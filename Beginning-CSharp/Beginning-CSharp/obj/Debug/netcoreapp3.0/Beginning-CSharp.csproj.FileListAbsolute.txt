@@ -1,0 +1,11 @@
+C:\Users\Andrew\source\repos\Beginning-CSharp\Beginning-CSharp\bin\Debug\netcoreapp3.0\Beginning-CSharp.exe
+C:\Users\Andrew\source\repos\Beginning-CSharp\Beginning-CSharp\bin\Debug\netcoreapp3.0\Beginning-CSharp.deps.json
+C:\Users\Andrew\source\repos\Beginning-CSharp\Beginning-CSharp\bin\Debug\netcoreapp3.0\Beginning-CSharp.runtimeconfig.json
+C:\Users\Andrew\source\repos\Beginning-CSharp\Beginning-CSharp\bin\Debug\netcoreapp3.0\Beginning-CSharp.runtimeconfig.dev.json
+C:\Users\Andrew\source\repos\Beginning-CSharp\Beginning-CSharp\bin\Debug\netcoreapp3.0\Beginning-CSharp.dll
+C:\Users\Andrew\source\repos\Beginning-CSharp\Beginning-CSharp\bin\Debug\netcoreapp3.0\Beginning-CSharp.pdb
+C:\Users\Andrew\source\repos\Beginning-CSharp\Beginning-CSharp\obj\Debug\netcoreapp3.0\Beginning-CSharp.csprojAssemblyReference.cache
+C:\Users\Andrew\source\repos\Beginning-CSharp\Beginning-CSharp\obj\Debug\netcoreapp3.0\Beginning-CSharp.AssemblyInfoInputs.cache
+C:\Users\Andrew\source\repos\Beginning-CSharp\Beginning-CSharp\obj\Debug\netcoreapp3.0\Beginning-CSharp.AssemblyInfo.cs
+C:\Users\Andrew\source\repos\Beginning-CSharp\Beginning-CSharp\obj\Debug\netcoreapp3.0\Beginning-CSharp.dll
+C:\Users\Andrew\source\repos\Beginning-CSharp\Beginning-CSharp\obj\Debug\netcoreapp3.0\Beginning-CSharp.pdb

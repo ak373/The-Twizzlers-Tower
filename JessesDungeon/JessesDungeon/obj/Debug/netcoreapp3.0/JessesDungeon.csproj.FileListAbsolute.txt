@@ -1,0 +1,11 @@
+C:\Users\Andrew\source\repos\JessesDungeon\JessesDungeon\bin\Debug\netcoreapp3.0\JessesDungeon.exe
+C:\Users\Andrew\source\repos\JessesDungeon\JessesDungeon\bin\Debug\netcoreapp3.0\JessesDungeon.deps.json
+C:\Users\Andrew\source\repos\JessesDungeon\JessesDungeon\bin\Debug\netcoreapp3.0\JessesDungeon.runtimeconfig.json
+C:\Users\Andrew\source\repos\JessesDungeon\JessesDungeon\bin\Debug\netcoreapp3.0\JessesDungeon.runtimeconfig.dev.json
+C:\Users\Andrew\source\repos\JessesDungeon\JessesDungeon\bin\Debug\netcoreapp3.0\JessesDungeon.dll
+C:\Users\Andrew\source\repos\JessesDungeon\JessesDungeon\bin\Debug\netcoreapp3.0\JessesDungeon.pdb
+C:\Users\Andrew\source\repos\JessesDungeon\JessesDungeon\obj\Debug\netcoreapp3.0\JessesDungeon.csprojAssemblyReference.cache
+C:\Users\Andrew\source\repos\JessesDungeon\JessesDungeon\obj\Debug\netcoreapp3.0\JessesDungeon.AssemblyInfoInputs.cache
+C:\Users\Andrew\source\repos\JessesDungeon\JessesDungeon\obj\Debug\netcoreapp3.0\JessesDungeon.AssemblyInfo.cs
+C:\Users\Andrew\source\repos\JessesDungeon\JessesDungeon\obj\Debug\netcoreapp3.0\JessesDungeon.dll
+C:\Users\Andrew\source\repos\JessesDungeon\JessesDungeon\obj\Debug\netcoreapp3.0\JessesDungeon.pdb
