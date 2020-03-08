@@ -2277,7 +2277,7 @@ namespace JessesDungeon
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
                                 }
-                                else if (peteQuestGiven == true && peteQuestCompleted == false)
+                                else if (peteQuestGiven == true && peteQuestCompleted == true)
                                 {
                                     Console.WriteLine();
                                     Console.WriteLine();
@@ -4399,7 +4399,7 @@ namespace JessesDungeon
                                     axe.Unlocked = true;
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine("\"Please take this in return for your services. This axe wasn't made for fighting, but it's better than much else you'll find down here, yes?\"");
+                                    Console.WriteLine("\"Please take this in return. This axe wasn't made for fighting, but it's better than much else you'll find down here, yes?\"");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
@@ -4452,7 +4452,7 @@ namespace JessesDungeon
                                 Console.ReadLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"Salamanca's money is useful, but what it symbolizes is that which truly matters: Power. People follow power, and with your aid we shall be that which this dungeon's denizens flock.\"");
+                                Console.WriteLine("\"Salamanca's money is useful, but what it symbolizes is that which truly matters: Power. People follow power, and with your aid we shall be that to which this dungeon's denizens flock.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -5919,8 +5919,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
-                        discoveredMap[4, 18] = "[x]";
-                        discoveredMap[5, 18] = " | ";
+                        discoveredMap[6, 18] = "[x]";
                         Console.WriteLine("A fairly well constructed [house] stands in the corner of this room. There is a [statue] of a man standing in front of the entrance.");
                         Console.WriteLine();
                         Console.WriteLine("There is an exit to the west.");
@@ -5949,7 +5948,7 @@ namespace JessesDungeon
                             randomEncountersOn = true;
                             ego.FleeLocation = "J4";
                             ego.Location = "I4";
-                            discoveredMap[4, 18] = "[M]";
+                            discoveredMap[6, 18] = "[M]";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Onward!");
@@ -5995,7 +5994,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"All right, " + gargoyleName + ", and who is it you're looking for here?\"");
-                            Thread.Sleep(2000);
+                            Thread.Sleep(2500);
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Well? Are you here for a reason or just sight-seeing?");
@@ -7962,7 +7961,7 @@ namespace JessesDungeon
                                 Console.ReadLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"I always used to buy it off that skinny junkie guy to the west. I'm sure he still has some! Please! I'll get what you need as soon as I am able.\"");
+                                Console.WriteLine("\"I always used to buy it off that skinny junkie to the west. I'm sure he still has some! Please! I'll get what you need as soon as I am able.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -8654,7 +8653,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.WriteLine();
 
-                                    Console.Write("Ready?");
+                                    Console.WriteLine("Ready?");
                                     Console.WriteLine();
                                     Console.Write("> ");
                                     fightClubAction = Console.ReadLine();
@@ -9284,6 +9283,9 @@ namespace JessesDungeon
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                             Console.Clear();
+                            Console.WriteLine("The note reads:");
+                            Console.WriteLine();
+                            Console.WriteLine();
                             Console.WriteLine("I can't believe he has such security measures in place. I've been lost here for so long that I've resorted to writing on the wall as if I'm some sort of deranged lunatic gone mad from prolonged isolation. No matter. I shall log my activities here in hopes that it will aid me in remembering the sequence through this maze.");
                             Console.WriteLine();
                             Console.WriteLine();
@@ -9291,14 +9293,14 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.WriteLine("I at least remember what he said ABOUT it: \"It has been employed over a hundred times and used exponentially more.\"");
                             Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
-                            Console.Clear();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
                             Console.WriteLine("I can't just wander indefinitely, as this place has become filled with the violent newcomers who have flooded our halls of late. Even one as hardy as myself may eventually fall. Obviously if I cannot recall the sequence then a simple matter of trial and error is in order.");
                             Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
-                            Console.Clear();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
                             Console.WriteLine("This is simple enough; each trip that I progress I will log the subsequent correct turns here (lest I forget!). Eventually I will have either recalled the entire sequence or simply made it through.");
                             Console.WriteLine();
                             Console.WriteLine("North");
@@ -10019,7 +10021,7 @@ namespace JessesDungeon
                                 Console.ReadLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess doesn't it always.\"");
+                                Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess it always does.\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Now even she would betray me.\"");
                                 Console.WriteLine();
@@ -10058,7 +10060,7 @@ namespace JessesDungeon
                                 Console.ReadLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess doesn't it always.\"");
+                                Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess it always does.\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Now even she would betray me.\"");
                                 Console.WriteLine();
@@ -10097,7 +10099,7 @@ namespace JessesDungeon
                                 Console.ReadLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess doesn't it always.\"");
+                                Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess it always does.\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"It's turned into such a travesty.\"");
                                 Console.WriteLine();
@@ -16435,6 +16437,7 @@ namespace JessesDungeon
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                 }
+                Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
@@ -16481,6 +16484,7 @@ namespace JessesDungeon
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
@@ -16508,6 +16512,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
@@ -16535,6 +16540,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Jimmy is motionless for a moment and then rolls his eyes.");
@@ -16554,6 +16560,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
@@ -16585,6 +16592,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
@@ -16619,7 +16627,7 @@ namespace JessesDungeon
                         Console.WriteLine();
                         Console.WriteLine("Gus pauses until it is finished, and then continues.");
                         Console.WriteLine();
-                        Console.WriteLine("\"-- and then removed all other obstacles for a united front. We owe him a debt of gratitude -- one I fully intend to repay.\"");
+                        Console.WriteLine("\"-- and then removed all other obstacles for a united front. We owe him a debt of gratitude - one I fully intend to repay.\"");
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
@@ -16628,11 +16636,12 @@ namespace JessesDungeon
                     {
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.WriteLine("\"He first destroyed the Salamanca dissidents and then removed all other obstacles for a united front. We owe him a debt of gratitude -- one I fully intend to repay.\"");
+                        Console.WriteLine("\"He first destroyed the Salamanca dissidents and then removed all other obstacles for a united front. We owe him a debt of gratitude - one I fully intend to repay.\"");
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
@@ -16671,6 +16680,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
@@ -16690,6 +16700,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
@@ -16777,6 +16788,7 @@ namespace JessesDungeon
                 }
                 if (disappearChoice != "saul")
                 {
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Jimmy breaks into a largely exaggerated applause.");
