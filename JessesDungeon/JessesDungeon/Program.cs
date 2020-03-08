@@ -15602,7 +15602,7 @@ namespace JessesDungeon
                     action = "complete";
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("vEXPANDEDIFSTATEMENTS");
+                    Console.WriteLine("v17 and one half");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
