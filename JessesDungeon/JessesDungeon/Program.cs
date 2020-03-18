@@ -58,7 +58,7 @@ namespace JessesDungeon
             Weapon rustyWoodenSpoon = new Weapon("Rusty Wooden Spoon", 1, 2, 0, true, false, 0, "A miracle of natural law.");
             Weapon stick = new Weapon("Stick", 1, 2, 0, true, true, 5, "Ho Haha Guard Turn Parry Dodge Spin Ha Thrust!");
             Weapon pointyStick = new Weapon("Pointy Stick", 4, 2, 0, true, false, 10, "Brilliant use of \"force over surface area\" wouldn't you say?");
-            Weapon mildewEncrustedPocketKnife = new Weapon("Mildew-encrusted Pocket Knife", 4, 3, 0, true, false, 0, "Gross. But pointy!");
+            Weapon mildewEncrustedPocketKnife = new Weapon("Mildew-Encrusted Pocket Knife", 4, 3, 0, true, false, 0, "Gross. But pointy!");
             Weapon knife = new Weapon("Knife", 4, 3, 0, true, false, 20, "You could definitely stab something with this.");
             Weapon huntingKnife = new Weapon("Hunting Knife", 6, 3, 0, true, false, 50, "THAT'S a knife.");
             Weapon axe = new Weapon("Fireman's Axe", 8, 3, 0, false, false, 400, "This emergency axe was not made for combat. The force of this two-handed weapon increases your damage die by two, but its unwieldy nature will decrease your AC by two as well.");
@@ -212,9 +212,11 @@ namespace JessesDungeon
             bool mapBowl = false;
             bool mapHermit = false;
             bool mapFortress = false;
+            bool searchedChest = false;
+            bool searchedNightstand = false;
 
-            List<string> boolList = new List<string> { "debugMode", "bowlAndSpoonLooted", "listenedToTownVoices", "unlockedListenTo", "hasNotEnteredTown", "hasLeftTown", "searchedTree", "galeQuestGiven", "galeQuestCompleted", "hermitVisited", "lookedMeepEyes", "searchedMeepMounds", "talkedToMeepMounds", "searchedMikeHouse", "fuckedUpWithMike", "searchedGraveyard", "salamancaGuardDefeated", "salamancaGuardSearched", "salamancaCousinDefeated", "salamancaDead", "randomEncountersOn", "lydiaQuestGiven", "lydiaQuestCompleted", "lootedCentaur", "frontEntranceWarning", "joinedFightClub", "fightClubLoop", "foughtInFightClub", "theCreeperInTheDarkDefeated", "puddleSearched", "visitedBowlingAlley", "bowlingLoop", "talkedToPriest", "noticedJane", "janesProtectionActive", "janesDoorOpened", "signedLogBook", "dryadLoop", "peteLoop", "buyLoop", "sellLoop", "inventoryLoop", "salamancaLoop", "salamancaBagLooted", "newConverseAvailable", "gusQuestGiven", "gusQuestCompleted", "gusLoop", "losPollosHermanos", "mikeQuestGiven", "mikeQuestCompleted", "peteQuestGiven", "peteQuestCompleted", "saulQuestGiven", "saulQuestCompleted", "studdedLeatherArmorLooted", "knightSuitAvailable", "mikeLoop", "janeQuestGiven", "janeQuestCompleted", "janeLoop", "freePotions", "dudeOnAPogoStickDefeated", "hidenGoseke", "secretTunnelOpened", "returnedRing", "shopClosed", "readLogbook", "tookPeteCash", "tookGusCash", "tookSaulCash", "tookHermitCash", "tookLydiaCash", "tookMikeCash", "tookJaneCash", "talkLoop", "killedJesse", "jesseDefeated", "sparedJesse", "searchedHeisenberg", "narratorDefeated", "searchedFortress", "mapTown", "mapPeace", "mapSalamanca", "mapLiquor", "mapVacuum", "mapCartel", "mapMike", "mapFight", "mapLydia", "mapSaul", "mapBowl", "mapHermit", "mapFortress" };
-            List<bool> boolFlags = new List<bool> { debugMode, bowlAndSpoonLooted, listenedToTownVoices, unlockedListenTo, hasNotEnteredTown, hasLeftTown, searchedTree, galeQuestGiven, galeQuestCompleted, hermitVisited, lookedMeepEyes, searchedMeepMounds, talkedToMeepMounds, searchedMikeHouse, fuckedUpWithMike, searchedGraveyard, salamancaGuardDefeated, salamancaGuardSearched, salamancaCousinDefeated, salamancaDead, randomEncountersOn, lydiaQuestGiven, lydiaQuestCompleted, lootedCentaur, frontEntranceWarning, joinedFightClub, fightClubLoop, foughtInFightClub, theCreeperInTheDarkDefeated, puddleSearched, visitedBowlingAlley, bowlingLoop, talkedToPriest, noticedJane, janesProtectionActive, janesDoorOpened, signedLogBook, dryadLoop, peteLoop, buyLoop, sellLoop, inventoryLoop, salamancaLoop, salamancaBagLooted, newConverseAvailable, gusQuestGiven, gusQuestCompleted, gusLoop, losPollosHermanos, mikeQuestGiven, mikeQuestCompleted, peteQuestGiven, peteQuestCompleted, saulQuestGiven, saulQuestCompleted, studdedLeatherArmorLooted, knightSuitAvailable, mikeLoop, janeQuestGiven, janeQuestCompleted, janeLoop, freePotions, dudeOnAPogoStickDefeated, hidenGoseke, secretTunnelOpened, returnedRing, shopClosed, readLogbook, tookPeteCash, tookGusCash, tookSaulCash, tookHermitCash, tookLydiaCash, tookMikeCash, tookJaneCash, talkLoop, killedJesse, jesseDefeated, sparedJesse, searchedHeisenberg, narratorDefeated, searchedFortress, mapTown, mapPeace, mapSalamanca, mapLiquor, mapVacuum, mapCartel, mapMike, mapFight, mapLydia, mapSaul, mapBowl, mapHermit, mapFortress };
+            List<string> boolList = new List<string> { "debugMode", "bowlAndSpoonLooted", "listenedToTownVoices", "unlockedListenTo", "hasNotEnteredTown", "hasLeftTown", "searchedTree", "galeQuestGiven", "galeQuestCompleted", "hermitVisited", "lookedMeepEyes", "searchedMeepMounds", "talkedToMeepMounds", "searchedMikeHouse", "fuckedUpWithMike", "searchedGraveyard", "salamancaGuardDefeated", "salamancaGuardSearched", "salamancaCousinDefeated", "salamancaDead", "randomEncountersOn", "lydiaQuestGiven", "lydiaQuestCompleted", "lootedCentaur", "frontEntranceWarning", "joinedFightClub", "fightClubLoop", "foughtInFightClub", "theCreeperInTheDarkDefeated", "puddleSearched", "visitedBowlingAlley", "bowlingLoop", "talkedToPriest", "noticedJane", "janesProtectionActive", "janesDoorOpened", "signedLogBook", "dryadLoop", "peteLoop", "buyLoop", "sellLoop", "inventoryLoop", "salamancaLoop", "salamancaBagLooted", "newConverseAvailable", "gusQuestGiven", "gusQuestCompleted", "gusLoop", "losPollosHermanos", "mikeQuestGiven", "mikeQuestCompleted", "peteQuestGiven", "peteQuestCompleted", "saulQuestGiven", "saulQuestCompleted", "studdedLeatherArmorLooted", "knightSuitAvailable", "mikeLoop", "janeQuestGiven", "janeQuestCompleted", "janeLoop", "freePotions", "dudeOnAPogoStickDefeated", "hidenGoseke", "secretTunnelOpened", "returnedRing", "shopClosed", "readLogbook", "tookPeteCash", "tookGusCash", "tookSaulCash", "tookHermitCash", "tookLydiaCash", "tookMikeCash", "tookJaneCash", "talkLoop", "killedJesse", "jesseDefeated", "sparedJesse", "searchedHeisenberg", "narratorDefeated", "searchedFortress", "mapTown", "mapPeace", "mapSalamanca", "mapLiquor", "mapVacuum", "mapCartel", "mapMike", "mapFight", "mapLydia", "mapSaul", "mapBowl", "mapHermit", "mapFortress" , "searchedChest" , "searchedNightstand" };
+            List<bool> boolFlags = new List<bool> { debugMode, bowlAndSpoonLooted, listenedToTownVoices, unlockedListenTo, hasNotEnteredTown, hasLeftTown, searchedTree, galeQuestGiven, galeQuestCompleted, hermitVisited, lookedMeepEyes, searchedMeepMounds, talkedToMeepMounds, searchedMikeHouse, fuckedUpWithMike, searchedGraveyard, salamancaGuardDefeated, salamancaGuardSearched, salamancaCousinDefeated, salamancaDead, randomEncountersOn, lydiaQuestGiven, lydiaQuestCompleted, lootedCentaur, frontEntranceWarning, joinedFightClub, fightClubLoop, foughtInFightClub, theCreeperInTheDarkDefeated, puddleSearched, visitedBowlingAlley, bowlingLoop, talkedToPriest, noticedJane, janesProtectionActive, janesDoorOpened, signedLogBook, dryadLoop, peteLoop, buyLoop, sellLoop, inventoryLoop, salamancaLoop, salamancaBagLooted, newConverseAvailable, gusQuestGiven, gusQuestCompleted, gusLoop, losPollosHermanos, mikeQuestGiven, mikeQuestCompleted, peteQuestGiven, peteQuestCompleted, saulQuestGiven, saulQuestCompleted, studdedLeatherArmorLooted, knightSuitAvailable, mikeLoop, janeQuestGiven, janeQuestCompleted, janeLoop, freePotions, dudeOnAPogoStickDefeated, hidenGoseke, secretTunnelOpened, returnedRing, shopClosed, readLogbook, tookPeteCash, tookGusCash, tookSaulCash, tookHermitCash, tookLydiaCash, tookMikeCash, tookJaneCash, talkLoop, killedJesse, jesseDefeated, sparedJesse, searchedHeisenberg, narratorDefeated, searchedFortress, mapTown, mapPeace, mapSalamanca, mapLiquor, mapVacuum, mapCartel, mapMike, mapFight, mapLydia, mapSaul, mapBowl, mapHermit, mapFortress, searchedChest, searchedNightstand };
 
             int hermitAnger = 0;
             int highestHermitAnger = 0;
@@ -248,11 +250,13 @@ namespace JessesDungeon
             string salamancaAction = null;
             string salamancaChoice = null;
             string disappearChoice = null;
+            string razzleDazzleRootBeer = null;
+            string suckBlueFrogs = null;
 
             string action = "";
 
-            List<string> stringList = new List<string>(){ "debugMoneyInput", "fightClubAction", "fightClubChoice", "bowlingAction", "purchaseItem", "sellItem", "sellItem2", "usingItem", "inspectingItem", "salamancaAction", "salamancaChoice", "disappearChoice", "action" };
-            List<string> stringFlags = new List<string>() { debugMoneyInput, fightClubAction, fightClubChoice, bowlingAction, purchaseItem, sellItem, sellItem2, usingItem, inspectingItem, salamancaAction, salamancaChoice, disappearChoice, action };
+            List<string> stringList = new List<string>(){ "debugMoneyInput", "fightClubAction", "fightClubChoice", "bowlingAction", "purchaseItem", "sellItem", "sellItem2", "usingItem", "inspectingItem", "salamancaAction", "salamancaChoice", "disappearChoice", "action" , "razzleDazzleRootBeer" , "suckBlueFrogs" };
+            List<string> stringFlags = new List<string>() { debugMoneyInput, fightClubAction, fightClubChoice, bowlingAction, purchaseItem, sellItem, sellItem2, usingItem, inspectingItem, salamancaAction, salamancaChoice, disappearChoice, action , razzleDazzleRootBeer, suckBlueFrogs };
 
 
             var ego = new Stats("Ego", 100, 100, rags, unarmed, nullShield, 0, 0.95, 0, 6, 1, 1, 0, 0, "J7", "J7", false, false, null, 0, 0);
@@ -314,11 +318,6 @@ namespace JessesDungeon
                 switch (ego.Location)
                 {
                     case "J7":
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[12, 18] = "[x]";
                         discoveredMap[12, 17] = "-";
@@ -342,9 +341,10 @@ namespace JessesDungeon
                         action = action.ToLower();
                         action = action.Trim();
 
+
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "J7";
                             ego.Location = "I7";
@@ -393,7 +393,7 @@ namespace JessesDungeon
 
                             if (action == "go west")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "I7";
                                 ego.Location = "H7";
@@ -406,7 +406,7 @@ namespace JessesDungeon
 
                             if (action == "go east")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 ego.Location = "winner";
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -416,7 +416,7 @@ namespace JessesDungeon
 
                             if (action == "look at dinner tray" || action == "search dinner tray")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("No! No dinner tray! Focus!");
@@ -450,7 +450,7 @@ namespace JessesDungeon
 
                             if (action == "go west")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "I7";
                                 ego.Location = "H7";
@@ -463,7 +463,7 @@ namespace JessesDungeon
 
                             if (action == "go east")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "I7";
                                 ego.Location = "J7";
@@ -478,7 +478,7 @@ namespace JessesDungeon
                             {
                                 if (bowlAndSpoonLooted == false)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("You see a large bowl with a spoon resting inside. On closer inspection... my goodness - this thing is so old the wooden spoon is rusty!");
@@ -488,7 +488,7 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("For better or worse, the tray is empty.");
@@ -529,7 +529,7 @@ namespace JessesDungeon
 
                                         if (action == "yes")
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             talkLoop = false;
                                             bowlAndSpoonLooted = true;
                                             Console.WriteLine();
@@ -543,25 +543,30 @@ namespace JessesDungeon
                                             Console.Write(".");
                                             Thread.Sleep(1500);
                                             Console.WriteLine();
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("You pick up the spoon, and brandish it high into the air. You swing it around several times, running battle drills with yourself. \"Voosh! voooosh!\" You begin to hear the sounds of your glorious blade whizzing through the air; though you soon realize that you were just getting a little too into it and began making sound effects.");
                                             Console.WriteLine();
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
+                                            Console.WriteLine("____________________________________________________");
                                             equippableWeapon.Add(rustyWoodenSpoon);
                                             GetEquipped(ego, rustyWoodenSpoon);
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("You pick up the bowl, and juggle it around in your hand a few times. Fitting your fingers up against the inside walls, you push outward until friction causes the bowl to remain on the end of your hand. Extending your arm furiously, you repel many floating particles of dust which were certainly a choking hazard.");
                                             Console.WriteLine();
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
+                                            Console.WriteLine("____________________________________________________");
                                             equippableShield.Add(soupBowl);
                                             GetStrapped(ego, soupBowl);
                                         }
                                         else if (action == "no")
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             talkLoop = false;
                                             Console.WriteLine();
                                             Console.WriteLine();
@@ -583,13 +588,14 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine("You've already taken the bowl and Rusty Wooden Spoon. These things don't just regenerate.");
+                                    Console.WriteLine("You've already taken the Soup Bowl and Rusty Wooden Spoon. These things don't just regenerate.");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("...Is \"wood doesn't grow on trees\" too obvious here?");
@@ -640,7 +646,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H7";
                             ego.Location = "G7";
@@ -653,7 +659,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H7";
                             ego.Location = "I7";
@@ -666,7 +672,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H7";
                             ego.Location = "H6";
@@ -679,7 +685,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H7";
                             ego.Location = "H8";
@@ -692,7 +698,7 @@ namespace JessesDungeon
 
                         if (action == "look at tracks")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("While going in and out of all four paths, there are far more foot falls leading westward than any other direction.");
@@ -703,7 +709,7 @@ namespace JessesDungeon
 
                         if (action == "search tracks")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You get down on all fours, and press your cheek against the floor to get the best view of the tracks that you can from the side. Crawling along the floor and swapping floor-cheeks as necessary, you determine that the tracks are certainly tracks made in dust.");
@@ -765,7 +771,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G7";
                             ego.Location = "F7";
@@ -778,7 +784,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G7";
                             ego.Location = "H7";
@@ -791,7 +797,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G7";
                             ego.Location = "G6";
@@ -804,7 +810,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G7";
                             ego.Location = "G8";
@@ -817,7 +823,7 @@ namespace JessesDungeon
 
                         if (action == "look at tracks")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("While going in and out of all four paths, there are far more foot falls leading westward than any other direction.");
@@ -828,7 +834,7 @@ namespace JessesDungeon
 
                         if (action == "search tracks")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You get down on all fours, and press your cheek against the floor to get the best view of the tracks that you can from the side. Crawling along the floor and swapping floor-cheeks as necessary, you determine that the tracks are certainly tracks made in dust.");
@@ -856,7 +862,7 @@ namespace JessesDungeon
                             {
                                 Console.WriteLine("How exactly do you search sound? Come on now. Seriously!");
                             }
-                                action = "complete";
+                                action = "Complete";
                             Thread.Sleep(2500);
                             Console.WriteLine();
                             Console.WriteLine();
@@ -869,7 +875,7 @@ namespace JessesDungeon
 
                         if (action == "listen to tracks" && unlockedListenTo == true)
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Smartass.");
@@ -880,7 +886,7 @@ namespace JessesDungeon
 
                         if (action == "listen to voices" && unlockedListenTo == true)
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Sidling up against the closest wall and holding your breath, you can make out the conversation.");
@@ -889,7 +895,45 @@ namespace JessesDungeon
                             Console.ReadLine();
                             Console.Clear();
                             //7 total conversations. 6 "newconverses"
-                            if (converseCount == 7 || (converseCount == 6 && newConverseAvailable == true))
+                            if (undroppables.Contains(dungeonKey))
+                            {
+                                Console.WriteLine("\"PICAAAAAAARD!\"");
+                                Thread.Sleep(2000);
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("\"DATA!\"");
+                                Thread.Sleep(2000);
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("\"Q! What the devil are you doing here?!\"");
+                                Thread.Sleep(3500);
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("\"...THE DOCTOR!\"");
+                                Thread.Sleep(2500);
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("\"Janeway.\"");
+                                Thread.Sleep(2000);
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("\"Sweeting?\"");
+                                Thread.Sleep(1500);
+                                Console.Clear();
+                                Thread.Sleep(1000);
+                                Console.WriteLine();
+                                Console.WriteLine("KHAAAAAAAAN!");
+                                Thread.Sleep(1000);
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.Clear();
+                                Thread.Sleep(1000);
+                                Console.WriteLine();
+                                Console.WriteLine("KHAAAAAAAAAAAAAAAAAAAAAAAN!");
+                                Thread.Sleep(2500);
+                            }
+                            else if (converseCount == 7 || (converseCount == 6 && newConverseAvailable == true))
                             {
                                 converseCount = 7;
                                 newConverseAvailable = false;
@@ -898,7 +942,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"It totally is, bro, I'm tellin' you! You pay him and just 'vwip!' he'll get you outta here! Anywhere you wanna go and any kind of life you want!\"");
-                                Thread.Sleep(14000);
+                                Thread.Sleep(10000);
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Oh yeah? Then why hasn't everyone done it? Why haven't you?\"");
@@ -906,7 +950,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Bro, you're not getting me. When I say 'a lot,' I mean *a lot.*\"");
-                                Thread.Sleep(10000);
+                                Thread.Sleep(7000);
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"What kind of business plan is that, then?\"");
@@ -914,15 +958,15 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"I don't know, man. I think it's what he used to charge and he just keeps the same price out of principle or whatever.\"");
-                                Thread.Sleep(12000);
+                                Thread.Sleep(10000);
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"So, what, do you just drag a huge bag of cash up there and say 'here you go' or something?\"");
-                                Thread.Sleep(4000);
+                                Thread.Sleep(5000);
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Nah, dude, it's like some super spy stuff with like a secret passcode. It's weird, but you say, 'I need a new dust filter for my Hoover Maxextract Pressurepro Model 60 - can you help me with that?'\"");
-                                Thread.Sleep(15000);
+                                Thread.Sleep(13000);
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Woah. Feel like I'd need to write that down. What was it again?\"");
@@ -941,11 +985,11 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"If there's even enough money down here at all, you'd have to pool everyone's stash together just to get one guy out. And I really don't think anyone's gonna go for that.\"");
-                                Thread.Sleep(12000);
+                                Thread.Sleep(11000);
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"They'll probably need your whole sack of goodies, too!\"");
-                                Thread.Sleep(4000);
+                                Thread.Sleep(5000);
                                 Console.Clear();
                                 Console.WriteLine("The remainder of this conversation takes a dark turn.");
                                 Console.WriteLine();
@@ -963,19 +1007,22 @@ namespace JessesDungeon
                                 Console.WriteLine("\"Bro, I'm just gonna slap those each out of the air in turn.\"");
                                 Thread.Sleep(4000);
                                 Console.WriteLine();
-                                Console.WriteLine("\"There are no constraints on the time travel, so that whole thing is just a disaster. It doesn't even matter if I could (and I could) say 'she should've done this or that.' Omnipotence and omnipresence simply cheapen the struggle.\"");
                                 Console.WriteLine();
-                                Console.WriteLine("\"'Voyager' treats the borg wrong, and the finale is no different. The borg are an unending army where a single ship can decimate the entire alpha quadrant, and Voyager just like blows up some of them. You ever take calculus, bro? Subtract 'a lot' from infinity and you still have at least one ship that can end the alpha quadrant whenever it wants.\"");
+                                Console.WriteLine("\"There are no constraints on the time travel, so that whole thing is just a disaster. It doesn't even matter if I could (and I could) say 'she should've done this or that.' Omnipotence and omnipresence simply cheapen the struggle.\"");
+                                Thread.Sleep(7500);
+                                Console.WriteLine();
+                                Console.WriteLine("\"The 'Voyager' series treats the borg wrong, and the finale is no exception. The borg are an unending army where a single ship can decimate the entire alpha quadrant, and Voyager just like blows some of them up. You ever take calculus, bro? Subtract 'a lot' from infinity and you still have at least one ship that can end the alpha quadrant whenever it wants.\"");
+                                Thread.Sleep(7500);
                                 Console.WriteLine();
                                 Console.WriteLine("\"And your 'pew pew bang happy ending,' bro? The whole thing was about deciding between an act of self-interest and an ethical act of self-sacrifice -- mirroring the series premiere, mind you. But - unlike the premiere - Janeway just has her cake and eats it too, which is a poor ending to any story.\"");
-                                Thread.Sleep(55000);
+                                Thread.Sleep(35000);
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"'Endgame' is the most rewatched episode of the series on Netflix.\"");
-                                Thread.Sleep(5000);
+                                Console.WriteLine("\"... And 'Endgame' is the most rewatched episode of the series on Netflix.\"");
+                                Thread.Sleep(6000);
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"Yeah and they'll probably release some movie on Netflix as an extension of their successful series too. In what world would something like that be any good?\"");
+                                Console.WriteLine("\"Yeah and they'll probably release some  Netflix-original movie as an extension just to please fans, too. In what world would something like that be any good?\"");
                                 Thread.Sleep(10000);
                                 Console.Clear();
                                 Console.WriteLine("The remainder of this conversation takes a dark turn.");
@@ -1012,7 +1059,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Yeah you're right! 'Star Trek' and 'The Visionaries' were both unjustly canceled!\"");
-                                Thread.Sleep(5000);
+                                Thread.Sleep(6000);
                                 Console.Clear();
                                 Console.WriteLine("The remainder of this conversation takes a dark turn.");
                                 Console.WriteLine();
@@ -1048,7 +1095,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"I've got faith... Faith of the heart...\"");
-                                Thread.Sleep(3000);
+                                Thread.Sleep(4000);
                                 Console.Clear();
                                 Console.WriteLine("The remainder of this conversation takes a dark turn.");
                                 Console.WriteLine();
@@ -1076,15 +1123,15 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"...Let's not say things we can't take back, bro.\"");
-                                Thread.Sleep(10000);
+                                Thread.Sleep(6000);
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"OK, you're right on that. But come on -- that whole thing about firing the torpedos at the Phoenix and everyone just stands there until they miss? Data obviously misses on purpose, and as he doesn't capitalize on his decoy it only serves as fabricated drama for a lacking movie.\"");
-                                Thread.Sleep(14000);
+                                Thread.Sleep(15000);
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"DATA CAN DO NO WRONG!!\"");
-                                Thread.Sleep(4000);
+                                Thread.Sleep(3000);
                                 Console.Clear();
                                 Console.WriteLine("The remainder of this conversation takes a dark turn.");
                                 Console.WriteLine();
@@ -1155,7 +1202,7 @@ namespace JessesDungeon
 
                         if (action == "listen to voices" && listenedToTownVoices == true && unlockedListenTo == false)
                         {
-                            action = "complete";
+                            action = "Complete";
                             unlockedListenTo = true;
                             Console.WriteLine();
                             Console.WriteLine();
@@ -1167,7 +1214,7 @@ namespace JessesDungeon
 
                         if (action == "listen to" && unlockedListenTo == true)
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Listen to? Listen to WHAT?!");
@@ -1178,7 +1225,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("listen to ") && unlockedListenTo == true)
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Let's not get carried away, ok. Listen to voices -- THAT'S IT. You're lucky even that.");
@@ -1224,7 +1271,7 @@ namespace JessesDungeon
                                 Console.ReadLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"And, well, if you want to \"make something\" of yourself down here, you can go pay your respects to the cartel just out and to the north. I'd be careful getting involved with them, though.\"");
+                                Console.WriteLine("\"And, well, if you want to 'make something' of yourself down here, you can go pay your respects to the cartel just out and to the north. I'd be careful getting involved with them, though.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -1254,7 +1301,7 @@ namespace JessesDungeon
                             if (action == "go east")
                             {
                                 mapTown = true;
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "F7";
                                 ego.Location = "G7";
@@ -1268,7 +1315,7 @@ namespace JessesDungeon
 
                             if (action == "look at men")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The men look haggard and a bit disheveled, but they are not currently attacking and/or robbing you, so that's definitely a good sign.");
@@ -1279,7 +1326,7 @@ namespace JessesDungeon
 
                             if (action == "search men")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("I really don't think they'd be all right with that. Not yet, anyway -- you guys just met!");
@@ -1290,7 +1337,7 @@ namespace JessesDungeon
 
                             if (action == "talk to men")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Hey, uh, yeah. I mean I just gave you my \'welcome\' spiel... that's all I got for right now. You get me right?\"");
@@ -1301,7 +1348,7 @@ namespace JessesDungeon
 
                             if (action == "look at podium")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Each podium looks like it might collapse to a light breeze. You can't be sure, but you don't think these were professionally built.");
@@ -1312,7 +1359,7 @@ namespace JessesDungeon
 
                             if (action == "search podium")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Careful! Probably get a splinter.");
@@ -1323,7 +1370,7 @@ namespace JessesDungeon
 
                             if (action == "look at plank")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The plank is roughly the size of a person. What a coincidence that he uses it for people to sleep on!");
@@ -1334,7 +1381,7 @@ namespace JessesDungeon
 
                             if (action == "search plank")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Three feet by seven feet. Kind of snug, but it'll work -- better than the floor am I right?!");
@@ -1345,7 +1392,7 @@ namespace JessesDungeon
 
                             if (action == "look at sack")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("That sack seems to be filled to the brim with goodies. So many odd shapes, angles, and points are trying to burst through the sides!");
@@ -1356,7 +1403,7 @@ namespace JessesDungeon
 
                             if (action == "search sack")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Skinny Pete puts an arm out, barring your path. \"Hey, man - just lemme know what you want and I'll see what I got, all right?\"");
@@ -1367,10 +1414,12 @@ namespace JessesDungeon
 
                             if (action == "shop")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 peteLoop = true;
                                 while (peteLoop == true)
                                 {
+                                    Console.WriteLine();
+                                    Console.WriteLine();
                                     Console.WriteLine("\"What're we doin', bro?\"");
                                     Console.WriteLine();
                                     Console.WriteLine("Buy");
@@ -2026,7 +2075,7 @@ namespace JessesDungeon
 
                             if (action == "rest")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 if (ego.BlueCrystals > 2)
                                 {
                                     Console.WriteLine();
@@ -2052,7 +2101,7 @@ namespace JessesDungeon
 
                             if (action == "talk to")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Talk to? Talk to WHO?!");
@@ -2063,7 +2112,7 @@ namespace JessesDungeon
 
                             if (action.StartsWith("talk to "))
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -2105,7 +2154,7 @@ namespace JessesDungeon
 
                             if (action == "go east")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "F7";
                                 ego.Location = "G7";
@@ -2118,7 +2167,7 @@ namespace JessesDungeon
 
                             if (action == "look at badger")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Badger smiles at you as he awaits your answer. He seems to genuinely be a nice and caring man stuck in a terrible circumstance.");
@@ -2131,7 +2180,7 @@ namespace JessesDungeon
 
                             if (action == "search badger")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("I really don't think he'd be all right with that -- you've only recently met!");
@@ -2142,7 +2191,7 @@ namespace JessesDungeon
 
                             if (action == "talk to badger")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Sup, guy? Be careful when you're walkin\' around out there - especially the body pile west of town. I'm not sure if you can catch chlamydia from a toilet seat or not, but you definitely can there.\"");
@@ -2153,7 +2202,7 @@ namespace JessesDungeon
 
                             if (action == "look at skinny pete")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Skinny Pete seems harmless enough -- eager to make a sale, but not that \"sleazy salesman\" type.");
@@ -2164,7 +2213,7 @@ namespace JessesDungeon
 
                             if (action == "search skinny pete")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("I really don't think he'd be all right with that -- you've only recently met!");
@@ -2175,7 +2224,7 @@ namespace JessesDungeon
 
                             if (action == "talk to skinny pete")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 if (converseCount == 7 && readLogbook == true && tookPeteCash == false)
                                 {
                                     Console.WriteLine();
@@ -2217,7 +2266,7 @@ namespace JessesDungeon
 
                                         if (action == "yes")
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             tookPeteCash = true;
                                             peteLoop = false;
                                             shopClosed = true;
@@ -2231,7 +2280,7 @@ namespace JessesDungeon
                                         }
                                         else if (action == "no")
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             peteLoop = false;
                                             Console.WriteLine();
                                             Console.WriteLine();
@@ -2370,7 +2419,7 @@ namespace JessesDungeon
 
                             if (action == "look at sack")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("That sack seems to be filled to the brim with goodies. So many odd shapes, angles, and points are trying to burst through the sides!");
@@ -2381,7 +2430,7 @@ namespace JessesDungeon
 
                             if (action == "search sack")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Skinny Pete puts an arm out, barring your path. \"Hey, man - just lemme know what you want and I'll see what I got, all right?\"");
@@ -2392,12 +2441,14 @@ namespace JessesDungeon
 
                             if (action == "shop")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 if (shopClosed == false)
                                 {
                                     peteLoop = true;
                                     while (peteLoop == true)
                                     {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
                                         Console.WriteLine("\"What're we doin', bro?\"");
                                         Console.WriteLine();
                                         Console.WriteLine("Buy");
@@ -3051,7 +3102,7 @@ namespace JessesDungeon
                                 {
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine("Sorry, bro -- you took all my stuff!.");
+                                    Console.WriteLine("Sorry, bro -- you took all my stuff!");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
@@ -3060,7 +3111,7 @@ namespace JessesDungeon
 
                             if (action == "rest")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 if (ego.BlueCrystals > 2)
                                 {
                                     Console.WriteLine();
@@ -3086,7 +3137,7 @@ namespace JessesDungeon
 
                             if (action == "talk to")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Talk to? Talk to WHO?!");
@@ -3097,7 +3148,7 @@ namespace JessesDungeon
 
                             if (action.StartsWith("talk to "))
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -3174,6 +3225,7 @@ namespace JessesDungeon
                                 {
                                     janeLoop = false;
                                     freePotions = true;
+                                    action = "Complete";
                                     undroppables.Add(janesKey);
                                     Console.WriteLine();
                                     Console.WriteLine();
@@ -3201,6 +3253,7 @@ namespace JessesDungeon
                                 else if (action == "no")
                                 {
                                     janeLoop = false;
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Oh. I guess I understand. Please just... make it quick at least.\"");
@@ -3249,7 +3302,7 @@ namespace JessesDungeon
 
                             if (action == "go west")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "G6";
                                 ego.Location = "F6";
@@ -3262,7 +3315,7 @@ namespace JessesDungeon
 
                             if (action == "go east")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "G6";
                                 ego.Location = "H6";
@@ -3275,7 +3328,7 @@ namespace JessesDungeon
 
                             if (action == "go north")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "G6";
                                 ego.Location = "G5";
@@ -3288,7 +3341,7 @@ namespace JessesDungeon
 
                             if (action == "go south")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "G6";
                                 ego.Location = "G7";
@@ -3301,7 +3354,7 @@ namespace JessesDungeon
 
                             if (action == "look at tree" && searchedTree == false)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You don't even need that famous ecologist's correspondence school for botanists. Trees can't live down here. But, nevertheless, there it is.");
@@ -3312,7 +3365,7 @@ namespace JessesDungeon
 
                             if (action == "search tree" && searchedTree == false)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 searchedTree = true;
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -3361,15 +3414,21 @@ namespace JessesDungeon
                                 Console.ReadLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("...");
-                                Thread.Sleep(3000);
+                                Console.Write(".");
+                                Thread.Sleep(500);
+                                Console.Write(".");
+                                Thread.Sleep(500);
+                                Console.Write(".");
+                                Thread.Sleep(2500);
+                                Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("OK it's been like 2 minutes. It's definitely been too long. Way too long.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
-                                Console.Clear();
+                                Console.WriteLine();
+                                Console.WriteLine();
                                 Console.WriteLine("The woman sighs. \"You're new. It's all right. Get up.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
@@ -3390,7 +3449,7 @@ namespace JessesDungeon
 
                             if (action == "look at tree" && searchedTree == true)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("I mean, now that you know what to look for... even Crocodile Dundee could see from here.");
@@ -3401,7 +3460,7 @@ namespace JessesDungeon
 
                             if (action == "search tree" && searchedTree == true)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Mmmmmmmnope. Nope nope nope.");
@@ -3412,7 +3471,7 @@ namespace JessesDungeon
 
                             if (action == "talk to tree" && searchedTree == true)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 if (killedJesse == true)
                                 {
                                     Console.WriteLine();
@@ -3448,9 +3507,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Oh. That ring...\"");
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
+                                    Thread.Sleep(1500);
                                     while (janeLoop == true)
                                     {
                                         Console.WriteLine();
@@ -3468,14 +3525,14 @@ namespace JessesDungeon
 
                                         if (action == "yes")
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             janeLoop = false;
                                             returnedRing = true;
                                             newConverseAvailable = true;
                                             undroppables.Remove(jeweledRing);
                                             Console.WriteLine();
                                             Console.WriteLine();
-                                            Console.WriteLine("She smiles and looks at it for a moment, then slips it into what you assume is a pocket. \"Thank you.\"");
+                                            Console.WriteLine("She smiles and looks at it for a moment, then slips it beneath her bark, into what you assume is a pocket. \"Thank you.\"");
                                             Console.WriteLine();
                                             Console.WriteLine("\"I had forgotten where I left this; I thought it was lost. I'm glad you brought it back to me.\"");
                                             Console.WriteLine();
@@ -3484,7 +3541,7 @@ namespace JessesDungeon
                                         }
                                         else if (action == "no")
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             janeLoop = false;
                                             Console.WriteLine();
                                             Console.WriteLine();
@@ -3506,7 +3563,7 @@ namespace JessesDungeon
                                 }
                                 else if (converseCount == 7 && readLogbook == true && returnedRing == true && tookJaneCash == false)
                                 {
-                                    if (tookGusCash && tookHermitCash && tookJaneCash && tookLydiaCash && tookMikeCash && tookPeteCash && tookSaulCash)
+                                    if (tookGusCash && tookHermitCash && tookLydiaCash && tookMikeCash && tookPeteCash && tookSaulCash)
                                     {
                                         undroppables.Add(jeweledRing);
                                         tookJaneCash = true;
@@ -3574,7 +3631,7 @@ namespace JessesDungeon
 
                             if (action == "talk to")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Talk to? Talk to WHO?!");
@@ -3585,7 +3642,7 @@ namespace JessesDungeon
 
                             if (action.StartsWith("talk to "))
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -3596,7 +3653,7 @@ namespace JessesDungeon
 
                             if (action == "buy potions" && searchedTree == true && freePotions == true)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 if (killedJesse == true)
                                 {
                                     Console.WriteLine();
@@ -3631,7 +3688,7 @@ namespace JessesDungeon
                                         Console.WriteLine("Exit");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.Write("\"Well? What would you like?\" ");
+                                        Console.WriteLine("\"Well? What would you like?\"");
                                         Console.WriteLine();
                                         Console.Write("> ");
                                         purchaseItem = Console.ReadLine();
@@ -3684,7 +3741,7 @@ namespace JessesDungeon
                             }
                             else if (action == "buy potions" && searchedTree == true)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 if (killedJesse == true)
                                 {
                                     Console.WriteLine();
@@ -3719,7 +3776,7 @@ namespace JessesDungeon
                                         Console.WriteLine("Exit");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.Write("\"Well? What would you like?\" ");
+                                        Console.WriteLine("\"Well? What would you like?\"");
                                         Console.WriteLine();
                                         Console.Write("> ");
                                         purchaseItem = Console.ReadLine();
@@ -3849,7 +3906,7 @@ namespace JessesDungeon
 
                             if (action == "go north")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You go north. Straight into a stone wall. derp.");
@@ -3860,7 +3917,7 @@ namespace JessesDungeon
 
                             if (action == "go south")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "G5";
                                 ego.Location = "G6";
@@ -3873,7 +3930,7 @@ namespace JessesDungeon
 
                             if (action == "look at fortification")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Make-shift it may be, but it'll certainly hold against anything you could do it.");
@@ -3884,7 +3941,7 @@ namespace JessesDungeon
 
                             if (action == "search fortification")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The wall is made of well-placed wood and stone. While it's certainly not impenetrable, any effort to break in would, at the very least, take long enough and create such a ruckus that it would be noticed.");
@@ -3927,7 +3984,7 @@ namespace JessesDungeon
 
                             if (action == "go north")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 if (losPollosHermanos == true)
                                 {
                                     Console.WriteLine();
@@ -3957,7 +4014,7 @@ namespace JessesDungeon
 
                             if (action == "go south")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "G5";
                                 ego.Location = "G6";
@@ -3970,7 +4027,7 @@ namespace JessesDungeon
 
                             if (action == "look at man")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("This man is not what you'd expect a sentry to look like. He seems like he'd be more at home with a book, or perhaps a karaoke machine. But regardless of how he looks, he is figuratively and literally standing between you and what is beyond this gate.");
@@ -3981,7 +4038,7 @@ namespace JessesDungeon
 
                             if (action == "search man")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He's all the way up there... and you're all the way down here... it's just not meant to be.");
@@ -3992,7 +4049,7 @@ namespace JessesDungeon
 
                             if (action == "talk to man")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 if (galeQuestGiven == false)
                                 {
                                     galeQuestGiven = true;
@@ -4086,7 +4143,7 @@ namespace JessesDungeon
 
                             if (action == "los pollos hermanos")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man disappears behind the fortification. A short moment later, the door opens.");
@@ -4101,7 +4158,7 @@ namespace JessesDungeon
 
                             if (action == "look at fortification")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Make-shift it may be, but it'll certainly hold against anything you could do it.");
@@ -4112,7 +4169,7 @@ namespace JessesDungeon
 
                             if (action == "search fortification")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The wall is made of well-placed wood and stone. While it's certainly not impenetrable, any effort to break in would, at the very least, take long enough and create such a ruckus that it would be noticed.");
@@ -4123,7 +4180,7 @@ namespace JessesDungeon
 
                             if (action == "talk to")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Talk to? Talk to WHO?!");
@@ -4134,7 +4191,7 @@ namespace JessesDungeon
 
                             if (action.StartsWith("talk to "))
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -4180,7 +4237,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (undroppables.Contains(sackOfCash) && tookGusCash == false)
                             {
                                 Console.WriteLine();
@@ -4206,7 +4263,7 @@ namespace JessesDungeon
 
                         if (action == "look at man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The man is completely calm and collected. He sits maintaining eye contact, yet does not convey any threat.");
@@ -4217,7 +4274,7 @@ namespace JessesDungeon
 
                         if (action == "search man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Something about him tells you that's just not gonna fly.");
@@ -4228,7 +4285,7 @@ namespace JessesDungeon
 
                         if (action == "talk to man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The man's response is simply a small twitch of his eye and a reiteration of his gesture for you to sit down.");
@@ -4239,7 +4296,7 @@ namespace JessesDungeon
 
                         if (action == "sit")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (converseCount == 7 && readLogbook == true && tookGusCash == false)
                             {
                                 undroppables.Add(sackOfCash);
@@ -4298,7 +4355,7 @@ namespace JessesDungeon
                                         if (action == "yes")
                                         {
                                             gusLoop = false;
-                                            action = "complete";
+                                            action = "Complete";
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Hm. I do appreciate your honesty.\"");
@@ -4356,7 +4413,7 @@ namespace JessesDungeon
                                         else if (action == "no")
                                         {
                                             gusLoop = false;
-                                            action = "complete";
+                                            action = "Complete";
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("The man's expressionless mask gives way to a slight squinting of the eyes. He continues to study you for a moment longer.");
@@ -4412,7 +4469,7 @@ namespace JessesDungeon
                                         }
                                         else
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("No weasling out of this one. Answer the man.");
@@ -4516,7 +4573,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("\"I will bribe and intimidate most of Heisenberg's forces. His fortress shall be far more accessible to you from this point forward.\"");
                                 Console.WriteLine();
-                                Console.WriteLine("\"We're counting on you.\"");
+                                Console.WriteLine("\"The fortress is to the far south. We're counting on you.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -4576,7 +4633,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C4";
                             ego.Location = "C5";
@@ -4589,7 +4646,7 @@ namespace JessesDungeon
 
                         if (action == "look at man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The man stands stationary with a bag at his feet. He doesn't seem to be guarding or watching anything. Just... standing.");
@@ -4602,7 +4659,7 @@ namespace JessesDungeon
 
                         if (action == "search man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("As you reach out to touch the man, he grabs your wrist and turns to meet your gaze.");
@@ -4621,7 +4678,7 @@ namespace JessesDungeon
 
                         if (action == "talk to man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (disappearChoice == null)
                             {
                                 Console.WriteLine();
@@ -4644,7 +4701,7 @@ namespace JessesDungeon
 
                         if (action == "i need a new dust filter for my hoover maxextract pressurepro model 60 - can you help me with that?")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (disappearChoice != null)
                             {
                                 Console.WriteLine();
@@ -4684,7 +4741,7 @@ namespace JessesDungeon
                                     if (action == "heisenberg" || action == "jesse")
                                     {
                                         disappearChoice = action;
-                                        action = "complete";
+                                        action = "Complete";
                                         talkLoop = false;
                                         undroppables.Remove(sackOfCash);
                                         undroppables.Remove(generator);
@@ -4705,7 +4762,7 @@ namespace JessesDungeon
                                     else if (action == "badger" || action == "skinny pete" || action == "jane" || action == "gale" || action == "gus" || action == "bowling guy" || action == "saul" || action == "hermit mcgill" || action == "lydia" || action == "mike" || action == "daniel" || action == "narrator" || (action == "salamanca" && !salamancaDead) || action == "sad broom man")
                                     {
                                         disappearChoice = action;
-                                        action = "complete";
+                                        action = "Complete";
                                         talkLoop = false;
                                         undroppables.Remove(sackOfCash);
                                         undroppables.Remove(generator);
@@ -4779,7 +4836,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -4790,7 +4847,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -4833,7 +4890,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             mapHermit = true;
                             randomEncountersOn = true;
                             ego.FleeLocation = "H9";
@@ -4847,7 +4904,7 @@ namespace JessesDungeon
 
                         if (action == "look at dwelling")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Whoever built this thing must've gone to great lengths to find, trade, or otherwise acquire all this material. There's more metal here than probably the rest of the dungeon combined.");
@@ -4858,7 +4915,7 @@ namespace JessesDungeon
 
                         if (action == "search dwelling")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("As you approach, a voice from inside calls out, \"whoever you are, please leave any light source in the lighthouse!\"");
@@ -4873,6 +4930,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.Clear();
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"One. Two. Three.\"");
@@ -4891,7 +4949,7 @@ namespace JessesDungeon
 
                         if (action == "look at sheets")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Are those... space blankets?");
@@ -4902,7 +4960,7 @@ namespace JessesDungeon
 
                         if (action == "search sheets")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Defintely space blankets.");
@@ -4943,7 +5001,7 @@ namespace JessesDungeon
 
                         if (action == "leave")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "Hermit";
                             ego.Location = "H9";
@@ -4955,7 +5013,7 @@ namespace JessesDungeon
 
                         if (action == "look at hermit")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You squint harder and tighter than you ever have before. You still see nothing.");
@@ -4966,7 +5024,7 @@ namespace JessesDungeon
 
                         if (action == "search hermit")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("If you even knew where he was to begin such an action, it'd probably not be a good idea.");
@@ -4977,7 +5035,7 @@ namespace JessesDungeon
 
                         if (action == "step forward")
                         {
-                            action = "complete";
+                            action = "Complete";
                             hermitAnger = hermitAnger + 3;
                             if (hermitAnger > 11) { hermitAnger = 11; }
                             Console.WriteLine();
@@ -5026,7 +5084,7 @@ namespace JessesDungeon
                         {
                             if (hermitVisited == false)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 hermitVisited = true;
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -5049,7 +5107,7 @@ namespace JessesDungeon
                             }
                             else if (hermitAnger == 10)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.Clear();
                                 Console.WriteLine("\"GET OUT! GET OUT! GET OUT! WHAT ARE YOU DOING!? GET OUT!!\"");
                                 Console.WriteLine();
@@ -5082,7 +5140,7 @@ namespace JessesDungeon
                             }
                             else if (converseCount == 7 && readLogbook == true && tookHermitCash == false)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 if (hermitAnger < 3)
                                 {
                                     tookHermitCash = true;
@@ -5142,7 +5200,7 @@ namespace JessesDungeon
                             }
                             else if (saulQuestGiven == true && saulHermitBond == 0)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 saulHermitBond++;
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -5165,13 +5223,13 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("You've taken 1 point of damage.");
                                 ego.CurrentHitPoints = ego.CurrentHitPoints - 1;
-                                if (ego.CurrentHitPoints >= 0)
-                                {
-                                    EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
-                                }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                if (ego.CurrentHitPoints <= 0)
+                                {
+                                    EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
+                                }
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit has begun filling the space between his words with panicked screams and short, shallow breaths.");
@@ -5192,7 +5250,7 @@ namespace JessesDungeon
                             }
                             else if (saulHermitBond == 2)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 saulHermitBond++;
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -5215,13 +5273,13 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("You've taken 1 point of damage.");
                                 ego.CurrentHitPoints = ego.CurrentHitPoints - 1;
-                                if (ego.CurrentHitPoints >= 0)
-                                {
-                                    EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
-                                }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                if (ego.CurrentHitPoints <= 0)
+                                {
+                                    EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
+                                }
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit has begun filling the space between his words with panicked screams and short, shallow breaths.");
@@ -5242,7 +5300,7 @@ namespace JessesDungeon
                             }
                             else if (saulHermitBond == 4)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 saulHermitBond++;
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -5264,14 +5322,14 @@ namespace JessesDungeon
                                 Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only found this out by it hitting you square in the face.");
                                 Console.WriteLine();
                                 Console.WriteLine("You've taken 1 point of damage.");
-                                ego.CurrentHitPoints = ego.CurrentHitPoints - 1;
-                                if (ego.CurrentHitPoints >= 0)
-                                {
-                                    EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
-                                }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                ego.CurrentHitPoints = ego.CurrentHitPoints - 1;
+                                if (ego.CurrentHitPoints <= 0)
+                                {
+                                    EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
+                                }
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit has begun filling the space between his words with panicked screams and short, shallow breaths.");
@@ -5292,7 +5350,7 @@ namespace JessesDungeon
                             }
                             else if (saulHermitBond == 6)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 saulHermitBond++;
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -5314,14 +5372,14 @@ namespace JessesDungeon
                                 Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only found this out by it hitting you square in the face.");
                                 Console.WriteLine();
                                 Console.WriteLine("You've taken 1 point of damage.");
-                                ego.CurrentHitPoints = ego.CurrentHitPoints - 1;
-                                if (ego.CurrentHitPoints >= 0)
-                                {
-                                    EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
-                                }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                ego.CurrentHitPoints = ego.CurrentHitPoints - 1;
+                                if (ego.CurrentHitPoints <= 0)
+                                {
+                                    EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
+                                }
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit has begun filling the space between his words with panicked screams and short, shallow breaths.");
@@ -5342,7 +5400,7 @@ namespace JessesDungeon
                             }
                             else if (saulHermitBond == 8)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 saulHermitBond++;
                                 saulQuestCompleted = true;
                                 undroppables.Add(stevia);
@@ -5377,7 +5435,7 @@ namespace JessesDungeon
                             }
                             else if (hermitAnger < 3)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
@@ -5399,7 +5457,7 @@ namespace JessesDungeon
                             }
                             else if (hermitAnger > 2 && hermitAnger < 6)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit clears his throat. \"Yes, well - I see you're back. Be sure you left any light source outside. Is there a reason you're here?\"");
@@ -5421,7 +5479,7 @@ namespace JessesDungeon
                             }
                             else if (hermitAnger > 5 && hermitAnger < 9)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit clears his throat. \"Yes, well - You're back. Hope you left your light sources outside. What do you want?\"");
@@ -5443,7 +5501,7 @@ namespace JessesDungeon
                             }
                             else if (hermitAnger == 9)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit clears his throat. \"Yes, well - What?\"");
@@ -5467,7 +5525,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -5478,7 +5536,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -5523,7 +5581,7 @@ namespace JessesDungeon
                         if (action == "go east")
                         {
                             mapSaul = true;
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "A7";
                             ego.Location = "B7";
@@ -5536,7 +5594,7 @@ namespace JessesDungeon
 
                         if (action == "look at mounds")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Did you expect to learn something useful? Well, you did. There are small openings in every mound which are all located at right around the height of a human's eyes.");
@@ -5547,7 +5605,7 @@ namespace JessesDungeon
 
                         if (action == "search mounds")
                         {
-                            action = "complete";
+                            action = "Complete";
                             searchedMeepMounds = true;
                             Console.WriteLine();
                             Console.WriteLine();
@@ -5567,7 +5625,7 @@ namespace JessesDungeon
 
                         if (action == "talk to mounds" && searchedMeepMounds == true && talkedToMeepMounds == false)
                         {
-                            action = "complete";
+                            action = "Complete";
                             talkedToMeepMounds = true;
                             Console.WriteLine();
                             Console.WriteLine();
@@ -5599,7 +5657,7 @@ namespace JessesDungeon
 
                         if (action == "talk to mounds" && searchedMeepMounds == true && talkedToMeepMounds == true)
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (undroppables.Contains(dungeonKey))
                             {
                                 Console.WriteLine();
@@ -5651,7 +5709,7 @@ namespace JessesDungeon
                                 Console.ReadLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"You really know how to tug on the heart strings. Listen, my friend, I really want to help -- truly I do! But do you think you could get this done by just leaving out my teensy little contribution?.\"");
+                                Console.WriteLine("\"You really know how to tug on the heart strings. Listen, my friend, I really want to help -- truly I do! But do you think you could get this done by just leaving out my teensy little contribution?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -5724,7 +5782,7 @@ namespace JessesDungeon
                                 Console.ReadLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"He's a nice enough guy and all, but he is not likely to part with his stuff... especially since he has no source to restock You might have to drop my name and try your luck.\"");
+                                Console.WriteLine("\"He's a nice enough guy and all, but he is not likely to part with his stuff... especially since he has no source to restock. You might have to drop my name and try your luck.\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"He lives east and a bit south of here. Just tell him 'little Jimmy' sent you!\"");
                                 Console.WriteLine();
@@ -5877,7 +5935,7 @@ namespace JessesDungeon
 
                         if (action == "look at glint")
                         {
-                            action = "complete";
+                            action = "Complete";
                             lookedMeepEyes = true;
                             Console.WriteLine();
                             Console.WriteLine();
@@ -5895,7 +5953,7 @@ namespace JessesDungeon
 
                         if (action == "search glint")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             if (lookedMeepEyes == true) { Console.WriteLine("Scooby-Doo wouldn't, and either should you."); }
@@ -5907,7 +5965,7 @@ namespace JessesDungeon
 
                         if (action == "talk to glint" && searchedMeepMounds == true)
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("No, you don\'t.");
@@ -5918,7 +5976,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -5929,7 +5987,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -5973,7 +6031,7 @@ namespace JessesDungeon
                         if (action == "go west")
                         {
                             mapMike = true;
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "J4";
                             ego.Location = "I4";
@@ -5986,7 +6044,7 @@ namespace JessesDungeon
 
                         if (action == "look at house")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The extent of its quality is beyond \"relative\" for this place. This house would rival any simple house built in the normal world.");
@@ -5997,7 +6055,7 @@ namespace JessesDungeon
 
                         if (action == "search house" && searchedMikeHouse == false)
                         {
-                            action = "complete";
+                            action = "Complete";
                             searchedMikeHouse = true;
                             Console.WriteLine();
                             Console.WriteLine();
@@ -6114,9 +6172,9 @@ namespace JessesDungeon
                             }
                         }
 
-                        if (action == "talk to statue" && searchedMikeHouse == true)
+                        if (action == "talk to statue" && searchedMikeHouse == true && fuckedUpWithMike == false)
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (undroppables.Contains(dungeonKey))
                             {
                                 Console.WriteLine();
@@ -6238,7 +6296,7 @@ namespace JessesDungeon
 
                         if (action == "talk to statue" && searchedMikeHouse == true && fuckedUpWithMike == true)
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (undroppables.Contains(dungeonKey))
                             {
                                 Console.WriteLine();
@@ -6397,7 +6455,7 @@ namespace JessesDungeon
 
                         if (action == "look at statue")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("It's an average (maybe less than average) middle-aged man. He's bald with a bit of a clueless look on his face. The statue stands as if to intercept visitors -- and in that case is a very odd choice of scare-statue.");
@@ -6408,7 +6466,7 @@ namespace JessesDungeon
 
                         if (action == "search statue")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             if (searchedTree == true) { Console.WriteLine("The statue is warm, and slightly more malleable to the touch than it should be... wait. Forget getting a leg-up on the situation -- just stop and back away slowly. You can't afford two potential sexual harrassment cases. It's not worth it."); }
@@ -6420,7 +6478,7 @@ namespace JessesDungeon
 
                         if (action == "talk to house")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Nothing happens.");
@@ -6431,7 +6489,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -6442,7 +6500,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -6482,7 +6540,7 @@ namespace JessesDungeon
 
                         if (action == "leave")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "Mike";
                             ego.Location = "J4";
@@ -6494,7 +6552,7 @@ namespace JessesDungeon
 
                         if (action == "look at mike")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("This must be the most intense man to ever exist. He's hard; he's tough; he's silent. There's nothing sinister about him, but neither does he inspire any sort of fuzzy feelings.");
@@ -6505,7 +6563,7 @@ namespace JessesDungeon
 
                         if (action == "search mike")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Are you kidding? He'd probably snap your fingers off and drain your blood out of them. Better meek out on this one.");
@@ -6516,7 +6574,7 @@ namespace JessesDungeon
 
                         if (action == "talk to mike")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (converseCount == 7 && readLogbook == true && tookMikeCash == false)
                             {
                                 undroppables.Add(giantBlueCrystal);
@@ -6629,15 +6687,11 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("He rises to his feet. \"I've got something I've been saving for 'the end' that you could use. But you better get us out of here.\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
                                 while (mikeLoop == true)
                                 {
                                     Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("He rises to his feet. \"I've got something I've been saving for 'the end' that you could use. But you better get us out of here.\"");
                                     Console.WriteLine();
                                     Console.WriteLine("\"I've only got the one so I can't replace it. Do you want it now?\"");
                                     Console.WriteLine();
@@ -6654,12 +6708,13 @@ namespace JessesDungeon
                                     {
                                         mikeLoop = false;
                                         knightSuitAvailable = false;
+                                        action = "Complete";
                                         equippableArmor.Add(chainmail);
                                         equippableShield.Add(realShield);
                                         equippableWeapon.Add(realSword);
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("You receive a sword, shield, and suit of chain mail.");
+                                        Console.WriteLine("You receive a sword, shield, and suit of chainmail.");
                                         Console.WriteLine();
                                         Console.WriteLine("\"Try not to lose it, yeah?\"");
                                         Console.WriteLine();
@@ -6669,6 +6724,7 @@ namespace JessesDungeon
                                     else if (action == "no")
                                     {
                                         mikeLoop = false;
+                                        action = "Complete";
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"Probably a smart move.\"");
@@ -6706,7 +6762,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -6717,7 +6773,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -6765,7 +6821,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E7";
                             ego.Location = "E6";
@@ -6778,7 +6834,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E7";
                             ego.Location = "E8";
@@ -6791,7 +6847,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E7";
                             ego.Location = "D7";
@@ -6804,7 +6860,7 @@ namespace JessesDungeon
 
                         if (action == "look at mass grave")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Creeping to the edge, you look down into the big hole. There are dozens of bodies of varying degrees of decay.");
@@ -6817,7 +6873,7 @@ namespace JessesDungeon
 
                         if (action == "search mass grave")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (searchedGraveyard == false)
                             {
                                 searchedGraveyard = true;
@@ -6906,7 +6962,7 @@ namespace JessesDungeon
 
                             if (action == "flee west")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.Location = "G2";
                                 ego.FleeLocation = "H2";
@@ -6919,7 +6975,7 @@ namespace JessesDungeon
 
                             if (action == "look at man")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He looks big, angry, and dangerous.");
@@ -6930,7 +6986,7 @@ namespace JessesDungeon
 
                             if (action == "search man")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You must EARN the right to do that!");
@@ -6941,7 +6997,7 @@ namespace JessesDungeon
 
                             if (action == "fight")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 BadGuyStats badGuy = new BadGuyStats("Salamanca Guard", 50, 50, 2, 0.85, 8, 4, 3.00, die.Next(20, 36), 1, lightHealingPotion, huntingKnife, leatherArmor, "The Salamanca Guard charges at you with a knife!");
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -6978,7 +7034,7 @@ namespace JessesDungeon
 
                             if (action == "go north")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "H2";
                                 ego.Location = "H1";
@@ -6991,7 +7047,7 @@ namespace JessesDungeon
 
                             if (action == "go west")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "H2";
                                 ego.Location = "G2";
@@ -7004,7 +7060,7 @@ namespace JessesDungeon
 
                             if (action == "look at man")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He looks big, dead, and innocuous.");
@@ -7015,7 +7071,7 @@ namespace JessesDungeon
 
                             if (action == "search man")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 if (salamancaGuardSearched == false)
                                 {
                                     salamancaGuardSearched = true;
@@ -7112,7 +7168,7 @@ namespace JessesDungeon
                             if (action == "flee south")
                             {
                                 mapSalamanca = true;
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.Location = "H2";
                                 ego.FleeLocation = "H1";
@@ -7125,7 +7181,7 @@ namespace JessesDungeon
 
                             if (action == "look at table")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("If you didn't know any better (and you don't), you'd say they are doing something illegal here.");
@@ -7136,7 +7192,7 @@ namespace JessesDungeon
 
                             if (action == "search table")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 salamancaLoop = true;
                                 while (salamancaLoop == true)
                                 {
@@ -7152,15 +7208,17 @@ namespace JessesDungeon
                                     Console.WriteLine("[Combine] them and throw them");
                                     Console.WriteLine("Do [nothing]");
                                     Console.WriteLine();
+                                    Console.Write("> ");
                                     salamancaAction = Console.ReadLine();
                                     salamancaAction = salamancaAction.ToLower();
                                     salamancaAction = salamancaAction.Trim();
+                                    Console.WriteLine();
 
                                     if (salamancaAction == "liquid")
                                     {
                                         salamancaLoop = false;
                                         salamancaChoice = "liquid";
-                                        BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 100, 100, 2, 0.85, 8, 4, 3.00, die.Next(40, 61), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
+                                        BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 70, 70, 2, 0.85, 8, 4, 2.00, die.Next(40, 61), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("You grab the beaker and hurl it at one of the men. It bursts and covers his face and body, and he falls to the ground screaming.");
@@ -7172,13 +7230,13 @@ namespace JessesDungeon
                                         PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
                                         PlotBattleResolution(ego, equippableArmor, equippableWeapon, equippableShield, potionBelt, badGuy);
                                         if (ego.Location == "H1") { salamancaCousinDefeated = true; } //maybe redundant
-                                        else { salamancaAction = null; }
+                                        else { salamancaChoice = null; }
                                     }
                                     else if (salamancaAction == "powder")
                                     {
                                         salamancaLoop = false;
                                         salamancaChoice = "powder";
-                                        BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 70, 100, 2, 0.85, 8, 4, 3.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
+                                        BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 40, 70, 2, 0.85, 8, 4, 2.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("You take the powder and throw it at the men. It disperses in the air over them.");
@@ -7192,7 +7250,7 @@ namespace JessesDungeon
                                         if (ego.Location == "H1") { salamancaCousinDefeated = true; } //maybe redundant
                                         if (ego.Location == "H1")
                                         {
-                                            badGuy.CurrentHitPoints = 70;
+                                            badGuy.CurrentHitPoints = 40;
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("The other man has collected himself, and resumes his charge. You ready yourself for battle.");
@@ -7202,7 +7260,7 @@ namespace JessesDungeon
                                             PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
                                             PlotBattleResolution(ego, equippableArmor, equippableWeapon, equippableShield, potionBelt, badGuy);
                                         }
-                                        if (ego.Location != "H1") { salamancaAction = null; }
+                                        if (ego.Location != "H1") { salamancaChoice = null; }
                                     }
                                     else if (salamancaAction == "combine")
                                     {
@@ -7231,13 +7289,13 @@ namespace JessesDungeon
                                         else
                                         {
                                             salamancaChoice = "combine";
-                                            BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 50, 100, 2, 0.85, 8, 4, 3.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
+                                            BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 30, 70, 2, 0.85, 8, 4, 3.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
                                             PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
                                             PlotBattleResolution(ego, equippableArmor, equippableWeapon, equippableShield, potionBelt, badGuy);
                                             if (ego.Location == "H1") { salamancaCousinDefeated = true; } //maybe redundant
                                             if (ego.Location == "H1")
                                             {
-                                                badGuy.CurrentHitPoints = 50;
+                                                badGuy.CurrentHitPoints = 30;
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("The other man has collected himself, and resumes his charge. You ready yourself for battle.");
@@ -7247,13 +7305,13 @@ namespace JessesDungeon
                                                 PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
                                                 PlotBattleResolution(ego, equippableArmor, equippableWeapon, equippableShield, potionBelt, badGuy);
                                             }
-                                            if (ego.Location != "H1") { salamancaAction = null; }
+                                            if (ego.Location != "H1") { salamancaChoice = null; }
                                         }
                                     }
                                     else if (salamancaAction == "nothing")
                                     {
                                         salamancaLoop = false;
-                                        salamancaAction = null;
+                                        salamancaChoice = null;
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Well you better do something!");
@@ -7276,7 +7334,7 @@ namespace JessesDungeon
 
                             if (action == "look at bag")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("It actually is a sack with a giant dollar sign on it. Technically it's misleading as it's not actual dollars... maybe it works.");
@@ -7287,7 +7345,7 @@ namespace JessesDungeon
 
                             if (action == "search bag")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("That's the idea, dummy. Get to it!");
@@ -7298,7 +7356,7 @@ namespace JessesDungeon
 
                             if (action == "fight")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 salamancaChoice = "fight";
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -7388,7 +7446,7 @@ namespace JessesDungeon
                             if (action == "go south")
                             {
                                 mapSalamanca = true;
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.Location = "H2";
                                 ego.FleeLocation = "H1";
@@ -7401,7 +7459,7 @@ namespace JessesDungeon
 
                             if (action == "look at table")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("If you didn't know any better (and you don't), you'd say they were doing something illegal here.");
@@ -7412,7 +7470,7 @@ namespace JessesDungeon
 
                             if (action == "search table")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Oof. You wouldn't even know where to start. You never really paid attention in chemistry class.");
@@ -7423,7 +7481,7 @@ namespace JessesDungeon
 
                             if (action == "look at bag" && salamancaBagLooted == false)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("It actually is a sack with a giant dollar sign on it. Technically it's misleading as it's not actual dollars... maybe it works.");
@@ -7434,7 +7492,7 @@ namespace JessesDungeon
 
                             if (action == "search bag" && salamancaBagLooted == false)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 salamancaLoop = true;
                                 salamancaBagLooted = true;
                                 undroppables.Add(sackOfCash);
@@ -7533,7 +7591,7 @@ namespace JessesDungeon
 
                             if (action == "look at man")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He's old, he's mean, and he's probably soiling himself. Why'd you leave him alive again?");
@@ -7544,7 +7602,7 @@ namespace JessesDungeon
 
                             if (action == "search man")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Whenever you approach he swats at you with such intense fury that you back down.");
@@ -7570,7 +7628,7 @@ namespace JessesDungeon
                             if (action == "Go south")
                             {
                                 mapSalamanca = true;
-                                action = "complete";
+                                action = "Complete";
                                 randomEncountersOn = true;
                                 ego.Location = "H2";
                                 ego.FleeLocation = "H1";
@@ -7583,7 +7641,7 @@ namespace JessesDungeon
 
                             if (action == "look at table")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("If you didn't know any better (and you don't), you'd say they were doing something illegal here.");
@@ -7594,7 +7652,7 @@ namespace JessesDungeon
 
                             if (action == "search table")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Oof. You wouldn't even know where to start. You never really paid attention in chemistry class.");
@@ -7605,7 +7663,7 @@ namespace JessesDungeon
 
                             if (action == "look at bag" && salamancaBagLooted == false)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("It actually is a sack with a giant dollar sign on it. Technically it's misleading as it's not actual dollars... maybe it works.");
@@ -7616,7 +7674,7 @@ namespace JessesDungeon
 
                             if (action == "search bag" && salamancaBagLooted == false)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 salamancaLoop = true;
                                 salamancaBagLooted = true;
                                 undroppables.Add(sackOfCash);
@@ -7713,7 +7771,7 @@ namespace JessesDungeon
 
                             if (action == "search man")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Nothin', man. Will have to settle for his gigantic bag of cash.");
@@ -7770,7 +7828,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "I6";
                             ego.Location = "I5";
@@ -7783,7 +7841,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "I6";
                             ego.Location = "J6";
@@ -7796,7 +7854,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "I6";
                             ego.Location = "H6";
@@ -7819,7 +7877,9 @@ namespace JessesDungeon
                         randomEncountersOn = false;
                         discoveredMap[10, 18] = "[x]";
                         discoveredMap[10, 17] = "-";
-                        Console.WriteLine("Ice predominates this room. A [woman] dressed in heavy, exotic furs sits by a table gazing forlornly at a [tea cup].");
+                        if (tookLydiaCash) { Console.WriteLine("Ice predominates this room. A [woman] sits shivering by a table gazing contentedly at a [tea cup]."); }
+                        else if (lydiaQuestCompleted) { Console.WriteLine("Ice predominates this room. A [woman] dressed in heavy, exotic furs sits by a table gazing contentedly at a [tea cup]."); }
+                        else { Console.WriteLine("Ice predominates this room. A [woman] dressed in heavy, exotic furs sits by a table gazing forlornly at a [tea cup]."); }
                         Console.WriteLine();
                         Console.WriteLine("There is an exit to the west.");
                         Console.WriteLine();
@@ -7843,7 +7903,7 @@ namespace JessesDungeon
                         if (action == "go west")
                         {
                             mapLydia = true;
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "J6";
                             ego.Location = "I6";
@@ -7856,7 +7916,7 @@ namespace JessesDungeon
 
                         if (action == "look at woman")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (lydiaQuestCompleted == false)
                             {
                                 Console.WriteLine();
@@ -7879,7 +7939,7 @@ namespace JessesDungeon
 
                         if (action == "search woman")
                         {
-                            action = "complete";
+                            action = "Complete";
                             inappropriateTouchingCounter++;
                             Console.WriteLine();
                             Console.WriteLine();
@@ -7891,7 +7951,7 @@ namespace JessesDungeon
 
                         if (action == "talk to woman")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (undroppables.Contains(dungeonKey))
                             {
                                 Console.WriteLine();
@@ -7923,13 +7983,13 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("She beams. \"I'm invigorated! Whatever it is I'm just happy to oblige!\"");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Oh. Well perhaps not that happy.\"");
+                                Console.WriteLine("\"Oh. Well maybe not THAT happy.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("The woman turns her head quizzically and quints her eyes. \"Do you really think it'll work?\"");
+                                Console.WriteLine("The woman turns her head quizzically and squints her eyes. \"Do you really think it'll work?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -8108,7 +8168,7 @@ namespace JessesDungeon
 
                         if (action == "look at tea cup")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The cup is plain, but sturdy. Looks like it came from a diner.");
@@ -8119,7 +8179,7 @@ namespace JessesDungeon
 
                         if (action == "search tea cup")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The old \"hide precious treasure in the tea cup trick,\" eh? Well not this time. Your search reveals nothing.");
@@ -8130,7 +8190,7 @@ namespace JessesDungeon
 
                         if (action == "talk to tea cup")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"All right ya got me, copper!\" The tea cup snarks. \"But what you gonna do \'bout it, see?\"");
@@ -8162,7 +8222,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -8173,7 +8233,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -8221,7 +8281,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F6";
                             ego.Location = "F5";
@@ -8234,7 +8294,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F6";
                             ego.Location = "G6";
@@ -8247,7 +8307,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F6";
                             ego.Location = "E6";
@@ -8260,7 +8320,7 @@ namespace JessesDungeon
 
                         if (action == "look at man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The man has a vacant stare straight at the floor in front of him. His sweeping pattern is erratic and quite ineffective.");
@@ -8271,7 +8331,7 @@ namespace JessesDungeon
 
                         if (action == "search man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You sidle up toward the man. Sensing no reaction, you throw your hesitance to the wind and shove your hands into his pockets and swab around.");
@@ -8293,7 +8353,7 @@ namespace JessesDungeon
 
                         if (action == "talk to man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The man stops and looks up at you. He quickly shifts his gaze away from your eyes and slowly backs away.");
@@ -8334,7 +8394,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -8345,7 +8405,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -8392,7 +8452,7 @@ namespace JessesDungeon
                         if (action == "go east")
                         {
                             mapFortress = true;
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E11";
                             ego.Location = "E10";
@@ -8406,7 +8466,7 @@ namespace JessesDungeon
 
                         if (action == "look at fortress")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The fortress is massive and well built. Unlike other structures in this dungeon, this was not built with scavenged supplies -- it was built into the structure itself.");
@@ -8417,7 +8477,7 @@ namespace JessesDungeon
 
                         if (action == "search fortress")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (gusQuestCompleted == true)
                             {
                                 Console.WriteLine();
@@ -8467,7 +8527,7 @@ namespace JessesDungeon
 
                         if (action == "attack!!" && gusQuestCompleted == false)
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (frontEntranceWarning == false)
                             {
                                 frontEntranceWarning = true;
@@ -8501,7 +8561,7 @@ namespace JessesDungeon
 
                         if (action == "enter" && gusQuestCompleted == true)
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (undroppables.Contains(dungeonKey))
                             {
                                 Console.WriteLine();
@@ -8571,7 +8631,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C6";
                             ego.Location = "C5";
@@ -8584,7 +8644,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C6";
                             ego.Location = "C7";
@@ -8597,20 +8657,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
-                            randomEncountersOn = true;
-                            ego.FleeLocation = "C6";
-                            ego.Location = "B6";
-                            discoveredMap[10, 4] = "[F]";
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("Onward!");
-                            Thread.Sleep(1500);
-                        }
-
-                        if (action == "go west")
-                        {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C6";
                             ego.Location = "D6";
@@ -8621,9 +8668,22 @@ namespace JessesDungeon
                             Thread.Sleep(1500);
                         }
 
+                        if (action == "go west")
+                        {
+                            action = "Complete";
+                            randomEncountersOn = true;
+                            ego.FleeLocation = "C6";
+                            ego.Location = "B6";
+                            discoveredMap[10, 4] = "[F]";
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Onward!");
+                            Thread.Sleep(1500);
+                        }
+
                         if (action == "look at man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The guy's ripped. He's gorgeous. If you were to experiment it'd be with this dude.");
@@ -8637,7 +8697,7 @@ namespace JessesDungeon
 
                         if (action == "search man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("What would you search? He's barely wearing any clothes. I guess maybe he can have something between his chiseled abs.");
@@ -8654,7 +8714,7 @@ namespace JessesDungeon
 
                         if (action == "talk to man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (joinedFightClub == false)
                             {
                                 joinedFightClub = true;
@@ -8693,7 +8753,7 @@ namespace JessesDungeon
 
                                     if (fightClubAction == "rules")
                                     {
-                                        fightClubAction = "complete";
+                                        fightClubAction = "Complete";
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("You do not talk about Fight Club.");
@@ -8709,7 +8769,7 @@ namespace JessesDungeon
                                     }
                                     if (fightClubAction == "fight")
                                     {
-                                        fightClubAction = "complete";
+                                        fightClubAction = "Complete";
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"What kind of battle you lookin\' for, kid?\"");
@@ -8772,7 +8832,7 @@ namespace JessesDungeon
                                     {
                                         if (foughtInFightClub == false)
                                         {
-                                            fightClubAction = "complete";
+                                            fightClubAction = "Complete";
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"It's your first night -- you're fighting someone.\"");
@@ -8782,11 +8842,11 @@ namespace JessesDungeon
                                         }
                                         if (foughtInFightClub == true)
                                         {
-                                            fightClubAction = "complete";
+                                            fightClubAction = "Complete";
                                             fightClubLoop = false;
                                         }
                                     }
-                                    if (fightClubAction != "complete")
+                                    if (fightClubAction != "Complete")
                                     {
                                         Console.WriteLine();
                                         Console.WriteLine();
@@ -8801,7 +8861,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -8812,7 +8872,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -8868,7 +8928,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D10";
                             ego.Location = "D9";
@@ -8881,7 +8941,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D10";
                             ego.Location = "E10";
@@ -8894,7 +8954,7 @@ namespace JessesDungeon
 
                         if (action == "look at dude" && hidenGoseke == false && dudeOnAPogoStickDefeated == false)
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The way this guy is looking at you is equal parts intimidating, creepy, and suggestive. Whatever his true intentions are, he is definitely proud of his pogo skills.");
@@ -8905,7 +8965,7 @@ namespace JessesDungeon
 
                         if (action == "search dude" && hidenGoseke == false && dudeOnAPogoStickDefeated == false)
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("His bouncing is simply far too FURIOUS for an effective search.");
@@ -8916,7 +8976,7 @@ namespace JessesDungeon
 
                         if (action == "talk to dude")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (hidenGoseke == true)
                             {
                                 Console.WriteLine();
@@ -8948,7 +9008,7 @@ namespace JessesDungeon
 
                         if (action == "look at west wall")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Certainly looks like a wall... hmm... WAIT! Did it just --! Hm no it didn't.");
@@ -8959,7 +9019,7 @@ namespace JessesDungeon
 
                         if (action == "search west wall")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (undroppables.Contains(dungeonKey))
                             {
                                 Console.WriteLine();
@@ -9031,7 +9091,7 @@ namespace JessesDungeon
 
                         if (action == "talk to west wall")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("HELLO! Hello! hello! helloooo...");
@@ -9048,7 +9108,7 @@ namespace JessesDungeon
 
                         if (action == "fight" && hidenGoseke == false && dudeOnAPogoStickDefeated == false)
                         {
-                            action = "complete";
+                            action = "Complete";
                             BadGuyStats badGuy = new BadGuyStats("Dude on a Pogo Stick", 150, 150, 3, 0.80, 8, 6, 3.00, die.Next(30, 51), 1, healingPotion, pogoStick, ringmail, "The Dude on a Pogo Stick bounces toward you furiously!");
                             Console.WriteLine();
                             Console.WriteLine();
@@ -9063,7 +9123,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -9074,7 +9134,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -9085,7 +9145,7 @@ namespace JessesDungeon
 
                         if (action == "hiden goseke")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (hidenGoseke == false && dudeOnAPogoStickDefeated == false)
                             {
                                 hidenGoseke = true;
@@ -9141,7 +9201,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "Secret Tunnel";
                             ego.Location = "D10";
@@ -9154,7 +9214,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             talkLoop = true;
                             Console.WriteLine();
                             Console.WriteLine();
@@ -9189,7 +9249,7 @@ namespace JessesDungeon
 
                                 if (action == "yes")
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     talkLoop = false;
                                     Console.WriteLine();
                                     Console.WriteLine();
@@ -9200,7 +9260,7 @@ namespace JessesDungeon
                                 }
                                 else if (action == "no")
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     talkLoop = false;
                                     Console.WriteLine();
                                     Console.WriteLine();
@@ -9287,7 +9347,7 @@ namespace JessesDungeon
 
                         if (action == "map")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The map won't help you here! Bwa! haha! HAHAHA!");
@@ -9298,7 +9358,7 @@ namespace JessesDungeon
 
                         if (action == "search note")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Swing and a miss. Try look at.");
@@ -9309,7 +9369,7 @@ namespace JessesDungeon
 
                         if (action == "look at note")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Someone scratched this into the stone with a rock. You can tell because there's a scratched rock at your feet. Smarty.");
@@ -9349,7 +9409,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             konamiProgress = 1;
                             randomEncountersOn = true;
                             ego.FleeLocation = "Fortress0";
@@ -9362,7 +9422,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             konamiProgress = 0;
                             randomEncountersOn = true;
                             ego.FleeLocation = "Fortress0";
@@ -9375,7 +9435,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             konamiProgress = 0;
                             randomEncountersOn = true;
                             ego.FleeLocation = "E11";
@@ -9388,7 +9448,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             konamiProgress = 0;
                             randomEncountersOn = true;
                             ego.FleeLocation = "E11";
@@ -9444,7 +9504,7 @@ namespace JessesDungeon
 
                         if (action == "map")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The map won't help you here! Bwa! haha! HAHAHA!");
@@ -9455,7 +9515,7 @@ namespace JessesDungeon
 
                         if (action == "look at body" && konamiProgress == 5)
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("If this is our charming chap who wrote that exceptionally helpful note, isn't it fancy that he expired in the exact room that is at the end of the hint he left? I mean, he could have just as easily been killed in any other room on the way here or perhaps after, but he just so happened to die here as if to tell you \"hey this is why my note stopped.\" What are the odds!!");
@@ -9466,7 +9526,7 @@ namespace JessesDungeon
 
                         if (action == "search body" && konamiProgress == 5)
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Illustrative storytelling aside, he is of no use to you.");
@@ -9477,7 +9537,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (konamiProgress == 0 || konamiProgress == 1)
                             { 
                                 konamiProgress++;
@@ -9498,7 +9558,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (konamiProgress == 2 || konamiProgress == 3)
                             {
                                 konamiProgress++;
@@ -9519,7 +9579,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (konamiProgress == 5)
                             {
                                 konamiProgress++;
@@ -9545,7 +9605,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (konamiProgress == 4 || konamiProgress == 6)
                             {
                                 konamiProgress++;
@@ -9606,7 +9666,7 @@ namespace JessesDungeon
 
                         if (action == "map")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The map won't help you here! Bwa! haha! HAHAHA!");
@@ -9617,7 +9677,7 @@ namespace JessesDungeon
 
                         if (action == "back")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (konamiProgress == 8)
                             {
                                 konamiProgress++;
@@ -9638,7 +9698,7 @@ namespace JessesDungeon
 
                         if (action == "advance")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (konamiProgress == 9)
                             {
                                 konamiProgress++;
@@ -9701,7 +9761,7 @@ namespace JessesDungeon
 
                         if (action == "map")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The map won't help you here! Bwa! haha! HAHAHA!");
@@ -9712,7 +9772,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             konamiProgress = 0;
                             ego.Location = "Fortress0";
                             randomEncountersOn = true;
@@ -9725,7 +9785,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             konamiProgress = 10;
                             ego.Location = "Jesse";
                             ego.FleeLocation = "Fortress3";
@@ -9737,7 +9797,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             konamiProgress = 0;
                             ego.Location = "Fortress0";
                             randomEncountersOn = true;
@@ -9750,7 +9810,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             konamiProgress = 0;
                             ego.Location = "Fortress0";
                             randomEncountersOn = true;
@@ -9822,7 +9882,7 @@ namespace JessesDungeon
 
                         if (action == "map")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You're up to your compass in plot! You can't use your map now.");
@@ -9833,7 +9893,7 @@ namespace JessesDungeon
 
                         if (action == "look at jesse")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (killedJesse)
                             {
                                 Console.WriteLine();
@@ -9867,7 +9927,7 @@ namespace JessesDungeon
 
                         if (action == "search jesse")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (killedJesse)
                             {
                                 Console.WriteLine();
@@ -9899,7 +9959,7 @@ namespace JessesDungeon
 
                         if (action == "talk to jesse" && !jesseDefeated)
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("As you go to address him, he shuts off his music and speaks.");
@@ -9992,7 +10052,7 @@ namespace JessesDungeon
 
                                         if (action == "leave")
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             talkLoop = false;
                                             sparedJesse = true;
                                             Console.WriteLine();
@@ -10004,7 +10064,7 @@ namespace JessesDungeon
                                         }
                                         else if (action == "kill")
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             talkLoop = false;
                                             killedJesse = true;
                                             gun.Unlocked = true;
@@ -10026,7 +10086,7 @@ namespace JessesDungeon
                                         }
                                         else
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("There is no escaping this choice.");
@@ -10156,7 +10216,7 @@ namespace JessesDungeon
                             }
                             if (ego.CurrentHitPoints >= 0)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 jesseDefeated = true;
                                 ego.Location = "Heisenberg";
                                 ego.FleeLocation = "Fortress0";
@@ -10239,7 +10299,7 @@ namespace JessesDungeon
 
                                         if (action == "leave")
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             talkLoop = false;
                                             sparedJesse = true;
                                             Console.WriteLine();
@@ -10251,7 +10311,7 @@ namespace JessesDungeon
                                         }
                                         else if (action == "kill")
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             talkLoop = false;
                                             killedJesse = true;
                                             gun.Unlocked = true;
@@ -10273,7 +10333,7 @@ namespace JessesDungeon
                                         }
                                         else
                                         {
-                                            action = "complete";
+                                            action = "Complete";
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("There is no escaping this choice.");
@@ -10286,7 +10346,7 @@ namespace JessesDungeon
                             }
                             if (ego.CurrentHitPoints >= 0)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 ego.Location = "Heisenberg";
                                 ego.FleeLocation = "Fortress0";
                                 Console.WriteLine();
@@ -10300,7 +10360,7 @@ namespace JessesDungeon
 
                         if (action == "unbar the door" && jesseDefeated)
                         {
-                            action = "complete";
+                            action = "Complete";
                             ego.Location = "Heisenberg";
                             ego.FleeLocation = "Fortress0";
                             Console.WriteLine();
@@ -10313,7 +10373,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("go "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You're in the show now, mustache.");
@@ -10324,7 +10384,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -10335,7 +10395,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -10383,7 +10443,7 @@ namespace JessesDungeon
 
                         if (action == "map")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You're up to your compass in the plot! You can't use your map now.");
@@ -10394,7 +10454,7 @@ namespace JessesDungeon
 
                         if (action == "look at heisenberg")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("He hasn't even turned around to address you. He is completely absorbed in his work.");
@@ -10405,7 +10465,7 @@ namespace JessesDungeon
 
                         if (action == "search heisenberg")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (searchedHeisenberg == false)
                             {
                                 searchedHeisenberg = true;
@@ -10473,7 +10533,7 @@ namespace JessesDungeon
                         if (action == "talk to heisenberg")
                         {
                             BadGuyStats badGuy = new BadGuyStats("Heisenberg", 200, 200, 3, 0.75, 8, 4, 2.00, 5000, 2 - stolenHeisenPotions, greaterHealingPotion, knife, hazmatSuit, "Heisenberg folds his hands in front of himself and says, \"I am the one who knocks.\"");                            
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"Hm? You're not Jesse.\"");
@@ -10572,7 +10632,7 @@ namespace JessesDungeon
                             }
                             if (ego.CurrentHitPoints > 0)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 ego.Location = "E11";
                                 ego.FleeLocation = "E11";
                                 if (sparedJesse == true || killedJesse == true || disappearChoice == "jesse")
@@ -10656,7 +10716,7 @@ namespace JessesDungeon
                         if (action == "fight")
                         {
                             BadGuyStats badGuy = new BadGuyStats("Heisenberg", 200, 200, 3, 0.75, 8, 4, 2.00, 5000, 2 - stolenHeisenPotions, greaterHealingPotion, knife, hazmatSuit, "Heisenberg folds his hands in front of himself and says, \"I am the one who knocks.\"");
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"Hm? You're not Jesse.\"");
@@ -10739,7 +10799,7 @@ namespace JessesDungeon
                             }
                             if (ego.CurrentHitPoints > 0)
                             {
-                                action = "complete";
+                                action = "Complete";
                                 ego.Location = "E11";
                                 ego.FleeLocation = "E11";
                                 if (sparedJesse == true || killedJesse == true || disappearChoice == "jesse")
@@ -10822,7 +10882,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("go "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You're in the show now, mustache.");
@@ -10833,7 +10893,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -10844,7 +10904,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -10887,7 +10947,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G10";
                             ego.Location = "G9";
@@ -10900,7 +10960,7 @@ namespace JessesDungeon
 
                         if (action == "look at puddle")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The liquid is murky, and made up of various... ingredients. The puddle must be from a gradual dripping of the entire dungeon. Whoever built this place needed a level.");
@@ -10911,7 +10971,7 @@ namespace JessesDungeon
 
                         if (action == "search puddle")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (puddleSearched == false)
                             {
                                 puddleSearched = true;
@@ -10945,7 +11005,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.WriteLine("Can't stop now. You're pot-committed.");
                                     Console.WriteLine();
-                                    Console.WriteLine("Aha! Your toiling has paid off with a Mildew-encrusted Pocket Knife!");
+                                    Console.WriteLine("Aha! Your toiling has paid off with a Mildew-Encrusted Pocket Knife!");
                                     equippableWeapon.Add(mildewEncrustedPocketKnife);
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
@@ -11005,7 +11065,7 @@ namespace JessesDungeon
                                 Console.WriteLine("Oh. Well I'll be over here eating crow.");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("Aha! Your toiling has paid off with a Mildew-encrusted Pocket Knife!");
+                                Console.WriteLine("Aha! Your toiling has paid off with a Mildew-Encrusted Pocket Knife!");
                                 equippableWeapon.Add(mildewEncrustedPocketKnife);
                                 Console.WriteLine();
                                 Console.WriteLine("Guess it was a box set.");
@@ -11056,7 +11116,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F8";
                             ego.Location = "F9";
@@ -11069,7 +11129,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F8";
                             ego.Location = "G8";
@@ -11082,7 +11142,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F8";
                             ego.Location = "E8";
@@ -11095,7 +11155,7 @@ namespace JessesDungeon
 
                         if (action == "look at man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("This is the look and demeanor of a man trying to sell you something.");
@@ -11108,7 +11168,7 @@ namespace JessesDungeon
 
                         if (action == "search man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("As you put your hands on the man and feel him up and down, he spreads his arms and legs, lifts his chin, and closes his eyes. He is overly willing to submit to your search.");
@@ -11127,7 +11187,7 @@ namespace JessesDungeon
 
                         if (action == "talk to man")
                         {
-                            action = "complete";
+                            action = "Complete";
                             bowlingLoop = true;
                             if (visitedBowlingAlley == false)
                             {
@@ -11138,20 +11198,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.Clear();
                             }
                             else if (visitedBowlingAlley == true)
                             {
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"Welcome back to the premiere recreation destination! How can I help you today?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
+                                Console.WriteLine("\"Welcome back to the premiere recreation destination!\"");
                             }
                             while (bowlingLoop == true)
                             {
-                                Console.Clear();
-                                Console.WriteLine("What would you like to do?");
+                                Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("-------------------");
                                 Console.WriteLine("[Bowl] some frames myself. (3 blue crystals)");
@@ -11160,7 +11217,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine();
 
-                                Console.WriteLine("What kind of fun are we having today?");
+                                Console.WriteLine("\"What kind of fun are we having today?\"");
                                 Console.WriteLine();
                                 Console.Write("> ");
                                 bowlingAction = Console.ReadLine();
@@ -11169,7 +11226,7 @@ namespace JessesDungeon
 
                                 if (bowlingAction == "bowl")
                                 {
-                                    bowlingAction = "complete";
+                                    bowlingAction = "Complete";
                                     if (ego.BlueCrystals >= 3)
                                     {
                                         bowlingLoop = false;
@@ -11178,12 +11235,13 @@ namespace JessesDungeon
                                         Console.WriteLine();
                                         Console.WriteLine("With the man cheering you on like a 16 year old girl would her studly 19 year old boyfriend, you bowl a few frames.");
                                         Console.WriteLine();
-                                        if (bowlingSkill < 6) { Console.WriteLine("You did okay. The holes were kind of too small for your hand, and it doesn't roll perfectly."); }
+                                        if (bowlingSkill < 1) { Console.WriteLine("You did okay. The holes were kind of too small for your hand, and it doesn't roll perfectly."); }
+                                        else if (bowlingSkill < 6) { Console.WriteLine("You did a bit better. You're getting more used to the imperfections of the ball."); }
                                         else if (bowlingSkill < 11) { Console.WriteLine("You did all right. The pins work but they could be balanced better."); }
                                         else if (bowlingSkill < 16) { Console.WriteLine("Not too shabby. You knocked out a strike that time."); }
                                         else if (bowlingSkill == 20) { Console.WriteLine("Hey hey a turkey! Not bad considering you only have 3 frames."); }
                                         Console.WriteLine();
-                                        if (bowlingSkill < 20) { bowlingSkill++; }
+                                        if (bowlingSkill < 21) { bowlingSkill++; }
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
                                         Console.WriteLine();
@@ -11192,6 +11250,7 @@ namespace JessesDungeon
                                         else { Console.WriteLine("\"Oh, my friend, I could see your prowess peak with every toss! You are practically an expert!\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
                                     }
                                     if (ego.BlueCrystals < 3)
                                     {
@@ -11332,7 +11391,7 @@ namespace JessesDungeon
 
                         if (action == "look at bowling alley")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Little arrows etched into the floor, ten wooden pins on one end, and a well-polished stone with three holes on the other. It's got all the ingredients for sure.");
@@ -11343,7 +11402,7 @@ namespace JessesDungeon
 
                         if (action == "search bowling alley")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"Feet over the line!\"");
@@ -11356,7 +11415,7 @@ namespace JessesDungeon
 
                         if (action == "talk to bowling alley")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("After having an arguably one-sided conversation with the floor, the man addresses you.");
@@ -11369,7 +11428,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -11380,7 +11439,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -11426,7 +11485,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G1";
                             ego.Location = "G2";
@@ -11439,7 +11498,7 @@ namespace JessesDungeon
 
                         if (action == "look at priest")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("As with everything else in this place, a sense of calm washes over you as you look at him.");
@@ -11450,7 +11509,7 @@ namespace JessesDungeon
 
                         if (action == "search priest")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("I know it might seem like just revenge to take advantage of a priest, but there are more imperative things now. Molesting a priest can wait until you escape this place.");
@@ -11461,7 +11520,7 @@ namespace JessesDungeon
 
                         if (action == "talk to priest")
                         {
-                            action = "complete";
+                            action = "Complete";
                             talkedToPriest = true;
                             Console.WriteLine();
                             Console.WriteLine();
@@ -11475,7 +11534,7 @@ namespace JessesDungeon
 
                         if (action == "rest" && talkedToPriest == true)
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You curl up in the corner of the room on a mound of cloth and rest for a while.");
@@ -11487,7 +11546,7 @@ namespace JessesDungeon
 
                         if (action == "look at painting")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("It's kind of crude, being made from make-shift art supplies. But it does have a certain beautiful quality to it.");
@@ -11504,7 +11563,7 @@ namespace JessesDungeon
 
                         if (action == "search painting")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Nothing much to it. Finest quality painting you'll find in a place like this.");
@@ -11515,7 +11574,7 @@ namespace JessesDungeon
 
                         if (action == "talk to painting")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You have the usual sense of feeling foolish when talking to inanimate objects. But there's an additional serenity that came with it this time, at least.");
@@ -11533,7 +11592,7 @@ namespace JessesDungeon
 
                         if (action == "talk to")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Talk to? Talk to WHO?!");
@@ -11544,7 +11603,7 @@ namespace JessesDungeon
 
                         if (action.StartsWith("talk to "))
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Unfortunately, talking to that did not aid you in your quest. A waste of time even to describe it!");
@@ -11591,7 +11650,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C9";
                             ego.Location = "C8";
@@ -11604,7 +11663,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C9";
                             ego.Location = "D9";
@@ -11617,7 +11676,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             if (undroppables.Contains(janesKey) || janesDoorOpened == true)
                             {
@@ -11645,7 +11704,7 @@ namespace JessesDungeon
 
                         if (action == "look at door")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The door is definitely not denizen-crafted. It's a sturdy, stone door made to fit perfectly.");
@@ -11656,7 +11715,7 @@ namespace JessesDungeon
 
                         if (action == "search door")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The only thing your search achieves is to reinforce your lack of knowledge and skills. The only way for you to get through this door is by key.");
@@ -11667,7 +11726,7 @@ namespace JessesDungeon
 
                         if (action == "look at flowers")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The flowers probably were once quite nice. They are most certainly decorative.");
@@ -11678,7 +11737,7 @@ namespace JessesDungeon
 
                         if (action == "search flowers")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("If you were trying to crack off some more petals: mission complete. If you were trying to desecrate this beautiful display and what it once meant: mission accomplished.");
@@ -11722,7 +11781,7 @@ namespace JessesDungeon
 
                         if (action == "leave")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "B9";
                             ego.Location = "C9";
@@ -11735,7 +11794,7 @@ namespace JessesDungeon
 
                         if (action == "rest")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Such a nice bed shouldn't go to waste. You curl up in the comfortable sheets and awaken refreshed a few hours later.");
@@ -11747,7 +11806,7 @@ namespace JessesDungeon
 
                         if (action == "look at bed")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Ostentatious.");
@@ -11758,7 +11817,7 @@ namespace JessesDungeon
 
                         if (action == "search bed")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The mattress is soft yet firm. The blanket is more comfortable than you realized a blanket could be. The pillows are of varying plushness and material.");
@@ -11771,7 +11830,7 @@ namespace JessesDungeon
 
                         if (action == "look at armoire")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("I know I sold it hard in the initial description, but it's just a piece of furniture. It's certainly nice though.");
@@ -11782,7 +11841,7 @@ namespace JessesDungeon
 
                         if (action == "search armoire")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (studdedLeatherArmorLooted == false)
                             {
                                 studdedLeatherArmorLooted = true;
@@ -11810,7 +11869,7 @@ namespace JessesDungeon
 
                         if (action == "look at chest of drawers")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You never had an eye for fashion. Or design... if those are different? Either way, it matching the armoire is a nice touch.");
@@ -11821,21 +11880,36 @@ namespace JessesDungeon
 
                         if (action == "search chest of drawers")
                         {
-                            action = "complete";
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("You never actually got to participate in a panty raid at college. Let's see here...");
-                            Console.WriteLine();
-                            Console.WriteLine("Oh. Well not what you expected to find, but there's a gorgeous ring in there. Definitely no use for this thing to remain here.");
-                            undroppables.Add(jeweledRing);
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            action = "Complete";
+                            if (!searchedChest)
+                            {
+                                searchedChest = true;
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("You never actually got to participate in a panty raid at college. Let's see here...");
+                                Console.WriteLine();
+                                Console.WriteLine("Oh. Well not what you expected to find, but there's a gorgeous ring in there. Definitely no use for this thing to remain here.");
+                                undroppables.Add(jeweledRing);
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("You never actually got to participate in a panty raid at college. Let's see here...");
+                                Console.WriteLine();
+                                Console.WriteLine("Teeheehee! Panties.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
                         }
 
                         if (action == "look at nightstand")
                         {
-                            action = "complete";
+                            action = "Complete";
                             readLogbook = true;
                             Console.WriteLine();
                             Console.WriteLine();
@@ -11851,7 +11925,7 @@ namespace JessesDungeon
                             Console.WriteLine("1/21");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("Somehow Jesse kidnapped and moved me and some others into what I can only describe as a maze, or dungeon. He encouraged me to write in this book as to fill any loneliness while he's away. He won't tell me what's going on, but insists \"everything will be fine.\" For some reason I have my doubts.");
+                            Console.WriteLine("Somehow Jesse kidnapped and moved me and some others into what I can only describe as a maze - or dungeon. He encouraged me to write in this book as to fill any loneliness while he's away. He won't tell me what's going on, but insists \"everything will be fine.\" For some reason I have my doubts.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -11878,7 +11952,7 @@ namespace JessesDungeon
                             Console.WriteLine("2/15");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("I'm becoming more and more frustrated with this situation. While I suppose I should be grateful for this room, it's still no way to live. Jesse visits less and less frequently, and doesn't even stay for more than a couple minutes when he does. He continues to assure me he has it under control and will turn out better for everyone, but it's getting harder every day to resist forcing an explanation from him.");
+                            Console.WriteLine("I'm becoming more and more frustrated with this situation. While I suppose I should be grateful for this room, it's still no way to live. Jesse visits less and less frequently, and doesn't even stay for more than a couple minutes when he does. He continues to assure me he has it under control and everything will turn out better for everyone, but it's getting harder every day to resist forcing an explanation from him.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -11923,19 +11997,32 @@ namespace JessesDungeon
 
                         if (action == "search nightstand")
                         {
-                            action = "complete";
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("You open the drawer of the nightstand. Pushing aside a few odds and ends, you find and retrieve the large brass key.");
-                            undroppables.Add(largeBrassKey);
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            action = "Complete";
+                            if (!searchedNightstand)
+                            {
+                                searchedNightstand = true;
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("You open the drawer of the nightstand. Pushing aside a few odds and ends, you find and retrieve the Large Brass Key.");
+                                undroppables.Add(largeBrassKey);
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("You open the drawer of the nightstand. Pushing aside a few odds and ends, you find more odds and ends.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
                         }
 
                         if ((action == "sign logbook" || action == "sign book") && signedLogBook == false)
                         {
-                            action = "complete";
+                            action = "Complete";
                             signedLogBook = true;
                             Console.WriteLine();
                             Console.WriteLine();
@@ -11982,7 +12069,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E3";
                             ego.Location = "E4";
@@ -11995,7 +12082,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E3";
                             ego.Location = "F3";
@@ -12008,7 +12095,7 @@ namespace JessesDungeon
 
                         if (action == "look at wine racks")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Wonder if he liked red or white. Guess we'll never know now.");
@@ -12019,7 +12106,7 @@ namespace JessesDungeon
 
                         if (action == "search wine racks")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (garbageCanLid.Unlocked == false)
                             {
                                 garbageCanLid.Unlocked = true;
@@ -12044,7 +12131,7 @@ namespace JessesDungeon
 
                         if (action == "look at cabinets")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Surprisingly, all the cabinets' doors are still intact. At least whoever robbed this place was respectful of other people's property.");
@@ -12055,7 +12142,7 @@ namespace JessesDungeon
 
                         if (action == "search cabinets")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Based on the internal construction, these are (were) liquor cabinets.");
@@ -12066,7 +12153,7 @@ namespace JessesDungeon
 
                         if (action == "look at lock box")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The lock and hinges are fairly beat up. Looks like people have tried and failed to get into it.");
@@ -12077,7 +12164,7 @@ namespace JessesDungeon
 
                         if (action == "search lock box")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (undroppables.Contains(liquorKey))
                             {
                                 undroppables.Remove(liquorKey);
@@ -12146,7 +12233,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F11";
                             ego.Location = "F10";
@@ -12159,7 +12246,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F11";
                             ego.Location = "E11";
@@ -12215,7 +12302,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F10";
                             ego.Location = "F11";
@@ -12228,7 +12315,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F10";
                             ego.Location = "E10";
@@ -12290,7 +12377,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             if (hidenGoseke == true && dudeOnAPogoStickDefeated == false)
                             {
                                 BadGuyStats badGuy = new BadGuyStats("Dude on a Pogo Stick", 150, 150, 3, 0.80, 8, 6, 3.00, die.Next(30, 51), 1, healingPotion, pogoStick, ringmail, "The Dude on a Pogo Stick bounces toward you furiously!");
@@ -12331,7 +12418,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E10";
                             ego.Location = "D10";
@@ -12392,7 +12479,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G9";
                             ego.Location = "G8";
@@ -12405,7 +12492,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G9";
                             ego.Location = "G10";
@@ -12418,7 +12505,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G9";
                             ego.Location = "H9";
@@ -12431,7 +12518,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G9";
                             ego.Location = "F9";
@@ -12490,7 +12577,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F9";
                             ego.Location = "F8";
@@ -12503,7 +12590,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F9";
                             ego.Location = "G9";
@@ -12516,7 +12603,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F9";
                             ego.Location = "E9";
@@ -12575,7 +12662,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E9";
                             ego.Location = "E8";
@@ -12588,7 +12675,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E9";
                             ego.Location = "F9";
@@ -12601,7 +12688,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E9";
                             ego.Location = "D9";
@@ -12658,7 +12745,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H8";
                             ego.Location = "H7";
@@ -12671,7 +12758,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H8";
                             ego.Location = "G8";
@@ -12732,7 +12819,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G8";
                             ego.Location = "G7";
@@ -12745,7 +12832,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G8";
                             ego.Location = "G9";
@@ -12758,7 +12845,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G8";
                             ego.Location = "H8";
@@ -12771,7 +12858,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G8";
                             ego.Location = "F8";
@@ -12832,7 +12919,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D8";
                             ego.Location = "D7";
@@ -12845,7 +12932,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D8";
                             ego.Location = "D9";
@@ -12858,7 +12945,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D8";
                             ego.Location = "E8";
@@ -12871,7 +12958,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D8";
                             ego.Location = "C8";
@@ -12928,7 +13015,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "B8";
                             ego.Location = "B7";
@@ -12941,7 +13028,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "B8";
                             ego.Location = "C8";
@@ -13002,7 +13089,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C7";
                             ego.Location = "C6";
@@ -13015,7 +13102,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C7";
                             ego.Location = "C8";
@@ -13028,7 +13115,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C7";
                             ego.Location = "D7";
@@ -13041,7 +13128,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C7";
                             ego.Location = "B7";
@@ -13103,7 +13190,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "B7";
                             ego.Location = "B6";
@@ -13116,7 +13203,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "B7";
                             ego.Location = "B8";
@@ -13129,7 +13216,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "B7";
                             ego.Location = "C7";
@@ -13142,7 +13229,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "B7";
                             ego.Location = "A7";
@@ -13203,7 +13290,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H6";
                             ego.Location = "H5";
@@ -13216,7 +13303,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H6";
                             ego.Location = "H7";
@@ -13229,7 +13316,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H6";
                             ego.Location = "I6";
@@ -13242,7 +13329,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H6";
                             ego.Location = "G6";
@@ -13303,7 +13390,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D6";
                             ego.Location = "D5";
@@ -13316,7 +13403,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D6";
                             ego.Location = "D7";
@@ -13329,7 +13416,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D6";
                             ego.Location = "E6";
@@ -13342,7 +13429,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D6";
                             ego.Location = "C6";
@@ -13399,7 +13486,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "B6";
                             ego.Location = "B7";
@@ -13412,7 +13499,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "B6";
                             ego.Location = "C6";
@@ -13469,7 +13556,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "I5";
                             ego.Location = "I6";
@@ -13482,7 +13569,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "I5";
                             ego.Location = "H5";
@@ -13541,7 +13628,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H5";
                             ego.Location = "H4";
@@ -13554,7 +13641,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H5";
                             ego.Location = "H6";
@@ -13567,7 +13654,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H5";
                             ego.Location = "I5";
@@ -13626,7 +13713,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F5";
                             ego.Location = "F4";
@@ -13639,7 +13726,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F5";
                             ego.Location = "F6";
@@ -13652,7 +13739,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F5";
                             ego.Location = "E5";
@@ -13713,7 +13800,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E5";
                             ego.Location = "E4";
@@ -13726,7 +13813,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E5";
                             ego.Location = "E6";
@@ -13739,7 +13826,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E5";
                             ego.Location = "F5";
@@ -13752,7 +13839,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E5";
                             ego.Location = "D5";
@@ -13813,7 +13900,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D5";
                             ego.Location = "D4";
@@ -13826,7 +13913,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D5";
                             ego.Location = "D6";
@@ -13839,7 +13926,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D5";
                             ego.Location = "E5";
@@ -13852,7 +13939,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D5";
                             ego.Location = "C5";
@@ -13911,7 +13998,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C5";
                             ego.Location = "C4";
@@ -13924,7 +14011,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C5";
                             ego.Location = "C6";
@@ -13937,7 +14024,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C5";
                             ego.Location = "D5";
@@ -13994,7 +14081,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "I4";
                             ego.Location = "J4";
@@ -14007,7 +14094,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "I4";
                             ego.Location = "H4";
@@ -14066,7 +14153,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H4";
                             ego.Location = "H3";
@@ -14079,7 +14166,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H4";
                             ego.Location = "H5";
@@ -14092,7 +14179,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H4";
                             ego.Location = "I4";
@@ -14151,7 +14238,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F4";
                             ego.Location = "F3";
@@ -14164,7 +14251,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F4";
                             ego.Location = "F5";
@@ -14177,7 +14264,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F4";
                             ego.Location = "E4";
@@ -14238,7 +14325,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E4";
                             ego.Location = "E3";
@@ -14251,7 +14338,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E4";
                             ego.Location = "E5";
@@ -14264,7 +14351,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E4";
                             ego.Location = "F4";
@@ -14277,7 +14364,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E4";
                             ego.Location = "D4";
@@ -14334,7 +14421,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D4";
                             ego.Location = "D5";
@@ -14347,7 +14434,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D4";
                             ego.Location = "E4";
@@ -14404,7 +14491,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H3";
                             ego.Location = "H4";
@@ -14417,7 +14504,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "H3";
                             ego.Location = "G3";
@@ -14474,7 +14561,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G3";
                             ego.Location = "H3";
@@ -14487,7 +14574,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G3";
                             ego.Location = "F3";
@@ -14548,7 +14635,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F3";
                             ego.Location = "F2";
@@ -14561,7 +14648,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F3";
                             ego.Location = "F4";
@@ -14574,7 +14661,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F3";
                             ego.Location = "G3";
@@ -14587,7 +14674,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F3";
                             ego.Location = "E3";
@@ -14646,7 +14733,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G2";
                             ego.Location = "G1";
@@ -14659,7 +14746,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G2";
                             ego.Location = "H2";
@@ -14672,7 +14759,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "G2";
                             ego.Location = "F2";
@@ -14729,7 +14816,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F2";
                             ego.Location = "F3";
@@ -14742,7 +14829,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "F2";
                             ego.Location = "G2";
@@ -14793,7 +14880,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D9";
                             ego.Location = "D8";
@@ -14806,7 +14893,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D9";
                             ego.Location = "D10";
@@ -14819,7 +14906,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D9";
                             ego.Location = "E9";
@@ -14832,7 +14919,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D9";
                             ego.Location = "C9";
@@ -14883,7 +14970,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C8";
                             ego.Location = "C7";
@@ -14896,7 +14983,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C8";
                             ego.Location = "C9";
@@ -14909,7 +14996,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C8";
                             ego.Location = "D8";
@@ -14922,7 +15009,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "C8";
                             ego.Location = "B8";
@@ -14973,7 +15060,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E8";
                             ego.Location = "E7";
@@ -14986,7 +15073,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E8";
                             ego.Location = "E9";
@@ -14999,7 +15086,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E8";
                             ego.Location = "F8";
@@ -15012,7 +15099,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E8";
                             ego.Location = "D8";
@@ -15063,7 +15150,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E6";
                             ego.Location = "E5";
@@ -15076,7 +15163,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E6";
                             ego.Location = "E7";
@@ -15089,7 +15176,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E6";
                             ego.Location = "F6";
@@ -15102,7 +15189,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E6";
                             ego.Location = "D6";
@@ -15153,7 +15240,7 @@ namespace JessesDungeon
 
                         if (action == "go north")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D7";
                             ego.Location = "D6";
@@ -15166,7 +15253,7 @@ namespace JessesDungeon
 
                         if (action == "go south")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D7";
                             ego.Location = "D8";
@@ -15179,7 +15266,7 @@ namespace JessesDungeon
 
                         if (action == "go east")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D7";
                             ego.Location = "E7";
@@ -15192,7 +15279,7 @@ namespace JessesDungeon
 
                         if (action == "go west")
                         {
-                            action = "complete";
+                            action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "D7";
                             ego.Location = "C7";
@@ -15209,7 +15296,7 @@ namespace JessesDungeon
 
                 if (action == "look at")
                 {
-                    action = "complete";
+                    action = "Complete";
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Look at... loo kat? zoo cat? A LION???");
@@ -15220,6 +15307,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.WriteLine("Fight or flee?");
                     Console.WriteLine();
+                    Console.Write("> ");
                     Console.ReadLine();
                     Console.WriteLine();
                     Console.WriteLine();
@@ -15231,7 +15319,7 @@ namespace JessesDungeon
 
                 if (action.StartsWith("look at "))
                 {
-                    action = "complete";
+                    action = "Complete";
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("It looks pretty much as you'd expect.");
@@ -15242,7 +15330,7 @@ namespace JessesDungeon
 
                 if (action == "search")
                 {
-                    action = "complete";
+                    action = "Complete";
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Search? Search WHAT?!");
@@ -15254,7 +15342,7 @@ namespace JessesDungeon
 
                 if (action.StartsWith("search "))
                 {
-                    action = "complete";
+                    action = "Complete";
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Unfortunately, searching that did not aid you in your quest. A waste of time even to describe it!");
@@ -15265,7 +15353,7 @@ namespace JessesDungeon
 
                 if (action == "map")
                 {
-                    action = "complete";
+                    action = "Complete";
                     Console.WriteLine();
                     Console.WriteLine();
                     GetMap(discoveredMap);
@@ -15347,7 +15435,7 @@ namespace JessesDungeon
 
                         if (action == "Equip")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Oops! You equipped something that we weren't expecting. Whatever it was, you don't need to do it to finish the game.");
@@ -15376,7 +15464,7 @@ namespace JessesDungeon
                                 string bagCheck = armor.Name;
                                 if (equippingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     GetDressed(ego, armor);
                                     break;
                                 }
@@ -15386,7 +15474,7 @@ namespace JessesDungeon
                                 string bagCheck = weapon.Name;
                                 if (equippingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     GetEquipped(ego, weapon);
                                     break;
                                 }
@@ -15396,12 +15484,12 @@ namespace JessesDungeon
                                 string bagCheck = shield.Name;
                                 if (equippingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     GetStrapped(ego, shield);
                                     break;
                                 }
                             }
-                            if (action != "complete")
+                            if (action != "Complete")
                             {
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -15414,7 +15502,7 @@ namespace JessesDungeon
                         }
                         else if (action == "Drop")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Drop? Drop WHAT?!");
@@ -15430,7 +15518,7 @@ namespace JessesDungeon
 
                             if (droppingItem == "Rags")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Nah don't drop that. Them's your clothes! Can't have a bunch of naked people running around this dungeon. Get more sales with a kid-friendly rating.");
@@ -15440,7 +15528,7 @@ namespace JessesDungeon
                             }
                             else
                             {
-                                action = "complete";
+                                action = "Complete";
                                 foreach (Armor armor in equippableArmor)
                                 {
                                     string bagCheck = armor.Name;
@@ -15524,9 +15612,9 @@ namespace JessesDungeon
                                     }
                                 }
                             }
-                            if (action != "complete")
+                            if (action != "Complete")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You must be quite a content person, as you don't want what you don't have.");
@@ -15539,7 +15627,7 @@ namespace JessesDungeon
                         }
                         else if (action == "Use")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Use? Use WHAT?!");
@@ -15558,7 +15646,7 @@ namespace JessesDungeon
                                 string bagCheck = potion.Name;
                                 if (usingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     GetDrunk(potionBelt, ego, potion);
                                     break;
                                 }
@@ -15568,7 +15656,7 @@ namespace JessesDungeon
                                 string bagCheck = armor.Name;
                                 if (usingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Nothing happens.");
@@ -15583,7 +15671,7 @@ namespace JessesDungeon
                                 string bagCheck = weapon.Name;
                                 if (usingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Nothing happens.");
@@ -15598,7 +15686,7 @@ namespace JessesDungeon
                                 string bagCheck = shield.Name;
                                 if (usingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Nothing happens.");
@@ -15613,7 +15701,7 @@ namespace JessesDungeon
                                 string bagCheck = item.Name;
                                 if (usingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Nothing happens.");
@@ -15623,9 +15711,9 @@ namespace JessesDungeon
                                     break;
                                 }
                             }
-                            if (action != "complete")
+                            if (action != "Complete")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine($"When you figure out what {usingItem} is you give me a call, ok?");
@@ -15638,7 +15726,7 @@ namespace JessesDungeon
                         }
                         else if (action == "Inspect")
                         {
-                            action = "complete";
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("-or gadget DOO DOO DOO DOO DOO DOOOO DOOOOOOO!");
@@ -15657,7 +15745,7 @@ namespace JessesDungeon
                                 string bagCheck = armor.Name;
                                 if (inspectingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine(armor.Description);
@@ -15675,7 +15763,7 @@ namespace JessesDungeon
                                 string bagCheck = weapon.Name;
                                 if (inspectingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine(weapon.Description);
@@ -15694,7 +15782,7 @@ namespace JessesDungeon
                                 string bagCheck = shield.Name;
                                 if (inspectingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine(shield.Description);
@@ -15712,7 +15800,7 @@ namespace JessesDungeon
                                 string bagCheck = potion.Name;
                                 if (inspectingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine(potion.Description);
@@ -15727,7 +15815,7 @@ namespace JessesDungeon
                                 string bagCheck = item.Name;
                                 if (inspectingItem == bagCheck)
                                 {
-                                    action = "complete";
+                                    action = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine(item.Description);
@@ -15737,9 +15825,9 @@ namespace JessesDungeon
                                     break;
                                 }
                             }
-                            if (action != "complete")
+                            if (action != "Complete")
                             {
-                                action = "complete";
+                                action = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Are we reading from the same inventory sheet?");
@@ -15750,10 +15838,10 @@ namespace JessesDungeon
                         }
                         else if (action == "Return")
                         {
-                            action = "complete";
+                            action = "Complete";
                             inventoryLoop = false;
                         }
-                        else if (action != "complete")
+                        else if (action != "Complete")
                         {
                             Console.WriteLine();
                             Console.WriteLine();
@@ -15767,7 +15855,7 @@ namespace JessesDungeon
 
                 if (action == "stats")
                 {
-                    action = "complete";
+                    action = "Complete";
                     string[] yourStats = ego.GetStats();
                     Console.WriteLine();
                     Console.WriteLine();
@@ -15797,10 +15885,10 @@ namespace JessesDungeon
 
                 if (action == "version")
                 {
-                    action = "complete";
+                    action = "Complete";
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("v.FI IS OPPOSITE LOGIC");
+                    Console.WriteLine("v.Insect's Quest I");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
@@ -15809,7 +15897,7 @@ namespace JessesDungeon
                 if (action == "i am the one who knocks")
                 {
                     debugMode = true;
-                    action = "complete";
+                    action = "Complete";
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("I sure won't be answering my door tonight.");
@@ -15859,17 +15947,19 @@ namespace JessesDungeon
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
-                    action = "complete";
+                    action = "Complete";
                 }  //debug teleport
 
                 if (action == "i'm in the empire business" && debugMode == true)
                 {
-                    action = "complete";
+                    action = "Complete";
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("And just how much is your empire worth nowadays?");
                     Console.WriteLine();
+                    Console.Write("> ");
                     debugMoneyInput = Console.ReadLine();
+                    Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine();
                     if (!int.TryParse(debugMoneyInput, out debugMoneyOutput))
@@ -15889,7 +15979,7 @@ namespace JessesDungeon
 
                 if (action == "say my name" && debugMode == true)
                 {
-                    action = "complete";
+                    action = "Complete";
                     ego.MaxHitPoints = 125000;
                     ego.CurrentHitPoints = 125000;
                     ego.ArmorClass = 125000;
@@ -15904,7 +15994,7 @@ namespace JessesDungeon
 
                 if (action == "tread lightly" && debugMode == true)
                 {
-                    action = "complete";
+                    action = "Complete";
                     discoveredMap[0, 12] = "[P]";
                     discoveredMap[0, 14] = "[S]";
                     discoveredMap[4, 8] = "[L]";
@@ -16074,7 +16164,7 @@ namespace JessesDungeon
 
                 if (action == "i'm a knight!" && debugMode == true)
                 {
-                    action = "complete";
+                    action = "Complete";
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Ok, Heath, settle down.");
@@ -16102,646 +16192,1303 @@ namespace JessesDungeon
 
                 if (action == "razzle dazzle root beer" && debugMode == true)
                 {
-                    action = "complete";
-                    undroppables.Add(sackOfCash);
-                    undroppables.Add(giantBlueCrystal);
-                    undroppables.Add(stevia);
-                    undroppables.Add(janesKey);
-                    undroppables.Add(largeBrassKey);
-                    undroppables.Add(liquorKey);
-                    undroppables.Add(mezcal);
-                    undroppables.Add(jeweledRing);
-                    undroppables.Add(sackOfGoodies);
-                    undroppables.Add(minkCoat);
-                    undroppables.Add(fredStash);
-                    undroppables.Add(safe);
-                    undroppables.Add(generator);
-                    undroppables.Add(dungeonKey);
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("What is that some kind of advertisement? Because it worked! I want it and I will give you everything to have it!");
-                    Console.WriteLine();
-                    Console.Write("Press ENTER to continue");
-                    Console.ReadLine();
-                }//all undroppables
+                    action = "Complete";
+                    talkLoop = true;
+                    while (talkLoop)
+                    {
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("What is that some kind of advertisement? Because it worked! I want it and I will give you anything to have it!");
+                        Console.WriteLine();
+                        Console.WriteLine("Rusty Wooden Spoon");
+                        Console.WriteLine("Stick");
+                        Console.WriteLine("Pointy Stick");
+                        Console.WriteLine("Mildew-Encrusted Pocket Knife");
+                        Console.WriteLine("Knife");
+                        Console.WriteLine("Hunting Knife");
+                        Console.WriteLine("Fireman's Axe");
+                        Console.WriteLine("Pogo Stick");
+                        Console.WriteLine("Sword");
+                        Console.WriteLine("Gun");
+                        Console.WriteLine("Leather Armor");
+                        Console.WriteLine("Studded Leather Armor");
+                        Console.WriteLine("Ringmail");
+                        Console.WriteLine("Chainmail");
+                        Console.WriteLine("Hazmat Suit");
+                        Console.WriteLine("Soup Bowl");
+                        Console.WriteLine("Cardboard Cutout");
+                        Console.WriteLine("Garbage Can Lid");
+                        Console.WriteLine("Shield");
+                        Console.WriteLine();
+                        Console.WriteLine("Exit");
+                        Console.WriteLine();
+                        Console.Write("> ");
+                        action = Console.ReadLine();
+                        action = action.ToLower();
+                        action = action.Trim();
+
+                        if (action == "rusty wooden spoon")
+                        {
+                            action = "Complete";
+                            equippableWeapon.Add(rustyWoodenSpoon);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "stick")
+                        {
+                            action = "Complete";
+                            equippableWeapon.Add(stick);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "pointy stick")
+                        {
+                            action = "Complete";
+                            equippableWeapon.Add(pointyStick);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "mildew-encrusted pocket knife")
+                        {
+                            action = "Complete";
+                            equippableWeapon.Add(mildewEncrustedPocketKnife);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "knife")
+                        {
+                            action = "Complete";
+                            equippableWeapon.Add(knife);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "hunting knife")
+                        {
+                            action = "Complete";
+                            equippableWeapon.Add(huntingKnife);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "fireman's axe")
+                        {
+                            action = "Complete";
+                            equippableWeapon.Add(axe);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "pogo stick")
+                        {
+                            action = "Complete";
+                            equippableWeapon.Add(pogoStick);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "sword")
+                        {
+                            action = "Complete";
+                            equippableWeapon.Add(realSword);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "gun")
+                        {
+                            action = "Complete";
+                            equippableWeapon.Add(gun);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "leather armor")
+                        {
+                            action = "Complete";
+                            equippableArmor.Add(leatherArmor);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "studded leather armor")
+                        {
+                            action = "Complete";
+                            equippableArmor.Add(studdedLeatherArmor);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "ringmail")
+                        {
+                            action = "Complete";
+                            equippableArmor.Add(ringmail);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "chainmail")
+                        {
+                            action = "Complete";
+                            equippableArmor.Add(chainmail);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "hazmat suit")
+                        {
+                            action = "Complete";
+                            equippableArmor.Add(hazmatSuit);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "soup bowl")
+                        {
+                            action = "Complete";
+                            equippableShield.Add(soupBowl);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "cardboard cutout")
+                        {
+                            action = "Complete";
+                            equippableShield.Add(cardboardCutout);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "garbage can lid")
+                        {
+                            action = "Complete";
+                            equippableShield.Add(garbageCanLid);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "shield")
+                        {
+                            action = "Complete";
+                            equippableShield.Add(realShield);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "exit")
+                        {
+                            action = "Complete";
+                            talkLoop = false;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Come back any time! I will always trade!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else
+                        {
+                            action = "Complete";
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("I'll give ANYTHING for it but I've gotta have it for you to choose it!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                    }
+                    
+                }//choose equipment
 
                 if (action == "suck blue frogs" && debugMode == true)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("A mysterious voice bellows, \"What do you need?\"");
-                    Console.WriteLine();
-                    Console.WriteLine("Sack of Cash");
-                    Console.WriteLine("Stevia");
-                    Console.WriteLine("Giant Blue Crystal");
-                    Console.WriteLine("Bedroom Key");
-                    Console.WriteLine("Large Brass Key");
-                    Console.WriteLine("Liquor Key");
-                    Console.WriteLine("Bottle of Mezcal");
-                    Console.WriteLine("Jeweled Ring");
-                    Console.WriteLine("Skinny Pete's Sack of Goodies");
-                    Console.WriteLine("Mink Coat");
-                    Console.WriteLine("Stinky Cash");
-                    Console.WriteLine("Safe Cash");
-                    Console.WriteLine("Electric Generator");
-                    Console.WriteLine("Heisenberg's Key");
-                    Console.WriteLine();
-                    Console.Write("> ");
-                    action = Console.ReadLine();
-                    action = action.ToLower();
+                    action = "Complete";
+                    talkLoop = true;
+                    while (talkLoop)
+                    {
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("A mysterious voice bellows, \"What do you need?\"");
+                        Console.WriteLine();
+                        Console.WriteLine("Sack of Cash");
+                        Console.WriteLine("Stevia");
+                        Console.WriteLine("Giant Blue Crystal");
+                        Console.WriteLine("Bedroom Key");
+                        Console.WriteLine("Large Brass Key");
+                        Console.WriteLine("Liquor Key");
+                        Console.WriteLine("Bottle of Mezcal");
+                        Console.WriteLine("Jeweled Ring");
+                        Console.WriteLine("Skinny Pete's Sack of Goodies");
+                        Console.WriteLine("Mink Coat");
+                        Console.WriteLine("Stinky Cash");
+                        Console.WriteLine("Safe Cash");
+                        Console.WriteLine("Electric Generator");
+                        Console.WriteLine("Heisenberg's Key");
+                        Console.WriteLine();
+                        Console.WriteLine("Exit");
+                        Console.WriteLine();
+                        Console.Write("> ");
+                        action = Console.ReadLine();
+                        action = action.ToLower();
+                        action = action.Trim();
 
-                    Console.Clear();
-                    if (action == "sack of cash")
-                    {
-                        action = "complete";
-                        undroppables.Add(sackOfCash);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
+                        if (action == "sack of cash")
+                        {
+                            action = "Complete";
+                            undroppables.Add(sackOfCash);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "stevia")
+                        {
+                            action = "Complete";
+                            undroppables.Add(stevia);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "giant blue crystal")
+                        {
+                            action = "Complete";
+                            undroppables.Add(giantBlueCrystal);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "bedroom key")
+                        {
+                            action = "Complete";
+                            undroppables.Add(janesKey);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "large brass key")
+                        {
+                            action = "Complete";
+                            undroppables.Add(largeBrassKey);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "liquor key")
+                        {
+                            action = "Complete";
+                            undroppables.Add(liquorKey);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "bottle of mezcal")
+                        {
+                            action = "Complete";
+                            undroppables.Add(mezcal);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "jeweled ring")
+                        {
+                            action = "Complete";
+                            undroppables.Add(jeweledRing);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "skinny pete's sack of goodies")
+                        {
+                            action = "Complete";
+                            undroppables.Add(sackOfGoodies);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "mink coat")
+                        {
+                            action = "Complete";
+                            undroppables.Add(minkCoat);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "stinky cash")
+                        {
+                            action = "Complete";
+                            undroppables.Add(fredStash);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "safe cash")
+                        {
+                            action = "Complete";
+                            undroppables.Add(safe);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "electric generator")
+                        {
+                            action = "Complete";
+                            undroppables.Add(generator);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "heisenberg's key")
+                        {
+                            action = "Complete";
+                            undroppables.Add(dungeonKey);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Poof!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (action == "exit")
+                        {
+                            action = "Complete";
+                            talkLoop = false;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("\"One bona fide prince pedigree coming up! I... what?\"");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else
+                        {
+                            action = "Complete";
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("All right, Sparky, here's the deal: if you wanna get the little item you gotta be a straight shooter, do ya got it?");
+                            Console.WriteLine();
+                            Console.WriteLine("Type with a precision that shows you care!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
                     }
-                    else if (action == "stevia")
-                    {
-                        action = "complete";
-                        undroppables.Add(stevia);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (action == "giant blue crystal")
-                    {
-                        action = "complete";
-                        undroppables.Add(giantBlueCrystal);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (action == "bedroom key")
-                    {
-                        action = "complete";
-                        undroppables.Add(janesKey);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (action == "large brass key")
-                    {
-                        action = "complete";
-                        undroppables.Add(largeBrassKey);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (action == "liquor key")
-                    {
-                        action = "complete";
-                        undroppables.Add(liquorKey);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (action == "bottle of mezcal")
-                    {
-                        action = "complete";
-                        undroppables.Add(mezcal);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (action == "jeweled ring")
-                    {
-                        action = "complete";
-                        undroppables.Add(jeweledRing);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (action == "skinny pete's sack of goodies")
-                    {
-                        action = "complete";
-                        undroppables.Add(sackOfGoodies);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (action == "mink coat")
-                    {
-                        action = "complete";
-                        undroppables.Add(minkCoat);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (action == "stinky cash")
-                    {
-                        action = "complete";
-                        undroppables.Add(fredStash);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (action == "safe cash")
-                    {
-                        action = "complete";
-                        undroppables.Add(safe);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (action == "electric generator")
-                    {
-                        action = "complete";
-                        undroppables.Add(generator);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (action == "electric generator")
-                    {
-                        action = "complete";
-                        undroppables.Add(dungeonKey);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Poof!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else
-                    {
-                        action = "complete";
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("All right, Sparky, here's the deal: if you wanna get the little item you gotta be a straight shooter, do ya got it?");
-                        Console.WriteLine();
-                        Console.WriteLine("Type with a precision that shows you care!");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
+
                 }//choose an undroppable
 
                 if (action == "alt k" && debugMode == true)
                  {
-                     Console.WriteLine();
-                     Console.WriteLine();
-                     Console.WriteLine("Change which stat/skill?");
-                     Console.WriteLine();
-                     Console.Write("> ");
-                     string razzleDazzleRootBeer = Console.ReadLine();
-
-
-                    for (int i = 0; i < stringList.Count; i++)
+                    talkLoop = true;
+                    while (talkLoop)
                     {
-                        string inputCheck = stringList[i];
-                        if (razzleDazzleRootBeer == inputCheck)
+                        if (action != "List")
                         {
-                            action = "complete";
-                            stringFlags[0] = debugMoneyInput;
-                            stringFlags[1] = fightClubAction;
-                            stringFlags[2] = fightClubChoice;
-                            stringFlags[3] = bowlingAction;
-                            stringFlags[4] = purchaseItem;
-                            stringFlags[5] = sellItem;
-                            stringFlags[6] = sellItem2;
-                            stringFlags[7] = usingItem;
-                            stringFlags[8] = inspectingItem;
-                            stringFlags[9] = salamancaAction;
-                            stringFlags[10] = salamancaChoice;
-                            stringFlags[11] = disappearChoice;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Change which stat/skill?");
+                            Console.WriteLine();
+                            Console.WriteLine("Or:");
+                            Console.WriteLine();
+                            Console.WriteLine("String list");
+                            Console.WriteLine("Int list");
+                            Console.WriteLine("Bool list");
+                            Console.WriteLine("Ego");
+                            Console.WriteLine();
+                            Console.WriteLine("Exit");
+                            Console.WriteLine();
+                            Console.Write("> ");
+                            razzleDazzleRootBeer = Console.ReadLine();
+                            action = razzleDazzleRootBeer.ToLower();
+                        }
+                        else
+                        {
+                            Console.WriteLine();
+                            Console.Write("> ");
+                            razzleDazzleRootBeer = Console.ReadLine();
+                            action = razzleDazzleRootBeer.ToLower();
+                        }
 
+                        if (action == "string list")
+                        {
+                            action = "List";
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.Write("Enter value: ");
-                            string suckBlueFrogs = Console.ReadLine();
-                            stringFlags[i] = suckBlueFrogs;
-                            Console.Write(".");
-                            Thread.Sleep(250);
-                            Console.Write(".");
-                            Thread.Sleep(250);
-                            Console.WriteLine(".");
-                            Thread.Sleep(250);
-                            Console.Write(".");
-                            Thread.Sleep(250);
-                            Console.Write(".");
-                            Thread.Sleep(250);
-                            Console.WriteLine(".");
-                            Thread.Sleep(250);
-                            Console.Write(".");
-                            Thread.Sleep(250);
-                            Console.Write(".");
-                            Thread.Sleep(250);
-                            Console.WriteLine(".");
-                            Thread.Sleep(250);
+                            foreach (string statskill in stringList)
+                            {
+                                Console.WriteLine(statskill);
+                            }                            
+                        }
+                        else if (action == "int list")
+                        {
+                            action = "List";
                             Console.WriteLine();
-                            Console.WriteLine($"{stringList[i]} = {stringFlags[i]}");
                             Console.WriteLine();
-                            Console.WriteLine("State flag changed. May god have mercy on your soul.");
+                            foreach (string statskill in intList)
+                            {
+                                Console.WriteLine(statskill);
+                            }
+                        }
+                        else if (action == "bool list")
+                        {
+                            action = "List";
                             Console.WriteLine();
-                            Console.WriteLine("Press ENTER not to crash the game");
+                            Console.WriteLine();
+                            foreach (string statskill in boolList)
+                            {
+                                Console.WriteLine(statskill);
+                            }
+                        }
+                        else if (action == "ego")
+                        {
+                            action = "Complete";
+                            janeLoop = true;
+                            while (janeLoop)
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Alter Ego?");
+                                Console.WriteLine();
+                                Console.WriteLine("Yes");
+                                Console.WriteLine("No");
+                                Console.WriteLine();
+                                Console.Write(">");
+
+                                action = Console.ReadLine();
+                                action = action.ToLower();
+                                action = action.Trim();
+                                Console.WriteLine();
+
+                                if (action == "yes")
+                                {
+                                    janeLoop = false;
+                                    action = "Complete";
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Note: Changing name from \"Ego\" will likely result in death and destruction");
+                                    Console.WriteLine();
+                                    Console.Write("Name: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    ego.Name = suckBlueFrogs;
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Max HP: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newMaxHP))
+                                    {
+                                        ego.MaxHitPoints = newMaxHP;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Current HP: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newCurHP))
+                                    {
+                                        ego.CurrentHitPoints = newCurHP;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Note: This will override current equipment and adulterate formulas");
+                                    Console.WriteLine($"Current AC: {ego.ArmorClass}");
+                                    Console.WriteLine();
+                                    Console.Write("Armor Class: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newAC))
+                                    {
+                                        ego.ArmorClass = newAC;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Note: This will override current equipment and adulterate formulas");
+                                    Console.WriteLine($"Current Crit Resist: {ego.CritResist}");
+                                    Console.WriteLine();
+                                    Console.Write("Crit Resist: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (double.TryParse(suckBlueFrogs, out double newCritRes))
+                                    {
+                                        ego.CritResist = newCritRes;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Note: This will override current equipment and adulterate formulas");
+                                    Console.WriteLine($"Current Dmg Reduction: {ego.DamageReduction}");
+                                    Console.WriteLine();
+                                    Console.Write("Dmg Reduction: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newDmgRed))
+                                    {
+                                        ego.DamageReduction = newDmgRed;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Note: This will override current equipment and adulterate formulas");
+                                    Console.WriteLine($"Current Damage Die: {ego.DamageDie}");
+                                    Console.WriteLine();
+                                    Console.Write("Damage Die: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newDmgDie))
+                                    {
+                                        ego.DamageDie = newDmgDie;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Note: This will override current equipment and adulterate formulas");
+                                    Console.WriteLine($"Current Damage Bonus: {ego.Damage}");
+                                    Console.WriteLine();
+                                    Console.Write("Damage Bonus: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newDmgBonus))
+                                    {
+                                        ego.Damage = newDmgBonus;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Note: This will override current equipment and adulterate formulas");
+                                    Console.WriteLine($"Current Crit Multiplier: {ego.CritMultiplier}");
+                                    Console.WriteLine();
+                                    Console.Write("Crit Multiplier: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (double.TryParse(suckBlueFrogs, out double newCritMult))
+                                    {
+                                        ego.CritMultiplier = newCritMult;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Blue Crystals: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newBlueCrys))
+                                    {
+                                        ego.BlueCrystals = newBlueCrys;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Fight Club Rank: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newFightRank))
+                                    {
+                                        ego.FightClubRank = newFightRank;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Note: An invalid location will crash the game");
+                                    Console.WriteLine($"Current Location: {ego.Location}");
+                                    Console.WriteLine();
+                                    Console.Write("Location: ");
+                                    suckBlueFrogs = Console.ReadLine();                                   
+                                    ego.Location = suckBlueFrogs;
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Note: Fleeing to an invalid location will crash the game");
+                                    Console.WriteLine($"Current Flee Location: {ego.FleeLocation}");
+                                    Console.WriteLine();
+                                    Console.Write("Flee Location: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    ego.FleeLocation = suckBlueFrogs;
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Just Fled (true/false): ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (bool.TryParse(suckBlueFrogs, out bool newJustFled))
+                                    {
+                                        ego.JustFled = newJustFled;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Jane's Protection (true/false): ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (bool.TryParse(suckBlueFrogs, out bool newJanesProt))
+                                    {
+                                        if (ego.JanesProtectionActive)
+                                        {
+                                            ego.JanesProtectionActive = false;
+                                            ego.ArmorClass--;
+                                        }
+                                        ego.JanesProtectionActive = newJanesProt;
+
+                                        if (ego.JanesProtectionActive)
+                                        {
+                                            ego.ArmorClass++;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Last Defeated: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    ego.LastDefeated = suckBlueFrogs;
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Flurry: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newFlurry))
+                                    {
+                                        ego.Flurry = newFlurry;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Note: This will override current equipment and adulterate formulas");
+                                    Console.WriteLine($"Current To Hit Mod: {ego.ToHitMod}");
+                                    Console.WriteLine();
+                                    Console.Write("To Hit Mod: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newToHitMod))
+                                    {
+                                        ego.ToHitMod = newToHitMod;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.WriteLine(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.WriteLine(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.WriteLine(".");
+                                    Thread.Sleep(250);
+                                    Console.WriteLine();
+                                    Console.WriteLine("Ego altered. May god have mercy on your soul.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Press ENTER not to crash the game");
+                                    Console.ReadLine();
+                                }
+                                else if (action == "no")
+                                {
+                                    janeLoop = false;
+                                    action = "Complete";
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Funny, though -- right?");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("That didn't do anything useful.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                            }
+                        }
+
+                        for (int i = 0; i < stringList.Count; i++)
+                        {
+                            string inputCheck = stringList[i];
+                            if (razzleDazzleRootBeer == inputCheck)
+                            {
+                                talkLoop = false;
+                                action = "Complete";
+                                stringFlags[0] = debugMoneyInput;
+                                stringFlags[1] = fightClubAction;
+                                stringFlags[2] = fightClubChoice;
+                                stringFlags[3] = bowlingAction;
+                                stringFlags[4] = purchaseItem;
+                                stringFlags[5] = sellItem;
+                                stringFlags[6] = sellItem2;
+                                stringFlags[7] = usingItem;
+                                stringFlags[8] = inspectingItem;
+                                stringFlags[9] = salamancaAction;
+                                stringFlags[10] = salamancaChoice;
+                                stringFlags[11] = disappearChoice;
+
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Enter value: ");
+                                suckBlueFrogs = Console.ReadLine();
+                                stringFlags[i] = suckBlueFrogs;
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.WriteLine(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.WriteLine(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.WriteLine(".");
+                                Thread.Sleep(250);
+                                Console.WriteLine();
+                                Console.WriteLine($"{stringList[i]} = {stringFlags[i]}");
+                                Console.WriteLine();
+                                Console.WriteLine("State flag changed. May god have mercy on your soul.");
+                                Console.WriteLine();
+                                Console.WriteLine("Press ENTER not to crash the game");
+                                Console.ReadLine();
+
+                                debugMoneyInput = stringFlags[0];
+                                fightClubAction = stringFlags[1];
+                                fightClubChoice = stringFlags[2];
+                                bowlingAction = stringFlags[3];
+                                purchaseItem = stringFlags[4];
+                                sellItem = stringFlags[5];
+                                sellItem2 = stringFlags[6];
+                                usingItem = stringFlags[7];
+                                inspectingItem = stringFlags[8];
+                                salamancaAction = stringFlags[9];
+                                salamancaChoice = stringFlags[10];
+                                disappearChoice = stringFlags[11];
+                                break;
+                            }
+                        }
+                        for (int i = 0; i < intList.Count; i++)
+                        {
+                            string inputCheck = intList[i];
+                            if (razzleDazzleRootBeer == inputCheck)
+                            {
+                                action = "Complete";
+                                intFlags[0] = hermitAnger;
+                                intFlags[1] = highestHermitAnger;
+                                intFlags[2] = debugMoneyOutput;
+                                intFlags[3] = inappropriateTouchingCounter;
+                                intFlags[4] = fightClubMode;
+                                intFlags[5] = bowlingSkill;
+                                intFlags[6] = lastBowlingBet;
+                                intFlags[7] = egoBowlingScore;
+                                intFlags[8] = enemyBowlingScore;
+                                intFlags[9] = bowlingPrizePackage;
+                                intFlags[10] = salamancaStolenCrystals;
+                                intFlags[11] = converseCount;
+                                intFlags[12] = gusSenseMotiveCheck;
+                                intFlags[13] = saulHermitBond;
+                                intFlags[14] = konamiProgress;
+                                intFlags[15] = stolenHeisenPotions;
+
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Enter value: ");
+                                suckBlueFrogs = Console.ReadLine();
+                                if (Int32.TryParse(suckBlueFrogs, out int newValue))
+                                {
+                                    talkLoop = false;
+                                    intFlags[i] = newValue;
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.WriteLine(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.WriteLine(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.WriteLine(".");
+                                    Thread.Sleep(250);
+                                    Console.WriteLine();
+                                    Console.WriteLine($"{intList[i]} = {intFlags[i]}");
+                                    Console.WriteLine();
+                                    Console.WriteLine("State flag changed. May god have mercy on your soul.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Press ENTER not to crash the game");
+                                    Console.ReadLine();
+
+                                    hermitAnger = intFlags[0];
+                                    highestHermitAnger = intFlags[1];
+                                    debugMoneyOutput = intFlags[2];
+                                    inappropriateTouchingCounter = intFlags[3];
+                                    fightClubMode = intFlags[4];
+                                    bowlingSkill = intFlags[5];
+                                    lastBowlingBet = intFlags[6];
+                                    egoBowlingScore = intFlags[7];
+                                    enemyBowlingScore = intFlags[8];
+                                    bowlingPrizePackage = intFlags[9];
+                                    salamancaStolenCrystals = intFlags[10];
+                                    converseCount = intFlags[11];
+                                    gusSenseMotiveCheck = intFlags[12];
+                                    saulHermitBond = intFlags[13];
+                                    konamiProgress = intFlags[14];
+                                    stolenHeisenPotions = intFlags[15];
+                                }
+                                else
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("WOAH! That's not a number! I certaintly just saved you from certain doom. Be more careful with what you typ!");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                break;
+                            }
+                        }
+                        for (int i = 0; i < boolList.Count; i++)
+                        {
+                            string inputCheck = boolList[i];
+                            if (razzleDazzleRootBeer == inputCheck)
+                            {
+                                action = "Complete";
+                                boolFlags[0] = debugMode;
+                                boolFlags[1] = bowlAndSpoonLooted;
+                                boolFlags[2] = listenedToTownVoices;
+                                boolFlags[3] = unlockedListenTo;
+                                boolFlags[4] = hasNotEnteredTown;
+                                boolFlags[5] = hasLeftTown;
+                                boolFlags[6] = searchedTree;
+                                boolFlags[7] = galeQuestGiven;
+                                boolFlags[8] = galeQuestCompleted;
+                                boolFlags[9] = hermitVisited;
+                                boolFlags[10] = lookedMeepEyes;
+                                boolFlags[11] = searchedMeepMounds;
+                                boolFlags[12] = talkedToMeepMounds;
+                                boolFlags[13] = searchedMikeHouse;
+                                boolFlags[14] = fuckedUpWithMike;
+                                boolFlags[15] = searchedGraveyard;
+                                boolFlags[16] = salamancaGuardDefeated;
+                                boolFlags[17] = salamancaGuardSearched;
+                                boolFlags[18] = salamancaCousinDefeated;
+                                boolFlags[19] = salamancaDead;
+                                boolFlags[20] = randomEncountersOn;
+                                boolFlags[21] = lydiaQuestGiven;
+                                boolFlags[22] = lydiaQuestCompleted;
+                                boolFlags[23] = lootedCentaur;
+                                boolFlags[24] = frontEntranceWarning;
+                                boolFlags[25] = joinedFightClub;
+                                boolFlags[26] = fightClubLoop;
+                                boolFlags[27] = foughtInFightClub;
+                                boolFlags[28] = theCreeperInTheDarkDefeated;
+                                boolFlags[29] = puddleSearched;
+                                boolFlags[30] = visitedBowlingAlley;
+                                boolFlags[31] = bowlingLoop;
+                                boolFlags[32] = talkedToPriest;
+                                boolFlags[33] = noticedJane;
+                                boolFlags[34] = janesProtectionActive;
+                                boolFlags[35] = janesDoorOpened;
+                                boolFlags[36] = signedLogBook;
+                                boolFlags[37] = dryadLoop;
+                                boolFlags[38] = peteLoop;
+                                boolFlags[39] = buyLoop;
+                                boolFlags[40] = sellLoop;
+                                boolFlags[41] = inventoryLoop;
+                                boolFlags[42] = salamancaLoop;
+                                boolFlags[43] = salamancaBagLooted;
+                                boolFlags[44] = newConverseAvailable;
+                                boolFlags[45] = gusQuestGiven;
+                                boolFlags[46] = gusQuestCompleted;
+                                boolFlags[47] = gusLoop;
+                                boolFlags[48] = losPollosHermanos;
+                                boolFlags[49] = mikeQuestGiven;
+                                boolFlags[50] = mikeQuestCompleted;
+                                boolFlags[51] = peteQuestGiven;
+                                boolFlags[52] = peteQuestCompleted;
+                                boolFlags[53] = saulQuestGiven;
+                                boolFlags[54] = saulQuestCompleted;
+                                boolFlags[55] = studdedLeatherArmorLooted;
+                                boolFlags[56] = knightSuitAvailable;
+                                boolFlags[57] = mikeLoop;
+                                boolFlags[58] = janeQuestGiven;
+                                boolFlags[59] = janeQuestCompleted;
+                                boolFlags[60] = janeLoop;
+                                boolFlags[61] = freePotions;
+                                boolFlags[62] = dudeOnAPogoStickDefeated;
+                                boolFlags[63] = hidenGoseke;
+                                boolFlags[64] = secretTunnelOpened;
+                                boolFlags[65] = returnedRing;
+                                boolFlags[66] = shopClosed;
+                                boolFlags[67] = readLogbook;
+                                boolFlags[68] = tookPeteCash;
+                                boolFlags[69] = tookGusCash;
+                                boolFlags[70] = tookSaulCash;
+                                boolFlags[71] = tookHermitCash;
+                                boolFlags[72] = tookLydiaCash;
+                                boolFlags[73] = tookMikeCash;
+                                boolFlags[74] = tookJaneCash;
+                                boolFlags[75] = talkLoop;
+                                boolFlags[76] = killedJesse;
+                                boolFlags[77] = jesseDefeated;
+                                boolFlags[78] = sparedJesse;
+                                boolFlags[79] = searchedHeisenberg;
+                                boolFlags[80] = narratorDefeated;
+                                boolFlags[81] = searchedFortress;
+                                boolFlags[82] = mapTown;
+                                boolFlags[83] = mapPeace;
+                                boolFlags[84] = mapSalamanca;
+                                boolFlags[85] = mapLiquor;
+                                boolFlags[86] = mapVacuum;
+                                boolFlags[87] = mapCartel;
+                                boolFlags[88] = mapMike;
+                                boolFlags[89] = mapFight;
+                                boolFlags[90] = mapLydia;
+                                boolFlags[91] = mapSaul;
+                                boolFlags[92] = mapBowl;
+                                boolFlags[93] = mapHermit;
+                                boolFlags[94] = mapFortress;
+
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Enter value: ");
+                                suckBlueFrogs = Console.ReadLine();
+                                if (bool.TryParse(suckBlueFrogs, out bool newValue))
+                                {
+                                    talkLoop = false;
+                                    boolFlags[i] = newValue;
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.WriteLine(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.WriteLine(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.Write(".");
+                                    Thread.Sleep(250);
+                                    Console.WriteLine(".");
+                                    Thread.Sleep(250);
+                                    Console.WriteLine();
+                                    Console.WriteLine($"{boolList[i]} = {boolFlags[i]}");
+                                    Console.WriteLine();
+                                    Console.WriteLine("State flag changed. May god have mercy on your soul.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Press ENTER not to crash the game");
+                                    Console.ReadLine();
+
+                                    debugMode = boolFlags[0];
+                                    bowlAndSpoonLooted = boolFlags[1];
+                                    listenedToTownVoices = boolFlags[2];
+                                    unlockedListenTo = boolFlags[3];
+                                    hasNotEnteredTown = boolFlags[4];
+                                    hasLeftTown = boolFlags[5];
+                                    searchedTree = boolFlags[6];
+                                    galeQuestGiven = boolFlags[7];
+                                    galeQuestCompleted = boolFlags[8];
+                                    hermitVisited = boolFlags[9];
+                                    lookedMeepEyes = boolFlags[10];
+                                    searchedMeepMounds = boolFlags[11];
+                                    talkedToMeepMounds = boolFlags[12];
+                                    searchedMikeHouse = boolFlags[13];
+                                    fuckedUpWithMike = boolFlags[14];
+                                    searchedGraveyard = boolFlags[15];
+                                    salamancaGuardDefeated = boolFlags[16];
+                                    salamancaGuardSearched = boolFlags[17];
+                                    salamancaCousinDefeated = boolFlags[18];
+                                    salamancaDead = boolFlags[19];
+                                    randomEncountersOn = boolFlags[20];
+                                    lydiaQuestGiven = boolFlags[21];
+                                    lydiaQuestCompleted = boolFlags[22];
+                                    lootedCentaur = boolFlags[23];
+                                    frontEntranceWarning = boolFlags[24];
+                                    joinedFightClub = boolFlags[25];
+                                    fightClubLoop = boolFlags[26];
+                                    foughtInFightClub = boolFlags[27];
+                                    theCreeperInTheDarkDefeated = boolFlags[28];
+                                    puddleSearched = boolFlags[29];
+                                    visitedBowlingAlley = boolFlags[30];
+                                    bowlingLoop = boolFlags[31];
+                                    talkedToPriest = boolFlags[32];
+                                    noticedJane = boolFlags[33];
+                                    janesProtectionActive = boolFlags[34];
+                                    janesDoorOpened = boolFlags[35];
+                                    signedLogBook = boolFlags[36];
+                                    dryadLoop = boolFlags[37];
+                                    peteLoop = boolFlags[38];
+                                    buyLoop = boolFlags[39];
+                                    sellLoop = boolFlags[40];
+                                    inventoryLoop = boolFlags[41];
+                                    salamancaLoop = boolFlags[42];
+                                    salamancaBagLooted = boolFlags[43];
+                                    newConverseAvailable = boolFlags[44];
+                                    gusQuestGiven = boolFlags[45];
+                                    gusQuestCompleted = boolFlags[46];
+                                    gusLoop = boolFlags[47];
+                                    losPollosHermanos = boolFlags[48];
+                                    mikeQuestGiven = boolFlags[49];
+                                    mikeQuestCompleted = boolFlags[50];
+                                    peteQuestGiven = boolFlags[51];
+                                    peteQuestCompleted = boolFlags[52];
+                                    saulQuestGiven = boolFlags[53];
+                                    saulQuestCompleted = boolFlags[54];
+                                    studdedLeatherArmorLooted = boolFlags[55];
+                                    knightSuitAvailable = boolFlags[56];
+                                    mikeLoop = boolFlags[57];
+                                    janeQuestGiven = boolFlags[58];
+                                    janeQuestCompleted = boolFlags[59];
+                                    janeLoop = boolFlags[60];
+                                    freePotions = boolFlags[61];
+                                    dudeOnAPogoStickDefeated = boolFlags[62];
+                                    hidenGoseke = boolFlags[63];
+                                    secretTunnelOpened = boolFlags[64];
+                                    returnedRing = boolFlags[65];
+                                    shopClosed = boolFlags[66];
+                                    readLogbook = boolFlags[67];
+                                    tookPeteCash = boolFlags[68];
+                                    tookGusCash = boolFlags[69];
+                                    tookSaulCash = boolFlags[70];
+                                    tookHermitCash = boolFlags[71];
+                                    tookLydiaCash = boolFlags[72];
+                                    tookMikeCash = boolFlags[73];
+                                    tookJaneCash = boolFlags[74];
+                                    talkLoop = boolFlags[75];
+                                    killedJesse = boolFlags[76];
+                                    jesseDefeated = boolFlags[77];
+                                    sparedJesse = boolFlags[78];
+                                    searchedHeisenberg = boolFlags[79];
+                                    narratorDefeated = boolFlags[80];
+                                    searchedFortress = boolFlags[81];
+                                    mapTown = boolFlags[82];
+                                    mapPeace = boolFlags[83];
+                                    mapSalamanca = boolFlags[84];
+                                    mapLiquor = boolFlags[85];
+                                    mapVacuum = boolFlags[86];
+                                    mapCartel = boolFlags[87];
+                                    mapMike = boolFlags[88];
+                                    mapFight = boolFlags[89];
+                                    mapLydia = boolFlags[90];
+                                    mapSaul = boolFlags[91];
+                                    mapBowl = boolFlags[92];
+                                    mapHermit = boolFlags[93];
+                                    mapFortress = boolFlags[94];
+                                }
+                                else
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("WOAH! That's not a boolean! I certaintly just saved you from certain doom. Be more careful with what you typ!");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                break;
+                            }
+                        }
+
+                        if (action == "exit")
+                        {
+                            action = "Complete";
+                            talkLoop = false;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Wise choice. These powers are beyond those of mortal men.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
                             Console.ReadLine();
-
-                            debugMoneyInput = stringFlags[0];
-                            fightClubAction = stringFlags[1];
-                            fightClubChoice = stringFlags[2];
-                            bowlingAction = stringFlags[3];
-                            purchaseItem = stringFlags[4];
-                            sellItem = stringFlags[5];
-                            sellItem2 = stringFlags[6];
-                            usingItem = stringFlags[7];
-                            inspectingItem = stringFlags[8];
-                            salamancaAction = stringFlags[9];
-                            salamancaChoice = stringFlags[10];
-                            disappearChoice = stringFlags[11];
-                            break;
                         }
-                    }
-
-                    for (int i = 0; i < intList.Count; i++)
-                    {
-                        string inputCheck = intList[i];
-                        if (razzleDazzleRootBeer == inputCheck)
+                        else if (action != "Complete" && action != "List")
                         {
-                            action = "complete";
-                            intFlags[0] = hermitAnger;
-                            intFlags[1] = highestHermitAnger;
-                            intFlags[2] = debugMoneyOutput;
-                            intFlags[3] = inappropriateTouchingCounter;
-                            intFlags[4] = fightClubMode;
-                            intFlags[5] = bowlingSkill;
-                            intFlags[6] = lastBowlingBet;
-                            intFlags[7] = egoBowlingScore;
-                            intFlags[8] = enemyBowlingScore;
-                            intFlags[9] = bowlingPrizePackage;
-                            intFlags[10] = salamancaStolenCrystals;
-                            intFlags[11] = converseCount;
-                            intFlags[12] = gusSenseMotiveCheck;
-                            intFlags[13] = saulHermitBond;
-                            intFlags[14] = konamiProgress;
-                            intFlags[15] = stolenHeisenPotions;
-
+                            action = "Complete";
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.Write("Enter value: ");
-                            string suckBlueFrogs = Console.ReadLine();
-                            if (Int32.TryParse(suckBlueFrogs, out int newValue))
-                            {
-                                intFlags[i] = newValue;
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.WriteLine(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.WriteLine(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.WriteLine(".");
-                                Thread.Sleep(250);
-                                Console.WriteLine();
-                                Console.WriteLine($"{intList[i]} = {intFlags[i]}");
-                                Console.WriteLine();
-                                Console.WriteLine("State flag changed. May god have mercy on your soul.");
-                                Console.WriteLine();
-                                Console.WriteLine("Press ENTER not to crash the game");
-                                Console.ReadLine();
-
-                                hermitAnger = intFlags[0];
-                                highestHermitAnger = intFlags[1];
-                                debugMoneyOutput = intFlags[2];
-                                inappropriateTouchingCounter = intFlags[3];
-                                fightClubMode = intFlags[4];
-                                bowlingSkill = intFlags[5];
-                                lastBowlingBet = intFlags[6];
-                                egoBowlingScore = intFlags[7];
-                                enemyBowlingScore = intFlags[8];
-                                bowlingPrizePackage = intFlags[9];
-                                salamancaStolenCrystals = intFlags[10];
-                                converseCount = intFlags[11];
-                                gusSenseMotiveCheck = intFlags[12];
-                                saulHermitBond = intFlags[13];
-                                konamiProgress = intFlags[14];
-                                stolenHeisenPotions = intFlags[15];
-                            }
-                            else
-                            {
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("WOAH! That's not a number! I certaintly just saved you from certain doom. Be more careful with what you typ!");
-                                Console.WriteLine();
-                                Console.WriteLine("Press ENTER to continue");
-                                Console.ReadLine();
-                            }
-                            break;
+                            Console.WriteLine("Obviously something has gone awry. Oft go the plans of mice and men.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
                         }
-                    }
-
-                    for (int i = 0; i < boolList.Count; i++)
-                    {
-                        string inputCheck = boolList[i];
-                        if (razzleDazzleRootBeer == inputCheck)
-                        {
-                            action = "complete";
-                            boolFlags[0] = debugMode;
-                            boolFlags[1] = bowlAndSpoonLooted;
-                            boolFlags[2] = listenedToTownVoices;
-                            boolFlags[3] = unlockedListenTo;
-                            boolFlags[4] = hasNotEnteredTown;
-                            boolFlags[5] = hasLeftTown;
-                            boolFlags[6] = searchedTree;
-                            boolFlags[7] = galeQuestGiven;
-                            boolFlags[8] = galeQuestCompleted;
-                            boolFlags[9] = hermitVisited;
-                            boolFlags[10] = lookedMeepEyes;
-                            boolFlags[11] = searchedMeepMounds;
-                            boolFlags[12] = talkedToMeepMounds;
-                            boolFlags[13] = searchedMikeHouse;
-                            boolFlags[14] = fuckedUpWithMike;
-                            boolFlags[15] = searchedGraveyard;
-                            boolFlags[16] = salamancaGuardDefeated;
-                            boolFlags[17] = salamancaGuardSearched;
-                            boolFlags[18] = salamancaCousinDefeated;
-                            boolFlags[19] = salamancaDead;
-                            boolFlags[20] = randomEncountersOn;
-                            boolFlags[21] = lydiaQuestGiven;
-                            boolFlags[22] = lydiaQuestCompleted;
-                            boolFlags[23] = lootedCentaur;
-                            boolFlags[24] = frontEntranceWarning;
-                            boolFlags[25] = joinedFightClub;
-                            boolFlags[26] = fightClubLoop;
-                            boolFlags[27] = foughtInFightClub;
-                            boolFlags[28] = theCreeperInTheDarkDefeated;
-                            boolFlags[29] = puddleSearched;
-                            boolFlags[30] = visitedBowlingAlley;
-                            boolFlags[31] = bowlingLoop;
-                            boolFlags[32] = talkedToPriest;
-                            boolFlags[33] = noticedJane;
-                            boolFlags[34] = janesProtectionActive;
-                            boolFlags[35] = janesDoorOpened;
-                            boolFlags[36] = signedLogBook;
-                            boolFlags[37] = dryadLoop;
-                            boolFlags[38] = peteLoop;
-                            boolFlags[39] = buyLoop;
-                            boolFlags[40] = sellLoop;
-                            boolFlags[41] = inventoryLoop;
-                            boolFlags[42] = salamancaLoop;
-                            boolFlags[43] = salamancaBagLooted;
-                            boolFlags[44] = newConverseAvailable;
-                            boolFlags[45] = gusQuestGiven;
-                            boolFlags[46] = gusQuestCompleted;
-                            boolFlags[47] = gusLoop;
-                            boolFlags[48] = losPollosHermanos;
-                            boolFlags[49] = mikeQuestGiven;
-                            boolFlags[50] = mikeQuestCompleted;
-                            boolFlags[51] = peteQuestGiven;
-                            boolFlags[52] = peteQuestCompleted;
-                            boolFlags[53] = saulQuestGiven;
-                            boolFlags[54] = saulQuestCompleted;
-                            boolFlags[55] = studdedLeatherArmorLooted;
-                            boolFlags[56] = knightSuitAvailable;
-                            boolFlags[57] = mikeLoop;
-                            boolFlags[58] = janeQuestGiven;
-                            boolFlags[59] = janeQuestCompleted;
-                            boolFlags[60] = janeLoop;
-                            boolFlags[61] = freePotions;
-                            boolFlags[62] = dudeOnAPogoStickDefeated;
-                            boolFlags[63] = hidenGoseke;
-                            boolFlags[64] = secretTunnelOpened;
-                            boolFlags[65] = returnedRing;
-                            boolFlags[66] = shopClosed;
-                            boolFlags[67] = readLogbook;
-                            boolFlags[68] = tookPeteCash;
-                            boolFlags[69] = tookGusCash;
-                            boolFlags[70] = tookSaulCash;
-                            boolFlags[71] = tookHermitCash;
-                            boolFlags[72] = tookLydiaCash;
-                            boolFlags[73] = tookMikeCash;
-                            boolFlags[74] = tookJaneCash;
-                            boolFlags[75] = talkLoop;
-                            boolFlags[76] = killedJesse;
-                            boolFlags[77] = jesseDefeated;
-                            boolFlags[78] = sparedJesse;
-                            boolFlags[79] = searchedHeisenberg;
-                            boolFlags[80] = narratorDefeated;
-                            boolFlags[81] = searchedFortress;
-                            boolFlags[82] = mapTown;
-                            boolFlags[83] = mapPeace;
-                            boolFlags[84] = mapSalamanca;
-                            boolFlags[85] = mapLiquor;
-                            boolFlags[86] = mapVacuum;
-                            boolFlags[87] = mapCartel;
-                            boolFlags[88] = mapMike;
-                            boolFlags[89] = mapFight;
-                            boolFlags[90] = mapLydia;
-                            boolFlags[91] = mapSaul;
-                            boolFlags[92] = mapBowl;
-                            boolFlags[93] = mapHermit;
-                            boolFlags[94] = mapFortress;
-
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.Write("Enter value: ");
-                            string suckBlueFrogs = Console.ReadLine();
-                            if (bool.TryParse(suckBlueFrogs, out bool newValue))
-                            {
-                                boolFlags[i] = newValue;
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.WriteLine(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.WriteLine(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.WriteLine(".");
-                                Thread.Sleep(250);
-                                Console.WriteLine();
-                                Console.WriteLine($"{boolList[i]} = {boolFlags[i]}");
-                                Console.WriteLine();
-                                Console.WriteLine("State flag changed. May god have mercy on your soul.");
-                                Console.WriteLine();
-                                Console.WriteLine("Press ENTER not to crash the game");
-                                Console.ReadLine();
-
-                                debugMode = boolFlags[0];
-                                bowlAndSpoonLooted = boolFlags[1];
-                                listenedToTownVoices = boolFlags[2];
-                                unlockedListenTo = boolFlags[3];
-                                hasNotEnteredTown = boolFlags[4];
-                                hasLeftTown = boolFlags[5];
-                                searchedTree = boolFlags[6];
-                                galeQuestGiven = boolFlags[7];
-                                galeQuestCompleted = boolFlags[8];
-                                hermitVisited = boolFlags[9];
-                                lookedMeepEyes = boolFlags[10];
-                                searchedMeepMounds = boolFlags[11];
-                                talkedToMeepMounds = boolFlags[12];
-                                searchedMikeHouse = boolFlags[13];
-                                fuckedUpWithMike = boolFlags[14];
-                                searchedGraveyard = boolFlags[15];
-                                salamancaGuardDefeated = boolFlags[16];
-                                salamancaGuardSearched = boolFlags[17];
-                                salamancaCousinDefeated = boolFlags[18];
-                                salamancaDead = boolFlags[19];
-                                randomEncountersOn = boolFlags[20];
-                                lydiaQuestGiven = boolFlags[21];
-                                lydiaQuestCompleted = boolFlags[22];
-                                lootedCentaur = boolFlags[23];
-                                frontEntranceWarning = boolFlags[24];
-                                joinedFightClub = boolFlags[25];
-                                fightClubLoop = boolFlags[26];
-                                foughtInFightClub = boolFlags[27];
-                                theCreeperInTheDarkDefeated = boolFlags[28];
-                                puddleSearched = boolFlags[29];
-                                visitedBowlingAlley = boolFlags[30];
-                                bowlingLoop = boolFlags[31];
-                                talkedToPriest = boolFlags[32];
-                                noticedJane = boolFlags[33];
-                                janesProtectionActive = boolFlags[34];
-                                janesDoorOpened = boolFlags[35];
-                                signedLogBook = boolFlags[36];
-                                dryadLoop = boolFlags[37];
-                                peteLoop = boolFlags[38];
-                                buyLoop = boolFlags[39];
-                                sellLoop = boolFlags[40];
-                                inventoryLoop = boolFlags[41];
-                                salamancaLoop = boolFlags[42];
-                                salamancaBagLooted = boolFlags[43];
-                                newConverseAvailable = boolFlags[44];
-                                gusQuestGiven = boolFlags[45];
-                                gusQuestCompleted = boolFlags[46];
-                                gusLoop = boolFlags[47];
-                                losPollosHermanos = boolFlags[48];
-                                mikeQuestGiven = boolFlags[49];
-                                mikeQuestCompleted = boolFlags[50];
-                                peteQuestGiven = boolFlags[51];
-                                peteQuestCompleted = boolFlags[52];
-                                saulQuestGiven = boolFlags[53];
-                                saulQuestCompleted = boolFlags[54];
-                                studdedLeatherArmorLooted = boolFlags[55];
-                                knightSuitAvailable = boolFlags[56];
-                                mikeLoop = boolFlags[57];
-                                janeQuestGiven = boolFlags[58];
-                                janeQuestCompleted = boolFlags[59];
-                                janeLoop = boolFlags[60];
-                                freePotions = boolFlags[61];
-                                dudeOnAPogoStickDefeated = boolFlags[62];
-                                hidenGoseke = boolFlags[63];
-                                secretTunnelOpened = boolFlags[64];
-                                returnedRing = boolFlags[65];
-                                shopClosed = boolFlags[66];
-                                readLogbook = boolFlags[67];
-                                tookPeteCash = boolFlags[68];
-                                tookGusCash = boolFlags[69];
-                                tookSaulCash = boolFlags[70];
-                                tookHermitCash = boolFlags[71];
-                                tookLydiaCash = boolFlags[72];
-                                tookMikeCash = boolFlags[73];
-                                tookJaneCash = boolFlags[74];
-                                talkLoop = boolFlags[75];
-                                killedJesse = boolFlags[76];
-                                jesseDefeated = boolFlags[77];
-                                sparedJesse = boolFlags[78];
-                                searchedHeisenberg = boolFlags[79];
-                                narratorDefeated = boolFlags[80];
-                                searchedFortress = boolFlags[81];
-                                mapTown = boolFlags[82];
-                                mapPeace = boolFlags[83];
-                                mapSalamanca = boolFlags[84];
-                                mapLiquor = boolFlags[85];
-                                mapVacuum = boolFlags[86];
-                                mapCartel = boolFlags[87];
-                                mapMike = boolFlags[88];
-                                mapFight = boolFlags[89];
-                                mapLydia = boolFlags[90];
-                                mapSaul = boolFlags[91];
-                                mapBowl = boolFlags[92];
-                                mapHermit = boolFlags[93];
-                                mapFortress = boolFlags[94];
-                            }
-                            else
-                            {
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("WOAH! That's not a boolean! I certaintly just saved you from certain doom. Be more careful with what you typ!");
-                                Console.WriteLine();
-                                Console.WriteLine("Press ENTER to continue");
-                                Console.ReadLine();
-                            }
-                            break;
-                        }
-                    }
-
-                    if (action != "complete")
-                    {
-                        action = "complete";
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Obviously something has gone awry. Oft go the plans of mice and men.");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-
-
+                    }                  
                 }//stat change **changing values so can screw things up
 
-                if (action != "complete")
+                if (action != "Complete")
                 {
-                    action = "complete";
+                    action = "Complete";
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("That didn't do anything useful.");
@@ -16790,7 +17537,7 @@ namespace JessesDungeon
                 {
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("After clearing his throat, a man mummified in space blankets begin to speak.");
+                    Console.WriteLine("After clearing his throat, a man mummified in space blankets begins to speak.");
                     Console.WriteLine();
                     if (highestHermitAnger == 0)
                     {
@@ -16852,7 +17599,7 @@ namespace JessesDungeon
                     {
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.WriteLine("Skinny Pete thrusts his hands in the air. \"Yeah! None of you guys really like to trade anymore, but this guy right here even brought me Jesse's celebratory Mezcal for when we were done in here! Seem appropriate for us to pass some around now!\"");
+                        Console.WriteLine("Skinny Pete thrusts his hands in the air. \"Yeah! None of you guys really like to trade anymore, but this guy right here even brought me Jesse's celebratory Mezcal for when we were done in here! Seems appropriate for us to pass some around now!\"");
                         Console.WriteLine();
                         Console.WriteLine("He and Badger proceed to pass around some cups.");
                         Console.WriteLine();
@@ -16890,7 +17637,7 @@ namespace JessesDungeon
                 {
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("Skinny Pete raises a hand in the air. \"None of you guys really like to trade anymore, but this guy right here even brought me Jesse's celebratory Mezcal for when we were done in here! Seem appropriate for us to pass some around now!\"");
+                    Console.WriteLine("Skinny Pete raises a hand in the air. \"None of you guys really like to trade anymore, but this guy right here even brought me Jesse's celebratory Mezcal for when we were done in here! Seems appropriate for us to pass some around now!\"");
                     Console.WriteLine();
                     Console.WriteLine("He proceeds to pass around some cups.");
                     Console.WriteLine();
@@ -16935,7 +17682,7 @@ namespace JessesDungeon
                     Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("Jimmy is motionless for a moment and then rolls his eyes.");
+                    Console.WriteLine("Jimmy is motionless for a moment, and then rolls his eyes.");
                     Console.WriteLine();
                     Console.WriteLine("\"Who else owes thanks to this Stevia Retriever of the Dungeon?\"");
                     Console.WriteLine();
@@ -16968,7 +17715,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.WriteLine("The glib bowling salesman speaks next.");
                     Console.WriteLine();
-                    Console.WriteLine("\"A great man walks here. A great man who has contributed SO much money to his recreational prowess! He has procured my services through his own blood and sweat that he has bested all others in the sport of bowling!\"");
+                    Console.WriteLine("\"A great man walks here. A great man who has contributed SO much money to his recreational prowess! He has procured my services through his own blood and sweat and has bested all others in the sport of bowling!\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
@@ -17185,7 +17932,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.WriteLine("Jimmy breaks into a largely exaggerated applause.");
                     Console.WriteLine();
-                    Console.WriteLine("\"No matter if he came from the north or east, he did not disappoint in the least. Whether your problems were many or zero, he has proven to be our hero.\"");
+                    Console.WriteLine("\"No matter if he came from the north or east, he did not disappoint in the least. Returning something most precious or merely some dinero, he has proven to be our hero.\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
@@ -17232,7 +17979,7 @@ namespace JessesDungeon
 
                     if (action == "help")
                     {
-                        action = "complete";
+                        action = "Complete";
                         talkLoop = false;
                         Console.WriteLine();
                         Console.WriteLine();
@@ -17240,7 +17987,7 @@ namespace JessesDungeon
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
-                        if (disappearChoice != "jesse" && !killedJesse)
+                        if (disappearChoice == "heisenberg" && !killedJesse)
                         {
                             Console.WriteLine();
                             Console.WriteLine();
@@ -17272,7 +18019,7 @@ namespace JessesDungeon
                     }
                     else if (action == "kick")
                     {
-                        action = "complete";
+                        action = "Complete";
                         talkLoop = false;
                         Console.WriteLine();
                         Console.WriteLine();
@@ -17490,7 +18237,7 @@ namespace JessesDungeon
             {
                 if (ego.FightClubRank >= 20)
                 {
-                    badGuy = badGuy.RewriteBadGuy("Narrator", 300, 300, 5, 1.00, 10, 10, 2.50, 0, 1, greaterHealingPotion, noWeapon, noArmor, "Everyone falls silent and backs away.");
+                    badGuy = badGuy.RewriteBadGuy("Narrator", 300, 300, 5, 1.00, 10, 10, 2.50, 0, 0, greaterHealingPotion, noWeapon, noArmor, "Everyone falls silent and backs away.");
                     badGuyHandicap = ego.FightClubRank - 20;
                 }
                 else if (undroppables.Contains(dungeonKey) && ego.FightClubRank >= 18)
@@ -17576,7 +18323,7 @@ namespace JessesDungeon
                 ego.FightClubRank = ego.FightClubRank / 2;
                 if (ego.FightClubRank >= 20)
                 {
-                    badGuy = badGuy.RewriteBadGuy("Narrator", 300, 300, 5, 1.00, 10, 10, 2.50, 0, 1, greaterHealingPotion, noWeapon, noArmor, "Everyone falls silent and backs away.");
+                    badGuy = badGuy.RewriteBadGuy("Narrator", 300, 300, 5, 1.00, 10, 10, 2.50, 0, 0, greaterHealingPotion, noWeapon, noArmor, "Everyone falls silent and backs away.");
                     badGuyHandicap = ego.FightClubRank - 20;
                 }
                 else if (undroppables.Contains(dungeonKey) && ego.FightClubRank >= 18)
@@ -17607,7 +18354,7 @@ namespace JessesDungeon
                 //insert more badguys with else if
                 else if (theCreeperInTheDarkDefeated == true && ego.FightClubRank >= 1)
                 {
-                    badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, die.Next(11), 1, lightHealingPotion, pointyStick, noArmor, "From the back of the crowd emerges two creepers in the dark. They begin closing in with weapons pointed at you.");
+                    badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, die.Next(11), 0, lightHealingPotion, pointyStick, noArmor, "From the back of the crowd emerges two creepers in the dark. They begin closing in with weapons pointed at you.");
                     badGuyHandicap = ego.FightClubRank - 1;
                 }
                 else if (ego.FightClubRank == 0)
@@ -17671,11 +18418,11 @@ namespace JessesDungeon
                 }
                 else if (ego.FightClubRank == 1 && theCreeperInTheDarkDefeated == true)
                 {
-                    badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, die.Next(11), 1, lightHealingPotion, pointyStick, noArmor, "SO MANY - wait there's just one. A creeper in the Dark emerges and engages.");
+                    badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, die.Next(11), 0, lightHealingPotion, pointyStick, noArmor, "SO MANY - wait there's just one. A creeper in the Dark emerges and engages.");
                 }
                 else if (ego.FightClubRank > 1 && theCreeperInTheDarkDefeated == true)
                 {
-                    badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, die.Next(11), 1, lightHealingPotion, pointyStick, noArmor, "From somewhere - somehow - many creepers in the dark emerge. They begin closing in with weapons pointed at you. One engages, and the rest throw air punches and kicks menacingly!");
+                    badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, die.Next(11), 0, lightHealingPotion, pointyStick, noArmor, "From somewhere - somehow - many creepers in the dark emerge. They begin closing in with weapons pointed at you. One engages, and the rest throw air punches and kicks menacingly!");
                 }
                 else
                 {
@@ -17727,19 +18474,17 @@ namespace JessesDungeon
                 Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine("You won!");
-                Console.WriteLine();
-                Console.WriteLine("Press ENTER to continue");
-                Console.WriteLine();
-                Console.WriteLine();
                 if (badGuy.BlueCrystals == 1)
                 {
                     Console.WriteLine("You search the pockets... but only find a single measly blue crystal; what a way to make a living!");
                 }
-                else if (badGuy.BlueCrystals != 1)
+                else if (badGuy.BlueCrystals > 1)
                 {
-                    Console.WriteLine("You search the pockets and find " + badGuy.BlueCrystals + " blue crystals, which you take.");
+                    Console.WriteLine("Searching the grotesque carcass, you find " + badGuy.BlueCrystals + " blue crystals, which you take.");
+                }
+                else if (badGuy.BlueCrystals == 0)
+                {
+                    Console.WriteLine("Searching the grotesque carcass, you find " + badGuy.BlueCrystals + " blue crystals. Must've been the big loser at last night's poker game.");
                 }
                 ego.BlueCrystals = ego.BlueCrystals + badGuy.BlueCrystals;
                 Console.WriteLine();
@@ -17784,6 +18529,12 @@ namespace JessesDungeon
                 int randomDamage = 1;
                 TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
 
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine(badGuy.BattleIntro);
+                Console.WriteLine();
+                Console.Write("Press ENTER to continue");
+                Console.ReadLine();
                 while (battleLoop == true)
                 {
                     Console.Clear();
@@ -17919,14 +18670,15 @@ namespace JessesDungeon
                                     string bagCheck = potion.Name;
                                     if (usedItem == bagCheck)
                                     {
-                                        battleAction = "complete";
+                                        battleAction = "Complete";
+                                        inventoryLoop = false;
                                         potionBelt.Remove(potion);
                                         GetGoodGuyDrunk(ego, potion);
                                         break;
                                     }
                                 }
 
-                                if (battleAction != "complete" && battleAction != "incomplete")
+                                if (battleAction != "Complete" && battleAction != "incomplete")
                                 {
                                     battleAction = "incomplete";
                                     Console.WriteLine();
@@ -18002,7 +18754,7 @@ namespace JessesDungeon
                                         break;
                                     }
                                 }
-                                if (battleAction != "complete" && battleAction != "incomplete")
+                                if (battleAction != "Complete" && battleAction != "incomplete")
                                 {
                                     Console.WriteLine();
                                     Console.WriteLine();
@@ -18096,9 +18848,9 @@ namespace JessesDungeon
                                         break;
                                     }
                                 }
-                                if (battleAction != "complete" && battleAction != "incomplete")
+                                if (battleAction != "Complete" && battleAction != "incomplete")
                                 {
-                                    battleAction = "complete";
+                                    battleAction = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Are we reading from the same inventory sheet?");
@@ -18137,7 +18889,7 @@ namespace JessesDungeon
                     }
                     if (battleAction == "defend")
                     {
-                        battleAction = "complete";
+                        battleAction = "Complete";
                         fullDefense = true;
                         Console.WriteLine();
                         Console.WriteLine();
@@ -18149,11 +18901,11 @@ namespace JessesDungeon
                     }
                     if (battleAction == "attack" || battleAction == "fight" || battleAction == "kill")
                     {
-                        battleAction = "complete";
+                        battleAction = "Complete";
                         attackRoll = die.Next(1, 21) + ego.ToHitMod;
                         Console.WriteLine();
                         Console.WriteLine();
-                        if (ego.EquippedWeapon.Name == "Pointy Stick" || ego.EquippedWeapon.Name == "Mildew-encrusted Pocket Knife" || ego.EquippedWeapon.Name == "Knife" || ego.EquippedWeapon.Name == "Stick" || ego.EquippedWeapon.Name == "Hunting Knife") { Console.Write("You stab at " + badGuy.Name + ", "); }
+                        if (ego.EquippedWeapon.Name == "Pointy Stick" || ego.EquippedWeapon.Name == "Mildew-Encrusted Pocket Knife" || ego.EquippedWeapon.Name == "Knife" || ego.EquippedWeapon.Name == "Stick" || ego.EquippedWeapon.Name == "Hunting Knife") { Console.Write("You stab at " + badGuy.Name + ", "); }
                         else if (ego.EquippedWeapon.Name == "Gun") { Console.Write("You shoot at " + badGuy.Name + ", "); }
                         else if (ego.EquippedWeapon.Name == "Pogo Stick") { Console.Write("You jab at " + badGuy.Name + ", "); }
                         else { Console.Write("You swing at " + badGuy.Name + ", "); }
@@ -18169,7 +18921,7 @@ namespace JessesDungeon
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                         }
-                        if (attackRoll == 20)
+                        if (attackRoll >= 20)
                         {
                             if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                             rolledDamage = (int)Math.Round((ego.CritMultiplier * (die.Next(1, (ego.DamageDie + 1)) + ego.Damage)) * badGuy.CritResist);
@@ -18240,7 +18992,7 @@ namespace JessesDungeon
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
-                    if (battleAction != "complete" && battleAction != "incomplete")
+                    if (battleAction != "Complete" && battleAction != "incomplete")
                     {
                         battleAction = "incomplete";
                         Console.WriteLine();
@@ -18252,7 +19004,7 @@ namespace JessesDungeon
                     }
                     if (badGuy.Name == "Heisenberg")
                     {
-                        if (battleAction == "complete" && badGuy.CurrentHitPoints > 0)
+                        if (battleAction == "Complete" && badGuy.CurrentHitPoints > 0)
                         {
                             enemyHPPercent = ((double)badGuy.CurrentHitPoints / (double)badGuy.MaxHitPoints);
 
@@ -18273,7 +19025,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Heisenberg, screaming in frustration, throws a pizza onto a canopied work station! The pizza begins to bake under an intense lamp, and the cheese becomes scalding hot. The oils become turbulent, causing it to slide down and off the canopy!");
-                                    Thread.Sleep(4000);
+                                    Thread.Sleep(7000);
                                     Console.WriteLine();
                                     Console.Write("It falls straight at your face, ");
                                 }
@@ -18292,8 +19044,8 @@ namespace JessesDungeon
                                     randomDamage = die.Next(15, 26);
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine("Heisenberg offers you a bath! In need of relaxation, you get in. Suddenly, Heisenberg is standing over you with flesh-disintegrating chemicals!");
-                                    Thread.Sleep(3000);
+                                    Console.WriteLine("Heisenberg offers you a bath! In need of relaxation, you get in. Suddenly, Heisenberg is standing over you with flesh-dissolving chemicals!");
+                                    Thread.Sleep(5000);
                                     Console.WriteLine();
                                     Console.Write("He pours the chemicals, ");
                                 }
@@ -18303,7 +19055,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Heisenberg tells you he poisoned someone near and dear to your heart. While this causes no direct damage, the mental distress manifests as physical harm!");
-                                    Thread.Sleep(3000);
+                                    Thread.Sleep(5000);
                                     Console.WriteLine();
                                     Console.Write("Heisenberg's evil intent reaches out with its icy hand, ");
                                 }
@@ -18358,7 +19110,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Heisenberg presses the button on a remote! Gesturing your attention, he points to the trunk of a car which pops open with a machine gun emerging.");
-                                Thread.Sleep(4000);
+                                Thread.Sleep(5000);
                                 Console.WriteLine();
                                 Console.WriteLine("The gun fires!");
                                 Thread.Sleep(1500);
@@ -18393,7 +19145,7 @@ namespace JessesDungeon
                     }
                     else
                     {
-                        if (battleAction == "complete" && badGuy.CurrentHitPoints > 0)
+                        if (battleAction == "Complete" && badGuy.CurrentHitPoints > 0)
                         {
                             enemyHPPercent = ((double)badGuy.CurrentHitPoints / (double)badGuy.MaxHitPoints);
                             if (enemyHPPercent > 0.25)
@@ -18450,6 +19202,11 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 if (badGuy.Name == "Dude on a Pogo Stick") { Console.Write($"{badGuy.Name} charges forward!"); }
                                 else if (badGuy.Name == "Jesse") { Console.Write($"{badGuy.Name} pulls out a gun and fires!"); }
+                                else if (badGuy.Name == "Narrator")
+                                {
+                                    Console.Write($"{badGuy.Name} puts on some hip furs and radical shades! In sheer awe, you drop your guard; {badGuy.Name} takes advantage and round-houses you in the face!");
+                                    attackRoll = 100;
+                                }
                                 else { Console.Write(badGuy.Name + " attacks you, "); }
                                 Thread.Sleep(1500);
                                 if (attackRoll >= ego.ArmorClass && attackRoll < 20)
@@ -18478,13 +19235,20 @@ namespace JessesDungeon
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
                                 }
-                                if (attackRoll == 20)
+                                if (attackRoll >= 20)
                                 {
                                     if (badGuy.Name == "Dude on a Pogo Stick")
                                     {
                                         rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
                                         if (rolledDamage < 0) { rolledDamage = 0; }
                                         Console.Write(" And critically hits for " + rolledDamage + " damage!");
+                                    }
+                                    else if (badGuy.Name == "Narrator")
+                                    {
+                                        rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
+                                        if (rolledDamage < 0) { rolledDamage = 0; }
+                                        Console.WriteLine();
+                                        Console.Write("And critically hits for " + rolledDamage + " damage!");
                                     }
                                     else
                                     {
@@ -18500,7 +19264,8 @@ namespace JessesDungeon
                                 }
                                 else if (attackRoll < ego.ArmorClass)
                                 {
-                                    Console.Write("but misses!");
+                                    if (badGuy.Name == "Dude on a Pogo Stick" || badGuy.Name == "Jesse") { Console.Write(" But misses!"); }
+                                    else { Console.Write("but misses!"); }
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
@@ -18524,9 +19289,6 @@ namespace JessesDungeon
                         Console.WriteLine();
                         Console.WriteLine("You won!");
                         Thread.Sleep(2000);
-                        Console.WriteLine();
-                        Console.WriteLine("Press ENTER to continue");
-                        Console.ReadLine();
                     }
                     if ((double)badGuy.CurrentHitPoints <= 0 && numberOfBaddies > 1)
                     {
@@ -18663,6 +19425,7 @@ namespace JessesDungeon
                 Console.Write("> ");
                 encounterAction = Console.ReadLine();
                 encounterAction = encounterAction.ToLower();
+                encounterAction = encounterAction.Trim();
 
                 while (encounterLoop == true)
                 {
@@ -18698,19 +19461,17 @@ namespace JessesDungeon
                         Console.Clear();
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("You won!");
-                        Console.WriteLine();
-                        Console.WriteLine("Press ENTER to continue");
-                        Console.WriteLine();
-                        Console.WriteLine();
                         if (badGuy.BlueCrystals == 1)
                         {
                             Console.WriteLine("Searching the grotesque carcass, you find a single measly blue crystal; what a way to make a living!");
                         }
-                        else if (badGuy.BlueCrystals != 1)
+                        else if (badGuy.BlueCrystals > 1)
                         {
                             Console.WriteLine("Searching the grotesque carcass, you find " + badGuy.BlueCrystals + " blue crystals, which you take.");
+                        }
+                        else if (badGuy.BlueCrystals == 0)
+                        {
+                            Console.WriteLine("Searching the grotesque carcass, you find " + badGuy.BlueCrystals + " blue crystals. Must've been the big loser at last night's poker game.");
                         }
                         ego.BlueCrystals = ego.BlueCrystals + badGuy.BlueCrystals;
                         Console.WriteLine();
@@ -18836,8 +19597,11 @@ namespace JessesDungeon
                         Console.WriteLine();
                         Console.WriteLine("Not really. No hidden parser secret or joke here. Just pick one.");
                         Console.WriteLine();
+                        Console.Write("> ");
                         encounterAction = Console.ReadLine();
                         encounterAction = encounterAction.ToLower();
+                        encounterAction = encounterAction.Trim();
+                        Console.WriteLine();
                     }
                 }
 
@@ -18994,14 +19758,15 @@ namespace JessesDungeon
                                     string bagCheck = potion.Name;
                                     if (usedItem == bagCheck)
                                     {
-                                        battleAction = "complete";
+                                        battleAction = "Complete";
+                                        inventoryLoop = false;
                                         potionBelt.Remove(potion);
                                         GetGoodGuyDrunk(ego, potion);
                                         break;
                                     }
                                 }
 
-                                if (battleAction != "complete" && battleAction != "incomplete")
+                                if (battleAction != "Complete" && battleAction != "incomplete")
                                 {
                                     battleAction = "incomplete";
                                     Console.WriteLine();
@@ -19077,7 +19842,7 @@ namespace JessesDungeon
                                         break;
                                     }
                                 }
-                                if (battleAction != "complete" && battleAction != "incomplete")
+                                if (battleAction != "Complete" && battleAction != "incomplete")
                                 {
                                     Console.WriteLine();
                                     Console.WriteLine();
@@ -19171,9 +19936,9 @@ namespace JessesDungeon
                                         break;
                                     }
                                 }
-                                if (battleAction != "complete" && battleAction != "incomplete")
+                                if (battleAction != "Complete" && battleAction != "incomplete")
                                 {
-                                    battleAction = "complete";
+                                    battleAction = "Complete";
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Are we reading from the same inventory sheet?");
@@ -19212,7 +19977,7 @@ namespace JessesDungeon
                     }
                     if (battleAction == "defend")
                     {
-                        battleAction = "complete";
+                        battleAction = "Complete";
                         fullDefense = true;
                         Console.WriteLine();
                         Console.WriteLine();
@@ -19224,11 +19989,11 @@ namespace JessesDungeon
                     }
                     if (battleAction == "attack" || battleAction == "fight" || battleAction == "kill")
                     {
-                        battleAction = "complete";
+                        battleAction = "Complete";
                         attackRoll = d20.Next(1, 21);
                         Console.WriteLine();
                         Console.WriteLine();
-                        if (ego.EquippedWeapon.Name == "Pointy Stick" || ego.EquippedWeapon.Name == "Mildew-encrusted Pocket Knife" || ego.EquippedWeapon.Name == "Knife" || ego.EquippedWeapon.Name == "Stick" || ego.EquippedWeapon.Name == "Hunting Knife") { Console.Write("You stab at " + badGuy.Name + ", "); }
+                        if (ego.EquippedWeapon.Name == "Pointy Stick" || ego.EquippedWeapon.Name == "Mildew-Encrusted Pocket Knife" || ego.EquippedWeapon.Name == "Knife" || ego.EquippedWeapon.Name == "Stick" || ego.EquippedWeapon.Name == "Hunting Knife") { Console.Write("You stab at " + badGuy.Name + ", "); }
                         else if (ego.EquippedWeapon.Name == "Gun") { Console.Write("You shoot at " + badGuy.Name + ", "); }
                         else if (ego.EquippedWeapon.Name == "Pogo Stick") { Console.Write("You jab at " + badGuy.Name + ", "); }
                         else { Console.Write("You swing at " + badGuy.Name + ", "); }
@@ -19244,7 +20009,7 @@ namespace JessesDungeon
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                         }
-                        if (attackRoll == 20)
+                        if (attackRoll >= 20)
                         {
                             if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                             rolledDamage = (int)Math.Round((ego.CritMultiplier * (d6.Next(1, (ego.DamageDie + 1)) + ego.Damage)) * badGuy.CritResist);
@@ -19349,7 +20114,7 @@ namespace JessesDungeon
                             Console.ReadLine();
                         }
                     }
-                    if (battleAction != "complete" && battleAction != "incomplete")
+                    if (battleAction != "Complete" && battleAction != "incomplete")
                     {
                         battleAction = "incomplete";
                         Console.WriteLine();
@@ -19359,7 +20124,7 @@ namespace JessesDungeon
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
-                    if (battleAction == "complete" && badGuy.CurrentHitPoints > 0)
+                    if (battleAction == "Complete" && badGuy.CurrentHitPoints > 0)
                     {
                         enemyHPPercent = ((double)badGuy.CurrentHitPoints / (double)badGuy.MaxHitPoints);
                         if ( enemyHPPercent > 0.25)
@@ -19459,9 +20224,6 @@ namespace JessesDungeon
                         Console.WriteLine();
                         Console.WriteLine("You won!");
                         Thread.Sleep(2000);
-                        Console.WriteLine();
-                        Console.WriteLine("Press ENTER to continue");
-                        Console.ReadLine();
                     }
                     if ((double)ego.CurrentHitPoints <= 0)
                     {
@@ -19688,14 +20450,15 @@ namespace JessesDungeon
                                 string bagCheck = potion.Name;
                                 if (usedItem == bagCheck)
                                 {
-                                    battleAction = "complete";
+                                    battleAction = "Complete";
+                                    inventoryLoop = false;
                                     potionBelt.Remove(potion);
                                     GetGoodGuyDrunk(ego, potion);
                                     break;
                                 }
                             }
 
-                            if (battleAction != "complete" && battleAction != "incomplete")
+                            if (battleAction != "Complete" && battleAction != "incomplete")
                             {
                                 battleAction = "incomplete";
                                 Console.WriteLine();
@@ -19771,7 +20534,7 @@ namespace JessesDungeon
                                     break;
                                 }
                             }
-                            if (battleAction != "complete" && battleAction != "incomplete")
+                            if (battleAction != "Complete" && battleAction != "incomplete")
                             {
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -19865,9 +20628,9 @@ namespace JessesDungeon
                                     break;
                                 }
                             }
-                            if (battleAction != "complete" && battleAction != "incomplete")
+                            if (battleAction != "Complete" && battleAction != "incomplete")
                             {
-                                battleAction = "complete";
+                                battleAction = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Are we reading from the same inventory sheet?");
@@ -19906,7 +20669,7 @@ namespace JessesDungeon
                 }
                 if (battleAction == "defend")
                 {
-                    battleAction = "complete";
+                    battleAction = "Complete";
                     fullDefense = true;
                     Console.WriteLine();
                     Console.WriteLine();
@@ -19918,11 +20681,11 @@ namespace JessesDungeon
                 }
                 if (battleAction == "attack" || battleAction == "fight" || battleAction == "kill")
                 {
-                    battleAction = "complete";
+                    battleAction = "Complete";
                     attackRoll = die.Next(1, 21) + ego.ToHitMod;
                     Console.WriteLine();
                     Console.WriteLine();
-                    if (ego.EquippedWeapon.Name == "Pointy Stick" || ego.EquippedWeapon.Name == "Mildew-encrusted Pocket Knife" || ego.EquippedWeapon.Name == "Knife" || ego.EquippedWeapon.Name == "Stick" || ego.EquippedWeapon.Name == "Hunting Knife") { Console.Write("You stab at " + badGuy.Name + ", "); }
+                    if (ego.EquippedWeapon.Name == "Pointy Stick" || ego.EquippedWeapon.Name == "Mildew-Encrusted Pocket Knife" || ego.EquippedWeapon.Name == "Knife" || ego.EquippedWeapon.Name == "Stick" || ego.EquippedWeapon.Name == "Hunting Knife") { Console.Write("You stab at " + badGuy.Name + ", "); }
                     else if (ego.EquippedWeapon.Name == "Gun") { Console.Write("You shoot at " + badGuy.Name + ", "); }
                     else if (ego.EquippedWeapon.Name == "Pogo Stick") { Console.Write("You jab at " + badGuy.Name + ", "); }
                     else { Console.Write("You swing at " + badGuy.Name + ", "); }
@@ -19938,7 +20701,7 @@ namespace JessesDungeon
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
-                    if (attackRoll == 20)
+                    if (attackRoll >= 20)
                     {
                         if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                         rolledDamage = (int)Math.Round((ego.CritMultiplier * (die.Next(1, (ego.DamageDie + 1)) + ego.Damage)) * badGuy.CritResist);
@@ -20043,7 +20806,7 @@ namespace JessesDungeon
                         Console.ReadLine();
                     }
                 }
-                if (battleAction != "complete" && battleAction != "incomplete")
+                if (battleAction != "Complete" && battleAction != "incomplete")
                 {
                     battleAction = "incomplete";
                     Console.WriteLine();
@@ -20053,7 +20816,7 @@ namespace JessesDungeon
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                 }
-                if (battleAction == "complete" && badGuy.CurrentHitPoints > 0)
+                if (battleAction == "Complete" && badGuy.CurrentHitPoints > 0)
                 {
                     enemyHPPercent = ((double)badGuy.CurrentHitPoints / (double)badGuy.MaxHitPoints);
                     if (enemyHPPercent > 0.25)
@@ -20193,9 +20956,6 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.WriteLine("You won!");
                     Thread.Sleep(2000);
-                    Console.WriteLine();
-                    Console.WriteLine("Press ENTER to continue");
-                    Console.ReadLine();
                 }
                 if ((double)ego.CurrentHitPoints <= 0)
                 {
@@ -20424,14 +21184,15 @@ namespace JessesDungeon
                                 string bagCheck = potion.Name;
                                 if (usedItem == bagCheck)
                                 {
-                                    battleAction = "complete";
+                                    battleAction = "Complete";
+                                    inventoryLoop = false;
                                     potionBelt.Remove(potion);
                                     GetGoodGuyDrunk(ego, potion);
                                     break;
                                 }
                             }
 
-                            if (battleAction != "complete" && battleAction != "incomplete")
+                            if (battleAction != "Complete" && battleAction != "incomplete")
                             {
                                 battleAction = "incomplete";
                                 Console.WriteLine();
@@ -20507,7 +21268,7 @@ namespace JessesDungeon
                                     break;
                                 }
                             }
-                            if (battleAction != "complete" && battleAction != "incomplete")
+                            if (battleAction != "Complete" && battleAction != "incomplete")
                             {
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -20601,9 +21362,9 @@ namespace JessesDungeon
                                     break;
                                 }
                             }
-                            if (battleAction != "complete" && battleAction != "incomplete")
+                            if (battleAction != "Complete" && battleAction != "incomplete")
                             {
-                                battleAction = "complete";
+                                battleAction = "Complete";
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Are we reading from the same inventory sheet?");
@@ -20642,7 +21403,7 @@ namespace JessesDungeon
                 }
                 if (battleAction == "defend")
                 {
-                    battleAction = "complete";
+                    battleAction = "Complete";
                     fullDefense = true;
                     Console.WriteLine();
                     Console.WriteLine();
@@ -20654,11 +21415,11 @@ namespace JessesDungeon
                 }
                 if (battleAction == "attack")
                 {
-                    battleAction = "complete";
+                    battleAction = "Complete";
                     attackRoll = die.Next(1, 21) + ego.ToHitMod;
                     Console.WriteLine();
                     Console.WriteLine();
-                    if (ego.EquippedWeapon.Name == "Pointy Stick" || ego.EquippedWeapon.Name == "Mildew-encrusted Pocket Knife" || ego.EquippedWeapon.Name == "Knife" || ego.EquippedWeapon.Name == "Stick" || ego.EquippedWeapon.Name == "Hunting Knife") { Console.Write("You stab at " + badGuy.Name + ", "); }
+                    if (ego.EquippedWeapon.Name == "Pointy Stick" || ego.EquippedWeapon.Name == "Mildew-Encrusted Pocket Knife" || ego.EquippedWeapon.Name == "Knife" || ego.EquippedWeapon.Name == "Stick" || ego.EquippedWeapon.Name == "Hunting Knife") { Console.Write("You stab at " + badGuy.Name + ", "); }
                     else if (ego.EquippedWeapon.Name == "Gun") { Console.Write("You shoot at " + badGuy.Name + ", "); }
                     else if (ego.EquippedWeapon.Name == "Pogo Stick") { Console.Write("You jab at " + badGuy.Name + ", "); }
                     else { Console.Write("You swing at " + badGuy.Name + ", "); }
@@ -20779,7 +21540,7 @@ namespace JessesDungeon
                         Console.ReadLine();
                     }
                 }
-                if (battleAction != "complete" && battleAction != "incomplete")
+                if (battleAction != "Complete" && battleAction != "incomplete")
                 {
                     battleAction = "incomplete";
                     Console.WriteLine();
@@ -20789,7 +21550,7 @@ namespace JessesDungeon
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                 }
-                if (battleAction == "complete" && badGuy.CurrentHitPoints > 0)
+                if (battleAction == "Complete" && badGuy.CurrentHitPoints > 0)
                 {
                     enemyHPPercent = ((double)badGuy.CurrentHitPoints / (double)badGuy.MaxHitPoints);
 
@@ -20810,7 +21571,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Heisenberg, screaming in frustration, throws a pizza onto a canopied work station! The pizza begins to bake under an intense lamp, and the cheese becomes scalding hot. The oils become turbulent, causing it to slide down and off the canopy!");
-                            Thread.Sleep(4000);
+                            Thread.Sleep(7000);
                             Console.WriteLine();
                             Console.Write("It falls straight at your face, ");
                         }
@@ -20829,8 +21590,8 @@ namespace JessesDungeon
                             randomDamage = die.Next(15, 26);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("Heisenberg offers you a bath! In need of relaxation, you get in. Suddenly, Heisenberg is standing over you with flesh-disintegrating chemicals!");
-                            Thread.Sleep(3000);
+                            Console.WriteLine("Heisenberg offers you a bath! In need of relaxation, you get in. Suddenly, Heisenberg is standing over you with flesh-dissolving chemicals!");
+                            Thread.Sleep(5000);
                             Console.WriteLine();
                             Console.Write("He pours the chemicals, ");
                         }
@@ -20840,7 +21601,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Heisenberg tells you he poisoned someone near and dear to your heart. While this causes no direct damage, the mental distress manifests as physical harm!");
-                            Thread.Sleep(3000);
+                            Thread.Sleep(5000);
                             Console.WriteLine();
                             Console.Write("Heisenberg's evil intent reaches out with its icy hand, ");
                         }
@@ -20895,7 +21656,7 @@ namespace JessesDungeon
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("Heisenberg presses the button on a remote! Gesturing your attention, he points to the trunk of a car which pops open with a machine gun emerging.");
-                        Thread.Sleep(4000);
+                        Thread.Sleep(5000);
                         Console.WriteLine();
                         Console.WriteLine("The gun fires!");
                         Thread.Sleep(1500);
@@ -20942,9 +21703,6 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.WriteLine("You won!");
                     Thread.Sleep(2000);
-                    Console.WriteLine();
-                    Console.WriteLine("Press ENTER to continue");
-                    Console.ReadLine();
                 }
                 if ((double)ego.CurrentHitPoints <= 0)
                 {
@@ -21043,19 +21801,17 @@ namespace JessesDungeon
                 Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine("You won!");
-                Console.WriteLine();
-                Console.WriteLine("Press ENTER to continue");
-                Console.WriteLine();
-                Console.WriteLine();
                 if (badGuy.BlueCrystals == 1)
                 {
                     Console.WriteLine("Searching the grotesque carcass, you find a single measly blue crystal; what a way to make a living!");
                 }
-                else if (badGuy.BlueCrystals != 1)
+                else if (badGuy.BlueCrystals > 1)
                 {
                     Console.WriteLine("Searching the grotesque carcass, you find " + badGuy.BlueCrystals + " blue crystals, which you take.");
+                }
+                else if (badGuy.BlueCrystals == 0)
+                {
+                    Console.WriteLine("Searching the grotesque carcass, you find " + badGuy.BlueCrystals + " blue crystals. Must've been the big loser at last night's poker game.");
                 }
                 ego.BlueCrystals = ego.BlueCrystals + badGuy.BlueCrystals;
                 Console.WriteLine();
@@ -21110,7 +21866,6 @@ namespace JessesDungeon
             equippableWeapon.Add(Unarmed);
             GetStripped(ego, Rags, Unarmed, nullShield);
             ego.CurrentHitPoints = ego.MaxHitPoints;
-            Thread.Sleep(1000);
             Console.WriteLine("You awaken on something hard. Not cold, though, as you'd expect from the dungeon floor.");
             Console.WriteLine();
             Console.Write("Press ENTER to continue");
