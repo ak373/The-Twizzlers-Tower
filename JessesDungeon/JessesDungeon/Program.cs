@@ -359,11 +359,6 @@ namespace JessesDungeon
                         break;
 
                     case "I7":
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[12, 16] = "[x]";
                         discoveredMap[12, 15] = "-";
@@ -417,6 +412,7 @@ namespace JessesDungeon
                             if (action == "look at dinner tray" || action == "search dinner tray")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("No! No dinner tray! Focus!");
@@ -479,6 +475,7 @@ namespace JessesDungeon
                                 if (bowlAndSpoonLooted == false)
                                 {
                                     action = "Complete";
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("You see a large bowl with a spoon resting inside. On closer inspection... my goodness - this thing is so old the wooden spoon is rusty!");
@@ -489,6 +486,7 @@ namespace JessesDungeon
                                 else
                                 {
                                     action = "Complete";
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("For better or worse, the tray is empty.");
@@ -504,6 +502,7 @@ namespace JessesDungeon
                                 if (bowlAndSpoonLooted == false)
                                 {
                                     talkLoop = true;
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Well, let's see here... there's the bowl. And the spoon which - presumably - was used to eat with.");
@@ -512,6 +511,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     while (talkLoop == true)
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Wait.");
@@ -610,11 +610,6 @@ namespace JessesDungeon
                         break;
 
                     case "H7":
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[12, 14] = "[x]";
                         discoveredMap[12, 13] = "-";
@@ -699,6 +694,7 @@ namespace JessesDungeon
                         if (action == "look at tracks")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("While going in and out of all four paths, there are far more foot falls leading westward than any other direction.");
@@ -710,18 +706,21 @@ namespace JessesDungeon
                         if (action == "search tracks")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You get down on all fours, and press your cheek against the floor to get the best view of the tracks that you can from the side. Crawling along the floor and swapping floor-cheeks as necessary, you determine that the tracks are certainly tracks made in dust.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("After returning to status erectus, you realize you're now wearing the tracks, erasing anything they may have told you. I certainly hope you \"looked at\" them first!");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Totally messing with you. You're dusty but they're still there. It's cool.");
@@ -734,11 +733,6 @@ namespace JessesDungeon
                         break;
 
                     case "G7":
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[12, 12] = "[x]";
                         discoveredMap[12, 11] = "-";
@@ -824,6 +818,7 @@ namespace JessesDungeon
                         if (action == "look at tracks")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("While going in and out of all four paths, there are far more foot falls leading westward than any other direction.");
@@ -835,12 +830,14 @@ namespace JessesDungeon
                         if (action == "search tracks")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You get down on all fours, and press your cheek against the floor to get the best view of the tracks that you can from the side. Crawling along the floor and swapping floor-cheeks as necessary, you determine that the tracks are certainly tracks made in dust.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("...That's how Aragorn does it isn't it?");
@@ -852,6 +849,7 @@ namespace JessesDungeon
                         if (action == "look at voices" || action == "search voices")
                         {
                             listenedToTownVoices = true;
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             if (action == "look at voices")
@@ -864,6 +862,7 @@ namespace JessesDungeon
                             }
                                 action = "Complete";
                             Thread.Sleep(2500);
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Oh this is on me, isn't it? No \"listen to\" command?... Well we don't have the budget to provide you with EVERY command prompt.");
@@ -876,6 +875,7 @@ namespace JessesDungeon
                         if (action == "listen to tracks" && unlockedListenTo == true)
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Smartass.");
@@ -887,6 +887,7 @@ namespace JessesDungeon
                         if (action == "listen to voices" && unlockedListenTo == true)
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Sidling up against the closest wall and holding your breath, you can make out the conversation.");
@@ -905,12 +906,12 @@ namespace JessesDungeon
                                 Thread.Sleep(2000);
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"Q! What the devil are you doing here?!\"");
-                                Thread.Sleep(3500);
+                                Console.WriteLine("\"Q!\"");
+                                Thread.Sleep(2000);
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"...THE DOCTOR!\"");
-                                Thread.Sleep(2500);
+                                Thread.Sleep(2000);
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Janeway.\"");
@@ -939,38 +940,47 @@ namespace JessesDungeon
                                 newConverseAvailable = false;
                                 Console.WriteLine("\"...There's no way that's true, man.\"");
                                 Thread.Sleep(4000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"It totally is, bro, I'm tellin' you! You pay him and just 'vwip!' he'll get you outta here! Anywhere you wanna go and any kind of life you want!\"");
                                 Thread.Sleep(10000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Oh yeah? Then why hasn't everyone done it? Why haven't you?\"");
                                 Thread.Sleep(5000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Bro, you're not getting me. When I say 'a lot,' I mean *a lot.*\"");
                                 Thread.Sleep(7000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"What kind of business plan is that, then?\"");
                                 Thread.Sleep(4000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"I don't know, man. I think it's what he used to charge and he just keeps the same price out of principle or whatever.\"");
                                 Thread.Sleep(10000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"So, what, do you just drag a huge bag of cash up there and say 'here you go' or something?\"");
                                 Thread.Sleep(5000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Nah, dude, it's like some super spy stuff with like a secret passcode. It's weird, but you say, 'I need a new dust filter for my Hoover Maxextract Pressurepro Model 60 - can you help me with that?'\"");
                                 Thread.Sleep(13000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Woah. Feel like I'd need to write that down. What was it again?\"");
                                 Thread.Sleep(5000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"'I need a new dust filter for my Hoover Maxextract Pressurepro Model 60 - can you help me with that?'\"");
@@ -978,14 +988,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"So, like, do you think anyone will ever do it?\"");
                                 Thread.Sleep(4000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"If there's even enough money down here at all, you'd have to pool everyone's stash together just to get one guy out. And I really don't think anyone's gonna go for that.\"");
                                 Thread.Sleep(11000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"They'll probably need your whole sack of goodies, too!\"");
@@ -1002,10 +1015,12 @@ namespace JessesDungeon
                                 newConverseAvailable = false;
                                 Console.WriteLine("\"It had time travel! It had borg! It had pew pew bang and a happy ending! I liked it!\"");
                                 Thread.Sleep(4000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Bro, I'm just gonna slap those each out of the air in turn.\"");
                                 Thread.Sleep(4000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"There are no constraints on the time travel, so that whole thing is just a disaster. It doesn't even matter if I could (and I could) say 'she should've done this or that.' Omnipotence and omnipresence simply cheapen the struggle.\"");
@@ -1016,10 +1031,12 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("\"And your 'pew pew bang happy ending,' bro? The whole thing was about deciding between an act of self-interest and an ethical act of self-sacrifice -- mirroring the series premiere, mind you. But - unlike the premiere - Janeway just has her cake and eats it too, which is a poor ending to any story.\"");
                                 Thread.Sleep(35000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"... And 'Endgame' is the most rewatched episode of the series on Netflix.\"");
                                 Thread.Sleep(6000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Yeah and they'll probably release some  Netflix-original movie as an extension just to please fans, too. In what world would something like that be any good?\"");
@@ -1036,26 +1053,32 @@ namespace JessesDungeon
                                 newConverseAvailable = false;
                                 Console.WriteLine("\"It was just ahead of its time, bro.\"");
                                 Thread.Sleep(4000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Did you even watch the original series? Yes, it was certainly ahead of its time -- but it also got pretty 'out there.'\"");
                                 Thread.Sleep(8000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"What do you mean?\"");
                                 Thread.Sleep(3000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"It got extremely heavy-handed and preachy, and just straight up bizarre sometimes. The show became like a sketch show, with the crew ending up on some world coincidentally identical to some previous period in Human history. Even Abraham Lincoln showed up!\"");
                                 Thread.Sleep(14000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Oh, come on, bro, all the 'Star Trek' shows just threw the crew into different scenarios like that.\"");
                                 Thread.Sleep(8000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"There's a fine line between 'themes' in future series and 'reality' in the original. Roddenberry was a visionary and the original series was groundbreaking, but the show was a mess.\"");
+                                Console.WriteLine("\"There's a fine line between 'themes' in the later series and 'reality' in the original. Roddenberry was a visionary and the original series was groundbreaking, but the show was a mess.\"");
                                 Thread.Sleep(14000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Yeah you're right! 'Star Trek' and 'The Visionaries' were both unjustly canceled!\"");
@@ -1072,26 +1095,32 @@ namespace JessesDungeon
                                 newConverseAvailable = false;
                                 Console.WriteLine("\"There's nothing that can get in the way of love, bro.\"");
                                 Thread.Sleep(4000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"It's even visited several times throughout the series; the very point of their relationship is that they can never be.\"");
                                 Thread.Sleep(8000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"But they did end up togeth --\"");
-                                Thread.Sleep(3000);
+                                Thread.Sleep(2500);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Bro, don't even get me started on the movies again. They were trash and that was just pandering to audiences so to fill their pockets on a lackluster movie.\"");
                                 Thread.Sleep(10000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Oh, come on, bro, everyone deserves a happy ending.\"");
                                 Thread.Sleep(5000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Riker chose his career over love. His ambition flourished but at the cost of his personal life. There's even tangential themes of him 'ending up like Picard' but - not only accepting it - relishing it.\"");
                                 Thread.Sleep(14000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"I've got faith... Faith of the heart...\"");
@@ -1106,32 +1135,38 @@ namespace JessesDungeon
                             {
                                 converseCount = 3;
                                 newConverseAvailable = false;
-                                Console.WriteLine("\"Bro it got a 93% Rotten Tomatoes score and a 89% audience approval score.\"");
-                                Thread.Sleep(5000);
+                                Console.WriteLine("\"Bro, it got a 93% Rotten Tomatoes score and a 89% audience approval score.\"");
+                                Thread.Sleep(6000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"Dude should I even list movies that were terrible but also 'scored' well with critics and audiences? Not to mention the corruption rumors behind the ratings on Star Wars IX.\"");
-                                Thread.Sleep(8000);
+                                Console.WriteLine("\"Dude, should I even list movies that were terrible but also 'scored' well with critics and audiences? Not to mention the corruption rumors behind the ratings on Star Wars IX.\"");
+                                Thread.Sleep(10000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"But what makes you think you'd be right in the face of so much differing opinion?\"");
-                                Thread.Sleep(6000);
+                                Thread.Sleep(8000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"The script was contrived and heavy-handed. The love story was shoe-horned near the end from non-existence. And don't even get me started on Data.\"");
-                                Thread.Sleep(10000);
+                                Thread.Sleep(9000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"...Let's not say things we can't take back, bro.\"");
-                                Thread.Sleep(6000);
+                                Thread.Sleep(5000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"OK, you're right on that. But come on -- that whole thing about firing the torpedos at the Phoenix and everyone just stands there until they miss? Data obviously misses on purpose, and as he doesn't capitalize on his decoy it only serves as fabricated drama for a lacking movie.\"");
                                 Thread.Sleep(15000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"DATA CAN DO NO WRONG!!\"");
-                                Thread.Sleep(3000);
+                                Thread.Sleep(2500);
                                 Console.Clear();
                                 Console.WriteLine("The remainder of this conversation takes a dark turn.");
                                 Console.WriteLine();
@@ -1144,22 +1179,27 @@ namespace JessesDungeon
                                 newConverseAvailable = false;
                                 Console.WriteLine("\"No way, man. How could she be better? She's not even likeable on her own.\"");
                                 Thread.Sleep(5000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Hey, man. She's strong, she's independent, and she lets everyone know it. At least she's not Picard's coddled little pet.\"");
                                 Thread.Sleep(8000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"Love isn't a weakness. Their relationship is understated and it doesn't take away from Crusher's strength as a woman. Pulaski is just mean - do you remember when she just kept telling Data he's just a machine and his dreams and aspirations of being human is impossible? Bitch is just nasty.\"");
-                                Thread.Sleep(10000);
+                                Console.WriteLine("\"Love isn't a weakness. Their relationship is understated and it doesn't take away from Crusher's strength as a woman. Pulaski is just mean -- do you remember when she just kept telling Data he's just a machine and his dreams and aspirations of being human are impossible? Bitch is just nasty.\"");
+                                Thread.Sleep(12000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"That's how it is with a confident, independent person. It's how anyone like her would really act, and she has many otherwise redeeming qualities related to that behavior.\"");
                                 Thread.Sleep(10000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Sure -- but this isn't reality. TV is a form of art, and as such is a representation of reality - NOT reality itself. Art is lies that tells the truth.\"");
                                 Thread.Sleep(10000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"TV is art? Next you're going to tell me those scribbles Picasso makes are art, too.\"");
@@ -1176,21 +1216,25 @@ namespace JessesDungeon
                                 newConverseAvailable = false;
                                 Console.WriteLine("\"No, man! No one will ever - CAN ever - be better than the original!\"");
                                 Thread.Sleep(5000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Listen, bro. Life is change. Records are made to be broken. Adapt or die. New things will always come along and it is their very purpose to best what came before.\"");
                                 Thread.Sleep(8000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Yeah but that don't mean that just because a newer one is good that it's better. Think about the time period Spock existed in and the fact that he had no original material to work off of.\"");
                                 Thread.Sleep(10000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Yeah but do those handicaps change the score? It's maybe \'unfair\' that Tim Russ didn't have to reinvent the wheel and could build on Nimoy's work, but that's how it goes. As Newton said: we stand on the shoulders of giants, bro.\"");
                                 Thread.Sleep(10000);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"Oh, dude, Mighty Ducks 3? I loved that movie too.\"");
+                                Console.WriteLine("\"Oh, dude, Mighty Ducks 3? I love that movie too.\"");
                                 Thread.Sleep(4000);
                                 Console.Clear();
                                 Console.WriteLine("The remainder of this conversation takes a dark turn.");
@@ -1204,9 +1248,10 @@ namespace JessesDungeon
                         {
                             action = "Complete";
                             unlockedListenTo = true;
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("What are you some kind of smartass? Fine.");
+                            Console.WriteLine("Fine.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -1226,6 +1271,7 @@ namespace JessesDungeon
                         if (action.StartsWith("listen to ") && unlockedListenTo == true)
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Let's not get carried away, ok. Listen to voices -- THAT'S IT. You're lucky even that.");
@@ -1238,11 +1284,6 @@ namespace JessesDungeon
                         break;
 
                     case "F7": //Town
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         discoveredMap[12, 10] = "[x]";
                         if (hasLeftTown == false)
                         {
@@ -1255,6 +1296,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man with the wooden plank speaks.");
@@ -1263,13 +1305,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Badger:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"If you wanna do some trading, Skinny Pete is your man. He's interested in pretty much anything - and that's how he's also got pretty much anything! Otherwise, if you need to rest -- I'm your guy. For just a small fee, you can get a full night's rest and (rest assured!) I'll watch out for ya.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Badger:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"And, well, if you want to 'make something' of yourself down here, you can go pay your respects to the cartel just out and to the north. I'd be careful getting involved with them, though.\"");
                                 Console.WriteLine();
@@ -1316,9 +1362,10 @@ namespace JessesDungeon
                             if (action == "look at men")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("The men look haggard and a bit disheveled, but they are not currently attacking and/or robbing you, so that's definitely a good sign.");
+                                Console.WriteLine("The men are haggard and a bit disheveled, but they are not currently attacking and/or robbing you, so that's definitely a good sign.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -1327,6 +1374,7 @@ namespace JessesDungeon
                             if (action == "search men")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("I really don't think they'd be all right with that. Not yet, anyway -- you guys just met!");
@@ -1338,7 +1386,9 @@ namespace JessesDungeon
                             if (action == "talk to men")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Badger:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Hey, uh, yeah. I mean I just gave you my \'welcome\' spiel... that's all I got for right now. You get me right?\"");
                                 Console.WriteLine();
@@ -1349,6 +1399,7 @@ namespace JessesDungeon
                             if (action == "look at podium")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Each podium looks like it might collapse to a light breeze. You can't be sure, but you don't think these were professionally built.");
@@ -1360,6 +1411,7 @@ namespace JessesDungeon
                             if (action == "search podium")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Careful! Probably get a splinter.");
@@ -1371,6 +1423,7 @@ namespace JessesDungeon
                             if (action == "look at plank")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The plank is roughly the size of a person. What a coincidence that he uses it for people to sleep on!");
@@ -1382,6 +1435,7 @@ namespace JessesDungeon
                             if (action == "search plank")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Three feet by seven feet. Kind of snug, but it'll work -- better than the floor am I right?!");
@@ -1393,6 +1447,7 @@ namespace JessesDungeon
                             if (action == "look at sack")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("That sack seems to be filled to the brim with goodies. So many odd shapes, angles, and points are trying to burst through the sides!");
@@ -1404,6 +1459,7 @@ namespace JessesDungeon
                             if (action == "search sack")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Skinny Pete puts an arm out, barring your path. \"Hey, man - just lemme know what you want and I'll see what I got, all right?\"");
@@ -1418,7 +1474,10 @@ namespace JessesDungeon
                                 peteLoop = true;
                                 while (peteLoop == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"What're we doin', bro?\"");
                                     Console.WriteLine();
@@ -1438,6 +1497,7 @@ namespace JessesDungeon
                                         buyLoop = true;
                                         while (buyLoop == true)
                                         {
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("Items available for sale:");
@@ -1498,6 +1558,7 @@ namespace JessesDungeon
                                                         {
                                                             equippableArmor.Add(armor);
                                                             ego.BlueCrystals = ego.BlueCrystals - armor.Price;
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -1508,6 +1569,7 @@ namespace JessesDungeon
                                                         }
                                                         else
                                                         {
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine("\"Shoot I don't think you got enough cash! Maybe next time, all right, bro?\"");
@@ -1531,6 +1593,7 @@ namespace JessesDungeon
                                                         {
                                                             equippableWeapon.Add(weapon);
                                                             ego.BlueCrystals = ego.BlueCrystals - weapon.Price;
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -1541,6 +1604,7 @@ namespace JessesDungeon
                                                         }
                                                         else
                                                         {
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine("\"Shoot I don't think you got enough cash! Maybe next time, all right, bro?\"");
@@ -1564,6 +1628,7 @@ namespace JessesDungeon
                                                         {
                                                             equippableShield.Add(shield);
                                                             ego.BlueCrystals = ego.BlueCrystals - shield.Price;
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -1574,6 +1639,7 @@ namespace JessesDungeon
                                                         }
                                                         else
                                                         {
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine("\"Shoot I don't think you got enough cash! Maybe next time, all right, bro?\"");
@@ -1591,6 +1657,7 @@ namespace JessesDungeon
                                             {
                                                 buyLoop = false;
                                                 purchaseItem = "switzerfisch";
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"Cool, man.\"");
@@ -1601,6 +1668,7 @@ namespace JessesDungeon
                                             if (purchaseItem != "switzerfisch")
                                             {
                                                 purchaseItem = "switzerfisch";
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("That didn't do anything useful.");
@@ -1615,6 +1683,7 @@ namespace JessesDungeon
                                         sellLoop = true;
                                         while (sellLoop == true)
                                         {
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Whatcha got for me?\" ");
@@ -1653,6 +1722,7 @@ namespace JessesDungeon
                                             if (sellItem == "Unarmed")
                                             {
                                                 sellItem = "switzerfisch";
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("Come on, bro, you can't sell your hands.");
@@ -1663,6 +1733,7 @@ namespace JessesDungeon
                                             else if (sellItem == "Forearm")
                                             {
                                                 sellItem = "switzerfisch";
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("Come on, bro, you can't sell your arm.");
@@ -1673,6 +1744,7 @@ namespace JessesDungeon
                                             else if (sellItem == "Rags")
                                             {
                                                 sellItem = "switzerfisch";
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("Come on, bro, you can't go naked. Might catch something.");
@@ -1690,6 +1762,7 @@ namespace JessesDungeon
                                                         if (sellItem == bagCheck)
                                                         {
                                                             sellItem = "switzerfisch";
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine($"\"{armor.Name}? How does {(armor.Price / 3)} sound?\"");
@@ -1705,6 +1778,7 @@ namespace JessesDungeon
                                                                 if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield); }
                                                                 equippableArmor.Remove(armor);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (armor.Price / 3);
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -1715,6 +1789,7 @@ namespace JessesDungeon
                                                             }
                                                             else if (sellItem2 == "no")
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("All right, bro, maybe next time.");
@@ -1724,6 +1799,7 @@ namespace JessesDungeon
                                                             }
                                                             else
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("That didn't do anything useful.");
@@ -1739,6 +1815,7 @@ namespace JessesDungeon
                                                         if (sellItem == bagCheck)
                                                         {
                                                             sellItem = "switzerfisch";
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine($"\"{weapon.Name}? How does {(weapon.Price / 3)} sound?\"");
@@ -1754,6 +1831,7 @@ namespace JessesDungeon
                                                                 if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield); }
                                                                 equippableWeapon.Remove(weapon);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (weapon.Price / 3);
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -1764,6 +1842,7 @@ namespace JessesDungeon
                                                             }
                                                             else if (sellItem2 == "no")
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("All right, bro, maybe next time.");
@@ -1773,6 +1852,7 @@ namespace JessesDungeon
                                                             }
                                                             else
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("That didn't do anything useful.");
@@ -1788,6 +1868,7 @@ namespace JessesDungeon
                                                         if (sellItem == bagCheck)
                                                         {
                                                             sellItem = "switzerfisch";
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine($"\"{shield.Name}? How does {(shield.Price / 3)} sound?\"");
@@ -1803,6 +1884,7 @@ namespace JessesDungeon
                                                                 if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield); }
                                                                 equippableShield.Remove(shield);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (shield.Price / 3);
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -1813,6 +1895,7 @@ namespace JessesDungeon
                                                             }
                                                             else if (sellItem2 == "no")
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("All right, bro, maybe next time.");
@@ -1822,6 +1905,7 @@ namespace JessesDungeon
                                                             }
                                                             else
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("That didn't do anything useful.");
@@ -1840,6 +1924,7 @@ namespace JessesDungeon
                                                         if (sellItem == bagCheck)
                                                         {
                                                             sellItem = "switzerfisch";
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine($"\"{armor.Name}? How does {(armor.Price / 4)} sound?\"");
@@ -1855,6 +1940,7 @@ namespace JessesDungeon
                                                                 if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield); }
                                                                 equippableArmor.Remove(armor);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (armor.Price / 4);
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -1865,6 +1951,7 @@ namespace JessesDungeon
                                                             }
                                                             else if (sellItem2 == "no")
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("All right, bro, maybe next time.");
@@ -1874,6 +1961,7 @@ namespace JessesDungeon
                                                             }
                                                             else
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("That didn't do anything useful.");
@@ -1889,6 +1977,7 @@ namespace JessesDungeon
                                                         if (sellItem == bagCheck)
                                                         {
                                                             sellItem = "switzerfisch";
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine($"\"{weapon.Name}? How does {(weapon.Price / 4)} sound?\"");
@@ -1904,6 +1993,7 @@ namespace JessesDungeon
                                                                 if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield); }
                                                                 equippableWeapon.Remove(weapon);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (weapon.Price / 4);
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -1914,6 +2004,7 @@ namespace JessesDungeon
                                                             }
                                                             else if (sellItem2 == "no")
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("All right, bro, maybe next time.");
@@ -1923,6 +2014,7 @@ namespace JessesDungeon
                                                             }
                                                             else
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("That didn't do anything useful.");
@@ -1938,6 +2030,7 @@ namespace JessesDungeon
                                                         if (sellItem == bagCheck)
                                                         {
                                                             sellItem = "switzerfisch";
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine($"\"{shield.Name}? How does {(shield.Price / 4)} sound?\"");
@@ -1953,6 +2046,7 @@ namespace JessesDungeon
                                                                 if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield); }
                                                                 equippableShield.Remove(shield);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (shield.Price / 4);
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -1963,6 +2057,7 @@ namespace JessesDungeon
                                                             }
                                                             else if (sellItem2 == "no")
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("All right, bro, maybe next time.");
@@ -1972,6 +2067,7 @@ namespace JessesDungeon
                                                             }
                                                             else
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("That didn't do anything useful.");
@@ -1990,6 +2086,7 @@ namespace JessesDungeon
                                                     {
                                                         if (item.Name == "Rags")
                                                         {
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine("\"Hrmm... Nah, bro, I think you should hold onto those.\"");
@@ -1999,12 +2096,14 @@ namespace JessesDungeon
                                                         }
                                                         else
                                                         {
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine("OK, you sell it.");
                                                             Console.WriteLine();
                                                             Console.Write("Press ENTER to continue");
                                                             Console.ReadLine();
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine("Then you think better of it and buy it back.");
@@ -2020,6 +2119,7 @@ namespace JessesDungeon
                                                     string bagCheck = potion.Name;
                                                     if (sellItem == bagCheck)
                                                     {
+                                                        Console.WriteLine("____________________________________________________");
                                                         Console.WriteLine();
                                                         Console.WriteLine();
                                                         Console.WriteLine("\"Ehh sorry, bro, I don't deal in those kinds of things.");
@@ -2033,6 +2133,7 @@ namespace JessesDungeon
                                             {
                                                 sellLoop = false;
                                                 sellItem = "switzerfisch";
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"Cool, man.\"");
@@ -2042,6 +2143,7 @@ namespace JessesDungeon
                                             }
                                             if (sellItem != "switzerfisch")
                                             {
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("That didn't do anything useful.");
@@ -2054,6 +2156,7 @@ namespace JessesDungeon
                                     else if (purchaseItem == "exit")
                                     {
                                         peteLoop = false;
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"Cool, man.\"");
@@ -2063,6 +2166,7 @@ namespace JessesDungeon
                                     }
                                     else
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("That didn't do anything useful.");
@@ -2078,7 +2182,9 @@ namespace JessesDungeon
                                 action = "Complete";
                                 if (ego.BlueCrystals > 2)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Badger:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"Yeah, man, get some rest. Don't worry for a second me and Pete got your back.\"");
                                     Console.WriteLine();
@@ -2090,6 +2196,7 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Hey, man, you're looking a little light in the pockets... I need to eat too -- you understand, right, bro? I'll be here when you've got a few more to spend.\"");
@@ -2168,6 +2275,7 @@ namespace JessesDungeon
                             if (action == "look at badger")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Badger smiles at you as he awaits your answer. He seems to genuinely be a nice and caring man stuck in a terrible circumstance.");
@@ -2181,6 +2289,7 @@ namespace JessesDungeon
                             if (action == "search badger")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("I really don't think he'd be all right with that -- you've only recently met!");
@@ -2192,7 +2301,9 @@ namespace JessesDungeon
                             if (action == "talk to badger")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Badger:");
                                 Console.WriteLine();
                                 Console.WriteLine("Sup, guy? Be careful when you're walkin\' around out there - especially the body pile west of town. I'm not sure if you can catch chlamydia from a toilet seat or not, but you definitely can there.\"");
                                 Console.WriteLine();
@@ -2203,6 +2314,7 @@ namespace JessesDungeon
                             if (action == "look at skinny pete")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Skinny Pete seems harmless enough -- eager to make a sale, but not that \"sleazy salesman\" type.");
@@ -2214,6 +2326,7 @@ namespace JessesDungeon
                             if (action == "search skinny pete")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("I really don't think he'd be all right with that -- you've only recently met!");
@@ -2227,21 +2340,27 @@ namespace JessesDungeon
                                 action = "Complete";
                                 if (converseCount == 7 && readLogbook == true && tookPeteCash == false)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"Wait, you want my sack of goodies for what...? How did you know about that?!\"");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
-                                    Console.WriteLine("Skinny Pete sighs. \"I guess my voice carries when I get a little excited.\"");
+                                    Console.WriteLine("He sighs. \"I guess my voice carries when I get a little excited.\"");
                                     Console.WriteLine();
                                     Console.WriteLine("\"But you really think you can gather enough cash for this?\"");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"All right, man, if you think this'll get us out of here.\"");
                                     Console.WriteLine();
@@ -2250,7 +2369,9 @@ namespace JessesDungeon
                                     peteLoop = true;
                                     while (peteLoop == true)
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
+                                        Console.WriteLine("Skinny Pete:");
                                         Console.WriteLine();
                                         Console.WriteLine("\"But I'll have to close up shop!\"");
                                         Console.WriteLine();
@@ -2271,7 +2392,9 @@ namespace JessesDungeon
                                             peteLoop = false;
                                             shopClosed = true;
                                             undroppables.Add(sackOfGoodies);
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
+                                            Console.WriteLine("Skinny Pete:");
                                             Console.WriteLine();
                                             Console.WriteLine("\"Aight, bro. Take good care of it!\"");
                                             Console.WriteLine();
@@ -2282,7 +2405,9 @@ namespace JessesDungeon
                                         {
                                             action = "Complete";
                                             peteLoop = false;
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
+                                            Console.WriteLine("Skinny Pete:");
                                             Console.WriteLine();
                                             Console.WriteLine("\"Ok, bro, just let me know.\"");
                                             Console.WriteLine();
@@ -2291,6 +2416,7 @@ namespace JessesDungeon
                                         }
                                         else
                                         {
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("That didn't do anything useful.");
@@ -2304,13 +2430,17 @@ namespace JessesDungeon
                                 {
                                     peteQuestGiven = true;
                                     undroppables.Add(liquorKey);
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"Sup, man? What can I help you with?\"");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"Oh, uh, stevia? Well, yes, I do have some, but...\"");
                                     Console.WriteLine();
@@ -2318,7 +2448,9 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"All right, I tell you what, bro. There is something you could do for me in exchange.\"");
                                     Console.WriteLine();
@@ -2326,7 +2458,9 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"There's a lockbox in there that Jesse put away for a special occasion. I always just left it there, but now everything's gone to hell and it's definitely better here with me.\"");
                                     Console.WriteLine();
@@ -2334,7 +2468,9 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"I've got the key here. You go get that for me and we're square.\"");
                                     Console.WriteLine();
@@ -2343,7 +2479,9 @@ namespace JessesDungeon
                                 }
                                 else if (peteQuestGiven == true && peteQuestCompleted == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"How's it going, bro? Just let me know if you need anything!\"");
                                     Console.WriteLine();
@@ -2355,21 +2493,27 @@ namespace JessesDungeon
                                     peteQuestCompleted = true;
                                     undroppables.Remove(mezcal);
                                     newConverseAvailable = true;
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"You got it, bro! Thanks, man!\"");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"I really appreciate it, bro. Here: take your stevia.\"");
                                     Console.WriteLine();
-                                    Console.WriteLine("Skinny Pete hands you a packet of stevia.");
+                                    Console.WriteLine("He hands you a packet of stevia.");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"What's that, bro? You need how much...?\"");
                                     Console.WriteLine();
@@ -2377,7 +2521,9 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"You know what, bro, I think I can still help you out. It's no guarantee, but I can tell you who bought up most of my stevia.\"");
                                     Console.WriteLine();
@@ -2385,13 +2531,17 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"It was this slinky guy who I heard lives west of here. He seemed nice but there was also something kinda slippery about him.\"");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"And I feel real bad about all this, bro. I'm so sorry you risked your neck for this bottle and you didn't even get your end.\"");
                                     Console.WriteLine();
@@ -2399,7 +2549,9 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"Now go out there and get them valuables!\"");
                                     Console.WriteLine();
@@ -2408,7 +2560,9 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"Yo, man - I know you gotta be careful and whatnot, but go bring me back some goodies, yeah?\"");
                                     Console.WriteLine();
@@ -2420,6 +2574,7 @@ namespace JessesDungeon
                             if (action == "look at sack")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("That sack seems to be filled to the brim with goodies. So many odd shapes, angles, and points are trying to burst through the sides!");
@@ -2431,6 +2586,7 @@ namespace JessesDungeon
                             if (action == "search sack")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Skinny Pete puts an arm out, barring your path. \"Hey, man - just lemme know what you want and I'll see what I got, all right?\"");
@@ -2447,7 +2603,9 @@ namespace JessesDungeon
                                     peteLoop = true;
                                     while (peteLoop == true)
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
+                                        Console.WriteLine("Skinny Pete:");
                                         Console.WriteLine();
                                         Console.WriteLine("\"What're we doin', bro?\"");
                                         Console.WriteLine();
@@ -2466,6 +2624,7 @@ namespace JessesDungeon
                                             buyLoop = true;
                                             while (buyLoop == true)
                                             {
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("Items available for sale:");
@@ -2525,6 +2684,7 @@ namespace JessesDungeon
                                                             {
                                                                 equippableArmor.Add(armor);
                                                                 ego.BlueCrystals = ego.BlueCrystals - armor.Price;
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -2535,6 +2695,7 @@ namespace JessesDungeon
                                                             }
                                                             else
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Shoot I don't think you got enough cash! Maybe next time, all right, bro?\"");
@@ -2558,6 +2719,7 @@ namespace JessesDungeon
                                                             {
                                                                 equippableWeapon.Add(weapon);
                                                                 ego.BlueCrystals = ego.BlueCrystals - weapon.Price;
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -2568,6 +2730,7 @@ namespace JessesDungeon
                                                             }
                                                             else
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Shoot I don't think you got enough cash! Maybe next time, all right, bro?\"");
@@ -2591,6 +2754,7 @@ namespace JessesDungeon
                                                             {
                                                                 equippableShield.Add(shield);
                                                                 ego.BlueCrystals = ego.BlueCrystals - shield.Price;
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -2601,6 +2765,7 @@ namespace JessesDungeon
                                                             }
                                                             else
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Shoot I don't think you got enough cash! Maybe next time, all right, bro?\"");
@@ -2618,6 +2783,7 @@ namespace JessesDungeon
                                                 {
                                                     buyLoop = false;
                                                     purchaseItem = "switzerfisch";
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("\"Cool, man.\"");
@@ -2628,6 +2794,7 @@ namespace JessesDungeon
                                                 if (purchaseItem != "switzerfisch")
                                                 {
                                                     purchaseItem = "switzerfisch";
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("That didn't do anything useful.");
@@ -2642,6 +2809,7 @@ namespace JessesDungeon
                                             sellLoop = true;
                                             while (sellLoop == true)
                                             {
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"Whatcha got for me?\"");
@@ -2679,6 +2847,7 @@ namespace JessesDungeon
                                                 if (sellItem == "Unarmed")
                                                 {
                                                     sellItem = "switzerfisch";
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("Come on, bro, you can't sell your hands.");
@@ -2689,6 +2858,7 @@ namespace JessesDungeon
                                                 else if (sellItem == "Forearm")
                                                 {
                                                     sellItem = "switzerfisch";
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("Come on, bro, you can't sell your arm.");
@@ -2699,6 +2869,7 @@ namespace JessesDungeon
                                                 else if (sellItem == "Rags")
                                                 {
                                                     sellItem = "switzerfisch";
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("Come on, bro, you can't go naked. Might catch something.");
@@ -2716,6 +2887,7 @@ namespace JessesDungeon
                                                             if (sellItem == bagCheck)
                                                             {
                                                                 sellItem = "switzerfisch";
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine($"\"{armor.Name}? How does {(armor.Price / 3)} sound?\"");
@@ -2731,6 +2903,7 @@ namespace JessesDungeon
                                                                     if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield); }
                                                                     equippableArmor.Remove(armor);
                                                                     ego.BlueCrystals = ego.BlueCrystals + (armor.Price / 3);
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -2741,6 +2914,7 @@ namespace JessesDungeon
                                                                 }
                                                                 else if (sellItem2 == "no")
                                                                 {
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("All right, bro, maybe next time.");
@@ -2750,6 +2924,7 @@ namespace JessesDungeon
                                                                 }
                                                                 else
                                                                 {
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("That didn't do anything useful.");
@@ -2765,6 +2940,7 @@ namespace JessesDungeon
                                                             if (sellItem == bagCheck)
                                                             {
                                                                 sellItem = "switzerfisch";
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine($"\"{weapon.Name}? How does {(weapon.Price / 3)} sound?\"");
@@ -2780,6 +2956,7 @@ namespace JessesDungeon
                                                                     if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield); }
                                                                     equippableWeapon.Remove(weapon);
                                                                     ego.BlueCrystals = ego.BlueCrystals + (weapon.Price / 3);
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -2790,6 +2967,7 @@ namespace JessesDungeon
                                                                 }
                                                                 else if (sellItem2 == "no")
                                                                 {
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("All right, bro, maybe next time.");
@@ -2799,6 +2977,7 @@ namespace JessesDungeon
                                                                 }
                                                                 else
                                                                 {
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("That didn't do anything useful.");
@@ -2814,6 +2993,7 @@ namespace JessesDungeon
                                                             if (sellItem == bagCheck)
                                                             {
                                                                 sellItem = "switzerfisch";
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine($"\"{shield.Name}? How does {(shield.Price / 3)} sound?\"");
@@ -2829,6 +3009,7 @@ namespace JessesDungeon
                                                                     if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield); }
                                                                     equippableShield.Remove(shield);
                                                                     ego.BlueCrystals = ego.BlueCrystals + (shield.Price / 3);
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -2839,6 +3020,7 @@ namespace JessesDungeon
                                                                 }
                                                                 else if (sellItem2 == "no")
                                                                 {
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("All right, bro, maybe next time.");
@@ -2848,6 +3030,7 @@ namespace JessesDungeon
                                                                 }
                                                                 else
                                                                 {
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("That didn't do anything useful.");
@@ -2866,6 +3049,7 @@ namespace JessesDungeon
                                                             if (sellItem == bagCheck)
                                                             {
                                                                 sellItem = "switzerfisch";
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine($"\"{armor.Name}? How does {(armor.Price / 4)} sound?\"");
@@ -2881,6 +3065,7 @@ namespace JessesDungeon
                                                                     if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield); }
                                                                     equippableArmor.Remove(armor);
                                                                     ego.BlueCrystals = ego.BlueCrystals + (armor.Price / 4);
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -2891,6 +3076,7 @@ namespace JessesDungeon
                                                                 }
                                                                 else if (sellItem2 == "no")
                                                                 {
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("All right, bro, maybe next time.");
@@ -2900,6 +3086,7 @@ namespace JessesDungeon
                                                                 }
                                                                 else
                                                                 {
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("That didn't do anything useful.");
@@ -2915,6 +3102,7 @@ namespace JessesDungeon
                                                             if (sellItem == bagCheck)
                                                             {
                                                                 sellItem = "switzerfisch";
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine($"\"{weapon.Name}? How does {(weapon.Price / 4)} sound?\"");
@@ -2930,6 +3118,7 @@ namespace JessesDungeon
                                                                     if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield); }
                                                                     equippableWeapon.Remove(weapon);
                                                                     ego.BlueCrystals = ego.BlueCrystals + (weapon.Price / 4);
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -2940,6 +3129,7 @@ namespace JessesDungeon
                                                                 }
                                                                 else if (sellItem2 == "no")
                                                                 {
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("All right, bro, maybe next time.");
@@ -2949,6 +3139,7 @@ namespace JessesDungeon
                                                                 }
                                                                 else
                                                                 {
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("That didn't do anything useful.");
@@ -2964,6 +3155,7 @@ namespace JessesDungeon
                                                             if (sellItem == bagCheck)
                                                             {
                                                                 sellItem = "switzerfisch";
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine($"\"{shield.Name}? How does {(shield.Price / 4)} sound?\"");
@@ -2979,6 +3171,7 @@ namespace JessesDungeon
                                                                     if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield); }
                                                                     equippableShield.Remove(shield);
                                                                     ego.BlueCrystals = ego.BlueCrystals + (shield.Price / 4);
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("\"Hey man good doing business with you.\"");
@@ -2989,6 +3182,7 @@ namespace JessesDungeon
                                                                 }
                                                                 else if (sellItem2 == "no")
                                                                 {
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("All right, bro, maybe next time.");
@@ -2998,6 +3192,7 @@ namespace JessesDungeon
                                                                 }
                                                                 else
                                                                 {
+                                                                    Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
                                                                     Console.WriteLine("That didn't do anything useful.");
@@ -3016,6 +3211,7 @@ namespace JessesDungeon
                                                         {
                                                             if (item.Name == "Rags")
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("\"Hrmm... Nah, bro, I think you should hold onto those.\"");
@@ -3025,12 +3221,14 @@ namespace JessesDungeon
                                                             }
                                                             else
                                                             {
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("OK, you sell it.");
                                                                 Console.WriteLine();
                                                                 Console.Write("Press ENTER to continue");
                                                                 Console.ReadLine();
+                                                                Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine("Then you think better of it and buy it back.");
@@ -3046,6 +3244,7 @@ namespace JessesDungeon
                                                         string bagCheck = potion.Name;
                                                         if (sellItem == bagCheck)
                                                         {
+                                                            Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine("\"Ehh sorry, bro, I don't deal in those kinds of things.");
@@ -3059,6 +3258,7 @@ namespace JessesDungeon
                                                 {
                                                     sellLoop = false;
                                                     sellItem = "switzerfisch";
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("\"Cool, man.\"");
@@ -3068,6 +3268,7 @@ namespace JessesDungeon
                                                 }
                                                 if (sellItem != "switzerfisch")
                                                 {
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("That didn't do anything useful.");
@@ -3080,6 +3281,7 @@ namespace JessesDungeon
                                         else if (purchaseItem == "exit")
                                         {
                                             peteLoop = false;
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Cool, man.\"");
@@ -3089,6 +3291,7 @@ namespace JessesDungeon
                                         }
                                         else
                                         {
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("That didn't do anything useful.");
@@ -3100,6 +3303,7 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Sorry, bro -- you took all my stuff!");
@@ -3114,7 +3318,9 @@ namespace JessesDungeon
                                 action = "Complete";
                                 if (ego.BlueCrystals > 2)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Badger:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"Yeah, man, get some rest. Don't worry for a second me and Pete got your back.\"");
                                     Console.WriteLine();
@@ -3126,6 +3332,7 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Hey, man, you're looking a little light in the pockets... I need to eat too -- you understand, right, bro? I'll be here when you've got a few more to spend.\"");
@@ -3162,11 +3369,6 @@ namespace JessesDungeon
                         break;
 
                     case "G6": //Dryad
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[10, 12] = "[x]";
                         discoveredMap[10, 11] = "-";
@@ -3181,6 +3383,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The tree woman drops her tree-like pose as she addresses you.");
@@ -3189,6 +3392,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"I understand. It is his doing we're all locked down here, and likely the only way out is through him. I won't tell you not to.\"");
@@ -3197,6 +3401,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"There is a secret escape tunnel that will take you straight to Jesse. I can get you the key to this door.\"");
@@ -3227,6 +3432,7 @@ namespace JessesDungeon
                                     freePotions = true;
                                     action = "Complete";
                                     undroppables.Add(janesKey);
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Thank you.\"");
@@ -3235,6 +3441,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"The secret door is nearby. He's got some kid on a pogo stick guarding it.\"");
@@ -3243,6 +3450,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"And - please - take any potions you need. Free of charge.\"");
@@ -3254,6 +3462,7 @@ namespace JessesDungeon
                                 {
                                     janeLoop = false;
                                     action = "Complete";
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Oh. I guess I understand. Please just... make it quick at least.\"");
@@ -3263,6 +3472,7 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("That didn't do anything useful.");
@@ -3355,6 +3565,7 @@ namespace JessesDungeon
                             if (action == "look at tree" && searchedTree == false)
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You don't even need that famous ecologist's correspondence school for botanists. Trees can't live down here. But, nevertheless, there it is.");
@@ -3367,28 +3578,32 @@ namespace JessesDungeon
                             {
                                 action = "Complete";
                                 searchedTree = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The tree is warm, and gives to the touch slightly more than you'd expect it to. Its leaves are brilliantly green and press up against the dungeon ceiling.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Getting down on your hands and knees to inspect its roots, you find that the tree isn't even planted into the floor at all. Its trunk seems to be split in half as it comes from the ground and unites a few feet up - perhaps to maintain balance without being truly rooted.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Completely taken with curiosity, you press your ear up against the trunk and begin knocking on various parts of the trunk to listen to the effects. Your hands find their way to two protrusions from the trunk above you which are even softer than the rest of the tree. Intrigued, you squeeze to see just how malleable they are.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Excuse me.\"");
-                                Thread.Sleep(3000);
+                                Thread.Sleep(2000);
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Holy shit.");
@@ -3400,18 +3615,21 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("She brushes off her... knobs, and returns her gaze to you. \"Did you want something?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You know you can't just say nothing, but you also don't want to find your way out of this dungeon just to be slapped with sexual harrassment charges. You must craft this response CAREFULLY.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.Write(".");
@@ -3427,18 +3645,21 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The woman sighs. \"You're new. It's all right. Get up.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The woman continues as you climb to your feet. \"I make and sell potions. If you have business for me, all you need do is say something; I can see you're not a danger so I no longer need to hide.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Oh, and - just in case you're some knight in shining armor type - I don't need rescuing. I am not a poor damsel cursed to remain in \'form of tree\' until a brave hero breaks the spell. I could probably even beat you up.\"");
@@ -3450,6 +3671,7 @@ namespace JessesDungeon
                             if (action == "look at tree" && searchedTree == true)
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("I mean, now that you know what to look for... even Crocodile Dundee could see from here.");
@@ -3461,6 +3683,7 @@ namespace JessesDungeon
                             if (action == "search tree" && searchedTree == true)
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Mmmmmmmnope. Nope nope nope.");
@@ -3474,6 +3697,7 @@ namespace JessesDungeon
                                 action = "Complete";
                                 if (killedJesse == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("The woman does not respond.");
@@ -3483,6 +3707,7 @@ namespace JessesDungeon
                                 }
                                 else if (undroppables.Contains(dungeonKey))
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("The tree woman smiles at you. \"So you've done it, have you?\"");
@@ -3493,6 +3718,7 @@ namespace JessesDungeon
                                     Console.ReadLine();
                                     if (freePotions == true)
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"And thank you for keeping your promise.\"");
@@ -3504,12 +3730,14 @@ namespace JessesDungeon
                                 else if (undroppables.Contains(jeweledRing) && returnedRing == false)
                                 {
                                     janeLoop = true;
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Oh. That ring...\"");
                                     Thread.Sleep(1500);
                                     while (janeLoop == true)
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"Could I have it?\"");
@@ -3530,6 +3758,7 @@ namespace JessesDungeon
                                             returnedRing = true;
                                             newConverseAvailable = true;
                                             undroppables.Remove(jeweledRing);
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("She smiles and looks at it for a moment, then slips it beneath her bark, into what you assume is a pocket. \"Thank you.\"");
@@ -3543,6 +3772,7 @@ namespace JessesDungeon
                                         {
                                             action = "Complete";
                                             janeLoop = false;
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Oh. Well I suppose I've already resigned to it being lost... So all right.\"");
@@ -3552,6 +3782,7 @@ namespace JessesDungeon
                                         }
                                         else
                                         {
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("That didn't do anything useful.");
@@ -3656,6 +3887,7 @@ namespace JessesDungeon
                                 action = "Complete";
                                 if (killedJesse == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("The woman does not respond.");
@@ -3671,6 +3903,7 @@ namespace JessesDungeon
                                         if (potionBelt.Count >= 3)
                                         {
                                             dryadLoop = false;
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("What do you think this is: every video game ever? This is real life, and you can't carry any more potions without them breaking. I'd be happy to sell you more when you use the ones you already have.");
@@ -3679,6 +3912,7 @@ namespace JessesDungeon
                                             Console.ReadLine();
                                             break;
                                         }
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Light Healing Potion (10 HP) - Free!");
@@ -3699,6 +3933,7 @@ namespace JessesDungeon
                                         if (purchaseItem == "Light Healing Potion")
                                         {
                                             potionBelt.Add(lightHealingPotion);
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Light? Are you doing some self-imposed-challenge run?\"");
@@ -3709,6 +3944,7 @@ namespace JessesDungeon
                                         if (purchaseItem == "Healing Potion")
                                         {
                                             potionBelt.Add(healingPotion);
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Normal? Are you doing some self-imposed-challenge run?\"");
@@ -3719,6 +3955,7 @@ namespace JessesDungeon
                                         if (purchaseItem == "Greater Healing Potion")
                                         {
                                             potionBelt.Add(greaterHealingPotion);
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"You got it.\"");
@@ -3729,6 +3966,7 @@ namespace JessesDungeon
                                         if (purchaseItem == "Exit")
                                         {
                                             dryadLoop = false;
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Good luck.\"");
@@ -3744,6 +3982,7 @@ namespace JessesDungeon
                                 action = "Complete";
                                 if (killedJesse == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("The woman does not respond.");
@@ -3759,6 +3998,7 @@ namespace JessesDungeon
                                         if (potionBelt.Count >= 3)
                                         {
                                             dryadLoop = false;
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("What do you think this is: every video game ever? This is real life, and you can't carry any more potions without them breaking. I'd be happy to sell you more when you use the ones you already have.");
@@ -3767,6 +4007,7 @@ namespace JessesDungeon
                                             Console.ReadLine();
                                             break;
                                         }
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Light Healing Potion (10 HP) - 20 crystals");
@@ -3790,6 +4031,7 @@ namespace JessesDungeon
                                             {
                                                 potionBelt.Add(lightHealingPotion);
                                                 ego.BlueCrystals = ego.BlueCrystals - 20;
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"I hope you need it enough to come back, but not so much that you don't.\"");
@@ -3799,6 +4041,7 @@ namespace JessesDungeon
                                             }
                                             else
                                             {
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"Oh dear. I seem not to have enough of the key component of my elixir! BLUE CRYSTALS -- GO GET MORE.\"");
@@ -3813,6 +4056,7 @@ namespace JessesDungeon
                                             {
                                                 potionBelt.Add(healingPotion);
                                                 ego.BlueCrystals = ego.BlueCrystals - 50;
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"I hope you need it enough to come back, but not so much that you don't.\"");
@@ -3822,6 +4066,7 @@ namespace JessesDungeon
                                             }
                                             else
                                             {
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"Oh dear. I seem not to have enough of the key component of my elixir! BLUE CRYSTALS -- GO GET MORE.\"");
@@ -3836,6 +4081,7 @@ namespace JessesDungeon
                                             {
                                                 potionBelt.Add(greaterHealingPotion);
                                                 ego.BlueCrystals = ego.BlueCrystals - 150;
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"I hope you need it enough to come back, but not so much that you don't.\"");
@@ -3845,6 +4091,7 @@ namespace JessesDungeon
                                             }
                                             else
                                             {
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"Oh dear. I seem not to have enough of the key component of my elixir! BLUE CRYSTALS -- GO GET MORE.\"");
@@ -3856,6 +4103,7 @@ namespace JessesDungeon
                                         if (purchaseItem == "Exit")
                                         {
                                             dryadLoop = false;
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Hmph.\"");
@@ -3872,11 +4120,6 @@ namespace JessesDungeon
                         break;
 
                     case "G5": //Gale
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[8, 12] = "[x]";
                         discoveredMap[7, 12] = " | ";
@@ -3907,6 +4150,7 @@ namespace JessesDungeon
                             if (action == "go north")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You go north. Straight into a stone wall. derp.");
@@ -3931,6 +4175,7 @@ namespace JessesDungeon
                             if (action == "look at fortification")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Make-shift it may be, but it'll certainly hold against anything you could do it.");
@@ -3942,12 +4187,14 @@ namespace JessesDungeon
                             if (action == "search fortification")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The wall is made of well-placed wood and stone. While it's certainly not impenetrable, any effort to break in would, at the very least, take long enough and create such a ruckus that it would be noticed.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Well it would have when there were actually people here. I suppose now you could actually spend the time breaking in if you really wanted to.");
@@ -3987,12 +4234,14 @@ namespace JessesDungeon
                                 action = "Complete";
                                 if (losPollosHermanos == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine("This is a parser game made in the style of 90s adventure games, so you gotta type out the code... hope you remember it! At least it's not switzerfisch or something.");
+                                    Console.WriteLine("This is a parser game made in the style of 90s adventure games, so you gotta type out the code... hope you remember it! At least it's not \"switzerfisch\" or something.");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Hey I get it. Life's short! It's \"Los Pollos Hermanos.\" But don't say I never did anything for you.");
@@ -4002,6 +4251,7 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("You go north. Straight into a stone wall. derp.");
@@ -4028,6 +4278,7 @@ namespace JessesDungeon
                             if (action == "look at man")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("This man is not what you'd expect a sentry to look like. He seems like he'd be more at home with a book, or perhaps a karaoke machine. But regardless of how he looks, he is figuratively and literally standing between you and what is beyond this gate.");
@@ -4039,6 +4290,7 @@ namespace JessesDungeon
                             if (action == "search man")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He's all the way up there... and you're all the way down here... it's just not meant to be.");
@@ -4053,18 +4305,21 @@ namespace JessesDungeon
                                 if (galeQuestGiven == false)
                                 {
                                     galeQuestGiven = true;
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("As you go to speak, he turns and interrupts you.");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Do you have business here? The boss is too busy to do a meet and greet with all new residents.\"");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("After a pause, the man sighs and speaks.");
@@ -4074,6 +4329,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Seeing the blank expression you're exhibiting, he continues. \"Ah of course... Blue crystals. It's basically money down here. All trade is done through this currency.\"");
@@ -4084,10 +4340,11 @@ namespace JessesDungeon
                                 else if (galeQuestGiven == true && undroppables.Contains(sackOfCash))
                                 {
                                     galeQuestCompleted = true;
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.Write("The man halts his sentry and faces you. \"Is that the Salamanca cache you got there? Let me take a re");
-                                    Thread.Sleep(3000);
+                                    Thread.Sleep(2500);
                                     Console.Write("e");
                                     Thread.Sleep(500);
                                     Console.Write("e");
@@ -4102,6 +4359,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Unsure of how else to proceed, you open the sack to showcase the crystals within.");
@@ -4110,6 +4368,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("He turns and disappears from view behind the fortification. A long moment later, a door opens and you are beckoned to enter.");
@@ -4123,6 +4382,7 @@ namespace JessesDungeon
                                 }
                                 else if (galeQuestGiven == true && galeQuestCompleted == false)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("The man turns and speaks. \"Well do you have it? It's gonna be way, way more than you could possibly gather on your own, so save yourself the strain of going down that road. Just go get it.\"");
@@ -4132,6 +4392,7 @@ namespace JessesDungeon
                                 }
                                 else if (galeQuestGiven == true && galeQuestCompleted == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Are you speaking to me?\"");
@@ -4144,6 +4405,7 @@ namespace JessesDungeon
                             if (action == "los pollos hermanos")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man disappears behind the fortification. A short moment later, the door opens.");
@@ -4159,6 +4421,7 @@ namespace JessesDungeon
                             if (action == "look at fortification")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Make-shift it may be, but it'll certainly hold against anything you could do it.");
@@ -4170,6 +4433,7 @@ namespace JessesDungeon
                             if (action == "search fortification")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The wall is made of well-placed wood and stone. While it's certainly not impenetrable, any effort to break in would, at the very least, take long enough and create such a ruckus that it would be noticed.");
@@ -4205,11 +4469,6 @@ namespace JessesDungeon
                         break;
 
                     case "G4": //Gus
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[6, 12] = "[x]";
                         discoveredMap[7, 12] = " | ";
@@ -4264,6 +4523,7 @@ namespace JessesDungeon
                         if (action == "look at man")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The man is completely calm and collected. He sits maintaining eye contact, yet does not convey any threat.");
@@ -4275,6 +4535,7 @@ namespace JessesDungeon
                         if (action == "search man")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Something about him tells you that's just not gonna fly.");
@@ -4286,6 +4547,7 @@ namespace JessesDungeon
                         if (action == "talk to man")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The man's response is simply a small twitch of his eye and a reiteration of his gesture for you to sit down.");
@@ -4301,13 +4563,18 @@ namespace JessesDungeon
                             {
                                 undroppables.Add(sackOfCash);
                                 tookGusCash = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Hm. You believe buying Heisenberg's escape is the key to our release? I am less convinced than you.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("He flares an eyebrow momentarily. \"Though I suppose with the power I am about to amass that I could easily take it back.\"");
                                 Console.WriteLine();
@@ -4316,6 +4583,9 @@ namespace JessesDungeon
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"All right, you have my support. You make take back Salamanca's stash.\"");
                                 Console.WriteLine();
@@ -4328,6 +4598,9 @@ namespace JessesDungeon
                                 losPollosHermanos = true;
                                 newConverseAvailable = true;
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"My men tell me you did us a service. And for that I would see you rewarded.\"");
                                 Console.WriteLine();
@@ -4339,8 +4612,10 @@ namespace JessesDungeon
                                     while (gusLoop == true)
                                     {
                                         Console.WriteLine();
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
-                                        Console.WriteLine("He looks at you silently for a moment, as if studying you.");
+                                        Console.WriteLine();
+                                        Console.WriteLine("Gus looks at you silently for a moment, as if studying you.");
                                         Console.WriteLine();
                                         Console.WriteLine("\"But first I must ask. Did you take any?\"");
                                         Console.WriteLine();
@@ -4357,6 +4632,9 @@ namespace JessesDungeon
                                             gusLoop = false;
                                             action = "Complete";
                                             Console.WriteLine();
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine("Gus:");
                                             Console.WriteLine();
                                             Console.WriteLine("\"Hm. I do appreciate your honesty.\"");
                                             Console.WriteLine();
@@ -4367,6 +4645,9 @@ namespace JessesDungeon
                                             if (salamancaStolenCrystals > ego.BlueCrystals)
                                             {
                                                 Console.WriteLine();
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine("Gus:");
                                                 Console.WriteLine();
                                                 Console.WriteLine("A smirk escapes the man's stoic front. \"Have you spent it already? We'll have to extract the proper value otherwise.\"");
                                                 Console.WriteLine();
@@ -4375,6 +4656,9 @@ namespace JessesDungeon
                                                 Console.Write("Press ENTER to continue");
                                                 Console.ReadLine();
                                                 Console.WriteLine();
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine("Gus:");
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"For now, however, we shall recover our rightful property.\"");
                                                 Console.WriteLine();
@@ -4389,6 +4673,9 @@ namespace JessesDungeon
                                             {
                                                 ego.BlueCrystals = 0;
                                                 Console.WriteLine();
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine("Gus:");
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"Do understand that I must trust those in my employ.\"");
                                                 Console.WriteLine();
@@ -4397,6 +4684,9 @@ namespace JessesDungeon
                                                 Console.Write("Press ENTER to continue");
                                                 Console.ReadLine();
                                                 Console.WriteLine();
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine("Gus:");
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"Until then, however, I have some things I must do. Please return another time.\"");
                                                 Console.WriteLine();
@@ -4414,6 +4704,7 @@ namespace JessesDungeon
                                         {
                                             gusLoop = false;
                                             action = "Complete";
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("The man's expressionless mask gives way to a slight squinting of the eyes. He continues to study you for a moment longer.");
@@ -4424,6 +4715,9 @@ namespace JessesDungeon
                                             if (gusSenseMotiveCheck > 10)
                                             {
                                                 Console.WriteLine();
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine("Gus:");
                                                 Console.WriteLine();
                                                 Console.WriteLine("A smirk escapes the man's stoic front. \"Do understand that I must trust those in my employ.\"");
                                                 Console.WriteLine();
@@ -4432,6 +4726,9 @@ namespace JessesDungeon
                                                 Console.Write("Press ENTER to continue");
                                                 Console.ReadLine();
                                                 Console.WriteLine();
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine("Gus:");
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"For now, however, we shall recover our rightful property.\"");
                                                 Console.WriteLine();
@@ -4446,6 +4743,9 @@ namespace JessesDungeon
                                                 equippableWeapon.Add(axe);
                                                 axe.Unlocked = true;
                                                 Console.WriteLine();
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine("Gus:");
                                                 Console.WriteLine();
                                                 Console.WriteLine("A smirk escapes the man's stoic front. \"Very well then.\"");
                                                 Console.WriteLine();
@@ -4454,6 +4754,9 @@ namespace JessesDungeon
                                                 Console.Write("Press ENTER to continue");
                                                 Console.ReadLine();
                                                 Console.WriteLine();
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine("Gus:");
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"I have need of one such as you. Simply say 'Los pollos hermanos' outside and you will be given entry. For now, however, I ask that you return another time.\"");
                                                 Console.WriteLine();
@@ -4470,6 +4773,7 @@ namespace JessesDungeon
                                         else
                                         {
                                             action = "Complete";
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("No weasling out of this one. Answer the man.");
@@ -4506,43 +4810,63 @@ namespace JessesDungeon
                             else if (gusQuestGiven == false)
                             {
                                 gusQuestGiven = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("The man nods at you. \"I thank you for joining me. Now - I have a proposal for you. One that is for our mutual benefit.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("His face cracks a half smile. \"You would like to get out of here, correct? Unsurprisingly, so would we. With your help I believe we could just pull that off.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"The way out is through Jesse; he is the one who constructed this place. I am unsure of what his aim is, but he systematically captured many of his past associates and trapped us all within.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"He is currently holed up with his partner, Heisenberg. My plan is this: break in and force our release -- through whatever means necessary. A simple plan, yes - but difficult.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Our first aim will be to weaken his defenses by swaying those in his employ that are less than loyal. You have already started us off on that endeavor.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Salamanca's money is useful, but what it symbolizes is that which truly matters: Power. People follow power, and with your aid we shall be that to which this dungeon's denizens flock.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"There is one more man we need concern ourselves with. He has done work for me in the past, but he adamantly maintains his independence. He is strong, and he is skilled; he must either be one of us, or not of consequence.\"");
                                 Console.WriteLine();
@@ -4551,6 +4875,9 @@ namespace JessesDungeon
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Mike resides to the far east of here. I look forward to your return.\"");
                                 Console.WriteLine();
@@ -4561,15 +4888,20 @@ namespace JessesDungeon
                             {
                                 gusQuestCompleted = true;
                                 knightSuitAvailable = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"So Mike has agreed not to interfere. That will do fine.\"");
+                                Console.WriteLine("\"So Mike has agreed not to interfere. That will suffice.\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"The time has come to make our move.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"I will bribe and intimidate most of Heisenberg's forces. His fortress shall be far more accessible to you from this point forward.\"");
                                 Console.WriteLine();
@@ -4580,7 +4912,9 @@ namespace JessesDungeon
                             }
                             else if (gusQuestGiven == true && gusQuestCompleted == false)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"It is good to see you are safe. But your mission is too important for dawdling. Please deal with Mike as quickly as possible.\"");
                                 Console.WriteLine();
@@ -4589,7 +4923,9 @@ namespace JessesDungeon
                             }
                             else if (gusQuestCompleted == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Gus:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"There is nothing left to discuss. It is time.\"");
                                 Console.WriteLine();
@@ -4602,11 +4938,6 @@ namespace JessesDungeon
                         break;
 
                     case "C4": //Vacuum Man
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[6, 4] = "[x]";
                         discoveredMap[7, 5] = " | ";
@@ -4647,6 +4978,7 @@ namespace JessesDungeon
                         if (action == "look at man")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The man stands stationary with a bag at his feet. He doesn't seem to be guarding or watching anything. Just... standing.");
@@ -4660,6 +4992,7 @@ namespace JessesDungeon
                         if (action == "search man")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("As you reach out to touch the man, he grabs your wrist and turns to meet your gaze.");
@@ -4668,6 +5001,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("After a moment, he releases your arm and returns his eyes to their previous heading. \"Be off with you then.\"");
@@ -4681,6 +5015,7 @@ namespace JessesDungeon
                             action = "Complete";
                             if (disappearChoice == null)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man has no reaction. He may as well be deaf.");
@@ -4690,7 +5025,9 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("???");
                                 Console.WriteLine();
                                 Console.WriteLine("Our business is concluded.");
                                 Console.WriteLine();
@@ -4704,7 +5041,9 @@ namespace JessesDungeon
                             action = "Complete";
                             if (disappearChoice != null)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("???");
                                 Console.WriteLine();
                                 Console.WriteLine("Our business is concluded.");
                                 Console.WriteLine();
@@ -4714,13 +5053,16 @@ namespace JessesDungeon
                             else if (tookGusCash && tookHermitCash && tookJaneCash && tookLydiaCash && tookMikeCash && tookPeteCash && tookSaulCash)
                             {
                                 talkLoop = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man turns his head to you, then shifts his gaze down to your bounty of goods.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("???");
                                 Console.WriteLine();
                                 Console.WriteLine("\"I don't usually accept trades. But given the circumstances I have learned to be flexible. I accept your offer as equitable.\"");
                                 Console.WriteLine();
@@ -4728,6 +5070,7 @@ namespace JessesDungeon
                                 Console.ReadLine();
                                 while (talkLoop == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Who's going?\"");
@@ -4750,7 +5093,9 @@ namespace JessesDungeon
                                         undroppables.Remove(giantBlueCrystal);
                                         undroppables.Remove(sackOfGoodies);
                                         undroppables.Remove(safe);
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
+                                        Console.WriteLine("???");
                                         Console.WriteLine();
                                         Console.WriteLine("\"It's done.\"");
                                         Console.WriteLine();
@@ -4771,7 +5116,9 @@ namespace JessesDungeon
                                         undroppables.Remove(giantBlueCrystal);
                                         undroppables.Remove(sackOfGoodies);
                                         undroppables.Remove(safe);
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
+                                        Console.WriteLine("???");
                                         Console.WriteLine();
                                         Console.WriteLine("\"It's done.\"");
                                         Console.WriteLine();
@@ -4780,12 +5127,14 @@ namespace JessesDungeon
                                     }
                                     else if (action == "me")
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("The man pulls his bag up off the floor. He takes out a hand-held vacuum, and gives it to you. He holds the bag open, and turns to face you. \"Just relax.\"");
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("He places the bag over your head, and everything goes black. You're not too sure what happened next, but you awaken on your living room couch.");
@@ -4796,7 +5145,9 @@ namespace JessesDungeon
                                     }
                                     else
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
+                                        Console.WriteLine("???");
                                         Console.WriteLine();
                                         Console.WriteLine("\"It looks like you worked hard for this haul. You might want to give me a name.\"");
                                         Console.WriteLine();
@@ -4860,11 +5211,6 @@ namespace JessesDungeon
                         break;
 
                     case "H9": //outside Hermit McGill
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[16, 14] = "[x]";
                         discoveredMap[16, 13] = "-";
@@ -4905,6 +5251,7 @@ namespace JessesDungeon
                         if (action == "look at dwelling")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Whoever built this thing must've gone to great lengths to find, trade, or otherwise acquire all this material. There's more metal here than probably the rest of the dungeon combined.");
@@ -4916,12 +5263,14 @@ namespace JessesDungeon
                         if (action == "search dwelling")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("As you approach, a voice from inside calls out, \"whoever you are, please leave any light source in the lighthouse!\"");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Flabbergasted that you failed to notice a lighthouse in a small dungeon room, you spin around and scan rapidly. After a short time, your eyes lock onto a bucket labeled \"Hermit's lighthouse.\" The word \"hermit\" is underlined... twice.");
@@ -4950,6 +5299,7 @@ namespace JessesDungeon
                         if (action == "look at sheets")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Are those... space blankets?");
@@ -4961,6 +5311,7 @@ namespace JessesDungeon
                         if (action == "search sheets")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Defintely space blankets.");
@@ -4973,11 +5324,6 @@ namespace JessesDungeon
                         break;
 
                     case "Hermit": //Hermit McGill
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         Console.WriteLine("You are in a very, very dark hovel. The [hermit] is here... somewhere.");
                         Console.WriteLine();
@@ -5014,6 +5360,7 @@ namespace JessesDungeon
                         if (action == "look at hermit")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You squint harder and tighter than you ever have before. You still see nothing.");
@@ -5025,6 +5372,7 @@ namespace JessesDungeon
                         if (action == "search hermit")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("If you even knew where he was to begin such an action, it'd probably not be a good idea.");
@@ -5038,6 +5386,7 @@ namespace JessesDungeon
                             action = "Complete";
                             hermitAnger = hermitAnger + 3;
                             if (hermitAnger > 11) { hermitAnger = 11; }
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("If you thought the voice was agitated before...");
@@ -5063,6 +5412,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit has begun filling the space between his words with panicked screams and short, shallow breaths.");
@@ -5086,21 +5436,27 @@ namespace JessesDungeon
                             {
                                 action = "Complete";
                                 hermitVisited = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. But I don't believe we've met? They call me Hermit McGill. And you are?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - that's all right. Names aren't important. It's CHARACTER that defines you.\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. But I don't believe we've met? They call me Hermit McGill. And you are?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - unless there's something you need? I was right in the middle of something. Please try to leave the sheets draped together as you leave.\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - that's all right. Names aren't important. It's CHARACTER that defines you.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Hermit:");
+                                Console.WriteLine();
+                                Console.WriteLine("He clears his throat. \"Yes, well - unless there's something you need? I was right in the middle of something. Please try to leave the sheets draped together as you leave.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -5123,6 +5479,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit has begun filling the space between his words with panicked screams and short, shallow breaths.");
@@ -5145,30 +5502,39 @@ namespace JessesDungeon
                                 {
                                     tookHermitCash = true;
                                     undroppables.Add(generator);
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Hermit:");
                                     Console.WriteLine();
-                                    Console.WriteLine("The hermit clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine("The hermit clears his throat. \"Yes, well - I guess I do want to leave. You think this will get us all out, do you?\"");
+                                    Console.WriteLine("He clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Hermit:");
                                     Console.WriteLine();
-                                    Console.WriteLine("The hermit clears his throat. \"Yes, well - I can see the merit of your argument. I have something that may be of use to you.\"");
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine("The hermit clears his throat. \"Yes, well - I brought this here with me. I kept it hidden just incase it came in handy. It'll probably be worth a good amount in trade.\"");
+                                    Console.WriteLine("He clears his throat. \"Yes, well - I guess I do want to leave. You think this will get us all out, do you?\"");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Hermit:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("He clears his throat. \"Yes, well - I can see the merit of your argument. I have something that may be of use to you.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Hermit:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("He clears his throat. \"Yes, well - I brought this here with me. I kept it hidden just incase it came in handy. It'll probably be worth a good amount in trade.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("The hermit gives you an Electric Generator.");
@@ -5178,21 +5544,27 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Hermit:");
                                     Console.WriteLine();
-                                    Console.WriteLine("The hermit clears his throat. \"Yes, well - I see you're back. Be sure you left any light source outside. Is there a reason you're here?\"");
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine("The hermit clears his throat. \"Yes, well - I guess I do want to leave. You think this will get us all out, do you?\"");
+                                    Console.WriteLine("He clears his throat. \"Yes, well - I see you're back. Be sure you left any light source outside. Is there a reason you're here?\"");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Hermit:");
                                     Console.WriteLine();
-                                    Console.WriteLine("The hermit clears his throat. \"Yes, well - Unfortunately I do not see the merit of your argument. You simply do not persuade me to help you.\"");
+                                    Console.WriteLine("He clears his throat. \"Yes, well - I guess I do want to leave. You think this will get us all out, do you?\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Hermit:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("He clears his throat. \"Yes, well - Unfortunately I do not see the merit of your argument. You simply do not persuade me to help you. I'll see your side another day, perhaps.\"");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
@@ -5202,20 +5574,27 @@ namespace JessesDungeon
                             {
                                 action = "Complete";
                                 saulHermitBond++;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well, of course I have stevia. Wait -- who?\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well, of course I have stevia. Wait -- who?\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Jimmy?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
                                 Console.WriteLine("\"GET OUT! GET OUT! GET OUT! GET OUT!!\"");
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -5230,6 +5609,7 @@ namespace JessesDungeon
                                 {
                                     EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
                                 }
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit has begun filling the space between his words with panicked screams and short, shallow breaths.");
@@ -5240,6 +5620,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("...It's probably the wise move to leave.");
@@ -5252,20 +5633,27 @@ namespace JessesDungeon
                             {
                                 action = "Complete";
                                 saulHermitBond++;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well, of course I complained about him. Wait -- what?\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well, of course I complained about him. Wait -- what?\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"'Unacceptable?'\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
                                 Console.WriteLine("\"GET OUT! GET OUT! GET OUT! GET OUT!!\"");
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -5280,6 +5668,7 @@ namespace JessesDungeon
                                 {
                                     EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
                                 }
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit has begun filling the space between his words with panicked screams and short, shallow breaths.");
@@ -5290,6 +5679,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("...It's probably the wise move to leave.");
@@ -5302,20 +5692,27 @@ namespace JessesDungeon
                             {
                                 action = "Complete";
                                 saulHermitBond++;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well, of course I gave him orders. Wait -- what?\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well, of course I gave him orders. Wait -- what?\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Didn't like being ordered around all the time?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
                                 Console.WriteLine("\"GET OUT! GET OUT! GET OUT! GET OUT!!\"");
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -5330,6 +5727,7 @@ namespace JessesDungeon
                                 {
                                     EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
                                 }
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit has begun filling the space between his words with panicked screams and short, shallow breaths.");
@@ -5340,6 +5738,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("...It's probably the wise move to leave.");
@@ -5352,20 +5751,27 @@ namespace JessesDungeon
                             {
                                 action = "Complete";
                                 saulHermitBond++;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well, of course there is much to do. Wait -- what?\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well, of course there is much to do. Wait -- what?\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"I nagged him all the time?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
                                 Console.WriteLine("\"GET OUT! GET OUT! GET OUT! GET OUT!!\"");
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -5380,6 +5786,7 @@ namespace JessesDungeon
                                 {
                                     EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
                                 }
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The hermit has begun filling the space between his words with panicked screams and short, shallow breaths.");
@@ -5390,6 +5797,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("...It's probably the wise move to leave.");
@@ -5406,27 +5814,35 @@ namespace JessesDungeon
                                 undroppables.Add(stevia);
                                 newConverseAvailable = true;
                                 ego.BlueCrystals = ego.BlueCrystals + 2;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well, it's you! I have something for you!\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well, Jimmy tells me you need this. I'd like for you to have it.\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well, it's you! I have something for you!\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well, and I apologize if I injured you with those books I threw. Please allow me to pay for a safe rest with that nice young man with the wooden plank.\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well, Jimmy tells me you need this. I'd like for you to have it.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Hermit:");
+                                Console.WriteLine();
+                                Console.WriteLine("He clears his throat. \"Yes, well, and I apologize if I injured you with those books I threw. Please allow me to pay for a safe rest with that nice young man with the wooden plank.\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"He still charges 2 crystals, I'm sure?\"");
                                 Console.WriteLine();
@@ -5436,21 +5852,27 @@ namespace JessesDungeon
                             else if (hermitAnger < 3)
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - that's all right. We don't always need a purpose, do we? A simple visit is always nice.\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - welcome to my home. I appreciate your not bringing any light in here. What brings you by?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - unless there's something you need? I was right in the middle of something. Please try to leave the sheets draped together as you leave.\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - that's all right. We don't always need a purpose, do we? A simple visit is always nice.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Hermit:");
+                                Console.WriteLine();
+                                Console.WriteLine("He clears his throat. \"Yes, well - unless there's something you need? I was right in the middle of something. Please try to leave the sheets draped together as you leave.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -5458,21 +5880,27 @@ namespace JessesDungeon
                             else if (hermitAnger > 2 && hermitAnger < 6)
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - I see you're back. Be sure you left any light source outside. Is there a reason you're here?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - that's fine. Don't always need a purpose I suppose. It's kind to visit people.\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - I see you're back. Be sure you left any light source outside. Is there a reason you're here?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - unless there's something you need? I was right in the middle of something. Leave the sheets draped together as you leave.\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - that's fine. Don't always need a purpose I suppose. It's kind to visit people.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Hermit:");
+                                Console.WriteLine();
+                                Console.WriteLine("He clears his throat. \"Yes, well - unless there's something you need? I was right in the middle of something. Leave the sheets draped together as you leave.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -5480,21 +5908,27 @@ namespace JessesDungeon
                             else if (hermitAnger > 5 && hermitAnger < 9)
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - You're back. Hope you left your light sources outside. What do you want?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - Fine. Just here to distract me, I suppose. Not like you'd be one to consider if you're interrupting something.\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - You're back. Hope you left your light sources outside. What do you want?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - can we cut this short? I was right in the middle of something. BE SURE the sheets are draped together as you leave.\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - Fine. Just here to distract me, I suppose. Not like you'd be one to consider if you're interrupting something.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Hermit:");
+                                Console.WriteLine();
+                                Console.WriteLine("He clears his throat. \"Yes, well - can we cut this short? I was right in the middle of something. BE SURE the sheets are draped together as you leave.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -5502,21 +5936,27 @@ namespace JessesDungeon
                             else if (hermitAnger == 9)
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - What?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - Nothing? Just sticking your nose into places, I suppose. Not like you'd ever consider if you're not welcome.\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - What?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Hermit:");
                                 Console.WriteLine();
-                                Console.WriteLine("The hermit clears his throat. \"Yes, well - can you just get out? I was right in the middle of something. Don't dare have the sheets not draped together as you leave.\"");
+                                Console.WriteLine("He clears his throat. \"Yes, well - Nothing? Just sticking your nose into places, I suppose. Not like you'd ever consider if you're not welcome.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Hermit:");
+                                Console.WriteLine();
+                                Console.WriteLine("He clears his throat. \"Yes, well - can you just get out? I was right in the middle of something. Don't dare have the sheets not draped together as you leave.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -5549,11 +5989,6 @@ namespace JessesDungeon
                         break;
 
                     case "A7": //Saul Meepman
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[12, 0] = "[x]";
                         discoveredMap[12, 1] = "-";
@@ -5595,6 +6030,7 @@ namespace JessesDungeon
                         if (action == "look at mounds")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Did you expect to learn something useful? Well, you did. There are small openings in every mound which are all located at right around the height of a human's eyes.");
@@ -5607,12 +6043,14 @@ namespace JessesDungeon
                         {
                             action = "Complete";
                             searchedMeepMounds = true;
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The mounds are sturdy. You could probably crumble one with some effort, if you chose to.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("As you're continuing to assess the mound of dirt, an arm suddenly reaches around from behind it and smacks your hand.");
@@ -5627,12 +6065,14 @@ namespace JessesDungeon
                         {
                             action = "Complete";
                             talkedToMeepMounds = true;
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"Hiya, Pleased to meetcha.\"");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("A man steps out from behind a mound. He is (unsurprisingly) covered in dirt; but he also (surprisingly) is wearing a flashy suit. He smiles and extends his hand.");
@@ -5641,13 +6081,16 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"Well yes, anyway. It's great to make your acquaintance; Jimmy's the name. You new? It's always good to meet the new ones; get to 'em before they meet all the wrong people.\"");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
+                            Console.WriteLine("Jimmy:");
                             Console.WriteLine();
                             Console.WriteLine("\"You and I? We're gonna be great friends -- I can just tell. It's all good, man! Come back and visit ANY time!\"");
                             Console.WriteLine();
@@ -5660,13 +6103,17 @@ namespace JessesDungeon
                             action = "Complete";
                             if (undroppables.Contains(dungeonKey))
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"You did it, huh? I knew we could count on you!\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Hey, listen, if we're really getting ourselves out of here, I have a lot of prep work to do in order to be ready. You understand, I'm sure. I'll see you on the outside, all right, bud?\"");
                                 Console.WriteLine();
@@ -5679,6 +6126,7 @@ namespace JessesDungeon
                             {
                                 undroppables.Add(safe);
                                 tookSaulCash = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man steps out from behind one of his hiding places.");
@@ -5687,13 +6135,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Uh-huh I see... and you think that'll work?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"I totally see what you're getting at and - buddy, believe me - I 100% support it.\"");
                                 Console.WriteLine();
@@ -5701,19 +6153,25 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"I can tell by your expression that you're not completely jiving with my version of events. That's fine and I respect that. You see, the thing is I do have something, but it's ALL my something, you know what I mean?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"You really know how to tug on the heart strings. Listen, my friend, I really want to help -- truly I do! But do you think you could get this done by just leaving out my teensy little contribution?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"All right all right! You really are stubborn sometimes, you know?\"");
                                 Console.WriteLine();
@@ -5721,7 +6179,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"The only problem - and I SWEAR this is true - I don't remember the combination. I do have it written down, but that paper is... inside the safe.\"");
                                 Console.WriteLine();
@@ -5731,7 +6191,9 @@ namespace JessesDungeon
                                 Console.ReadLine();
                                 if (tookHermitCash == false)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
+                                    Console.WriteLine("Jimmy:");
                                     Console.WriteLine();
                                     Console.WriteLine("\"And be sure to check with my brother -- I KNOW he's got something hidden there.\"");
                                     Console.WriteLine();
@@ -5742,6 +6204,7 @@ namespace JessesDungeon
                             else if (peteQuestCompleted == true && saulQuestGiven == false)
                             {
                                 saulQuestGiven = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man steps out from behind one of his hiding places.");
@@ -5750,13 +6213,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Stevia? The skinny kid from town told you to ask me? Hah!\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Listen, buddy, I'd love to help you out -- really I would! But I just simply can't help you.\"");
                                 Console.WriteLine();
@@ -5764,7 +6231,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"But I'll tell you, my friend, that I do know where it is!\"");
                                 Console.WriteLine();
@@ -5772,7 +6241,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Now -- here's the little caveat. He is less-than-happy with me right now, and we haven't spoken in a while.\"");
                                 Console.WriteLine();
@@ -5780,7 +6251,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"He's a nice enough guy and all, but he is not likely to part with his stuff... especially since he has no source to restock. You might have to drop my name and try your luck.\"");
                                 Console.WriteLine();
@@ -5792,6 +6265,7 @@ namespace JessesDungeon
                             else if (saulHermitBond == 1)
                             {
                                 saulHermitBond++;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man steps out from behind one of his hiding places.");
@@ -5800,7 +6274,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Oh. He said what?\"");
                                 Console.WriteLine();
@@ -5808,7 +6284,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"You know that man is so opinionated. I was just trying to live my separate life while taking care of his, too!\"");
                                 Console.WriteLine();
@@ -5820,6 +6298,7 @@ namespace JessesDungeon
                             else if (saulHermitBond == 3)
                             {
                                 saulHermitBond++;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man steps out from behind one of his hiding places.");
@@ -5828,13 +6307,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Lazy? I'm doing him a favor and I'm lazy?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"All he ever did was bark and give me orders!\"");
                                 Console.WriteLine();
@@ -5846,6 +6329,7 @@ namespace JessesDungeon
                             else if (saulHermitBond == 5)
                             {
                                 saulHermitBond++;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man steps out from behind one of his hiding places.");
@@ -5854,7 +6338,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"MY IDEA AFTER ALL?\"");
                                 Console.WriteLine();
@@ -5862,7 +6348,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Sure, it was my idea: 'hey, why don't I do these life-necessities for you and get nothing in return?'\"");
                                 Console.WriteLine();
@@ -5874,6 +6362,7 @@ namespace JessesDungeon
                             else if (saulHermitBond == 7)
                             {
                                 saulHermitBond++;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man steps out from behind one of his hiding places.");
@@ -5882,7 +6371,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Garlic and avocado sandwiches?\"");
                                 Console.WriteLine();
@@ -5890,7 +6381,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Man, those were some good sandwiches though. You should have seen how high we stacked those sandwiches...\"");
                                 Console.WriteLine();
@@ -5898,7 +6391,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Don't worry, my friend! I'll be sure to toss in your good name for that stevia, too.\"");
                                 Console.WriteLine();
@@ -5907,6 +6402,7 @@ namespace JessesDungeon
                             }
                             else if (saulHermitBond == 8)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man does not seem to be here.");
@@ -5916,6 +6412,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man steps out from behind one of his hiding places.");
@@ -5924,7 +6421,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"You know, you don't talk much -- and that's great. Always good to have a \'strong and silent type\' pal that you can count on. But don't be shy! if you EVER need something -- I'm your man!\"");
                                 Console.WriteLine();
@@ -5937,12 +6436,14 @@ namespace JessesDungeon
                         {
                             action = "Complete";
                             lookedMeepEyes = true;
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Honing your chi, you concentrate hard on catching one of these glints of light.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("They are eyes.");
@@ -5954,6 +6455,7 @@ namespace JessesDungeon
                         if (action == "search glint")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             if (lookedMeepEyes == true) { Console.WriteLine("Scooby-Doo wouldn't, and either should you."); }
@@ -5966,6 +6468,7 @@ namespace JessesDungeon
                         if (action == "talk to glint" && searchedMeepMounds == true)
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("No, you don\'t.");
@@ -6000,11 +6503,6 @@ namespace JessesDungeon
                         break;
 
                     case "J4": //Outside Mike
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[6, 18] = "[x]";
                         Console.WriteLine("A fairly well constructed [house] stands in the corner of this room. There is a [statue] of a man standing in front of the entrance.");
@@ -6045,6 +6543,7 @@ namespace JessesDungeon
                         if (action == "look at house")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The extent of its quality is beyond \"relative\" for this place. This house would rival any simple house built in the normal world.");
@@ -6057,6 +6556,7 @@ namespace JessesDungeon
                         {
                             action = "Complete";
                             searchedMikeHouse = true;
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("As you approach the house, the statue comes to life.");
@@ -6067,6 +6567,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"Hey? Who are you?\" the statue asks.");
@@ -6078,6 +6579,7 @@ namespace JessesDungeon
                             Console.Write("> ");
                             string gargoyleName = Console.ReadLine();
                             Console.WriteLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"All right, " + gargoyleName + ", and who is it you're looking for here?\"");
@@ -6093,6 +6595,7 @@ namespace JessesDungeon
                             if (gargoylePurpose == "mike")
                             {
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"OK - great,\" the statue-man takes out a notepad and studies it as he continues, \"and what is the cartel's password?\"");
@@ -6109,6 +6612,7 @@ namespace JessesDungeon
                                 {
                                     fuckedUpWithMike = true;
                                     Console.WriteLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Hrm. The boss doesn't want to get mixed up with you guys. He won\'t see you. Sorry.\"");
@@ -6119,6 +6623,7 @@ namespace JessesDungeon
                                 else if (gargoylePassword == "blue")
                                 {
                                     Console.WriteLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Right. Off you go.\"");
@@ -6130,6 +6635,7 @@ namespace JessesDungeon
                                 else if (gargoylePassword == "yellow")
                                 {
                                     Console.WriteLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Hrm. I take you for more of a \'blue\' man.\"");
@@ -6140,6 +6646,7 @@ namespace JessesDungeon
                                 else if (gargoylePassword == "assur")
                                 {
                                     Console.WriteLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"I, uh, will take your word for it. Wait -- what question did I ask? Eh, whatever. Mike will see you.\"");
@@ -6151,6 +6658,7 @@ namespace JessesDungeon
                                 else
                                 {
                                     Console.WriteLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Good - you're not in the cartel! The boss can't be bothered with them. He will see you now.\"");
@@ -6163,6 +6671,7 @@ namespace JessesDungeon
                             else
                             {
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Hrm. No. The boss only bothers to see people with a purpose. Sorry.\"");
@@ -6177,6 +6686,7 @@ namespace JessesDungeon
                             action = "Complete";
                             if (undroppables.Contains(dungeonKey))
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Hey? Uh, actually, the boss told me not to let you in.\"");
@@ -6188,6 +6698,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Hey? Uh... who are you again?\"");
@@ -6199,6 +6710,7 @@ namespace JessesDungeon
                                 Console.Write("> ");
                                 string gargoyleName = Console.ReadLine();
                                 Console.WriteLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"All right, " + gargoyleName + ", and who is it you were looking for again?\"");
@@ -6214,6 +6726,7 @@ namespace JessesDungeon
                                 if (gargoylePurpose == "mike")
                                 {
                                     Console.WriteLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"OK - great,\" the statue-man takes out a notepad and studies it as he continues, \"and what is the cartel's password?\"");
@@ -6230,6 +6743,7 @@ namespace JessesDungeon
                                     {
                                         fuckedUpWithMike = true;
                                         Console.WriteLine();
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"Hrm. The boss doesn't want to get mixed up with you guys. He won\'t see you. Sorry.\"");
@@ -6240,6 +6754,7 @@ namespace JessesDungeon
                                     else if (gargoylePassword == "blue")
                                     {
                                         Console.WriteLine();
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"Right. Off you go.\"");
@@ -6251,6 +6766,7 @@ namespace JessesDungeon
                                     else if (gargoylePassword == "yellow")
                                     {
                                         Console.WriteLine();
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"Hrm. I take you for more of a \'blue\' man.\"");
@@ -6261,6 +6777,7 @@ namespace JessesDungeon
                                     else if (gargoylePassword == "assur")
                                     {
                                         Console.WriteLine();
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"I, uh, will take your word for it. Wait -- what question did I ask? Eh, whatever. Mike will see you.\"");
@@ -6272,6 +6789,7 @@ namespace JessesDungeon
                                     else
                                     {
                                         Console.WriteLine();
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"Good -- you're not in the cartel! The boss can't be bothered with them. He will see you now.\"");
@@ -6284,6 +6802,7 @@ namespace JessesDungeon
                                 else
                                 {
                                     Console.WriteLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Hrm. No. The boss only bothers to see people with a purpose. Sorry.\"");
@@ -6299,6 +6818,7 @@ namespace JessesDungeon
                             action = "Complete";
                             if (undroppables.Contains(dungeonKey))
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Hey? Uh, actually, the boss told me not to let you in.\"");
@@ -6310,6 +6830,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Hey. Uh?... wait. You're one of those cartel guys, aren't you?\"");
@@ -6326,6 +6847,7 @@ namespace JessesDungeon
                                 {
                                     fuckedUpWithMike = false;
                                     Console.WriteLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Oh. Hey? Then... who are you again?\"");
@@ -6337,6 +6859,7 @@ namespace JessesDungeon
                                     Console.Write("> ");
                                     string gargoyleName = Console.ReadLine();
                                     Console.WriteLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"All right, " + gargoyleName + ", and who is it you were looking for again?\"");
@@ -6352,6 +6875,7 @@ namespace JessesDungeon
                                     if (gargoylePurpose == "mike")
                                     {
                                         Console.WriteLine();
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"OK - great,\" the statue-man takes out a notepad and studies it as he continues, \"and what is the cartel's password?\"");
@@ -6368,6 +6892,7 @@ namespace JessesDungeon
                                         {
                                             fuckedUpWithMike = true;
                                             Console.WriteLine();
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Hrm. The boss doesn't want to get mixed up with you guys. He won\'t see you. Sorry.\"");
@@ -6378,6 +6903,7 @@ namespace JessesDungeon
                                         else if (gargoylePassword == "blue")
                                         {
                                             Console.WriteLine();
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Right. Off you go.\"");
@@ -6389,6 +6915,7 @@ namespace JessesDungeon
                                         else if (gargoylePassword == "yellow")
                                         {
                                             Console.WriteLine();
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Hrm. I take you for more of a \'blue\' man.\"");
@@ -6399,6 +6926,7 @@ namespace JessesDungeon
                                         else if (gargoylePassword == "assur")
                                         {
                                             Console.WriteLine();
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"I, uh, will take your word for it. Wait -- what question did I ask? Eh, whatever. Mike will see you.\"");
@@ -6410,6 +6938,7 @@ namespace JessesDungeon
                                         else
                                         {
                                             Console.WriteLine();
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Good -- you're not in the cartel! The boss can't be bothered with them. He will see you now.\"");
@@ -6422,6 +6951,7 @@ namespace JessesDungeon
                                     else
                                     {
                                         Console.WriteLine();
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"Hrm. No. The boss only bothers to see people with a purpose. Sorry.\"");
@@ -6433,6 +6963,7 @@ namespace JessesDungeon
                                 else if (gargoyleConfession == "yes")
                                 {
                                     Console.WriteLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Hrm. The boss doesn't want to get mixed up with you guys. He won\'t see you. Sorry.\"");
@@ -6443,6 +6974,7 @@ namespace JessesDungeon
                                 else
                                 {
                                     Console.WriteLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"I'm not really sure what you're trying to say? But I'm pretty sure you're that cartel guy. The boss doesn't want to get mixed up with you guys. He won\'t see you. Sorry.\"");
@@ -6456,6 +6988,7 @@ namespace JessesDungeon
                         if (action == "look at statue")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("It's an average (maybe less than average) middle-aged man. He's bald with a bit of a clueless look on his face. The statue stands as if to intercept visitors -- and in that case is a very odd choice of scare-statue.");
@@ -6467,6 +7000,7 @@ namespace JessesDungeon
                         if (action == "search statue")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             if (searchedTree == true) { Console.WriteLine("The statue is warm, and slightly more malleable to the touch than it should be... wait. Forget getting a leg-up on the situation -- just stop and back away slowly. You can't afford two potential sexual harrassment cases. It's not worth it."); }
@@ -6479,6 +7013,7 @@ namespace JessesDungeon
                         if (action == "talk to house")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Nothing happens.");
@@ -6513,11 +7048,6 @@ namespace JessesDungeon
                         break;
 
                     case "Mike": //Mike
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         Console.WriteLine("[Mike] is at his desk, and finishes writing something as you approach. He looks up at you with a blank expression.");
                         Console.WriteLine();
@@ -6553,6 +7083,7 @@ namespace JessesDungeon
                         if (action == "look at mike")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("This must be the most intense man to ever exist. He's hard; he's tough; he's silent. There's nothing sinister about him, but neither does he inspire any sort of fuzzy feelings.");
@@ -6564,6 +7095,7 @@ namespace JessesDungeon
                         if (action == "search mike")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Are you kidding? He'd probably snap your fingers off and drain your blood out of them. Better meek out on this one.");
@@ -6579,19 +7111,24 @@ namespace JessesDungeon
                             {
                                 undroppables.Add(giantBlueCrystal);
                                 tookMikeCash = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Mike raises an eyebrow at you. \"Yeah?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Mike:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Hmph. You really think this will work, huh?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Mike:");
                                 Console.WriteLine();
                                 Console.WriteLine("He rises to his feet. \"All right. You can take this big thing back and use it. But this better work.\"");
                                 Console.WriteLine();
@@ -6600,13 +7137,16 @@ namespace JessesDungeon
                             }
                             else if (gusQuestGiven == false)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Mike raises an eyebrow at you. \"Yeah?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Mike:");
                                 Console.WriteLine();
                                 Console.WriteLine("He sighs. \"I thought I told that oaf not to let people waste my time. Get out.\"");
                                 Console.WriteLine();
@@ -6616,19 +7156,24 @@ namespace JessesDungeon
                             else if (gusQuestGiven == true && mikeQuestGiven == false)
                             {
                                 mikeQuestGiven = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Mike raises an eyebrow at you. \"Yeah?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Mike:");
                                 Console.WriteLine();
-                                Console.WriteLine("Mike rises to his feet and glares at you. \"I thought I told that oaf not to let you cartel in here.\"");
+                                Console.WriteLine("He rises to his feet and glares at you. \"I thought I told that oaf not to let you cartel in here.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Mike:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Listen. I'll make you a deal.\"");
                                 Console.WriteLine();
@@ -6636,13 +7181,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Mike:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Lydia resides in the old refrigerated section of the dungeon to the south of here. Find out what's happened and retrieve my money, and I will promise not to challenge the cartel in a power play.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Mike:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"And that's the best I will offer you. Take it or leave it.\"");
                                 Console.WriteLine();
@@ -6654,24 +7203,30 @@ namespace JessesDungeon
                                 mikeQuestCompleted = true;
                                 newConverseAvailable = true;
                                 undroppables.Remove(giantBlueCrystal);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Mike:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Hmph.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Mike:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Suppose I can smash it.\"");
                                 Console.WriteLine();
-                                Console.WriteLine("Mike sighs. \"All right. You got nothing to worry about from me in your little drama. Tell them I'm cowed or whatever you gotta do.\"");
+                                Console.WriteLine("He sighs. \"All right. You got nothing to worry about from me in your little drama. Tell them I'm cowed or whatever you gotta do.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                             }
                             else if (mikeQuestGiven == true && mikeQuestCompleted == false)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Mike:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Until you return with my money we have nothing to discuss.\"");
                                 Console.WriteLine();
@@ -6681,6 +7236,7 @@ namespace JessesDungeon
                             else if (knightSuitAvailable == true)
                             {
                                 mikeLoop = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Mike raises an eyebrow at you. \"Yeah?\"");
@@ -6689,9 +7245,10 @@ namespace JessesDungeon
                                 Console.ReadLine();
                                 while (mikeLoop == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine("He rises to his feet. \"I've got something I've been saving for 'the end' that you could use. But you better get us out of here.\"");
+                                    Console.WriteLine("Mike rises to his feet. \"I've got something I've been saving for 'the end' that you could use. But you better get us out of here.\"");
                                     Console.WriteLine();
                                     Console.WriteLine("\"I've only got the one so I can't replace it. Do you want it now?\"");
                                     Console.WriteLine();
@@ -6712,6 +7269,7 @@ namespace JessesDungeon
                                         equippableArmor.Add(chainmail);
                                         equippableShield.Add(realShield);
                                         equippableWeapon.Add(realSword);
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("You receive a sword, shield, and suit of chainmail.");
@@ -6725,6 +7283,7 @@ namespace JessesDungeon
                                     {
                                         mikeLoop = false;
                                         action = "Complete";
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"Probably a smart move.\"");
@@ -6734,6 +7293,7 @@ namespace JessesDungeon
                                     }
                                     else
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("That didn't do anything useful.");
@@ -6745,13 +7305,16 @@ namespace JessesDungeon
                             }
                             else if (mikeQuestCompleted == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Mike raises an eyebrow at you. \"Yeah?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Mike:");
                                 Console.WriteLine();
                                 Console.WriteLine("He sighs. \"Maybe I could help you with something later. Until then: leave.\"");
                                 Console.WriteLine();
@@ -6785,11 +7348,6 @@ namespace JessesDungeon
                         break;
 
                     case "E7": //Graveyard
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[12, 8] = "[x]";
                         discoveredMap[13, 8] = " | ";
@@ -6861,6 +7419,7 @@ namespace JessesDungeon
                         if (action == "look at mass grave")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Creeping to the edge, you look down into the big hole. There are dozens of bodies of varying degrees of decay.");
@@ -6877,24 +7436,28 @@ namespace JessesDungeon
                             if (searchedGraveyard == false)
                             {
                                 searchedGraveyard = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Hoping to find a forgotten treasure, you hop down into the pit. After a few minutes of searching through old pockets and packs, you come up empty.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Wait! You've definitely found something in this pocket. Not being able to get a good grip on it, you throw some bodies aside in order to get your prize more exposed.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You now see that \"pocket\" was actually a rotting patch of flesh, and that \"prize\" must've been some internal organ.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You... ah... uhh... wha?...");
@@ -6902,7 +7465,7 @@ namespace JessesDungeon
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.Clear();
-                                Thread.Sleep(2000);
+                                Thread.Sleep(1500);
                                 Console.WriteLine("You awaken face down in, fortunately, something inorganic. You don't know how long you've been out, but you do know one thing -- you won't be digging around in anymore mass graves any time soon.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
@@ -6910,6 +7473,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Nooooope!");
@@ -6923,11 +7487,6 @@ namespace JessesDungeon
                         break;
 
                     case "H2": //Outside Salamanca
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -6976,6 +7535,7 @@ namespace JessesDungeon
                             if (action == "look at man")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He looks big, angry, and dangerous.");
@@ -6987,6 +7547,7 @@ namespace JessesDungeon
                             if (action == "search man")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You must EARN the right to do that!");
@@ -6999,6 +7560,7 @@ namespace JessesDungeon
                             {
                                 action = "Complete";
                                 BadGuyStats badGuy = new BadGuyStats("Salamanca Guard", 50, 50, 2, 0.85, 8, 4, 3.00, die.Next(20, 36), 1, lightHealingPotion, huntingKnife, leatherArmor, "The Salamanca Guard charges at you with a knife!");
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You ready yourself for battle.");
@@ -7061,6 +7623,7 @@ namespace JessesDungeon
                             if (action == "look at man")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He looks big, dead, and innocuous.");
@@ -7075,6 +7638,7 @@ namespace JessesDungeon
                                 if (salamancaGuardSearched == false)
                                 {
                                     salamancaGuardSearched = true;
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("You earned the right to search him, and gosh darn it you'll go through his pockets as many times as you see fit!");
@@ -7093,6 +7657,7 @@ namespace JessesDungeon
                                 }
                                 else if (salamancaGuardSearched == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("YOU FOUND ANOTHER HIDDEN STASH OF oh wait no you didn't.");
@@ -7107,11 +7672,6 @@ namespace JessesDungeon
                         break;
 
                     case "H1": //Salamanca
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -7182,6 +7742,7 @@ namespace JessesDungeon
                             if (action == "look at table")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("If you didn't know any better (and you don't), you'd say they are doing something illegal here.");
@@ -7196,6 +7757,7 @@ namespace JessesDungeon
                                 salamancaLoop = true;
                                 while (salamancaLoop == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Within reach is a beaker with a clear liquid being heated over a flame, and a container of red powder.");
@@ -7219,6 +7781,7 @@ namespace JessesDungeon
                                         salamancaLoop = false;
                                         salamancaChoice = "liquid";
                                         BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 70, 70, 2, 0.85, 8, 4, 2.00, die.Next(40, 61), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("You grab the beaker and hurl it at one of the men. It bursts and covers his face and body, and he falls to the ground screaming.");
@@ -7237,6 +7800,7 @@ namespace JessesDungeon
                                         salamancaLoop = false;
                                         salamancaChoice = "powder";
                                         BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 40, 70, 2, 0.85, 8, 4, 2.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("You take the powder and throw it at the men. It disperses in the air over them.");
@@ -7251,6 +7815,7 @@ namespace JessesDungeon
                                         if (ego.Location == "H1")
                                         {
                                             badGuy.CurrentHitPoints = 40;
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("The other man has collected himself, and resumes his charge. You ready yourself for battle.");
@@ -7266,6 +7831,7 @@ namespace JessesDungeon
                                     {
                                         salamancaLoop = false;
                                         ego.CurrentHitPoints = ego.CurrentHitPoints - 30;
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("You take the powder and toss it into the beaker. A violent reaction occurs, and you quickly throw it at the men.");
@@ -7283,19 +7849,21 @@ namespace JessesDungeon
                                         Console.ReadLine();
                                         if (ego.CurrentHitPoints <= 0)
                                         {
+                                            salamancaChoice = null;
                                             EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
                                             //break; crashing?
                                         }
                                         else
                                         {
                                             salamancaChoice = "combine";
-                                            BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 30, 70, 2, 0.85, 8, 4, 3.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
+                                            BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 30, 70, 2, 0.85, 8, 4, 2.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
                                             PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
                                             PlotBattleResolution(ego, equippableArmor, equippableWeapon, equippableShield, potionBelt, badGuy);
                                             if (ego.Location == "H1") { salamancaCousinDefeated = true; } //maybe redundant
                                             if (ego.Location == "H1")
                                             {
                                                 badGuy.CurrentHitPoints = 30;
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("The other man has collected himself, and resumes his charge. You ready yourself for battle.");
@@ -7312,6 +7880,7 @@ namespace JessesDungeon
                                     {
                                         salamancaLoop = false;
                                         salamancaChoice = null;
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Well you better do something!");
@@ -7321,6 +7890,7 @@ namespace JessesDungeon
                                     }
                                     else
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("That didn't do anything useful.");
@@ -7335,6 +7905,7 @@ namespace JessesDungeon
                             if (action == "look at bag")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("It actually is a sack with a giant dollar sign on it. Technically it's misleading as it's not actual dollars... maybe it works.");
@@ -7346,6 +7917,7 @@ namespace JessesDungeon
                             if (action == "search bag")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("That's the idea, dummy. Get to it!");
@@ -7358,6 +7930,7 @@ namespace JessesDungeon
                             {
                                 action = "Complete";
                                 salamancaChoice = "fight";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 if (ego.EquippedWeapon.Name == "Unarmed") { Console.WriteLine("You clench your fists and raise them to ready yourself for battle."); }
@@ -7367,13 +7940,13 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
-                                BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 100, 100, 2, 0.85, 8, 4, 3.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
-                                PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
+                                BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 70, 70, 2, 0.85, 8, 4, 2.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");                                PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
                                 PlotBattleResolution(ego, equippableArmor, equippableWeapon, equippableShield, potionBelt, badGuy);
                                 if (ego.Location == "H1") { salamancaCousinDefeated = true; } //maybe redundant
                                 if (ego.Location == "H1")
                                 {
-                                    badGuy.CurrentHitPoints = 100;
+                                    badGuy.CurrentHitPoints = 70;
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Seeing the first fall, the other man charges.");
@@ -7460,6 +8033,7 @@ namespace JessesDungeon
                             if (action == "look at table")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("If you didn't know any better (and you don't), you'd say they were doing something illegal here.");
@@ -7471,6 +8045,7 @@ namespace JessesDungeon
                             if (action == "search table")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Oof. You wouldn't even know where to start. You never really paid attention in chemistry class.");
@@ -7482,9 +8057,10 @@ namespace JessesDungeon
                             if (action == "look at bag" && salamancaBagLooted == false)
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("It actually is a sack with a giant dollar sign on it. Technically it's misleading as it's not actual dollars... maybe it works.");
+                                Console.WriteLine("Believe it or not, it is a sack with a giant dollar sign on it. Technically it's misleading as it's not actually dollars... so maybe it works.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -7498,6 +8074,7 @@ namespace JessesDungeon
                                 undroppables.Add(sackOfCash);
                                 while (salamancaLoop == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("That's the most blue you've ever seen in one place.");
@@ -7518,6 +8095,7 @@ namespace JessesDungeon
                                     {
                                         while (salamancaLoop == true)
                                         {
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("You devil! How much?");
@@ -7532,6 +8110,7 @@ namespace JessesDungeon
                                                 {
                                                     salamancaLoop = false;
                                                     salamancaStolenCrystals = stolenCrystals;
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     if (stolenCrystals <= 20) { Console.WriteLine("Dastardly."); }
@@ -7546,6 +8125,7 @@ namespace JessesDungeon
                                                 }
                                                 else
                                                 {
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("You can't take negative, imaginary, or pi crystals, ok? Get with the program.");
@@ -7556,6 +8136,7 @@ namespace JessesDungeon
                                             }
                                             else
                                             {
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("Come on! Gimmie a number. This is exciting isn't it?!");
@@ -7570,6 +8151,7 @@ namespace JessesDungeon
                                     else if (salamancaAction == "no")
                                     {
                                         salamancaLoop = false;
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Boring. But smart I suppose.");
@@ -7579,6 +8161,7 @@ namespace JessesDungeon
                                     }
                                     else
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("That didn't do anything useful.");
@@ -7592,6 +8175,7 @@ namespace JessesDungeon
                             if (action == "look at man")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He's old, he's mean, and he's probably soiling himself. Why'd you leave him alive again?");
@@ -7603,6 +8187,7 @@ namespace JessesDungeon
                             if (action == "search man")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Whenever you approach he swats at you with such intense fury that you back down.");
@@ -7614,6 +8199,7 @@ namespace JessesDungeon
                             if (action == "kill old man")
                             {
                                 salamancaDead = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("No loose ends is probably the safest route. You're in this for your own survival, and not the well-being of any evil old man who crosses your path.");
@@ -7642,6 +8228,7 @@ namespace JessesDungeon
                             if (action == "look at table")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("If you didn't know any better (and you don't), you'd say they were doing something illegal here.");
@@ -7653,6 +8240,7 @@ namespace JessesDungeon
                             if (action == "search table")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Oof. You wouldn't even know where to start. You never really paid attention in chemistry class.");
@@ -7664,9 +8252,10 @@ namespace JessesDungeon
                             if (action == "look at bag" && salamancaBagLooted == false)
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("It actually is a sack with a giant dollar sign on it. Technically it's misleading as it's not actual dollars... maybe it works.");
+                                Console.WriteLine("Believe it or not, it is a sack with a giant dollar sign on it. Technically it's misleading as it's not actually dollars... so maybe it works.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -7680,6 +8269,7 @@ namespace JessesDungeon
                                 undroppables.Add(sackOfCash);
                                 while (salamancaLoop == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("That's the most blue you've ever seen in one place.");
@@ -7700,6 +8290,7 @@ namespace JessesDungeon
                                     {
                                         while (salamancaLoop == true)
                                         {
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("You devil! How much?");
@@ -7728,6 +8319,7 @@ namespace JessesDungeon
                                                 }
                                                 else
                                                 {
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("You can't take negative, imaginary, or pi crystals, ok? Get with the program.");
@@ -7738,6 +8330,7 @@ namespace JessesDungeon
                                             }
                                             else
                                             {
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("Come on! Gimmie a number. This is exciting isn't it?!");
@@ -7750,6 +8343,7 @@ namespace JessesDungeon
                                     else if (salamancaAction == "no")
                                     {
                                         salamancaLoop = false;
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Boring. But smart I suppose.");
@@ -7759,6 +8353,7 @@ namespace JessesDungeon
                                     }
                                     else
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("That didn't do anything useful.");
@@ -7772,6 +8367,7 @@ namespace JessesDungeon
                             if (action == "search man")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Nothin', man. Will have to settle for his gigantic bag of cash.");
@@ -7788,11 +8384,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -7869,11 +8460,6 @@ namespace JessesDungeon
                         break;
 
                     case "J6": //lydia
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[10, 18] = "[x]";
                         discoveredMap[10, 17] = "-";
@@ -7919,6 +8505,7 @@ namespace JessesDungeon
                             action = "Complete";
                             if (lydiaQuestCompleted == false)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The source of this woman's sadness seems somewhat artificial.");
@@ -7928,6 +8515,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The source of this woman's happiness seems somewhat artificial.");
@@ -7960,7 +8548,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("She beams. \"Oh? Won the game, have you?\"");
                                 Console.WriteLine();
@@ -7973,27 +8563,34 @@ namespace JessesDungeon
                             {
                                 undroppables.Add(minkCoat);
                                 tookLydiaCash = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The woman looks up at you. \"Oh. Hello!\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("She beams. \"I'm invigorated! Whatever it is I'm just happy to oblige!\"");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Oh. Well maybe not THAT happy.\"");
+                                Console.WriteLine("\"Oh... you want what from me? Well maybe not THAT happy.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
-                                Console.WriteLine("The woman turns her head quizzically and squints her eyes. \"Do you really think it'll work?\"");
+                                Console.WriteLine("She turns her head quizzically and squints her eyes. \"Do you really think it'll work?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"All right. But all of my money is still dirty. All I really have that's valuable is... my coat.\"");
                                 Console.WriteLine();
@@ -8004,12 +8601,14 @@ namespace JessesDungeon
                             }
                             else if (mikeQuestGiven == false)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The woman looks up at you. \"Oh. Hello?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("She sighs. \"I'm sorry. Whatever it is I'm just not in the mood.\"");
@@ -8022,13 +8621,16 @@ namespace JessesDungeon
                             else if (lydiaQuestGiven == false && mikeQuestGiven == true)
                             {
                                 lydiaQuestGiven = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The woman looks up at you. \"Oh. Hello?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("She sighs. \"I'm sorry. Whatever it is I'm just not -- oh. You're from the cartel?\"");
                                 Console.WriteLine();
@@ -8036,13 +8638,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("A glimmer of hope strikes her face for a moment as she looks back to you. \"I hate to make this a \'quid pro quo\' situation, but I can't help you unless you help first.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("She looks back down and runs her finger around the rim of her cup. \"I simply can't get started without my habitual jolt of caffeine. And I can't drink my tea as it is -- I've run out of stevia.\"");
                                 Console.WriteLine();
@@ -8050,13 +8656,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"I always used to buy it off that skinny junkie to the west. I'm sure he still has some! Please! I'll get what you need as soon as I am able.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Oh, and just one more thing -- I take lots of stevia. A fistful's worth!\"");
                                 Console.WriteLine();
@@ -8071,12 +8681,14 @@ namespace JessesDungeon
                                 newConverseAvailable = true;
                                 undroppables.Remove(stevia);
                                 undroppables.Add(giantBlueCrystal);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The woman looks up at you. \"You're back? Do you have it?!\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Her eyes ignite with passion when you hand her the stevia. She pours some into her cup and takes a big sip.");
@@ -8085,6 +8697,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("She is completely absorbed in her drink and seems to have forgotten you're even here.");
@@ -8093,7 +8706,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Oh. Hello!\"");
                                 Console.WriteLine();
@@ -8101,13 +8716,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Yes of course! While you were gone I worked tirelessly to get things ready for you!\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"It would have taken AGES to properly arrange the necessary clean crystals, so I got something just as good for you.\"");
                                 Console.WriteLine();
@@ -8115,14 +8734,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"If there's some sort of problem I can start working on the original package - but it'll take a while!\"");
+                                Console.WriteLine("\"I can start working on the original package - but it'll take a long while!\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Dirty money takes so long to clean!\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You're not too sure why Mike would care if his crystals had dirt on them, but you're just the new guy here.");
@@ -8132,13 +8754,16 @@ namespace JessesDungeon
                             }
                             else if (lydiaQuestGiven == true && lydiaQuestCompleted == false)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The woman looks up at you. \"You're back? Do you have it?!\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("She sighs. \"Oh. Well please hurry. The headaches are setting in.\"");
                                 Console.WriteLine();
@@ -8149,13 +8774,16 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The woman looks up at you. \"Oh. Hello!\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Lydia:");
                                 Console.WriteLine();
                                 Console.WriteLine("She beams. \"I'm invigorated! Whatever it is I'm just happy to oblige!\"");
                                 Console.WriteLine();
@@ -8169,6 +8797,7 @@ namespace JessesDungeon
                         if (action == "look at tea cup")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The cup is plain, but sturdy. Looks like it came from a diner.");
@@ -8180,6 +8809,7 @@ namespace JessesDungeon
                         if (action == "search tea cup")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The old \"hide precious treasure in the tea cup trick,\" eh? Well not this time. Your search reveals nothing.");
@@ -8191,12 +8821,14 @@ namespace JessesDungeon
                         if (action == "talk to tea cup")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"All right ya got me, copper!\" The tea cup snarks. \"But what you gonna do \'bout it, see?\"");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You slam the tea cup up against the wall and remove all its weapons and toss them aside. It tries to spill scalding hot liquid on you, but you dodge quickly.");
@@ -8205,6 +8837,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"Book \'em, Danno.\"");
@@ -8246,11 +8879,6 @@ namespace JessesDungeon
                         break;
 
                     case "F6": //not centaur
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[10, 10] = "[x]";
                         discoveredMap[10, 11] = "-";
@@ -8321,6 +8949,7 @@ namespace JessesDungeon
                         if (action == "look at man")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The man has a vacant stare straight at the floor in front of him. His sweeping pattern is erratic and quite ineffective.");
@@ -8332,6 +8961,7 @@ namespace JessesDungeon
                         if (action == "search man")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You sidle up toward the man. Sensing no reaction, you throw your hesitance to the wind and shove your hands into his pockets and swab around.");
@@ -8339,6 +8969,7 @@ namespace JessesDungeon
                             if (lootedCentaur == false)
                             {
                                 lootedCentaur = true;
+                                ego.BlueCrystals++;
                                 Console.WriteLine("Hey a blue crystal. Not bad I suppose.");
                                 Console.WriteLine();
                             }
@@ -8354,6 +8985,7 @@ namespace JessesDungeon
                         if (action == "talk to man")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The man stops and looks up at you. He quickly shifts his gaze away from your eyes and slowly backs away.");
@@ -8362,6 +8994,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Judging that you don't intend him harm, he takes a stance less reminiscent of a cowering animal.");
@@ -8370,12 +9003,14 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"I was sent to take down the fortress. They knew it was a doomed mission... probably just not how doomed.\"");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"They say Jesse is the worst of the worst; even that he's the reason why we're all here. But he... I don't know. He wasn't what they had me expecting.\"");
@@ -8384,6 +9019,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("He looks down and continues sweeping.");
@@ -8418,11 +9054,6 @@ namespace JessesDungeon
                         break;
 
                     case "E11": //fortress front entrance
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[20, 8] = "[x]";
                         discoveredMap[20, 9] = "-";
@@ -8467,6 +9098,7 @@ namespace JessesDungeon
                         if (action == "look at fortress")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The fortress is massive and well built. Unlike other structures in this dungeon, this was not built with scavenged supplies -- it was built into the structure itself.");
@@ -8480,6 +9112,7 @@ namespace JessesDungeon
                             action = "Complete";
                             if (gusQuestCompleted == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Baby steps enter the fortress.");
@@ -8490,6 +9123,7 @@ namespace JessesDungeon
                             else
                             {
                                 searchedFortress = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Easy, sparky. Try typing \"win game\" and see if that works, too.");
@@ -8501,6 +9135,7 @@ namespace JessesDungeon
 
                         if (action == "win game" && searchedFortress)
                         {
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.Write("Dooooon't stop");
@@ -8531,6 +9166,7 @@ namespace JessesDungeon
                             if (frontEntranceWarning == false)
                             {
                                 frontEntranceWarning = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("OK -- couple things.");
@@ -8545,6 +9181,7 @@ namespace JessesDungeon
 
                             else if (frontEntranceWarning == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("I've gotta admit -- you've got balls.");
@@ -8564,6 +9201,7 @@ namespace JessesDungeon
                             action = "Complete";
                             if (undroppables.Contains(dungeonKey))
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Haven't you had enough?");
@@ -8588,11 +9226,6 @@ namespace JessesDungeon
                         break;
 
                     case "C6": //fight club
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -8684,6 +9317,7 @@ namespace JessesDungeon
                         if (action == "look at man")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The guy's ripped. He's gorgeous. If you were to experiment it'd be with this dude.");
@@ -8698,12 +9332,14 @@ namespace JessesDungeon
                         if (action == "search man")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("What would you search? He's barely wearing any clothes. I guess maybe he can have something between his chiseled abs.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Nope.");
@@ -8718,6 +9354,7 @@ namespace JessesDungeon
                             if (joinedFightClub == false)
                             {
                                 joinedFightClub = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The man looks you up and down, then smirks and greets you.");
@@ -8734,6 +9371,7 @@ namespace JessesDungeon
                                 fightClubLoop = true;
                                 while (fightClubLoop == true)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Need me to go over the rules? Or are you ready to fight?\"");
@@ -8754,6 +9392,7 @@ namespace JessesDungeon
                                     if (fightClubAction == "rules")
                                     {
                                         fightClubAction = "Complete";
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("You do not talk about Fight Club.");
@@ -8770,6 +9409,7 @@ namespace JessesDungeon
                                     if (fightClubAction == "fight")
                                     {
                                         fightClubAction = "Complete";
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"What kind of battle you lookin\' for, kid?\"");
@@ -8782,6 +9422,7 @@ namespace JessesDungeon
                                         fightClubChoice = Console.ReadLine();
                                         fightClubChoice = fightClubChoice.ToLower();
                                         fightClubChoice = fightClubChoice.Trim();
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         if (ego.FightClubRank >= 20)
@@ -8833,6 +9474,7 @@ namespace JessesDungeon
                                         if (foughtInFightClub == false)
                                         {
                                             fightClubAction = "Complete";
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"It's your first night -- you're fighting someone.\"");
@@ -8848,6 +9490,7 @@ namespace JessesDungeon
                                     }
                                     if (fightClubAction != "Complete")
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"Hey, man. I'm gonna need you to focus. What you said didn't do anything useful.\"");
@@ -8885,11 +9528,6 @@ namespace JessesDungeon
                         break;
 
                     case "D10": //flynn
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -8955,6 +9593,7 @@ namespace JessesDungeon
                         if (action == "look at dude" && hidenGoseke == false && dudeOnAPogoStickDefeated == false)
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The way this guy is looking at you is equal parts intimidating, creepy, and suggestive. Whatever his true intentions are, he is definitely proud of his pogo skills.");
@@ -8966,6 +9605,7 @@ namespace JessesDungeon
                         if (action == "search dude" && hidenGoseke == false && dudeOnAPogoStickDefeated == false)
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("His bouncing is simply far too FURIOUS for an effective search.");
@@ -8979,6 +9619,7 @@ namespace JessesDungeon
                             action = "Complete";
                             if (hidenGoseke == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Aww it's all right -- I miss him too. Maybe one day there will be a bunch of mini ones bouncing around.");
@@ -8988,6 +9629,7 @@ namespace JessesDungeon
                             }
                             else if (dudeOnAPogoStickDefeated == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He's dead, Jim.");
@@ -8997,6 +9639,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He simply responds by making his smirk even bigger (and creepier).");
@@ -9009,6 +9652,7 @@ namespace JessesDungeon
                         if (action == "look at west wall")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Certainly looks like a wall... hmm... WAIT! Did it just --! Hm no it didn't.");
@@ -9022,6 +9666,7 @@ namespace JessesDungeon
                             action = "Complete";
                             if (undroppables.Contains(dungeonKey))
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Haven't you had enough?");
@@ -9033,12 +9678,14 @@ namespace JessesDungeon
                             {
                                 undroppables.Remove(largeBrassKey);
                                 secretTunnelOpened = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("After extensive searching, you find a well camouflaged slit where your key may fit.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Snick!\" It's open!");
@@ -9052,12 +9699,14 @@ namespace JessesDungeon
                             }
                             else if (secretTunnelOpened == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("After a bit of searching, you find the camouflaged door.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("It's open!");
@@ -9071,6 +9720,7 @@ namespace JessesDungeon
                             }
                             else if (hidenGoseke == true || dudeOnAPogoStickDefeated == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The wall is cold. Cold as stone.");
@@ -9080,6 +9730,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("As you approach, the pogo dude begins to rev his handles and bounce furiously. Taking that as a warning, you back away.");
@@ -9092,12 +9743,14 @@ namespace JessesDungeon
                         if (action == "talk to west wall")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("HELLO! Hello! hello! helloooo...");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("There\'s actually no echo. I\'m just mocking you. Nothing happens.");
@@ -9109,6 +9762,7 @@ namespace JessesDungeon
                         if (action == "fight" && hidenGoseke == false && dudeOnAPogoStickDefeated == false)
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             BadGuyStats badGuy = new BadGuyStats("Dude on a Pogo Stick", 150, 150, 3, 0.80, 8, 6, 3.00, die.Next(30, 51), 1, healingPotion, pogoStick, ringmail, "The Dude on a Pogo Stick bounces toward you furiously!");
                             Console.WriteLine();
                             Console.WriteLine();
@@ -9149,6 +9803,7 @@ namespace JessesDungeon
                             if (hidenGoseke == false && dudeOnAPogoStickDefeated == false)
                             {
                                 hidenGoseke = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("For some weird reason, the dude on a pogo stick bounces past you and exits to the east.");
@@ -9158,6 +9813,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Ok. You say Hiden Goseke.");
@@ -9171,11 +9827,6 @@ namespace JessesDungeon
                         break;
 
                     case "Secret Tunnel": //tunnel
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[18, 4] = " x ";
                         Console.WriteLine("Even in the darkness of the dungeon, this place is darker still. After your eyes adjust, you see you have entered a narrow tunnel seemingly dug through the earth outside the bounds of the labyrinth.");
@@ -9216,6 +9867,7 @@ namespace JessesDungeon
                         {
                             action = "Complete";
                             talkLoop = true;
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Before you can react, a burst of earth is upon you. Your eyes snap shut and you double over hacking on the dirtstorm.");
@@ -9224,6 +9876,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The foul, cruel beast speaks.");
@@ -9234,6 +9887,7 @@ namespace JessesDungeon
                             Console.ReadLine();
                             while (talkLoop == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Should I make a left turn?\"");
@@ -9251,6 +9905,7 @@ namespace JessesDungeon
                                 {
                                     action = "Complete";
                                     talkLoop = false;
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Ehh-- thanks, doc! As history's proven this is going to work out just fine.\"");
@@ -9262,6 +9917,7 @@ namespace JessesDungeon
                                 {
                                     action = "Complete";
                                     talkLoop = false;
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Ehh-- thanks, doc! I always make a left here and it never works out. You're way smarter than you look!\"");
@@ -9271,6 +9927,7 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Ehh-- what?\"");
@@ -9279,6 +9936,7 @@ namespace JessesDungeon
                                     Console.ReadLine();
                                 }
                             }
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The creature submerges back into the earth and takes off.");
@@ -9313,11 +9971,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -9348,6 +10001,7 @@ namespace JessesDungeon
                         if (action == "map")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The map won't help you here! Bwa! haha! HAHAHA!");
@@ -9356,30 +10010,19 @@ namespace JessesDungeon
                             Console.ReadLine();
                         }
 
-                        if (action == "search note")
+                        if (action == "look at note" || action == "search note")
                         {
                             action = "Complete";
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("Swing and a miss. Try look at.");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
-                        }
-
-                        if (action == "look at note")
-                        {
-                            action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Someone scratched this into the stone with a rock. You can tell because there's a scratched rock at your feet. Smarty.");
                             Console.WriteLine();
+                            Console.WriteLine("The note reads:");
+                            Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                             Console.Clear();
-                            Console.WriteLine("The note reads:");
-                            Console.WriteLine();
-                            Console.WriteLine();
                             Console.WriteLine("I can't believe he has such security measures in place. I've been lost here for so long that I've resorted to writing on the wall as if I'm some sort of deranged lunatic gone mad from prolonged isolation. No matter. I shall log my activities here in hopes that it will aid me in remembering the sequence through this maze.");
                             Console.WriteLine();
                             Console.WriteLine();
@@ -9468,11 +10111,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -9505,6 +10143,7 @@ namespace JessesDungeon
                         if (action == "map")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The map won't help you here! Bwa! haha! HAHAHA!");
@@ -9516,6 +10155,7 @@ namespace JessesDungeon
                         if (action == "look at body" && konamiProgress == 5)
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("If this is our charming chap who wrote that exceptionally helpful note, isn't it fancy that he expired in the exact room that is at the end of the hint he left? I mean, he could have just as easily been killed in any other room on the way here or perhaps after, but he just so happened to die here as if to tell you \"hey this is why my note stopped.\" What are the odds!!");
@@ -9527,6 +10167,7 @@ namespace JessesDungeon
                         if (action == "search body" && konamiProgress == 5)
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Illustrative storytelling aside, he is of no use to you.");
@@ -9633,11 +10274,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -9667,6 +10303,7 @@ namespace JessesDungeon
                         if (action == "map")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The map won't help you here! Bwa! haha! HAHAHA!");
@@ -9726,11 +10363,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -9762,6 +10394,7 @@ namespace JessesDungeon
                         if (action == "map")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The map won't help you here! Bwa! haha! HAHAHA!");
@@ -9826,11 +10459,6 @@ namespace JessesDungeon
 
 
                     case "Jesse": //Jesse
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -9883,6 +10511,7 @@ namespace JessesDungeon
                         if (action == "map")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You're up to your compass in plot! You can't use your map now.");
@@ -9896,6 +10525,7 @@ namespace JessesDungeon
                             action = "Complete";
                             if (killedJesse)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The potency of his distant stare almost drowns out the determination that he's dead.");
@@ -9905,6 +10535,7 @@ namespace JessesDungeon
                             }
                             else if (jesseDefeated)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Peek-a-boo! I see you!");
@@ -9916,6 +10547,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The potency of his distant stare drowns out anything you may determine about him.");
@@ -9930,6 +10562,7 @@ namespace JessesDungeon
                             action = "Complete";
                             if (killedJesse)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("As you're about to go frisk the corpse lying at the end of the foreboding fortress, you realize you've already done that. You decide not to follow through.");
@@ -9939,6 +10572,7 @@ namespace JessesDungeon
                             }
                             else if (jesseDefeated)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("As you're about to go frisk the man who's no longer at the end of the foreboding fortress, you realize it's gonna be more difficult than that. He's not here.");
@@ -9948,6 +10582,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("As you're about to go frisk the man sitting at the end of the foreboding fortress, you realize it's gotta be more involved than that. You decide not to follow through.");
@@ -9960,6 +10595,7 @@ namespace JessesDungeon
                         if (action == "talk to jesse" && !jesseDefeated)
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("As you go to address him, he shuts off his music and speaks.");
@@ -9978,6 +10614,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind the couch and throws a bag over Jesse's head.");
@@ -9990,6 +10627,7 @@ namespace JessesDungeon
                             else if (undroppables.Contains(jeweledRing))
                             {
                                 undroppables.Remove(jeweledRing);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("His gaze shifts down and settles upon the jeweled ring you're holding. His eyes widen and he rises to his feet.");
@@ -9998,6 +10636,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He darts at you and grabs the ring. His eyes, burning with rage, now stare intensely into yours.");
@@ -10006,6 +10645,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 BadGuyStats badGuy = new BadGuyStats("Jesse", 150, 150, 4, 0.85, 8, 3, 3.00, 500, 3, healingPotion, axe, ringmail, "Jesse brandishes an axe menacingly!");
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -10035,6 +10675,7 @@ namespace JessesDungeon
                                     talkLoop = true;
                                     while (talkLoop == true)
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Jesse lays gasping for air at your feet. He's definitely down for the count, but will survive.");
@@ -10055,6 +10696,7 @@ namespace JessesDungeon
                                             action = "Complete";
                                             talkLoop = false;
                                             sparedJesse = true;
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("Mercy being the necessary part of honor, you leave the cause of your woes to fight another day.");
@@ -10069,6 +10711,9 @@ namespace JessesDungeon
                                             killedJesse = true;
                                             gun.Unlocked = true;
                                             axe.Unlocked = true;
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
                                             Console.WriteLine("Searching the grotesque carcass, you find 500 blue crystals, which you take.");
                                             ego.BlueCrystals = ego.BlueCrystals + 500;
                                             Console.WriteLine();
@@ -10087,6 +10732,7 @@ namespace JessesDungeon
                                         else
                                         {
                                             action = "Complete";
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("There is no escaping this choice.");
@@ -10099,7 +10745,9 @@ namespace JessesDungeon
                             }
                             else if (konamiProgress != 10)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("He rises to his feet and squints at you suspiciously.");
                                 Console.WriteLine();
@@ -10107,13 +10755,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Jane? She would not... she would... not...\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess it always does.\"");
                                 Console.WriteLine();
@@ -10121,13 +10773,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"I've lost sight of it all. It needs to end.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Just make him stop loving them more than himself -- no matter how you balance that equation.\"");
                                 Console.WriteLine();
@@ -10138,7 +10794,9 @@ namespace JessesDungeon
                             }
                             else if (freePotions == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("He rises to his feet and squints at you suspiciously.");
                                 Console.WriteLine();
@@ -10146,13 +10804,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"...The cartel has conspired against me? With allies? Even... with Jane?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess it always does.\"");
                                 Console.WriteLine();
@@ -10160,13 +10822,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"I've lost sight of it all. It needs to end.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Just make him stop loving them more than himself -- no matter how you balance that equation.\"");
                                 Console.WriteLine();
@@ -10177,7 +10843,9 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("He rises to his feet and squints at you suspiciously.");
                                 Console.WriteLine();
@@ -10185,13 +10853,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"...The cartel has conspired against me? With allies? EVERYONE has united to kill me?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess it always does.\"");
                                 Console.WriteLine();
@@ -10199,13 +10871,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"I've lost sight of it all. It needs to end.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
                                 Console.WriteLine("\"Just make him stop loving them more than himself -- no matter how you balance that equation.\"");
                                 Console.WriteLine();
@@ -10241,6 +10917,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind the couch and throws a bag over Jesse's head.");
@@ -10253,6 +10930,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 BadGuyStats badGuy = new BadGuyStats("Jesse", 150, 150, 4, 0.85, 8, 3, 3.00, 500, 3, healingPotion, axe, ringmail, "Jesse brandishes an axe menacingly!");
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -10282,6 +10960,7 @@ namespace JessesDungeon
                                     talkLoop = true;
                                     while (talkLoop == true)
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Jesse lays gasping for air at your feet. He's definitely down for the count, but will survive.");
@@ -10302,6 +10981,7 @@ namespace JessesDungeon
                                             action = "Complete";
                                             talkLoop = false;
                                             sparedJesse = true;
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("Mercy being the necessary part of honor, you leave the cause of your woes to fight another day.");
@@ -10316,6 +10996,9 @@ namespace JessesDungeon
                                             killedJesse = true;
                                             gun.Unlocked = true;
                                             axe.Unlocked = true;
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
                                             Console.WriteLine("Searching the grotesque carcass, you find 500 blue crystals, which you take.");
                                             ego.BlueCrystals = ego.BlueCrystals + 500;
                                             Console.WriteLine();
@@ -10334,6 +11017,7 @@ namespace JessesDungeon
                                         else
                                         {
                                             action = "Complete";
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("There is no escaping this choice.");
@@ -10349,6 +11033,7 @@ namespace JessesDungeon
                                 action = "Complete";
                                 ego.Location = "Heisenberg";
                                 ego.FleeLocation = "Fortress0";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("The door at the far end of the room is locked and barred from your side. You open it and go in.");
@@ -10363,6 +11048,7 @@ namespace JessesDungeon
                             action = "Complete";
                             ego.Location = "Heisenberg";
                             ego.FleeLocation = "Fortress0";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The door at the far end of the room is locked and barred from your side. You open it and go in.");
@@ -10409,11 +11095,6 @@ namespace JessesDungeon
 
 
                     case "Heisenberg": //Heisenberg
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -10444,6 +11125,7 @@ namespace JessesDungeon
                         if (action == "map")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You're up to your compass in the plot! You can't use your map now.");
@@ -10455,6 +11137,7 @@ namespace JessesDungeon
                         if (action == "look at heisenberg")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("He hasn't even turned around to address you. He is completely absorbed in his work.");
@@ -10470,12 +11153,14 @@ namespace JessesDungeon
                             {
                                 searchedHeisenberg = true;
                                 equippableWeapon.Add(gun);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("This guy has GOT to have interesting stuff on him. I mean, he's kind of what all of this has centered around. You just HAVE to stick your fingers in those pockets...");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Apparently too absorbed in his work to notice, you lift a gun out of his pocket and add it to your belongings.");
@@ -10487,6 +11172,7 @@ namespace JessesDungeon
                             {
                                 if (stolenHeisenPotions < 3)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("You seem to like tempting fate. Worked out before so you'll probably just get a neutral result at worst, right?");
@@ -10499,6 +11185,7 @@ namespace JessesDungeon
                                     {
                                         stolenHeisenPotions++;
                                         potionBelt.Add(greaterHealingPotion);
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("You add it to your collection.");
@@ -10508,6 +11195,7 @@ namespace JessesDungeon
                                     }
                                     else
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("But you have too many already. You leave it there.");
@@ -10518,6 +11206,7 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("OK. You're really pushing it now, don't you think?");
@@ -10534,12 +11223,14 @@ namespace JessesDungeon
                         {
                             BadGuyStats badGuy = new BadGuyStats("Heisenberg", 200, 200, 3, 0.75, 8, 4, 2.00, 5000, 2 - stolenHeisenPotions, greaterHealingPotion, knife, hazmatSuit, "Heisenberg folds his hands in front of himself and says, \"I am the one who knocks.\"");                            
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"Hm? You're not Jesse.\"");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Heisenberg turns around and assumes a skeptical expression.");
@@ -10557,6 +11248,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind a lab table and throws a bag over Heisenberg's head.");
@@ -10568,6 +11260,7 @@ namespace JessesDungeon
                             }
                             else if (killedJesse == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He looks around you and through the opened door.");
@@ -10576,6 +11269,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("His eyes fix back onto you and they squint menacingly.");
@@ -10584,6 +11278,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Regardless, I will now make sure you are spared that pain.\"");
@@ -10597,6 +11292,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Freeing me?\"");
@@ -10605,6 +11301,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He looks around you and through the opened door.");
@@ -10613,12 +11310,14 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"So I see Jesse has finally pulled the trigger. And that makes you the bullet?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"But I am not so easy a target.\"");
@@ -10645,6 +11344,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("In addition to many fascinating chemist's trinkets, you find a key which does not seem to operate any lock in the immediate vicinity. You take it hoping it is what you have sought.");
@@ -10664,6 +11364,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Jesse is peeking his head in from the other room.");
@@ -10672,6 +11373,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("He walks over to a drawer and retrieves a key.");
@@ -10693,6 +11395,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Jesse is peeking his head in from the other room.");
@@ -10701,6 +11404,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("He walks over to a drawer and retrieves a key.");
@@ -10717,12 +11421,14 @@ namespace JessesDungeon
                         {
                             BadGuyStats badGuy = new BadGuyStats("Heisenberg", 200, 200, 3, 0.75, 8, 4, 2.00, 5000, 2 - stolenHeisenPotions, greaterHealingPotion, knife, hazmatSuit, "Heisenberg folds his hands in front of himself and says, \"I am the one who knocks.\"");
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"Hm? You're not Jesse.\"");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Heisenberg turns around and assumes a skeptical expression.");
@@ -10740,6 +11446,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind a lab table and throws a bag over Heisenberg's head.");
@@ -10751,6 +11458,7 @@ namespace JessesDungeon
                             }
                             else if (killedJesse == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("He looks around you and through the opened door.");
@@ -10759,6 +11467,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("His eyes fix back onto you and they squint menacingly.");
@@ -10767,6 +11476,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Regardless, I will now make sure you are spared that pain.\"");
@@ -10780,12 +11490,14 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"So I see Jesse has finally pulled the trigger. And that makes you the bullet?\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"But I am not so easy a target.\"");
@@ -10812,6 +11524,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("In addition to many fascinating chemist's trinkets, you find a key which does not seem to operate any lock in the immediate vicinity. You take it hoping it is what you have sought.");
@@ -10831,6 +11544,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Jesse is peeking his head in from the other room.");
@@ -10839,6 +11553,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("He walks over to a drawer and retrieves a key.");
@@ -10860,6 +11575,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Jesse is peeking his head in from the other room.");
@@ -10868,6 +11584,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("He walks over to a drawer and retrieves a key.");
@@ -10917,11 +11634,6 @@ namespace JessesDungeon
                         break;
 
                     case "G10": //lake
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[18, 12] = "[x]";
                         discoveredMap[17, 12] = " | ";
@@ -10961,6 +11673,7 @@ namespace JessesDungeon
                         if (action == "look at puddle")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The liquid is murky, and made up of various... ingredients. The puddle must be from a gradual dripping of the entire dungeon. Whoever built this place needed a level.");
@@ -10975,17 +11688,21 @@ namespace JessesDungeon
                             if (puddleSearched == false)
                             {
                                 puddleSearched = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You're lucky no one in this dungeon cares about being filthy. You begin running your hand through the puddle in hopes of finding something within.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Well you found something -- and that something BIT YOU!");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You retract your hand, and a nasty looking little amphibian comes with it. It gets flung against the wall, lands on the ground, and scampers away.");
@@ -11001,6 +11718,7 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Can't stop now. You're pot-committed.");
@@ -11014,6 +11732,7 @@ namespace JessesDungeon
                             }
                             else if (puddleSearched == true && equippableWeapon.Contains(mildewEncrustedPocketKnife))
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("What? You think you\'re going to find more in there?");
@@ -11022,11 +11741,14 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Well you found something -- and that something BIT YOU!");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You retract your hand, and a nasty looking little amphibian comes with it. It gets flung against the wall, lands on the ground, and scampers away.");
@@ -11042,6 +11764,7 @@ namespace JessesDungeon
                                 }
                                 else
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("You continue to search, but you\'re not quite so lucky this time and come up empty.");
@@ -11052,6 +11775,7 @@ namespace JessesDungeon
                             }
                             else if (puddleSearched == true && !equippableWeapon.Contains(mildewEncrustedPocketKnife))
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("What? You think you\'re going to find more in there?");
@@ -11060,9 +11784,11 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Oh. Well I'll be over here eating crow.");
+                                Thread.Sleep(1500);
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Aha! Your toiling has paid off with a Mildew-Encrusted Pocket Knife!");
@@ -11079,11 +11805,6 @@ namespace JessesDungeon
                         break;
 
                     case "F8": //bowling
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[14, 10] = "[x]";
                         discoveredMap[15, 10] = " | ";
@@ -11156,6 +11877,7 @@ namespace JessesDungeon
                         if (action == "look at man")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("This is the look and demeanor of a man trying to sell you something.");
@@ -11169,6 +11891,7 @@ namespace JessesDungeon
                         if (action == "search man")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("As you put your hands on the man and feel him up and down, he spreads his arms and legs, lifts his chin, and closes his eyes. He is overly willing to submit to your search.");
@@ -11177,6 +11900,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Oh and you did find his money pouch, but I'm assuming you're a gentleman and let him hold onto it -- it's the least you can do for someone so helpful.");
@@ -11192,6 +11916,7 @@ namespace JessesDungeon
                             if (visitedBowlingAlley == false)
                             {
                                 visitedBowlingAlley = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Welcome! Welcome to the best (and only) recreational destination of \'Jesse\'s Dungeon!\' For just a few crystals you can bowl away your worries for a few frames, or you can challenge our resident champions for a cash prize!\"");
@@ -11202,6 +11927,7 @@ namespace JessesDungeon
                             }
                             else if (visitedBowlingAlley == true)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("\"Welcome back to the premiere recreation destination!\"");
@@ -11231,19 +11957,22 @@ namespace JessesDungeon
                                     {
                                         bowlingLoop = false;
                                         ego.BlueCrystals = ego.BlueCrystals - 3;
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("With the man cheering you on like a 16 year old girl would her studly 19 year old boyfriend, you bowl a few frames.");
                                         Console.WriteLine();
-                                        if (bowlingSkill < 1) { Console.WriteLine("You did okay. The holes were kind of too small for your hand, and it doesn't roll perfectly."); }
-                                        else if (bowlingSkill < 6) { Console.WriteLine("You did a bit better. You're getting more used to the imperfections of the ball."); }
-                                        else if (bowlingSkill < 11) { Console.WriteLine("You did all right. The pins work but they could be balanced better."); }
-                                        else if (bowlingSkill < 16) { Console.WriteLine("Not too shabby. You knocked out a strike that time."); }
+                                        if (bowlingSkill == 0) { Console.WriteLine("You did okay. The holes were kind of too small for your hand, and it doesn't roll perfectly."); }
+                                        else if (bowlingSkill < 4) { Console.WriteLine("You did a bit better. You're getting more used to the imperfections of the ball."); }
+                                        else if (bowlingSkill < 8) { Console.WriteLine("You did all right. The pins could be balanced better."); }
+                                        else if (bowlingSkill < 14) { Console.WriteLine("Weeeeeooooow you popped a spare. Practice makes almost perfect, as they say."); }
+                                        else if (bowlingSkill < 17) { Console.WriteLine("Not too shabby. You knocked out a strike that time."); }
                                         else if (bowlingSkill == 20) { Console.WriteLine("Hey hey a turkey! Not bad considering you only have 3 frames."); }
                                         Console.WriteLine();
                                         if (bowlingSkill < 21) { bowlingSkill++; }
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         if (bowlingSkill == 20) { Console.WriteLine("\"Oh, my friend, You are a master! I can't recall a grander sight!\""); }
@@ -11254,6 +11983,7 @@ namespace JessesDungeon
                                     }
                                     if (ego.BlueCrystals < 3)
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"Oh, my friend - you are a crystal or so short. SO CLOSE! One day, soon, you shall achieve the recreation sensation of your life!\"");
@@ -11264,6 +11994,7 @@ namespace JessesDungeon
                                 }
                                 else if (bowlingAction == "compete")
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Ah yes! A brawl of titans! How much will represent your might in this epic duel?\"");
@@ -11283,6 +12014,7 @@ namespace JessesDungeon
                                             {
                                                 bowlingLoop = false;
                                                 ego.BlueCrystals = ego.BlueCrystals - bowlingBet;
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"Your challenge has been called! We've got a game! Best of luck, my friend!\"");
@@ -11295,6 +12027,7 @@ namespace JessesDungeon
                                                 {
                                                     lastBowlingBet = bowlingBet;
                                                     bowlingPrizePackage = (bowlingBet * 2) - 2;
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("\"A giant amongst men! Here is your prize! With some taken out for upkeep and labor, of course.\"");
@@ -11308,6 +12041,7 @@ namespace JessesDungeon
                                                 }
                                                 else if (egoBowlingScore < enemyBowlingScore)
                                                 {
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("\"It would seem you have been bested, my friend. Not to worry! Just practice - practice - PRACTICE!\"");
@@ -11317,12 +12051,14 @@ namespace JessesDungeon
                                                 }
                                                 else if (egoBowlingScore == enemyBowlingScore)
                                                 {
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("\"You... you tied? Humph. This wasn't in the manual.\"");
                                                     Console.WriteLine();
                                                     Console.Write("Press ENTER to continue");
                                                     Console.ReadLine();
+                                                    Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
                                                     Console.WriteLine("\"Well, the two of you just take your wagers back, and challenge each other again. I'll even waive my service fee this time!\"");
@@ -11335,6 +12071,7 @@ namespace JessesDungeon
                                             }
                                             else
                                             {
+                                                Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"My SIR! It seems no one will take your wager. Anyone who would consider bowling for such a prize package is afraid of you!\"");
@@ -11345,6 +12082,7 @@ namespace JessesDungeon
                                         }
                                         else
                                         {
+                                            Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Oh, my friend - you are a crystal or so short. SO CLOSE! One day, soon, you shall achieve the recreation sensation of your life!\"");
@@ -11355,6 +12093,7 @@ namespace JessesDungeon
                                     }
                                     else
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("\"Yes! Yes! And one day we'll accept that! But for today just blue crystals.\"");
@@ -11369,6 +12108,7 @@ namespace JessesDungeon
                                 else if (bowlingAction == "nevermind")
                                 {
                                     bowlingLoop = false;
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Yes! That's it! Go out there and get some blue crystals to spend here at the ultimate recreation activity!\"");
@@ -11376,8 +12116,9 @@ namespace JessesDungeon
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
                                 }
-                                else 
+                                else
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"Yes! Yes! And one day we'll have that! But for today just these three options.\"");
@@ -11392,6 +12133,7 @@ namespace JessesDungeon
                         if (action == "look at bowling alley")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Little arrows etched into the floor, ten wooden pins on one end, and a well-polished stone with three holes on the other. It's got all the ingredients for sure.");
@@ -11403,6 +12145,7 @@ namespace JessesDungeon
                         if (action == "search bowling alley")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"Feet over the line!\"");
@@ -11416,6 +12159,7 @@ namespace JessesDungeon
                         if (action == "talk to bowling alley")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("After having an arguably one-sided conversation with the floor, the man addresses you.");
@@ -11452,11 +12196,6 @@ namespace JessesDungeon
                         break;
 
                     case "G1": //jane's peace
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[0, 12] = "[x]";
                         discoveredMap[1, 12] = " | ";
@@ -11499,6 +12238,7 @@ namespace JessesDungeon
                         if (action == "look at priest")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("As with everything else in this place, a sense of calm washes over you as you look at him.");
@@ -11510,6 +12250,7 @@ namespace JessesDungeon
                         if (action == "search priest")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("I know it might seem like just revenge to take advantage of a priest, but there are more imperative things now. Molesting a priest can wait until you escape this place.");
@@ -11522,6 +12263,7 @@ namespace JessesDungeon
                         {
                             action = "Complete";
                             talkedToPriest = true;
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("\"Welcome,\" the man greets you with a smile. \"Be at ease here; the harsh reality of this dungeon is left outside these walls.\"");
@@ -11535,6 +12277,7 @@ namespace JessesDungeon
                         if (action == "rest" && talkedToPriest == true)
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You curl up in the corner of the room on a mound of cloth and rest for a while.");
@@ -11547,6 +12290,7 @@ namespace JessesDungeon
                         if (action == "look at painting")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("It's kind of crude, being made from make-shift art supplies. But it does have a certain beautiful quality to it.");
@@ -11564,6 +12308,7 @@ namespace JessesDungeon
                         if (action == "search painting")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Nothing much to it. Finest quality painting you'll find in a place like this.");
@@ -11575,6 +12320,7 @@ namespace JessesDungeon
                         if (action == "talk to painting")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You have the usual sense of feeling foolish when talking to inanimate objects. But there's an additional serenity that came with it this time, at least.");
@@ -11616,11 +12362,6 @@ namespace JessesDungeon
                         break;
 
                     case "C9": //before jane's bedroom
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[16, 4] = "[x]";
                         discoveredMap[16, 3] = "-";
@@ -11692,6 +12433,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Locked. Can't say you're surprised.");
@@ -11705,6 +12447,7 @@ namespace JessesDungeon
                         if (action == "look at door")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The door is definitely not denizen-crafted. It's a sturdy, stone door made to fit perfectly.");
@@ -11716,17 +12459,35 @@ namespace JessesDungeon
                         if (action == "search door")
                         {
                             action = "Complete";
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("The only thing your search achieves is to reinforce your lack of knowledge and skills. The only way for you to get through this door is by key.");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            randomEncountersOn = true;
+                            if (undroppables.Contains(janesKey) || janesDoorOpened == true)
+                            {
+                                ego.FleeLocation = "C9";
+                                ego.Location = "B9";
+                                janesDoorOpened = true;
+                                undroppables.Remove(janesKey);
+                                discoveredMap[16, 4] = "[ ]";
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("This should be good.");
+                                Thread.Sleep(1500);
+                            }
+                            else
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("The only thing your search achieves is to reinforce your lack of knowledge and skills. The only way for you to get through this door is by key.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
                         }
 
                         if (action == "look at flowers")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The flowers probably were once quite nice. They are most certainly decorative.");
@@ -11738,6 +12499,7 @@ namespace JessesDungeon
                         if (action == "search flowers")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("If you were trying to crack off some more petals: mission complete. If you were trying to desecrate this beautiful display and what it once meant: mission accomplished.");
@@ -11750,11 +12512,6 @@ namespace JessesDungeon
                         break;
 
                     case "B9": //jane's bedroom
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[16, 2] = "[x]";
                         discoveredMap[16, 3] = "-";
@@ -11795,6 +12552,7 @@ namespace JessesDungeon
                         if (action == "rest")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Such a nice bed shouldn't go to waste. You curl up in the comfortable sheets and awaken refreshed a few hours later.");
@@ -11807,6 +12565,7 @@ namespace JessesDungeon
                         if (action == "look at bed")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Ostentatious.");
@@ -11818,6 +12577,7 @@ namespace JessesDungeon
                         if (action == "search bed")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The mattress is soft yet firm. The blanket is more comfortable than you realized a blanket could be. The pillows are of varying plushness and material.");
@@ -11831,6 +12591,7 @@ namespace JessesDungeon
                         if (action == "look at armoire")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("I know I sold it hard in the initial description, but it's just a piece of furniture. It's certainly nice though.");
@@ -11845,6 +12606,7 @@ namespace JessesDungeon
                             if (studdedLeatherArmorLooted == false)
                             {
                                 studdedLeatherArmorLooted = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Woah. Is that... a dominatrix outfit?");
@@ -11858,6 +12620,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Unfortunately, none of these frilly outfits are quite as useful as the tight black leather one.");
@@ -11870,6 +12633,7 @@ namespace JessesDungeon
                         if (action == "look at chest of drawers")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You never had an eye for fashion. Or design... if those are different? Either way, it matching the armoire is a nice touch.");
@@ -11884,6 +12648,7 @@ namespace JessesDungeon
                             if (!searchedChest)
                             {
                                 searchedChest = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You never actually got to participate in a panty raid at college. Let's see here...");
@@ -11896,6 +12661,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You never actually got to participate in a panty raid at college. Let's see here...");
@@ -11911,6 +12677,7 @@ namespace JessesDungeon
                         {
                             action = "Complete";
                             readLogbook = true;
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Atop the nightstand is a book. Obviously, you read it.");
@@ -11920,6 +12687,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("1/21");
@@ -11929,6 +12697,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("1/23");
@@ -11938,6 +12707,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("1/30");
@@ -11947,6 +12717,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("2/15");
@@ -11956,6 +12727,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("3/15");
@@ -11967,6 +12739,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("4/24");
@@ -11976,6 +12749,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("?/??");
@@ -11987,6 +12761,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("There are no more entries.");
@@ -12001,6 +12776,7 @@ namespace JessesDungeon
                             if (!searchedNightstand)
                             {
                                 searchedNightstand = true;
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You open the drawer of the nightstand. Pushing aside a few odds and ends, you find and retrieve the Large Brass Key.");
@@ -12011,6 +12787,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You open the drawer of the nightstand. Pushing aside a few odds and ends, you find more odds and ends.");
@@ -12020,27 +12797,36 @@ namespace JessesDungeon
                             }
                         }
 
-                        if ((action == "sign logbook" || action == "sign book") && signedLogBook == false)
+                        if ((action == "sign logbook" || action == "sign book"))
                         {
                             action = "Complete";
-                            signedLogBook = true;
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("You sign your name with a flourish.");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            if (signedLogBook == false)
+                            {
+                                signedLogBook = true;
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("You sign your name with a flourish.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Don't be greedy! Save some space for the next hero.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
                         }
 
 
                         break;
 
                     case "E3": //liquor cabinet
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[4, 8] = "[x]";
                         discoveredMap[4, 9] = "-";
@@ -12096,6 +12882,7 @@ namespace JessesDungeon
                         if (action == "look at wine racks")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Wonder if he liked red or white. Guess we'll never know now.");
@@ -12111,6 +12898,7 @@ namespace JessesDungeon
                             {
                                 garbageCanLid.Unlocked = true;
                                 equippableShield.Add(garbageCanLid);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Hey there's a Garbage Can Lid slipped in the back between the rack and the wall. Let's toddler it up and use it as a shield, yeah?");
@@ -12120,6 +12908,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Nothing is left of the contents to reveal anything useful.");
@@ -12132,6 +12921,7 @@ namespace JessesDungeon
                         if (action == "look at cabinets")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Surprisingly, all the cabinets' doors are still intact. At least whoever robbed this place was respectful of other people's property.");
@@ -12143,9 +12933,10 @@ namespace JessesDungeon
                         if (action == "search cabinets")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("Based on the internal construction, these are (were) liquor cabinets.");
+                            Console.WriteLine("Bare.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -12154,6 +12945,7 @@ namespace JessesDungeon
                         if (action == "look at lock box")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The lock and hinges are fairly beat up. Looks like people have tried and failed to get into it.");
@@ -12169,6 +12961,7 @@ namespace JessesDungeon
                             {
                                 undroppables.Remove(liquorKey);
                                 undroppables.Add(mezcal);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Inside there is a single bottle of mezcal. You take it.");
@@ -12178,6 +12971,7 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Funny - the lock box is locked.");
@@ -12195,11 +12989,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -12265,11 +13054,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -12339,11 +13123,6 @@ namespace JessesDungeon
                                 Console.Clear();
                             }
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -12380,6 +13159,7 @@ namespace JessesDungeon
                             action = "Complete";
                             if (hidenGoseke == true && dudeOnAPogoStickDefeated == false)
                             {
+                                Console.WriteLine("____________________________________________________");
                                 BadGuyStats badGuy = new BadGuyStats("Dude on a Pogo Stick", 150, 150, 3, 0.80, 8, 6, 3.00, die.Next(30, 51), 1, healingPotion, pogoStick, ringmail, "The Dude on a Pogo Stick bounces toward you furiously!");
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -12390,6 +13170,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Dropping and rolling, you dodge just in time.");
@@ -12437,11 +13218,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -12538,11 +13314,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -12622,11 +13393,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -12708,11 +13474,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -12777,11 +13538,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -12878,11 +13634,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -12978,11 +13729,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -13047,11 +13793,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -13149,11 +13890,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -13248,11 +13984,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -13349,11 +14080,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -13449,11 +14175,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -13519,11 +14240,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -13588,11 +14304,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -13674,11 +14385,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -13758,11 +14464,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -13859,11 +14560,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -13959,11 +14655,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -14044,11 +14735,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -14113,11 +14799,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -14199,11 +14880,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -14283,11 +14959,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -14384,11 +15055,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -14453,11 +15119,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -14524,11 +15185,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -14593,11 +15249,6 @@ namespace JessesDungeon
                         {
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
-                        }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
                         }
                         if (ego.JustFled)
                         {
@@ -14694,11 +15345,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -14779,11 +15425,6 @@ namespace JessesDungeon
                             RandomEncounterGenerator(ego, potionBelt, equippableWeapon, equippableArmor, equippableShield);
                             Console.Clear();
                         }
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         if (ego.JustFled)
                         {
                             ego.JustFled = false;
@@ -14844,11 +15485,6 @@ namespace JessesDungeon
                         break;
 
                     case "D9": //two rooms out jane's bedroom
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[16, 6] = "[x]";
                         discoveredMap[16, 7] = "-";
@@ -14934,11 +15570,6 @@ namespace JessesDungeon
                         break;
 
                     case "C8": //two rooms out jane's bedroom
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[14, 4] = "[x]";
                         discoveredMap[14, 3] = "-";
@@ -15024,11 +15655,6 @@ namespace JessesDungeon
                         break;
 
                     case "E8": //south of GY
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[14, 8] = "[x]";
                         discoveredMap[14, 9] = "-";
@@ -15114,11 +15740,6 @@ namespace JessesDungeon
                         break;
 
                     case "E6": //north of GY
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[10, 8] = "[x]";
                         discoveredMap[10, 9] = "-";
@@ -15204,11 +15825,6 @@ namespace JessesDungeon
                         break;
 
                     case "D7": //west of GY
-                        if (ego.Location == "dead")
-                        {
-                            ego.Location = "F7";
-                            break;
-                        }
                         randomEncountersOn = false;
                         discoveredMap[12, 6] = "[x]";
                         discoveredMap[12, 5] = "-";
@@ -15297,6 +15913,7 @@ namespace JessesDungeon
                 if (action == "look at")
                 {
                     action = "Complete";
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Look at... loo kat? zoo cat? A LION???");
@@ -15309,6 +15926,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("> ");
                     Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("OK not really. But could you please be more careful with what you type? Can't really trust me to interpret everything properly.");
@@ -15436,6 +16054,7 @@ namespace JessesDungeon
                         if (action == "Equip")
                         {
                             action = "Complete";
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Oops! You equipped something that we weren't expecting. Whatever it was, you don't need to do it to finish the game.");
@@ -15446,6 +16065,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Had you going there, didn't I? But seriously -- next time try saying what you want to equip.");
@@ -15491,6 +16111,7 @@ namespace JessesDungeon
                             }
                             if (action != "Complete")
                             {
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Let's get one thing straight, OK? You don't have that, it's not equippable, or you just plain typed something that didn't make sense.");
@@ -15519,6 +16140,7 @@ namespace JessesDungeon
                             if (droppingItem == "Rags")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Nah don't drop that. Them's your clothes! Can't have a bunch of naked people running around this dungeon. Get more sales with a kid-friendly rating.");
@@ -15529,6 +16151,7 @@ namespace JessesDungeon
                             else
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 foreach (Armor armor in equippableArmor)
                                 {
                                     string bagCheck = armor.Name;
@@ -15603,6 +16226,7 @@ namespace JessesDungeon
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Then you think better of it and pick it back up.");
@@ -15615,6 +16239,7 @@ namespace JessesDungeon
                             if (action != "Complete")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You must be quite a content person, as you don't want what you don't have.");
@@ -15657,6 +16282,7 @@ namespace JessesDungeon
                                 if (usingItem == bagCheck)
                                 {
                                     action = "Complete";
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Nothing happens.");
@@ -15672,6 +16298,7 @@ namespace JessesDungeon
                                 if (usingItem == bagCheck)
                                 {
                                     action = "Complete";
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Nothing happens.");
@@ -15687,6 +16314,7 @@ namespace JessesDungeon
                                 if (usingItem == bagCheck)
                                 {
                                     action = "Complete";
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Nothing happens.");
@@ -15702,6 +16330,7 @@ namespace JessesDungeon
                                 if (usingItem == bagCheck)
                                 {
                                     action = "Complete";
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Nothing happens.");
@@ -15714,6 +16343,7 @@ namespace JessesDungeon
                             if (action != "Complete")
                             {
                                 action = "Complete";
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine($"When you figure out what {usingItem} is you give me a call, ok?");
@@ -15740,6 +16370,7 @@ namespace JessesDungeon
                             inspectingItem = inspectingItem.ToLower();
                             inspectingItem = myTI.ToTitleCase(inspectingItem);
 
+                            Console.WriteLine("____________________________________________________");
                             foreach (Armor armor in equippableArmor)
                             {
                                 string bagCheck = armor.Name;
@@ -15843,6 +16474,7 @@ namespace JessesDungeon
                         }
                         else if (action != "Complete")
                         {
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("That didn't do anything useful.");
@@ -15872,7 +16504,8 @@ namespace JessesDungeon
                 }
 
                 if (action == "quit")
-                {                    
+                {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("B'wana join the land of the living for a slice of quiche?");
@@ -15886,6 +16519,7 @@ namespace JessesDungeon
                 if (action == "version")
                 {
                     action = "Complete";
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("v.Insect's Quest I");
@@ -15898,6 +16532,7 @@ namespace JessesDungeon
                 {
                     debugMode = true;
                     action = "Complete";
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("I sure won't be answering my door tonight.");
@@ -15940,6 +16575,7 @@ namespace JessesDungeon
                     }
                     else
                     {
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("Could you be more careful where you aim that thing? Liable to wind up in a wall or something.");
@@ -15953,6 +16589,7 @@ namespace JessesDungeon
                 if (action == "i'm in the empire business" && debugMode == true)
                 {
                     action = "Complete";
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("And just how much is your empire worth nowadays?");
@@ -16683,6 +17320,7 @@ namespace JessesDungeon
                     {
                         if (action != "List")
                         {
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Change which stat/skill?");
@@ -17489,6 +18127,7 @@ namespace JessesDungeon
                 if (action != "Complete")
                 {
                     action = "Complete";
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("That didn't do anything useful.");
@@ -17499,6 +18138,7 @@ namespace JessesDungeon
 
                 if (ego.Location == "disappeared")
                 {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Congratulations! You escaped the dungeon!");
@@ -17519,6 +18159,7 @@ namespace JessesDungeon
                 Console.WriteLine();
                 Console.Write("Press ENTER to continue");
                 Console.ReadLine();
+                Console.WriteLine("____________________________________________________");
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine("When the applause comes down, Jimmy, standing at the head of the crowd, speaks. \"So you've finally made it! We all just wanted to properly thank you for getting us out of here.\"");
@@ -17527,7 +18168,9 @@ namespace JessesDungeon
                 Console.WriteLine();
                 Console.Write("Press ENTER to continue");
                 Console.ReadLine();
+                Console.WriteLine("____________________________________________________");
                 Console.WriteLine();
+                Console.WriteLine("Jimmy");
                 Console.WriteLine();
                 Console.WriteLine("\"But I would be remiss if I did not point out that without your intervention - for my personal benefit or not - my relationship with my brother would still be in shambles.\"");
                 Console.WriteLine();
@@ -17535,6 +18178,7 @@ namespace JessesDungeon
                 Console.ReadLine();
                 if (disappearChoice != "hermit mcgill")
                 {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After clearing his throat, a man mummified in space blankets begins to speak.");
@@ -17545,9 +18189,11 @@ namespace JessesDungeon
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
+                        Console.WriteLine("Hermit");
                         Console.WriteLine();
-                        Console.WriteLine("The hermit loosens the wrap on his head and peeks his eyes out.");
+                        Console.WriteLine("He loosens the wrap on his head and peeks his eyes out.");
                         Console.WriteLine();
                         Console.WriteLine("\"The young man has even inspired me to acclimate myself to the light. I think I'll get into selling action figures of us and split the profits!\"");
                         Console.WriteLine();
@@ -17587,6 +18233,7 @@ namespace JessesDungeon
                 Console.ReadLine();
                 if (disappearChoice != "badger")
                 {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Badger hesitantly looks around and raises his hand.");
@@ -17597,6 +18244,7 @@ namespace JessesDungeon
                     Console.ReadLine();
                     if (disappearChoice != "skinny pete")
                     {
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("Skinny Pete thrusts his hands in the air. \"Yeah! None of you guys really like to trade anymore, but this guy right here even brought me Jesse's celebratory Mezcal for when we were done in here! Seems appropriate for us to pass some around now!\"");
@@ -17605,9 +18253,11 @@ namespace JessesDungeon
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
+                        Console.WriteLine("Skinny Pete");
                         Console.WriteLine();
-                        Console.WriteLine("Skinny Pete holds up the mostly-full bottle with a smile, and shrugs.");
+                        Console.WriteLine("He holds up the mostly-full bottle with a smile, and shrugs.");
                         Console.WriteLine();
                         Console.WriteLine("\"Hey, well, I didn't really count on you succeeding and all... so I guess we'll just say I got a bit of a head start.\"");
                         Console.WriteLine();
@@ -17616,7 +18266,9 @@ namespace JessesDungeon
                     }
                     else
                     {
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
+                        Console.WriteLine("Badger");
                         Console.WriteLine();
                         Console.WriteLine("\"And I'm not too sure where Skinny Pete got off to, but I know he was planning some celebratory toast or something.\"");
                         Console.WriteLine();
@@ -17643,9 +18295,11 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
+                    Console.WriteLine("Skinny Pete");
                     Console.WriteLine();
-                    Console.WriteLine("Skinny Pete looks left and right to the people adjacent to him.");
+                    Console.WriteLine("He looks left and right to the people adjacent to him.");
                     Console.WriteLine();
                     Console.WriteLine("\"Well I don't like exactly know where Badger got off to, but could you help pass these cups out?\"");
                     Console.WriteLine();
@@ -17671,9 +18325,11 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
+                    Console.WriteLine("Lydia");
                     Console.WriteLine();
-                    Console.WriteLine("Lydia retrieves her cup.");
+                    Console.WriteLine("She retrieves her cup.");
                     Console.WriteLine();
                     Console.WriteLine("\"Just remember how important the little things can be.\"");
                     Console.WriteLine();
@@ -17691,6 +18347,7 @@ namespace JessesDungeon
                 }
                 if (disappearChoice != "narrator" && narratorDefeated)
                 {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("The gorgeous, shirtless man from the fight club steps forward.");
@@ -17711,6 +18368,7 @@ namespace JessesDungeon
                 }
                 if (disappearChoice != "bowling guy" && bowlingSkill == 20)
                 {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("The glib bowling salesman speaks next.");
@@ -17719,12 +18377,14 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("\"I'll be able to open a franchise of alleys now!\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Jimmy squints his eyes and gives the man a half smile. \"Of course you realize those crystals no longer hold any value as currency... actually - you know what - we'll talk!\"");
@@ -17753,18 +18413,23 @@ namespace JessesDungeon
                     Console.ReadLine();
                     if (disappearChoice != "salamanca" && !salamancaDead)
                     {
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
+                        Console.WriteLine("Gus");
                         Console.WriteLine();
                         Console.WriteLine("\"He first destroyed the Salamanca dissidents --\"");
                         Thread.Sleep(1000);
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine("Salamanca interrupts and begins a (likely less than flattering) tirade in Spanish.");
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
+                        Console.WriteLine("Gus");
                         Console.WriteLine();
-                        Console.WriteLine("Gus pauses until it is finished, and then continues.");
+                        Console.WriteLine("He pauses until it is quiet again, and then continues.");
                         Console.WriteLine();
                         Console.WriteLine("\"-- and then removed all other obstacles for a united front. We owe him a debt of gratitude - one I fully intend to repay.\"");
                         Console.WriteLine();
@@ -17773,7 +18438,9 @@ namespace JessesDungeon
                     }
                     else
                     {
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
+                        Console.WriteLine("Gus");
                         Console.WriteLine();
                         Console.WriteLine("\"He first destroyed the Salamanca dissidents and then removed all other obstacles for a united front. We owe him a debt of gratitude - one I fully intend to repay.\"");
                         Console.WriteLine();
@@ -17792,6 +18459,7 @@ namespace JessesDungeon
                 }
                 if (disappearChoice != "mike")
                 {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("There is a short silence, and Jimmy looks at Mike.");
@@ -17802,6 +18470,7 @@ namespace JessesDungeon
                     Console.ReadLine();
                     if (disappearChoice != "daniel")
                     {
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("Mike remains unmoving with his arms crossed.");
@@ -17811,9 +18480,11 @@ namespace JessesDungeon
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
+                    Console.WriteLine("Mike");
                     Console.WriteLine();
-                    Console.WriteLine("Mike, keeping his arms folded in front of his chest, looks away to the side.");
+                    Console.WriteLine("He keeps his arms folded in front of his chest, looking away to the side.");
                     Console.WriteLine();
                     Console.WriteLine("\"Hmph.\"");
                     Console.WriteLine();
@@ -17831,6 +18502,7 @@ namespace JessesDungeon
                 }
                 else
                 {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("The statue man raises his hand and stutters.");
@@ -17851,6 +18523,7 @@ namespace JessesDungeon
                 }
                 if (disappearChoice != "jane" && !killedJesse && searchedTree)
                 {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("The tree woman raises her branch and takes a step forward.");
@@ -17861,7 +18534,9 @@ namespace JessesDungeon
                     Console.ReadLine();
                     if (freePotions)
                     {
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
+                        Console.WriteLine("Jane");
                         Console.WriteLine();
                         Console.WriteLine("\"I trusted him with the secrets to Jesse's Fortress. In return I asked what little I could do to protect Jesse: a promise that he would leave him alive -- something anyone could easily break.\"");
                         Console.WriteLine();
@@ -17872,7 +18547,9 @@ namespace JessesDungeon
                     }
                     if (disappearChoice == "jesse")
                     {
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
+                        if (freePotions) { Console.WriteLine("Jane"); }
                         Console.WriteLine();
                         Console.WriteLine("\"I know not where Jesse ended up, but I do trust that he is alive and well somewhere.\"");
                         Console.WriteLine();
@@ -17883,6 +18560,7 @@ namespace JessesDungeon
                     }
                     else if (disappearChoice == "heisenberg")
                     {
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("Jesse clears his throat and steps forward next to her.");
@@ -17891,6 +18569,7 @@ namespace JessesDungeon
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("Jesse turns and smiles at the tree woman and they both step back.");
@@ -17900,6 +18579,7 @@ namespace JessesDungeon
                     }
                     else
                     {
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("Jesse clears his throat and steps forward next to her.");
@@ -17908,16 +18588,11 @@ namespace JessesDungeon
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Jesse turns and smiles at the tree woman and they both step back.");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
                     }
                 }
                 else
                 {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("\"Oh, I'm wrong.\"");
@@ -17946,6 +18621,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind the crowd and throws a bag over Jimmy's head.");
@@ -17955,6 +18631,7 @@ namespace JessesDungeon
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                 }
+                Console.WriteLine("____________________________________________________");
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine("The crowd parts, making a path for you to the door. Someone had the forethought of setting up a ladder for you, as well.");
@@ -17966,6 +18643,7 @@ namespace JessesDungeon
                 talkLoop = true;
                 while (talkLoop == true)
                 {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After climbing out, would you like to:");
@@ -17981,6 +18659,7 @@ namespace JessesDungeon
                     {
                         action = "Complete";
                         talkLoop = false;
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("You see to the escape of all your grateful friends. Gradually, everyone says their goodbyes and parts ways.");
@@ -17989,6 +18668,7 @@ namespace JessesDungeon
                         Console.ReadLine();
                         if (disappearChoice == "heisenberg" && !killedJesse)
                         {
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("In thanks, Jesse bequeaths the dungeon to you to use as you see fit. He suggests the installation of an entrance ramp and a thorough cleaning.");
@@ -17996,6 +18676,7 @@ namespace JessesDungeon
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                         }
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("Congratulations! You've successfully completed \"Jesse's Dungeon.\" Your final score was 100 of 100 possible Puzzle Points.");
@@ -18004,12 +18685,14 @@ namespace JessesDungeon
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("Just kidding sorry there is no unlockable feature or second quest or anything. Probably a whole bunch of jokes and references you didn't see, though!");
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("See you next time!");
@@ -18028,6 +18711,7 @@ namespace JessesDungeon
                     }
                     else
                     {
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("That didn't do anything useful.");
@@ -18529,12 +19213,9 @@ namespace JessesDungeon
                 int randomDamage = 1;
                 TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
 
-                Console.WriteLine();
-                Console.WriteLine();
+                Console.Clear();
                 Console.WriteLine(badGuy.BattleIntro);
-                Console.WriteLine();
-                Console.Write("Press ENTER to continue");
-                Console.ReadLine();
+                Thread.Sleep(2500);
                 while (battleLoop == true)
                 {
                     Console.Clear();
@@ -19623,6 +20304,9 @@ namespace JessesDungeon
                 double enemyHPPercent = 1.00;
                 TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
 
+                Console.Clear();
+                Console.WriteLine(badGuy.BattleIntro);
+                Thread.Sleep(2500);
                 while (battleLoop == true)
                 {
                     Console.Clear();
@@ -20314,6 +20998,10 @@ namespace JessesDungeon
             int rolledDamage = 0;
             double enemyHPPercent = 1.00;
             TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
+
+            Console.Clear();
+            Console.WriteLine(badGuy.BattleIntro);
+            Thread.Sleep(2500);
 
             while (battleLoop == true)
             {
