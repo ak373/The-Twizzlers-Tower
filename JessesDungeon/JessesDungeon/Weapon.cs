@@ -14,8 +14,9 @@ namespace JessesDungeon
         public bool Unlocked;
         public int Price;
         public string Description;
+        public string Class;
 
-        public Weapon(string aName, int aDamage, double aCritMultiplier, int aToHitMod, bool aOneHanded, bool aUnlocked, int aPrice, string aDescription)
+        public Weapon(string aName, int aDamage, double aCritMultiplier, int aToHitMod, bool aOneHanded, bool aUnlocked, int aPrice, string aDescription, string aClass)
         {
             Name = aName;
             Damage = aDamage;
@@ -25,6 +26,7 @@ namespace JessesDungeon
             Unlocked = aUnlocked;
             Price = aPrice;
             Description = aDescription;
+            Class = aClass;
         }
     }
 }

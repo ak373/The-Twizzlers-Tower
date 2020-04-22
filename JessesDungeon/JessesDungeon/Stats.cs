@@ -7,8 +7,8 @@ namespace JessesDungeon
     class Stats
     {
         public string Name;
-        public int MaxHitPoints;
         public int CurrentHitPoints;
+        public int MaxHitPoints;
         public Armor EquippedArmor;
         public Weapon EquippedWeapon;
         public Shield EquippedShield;
@@ -27,12 +27,21 @@ namespace JessesDungeon
         public string LastDefeated;
         public int Flurry;
         public int ToHitMod;
+        public int HotActive;
+        public int DotActive;
+        public int BankedCrystals;
+        public bool TheCreeperInTheDarkDefeated;
+        public bool SalamancaGuardDefeated;
+        public bool SalamancaCousinDefeated;
+        public bool FredDefeated;
+        public bool JesseDefeated;
+        public bool DudeOnAPogoStickDefeated;
 
-        public Stats(string aName, int aMaxHitPoints, int aCurrentHitPoints, Armor aEquippedArmor, Weapon aEquippedWeapon, Shield aEquippedShield, int aArmorClass, double aCritResist, int aDamageReduction, int aDamageDie, int aDamage, double aCritMultiplier, int aBlueCrystals, int aFightClubRank, string aLocation, string aFleeLocation, bool aJustFled, bool aJanesProtectionActive, string aLastDefeated, int aFlurry, int aToHitMod)
+        public Stats(string aName, int aCurrentHitPoints, int aMaxHitPoints, Armor aEquippedArmor, Weapon aEquippedWeapon, Shield aEquippedShield, int aArmorClass, double aCritResist, int aDamageReduction, int aDamageDie, int aDamage, double aCritMultiplier, int aBlueCrystals, int aFightClubRank, string aLocation, string aFleeLocation, bool aJustFled, bool aJanesProtectionActive, string aLastDefeated, int aFlurry, int aToHitMod, int aHotActive, int aDotActive, int aBankedCrystals, bool aTheCreeperInTheDarkDefeated, bool aSalamancaGuardDefeated, bool aSalamancaCousinDefeated, bool aFredDefeated, bool aDudeOnAPogoStickDefeated, bool aJesseDefeated)
         {
             Name = aName;
-            MaxHitPoints = aMaxHitPoints;
             CurrentHitPoints = aCurrentHitPoints;
+            MaxHitPoints = aMaxHitPoints;
             EquippedArmor = aEquippedArmor;
             EquippedWeapon = aEquippedWeapon;
             EquippedShield = aEquippedShield;
@@ -51,6 +60,15 @@ namespace JessesDungeon
             LastDefeated = aLastDefeated;
             Flurry = aFlurry;
             ToHitMod = aToHitMod;
+            HotActive = aHotActive;
+            DotActive = aDotActive;
+            BankedCrystals = aBankedCrystals;
+            TheCreeperInTheDarkDefeated = aTheCreeperInTheDarkDefeated;
+            SalamancaGuardDefeated = aSalamancaGuardDefeated;
+            SalamancaCousinDefeated = aSalamancaCousinDefeated;
+            FredDefeated = aFredDefeated;
+            DudeOnAPogoStickDefeated = aDudeOnAPogoStickDefeated;
+            JesseDefeated = aJesseDefeated;
         }
 
         public string[] GetStats()
@@ -80,8 +98,8 @@ namespace JessesDungeon
     class BadGuyStats
     {
         public string Name;
-        public int MaxHitPoints;
         public int CurrentHitPoints;
+        public int MaxHitPoints;
         public int ArmorClass;
         public double CritResist;
         public int DamageDie;
@@ -94,11 +112,11 @@ namespace JessesDungeon
         public Armor Armor;
         public string BattleIntro;
 
-        public BadGuyStats(string aName, int aMaxHitPoints, int aCurrentHitPoints, int aArmorClass, double aCritResist, int aDamageDie, int aDamage, double aCritMultiplier, int aBlueCrystals, int aPotionCount, Potion aPotionType, Weapon aWeapon, Armor aArmor, string aBattleIntro)
+        public BadGuyStats(string aName, int aCurrentHitPoints, int aMaxHitPoints, int aArmorClass, double aCritResist, int aDamageDie, int aDamage, double aCritMultiplier, int aBlueCrystals, int aPotionCount, Potion aPotionType, Weapon aWeapon, Armor aArmor, string aBattleIntro)
         {
             Name = aName;
-            MaxHitPoints = aMaxHitPoints;
             CurrentHitPoints = aCurrentHitPoints;
+            MaxHitPoints = aMaxHitPoints;
             ArmorClass = aArmorClass;
             CritResist = aCritResist;
             DamageDie = aDamageDie;

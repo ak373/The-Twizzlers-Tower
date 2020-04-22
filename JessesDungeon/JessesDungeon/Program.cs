@@ -49,17 +49,19 @@ namespace JessesDungeon
 
             //add all armor, weapon, shield merchant will sell at any point to list
 
-            Weapon unarmed = new Weapon("Unarmed", 0, 1, 0, true, false, 0, "Fists of fury.");
-            Weapon rustyWoodenSpoon = new Weapon("Rusty Wooden Spoon", 1, 2, 0, true, false, 0, "A miracle of natural law.");
-            Weapon stick = new Weapon("Stick", 1, 2, 0, true, true, 5, "Ho Haha Guard Turn Parry Dodge Spin Ha Thrust!");
-            Weapon pointyStick = new Weapon("Pointy Stick", 4, 2, 0, true, false, 10, "Brilliant use of \"force over surface area\" wouldn't you say?");
-            Weapon mildewEncrustedPocketKnife = new Weapon("Mildew-Encrusted Pocket Knife", 4, 3, 0, true, false, 0, "Gross. But pointy!");
-            Weapon knife = new Weapon("Knife", 4, 3, 0, true, false, 20, "You could definitely stab something with this.");
-            Weapon huntingKnife = new Weapon("Hunting Knife", 6, 3, 0, true, false, 50, "THAT'S a knife.");
-            Weapon axe = new Weapon("Fireman's Axe", 8, 3, 0, false, false, 400, "This emergency axe was not made for combat. The force of this two-handed weapon increases your damage die by two, but its unwieldy nature will decrease your AC by two as well.");
-            Weapon pogoStick = new Weapon("Pogo Stick", 4, 2, 0, false, false, 700, "Wielding this contraption like a lance/bazooka, each successful hit leads to an additional attack -- albeit at a -5 penalty.");
-            Weapon realSword = new Weapon("Sword", 10, 3, 0, true, false, 0, "Unfortunately, this sword is not unnaturally propotioned or outfitted with a gun.");
-            Weapon gun = new Weapon("Gun", 20, 0, -5, true, false, 1000, "Can make a massive hole in your target if you can handle its massive kickback (-5 penalty).");
+            Weapon unarmed = new Weapon("Unarmed", 0, 1, 0, true, false, 0, "Fists of fury.", "SlashBash");
+            Weapon rustyWoodenSpoon = new Weapon("Rusty Wooden Spoon", 1, 2, 0, true, false, 0, "A miracle of natural law.", "SlashBash");
+            Weapon stick = new Weapon("Stick", 1, 2, 0, true, true, 5, "Ho Haha Guard Turn Parry Dodge Spin Ha Thrust!", "SlashBash");
+            Weapon pointyStick = new Weapon("Pointy Stick", 4, 2, 0, true, false, 10, "Brilliant use of \"force over surface area\" wouldn't you say?", "Piercing");
+            Weapon mildewEncrustedPocketKnife = new Weapon("Mildew-Encrusted Pocket Knife", 4, 3, 0, true, false, 0, "Gross. But pointy!", "Piercing");
+            Weapon knife = new Weapon("Knife", 4, 3, 0, true, false, 20, "You could definitely stab something with this.", "Piercing");
+            Weapon huntingKnife = new Weapon("Hunting Knife", 6, 3, 0, true, false, 50, "THAT'S a knife.", "Piercing");
+            Weapon club = new Weapon("Club", 15, 2, 0, false, false, 500, "Known to be used by frequent party-goers.", "SlashBash");
+            Weapon axe = new Weapon("Fireman's Axe", 10, 3, 0, false, false, 400, "This emergency axe was not made for combat. The force of this two-handed weapon increases your damage die by two, but its unwieldy nature will decrease your AC by two as well.", "SlashBash");
+            Weapon pogoStick = new Weapon("Pogo Stick", 4, 2, 0, false, false, 700, "Wielding this contraption like a lance/bazooka, each successful hit leads to an additional attack -- albeit at a -5 penalty.", "Polearm");
+            Weapon realSword = new Weapon("Sword", 10, 3, 0, true, false, 0, "Unfortunately, this sword is not unnaturally propotioned or outfitted with a gun.", "SlashBash");
+            Weapon gun = new Weapon("Gun", 20, 1.5, -5, true, false, 1000, "Can make a massive hole in your target if you can handle its massive kickback (-5 penalty).", "Ranged");
+            Weapon assassinsDagger = new Weapon("Assassin's Dagger", 2, 2, 5, true, false, 500, "It's not the size of the dagger that counts -- but how you use it. It may be weak initially, but it's balanced to connect (+5 bonus) and its poison will continue to harm its victim (5 dmg/round x3).", "Piercing");
             List<Weapon> merchantWeapon = new List<Weapon>();
 
             Shield nullShield = new Shield("Forearm", 0, 1.00, true, 0, "'Tis nothing but spun sugar and bootblack.");
@@ -67,11 +69,21 @@ namespace JessesDungeon
             Shield cardboardCutout = new Shield("Cardboard Cutout", 1, 0.95, true, 3, "Well it looks like a shield...");
             Shield garbageCanLid = new Shield("Garbage Can Lid", 2, 0.90, false, 10, "Can't top this one.");
             Shield realShield = new Shield("Shield", 5, 0.85, false, 0, "Perfect for phalanx formation if you only had some friends.");
+            Shield mirrorShield = new Shield("The Mirror Shield", 4, 0.90, false, 0, "But which iteration is it?");
             List<Shield> merchantShield = new List<Shield>();
 
-            Potion healingPotion = new Potion("Healing Potion", 20, "This potion will recover 20 HP.");
-            Potion lightHealingPotion = new Potion("Light Healing Potion", 10, "This potion will recover 10 HP.");
+            Potion healingPotion = new Potion("Healing Potion", 30, "This potion will recover 30 HP.");
+            Potion lightHealingPotion = new Potion("Light Healing Potion", 20, "This potion will recover 20 HP.");
             Potion greaterHealingPotion = new Potion("Greater Healing Potion", 50, "This potion will recover 50 HP.");
+            Potion hotPotion = new Potion("Soothing Potion", 15, "This potion will recover 15 HP each round for 3 rounds.");
+            Potion lightHotPotion = new Potion("Light Soothing Potion", 10, "This potion will recover 10 HP each round for 3 rounds.");
+            Potion greaterHotPotion = new Potion("Greater Soothing Potion", 25, "This potion will recover 25 HP each round for 3 rounds.");
+            Potion lightAcidBomb = new Potion("Light Acid Bomb", -10, "This bomb will inflict 10 damage to its target.");
+            Potion acidBomb = new Potion("Acid Bomb", -20, "This bomb will inflict 20 damage to its target.");
+            Potion greaterAcidBomb = new Potion("Greater Acid Bomb", -40, "This bomb will inflict 40 damage to its target.");
+            Potion lightDotPotion = new Potion("Light Vial of Corrosive", -5, "This acid will inflict 5 damage to its target each round for 3 rounds.");
+            Potion dotPotion = new Potion("Vial of Corrosive", -10, "This acid will inflict 10 damage to its target each round for 3 rounds.");
+            Potion greaterDotPotion = new Potion("Greater Vial of Corrosive", -20, "This acid will inflict 20 damage to its target each round for 3 rounds.");
 
             Item sackOfCash = new Item("Sack of Cash", "Salamanca's giant bag of crystals.");
             Item giantBlueCrystal = new Item("Giant Blue Crystal", "An enormous[ly] beautiful gem.");
@@ -83,14 +95,13 @@ namespace JessesDungeon
             Item jeweledRing = new Item("Jeweled Ring", "A beautiful ring you found in the tree-woman's room.");
             Item sackOfGoodies = new Item("Skinny Pete's Sack of Goodies", "A fine goodie bag for any occasion.");
             Item minkCoat = new Item("Mink Coat", "An extremely LUXURIOUS coat. Or an extremely CRUEL coat. Whichever you are less offended by.");
-            Item fredStash = new Item("Stinky Cash", "Separated out from putrid rotting food, this bounty must be part of a long forgotten contingency plan.");
+            Item fredStash = new Item("Fabulous Beard", "This beard is long, flowing, and silky-smooth.");
             Item safe = new Item("Safe Cash", "This cash is so safe that the only written form of its combination is locked inside it.");
             Item generator = new Item("Electric Generator", "This small generator may not be worth much outside this dungeon, but in here it's all but priceless.");
             Item dungeonKey = new Item("Heisenberg's Key", "A key found in the Fortress that (hopefully) will free you and everyone else.");
 
             List<Item> undroppables = new List<Item>();
             List<Armor> equippableArmor = new List<Armor>();
-            equippableArmor.Add(rags);
             List<Shield> equippableShield = new List<Shield>();
             equippableShield.Add(nullShield);
             List<Weapon> equippableWeapon = new List<Weapon>();
@@ -198,9 +209,18 @@ namespace JessesDungeon
             bool mapFortress = false;
             bool searchedChest = false;
             bool searchedNightstand = false;
+            bool lootedFredBeard = false;
+            bool lootedMirror = false;
+            bool converseOneDone = false;
+            bool converseTwoDone = false;
+            bool converseThreeDone = false;
+            bool converseFourDone = false;
+            bool converseFiveDone = false;
+            bool converseSixDone = false;
+            bool converseSevenDone = false;
 
-            List<string> boolList = new List<string> { "debugMode", "bowlAndSpoonLooted", "listenedToTownVoices", "unlockedListenTo", "hasNotEnteredTown", "hasLeftTown", "searchedTree", "galeQuestGiven", "galeQuestCompleted", "hermitVisited", "lookedMeepEyes", "searchedMeepMounds", "talkedToMeepMounds", "searchedMikeHouse", "fuckedUpWithMike", "searchedGraveyard", "salamancaGuardDefeated", "salamancaGuardSearched", "salamancaCousinDefeated", "salamancaDead", "randomEncountersOn", "lydiaQuestGiven", "lydiaQuestCompleted", "lootedCentaur", "frontEntranceWarning", "joinedFightClub", "fightClubLoop", "foughtInFightClub", "theCreeperInTheDarkDefeated", "puddleSearched", "visitedBowlingAlley", "bowlingLoop", "talkedToPriest", "noticedJane", "janesProtectionActive", "janesDoorOpened", "signedLogBook", "dryadLoop", "peteLoop", "buyLoop", "sellLoop", "inventoryLoop", "salamancaLoop", "salamancaBagLooted", "newConverseAvailable", "gusQuestGiven", "gusQuestCompleted", "gusLoop", "losPollosHermanos", "mikeQuestGiven", "mikeQuestCompleted", "peteQuestGiven", "peteQuestCompleted", "saulQuestGiven", "saulQuestCompleted", "studdedLeatherArmorLooted", "knightSuitAvailable", "mikeLoop", "janeQuestGiven", "janeQuestCompleted", "janeLoop", "freePotions", "dudeOnAPogoStickDefeated", "hidenGoseke", "secretTunnelOpened", "returnedRing", "shopClosed", "readLogbook", "tookPeteCash", "tookGusCash", "tookSaulCash", "tookHermitCash", "tookLydiaCash", "tookMikeCash", "tookJaneCash", "talkLoop", "killedJesse", "jesseDefeated", "sparedJesse", "searchedHeisenberg", "narratorDefeated", "searchedFortress", "mapTown", "mapPeace", "mapSalamanca", "mapLiquor", "mapVacuum", "mapCartel", "mapMike", "mapFight", "mapLydia", "mapSaul", "mapBowl", "mapHermit", "mapFortress" , "searchedChest" , "searchedNightstand" };
-            List<bool> boolFlags = new List<bool> { debugMode, bowlAndSpoonLooted, listenedToTownVoices, unlockedListenTo, hasNotEnteredTown, hasLeftTown, searchedTree, galeQuestGiven, galeQuestCompleted, hermitVisited, lookedMeepEyes, searchedMeepMounds, talkedToMeepMounds, searchedMikeHouse, fuckedUpWithMike, searchedGraveyard, salamancaGuardDefeated, salamancaGuardSearched, salamancaCousinDefeated, salamancaDead, randomEncountersOn, lydiaQuestGiven, lydiaQuestCompleted, lootedCentaur, frontEntranceWarning, joinedFightClub, fightClubLoop, foughtInFightClub, theCreeperInTheDarkDefeated, puddleSearched, visitedBowlingAlley, bowlingLoop, talkedToPriest, noticedJane, janesProtectionActive, janesDoorOpened, signedLogBook, dryadLoop, peteLoop, buyLoop, sellLoop, inventoryLoop, salamancaLoop, salamancaBagLooted, newConverseAvailable, gusQuestGiven, gusQuestCompleted, gusLoop, losPollosHermanos, mikeQuestGiven, mikeQuestCompleted, peteQuestGiven, peteQuestCompleted, saulQuestGiven, saulQuestCompleted, studdedLeatherArmorLooted, knightSuitAvailable, mikeLoop, janeQuestGiven, janeQuestCompleted, janeLoop, freePotions, dudeOnAPogoStickDefeated, hidenGoseke, secretTunnelOpened, returnedRing, shopClosed, readLogbook, tookPeteCash, tookGusCash, tookSaulCash, tookHermitCash, tookLydiaCash, tookMikeCash, tookJaneCash, talkLoop, killedJesse, jesseDefeated, sparedJesse, searchedHeisenberg, narratorDefeated, searchedFortress, mapTown, mapPeace, mapSalamanca, mapLiquor, mapVacuum, mapCartel, mapMike, mapFight, mapLydia, mapSaul, mapBowl, mapHermit, mapFortress, searchedChest, searchedNightstand };
+            List<string> boolList = new List<string> { "debugMode", "bowlAndSpoonLooted", "listenedToTownVoices", "unlockedListenTo", "hasNotEnteredTown", "hasLeftTown", "searchedTree", "galeQuestGiven", "galeQuestCompleted", "hermitVisited", "lookedMeepEyes", "searchedMeepMounds", "talkedToMeepMounds", "searchedMikeHouse", "fuckedUpWithMike", "searchedGraveyard", "salamancaGuardDefeated", "salamancaGuardSearched", "salamancaCousinDefeated", "salamancaDead", "randomEncountersOn", "lydiaQuestGiven", "lydiaQuestCompleted", "lootedCentaur", "frontEntranceWarning", "joinedFightClub", "fightClubLoop", "foughtInFightClub", "theCreeperInTheDarkDefeated", "puddleSearched", "visitedBowlingAlley", "bowlingLoop", "talkedToPriest", "noticedJane", "janesProtectionActive", "janesDoorOpened", "signedLogBook", "dryadLoop", "peteLoop", "buyLoop", "sellLoop", "inventoryLoop", "salamancaLoop", "salamancaBagLooted", "newConverseAvailable", "gusQuestGiven", "gusQuestCompleted", "gusLoop", "losPollosHermanos", "mikeQuestGiven", "mikeQuestCompleted", "peteQuestGiven", "peteQuestCompleted", "saulQuestGiven", "saulQuestCompleted", "studdedLeatherArmorLooted", "knightSuitAvailable", "mikeLoop", "janeQuestGiven", "janeQuestCompleted", "janeLoop", "freePotions", "dudeOnAPogoStickDefeated", "hidenGoseke", "secretTunnelOpened", "returnedRing", "shopClosed", "readLogbook", "tookPeteCash", "tookGusCash", "tookSaulCash", "tookHermitCash", "tookLydiaCash", "tookMikeCash", "tookJaneCash", "talkLoop", "killedJesse", "jesseDefeated", "sparedJesse", "searchedHeisenberg", "narratorDefeated", "searchedFortress", "mapTown", "mapPeace", "mapSalamanca", "mapLiquor", "mapVacuum", "mapCartel", "mapMike", "mapFight", "mapLydia", "mapSaul", "mapBowl", "mapHermit", "mapFortress" , "searchedChest" , "searchedNightstand" , "lootedFredBeard", "lootedMirror", "converseOneDone", "converseTwoDone", "converseThreeDone", "converseFourDone", "converseFiveDone", "converseSixDone", "converseSevenDone" };
+            List<bool> boolFlags = new List<bool> { debugMode, bowlAndSpoonLooted, listenedToTownVoices, unlockedListenTo, hasNotEnteredTown, hasLeftTown, searchedTree, galeQuestGiven, galeQuestCompleted, hermitVisited, lookedMeepEyes, searchedMeepMounds, talkedToMeepMounds, searchedMikeHouse, fuckedUpWithMike, searchedGraveyard, salamancaGuardDefeated, salamancaGuardSearched, salamancaCousinDefeated, salamancaDead, randomEncountersOn, lydiaQuestGiven, lydiaQuestCompleted, lootedCentaur, frontEntranceWarning, joinedFightClub, fightClubLoop, foughtInFightClub, theCreeperInTheDarkDefeated, puddleSearched, visitedBowlingAlley, bowlingLoop, talkedToPriest, noticedJane, janesProtectionActive, janesDoorOpened, signedLogBook, dryadLoop, peteLoop, buyLoop, sellLoop, inventoryLoop, salamancaLoop, salamancaBagLooted, newConverseAvailable, gusQuestGiven, gusQuestCompleted, gusLoop, losPollosHermanos, mikeQuestGiven, mikeQuestCompleted, peteQuestGiven, peteQuestCompleted, saulQuestGiven, saulQuestCompleted, studdedLeatherArmorLooted, knightSuitAvailable, mikeLoop, janeQuestGiven, janeQuestCompleted, janeLoop, freePotions, dudeOnAPogoStickDefeated, hidenGoseke, secretTunnelOpened, returnedRing, shopClosed, readLogbook, tookPeteCash, tookGusCash, tookSaulCash, tookHermitCash, tookLydiaCash, tookMikeCash, tookJaneCash, talkLoop, killedJesse, jesseDefeated, sparedJesse, searchedHeisenberg, narratorDefeated, searchedFortress, mapTown, mapPeace, mapSalamanca, mapLiquor, mapVacuum, mapCartel, mapMike, mapFight, mapLydia, mapSaul, mapBowl, mapHermit, mapFortress, searchedChest, searchedNightstand, lootedFredBeard, lootedMirror, converseOneDone, converseTwoDone, converseThreeDone, converseFourDone, converseFiveDone, converseSixDone, converseSevenDone };
 
             int hermitAnger = 0;
             int highestHermitAnger = 0;
@@ -218,9 +238,12 @@ namespace JessesDungeon
             int saulHermitBond = -1;
             int konamiProgress = -1;
             int stolenHeisenPotions = 0;
+            int bankDeposit = 0;
+            int bankWithdrawal = 0;
+            int jokeConverse = 0;
 
-            List<string> intList = new List<string> { "hermitAnger", "highestHermitAnger", "debugMoneyOutput", "inappropriateTouchingCounter", "fightClubMode", "bowlingSkill", "lastBowlingBet", "egoBowlingScore", "enemyBowlingScore", "bowlingPrizePackage", "salamancaStolenCrystals", "converseCount", "gusSenseMotiveCheck", "saulHermitBond", "konamiProgress", "stolenHeisenPotions" };
-            List<int> intFlags = new List<int> { hermitAnger, highestHermitAnger, debugMoneyOutput, inappropriateTouchingCounter, fightClubMode, bowlingSkill, lastBowlingBet, egoBowlingScore, enemyBowlingScore, bowlingPrizePackage, salamancaStolenCrystals, converseCount, gusSenseMotiveCheck, saulHermitBond, konamiProgress, stolenHeisenPotions };
+            List<string> intList = new List<string> { "hermitAnger", "highestHermitAnger", "debugMoneyOutput", "inappropriateTouchingCounter", "fightClubMode", "bowlingSkill", "lastBowlingBet", "egoBowlingScore", "enemyBowlingScore", "bowlingPrizePackage", "salamancaStolenCrystals", "converseCount", "gusSenseMotiveCheck", "saulHermitBond", "konamiProgress", "stolenHeisenPotions", "bankDeposit", "bankWithdrawal", "jokeConverse" };
+            List<int> intFlags = new List<int> { hermitAnger, highestHermitAnger, debugMoneyOutput, inappropriateTouchingCounter, fightClubMode, bowlingSkill, lastBowlingBet, egoBowlingScore, enemyBowlingScore, bowlingPrizePackage, salamancaStolenCrystals, converseCount, gusSenseMotiveCheck, saulHermitBond, konamiProgress, stolenHeisenPotions, bankDeposit, bankWithdrawal, jokeConverse };
 
             string debugMoneyInput = "";
             string fightClubAction = "";
@@ -243,7 +266,7 @@ namespace JessesDungeon
             List<string> stringFlags = new List<string>() { debugMoneyInput, fightClubAction, fightClubChoice, bowlingAction, purchaseItem, sellItem, sellItem2, usingItem, inspectingItem, salamancaAction, salamancaChoice, disappearChoice, action , razzleDazzleRootBeer, suckBlueFrogs };
 
 
-            var ego = new Stats("Ego", 100, 100, rags, unarmed, nullShield, 0, 0.95, 0, 6, 1, 1, 0, 0, "J7", "J7", false, false, null, 0, 0);
+            var ego = new Stats("Ego", 100, 100, rags, unarmed, nullShield, 0, 0.95, 0, 6, 1, 1, 0, 0, "J7", "J7", false, false, null, 0, 0, 0, 0, 0, false, false, false, false, false, false);
 
 
 
@@ -267,23 +290,31 @@ namespace JessesDungeon
             {
                 if (ego.LastDefeated == "The Creeper in the Dark")
                 {
+                    ego.TheCreeperInTheDarkDefeated = true;
                     theCreeperInTheDarkDefeated = true;
                     pointyStick.Unlocked = true;
                 }
                 if (ego.LastDefeated == "Salamanca Guard")
                 {
+                    ego.SalamancaGuardDefeated = true;
                     salamancaGuardDefeated = true;
                     huntingKnife.Unlocked = true;
                     leatherArmor.Unlocked = true;
                 }
                 if (ego.LastDefeated == "Salamanca Cousin")
                 {
+                    ego.SalamancaCousinDefeated = true;
                     salamancaCousinDefeated = true;
                     huntingKnife.Unlocked = true;
                     leatherArmor.Unlocked = true;
                 }
+                if (ego.LastDefeated == "Fabulous Fred")
+                {
+                    ego.FredDefeated = true;
+                }
                 if (ego.LastDefeated == "Dude on a Pogo Stick")
                 {
+                    ego.DudeOnAPogoStickDefeated = true;
                     dudeOnAPogoStickDefeated = true;
                     pogoStick.Unlocked = true;
                     ringmail.Unlocked = true;
@@ -296,6 +327,15 @@ namespace JessesDungeon
                 {
                     highestHermitAnger = hermitAnger;
                 }
+                if (ego.HotActive == 1) { ego.CurrentHitPoints = ego.CurrentHitPoints + 10; }
+                else if (ego.HotActive == 2) { ego.CurrentHitPoints = ego.CurrentHitPoints + 20; }
+                else if (ego.HotActive == 3) { ego.CurrentHitPoints = ego.CurrentHitPoints + 15; }
+                else if (ego.HotActive == 4) { ego.CurrentHitPoints = ego.CurrentHitPoints + 30; }
+                else if (ego.HotActive == 5) { ego.CurrentHitPoints = ego.CurrentHitPoints + 25; }
+                else if (ego.HotActive == 6) { ego.CurrentHitPoints = ego.CurrentHitPoints + 50; }
+                ego.HotActive = 0;
+                ego.DotActive = 0;
+                if (ego.CurrentHitPoints > ego.MaxHitPoints) { ego.CurrentHitPoints = ego.MaxHitPoints; }
 
 
                 Console.Clear();
@@ -535,7 +575,7 @@ namespace JessesDungeon
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
                                             equippableWeapon.Add(rustyWoodenSpoon);
-                                            GetEquipped(ego, rustyWoodenSpoon);
+                                            GetEquipped(ego, rustyWoodenSpoon, equippableWeapon, equippableArmor, equippableShield);
                                             Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
@@ -544,7 +584,7 @@ namespace JessesDungeon
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
                                             equippableShield.Add(soupBowl);
-                                            GetStrapped(ego, soupBowl);
+                                            GetStrapped(ego, soupBowl, equippableShield);
                                         }
                                         else if (action == "no")
                                         {
@@ -877,354 +917,750 @@ namespace JessesDungeon
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                             Console.Clear();
-                            //7 total conversations. 6 "newconverses"
                             if (undroppables.Contains(dungeonKey))
                             {
-                                Console.WriteLine("\"PICAAAAAAARD!\"");
-                                Thread.Sleep(2500);
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"DATA!\"");
-                                Thread.Sleep(2500);
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Q!\"");
-                                Thread.Sleep(2500);
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"...THE DOCTOR!\"");
-                                Thread.Sleep(2500);
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Janeway.\"");
-                                Thread.Sleep(2500);
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Sweeting?\"");
-                                Thread.Sleep(1500);
-                                Console.Clear();
-                                Thread.Sleep(1500);
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("KHAAAAAAAAN!");
-                                Thread.Sleep(1000);
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.Clear();
-                                Thread.Sleep(1500);
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("KHAAAAAAAAAAAAAAAAAAAAAAAN!");
-                                Thread.Sleep(2500);
+                                if (jokeConverse == 0)
+                                {
+                                    Console.WriteLine("\"PICAAAAAAARD!\"");
+                                    Thread.Sleep(2500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"DATA!\"");
+                                    Thread.Sleep(2500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Q!\"");
+                                    Thread.Sleep(2500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"...THE DOCTOR!\"");
+                                    Thread.Sleep(2500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Janeway.\"");
+                                    Thread.Sleep(2500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Sweeting?\"");
+                                    Thread.Sleep(1500);
+                                    Console.Clear();
+                                    Thread.Sleep(1500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("KHAAAAAAAAN!");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.Clear();
+                                    Thread.Sleep(1500);
+                                    Console.WriteLine("KHAAAAAAAAAAAAAAAAAAAAAAAN!");
+                                    Thread.Sleep(2500);
+                                }
+                                else if (jokeConverse == 1)
+                                {
+                                    Console.WriteLine("\"Come on, Fox! Let's kick some ass!\"");
+                                    Thread.Sleep(2500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Shit! He's right behind me!\"");
+                                    Thread.Sleep(2500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Hey, idiot! I'm on your side!\"");
+                                    Thread.Sleep(2500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Shit! We were so close to Venom.\"");
+                                    Thread.Sleep(2500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Jesus Christ! What is that?\"");
+                                    Thread.Sleep(2500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Are you gonna listen to that --");
+                                    Thread.Sleep(1500);
+                                    Console.Clear();
+                                    Thread.Sleep(1500);
+                                    Console.WriteLine("Do a barrel roll!");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else if (jokeConverse == 2)
+                                {
+                                    Console.WriteLine("\"You know, Heisenberg has some pretty badass lines.\"");
+                                    Thread.Sleep(3000);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Yeah? Like what?\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"There are so many, bro! But I bet the best ones made their way into this game.\"");
+                                    Thread.Sleep(3500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Why would they do that?\"");
+                                    Thread.Sleep(1500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"If it was me, I'd make debug codes out of them.\"");
+                                    Thread.Sleep(3000);
+                                    Console.Clear();
+                                    Thread.Sleep(1500);
+                                    Console.WriteLine("Eh? ehhhhh?");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                jokeConverse++;
+                                if (jokeConverse == 3) { jokeConverse = 0; }
                             }
+                            //7 total conversations. 6 "newconverses"
                             else if (converseCount == 7 || (converseCount == 6 && newConverseAvailable == true))
                             {
                                 converseCount = 7;
+                                converseSevenDone = true;
                                 newConverseAvailable = false;
-                                Console.WriteLine("\"...There's no way that's true, man.\"");
-                                Thread.Sleep(4000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"It totally is, bro, I'm tellin' you! You pay him and just 'vwip!' he'll get you outta here! Anywhere you wanna go and any kind of life you want!\"");
-                                Thread.Sleep(10000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Oh yeah? Then why hasn't everyone done it? Why haven't you?\"");
-                                Thread.Sleep(5000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Bro, you're not getting me. When I say 'a lot,' I mean *a lot.*\"");
-                                Thread.Sleep(7000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"What kind of business plan is that, then?\"");
-                                Thread.Sleep(4000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"I don't know, man. I think it's what he used to charge and he just keeps the same price out of principle or whatever.\"");
-                                Thread.Sleep(10000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"So, what, do you just drag a huge bag of cash up there and say 'here you go' or something?\"");
-                                Thread.Sleep(5000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Nah, dude, it's like some super spy stuff with like a secret passcode. It's weird, but you say, 'I need a new dust filter for my Hoover Maxextract Pressurepro Model 60 - can you help me with that?'\"");
-                                Thread.Sleep(13000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Woah. Feel like I'd need to write that down. What was it again?\"");
-                                Thread.Sleep(5000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"'I need a new dust filter for my Hoover Maxextract Pressurepro Model 60 - can you help me with that?'\"");
-                                Thread.Sleep(5000);
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"So, like, do you think anyone will ever do it?\"");
-                                Thread.Sleep(4000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"If there's even enough money down here at all, you'd have to pool everyone's stash together just to get one guy out. And I really don't think anyone's gonna go for that.\"");
-                                Thread.Sleep(11000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"They'll probably need your whole sack of goodies, too!\"");
-                                Thread.Sleep(5000);
-                                Console.Clear();
-                                Console.WriteLine("The remainder of this conversation takes a dark turn.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
+                                if (converseSevenDone)
+                                {
+                                    Console.WriteLine("\"...There's no way that's true, man.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"It totally is, bro, I'm tellin' you! You pay him and just 'vwip!' he'll get you outta here! Anywhere you wanna go and any kind of life you want!\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Oh yeah? Then why hasn't everyone done it? Why haven't you?\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Bro, you're not getting me. When I say 'a lot,' I mean *a lot.*\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"What kind of business plan is that, then?\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"I don't know, man. I think it's what he used to charge and he just keeps the same price out of principle or whatever.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"So, what, do you just drag a huge bag of cash up there and say 'here you go' or something?\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Nah, dude, it's like some super spy stuff with like a secret passcode. It's weird, but you say, 'I need a new dust filter for my Hoover Maxextract Pressurepro Model 60 - can you help me with that?'\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Woah. Feel like I'd need to write that down. What was it again?\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"'I need a new dust filter for my Hoover Maxextract Pressurepro Model 60 - can you help me with that?'\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"So, like, do you think anyone will ever do it?\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"If there's even enough money down here at all, you'd have to pool everyone's stash together just to get one guy out. And I really don't think anyone's gonna go for that.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"They'll probably need your whole sack of goodies, too!\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\"...There's no way that's true, man.\"");
+                                    Thread.Sleep(4000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"It totally is, bro, I'm tellin' you! You pay him and just 'vwip!' he'll get you outta here! Anywhere you wanna go and any kind of life you want!\"");
+                                    Thread.Sleep(10000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Oh yeah? Then why hasn't everyone done it? Why haven't you?\"");
+                                    Thread.Sleep(5000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Bro, you're not getting me. When I say 'a lot,' I mean *a lot.*\"");
+                                    Thread.Sleep(7000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"What kind of business plan is that, then?\"");
+                                    Thread.Sleep(4000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"I don't know, man. I think it's what he used to charge and he just keeps the same price out of principle or whatever.\"");
+                                    Thread.Sleep(10000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"So, what, do you just drag a huge bag of cash up there and say 'here you go' or something?\"");
+                                    Thread.Sleep(5000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Nah, dude, it's like some super spy stuff with like a secret passcode. It's weird, but you say, 'I need a new dust filter for my Hoover Maxextract Pressurepro Model 60 - can you help me with that?'\"");
+                                    Thread.Sleep(13000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Woah. Feel like I'd need to write that down. What was it again?\"");
+                                    Thread.Sleep(5000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"'I need a new dust filter for my Hoover Maxextract Pressurepro Model 60 - can you help me with that?'\"");
+                                    Thread.Sleep(5000);
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"So, like, do you think anyone will ever do it?\"");
+                                    Thread.Sleep(4000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"If there's even enough money down here at all, you'd have to pool everyone's stash together just to get one guy out. And I really don't think anyone's gonna go for that.\"");
+                                    Thread.Sleep(11000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"They'll probably need your whole sack of goodies, too!\"");
+                                    Thread.Sleep(5000);
+                                    Console.Clear();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
                             }
                             else if (converseCount == 6 || (converseCount == 5 && newConverseAvailable == true))
                             {
                                 converseCount = 6;
+                                converseSixDone = true;
                                 newConverseAvailable = false;
-                                Console.WriteLine("\"It had time travel! It had Borg! It had pew pew bang and a happy ending! I liked it!\"");
-                                Thread.Sleep(4000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Bro, I'm just gonna slap those each out of the air in turn.\"");
-                                Thread.Sleep(4000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"There are no constraints on the time travel, so that whole thing is just a disaster. It doesn't even matter if I could (and I could) say 'she should've done this or that.' Omnipotence and omnipresence simply cheapen the struggle.\"");
-                                Thread.Sleep(7500);
-                                Console.WriteLine();
-                                Console.WriteLine("\"The 'Voyager' series treats the Borg wrong, and the finale is no exception. The borg are an unending army where a single ship can decimate the entire alpha quadrant, and Voyager just like blows some of them up. You ever take calculus, bro? Subtract 'a lot' from infinity and you still have at least one ship that can end the alpha quadrant whenever it wants.\"");
-                                Thread.Sleep(7500);
-                                Console.WriteLine();
-                                Console.WriteLine("\"And your 'pew pew bang happy ending,' bro? The whole thing was about deciding between an act of self-interest and an ethical act of self-sacrifice -- mirroring the series premiere, mind you. But - unlike the premiere - Janeway just has her cake and eats it too, which is a poor ending to any story.\"");
-                                Thread.Sleep(35000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"... And 'Endgame' is the most rewatched episode of the series on Netflix.\"");
-                                Thread.Sleep(6000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Yeah and they'll probably release some Netflix-original movie as an extension just to please fans, too. In what world would something like that be any good?\"");
-                                Thread.Sleep(10000);
-                                Console.Clear();
-                                Console.WriteLine("The remainder of this conversation takes a dark turn.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
+                                if (converseSixDone)
+                                {
+                                    Console.WriteLine("\"It had time travel! It had Borg! It had pew pew bang and a happy ending! I liked it!\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Bro, I'm just gonna slap those each out of the air in turn.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"There are no constraints on the time travel, so that whole thing is just a disaster. It doesn't even matter if I could (and I could) say 'she should've done this or that.' Omnipotence and omnipresence simply cheapen the struggle.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"The 'Voyager' series treats the Borg wrong, and the finale is no exception. The borg are an unending army where a single ship can decimate the entire alpha quadrant, and Voyager just like blows some of them up. You ever take calculus, bro? Subtract 'a lot' from infinity and you still have at least one ship that can end the alpha quadrant whenever it wants.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"And your 'pew pew bang happy ending,' bro? The whole thing was about deciding between an act of self-interest and an ethical act of self-sacrifice -- mirroring the series premiere, mind you. But - unlike the premiere - Janeway just has her cake and eats it too, which is a poor ending to any story.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"... And 'Endgame' is the most rewatched episode of the series on Netflix.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Yeah and they'll probably release some Netflix-original movie as an extension just to please fans, too. In what world would something like that be any good?\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\"It had time travel! It had Borg! It had pew pew bang and a happy ending! I liked it!\"");
+                                    Thread.Sleep(4000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Bro, I'm just gonna slap those each out of the air in turn.\"");
+                                    Thread.Sleep(4000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"There are no constraints on the time travel, so that whole thing is just a disaster. It doesn't even matter if I could (and I could) say 'she should've done this or that.' Omnipotence and omnipresence simply cheapen the struggle.\"");
+                                    Thread.Sleep(7500);
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"The 'Voyager' series treats the Borg wrong, and the finale is no exception. The borg are an unending army where a single ship can decimate the entire alpha quadrant, and Voyager just like blows some of them up. You ever take calculus, bro? Subtract 'a lot' from infinity and you still have at least one ship that can end the alpha quadrant whenever it wants.\"");
+                                    Thread.Sleep(7500);
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"And your 'pew pew bang happy ending,' bro? The whole thing was about deciding between an act of self-interest and an ethical act of self-sacrifice -- mirroring the series premiere, mind you. But - unlike the premiere - Janeway just has her cake and eats it too, which is a poor ending to any story.\"");
+                                    Thread.Sleep(35000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"... And 'Endgame' is the most rewatched episode of the series on Netflix.\"");
+                                    Thread.Sleep(6000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Yeah and they'll probably release some Netflix-original movie as an extension just to please fans, too. In what world would something like that be any good?\"");
+                                    Thread.Sleep(10000);
+                                    Console.Clear();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
                             }
                             else if (converseCount == 5 || (converseCount == 4 && newConverseAvailable == true))
                             {
                                 converseCount = 5;
+                                converseFiveDone = true;
                                 newConverseAvailable = false;
-                                Console.WriteLine("\"It was just ahead of its time, bro.\"");
-                                Thread.Sleep(4000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Did you even watch the original series? Yes, it was certainly ahead of its time -- but it also got pretty 'out there.'\"");
-                                Thread.Sleep(8000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"What do you mean?\"");
-                                Thread.Sleep(3000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"It got extremely heavy-handed and preachy, and just straight up bizarre sometimes. The show became like a sketch show, with the crew ending up on some world coincidentally identical to some previous period in human history. Even Abraham Lincoln showed up!\"");
-                                Thread.Sleep(14000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Oh, come on, bro, all the 'Star Trek' shows just threw the crew into different scenarios like that.\"");
-                                Thread.Sleep(8000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"There's a fine line between 'themes' in the later series and 'reality' in the original. Roddenberry was a visionary and the original series was groundbreaking, but the show was a mess.\"");
-                                Thread.Sleep(14000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Yeah you're right! 'Star Trek' and 'The Visionaries' were both unjustly canceled!\"");
-                                Thread.Sleep(6000);
-                                Console.Clear();
-                                Console.WriteLine("The remainder of this conversation takes a dark turn.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
+                                if (converseFiveDone)
+                                {
+                                    Console.WriteLine("\"It was just ahead of its time, bro.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Did you even watch the original series? Yes, it was certainly ahead of its time -- but it also got pretty 'out there.'\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"What do you mean?\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"It got extremely heavy-handed and preachy, and just straight up bizarre sometimes. The show became like a sketch show, with the crew ending up on some world coincidentally identical to some previous period in human history. Even Abraham Lincoln showed up!\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Oh, come on, bro, all the 'Star Trek' shows just threw the crew into different scenarios like that.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"There's a fine line between 'themes' in the later series and 'reality' in the original. Roddenberry was a visionary and the original series was groundbreaking, but the show was a mess.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Yeah you're right! 'Star Trek' and 'The Visionaries' were both unjustly canceled!\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\"It was just ahead of its time, bro.\"");
+                                    Thread.Sleep(4000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Did you even watch the original series? Yes, it was certainly ahead of its time -- but it also got pretty 'out there.'\"");
+                                    Thread.Sleep(8000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"What do you mean?\"");
+                                    Thread.Sleep(3000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"It got extremely heavy-handed and preachy, and just straight up bizarre sometimes. The show became like a sketch show, with the crew ending up on some world coincidentally identical to some previous period in human history. Even Abraham Lincoln showed up!\"");
+                                    Thread.Sleep(14000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Oh, come on, bro, all the 'Star Trek' shows just threw the crew into different scenarios like that.\"");
+                                    Thread.Sleep(8000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"There's a fine line between 'themes' in the later series and 'reality' in the original. Roddenberry was a visionary and the original series was groundbreaking, but the show was a mess.\"");
+                                    Thread.Sleep(14000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Yeah you're right! 'Star Trek' and 'The Visionaries' were both unjustly canceled!\"");
+                                    Thread.Sleep(6000);
+                                    Console.Clear();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
                             }
                             else if (converseCount == 4 || (converseCount == 3 && newConverseAvailable == true))
                             {
                                 converseCount = 4;
+                                converseFourDone = true;
                                 newConverseAvailable = false;
-                                Console.WriteLine("\"There's nothing that can get in the way of love, bro.\"");
-                                Thread.Sleep(4000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"It's even visited several times throughout the series; the very point of their relationship is that they can never be.\"");
-                                Thread.Sleep(8000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"But they did end up togeth --\"");
-                                Thread.Sleep(2500);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Bro, don't even get me started on the movies again. They were trash and that was just pandering to audiences so to fill their pockets on a lackluster movie.\"");
-                                Thread.Sleep(10000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Oh, come on, bro, everyone deserves a happy ending.\"");
-                                Thread.Sleep(5000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Riker chose his career over love. His ambition flourished but at the cost of his personal life. There's even tangential themes of him 'ending up like Picard' but - not only accepting it - relishing it.\"");
-                                Thread.Sleep(14000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"I've got faith... Faith of the heart...\"");
-                                Thread.Sleep(4000);
-                                Console.Clear();
-                                Console.WriteLine("The remainder of this conversation takes a dark turn.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
+                                if (converseFourDone)
+                                {
+                                    Console.WriteLine("\"There's nothing that can get in the way of love, bro.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"It's even visited several times throughout the series; the very point of their relationship is that they can never be.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"But they did end up togeth --\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Bro, don't even get me started on the movies again. They were trash and that was just pandering to audiences so to fill their pockets on a lackluster movie.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Oh, come on, bro, everyone deserves a happy ending.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Riker chose his career over love. His ambition flourished but at the cost of his personal life. There's even tangential themes of him 'ending up like Picard' but - not only accepting it - relishing it.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"I've got faith... Faith of the heart...\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\"There's nothing that can get in the way of love, bro.\"");
+                                    Thread.Sleep(4000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"It's even visited several times throughout the series; the very point of their relationship is that they can never be.\"");
+                                    Thread.Sleep(8000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"But they did end up togeth --\"");
+                                    Thread.Sleep(2500);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Bro, don't even get me started on the movies again. They were trash and that was just pandering to audiences so to fill their pockets on a lackluster movie.\"");
+                                    Thread.Sleep(10000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Oh, come on, bro, everyone deserves a happy ending.\"");
+                                    Thread.Sleep(5000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Riker chose his career over love. His ambition flourished but at the cost of his personal life. There's even tangential themes of him 'ending up like Picard' but - not only accepting it - relishing it.\"");
+                                    Thread.Sleep(14000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"I've got faith... Faith of the heart...\"");
+                                    Thread.Sleep(4000);
+                                    Console.Clear();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
                             }
                             else if (converseCount == 3 || (converseCount == 2 && newConverseAvailable == true))
                             {
                                 converseCount = 3;
+                                converseThreeDone = true;
                                 newConverseAvailable = false;
-                                Console.WriteLine("\"Bro, it got a 93% Rotten Tomatoes score and a 89% audience approval score.\"");
-                                Thread.Sleep(6000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Dude, should I even list movies that were terrible but also 'scored' well with critics and audiences? Not to mention the corruption rumors behind the ratings on Star Wars IX.\"");
-                                Thread.Sleep(10000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"But what makes you think you'd be right in the face of so much differing opinion?\"");
-                                Thread.Sleep(8000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"The script was contrived and heavy-handed. The love story was shoe-horned near the end from non-existence. And don't even get me started on Data.\"");
-                                Thread.Sleep(9000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"...Let's not say things we can't take back, bro.\"");
-                                Thread.Sleep(5000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"OK, you're right on that. But come on -- that whole thing about firing the torpedos at the Phoenix and everyone just stands there until they miss? Data obviously misses on purpose, and as he doesn't capitalize on his decoy it only serves as fabricated drama for a lacking movie.\"");
-                                Thread.Sleep(15000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"DATA CAN DO NO WRONG!!\"");
-                                Thread.Sleep(2500);
-                                Console.Clear();
-                                Console.WriteLine("The remainder of this conversation takes a dark turn.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
+                                if (converseThreeDone)
+                                {
+                                    Console.WriteLine("\"Bro, it got a 93% Rotten Tomatoes score and a 89% audience approval score.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Dude, should I even list movies that were terrible but also 'scored' well with critics and audiences? Not to mention the corruption rumors behind the ratings on Star Wars IX.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"But what makes you think you'd be right in the face of so much differing opinion?\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"The script was contrived and heavy-handed. The love story was shoe-horned near the end from non-existence. And don't even get me started on Data.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"...Let's not say things we can't take back, bro.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"OK, you're right on that. But come on -- that whole thing about firing the torpedos at the Phoenix and everyone just stands there until they miss? Data obviously misses on purpose, and as he doesn't capitalize on his decoy it only serves as fabricated drama for a lacking movie.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"DATA CAN DO NO WRONG!!\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\"Bro, it got a 93% Rotten Tomatoes score and a 89% audience approval score.\"");
+                                    Thread.Sleep(6000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Dude, should I even list movies that were terrible but also 'scored' well with critics and audiences? Not to mention the corruption rumors behind the ratings on Star Wars IX.\"");
+                                    Thread.Sleep(10000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"But what makes you think you'd be right in the face of so much differing opinion?\"");
+                                    Thread.Sleep(8000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"The script was contrived and heavy-handed. The love story was shoe-horned near the end from non-existence. And don't even get me started on Data.\"");
+                                    Thread.Sleep(9000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"...Let's not say things we can't take back, bro.\"");
+                                    Thread.Sleep(5000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"OK, you're right on that. But come on -- that whole thing about firing the torpedos at the Phoenix and everyone just stands there until they miss? Data obviously misses on purpose, and as he doesn't capitalize on his decoy it only serves as fabricated drama for a lacking movie.\"");
+                                    Thread.Sleep(15000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"DATA CAN DO NO WRONG!!\"");
+                                    Thread.Sleep(2500);
+                                    Console.Clear();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
                             }
                             else if (converseCount == 2 || (converseCount == 1 && newConverseAvailable == true))
                             {
                                 converseCount = 2;
+                                converseTwoDone = true;
                                 newConverseAvailable = false;
-                                Console.WriteLine("\"No way, man. How could she be better? She's not even likeable on her own.\"");
-                                Thread.Sleep(5000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Hey, man. She's strong, she's independent, and she lets everyone know it. At least she's not Picard's coddled little pet.\"");
-                                Thread.Sleep(8000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Love isn't a weakness. Their relationship is understated and it doesn't take away from Crusher's strength as a woman. Pulaski is just mean -- do you remember when she just kept telling Data he's just a machine and his dreams and aspirations of being human are impossible? Bitch is just nasty.\"");
-                                Thread.Sleep(12000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"That's how it is with a confident, independent person. It's how anyone like her would really act, and she has many otherwise redeeming qualities related to that behavior.\"");
-                                Thread.Sleep(10000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Sure -- but this isn't reality. TV is a form of art, and as such is a representation of reality - NOT reality itself. Art is lies that tells the truth.\"");
-                                Thread.Sleep(10000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"TV is art? Next you're going to tell me those scribbles Picasso makes are art, too.\"");
-                                Thread.Sleep(4000);
-                                Console.Clear();
-                                Console.WriteLine("The remainder of this conversation takes a dark turn.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
+                                if (converseTwoDone)
+                                {
+
+                                    Console.WriteLine("\"No way, man. How could she be better? She's not even likeable on her own.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Hey, man. She's strong, she's independent, and she lets everyone know it. At least she's not Picard's coddled little pet.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Love isn't a weakness. Their relationship is understated and it doesn't take away from Crusher's strength as a woman. Pulaski is just mean -- do you remember when she just kept telling Data he's just a machine and his dreams and aspirations of being human are impossible? Bitch is just nasty.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"That's how it is with a confident, independent person. It's how anyone like her would really act, and she has many otherwise redeeming qualities related to that behavior.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Sure -- but this isn't reality. TV is a form of art, and as such is a representation of reality - NOT reality itself. Art is lies that tells the truth.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"TV is art? Next you're going to tell me those scribbles Picasso makes are art, too.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\"No way, man. How could she be better? She's not even likeable on her own.\"");
+                                    Thread.Sleep(5000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Hey, man. She's strong, she's independent, and she lets everyone know it. At least she's not Picard's coddled little pet.\"");
+                                    Thread.Sleep(8000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Love isn't a weakness. Their relationship is understated and it doesn't take away from Crusher's strength as a woman. Pulaski is just mean -- do you remember when she just kept telling Data he's just a machine and his dreams and aspirations of being human are impossible? Bitch is just nasty.\"");
+                                    Thread.Sleep(12000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"That's how it is with a confident, independent person. It's how anyone like her would really act, and she has many otherwise redeeming qualities related to that behavior.\"");
+                                    Thread.Sleep(10000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Sure -- but this isn't reality. TV is a form of art, and as such is a representation of reality - NOT reality itself. Art is lies that tells the truth.\"");
+                                    Thread.Sleep(10000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"TV is art? Next you're going to tell me those scribbles Picasso makes are art, too.\"");
+                                    Thread.Sleep(4000);
+                                    Console.Clear();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
                             }
                             else if (converseCount == 1 || (converseCount == 0 && newConverseAvailable == true))
                             {
                                 converseCount = 1;
+                                converseOneDone = true;
                                 newConverseAvailable = false;
-                                Console.WriteLine("\"No, man! No one will ever - CAN ever - be better than the original!\"");
-                                Thread.Sleep(5000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Listen, bro. Life is change. Records are made to be broken. Adapt or die. New things will always come along and it is their very purpose to best what came before.\"");
-                                Thread.Sleep(8000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Yeah but that don't mean that just because a newer one is good that it's better. Think about the time period Spock existed in and the fact that he had no original material to work off of.\"");
-                                Thread.Sleep(10000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Yeah but do those handicaps change the score? It's maybe \'unfair\' that Tim Russ didn't have to reinvent the wheel and could build on Nimoy's work, but that's how it goes. As Newton said: we stand on the shoulders of giants, bro.\"");
-                                Thread.Sleep(10000);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("\"Oh, dude, Mighty Ducks 3? I love that movie too.\"");
-                                Thread.Sleep(4000);
-                                Console.Clear();
-                                Console.WriteLine("The remainder of this conversation takes a dark turn.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
+                                if (converseOneDone)
+                                {
+                                    Console.WriteLine("\"No, man! No one will ever - CAN ever - be better than the original!\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Listen, bro. Life is change. Records are made to be broken. Adapt or die. New things will always come along and it is their very purpose to best what came before.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Yeah but that don't mean that just because a newer one is good that it's better. Think about the time period Spock existed in and the fact that he had no original material to work off of.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Yeah but do those handicaps change the score? It's maybe \'unfair\' that Tim Russ didn't have to reinvent the wheel and could build on Nimoy's work, but that's how it goes. As Newton said: we stand on the shoulders of giants, bro.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Oh, dude, Mighty Ducks 3? I love that movie too.\"");
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\"No, man! No one will ever - CAN ever - be better than the original!\"");
+                                    Thread.Sleep(5000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Listen, bro. Life is change. Records are made to be broken. Adapt or die. New things will always come along and it is their very purpose to best what came before.\"");
+                                    Thread.Sleep(8000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Yeah but that don't mean that just because a newer one is good that it's better. Think about the time period Spock existed in and the fact that he had no original material to work off of.\"");
+                                    Thread.Sleep(10000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Yeah but do those handicaps change the score? It's maybe \'unfair\' that Tim Russ didn't have to reinvent the wheel and could build on Nimoy's work, but that's how it goes. As Newton said: we stand on the shoulders of giants, bro.\"");
+                                    Thread.Sleep(11000);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Oh, dude, Mighty Ducks 3? I love that movie too.\"");
+                                    Thread.Sleep(4000);
+                                    Console.Clear();
+                                    Console.WriteLine("The remainder of this conversation takes a dark turn.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
                             }
                         }
 
@@ -1235,7 +1671,7 @@ namespace JessesDungeon
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("Fine.");
+                            Console.WriteLine("GAW! Fine then.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -1489,6 +1925,7 @@ namespace JessesDungeon
                                         merchantWeapon.Add(pointyStick);
                                         merchantWeapon.Add(knife);
                                         merchantWeapon.Add(huntingKnife);
+                                        merchantWeapon.Add(club);
                                         merchantWeapon.Add(axe);
                                         merchantWeapon.Add(pogoStick);
                                         merchantWeapon.Add(gun);
@@ -1498,9 +1935,8 @@ namespace JessesDungeon
                                         while (buyLoop == true)
                                         {
                                             Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                             Console.WriteLine();
-                                            Console.WriteLine();
-                                            Console.WriteLine("Items available for sale:");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("Armor:");
@@ -1669,12 +2105,12 @@ namespace JessesDungeon
                                             }
                                             if (purchaseItem != "switzerfisch")
                                             {
-                                                purchaseItem = "switzerfisch";
                                                 Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
-                                                Console.WriteLine("That didn't do anything useful.");
+                                                Console.WriteLine($"\"Hey, man, what's a {purchaseItem}? I want one of those!\"");
                                                 Console.WriteLine();
+                                                purchaseItem = "switzerfisch";
                                                 Console.Write("Press ENTER to continue");
                                                 Console.ReadLine();
                                             }
@@ -1686,6 +2122,7 @@ namespace JessesDungeon
                                         while (sellLoop == true)
                                         {
                                             Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Whatcha got for me?\" ");
@@ -1765,6 +2202,7 @@ namespace JessesDungeon
                                                         {
                                                             sellItem = "switzerfisch";
                                                             Console.WriteLine("____________________________________________________");
+                                                            Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine($"\"{armor.Name}? How does {(armor.Price / 3)} sound?\"");
@@ -1777,7 +2215,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield); }
+                                                                if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableArmor.Remove(armor);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (armor.Price / 3);
                                                                 Console.WriteLine("____________________________________________________");
@@ -1794,7 +2232,7 @@ namespace JessesDungeon
                                                                 Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
-                                                                Console.WriteLine("All right, bro, maybe next time.");
+                                                                Console.WriteLine("\"All right, bro, maybe next time.\"");
                                                                 Console.WriteLine();
                                                                 Console.Write("Press ENTER to continue");
                                                                 Console.ReadLine();
@@ -1818,6 +2256,7 @@ namespace JessesDungeon
                                                         {
                                                             sellItem = "switzerfisch";
                                                             Console.WriteLine("____________________________________________________");
+                                                            Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine($"\"{weapon.Name}? How does {(weapon.Price / 3)} sound?\"");
@@ -1830,7 +2269,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield); }
+                                                                if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableWeapon.Remove(weapon);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (weapon.Price / 3);
                                                                 Console.WriteLine("____________________________________________________");
@@ -1847,7 +2286,7 @@ namespace JessesDungeon
                                                                 Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
-                                                                Console.WriteLine("All right, bro, maybe next time.");
+                                                                Console.WriteLine("\"All right, bro, maybe next time.\"");
                                                                 Console.WriteLine();
                                                                 Console.Write("Press ENTER to continue");
                                                                 Console.ReadLine();
@@ -1871,6 +2310,7 @@ namespace JessesDungeon
                                                         {
                                                             sellItem = "switzerfisch";
                                                             Console.WriteLine("____________________________________________________");
+                                                            Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine($"\"{shield.Name}? How does {(shield.Price / 3)} sound?\"");
@@ -1883,7 +2323,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield); }
+                                                                if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableShield.Remove(shield);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (shield.Price / 3);
                                                                 Console.WriteLine("____________________________________________________");
@@ -1900,7 +2340,7 @@ namespace JessesDungeon
                                                                 Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
-                                                                Console.WriteLine("All right, bro, maybe next time.");
+                                                                Console.WriteLine("\"All right, bro, maybe next time.\"");
                                                                 Console.WriteLine();
                                                                 Console.Write("Press ENTER to continue");
                                                                 Console.ReadLine();
@@ -1927,6 +2367,7 @@ namespace JessesDungeon
                                                         {
                                                             sellItem = "switzerfisch";
                                                             Console.WriteLine("____________________________________________________");
+                                                            Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine($"\"{armor.Name}? How does {(armor.Price / 4)} sound?\"");
@@ -1939,7 +2380,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield); }
+                                                                if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableArmor.Remove(armor);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (armor.Price / 4);
                                                                 Console.WriteLine("____________________________________________________");
@@ -1956,7 +2397,7 @@ namespace JessesDungeon
                                                                 Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
-                                                                Console.WriteLine("All right, bro, maybe next time.");
+                                                                Console.WriteLine("\"\"All right, bro, maybe next time.\"\"");
                                                                 Console.WriteLine();
                                                                 Console.Write("Press ENTER to continue");
                                                                 Console.ReadLine();
@@ -1980,6 +2421,7 @@ namespace JessesDungeon
                                                         {
                                                             sellItem = "switzerfisch";
                                                             Console.WriteLine("____________________________________________________");
+                                                            Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine($"\"{weapon.Name}? How does {(weapon.Price / 4)} sound?\"");
@@ -1992,7 +2434,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield); }
+                                                                if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableWeapon.Remove(weapon);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (weapon.Price / 4);
                                                                 Console.WriteLine("____________________________________________________");
@@ -2009,7 +2451,7 @@ namespace JessesDungeon
                                                                 Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
-                                                                Console.WriteLine("All right, bro, maybe next time.");
+                                                                Console.WriteLine("\"All right, bro, maybe next time.\"");
                                                                 Console.WriteLine();
                                                                 Console.Write("Press ENTER to continue");
                                                                 Console.ReadLine();
@@ -2033,6 +2475,7 @@ namespace JessesDungeon
                                                         {
                                                             sellItem = "switzerfisch";
                                                             Console.WriteLine("____________________________________________________");
+                                                            Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine($"\"{shield.Name}? How does {(shield.Price / 4)} sound?\"");
@@ -2045,7 +2488,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield); }
+                                                                if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableShield.Remove(shield);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (shield.Price / 4);
                                                                 Console.WriteLine("____________________________________________________");
@@ -2062,7 +2505,7 @@ namespace JessesDungeon
                                                                 Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
-                                                                Console.WriteLine("All right, bro, maybe next time.");
+                                                                Console.WriteLine("\"All right, bro, maybe next time.\"");
                                                                 Console.WriteLine();
                                                                 Console.Write("Press ENTER to continue");
                                                                 Console.ReadLine();
@@ -2082,10 +2525,10 @@ namespace JessesDungeon
                                                 }
                                                 foreach (Item item in undroppables)
                                                 {
-                                                    sellItem = "switzerfisch";
                                                     string bagCheck = item.Name;
                                                     if (sellItem == bagCheck)
                                                     {
+                                                        sellItem = "switzerfisch";
                                                         if (item.Name == "Rags")
                                                         {
                                                             Console.WriteLine("____________________________________________________");
@@ -2117,10 +2560,10 @@ namespace JessesDungeon
                                                 }
                                                 foreach (Potion potion in potionBelt)
                                                 {
-                                                    sellItem = "switzerfisch";
                                                     string bagCheck = potion.Name;
                                                     if (sellItem == bagCheck)
                                                     {
+                                                        sellItem = "switzerfisch";
                                                         Console.WriteLine("____________________________________________________");
                                                         Console.WriteLine();
                                                         Console.WriteLine();
@@ -2134,6 +2577,7 @@ namespace JessesDungeon
                                             if (sellItem == "Exit")
                                             {
                                                 sellLoop = false;
+                                                purchaseItem = "switzerfisch";
                                                 sellItem = "switzerfisch";
                                                 Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
@@ -2464,7 +2908,7 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.WriteLine("Skinny Pete:");
                                     Console.WriteLine();
-                                    Console.WriteLine("\"There's a lockbox in there that Jesse put away for a special occasion. I always just left it there, but now everything's gone to hell and it's definitely better here with me.\"");
+                                    Console.WriteLine("\"There's a lockbox hidden behind a sliding mirror that Jesse put away for a special occasion. I always just left it there, but now everything's gone to hell and it's definitely better here with me.\"");
                                     Console.WriteLine();
                                     Console.WriteLine("\"But of course now it's too dangerous to go get it! But you, bro - you can do it.\"");
                                     Console.WriteLine();
@@ -2634,6 +3078,7 @@ namespace JessesDungeon
                                             merchantWeapon.Add(pointyStick);
                                             merchantWeapon.Add(knife);
                                             merchantWeapon.Add(huntingKnife);
+                                            merchantWeapon.Add(club);
                                             merchantWeapon.Add(axe);
                                             merchantWeapon.Add(pogoStick);
                                             merchantWeapon.Add(gun);
@@ -2643,9 +3088,8 @@ namespace JessesDungeon
                                             while (buyLoop == true)
                                             {
                                                 Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                 Console.WriteLine();
-                                                Console.WriteLine();
-                                                Console.WriteLine("Items available for sale:");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("Armor:");
@@ -2813,12 +3257,12 @@ namespace JessesDungeon
                                                 }
                                                 if (purchaseItem != "switzerfisch")
                                                 {
-                                                    purchaseItem = "switzerfisch";
                                                     Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
                                                     Console.WriteLine();
-                                                    Console.WriteLine("That didn't do anything useful.");
+                                                    Console.WriteLine($"\"Hey, man, what's a {purchaseItem}? I want one of those!\"");
                                                     Console.WriteLine();
+                                                    purchaseItem = "switzerfisch";
                                                     Console.Write("Press ENTER to continue");
                                                     Console.ReadLine();
                                                 }
@@ -2830,6 +3274,7 @@ namespace JessesDungeon
                                             while (sellLoop == true)
                                             {
                                                 Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
                                                 Console.WriteLine("\"Whatcha got for me?\"");
@@ -2908,6 +3353,7 @@ namespace JessesDungeon
                                                             {
                                                                 sellItem = "switzerfisch";
                                                                 Console.WriteLine("____________________________________________________");
+                                                                Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine($"\"{armor.Name}? How does {(armor.Price / 3)} sound?\"");
@@ -2920,7 +3366,7 @@ namespace JessesDungeon
                                                                 sellItem2 = sellItem2.ToLower();
                                                                 if (sellItem2 == "yes")
                                                                 {
-                                                                    if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield); }
+                                                                    if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                     equippableArmor.Remove(armor);
                                                                     ego.BlueCrystals = ego.BlueCrystals + (armor.Price / 3);
                                                                     Console.WriteLine("____________________________________________________");
@@ -2937,7 +3383,7 @@ namespace JessesDungeon
                                                                     Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
-                                                                    Console.WriteLine("All right, bro, maybe next time.");
+                                                                    Console.WriteLine("\"All right, bro, maybe next time.\"");
                                                                     Console.WriteLine();
                                                                     Console.Write("Press ENTER to continue");
                                                                     Console.ReadLine();
@@ -2961,6 +3407,7 @@ namespace JessesDungeon
                                                             {
                                                                 sellItem = "switzerfisch";
                                                                 Console.WriteLine("____________________________________________________");
+                                                                Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine($"\"{weapon.Name}? How does {(weapon.Price / 3)} sound?\"");
@@ -2973,7 +3420,7 @@ namespace JessesDungeon
                                                                 sellItem2 = sellItem2.ToLower();
                                                                 if (sellItem2 == "yes")
                                                                 {
-                                                                    if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield); }
+                                                                    if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                     equippableWeapon.Remove(weapon);
                                                                     ego.BlueCrystals = ego.BlueCrystals + (weapon.Price / 3);
                                                                     Console.WriteLine("____________________________________________________");
@@ -2990,7 +3437,7 @@ namespace JessesDungeon
                                                                     Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
-                                                                    Console.WriteLine("All right, bro, maybe next time.");
+                                                                    Console.WriteLine("\"All right, bro, maybe next time.\"");
                                                                     Console.WriteLine();
                                                                     Console.Write("Press ENTER to continue");
                                                                     Console.ReadLine();
@@ -3014,6 +3461,7 @@ namespace JessesDungeon
                                                             {
                                                                 sellItem = "switzerfisch";
                                                                 Console.WriteLine("____________________________________________________");
+                                                                Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine($"\"{shield.Name}? How does {(shield.Price / 3)} sound?\"");
@@ -3026,7 +3474,7 @@ namespace JessesDungeon
                                                                 sellItem2 = sellItem2.ToLower();
                                                                 if (sellItem2 == "yes")
                                                                 {
-                                                                    if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield); }
+                                                                    if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                     equippableShield.Remove(shield);
                                                                     ego.BlueCrystals = ego.BlueCrystals + (shield.Price / 3);
                                                                     Console.WriteLine("____________________________________________________");
@@ -3043,7 +3491,7 @@ namespace JessesDungeon
                                                                     Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
-                                                                    Console.WriteLine("All right, bro, maybe next time.");
+                                                                    Console.WriteLine("\"All right, bro, maybe next time.\"");
                                                                     Console.WriteLine();
                                                                     Console.Write("Press ENTER to continue");
                                                                     Console.ReadLine();
@@ -3070,6 +3518,7 @@ namespace JessesDungeon
                                                             {
                                                                 sellItem = "switzerfisch";
                                                                 Console.WriteLine("____________________________________________________");
+                                                                Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine($"\"{armor.Name}? How does {(armor.Price / 4)} sound?\"");
@@ -3082,7 +3531,7 @@ namespace JessesDungeon
                                                                 sellItem2 = sellItem2.ToLower();
                                                                 if (sellItem2 == "yes")
                                                                 {
-                                                                    if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield); }
+                                                                    if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                     equippableArmor.Remove(armor);
                                                                     ego.BlueCrystals = ego.BlueCrystals + (armor.Price / 4);
                                                                     Console.WriteLine("____________________________________________________");
@@ -3099,7 +3548,7 @@ namespace JessesDungeon
                                                                     Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
-                                                                    Console.WriteLine("All right, bro, maybe next time.");
+                                                                    Console.WriteLine("\"All right, bro, maybe next time.\"");
                                                                     Console.WriteLine();
                                                                     Console.Write("Press ENTER to continue");
                                                                     Console.ReadLine();
@@ -3123,6 +3572,7 @@ namespace JessesDungeon
                                                             {
                                                                 sellItem = "switzerfisch";
                                                                 Console.WriteLine("____________________________________________________");
+                                                                Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine($"\"{weapon.Name}? How does {(weapon.Price / 4)} sound?\"");
@@ -3135,7 +3585,7 @@ namespace JessesDungeon
                                                                 sellItem2 = sellItem2.ToLower();
                                                                 if (sellItem2 == "yes")
                                                                 {
-                                                                    if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield); }
+                                                                    if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                     equippableWeapon.Remove(weapon);
                                                                     ego.BlueCrystals = ego.BlueCrystals + (weapon.Price / 4);
                                                                     Console.WriteLine("____________________________________________________");
@@ -3152,7 +3602,7 @@ namespace JessesDungeon
                                                                     Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
-                                                                    Console.WriteLine("All right, bro, maybe next time.");
+                                                                    Console.WriteLine("\"All right, bro, maybe next time.\"");
                                                                     Console.WriteLine();
                                                                     Console.Write("Press ENTER to continue");
                                                                     Console.ReadLine();
@@ -3176,6 +3626,7 @@ namespace JessesDungeon
                                                             {
                                                                 sellItem = "switzerfisch";
                                                                 Console.WriteLine("____________________________________________________");
+                                                                Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
                                                                 Console.WriteLine($"\"{shield.Name}? How does {(shield.Price / 4)} sound?\"");
@@ -3188,7 +3639,7 @@ namespace JessesDungeon
                                                                 sellItem2 = sellItem2.ToLower();
                                                                 if (sellItem2 == "yes")
                                                                 {
-                                                                    if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield); }
+                                                                    if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                     equippableShield.Remove(shield);
                                                                     ego.BlueCrystals = ego.BlueCrystals + (shield.Price / 4);
                                                                     Console.WriteLine("____________________________________________________");
@@ -3205,7 +3656,7 @@ namespace JessesDungeon
                                                                     Console.WriteLine("____________________________________________________");
                                                                     Console.WriteLine();
                                                                     Console.WriteLine();
-                                                                    Console.WriteLine("All right, bro, maybe next time.");
+                                                                    Console.WriteLine("\"All right, bro, maybe next time.\"");
                                                                     Console.WriteLine();
                                                                     Console.Write("Press ENTER to continue");
                                                                     Console.ReadLine();
@@ -3225,12 +3676,12 @@ namespace JessesDungeon
                                                     }
                                                     foreach (Item item in undroppables)
                                                     {
-                                                        sellItem = "switzerfisch";
                                                         string bagCheck = item.Name;
                                                         if (sellItem == bagCheck)
                                                         {
                                                             if (item.Name == "Rags")
                                                             {
+                                                                sellItem = "switzerfisch";
                                                                 Console.WriteLine("____________________________________________________");
                                                                 Console.WriteLine();
                                                                 Console.WriteLine();
@@ -3260,10 +3711,10 @@ namespace JessesDungeon
                                                     }
                                                     foreach (Potion potion in potionBelt)
                                                     {
-                                                        sellItem = "switzerfisch";
                                                         string bagCheck = potion.Name;
                                                         if (sellItem == bagCheck)
                                                         {
+                                                            sellItem = "switzerfisch";
                                                             Console.WriteLine("____________________________________________________");
                                                             Console.WriteLine();
                                                             Console.WriteLine();
@@ -3277,6 +3728,7 @@ namespace JessesDungeon
                                                 if (sellItem == "Exit")
                                                 {
                                                     sellLoop = false;
+                                                    purchaseItem = "switzerfisch";
                                                     sellItem = "switzerfisch";
                                                     Console.WriteLine("____________________________________________________");
                                                     Console.WriteLine();
@@ -3926,7 +4378,7 @@ namespace JessesDungeon
                                             Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
-                                            Console.WriteLine("What do you think this is: every video game ever? This is real life, and you can't carry any more potions without them breaking. I'd be happy to sell you more when you use the ones you already have.");
+                                            Console.WriteLine("\"What do you think this is: every video game ever? This is real life, and you can't carry any more potions without them breaking. I'd be happy to sell you more when you use the ones you already have.\"");
                                             Console.WriteLine();
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
@@ -3935,9 +4387,13 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("Light Healing Potion (10 HP) - Free!");
-                                        Console.WriteLine("Healing Potion (20 HP) - Free!");
+                                        Console.WriteLine("Light Healing Potion (20 HP) - Free!");
+                                        Console.WriteLine("Healing Potion (30 HP) - Free!");
                                         Console.WriteLine("Greater Healing Potion (50 HP) - Free!");
+                                        Console.WriteLine();
+                                        Console.WriteLine("Light Soothing Potion (10 HP/round x3) - Free!");
+                                        Console.WriteLine("Soothing Potion (15 HP/round x3) - Free!");
+                                        Console.WriteLine("Greater Soothing Potion (25 HP/round x3) - Free!");
                                         Console.WriteLine();
                                         Console.WriteLine("Exit");
                                         Console.WriteLine();
@@ -3952,28 +4408,31 @@ namespace JessesDungeon
 
                                         if (purchaseItem == "Light Healing Potion")
                                         {
+                                            purchaseItem = "Complete";
                                             potionBelt.Add(lightHealingPotion);
                                             Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
-                                            Console.WriteLine("\"Light? Are you doing some self-imposed-challenge run?\"");
+                                            Console.WriteLine("\"Light? Are you doing some self-imposed challenge run?\"");
                                             Console.WriteLine();
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
                                         }
-                                        if (purchaseItem == "Healing Potion")
+                                        else if (purchaseItem == "Healing Potion")
                                         {
+                                            purchaseItem = "Complete";
                                             potionBelt.Add(healingPotion);
                                             Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
-                                            Console.WriteLine("\"Normal? Are you doing some self-imposed-challenge run?\"");
+                                            Console.WriteLine("\"Normal? Are you doing some self-imposed challenge run?\"");
                                             Console.WriteLine();
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
                                         }
-                                        if (purchaseItem == "Greater Healing Potion")
+                                        else if (purchaseItem == "Greater Healing Potion")
                                         {
+                                            purchaseItem = "Complete";
                                             potionBelt.Add(greaterHealingPotion);
                                             Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
@@ -3983,13 +4442,60 @@ namespace JessesDungeon
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
                                         }
-                                        if (purchaseItem == "Exit")
+                                        else if (purchaseItem == "Light Soothing Potion")
                                         {
+                                            purchaseItem = "Complete";
+                                            potionBelt.Add(lightHotPotion);
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine("\"Light? Are you doing some self-imposed challenge run?\"");
+                                            Console.WriteLine();
+                                            Console.Write("Press ENTER to continue");
+                                            Console.ReadLine();
+                                        }
+                                        else if (purchaseItem == "Soothing Potion")
+                                        {
+                                            purchaseItem = "Complete";
+                                            potionBelt.Add(hotPotion);
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine("\"Normal? Are you doing some self-imposed challenge run?\"");
+                                            Console.WriteLine();
+                                            Console.Write("Press ENTER to continue");
+                                            Console.ReadLine();
+                                        }
+                                        else if (purchaseItem == "Greater Soothing Potion")
+                                        {
+                                            purchaseItem = "Complete";
+                                            potionBelt.Add(greaterHotPotion);
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine("\"You got it\"");
+                                            Console.WriteLine();
+                                            Console.Write("Press ENTER to continue");
+                                            Console.ReadLine();
+                                        }
+                                        else if (purchaseItem == "Exit")
+                                        {
+                                            purchaseItem = "Complete";
                                             dryadLoop = false;
                                             Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Good luck.\"");
+                                            Console.WriteLine();
+                                            Console.Write("Press ENTER to continue");
+                                            Console.ReadLine();
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine("\"I'd give it if it were mine to give!\"");
                                             Console.WriteLine();
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
@@ -4021,18 +4527,23 @@ namespace JessesDungeon
                                             Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
-                                            Console.WriteLine("What do you think this is: every video game ever? This is real life, and you can't carry any more potions without them breaking. I'd be happy to sell you more when you use the ones you already have.");
+                                            Console.WriteLine("\"What do you think this is: every video game ever? This is real life, and you can't carry any more potions without them breaking. I'd be happy to sell you more when you use the ones you already have.\"");
                                             Console.WriteLine();
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
                                             break;
                                         }
                                         Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("Light Healing Potion (10 HP) - 20 crystals");
-                                        Console.WriteLine("Healing Potion (20 HP) - 50 crystals");
+                                        Console.WriteLine("Light Healing Potion (20 HP) - 20 crystals");
+                                        Console.WriteLine("Healing Potion (30 HP) - 50 crystals");
                                         Console.WriteLine("Greater Healing Potion (50 HP) - 150 crystals");
+                                        Console.WriteLine();
+                                        Console.WriteLine("Light Soothing Potion (10 HP/round x3) - 30 crystals");
+                                        Console.WriteLine("Soothing Potion (15 HP/round x3) - 75 crystals");
+                                        Console.WriteLine("Greater Soothing Potion (25 HP/round x3) - 225 crystals");
                                         Console.WriteLine();
                                         Console.WriteLine("Exit");
                                         Console.WriteLine();
@@ -4047,6 +4558,7 @@ namespace JessesDungeon
 
                                         if (purchaseItem == "Light Healing Potion")
                                         {
+                                            purchaseItem = "Complete";
                                             if (ego.BlueCrystals >= 20)
                                             {
                                                 potionBelt.Add(lightHealingPotion);
@@ -4070,8 +4582,9 @@ namespace JessesDungeon
                                                 Console.ReadLine();
                                             }
                                         }
-                                        if (purchaseItem == "Healing Potion")
+                                        else if (purchaseItem == "Healing Potion")
                                         {
+                                            purchaseItem = "Complete";
                                             if (ego.BlueCrystals >= 50)
                                             {
                                                 potionBelt.Add(healingPotion);
@@ -4095,8 +4608,9 @@ namespace JessesDungeon
                                                 Console.ReadLine();
                                             }
                                         }
-                                        if (purchaseItem == "Greater Healing Potion")
+                                        else if (purchaseItem == "Greater Healing Potion")
                                         {
+                                            purchaseItem = "Complete";
                                             if (ego.BlueCrystals >= 150)
                                             {
                                                 potionBelt.Add(greaterHealingPotion);
@@ -4120,13 +4634,102 @@ namespace JessesDungeon
                                                 Console.ReadLine();
                                             }
                                         }
-                                        if (purchaseItem == "Exit")
+                                        else if (purchaseItem == "Light Soothing Potion")
+                                        {
+                                            purchaseItem = "Complete";
+                                            if (ego.BlueCrystals >= 30)
+                                            {
+                                                potionBelt.Add(lightHotPotion);
+                                                ego.BlueCrystals = ego.BlueCrystals - 30;
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                Console.WriteLine("\"I hope you need it enough to come back, but not so much that you don't.\"");
+                                                Console.WriteLine();
+                                                Console.Write("Press ENTER to continue");
+                                                Console.ReadLine();
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                Console.WriteLine("\"Oh dear. I seem not to have enough of the key component of my elixir! BLUE CRYSTALS -- GO GET MORE.\"");
+                                                Console.WriteLine();
+                                                Console.Write("Press ENTER to continue");
+                                                Console.ReadLine();
+                                            }
+                                        }
+                                        else if (purchaseItem == "Soothing Potion")
+                                        {
+                                            purchaseItem = "Complete";
+                                            if (ego.BlueCrystals >= 75)
+                                            {
+                                                potionBelt.Add(hotPotion);
+                                                ego.BlueCrystals = ego.BlueCrystals - 75;
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                Console.WriteLine("\"I hope you need it enough to come back, but not so much that you don't.\"");
+                                                Console.WriteLine();
+                                                Console.Write("Press ENTER to continue");
+                                                Console.ReadLine();
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                Console.WriteLine("\"Oh dear. I seem not to have enough of the key component of my elixir! BLUE CRYSTALS -- GO GET MORE.\"");
+                                                Console.WriteLine();
+                                                Console.Write("Press ENTER to continue");
+                                                Console.ReadLine();
+                                            }
+                                        }
+                                        else if (purchaseItem == "Greater Soothing Potion")
+                                        {
+                                            purchaseItem = "Complete";
+                                            if (ego.BlueCrystals >= 225)
+                                            {
+                                                potionBelt.Add(greaterHotPotion);
+                                                ego.BlueCrystals = ego.BlueCrystals - 225;
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                Console.WriteLine("\"I hope you need it enough to come back, but not so much that you don't.\"");
+                                                Console.WriteLine();
+                                                Console.Write("Press ENTER to continue");
+                                                Console.ReadLine();
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                Console.WriteLine("\"Oh dear. I seem not to have enough of the key component of my elixir! BLUE CRYSTALS -- GO GET MORE.\"");
+                                                Console.WriteLine();
+                                                Console.Write("Press ENTER to continue");
+                                                Console.ReadLine();
+                                            }
+                                        }
+                                        else if (purchaseItem == "Exit")
                                         {
                                             dryadLoop = false;
+                                            purchaseItem = "Complete";
                                             Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
                                             Console.WriteLine("\"Hmph.\"");
+                                            Console.WriteLine();
+                                            Console.Write("Press ENTER to continue");
+                                            Console.ReadLine();
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine("\"I don't recall offering that.\"");
                                             Console.WriteLine();
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
@@ -4330,11 +4933,6 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.WriteLine("As you go to speak, he turns and interrupts you.");
                                     Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
-                                    Console.WriteLine("____________________________________________________");
-                                    Console.WriteLine();
-                                    Console.WriteLine();
                                     Console.WriteLine("\"Do you have business here? The boss is too busy to do a meet and greet with all new residents.\"");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
@@ -4343,7 +4941,6 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("After a pause, the man sighs and speaks.");
-                                    Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("\"If you want to see Gus, you can do him a service. To the east and far north of here is his competitor. Bring us his crystals; it doesn't matter how you get them. Without his crystals he won't have the power to command his empire.\"");
                                     Console.WriteLine();
@@ -4363,7 +4960,9 @@ namespace JessesDungeon
                                     Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.Write("The man halts his sentry and faces you. \"Is that the Salamanca cache you got there? Let me take a re");
+                                    Console.WriteLine("The man halts his sentry and faces you.");
+                                    Console.WriteLine();
+                                    Console.Write("\"Is that the Salamanca cache you got there? Let me take a re");
                                     Thread.Sleep(2500);
                                     Console.Write("e");
                                     Thread.Sleep(500);
@@ -4422,7 +5021,7 @@ namespace JessesDungeon
                                 }
                             }
 
-                            if (action == "los pollos hermanos")
+                            if (action == "los pollos hermanos" && losPollosHermanos)
                             {
                                 action = "Complete";
                                 Console.WriteLine("____________________________________________________");
@@ -4493,9 +5092,9 @@ namespace JessesDungeon
                         discoveredMap[6, 12] = "[x]";
                         discoveredMap[7, 12] = " | ";
                         mapCartel = true;
-                        Console.WriteLine("A number of men occupy this room, some of which are watching you. There is one [man] obviously in charge, who sits at a table opposite an empty chair. He gestures for you to sit.");
+                        Console.WriteLine("A number of men move about engaged in activity, and a [woman] scowls at you from the corner. There is one [man] obviously in charge, who sits at a table opposite an empty chair. He gestures for you to sit.");
                         Console.WriteLine();
-                        Console.WriteLine("There is an exit to the south.");
+                        Console.WriteLine("There is an exit to the [south].");
                         Console.WriteLine();
                         Console.WriteLine("What will you do?");
                         Console.WriteLine("-------------------");
@@ -4537,7 +5136,6 @@ namespace JessesDungeon
                                 Console.WriteLine("Onward!");
                                 Thread.Sleep(1500);
                             }
-
                         }
 
                         if (action == "look at man")
@@ -4574,6 +5172,208 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                        }
+
+                        if (action == "look at woman")
+                        {
+                            action = "Complete";
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("She seems over-the-top pissed off and just unnecessarily cruel.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+
+                        if (action == "search woman")
+                        {
+                            action = "Complete";
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("You die.");
+                            Thread.Sleep(2000);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("At least you would if I hadn't stopped you.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+
+                        if (action == "talk to woman")
+                        {
+                            action = "Complete";
+                            if (gusQuestGiven)
+                            {
+                                gusLoop = true;
+                                while (gusLoop == true)
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Skyler:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Well?\"");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine($"Current Crystals: {ego.BlueCrystals}");
+                                    Console.WriteLine($"Stored Crystals:  {ego.BankedCrystals}");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Deposit");
+                                    Console.WriteLine("Withdraw");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Exit");
+                                    Console.WriteLine();
+                                    Console.Write(">");
+                                    action = Console.ReadLine();
+                                    action = action.ToLower();
+                                    action = action.Trim();
+
+                                    if (action == "deposit")
+                                    {
+                                        dryadLoop = true;
+                                        while (dryadLoop == true)
+                                        {
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine($"Current Crystals: {ego.BlueCrystals}");
+                                            Console.WriteLine($"Stored Crystals:  {ego.BankedCrystals}");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine("\"How much am I taking?\"");
+                                            Console.WriteLine();
+                                            Console.Write(">");
+                                            action = Console.ReadLine();
+                                            action = action.Trim();
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            if (!int.TryParse(action, out bankDeposit))
+                                            {
+                                                Console.WriteLine("\"Don't waste my time or I'll have your balls.\"");
+                                                Console.WriteLine();
+                                                Console.WriteLine("\"Give me a number.\"");
+                                            }
+                                            else if (int.TryParse(action, out bankDeposit))
+                                            {
+                                                if (bankDeposit < 0)
+                                                {
+                                                    Console.WriteLine("\"Don't waste my time or I'll have your balls.\"");
+                                                    Console.WriteLine();
+                                                    Console.WriteLine("\"You can't trick me just because I'm a woman.\"");
+                                                }
+                                                else if (ego.BlueCrystals >= bankDeposit)
+                                                {
+                                                    dryadLoop = false;
+                                                    bankDeposit = Convert.ToInt32(bankDeposit);
+                                                    Console.WriteLine("\"Got it.\"");
+                                                    ego.BlueCrystals = ego.BlueCrystals - bankDeposit;
+                                                    ego.BankedCrystals = ego.BankedCrystals + bankDeposit;
+                                                }
+                                                else
+                                                {
+                                                    Console.WriteLine("\"Don't waste my time or I'll have your balls.\"");
+                                                    Console.WriteLine();
+                                                    Console.WriteLine("\"You don't have that much.\"");
+                                                }
+                                            }
+                                            Console.WriteLine();
+                                            Console.Write("Press ENTER to continue");
+                                            Console.ReadLine();
+                                        }
+                                    }
+                                    else if (action == "withdraw")
+                                    {
+                                        dryadLoop = true;
+                                        while (dryadLoop == true)
+                                        {
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine($"Current Crystals: {ego.BlueCrystals}");
+                                            Console.WriteLine($"Stored Crystals:  {ego.BankedCrystals}");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine("\"How much are you taking?\"");
+                                            Console.WriteLine();
+                                            Console.Write(">");
+                                            action = Console.ReadLine();
+                                            action = action.Trim();
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            if (!int.TryParse(action, out bankWithdrawal))
+                                            {
+                                                Console.WriteLine("\"Don't waste my time or I'll have your balls.\"");
+                                                Console.WriteLine();
+                                                Console.WriteLine("\"Give me a number.\"");
+                                            }
+                                            else if (int.TryParse(action, out bankWithdrawal))
+                                            {
+                                                if (bankWithdrawal < 0)
+                                                {
+                                                    Console.WriteLine("\"Don't waste my time or I'll have your balls.\"");
+                                                    Console.WriteLine();
+                                                    Console.WriteLine("\"You can't trick me just because I'm a woman.\"");
+                                                }
+                                                else if (ego.BankedCrystals >= bankWithdrawal)
+                                                {
+                                                    dryadLoop = false;
+                                                    bankDeposit = Convert.ToInt32(bankDeposit);
+                                                    Console.WriteLine("\"Here.\"");
+                                                    ego.BlueCrystals = ego.BlueCrystals + bankWithdrawal;
+                                                    ego.BankedCrystals = ego.BankedCrystals - bankWithdrawal;
+                                                }
+                                                else
+                                                {
+                                                    Console.WriteLine("\"Don't waste my time or I'll have your balls.\"");
+                                                    Console.WriteLine();
+                                                    Console.WriteLine("\"There isn't that much available.\"");
+                                                }
+                                            }
+                                            Console.WriteLine();
+                                            Console.Write("Press ENTER to continue");
+                                            Console.ReadLine();
+                                        }
+                                    }
+                                    else if (action == "exit")
+                                    {
+                                        gusLoop = false;
+                                        action = "Complete";
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine("Skyler:");
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Don't hurry back.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Don't waste my time or I'll have your balls.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("\"I look, sound, and am a total bitch.\"");
+                                Console.WriteLine();
+                                Console.WriteLine("She scoffs and haughtily turns away.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
                         }
 
                         if (action == "sit")
@@ -4838,7 +5638,17 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Gus:");
                                 Console.WriteLine();
-                                Console.WriteLine("The man nods at you. \"I thank you for joining me. Now - I have a proposal for you. One that is for our mutual benefit.\"");
+                                Console.WriteLine("The man nods at you. \"I thank you for joining me. First I would like to offer the services of our bookkeeper to hold onto your extra blue crystals.\"");
+                                Console.WriteLine();
+                                Console.WriteLine("\"You needn't worry - Skyler can be trusted with your belongings, and it will be free of charge to you.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Gus:");
+                                Console.WriteLine();
+                                Console.WriteLine("\"Now: I have a proposal for you. One that is for our mutual benefit.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -4967,7 +5777,7 @@ namespace JessesDungeon
                         discoveredMap[7, 5] = " | ";
                         Console.WriteLine("This room just has a [man] standing in the center of it. While you imagine he's aware of your presence, he has no apparent reaction.");
                         Console.WriteLine();
-                        Console.WriteLine("There is an exit to the south.");
+                        Console.WriteLine("There is an exit to the [south].");
                         Console.WriteLine();
                         Console.WriteLine("What will you do?");
                         Console.WriteLine("-------------------");
@@ -5278,7 +6088,7 @@ namespace JessesDungeon
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("Whoever built this thing must've gone to great lengths to find, trade, or otherwise acquire all this material. There's more metal here than probably the rest of the dungeon combined.");
+                            Console.WriteLine("Whoever built this thing must've gone to great lengths to find, trade, or otherwise acquire all this material. There's probably more metal here than the rest of the dungeon combined.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -5335,13 +6145,28 @@ namespace JessesDungeon
                         if (action == "search sheets")
                         {
                             action = "Complete";
-                            Console.WriteLine("____________________________________________________");
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("Defintely space blankets.");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            if (garbageCanLid.Unlocked == false)
+                            {
+                                garbageCanLid.Unlocked = true;
+                                equippableShield.Add(garbageCanLid);
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("There's a Garbage Can Lid which doesn't seem to be contributing to the structure. Let's toddler it up and use it as a shield, yeah?");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Definitely space blankets.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
                         }
 
 
@@ -5422,7 +6247,7 @@ namespace JessesDungeon
                             Thread.Sleep(1000);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only found this out by it hitting you square in the face.");
+                            Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only find this out by it hitting you square in the face.");
                             Console.WriteLine();
                             Console.WriteLine("You've taken 1 point of damage.");
                             Thread.Sleep(3000);
@@ -5492,7 +6317,7 @@ namespace JessesDungeon
                                 Console.WriteLine("\"GET OUT! GET OUT! GET OUT! WHAT ARE YOU DOING!? GET OUT!!\"");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only found this out by it hitting you square in the face.");
+                                Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only find this out by it hitting you square in the face.");
                                 Console.WriteLine();
                                 Console.WriteLine("You've taken 1 point of damage.");
                                 ego.CurrentHitPoints = ego.CurrentHitPoints - 1;
@@ -5622,7 +6447,7 @@ namespace JessesDungeon
                                 Console.WriteLine("\"GET OUT! GET OUT! GET OUT! GET OUT!!\"");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only found this out by it hitting you square in the face.");
+                                Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only find this out by it hitting you square in the face.");
                                 Console.WriteLine();
                                 Console.WriteLine("You've taken 1 point of damage.");
                                 ego.CurrentHitPoints = ego.CurrentHitPoints - 1;
@@ -5681,7 +6506,7 @@ namespace JessesDungeon
                                 Console.WriteLine("\"GET OUT! GET OUT! GET OUT! GET OUT!!\"");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only found this out by it hitting you square in the face.");
+                                Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only find this out by it hitting you square in the face.");
                                 Console.WriteLine();
                                 Console.WriteLine("You've taken 1 point of damage.");
                                 ego.CurrentHitPoints = ego.CurrentHitPoints - 1;
@@ -5740,7 +6565,7 @@ namespace JessesDungeon
                                 Console.WriteLine("\"GET OUT! GET OUT! GET OUT! GET OUT!!\"");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only found this out by it hitting you square in the face.");
+                                Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only find this out by it hitting you square in the face.");
                                 Console.WriteLine();
                                 Console.WriteLine("You've taken 1 point of damage.");
                                 Console.WriteLine();
@@ -5799,7 +6624,7 @@ namespace JessesDungeon
                                 Console.WriteLine("\"GET OUT! GET OUT! GET OUT! GET OUT!!\"");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only found this out by it hitting you square in the face.");
+                                Console.WriteLine("A book comes flying at you. Unfortunately it's so dark you only find this out by it hitting you square in the face.");
                                 Console.WriteLine();
                                 Console.WriteLine("You've taken 1 point of damage.");
                                 Console.WriteLine();
@@ -7483,10 +8308,10 @@ namespace JessesDungeon
                                 Console.ReadLine();
                             }
 
-                            if (action == "fight")
+                            if (action == "fight" || action == "fight man")
                             {
                                 action = "Complete";
-                                BadGuyStats badGuy = new BadGuyStats("Salamanca Guard", 50, 50, 2, 0.85, 8, 4, 3.00, die.Next(20, 36), 1, lightHealingPotion, huntingKnife, leatherArmor, "The Salamanca Guard charges at you with a knife!");
+                                BadGuyStats badGuy = new BadGuyStats("Salamanca Guard", 50, 50, 2, 0.85, 8, 4, 3.00, die.Next(20, 36), 1, lightHealingPotion, knife, leatherArmor, "The Salamanca Guard charges at you with a knife!");
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -7624,9 +8449,9 @@ namespace JessesDungeon
                         {
                             Console.WriteLine("An old [man] is saying things at you that don't understand. Based on his tone and body language, you're guessing it's not flattering.");
                             Console.WriteLine();
-                            Console.WriteLine("There is an exit to the south.");
+                            Console.WriteLine("There is an exit to the [south].");
                         }
-                        if (salamancaDead == true) { Console.WriteLine("There is an exit to the south."); }
+                        if (salamancaDead == true) { Console.WriteLine("There is an exit to the [south]."); }
                         Console.WriteLine();
                         Console.WriteLine("What will you do?");
                         Console.WriteLine("-------------------");
@@ -7707,7 +8532,7 @@ namespace JessesDungeon
                                     {
                                         salamancaLoop = false;
                                         salamancaChoice = "liquid";
-                                        BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 70, 70, 2, 0.85, 8, 4, 2.00, die.Next(40, 61), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
+                                        BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 60, 60, 2, 0.85, 8, 6, 2.00, die.Next(40, 61), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
@@ -7726,7 +8551,7 @@ namespace JessesDungeon
                                     {
                                         salamancaLoop = false;
                                         salamancaChoice = "powder";
-                                        BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 40, 70, 2, 0.85, 8, 4, 2.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
+                                        BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 30, 60, 2, 0.85, 8, 6, 2.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
@@ -7737,11 +8562,18 @@ namespace JessesDungeon
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
                                         PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
-                                        PlotBattleResolution(ego, equippableArmor, equippableWeapon, equippableShield, potionBelt, badGuy);
+                                        if (ego.CurrentHitPoints <= 0)
+                                        {
+                                            salamancaChoice = null;
+                                            EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
+                                            break;
+                                        }
                                         if (ego.Location == "H1") { salamancaCousinDefeated = true; } //maybe redundant
                                         if (ego.Location == "H1")
                                         {
-                                            badGuy.CurrentHitPoints = 40;
+                                            ego.DotActive = 0;
+                                            badGuy.CurrentHitPoints = 30;
+                                            badGuy.PotionCount = 1;
                                             Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
@@ -7757,7 +8589,7 @@ namespace JessesDungeon
                                     else if (salamancaAction == "combine")
                                     {
                                         salamancaLoop = false;
-                                        ego.CurrentHitPoints = ego.CurrentHitPoints - 30;
+                                        ego.CurrentHitPoints = ego.CurrentHitPoints - 20;
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
@@ -7778,18 +8610,25 @@ namespace JessesDungeon
                                         {
                                             salamancaChoice = null;
                                             EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
-                                            //break; crashing?
+                                            break;
                                         }
                                         else
                                         {
                                             salamancaChoice = "combine";
-                                            BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 30, 70, 2, 0.85, 8, 4, 2.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
-                                            PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
-                                            PlotBattleResolution(ego, equippableArmor, equippableWeapon, equippableShield, potionBelt, badGuy);
+                                            BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 20, 60, 2, 0.85, 8, 6, 2.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");
+                                            PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield); 
+                                            if (ego.CurrentHitPoints <= 0)
+                                            {
+                                                salamancaChoice = null;
+                                                EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
+                                                break;
+                                            }
                                             if (ego.Location == "H1") { salamancaCousinDefeated = true; } //maybe redundant
                                             if (ego.Location == "H1")
                                             {
-                                                badGuy.CurrentHitPoints = 30;
+                                                ego.DotActive = 0;
+                                                badGuy.CurrentHitPoints = 20;
+                                                badGuy.PotionCount = 1;
                                                 Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
@@ -7853,7 +8692,7 @@ namespace JessesDungeon
                                 Console.ReadLine();
                             }
 
-                            if (action == "fight")
+                            if (action == "fight" || action == "fight men")
                             {
                                 action = "Complete";
                                 salamancaChoice = "fight";
@@ -7867,12 +8706,20 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
-                                BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 70, 70, 2, 0.85, 8, 4, 2.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");                                PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
-                                PlotBattleResolution(ego, equippableArmor, equippableWeapon, equippableShield, potionBelt, badGuy);
+                                BadGuyStats badGuy = new BadGuyStats("Salamanca Cousin", 60, 60, 2, 0.85, 8, 6, 2.00, die.Next(20, 31), 1, healingPotion, huntingKnife, leatherArmor, "The Salamanca Cousin charges at you with a knife!");                                PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
+                                PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
+                                if (ego.CurrentHitPoints <= 0)
+                                {
+                                    salamancaChoice = null;
+                                    EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
+                                    break;
+                                }
                                 if (ego.Location == "H1") { salamancaCousinDefeated = true; } //maybe redundant
                                 if (ego.Location == "H1")
                                 {
-                                    badGuy.CurrentHitPoints = 70;
+                                    ego.DotActive = 0;
+                                    badGuy.CurrentHitPoints = 60;
+                                    badGuy.PotionCount = 1;
                                     Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
@@ -7891,8 +8738,6 @@ namespace JessesDungeon
                                 salamancaLoop = true;
                                 while (salamancaLoop == true)
                                 {
-                                    Console.WriteLine();
-                                    Console.WriteLine();
                                     Console.WriteLine("The old man is hurling insults in another language. It doesn't seem like he's otherwise much of a threat.");
                                     Console.WriteLine();
                                     Console.WriteLine("What will you do with him?");
@@ -7901,6 +8746,7 @@ namespace JessesDungeon
                                     Console.WriteLine("[Leave] him");
                                     Console.WriteLine("[Kill] him");
                                     Console.WriteLine();
+                                    Console.Write("> ");
                                     salamancaAction = Console.ReadLine();
                                     salamancaAction = salamancaAction.ToLower();
                                     salamancaAction = salamancaAction.Trim();
@@ -7908,6 +8754,7 @@ namespace JessesDungeon
                                     if (salamancaAction == "leave")
                                     {
                                         salamancaLoop = false;
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Mercy is the better part of valor? Something like that. Or maybe you just can't stomach killing an old man in cold blood?");
@@ -7921,6 +8768,7 @@ namespace JessesDungeon
                                     {
                                         salamancaLoop = false;
                                         salamancaDead = true;
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("No loose ends is probably the safest route. You're in this for your own survival, and not the well-being of any evil old man who crosses your path.");
@@ -7930,6 +8778,7 @@ namespace JessesDungeon
                                     }
                                     else
                                     {
+                                        Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("That didn't do anything useful.");
@@ -8561,7 +9410,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("She sighs. \"I'm sorry. Whatever it is I'm just not -- oh. You're from the cartel?\"");
                                 Console.WriteLine();
-                                Console.WriteLine("\"I suppose I do have some backlogged work that I owe. it's just...\" she trails off and returns her eyes toward her cup.");
+                                Console.WriteLine("\"I suppose I do have some backlogged work that I owe. It's just...\" she trails off and returns her eyes toward her cup.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -8647,7 +9496,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Lydia:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Yes of course! While you were gone I worked tirelessly to get things ready for you!\"");
+                                Console.WriteLine("\"Yes of course! I've been hard at work ever since you dropped off the stevia!\"");
+                                Console.WriteLine();
+                                Console.WriteLine("\"Now that you're back everything is ready for you!\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -8658,16 +9509,6 @@ namespace JessesDungeon
                                 Console.WriteLine("\"It would have taken AGES to properly arrange the necessary clean crystals, so I got something just as good for you.\"");
                                 Console.WriteLine();
                                 Console.WriteLine("She hands you a giant blue crystal. \"It's worth the same amount -- I guarantee it. And it's clean!\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Lydia:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"I can start working on the original package - but it'll take a long while!\"");
-                                Console.WriteLine();
-                                Console.WriteLine("\"Dirty money takes so long to clean!\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -8811,7 +9652,7 @@ namespace JessesDungeon
                         discoveredMap[10, 11] = "-";
                         discoveredMap[10, 9] = "-";
                         discoveredMap[9, 10] = " | ";
-                        Console.WriteLine("A [man] sheepishly pushes a broom slowly across the floor. He's not doing a very good job as this room looks the same as every other room (at best).");
+                        Console.WriteLine("A [man] pushes a broom across the [floor] of this room of the dungeon.");
                         Console.WriteLine();
                         Console.WriteLine("There is an exit to the [north], [east], and [west].");
                         Console.WriteLine();
@@ -8879,7 +9720,7 @@ namespace JessesDungeon
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("The man has a vacant stare straight at the floor in front of him. His sweeping pattern is erratic and quite ineffective.");
+                            Console.WriteLine("The man keeps his gaze focused on the floor in front of him, though you get the feeling that he is watching you.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -8891,20 +9732,19 @@ namespace JessesDungeon
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("You sidle up toward the man. Sensing no reaction, you throw your hesitance to the wind and shove your hands into his pockets and swab around.");
+                            Console.WriteLine("The man stops sweeping as you approach.");
                             Console.WriteLine();
-                            if (lootedCentaur == false)
-                            {
-                                lootedCentaur = true;
-                                ego.BlueCrystals++;
-                                Console.WriteLine("Hey a blue crystal. Not bad I suppose.");
-                                Console.WriteLine();
-                            }
-                            else if (lootedCentaur == true)
-                            {
-                                Console.WriteLine("He didn't go restock his blue crystal. Shocker.");
-                                Console.WriteLine();
-                            }
+                            Console.WriteLine("\"Ahem.\"");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("\"Yes, I did just emphasize my disapproval with onomatopoeia.\"");
+                            Console.WriteLine();
+                            Console.WriteLine("He turns and continues sweeping.");
+                            Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                         }
@@ -8912,47 +9752,368 @@ namespace JessesDungeon
                         if (action == "talk to man")
                         {
                             action = "Complete";
+                            if (!lootedCentaur)
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("The man stops and looks at you. He squints one eye and raises the other's brow.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("After a long moment he cracks a smile and speaks.");
+                                Console.WriteLine();
+                                Console.WriteLine("\"You new?\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("\"Let me tell you what I tell all new people down here: beware the cartel.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("\"I bet you're wondering why -- I can see in it in your inquisitive, adventurous eyes.\"");
+                                Console.WriteLine();
+                                Console.WriteLine("\"The cartel is out for its own, and will use anyone and anything to further itself. I know because I was one who was chewed up and spit out.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("\"Most don't get spit out.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("\"They sent me to take down the fortress. It was a doomed mission... but they didn't even know just how doomed.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("\"They said Jesse is the worst of the worst; even that he's the reason why we're all here. But he... I don't know. He wasn't what they had me expecting.\"");
+                                Console.WriteLine();
+                                Console.WriteLine("\"His boss is the real terror.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+
+                            }
+                            lootedCentaur = true;
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("The man stops and looks up at you. He quickly shifts his gaze away from your eyes and slowly backs away.");
+                            Console.WriteLine("\"Despite my warning some poor fools join up anyway... I do what I can to help, but I don't ever see them return.\"");
                             Console.WriteLine();
-                            Console.WriteLine("\"Hello?\"");
+                            Console.WriteLine("He goes back to sweeping.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                        }
+
+                        if (action == "look at floor")
+                        {
+                            action = "Complete";
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("Judging that you don't intend him harm, he takes a stance less reminiscent of a cowering animal.");
-                            Console.WriteLine();
-                            Console.WriteLine(" \"Oh, uh, you must be new. I guess...\" the man's sentence trails off. As if summoning his courage, he takes a deep breath and continues. \"I guess I\'ll tell you what happened to me so maybe it won\'t happen to you.\"");
+                            Console.WriteLine("The floor is dust-free. It's unlikely he's getting paid to clean a clean floor.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                        }
+
+                        if (action == "search floor")
+                        {
+                            action = "Complete";
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("\"I was sent to take down the fortress. They knew it was a doomed mission... probably just not how doomed.\"");
+                            Console.WriteLine("You search the floor and find two people. I forget how the joke goes but one has a broom and the other is you.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                        }
+
+                        if (action == "talk to floor")
+                        {
+                            action = "Complete";
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("\"They say Jesse is the worst of the worst; even that he's the reason why we're all here. But he... I don't know. He wasn't what they had me expecting.\"");
-                            Console.WriteLine();
-                            Console.WriteLine("\"But Heis - ...Hei -\" the man stops and closes his eyes. \"His boss is the real terror.\"");
+                            Console.WriteLine("You were never one for public speaking.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
-                            Console.WriteLine("____________________________________________________");
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("He looks down and continues sweeping.");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                        }
+
+                        if (action == "los pollos hermanos" && losPollosHermanos)
+                        {
+                            action = "Complete";
+                            dryadLoop = true;
+                            while (dryadLoop == true)
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                if (lootedCentaur) { Console.WriteLine("\"Didn't I tell you exactly NOT to do that? Or did you do it just to check out my goods?\""); }
+                                else { Console.WriteLine("\"A cartel member? For your sake you better check out my goods!\""); }
+                                Console.WriteLine();
+                                if (potionBelt.Count >= 3)
+                                {
+                                    Console.WriteLine("\"This is some dangerous stuff! I can't sell you any potions until you unload the ones you got already.\"");
+                                }
+                                else
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Light Acidic Bomb (10 dmg) - 20 crystals");
+                                    Console.WriteLine("Acidic Bomb (20 dmg) - 70 crystals");
+                                    Console.WriteLine("Greater Acidic Bomb (40 dmg) - 200 crystals");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Light Vial of Corrosive (5 dmg/round x3) - 30 crystals");
+                                    Console.WriteLine("Vial of Corrosive (10 dmg/round x3) - 100 crystals");
+                                    Console.WriteLine("Greater Vial of Corrosive (20 dmg/round x3) - 300 crystals");
+                                }
+                                Console.WriteLine();
+                                if (mikeQuestCompleted)
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine($"Assassin's Dagger (Damage Bonus: {assassinsDagger.Damage} + 5 dmg/round x3  Crit Multiplier: {assassinsDagger.CritMultiplier}) - {assassinsDagger.Price} crystals");
+                                    Console.WriteLine();
+                                }
+                                Console.WriteLine();
+                                Console.WriteLine("Exit");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("\"Whatcha need?\"");
+                                Console.WriteLine();
+                                Console.Write("> ");
+                                purchaseItem = Console.ReadLine();
+                                purchaseItem = purchaseItem.ToLower();
+                                purchaseItem = myTI.ToTitleCase(purchaseItem);
+                                purchaseItem = purchaseItem.Trim();
+
+                                if (purchaseItem == "Light Acidic Bomb" && potionBelt.Count < 3)
+                                {
+                                    purchaseItem = "switzerfisch";
+                                    if (ego.BlueCrystals >= 20)
+                                    {
+                                        ego.BlueCrystals = ego.BlueCrystals - 20;
+                                        potionBelt.Add(lightAcidBomb);
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Here you go, man - blow some bad man's face off.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                }
+                                else if (purchaseItem == "Acidic Bomb" && potionBelt.Count < 3)
+                                {
+                                    purchaseItem = "switzerfisch";
+                                    if (ego.BlueCrystals >= 70)
+                                    {
+                                        ego.BlueCrystals = ego.BlueCrystals - 70;
+                                        potionBelt.Add(acidBomb);
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Here you go, man - blow some bad man's face off.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                }
+                                else if (purchaseItem == "Greater Acidic Bomb" && potionBelt.Count < 3)
+                                {
+                                    purchaseItem = "switzerfisch";
+                                    if (ego.BlueCrystals >= 200)
+                                    {
+                                        ego.BlueCrystals = ego.BlueCrystals - 200;
+                                        potionBelt.Add(greaterAcidBomb);
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Here you go, man - blow some bad man's face off.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                }
+                                else if (purchaseItem == "Light Vial Of Corrosive" && potionBelt.Count < 3)
+                                {
+                                    purchaseItem = "switzerfisch";
+                                    if (ego.BlueCrystals >= 30)
+                                    {
+                                        ego.BlueCrystals = ego.BlueCrystals - 30;
+                                        potionBelt.Add(lightHotPotion);
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Here you go, man - melt some bad man's face off.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                }
+                                else if (purchaseItem == "Vial Of Corrosive" && potionBelt.Count < 3)
+                                {
+                                    purchaseItem = "switzerfisch";
+                                    if (ego.BlueCrystals >= 100)
+                                    {
+                                        ego.BlueCrystals = ego.BlueCrystals - 100;
+                                        potionBelt.Add(hotPotion);
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Here you go, man - melt some bad man's face off.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                }
+                                else if (purchaseItem == "Greater Vial Of Corrosive" && potionBelt.Count < 3)
+                                {
+                                    purchaseItem = "switzerfisch";
+                                    if (ego.BlueCrystals >= 300)
+                                    {
+                                        purchaseItem = "Complete";
+                                        ego.BlueCrystals = ego.BlueCrystals - 300;
+                                        potionBelt.Add(greaterHotPotion);
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Here you go, man - melt some bad man's face off.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                }
+                                else if (purchaseItem == "Assassin's Dagger" && mikeQuestCompleted)
+                                {
+                                    purchaseItem = "switzerfisch";
+                                    if (ego.BlueCrystals >= 500)
+                                    {
+                                        ego.BlueCrystals = ego.BlueCrystals - 500;
+                                        equippableWeapon.Add(assassinsDagger);
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("He simply smirks as he slips the weapon to you on the sly.");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                }
+                                else if (purchaseItem == "Exit")
+                                {
+                                    purchaseItem = "switzerfisch";
+                                    dryadLoop = false;
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Just remember that I warned you, all right?\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine($"\"You think you need a {purchaseItem}? Maybe I should look into that. But for now just pick from what I've got.\"");
+                                    Console.WriteLine();
+                                    purchaseItem = "switzerfisch";
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                            }
                         }
 
                         if (action == "talk to")
@@ -9308,9 +10469,6 @@ namespace JessesDungeon
                                     Console.WriteLine("Nevermind!");
                                     Console.WriteLine();
                                     Console.WriteLine();
-
-                                    Console.WriteLine("Ready?");
-                                    Console.WriteLine();
                                     Console.Write("> ");
                                     fightClubAction = Console.ReadLine();
                                     fightClubAction = fightClubAction.ToLower();
@@ -9363,7 +10521,7 @@ namespace JessesDungeon
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
                                             fightClubMode = 1;
-                                            FightClubBattleGenerator(fightClubMode, ego, potionBelt, equippableArmor, equippableWeapon, equippableShield, theCreeperInTheDarkDefeated, salamancaGuardDefeated, salamancaCousinDefeated, dudeOnAPogoStickDefeated, jesseDefeated, undroppables);
+                                            FightClubBattleGenerator(fightClubMode, ego, potionBelt, equippableArmor, equippableWeapon, equippableShield, undroppables);
                                         }
                                         else if (fightClubChoice == "toughest" || fightClubChoice == "two" || fightClubChoice == "many")
                                         {
@@ -9387,7 +10545,7 @@ namespace JessesDungeon
                                             Console.WriteLine();
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
-                                            FightClubBattleGenerator(fightClubMode, ego, potionBelt, equippableArmor, equippableWeapon, equippableShield, theCreeperInTheDarkDefeated, salamancaGuardDefeated, salamancaCousinDefeated, dudeOnAPogoStickDefeated, jesseDefeated, undroppables);
+                                            FightClubBattleGenerator(fightClubMode, ego, potionBelt, equippableArmor, equippableWeapon, equippableShield, undroppables);
                                         }
                                         else
                                         {
@@ -9687,11 +10845,11 @@ namespace JessesDungeon
                             Console.ReadLine();
                         }
 
-                        if (action == "fight" && hidenGoseke == false && dudeOnAPogoStickDefeated == false)
+                        if ((action == "fight" || action == "fight dude") && hidenGoseke == false && dudeOnAPogoStickDefeated == false)
                         {
                             action = "Complete";
                             Console.WriteLine("____________________________________________________");
-                            BadGuyStats badGuy = new BadGuyStats("Dude on a Pogo Stick", 150, 150, 3, 0.80, 8, 6, 3.00, die.Next(30, 51), 1, healingPotion, pogoStick, ringmail, "The Dude on a Pogo Stick bounces toward you furiously!");
+                            BadGuyStats badGuy = new BadGuyStats("Dude on a Pogo Stick", 125, 125, 5, 0.80, 6, 6, 2.00, die.Next(30, 51), 1, greaterHealingPotion, pogoStick, ringmail, "The Dude on a Pogo Stick bounces toward you furiously!");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("You ready yourself for battle.");
@@ -9809,7 +10967,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.WriteLine("The foul, cruel beast speaks.");
                             Console.WriteLine();
-                            Console.WriteLine("I'm a bit lost... you certainly seem like a local - perhaps you can help.");
+                            Console.WriteLine("\"I'm a bit lost... you certainly seem like a local - perhaps you can help.\"");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -10402,7 +11560,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.WriteLine("Heisenberg's door is locked and barred.");
                         }
-                        else if (jesseDefeated)
+                        else if (ego.JesseDefeated)
                         {
                             Console.WriteLine("No one is here. Loud music is blasting from nearby speakers.");
                             Console.WriteLine();
@@ -10422,7 +11580,7 @@ namespace JessesDungeon
                         Console.WriteLine("Stats");
                         Console.WriteLine("Look at");
                         Console.WriteLine("Search");
-                        if (jesseDefeated)
+                        if (ego.JesseDefeated)
                         {
                             Console.WriteLine("Unbar the door");
                         }
@@ -10464,7 +11622,7 @@ namespace JessesDungeon
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                             }
-                            else if (jesseDefeated)
+                            else if (ego.JesseDefeated)
                             {
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
@@ -10501,7 +11659,7 @@ namespace JessesDungeon
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                             }
-                            else if (jesseDefeated)
+                            else if (ego.JesseDefeated)
                             {
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
@@ -10523,7 +11681,7 @@ namespace JessesDungeon
                             }
                         }
 
-                        if (action == "talk to jesse" && !jesseDefeated)
+                        if (action == "talk to jesse" && !ego.JesseDefeated)
                         {
                             action = "Complete";
                             Console.WriteLine("____________________________________________________");
@@ -10602,7 +11760,7 @@ namespace JessesDungeon
                                 }
                                 else if (badGuy.CurrentHitPoints <= 0)
                                 {
-                                    jesseDefeated = true;
+                                    ego.JesseDefeated = true;
                                     talkLoop = true;
                                     while (talkLoop == true)
                                     {
@@ -10824,7 +11982,7 @@ namespace JessesDungeon
                             if (ego.CurrentHitPoints >= 0)
                             {
                                 action = "Complete";
-                                jesseDefeated = true;
+                                ego.JesseDefeated = true;
                                 ego.Location = "Heisenberg";
                                 ego.FleeLocation = "Fortress0";
                                 Console.Clear();
@@ -10837,7 +11995,7 @@ namespace JessesDungeon
                             }
                         }
 
-                        if (action == "fight" && !jesseDefeated)
+                        if ((action == "fight" || action == "fight jesse") && !ego.JesseDefeated)
                         {
                             if (disappearChoice == "jesse")
                             {
@@ -10857,7 +12015,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
-                                jesseDefeated = true;
+                                ego.JesseDefeated = true;
                             }
                             else
                             {
@@ -10887,7 +12045,7 @@ namespace JessesDungeon
                                 }
                                 else if (badGuy.CurrentHitPoints <= 0)
                                 {
-                                    jesseDefeated = true;
+                                    ego.JesseDefeated = true;
                                     talkLoop = true;
                                     while (talkLoop == true)
                                     {
@@ -10974,7 +12132,7 @@ namespace JessesDungeon
                             }
                         }
 
-                        if (action == "unbar the door" && jesseDefeated)
+                        if (action == "unbar the door" && ego.JesseDefeated)
                         {
                             action = "Complete";
                             ego.Location = "Heisenberg";
@@ -11348,7 +12506,7 @@ namespace JessesDungeon
                             }
                         }
 
-                        if (action == "fight")
+                        if (action == "fight" || action == "fight heisenberg")
                         {
                             BadGuyStats badGuy = new BadGuyStats("Heisenberg", 200, 200, 3, 0.75, 8, 4, 2.00, 5000, 2 - stolenHeisenPotions, greaterHealingPotion, knife, hazmatSuit, "Heisenberg folds his hands in front of himself and says, \"I am the one who knocks.\"");
                             action = "Complete";
@@ -12354,7 +13512,7 @@ namespace JessesDungeon
                         mapPeace = true;
                         Console.WriteLine("There are people gathered around a large [painting] depicting a humanoid tree, seemingly worshiping it. A man who would then be in the role of [priest] nods to you in greeting.");
                         Console.WriteLine();
-                        Console.WriteLine("There is an exit to the south.");
+                        Console.WriteLine("There is an exit to the [south].");
                         Console.WriteLine();
                         Console.WriteLine("What will you do?");
                         Console.WriteLine("-------------------");
@@ -12984,7 +14142,9 @@ namespace JessesDungeon
                         discoveredMap[4, 9] = "-";
                         discoveredMap[5, 8] = " | ";
                         mapLiquor = true;
-                        Console.WriteLine("Empty [wine racks] and [cabinets] line the walls, having long since been raided of their contents. In the far corner is a [lock box] built into the wall.");
+                        if (lootedMirror) { Console.WriteLine("Jesse's lock box in the far wall stands revealed between the tracks of its concealing mirror. Empty [wine racks] and [cabinets] line the walls, having long since been raided of their contents."); }
+                        else if (ego.FredDefeated) { Console.WriteLine("The [mirror] concealing Jesse's lock box hangs on the far wall. Empty [wine racks] and [cabinets] line the walls, having long since been raided of their contents."); }
+                        else { Console.WriteLine("In the far corner is a large, bearded [man] preening himself in a [mirror]. Empty [wine racks] and [cabinets] line the walls, having long since been raided of their contents."); }                        
                         Console.WriteLine();
                         Console.WriteLine("There is an exit to the [south] and [east].");
                         Console.WriteLine();
@@ -12995,6 +14155,7 @@ namespace JessesDungeon
                         Console.WriteLine("Stats");
                         Console.WriteLine("Look at");
                         Console.WriteLine("Search");
+                        Console.WriteLine("Fight");
                         Console.WriteLine("Go south");
                         Console.WriteLine("Go east");
                         Console.WriteLine();
@@ -13031,6 +14192,85 @@ namespace JessesDungeon
                             Thread.Sleep(1500);
                         }
 
+                        if (action == "look at man")
+                        {
+                            action = "Complete";
+                            if (!ego.FredDefeated)
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("He seems completely absorbed in grooming himself.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("He makes quite the handsome corpse.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                        }
+
+                        if (action == "search man")
+                        {
+                            action = "Complete";
+                            if (!ego.FredDefeated)
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("While he may be *distracted* by the mirror, he probably would at least see you in the mirror while you're rifling through his pockets.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else if (!lootedFredBeard)
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                lootedFredBeard = true;
+                                undroppables.Add(fredStash);
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Ahh the \"double-search\" trick? Well I don't want to disappoint.");
+                                Console.WriteLine();
+                                Console.WriteLine("It's just so fabulous! You cut off his beard and take it with you.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Your searching beyond the second proves fruitless. In what game would a THIRD search get you something?");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                        }
+
+                        if (action == "fight" || action == "fight man")
+                        {
+                            action = "Complete";
+                            BadGuyStats badGuy = new BadGuyStats("Fabulous Fred", 80, 80, 3, 0.75, 10, 10, 2.00, die.Next(30, 46), 1, greaterHealingPotion, stick, leatherArmor, "After smoothing out a cowlick, the large man lunges forward!");
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("You ready yourself for battle.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
+                            PlotBattleResolution(ego, equippableArmor, equippableWeapon, equippableShield, potionBelt, badGuy);
+                        }
+
                         if (action == "look at wine racks")
                         {
                             action = "Complete";
@@ -13046,28 +14286,13 @@ namespace JessesDungeon
                         if (action == "search wine racks")
                         {
                             action = "Complete";
-                            if (garbageCanLid.Unlocked == false)
-                            {
-                                garbageCanLid.Unlocked = true;
-                                equippableShield.Add(garbageCanLid);
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("Hey there's a Garbage Can Lid slipped in the back between the rack and the wall. Let's toddler it up and use it as a shield, yeah?");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                            }
-                            else
-                            {
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("Nothing is left of the contents to reveal anything useful.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                            }
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Nothing is left of the contents to reveal anything useful.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
                         }
 
                         if (action == "look at cabinets")
@@ -13094,29 +14319,15 @@ namespace JessesDungeon
                             Console.ReadLine();
                         }
 
-                        if (action == "look at lock box")
+                        if (action == "look at mirror")
                         {
                             action = "Complete";
-                            Console.WriteLine("____________________________________________________");
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("The lock and hinges are fairly beat up. Looks like people have tried and failed to get into it.");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
-                        }
-
-                        if (action == "search lock box")
-                        {
-                            action = "Complete";
-                            if (undroppables.Contains(liquorKey))
+                            if (!lootedMirror)
                             {
-                                undroppables.Remove(liquorKey);
-                                undroppables.Add(mezcal);
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("Inside there is a single bottle of mezcal. You take it.");
+                                Console.WriteLine("Magic mirror, on the wall...");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -13126,7 +14337,123 @@ namespace JessesDungeon
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("Funny - the lock box is locked.");
+                                Console.WriteLine("...Who is the fairest of them all?");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                        }
+
+                        if (action == "search mirror")
+                        {
+                            action = "Complete";
+                            if (ego.FredDefeated)
+                            {
+                                if (!lootedMirror)
+                                {
+                                    if (undroppables.Contains(liquorKey))
+                                    {
+                                        undroppables.Remove(liquorKey);
+                                        undroppables.Add(mezcal);
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("You slide the mirror to the side revealing Jesse's lock box.");
+                                        Console.WriteLine();
+                                        Console.WriteLine("Inside there is a single bottle of mezcal. You take it.");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("You slide the mirror to the side revealing Jesse's lock box.");
+                                        Console.WriteLine();
+                                        Console.WriteLine("Funny - the lock box is locked.");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                }
+                                else
+                                {
+                                    if (undroppables.Contains(liquorKey))
+                                    {
+                                        undroppables.Remove(liquorKey);
+                                        undroppables.Add(mezcal);
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Searching the mirror that isn't there anymore, you find Jesse's lock box.");
+                                        Console.WriteLine();
+                                        Console.WriteLine("Inside there is a single bottle of mezcal. You take it.");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("What mirror?");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Not with the big scary man in front of it you're not.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                        }
+
+                        if (action == "take mirror" || action == "get mirror")
+                        {
+                            action = "Complete";
+                            if (ego.FredDefeated)
+                            {
+                                if (!lootedMirror)
+                                {
+                                    lootedMirror = true;
+                                    equippableShield.Add(mirrorShield);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("You remove the mirror from its sliding track and put it away.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The mirror cannot reflect an image of itself back to where it used to be if it no longer is where it was to do so.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Not that it would anyway.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Not with the big scary man in front of it you're not.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -13312,7 +14639,7 @@ namespace JessesDungeon
                             if (hidenGoseke == true && dudeOnAPogoStickDefeated == false)
                             {
                                 Console.WriteLine("____________________________________________________");
-                                BadGuyStats badGuy = new BadGuyStats("Dude on a Pogo Stick", 150, 150, 3, 0.80, 8, 6, 3.00, die.Next(30, 51), 1, healingPotion, pogoStick, ringmail, "The Dude on a Pogo Stick bounces toward you furiously!");
+                                BadGuyStats badGuy = new BadGuyStats("Dude on a Pogo Stick", 125, 125, 5, 0.80, 6, 6, 2.00, die.Next(30, 51), 1, greaterHealingPotion, pogoStick, ringmail, "The Dude on a Pogo Stick bounces toward you furiously!");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("Huh?");
@@ -16246,7 +17573,7 @@ namespace JessesDungeon
                                 if (equippingItem == bagCheck)
                                 {
                                     action = "Complete";
-                                    GetDressed(ego, armor);
+                                    GetDressed(ego, armor, equippableArmor);
                                     break;
                                 }
                             }
@@ -16256,7 +17583,7 @@ namespace JessesDungeon
                                 if (equippingItem == bagCheck)
                                 {
                                     action = "Complete";
-                                    GetEquipped(ego, weapon);
+                                    GetEquipped(ego, weapon, equippableWeapon, equippableArmor, equippableShield);
                                     break;
                                 }
                             }
@@ -16266,7 +17593,7 @@ namespace JessesDungeon
                                 if (equippingItem == bagCheck)
                                 {
                                     action = "Complete";
-                                    GetStrapped(ego, shield);
+                                    GetStrapped(ego, shield, equippableShield);
                                     break;
                                 }
                             }
@@ -16311,14 +17638,14 @@ namespace JessesDungeon
                             }
                             else
                             {
-                                action = "Complete";
                                 Console.WriteLine("____________________________________________________");
                                 foreach (Armor armor in equippableArmor)
                                 {
                                     string bagCheck = armor.Name;
                                     if (droppingItem == bagCheck)
                                     {
-                                        if (ego.EquippedArmor.Name == droppingItem) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield); }
+                                        action = "Complete";
+                                        if (ego.EquippedArmor.Name == droppingItem) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                         equippableArmor.Remove(armor);
                                         Console.WriteLine();
                                         Console.WriteLine();
@@ -16334,7 +17661,8 @@ namespace JessesDungeon
                                     string bagCheck = weapon.Name;
                                     if (droppingItem == bagCheck)
                                     {
-                                        if (ego.EquippedWeapon.Name == droppingItem) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield); }
+                                        action = "Complete";
+                                        if (ego.EquippedWeapon.Name == droppingItem) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                         equippableWeapon.Remove(weapon);
                                         Console.WriteLine();
                                         Console.WriteLine();
@@ -16350,7 +17678,8 @@ namespace JessesDungeon
                                     string bagCheck = shield.Name;
                                     if (droppingItem == bagCheck)
                                     {
-                                        if (ego.EquippedShield.Name == droppingItem) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield); }
+                                        action = "Complete";
+                                        if (ego.EquippedShield.Name == droppingItem) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
                                         equippableShield.Remove(shield);
                                         Console.WriteLine();
                                         Console.WriteLine();
@@ -16366,6 +17695,7 @@ namespace JessesDungeon
                                     string bagCheck = potion.Name;
                                     if (droppingItem == bagCheck)
                                     {
+                                        action = "Complete";
                                         potionBelt.Remove(potion);
                                         Console.WriteLine();
                                         Console.WriteLine();
@@ -16381,6 +17711,7 @@ namespace JessesDungeon
                                     string bagCheck = item.Name;
                                     if (droppingItem == bagCheck)
                                     {
+                                        action = "Complete";
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("OK, you drop it.");
@@ -16434,6 +17765,11 @@ namespace JessesDungeon
                                 {
                                     action = "Complete";
                                     GetDrunk(potionBelt, ego, potion);
+                                    if (ego.CurrentHitPoints <= 0)
+                                    {
+                                        inventoryLoop = false;
+                                        EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt);
+                                    }
                                     break;
                                 }
                             }
@@ -17014,11 +18350,11 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Thread.Sleep(1500);
                     equippableWeapon.Add(realSword);
-                    GetEquipped(ego, realSword);
+                    GetEquipped(ego, realSword, equippableWeapon, equippableArmor, equippableShield);
                     equippableShield.Add(realShield);
-                    GetStrapped(ego, realShield);
+                    GetStrapped(ego, realShield, equippableShield);
                     equippableArmor.Add(chainmail);
-                    GetDressed(ego, chainmail);
+                    GetDressed(ego, chainmail, equippableArmor);
                 }  //endgame gear
 
                 if (action == "razzle dazzle root beer" && debugMode == true)
@@ -17037,8 +18373,10 @@ namespace JessesDungeon
                         Console.WriteLine("Pointy Stick");
                         Console.WriteLine("Mildew-Encrusted Pocket Knife");
                         Console.WriteLine("Knife");
+                        Console.WriteLine("Club");
                         Console.WriteLine("Hunting Knife");
                         Console.WriteLine("Fireman's Axe");
+                        Console.WriteLine("Assassin's Dagger");
                         Console.WriteLine("Pogo Stick");
                         Console.WriteLine("Sword");
                         Console.WriteLine("Gun");
@@ -17051,6 +18389,7 @@ namespace JessesDungeon
                         Console.WriteLine("Cardboard Cutout");
                         Console.WriteLine("Garbage Can Lid");
                         Console.WriteLine("Shield");
+                        Console.WriteLine("The Mirror Shield");
                         Console.WriteLine();
                         Console.WriteLine("Exit");
                         Console.WriteLine();
@@ -17065,10 +18404,8 @@ namespace JessesDungeon
                             equippableWeapon.Add(rustyWoodenSpoon);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "stick")
                         {
@@ -17076,10 +18413,8 @@ namespace JessesDungeon
                             equippableWeapon.Add(stick);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "pointy stick")
                         {
@@ -17087,10 +18422,8 @@ namespace JessesDungeon
                             equippableWeapon.Add(pointyStick);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "mildew-encrusted pocket knife")
                         {
@@ -17098,10 +18431,8 @@ namespace JessesDungeon
                             equippableWeapon.Add(mildewEncrustedPocketKnife);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "knife")
                         {
@@ -17109,10 +18440,17 @@ namespace JessesDungeon
                             equippableWeapon.Add(knife);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
+                        }
+                        else if (action == "club")
+                        {
+                            action = "Complete";
+                            equippableWeapon.Add(club);
                             Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.WriteLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "hunting knife")
                         {
@@ -17120,10 +18458,8 @@ namespace JessesDungeon
                             equippableWeapon.Add(huntingKnife);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "fireman's axe")
                         {
@@ -17131,10 +18467,17 @@ namespace JessesDungeon
                             equippableWeapon.Add(axe);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
+                        }
+                        else if (action == "assassin's dagger")
+                        {
+                            action = "Complete";
+                            equippableWeapon.Add(assassinsDagger);
                             Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.WriteLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "pogo stick")
                         {
@@ -17142,10 +18485,8 @@ namespace JessesDungeon
                             equippableWeapon.Add(pogoStick);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "sword")
                         {
@@ -17153,10 +18494,8 @@ namespace JessesDungeon
                             equippableWeapon.Add(realSword);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "gun")
                         {
@@ -17164,10 +18503,8 @@ namespace JessesDungeon
                             equippableWeapon.Add(gun);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "leather armor")
                         {
@@ -17175,10 +18512,8 @@ namespace JessesDungeon
                             equippableArmor.Add(leatherArmor);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "studded leather armor")
                         {
@@ -17186,10 +18521,8 @@ namespace JessesDungeon
                             equippableArmor.Add(studdedLeatherArmor);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "ringmail")
                         {
@@ -17197,10 +18530,8 @@ namespace JessesDungeon
                             equippableArmor.Add(ringmail);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "chainmail")
                         {
@@ -17208,10 +18539,8 @@ namespace JessesDungeon
                             equippableArmor.Add(chainmail);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "hazmat suit")
                         {
@@ -17219,10 +18548,8 @@ namespace JessesDungeon
                             equippableArmor.Add(hazmatSuit);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "soup bowl")
                         {
@@ -17230,10 +18557,8 @@ namespace JessesDungeon
                             equippableShield.Add(soupBowl);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "cardboard cutout")
                         {
@@ -17241,10 +18566,8 @@ namespace JessesDungeon
                             equippableShield.Add(cardboardCutout);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "garbage can lid")
                         {
@@ -17252,10 +18575,8 @@ namespace JessesDungeon
                             equippableShield.Add(garbageCanLid);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "shield")
                         {
@@ -17263,10 +18584,17 @@ namespace JessesDungeon
                             equippableShield.Add(realShield);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
+                        }
+                        else if (action == "the mirror shield")
+                        {
+                            action = "Complete";
+                            equippableShield.Add(mirrorShield);
                             Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            Console.WriteLine();
+                            Console.Write("AHHH YEAAAH! That's the stuff. Anything else?");
+                            Thread.Sleep(1000);
                         }
                         else if (action == "exit")
                         {
@@ -17745,6 +19073,18 @@ namespace JessesDungeon
                                         Console.WriteLine();
                                         Console.WriteLine("Fail. Moving on!");
                                     }
+                                    Console.Write("Banked Crystals: ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newBankedCrys))
+                                    {
+                                        ego.BankedCrystals = newBankedCrys;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.Write("Fight Club Rank: ");
@@ -17842,6 +19182,136 @@ namespace JessesDungeon
                                     if (Int32.TryParse(suckBlueFrogs, out int newToHitMod))
                                     {
                                         ego.ToHitMod = newToHitMod;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Heal over time effect (enter value 0-6): ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newHot))
+                                    {
+                                        if (newHot >= 0 && newHot <= 6)
+                                        {
+                                            ego.HotActive = newHot;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine("Fail. Moving on!");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Damage over time effect (enter value 0-6): ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (Int32.TryParse(suckBlueFrogs, out int newDot))
+                                    {
+                                        if (newDot >= 0 && newDot <= 6)
+                                        {
+                                            ego.DotActive = newDot;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine("Fail. Moving on!");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("The Creeper In The Dark Defeated (true/false): ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (bool.TryParse(suckBlueFrogs, out bool newCreeper))
+                                    {
+                                        ego.TheCreeperInTheDarkDefeated = newCreeper;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Salamanca Guard Defeated (true/false): ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (bool.TryParse(suckBlueFrogs, out bool newSalGuard))
+                                    {
+                                        ego.SalamancaGuardDefeated = newSalGuard;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Salamanca Cousin Defeated (true/false): ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (bool.TryParse(suckBlueFrogs, out bool newSalCousin))
+                                    {
+                                        ego.SalamancaCousinDefeated = newSalCousin;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Fred Defeated (true/false): ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (bool.TryParse(suckBlueFrogs, out bool newFred))
+                                    {
+                                        ego.FredDefeated = newFred;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Dude On a Pogo Stick Defeated (true/false): ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (bool.TryParse(suckBlueFrogs, out bool newPogoPunk))
+                                    {
+                                        ego.DudeOnAPogoStickDefeated = newPogoPunk;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Fail. Moving on!");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Jesse Defeated (true/false): ");
+                                    suckBlueFrogs = Console.ReadLine();
+                                    if (bool.TryParse(suckBlueFrogs, out bool newJesse))
+                                    {
+                                        ego.JesseDefeated = newJesse;
                                     }
                                     else
                                     {
@@ -18530,6 +20000,37 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
+                    if (inappropriateTouchingCounter > 0)
+                    {
+
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine("Lydia:");
+                        Console.WriteLine();
+                        Console.WriteLine("And let's not forget just how FRIENDLY he is!");
+                        Console.WriteLine();
+                        Console.Write("\"He touched me\"");
+                        Thread.Sleep(500);
+                        Console.Write(".");
+                        Thread.Sleep(500);
+                        Console.Write(".");
+                        Thread.Sleep(500);
+                        Console.Write(".");
+                        Thread.Sleep(1500);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Here.");
+                        for (int i = 0; i < inappropriateTouchingCounter; i++)
+                        {
+                            Thread.Sleep(500);
+                            Console.WriteLine();
+                            Console.WriteLine("And here.");
+                        }
+                        Thread.Sleep(500);
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
                     Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine();
@@ -18948,7 +20449,7 @@ namespace JessesDungeon
             
         }
 
-        static void GetDressed(Stats ego, Armor newArmor)
+        static void GetDressed(Stats ego, Armor newArmor, List<Armor> equippableArmor)
         {
             if (ego.EquippedArmor.Name != newArmor.Name )
             {
@@ -18957,7 +20458,9 @@ namespace JessesDungeon
                 Console.WriteLine("____________________________________________________");
                 Console.WriteLine();
                 Console.WriteLine();
+                equippableArmor.Add(ego.EquippedArmor);
                 ego.EquippedArmor = newArmor;
+                equippableArmor.Remove(ego.EquippedArmor);
                 Console.WriteLine("You equip the " + newArmor.Name + ".");
                 Console.WriteLine();
                 Console.Write("Press ENTER to continue");
@@ -18976,7 +20479,7 @@ namespace JessesDungeon
             }
         }
 
-        static void GetEquipped(Stats ego, Weapon newWeapon)
+        static void GetEquipped(Stats ego, Weapon newWeapon, List<Weapon> equippableWeapon, List<Armor> equippableArmor, List<Shield> equippableShield)
         {
             Shield nullShield = new Shield("Forearm", 0, 1.00, true, 0, "'Tis nothing but spun sugar and bootblack.");
 
@@ -18993,7 +20496,10 @@ namespace JessesDungeon
                 Console.WriteLine("____________________________________________________");
                 Console.WriteLine();
                 Console.WriteLine();
+                equippableWeapon.Add(ego.EquippedWeapon);
+                if (ego.EquippedWeapon.Name == "Unarmed") { equippableWeapon.Remove(ego.EquippedWeapon); }
                 ego.EquippedWeapon = newWeapon;
+                equippableWeapon.Remove(ego.EquippedWeapon);
                 Console.WriteLine("You equip the " + newWeapon.Name + ".");
                 Console.WriteLine();
                 if (newWeapon.Name == "Fireman's Axe")
@@ -19005,7 +20511,7 @@ namespace JessesDungeon
                 {                   
                     Console.WriteLine($"But you cannot use your {ego.EquippedShield.Name} at the same time. You remove it.");
                     Console.WriteLine();
-                    GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield);
+                    GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield);
                 }
                 Console.Write("Press ENTER to continue");
                 Console.ReadLine();
@@ -19022,7 +20528,7 @@ namespace JessesDungeon
             }
         }
 
-        static void GetStrapped(Stats ego, Shield newShield)
+        static void GetStrapped(Stats ego, Shield newShield, List<Shield> equippableShield)
         {
             if (ego.EquippedShield.Name != newShield.Name)
             {
@@ -19043,7 +20549,10 @@ namespace JessesDungeon
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
+                    equippableShield.Add(ego.EquippedShield);
+                    if (ego.EquippedShield.Name == "Forearm") { equippableShield.Remove(ego.EquippedShield); }
                     ego.EquippedShield = newShield;
+                    equippableShield.Remove(ego.EquippedShield);
                     Console.WriteLine("You equip the " + newShield.Name + ".");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
@@ -19062,7 +20571,7 @@ namespace JessesDungeon
             }
         }
 
-        static void GetStripped(Stats ego, Armor newArmor, Weapon newWeapon, Shield newShield)
+        static void GetStripped(Stats ego, Armor newArmor, Weapon newWeapon, Shield newShield, List<Armor> equippableArmor, List<Weapon> equippableWeapon, List<Shield> equippableShield)
         {
             if (ego.EquippedWeapon.Name == "Fireman's Axe")
             {
@@ -19071,14 +20580,22 @@ namespace JessesDungeon
             }
             ego.DamageReduction = ego.DamageReduction - ego.EquippedArmor.DamageReduction + newArmor.DamageReduction;
             ego.CritResist = ego.CritResist + ego.EquippedArmor.CritResist - newArmor.CritResist;
+            equippableArmor.Add(ego.EquippedArmor);
             ego.EquippedArmor = newArmor;
+            equippableArmor.Remove(ego.EquippedArmor);
             ego.ToHitMod = ego.ToHitMod - ego.EquippedWeapon.ToHitMod + newWeapon.ToHitMod;
             ego.Damage = ego.Damage - ego.EquippedWeapon.Damage + newWeapon.Damage;
             ego.CritMultiplier = ego.CritMultiplier - ego.EquippedWeapon.CritMultiplier + newWeapon.CritMultiplier;
+            equippableWeapon.Add(ego.EquippedWeapon);
+            if (ego.EquippedWeapon.Name == "Unarmed") { equippableWeapon.Remove(ego.EquippedWeapon); }
             ego.EquippedWeapon = newWeapon;
+            equippableWeapon.Remove(ego.EquippedWeapon);
             ego.ArmorClass = ego.ArmorClass - ego.EquippedShield.ArmorClass + newShield.ArmorClass;
             ego.CritResist = ego.CritResist + ego.EquippedShield.CritResist - newShield.CritResist;
+            equippableShield.Add(ego.EquippedShield);
+            if (ego.EquippedShield.Name == "Forearm") { equippableShield.Remove(ego.EquippedShield); }
             ego.EquippedShield = newShield;
+            equippableShield.Remove(ego.EquippedShield);
         }
 
         static void GetDrunk(List<Potion> potionBelt, Stats ego, Potion potion)
@@ -19087,33 +20604,45 @@ namespace JessesDungeon
             Console.WriteLine("____________________________________________________");
             Console.WriteLine();
             Console.WriteLine();
-            if (ego.CurrentHitPoints <= (ego.MaxHitPoints - potion.Potency))
+            if (potion.Name == "Light Soothing Potion" || potion.Name == "Soothing Potion" || potion.Name == "Greater Soothing Potion" || potion.Name == "Light Vial of Corrosive" || potion.Name == "Vial of Corrosive" || potion.Name == "Greater Vial of Corrosive")
+            {
+                potion.Potency = potion.Potency * 3;
+            }
+            if (potion.Potency > 0)
+            {
+                if (ego.CurrentHitPoints < (ego.MaxHitPoints - potion.Potency))
+                {
+                    ego.CurrentHitPoints = ego.CurrentHitPoints + potion.Potency;
+                    Console.WriteLine("You drink the " + potion.Name + ". You regain " + potion.Potency + " HP!");
+                }
+                else
+                {
+                    ego.CurrentHitPoints = ego.MaxHitPoints;
+                    Console.WriteLine("You drink the " + potion.Name + ". Your HP are maxed out!");
+                }
+            }
+            if (potion.Potency < 0)
             {
                 ego.CurrentHitPoints = ego.CurrentHitPoints + potion.Potency;
-                Console.WriteLine("You drink the " + potion.Name + ". You regain " + potion.Potency + " HP!");
-            }
-            else
-            {
-                ego.CurrentHitPoints = ego.MaxHitPoints;
-                Console.WriteLine("You drink the " + potion.Name + ". Your HP are maxed out!");
+                Console.WriteLine("You drink the " + potion.Name + ". You lose " + potion.Potency + " HP!");
             }
             Console.WriteLine();
             Console.Write("Press ENTER to continue");
             Console.ReadLine();
         }
 
-        static void FightClubBattleGenerator(int mode, Stats ego, List<Potion> potionBelt, List<Armor> equippableArmor, List<Weapon> equippableWeapon, List<Shield> equippableShield, bool theCreeperInTheDarkDefeated, bool salamancaGuardDefeated, bool salamancaCousinDefeated, bool dudeOnAPogoStickDefeated, bool jesseDefeated, List<Item> undroppables)
+        static void FightClubBattleGenerator(int mode, Stats ego, List<Potion> potionBelt, List<Armor> equippableArmor, List<Weapon> equippableWeapon, List<Shield> equippableShield, List<Item> undroppables)
         {
             Random die = new Random();
 
-            Weapon noWeapon = new Weapon(null, 0, 0, 0, true, false, 0, "'Tis nothing but spun sugar and bootblack.");
+            Weapon noWeapon = new Weapon(null, 0, 0, 0, true, false, 0, "'Tis nothing but spun sugar and bootblack.", "SlashBash");
             Armor noArmor = new Armor(null, 0, 0, false, 0, "'Tis nothing but spun sugar and bootblack.");
-            Potion lightHealingPotion = new Potion("Light Healing Potion", 10, "This potion will recover 10 HP.");
-            Potion healingPotion = new Potion("Healing Potion", 20, "This potion will recover 20 HP.");
+            Potion lightHealingPotion = new Potion("Light Healing Potion", 10, "This potion will recover 20 HP.");
+            Potion healingPotion = new Potion("Healing Potion", 20, "This potion will recover 30 HP.");
             Potion greaterHealingPotion = new Potion("Greater Healing Potion", 50, "This potion will recover 50 HP.");
-            Weapon pointyStick = new Weapon("Pointy Stick", 4, 2, 0, true, false, 10, "Brilliant use of \"force over surface area\" wouldn't you say?");
-            Weapon huntingKnife = new Weapon("Hunting Knife", 4, 3, 0, true, false, 50, "THAT'S a knife.");
-            Weapon pogoStick = new Weapon("Pogo Stick", 4, 2, 0, false, false, 700, "Wielding this contraption like a lance/bazooka, each successful hit leads to an additional attack -- albeit at a -5 penalty.");
+            Weapon pointyStick = new Weapon("Pointy Stick", 4, 2, 0, true, false, 10, "Brilliant use of \"force over surface area\" wouldn't you say?", "Piercing");
+            Weapon huntingKnife = new Weapon("Hunting Knife", 4, 3, 0, true, false, 50, "THAT'S a knife.", "Piercing");
+            Weapon pogoStick = new Weapon("Pogo Stick", 4, 2, 0, false, false, 700, "Wielding this contraption like a lance/bazooka, each successful hit leads to an additional attack -- albeit at a -5 penalty.", "Polearm");
             Armor leatherArmor = new Armor("Leather Armor", 1, 0.85, false, 70, "Provides a bit of protection, but still no match for a good stabbing.");
             Item dungeonKey = new Item("Heisenberg's Key", "A key found in the Fortress that (hopefully) will free you and everyone else.");
 
@@ -19133,28 +20662,28 @@ namespace JessesDungeon
                     badGuy = badGuy.RewriteBadGuy("Heisenberg", 150, 150, 3, 0.75, 8, 4, 2.00, 5000, 2, greaterHealingPotion, noWeapon, noArmor, "The crowd suddenly hushes and begins to part, revealing Heisenberg standing in the back. He folds his hands in front of himself and says, \"I am the one who knocks.\"");
                     badGuyHandicap = ego.FightClubRank - 18;
                 }
-                else if (jesseDefeated == true && ego.FightClubRank >= 15)
+                else if (ego.JesseDefeated == true && ego.FightClubRank >= 15)
                 {
                     badGuy = badGuy.RewriteBadGuy("Jesse", 150, 150, 4, 0.85, 8, 3, 3.00, 500, 2, healingPotion, noWeapon, noArmor, "Jesse steps forward from the back of the crowd and brandishes an axe menacingly!");
                     badGuyHandicap = ego.FightClubRank - 15;
                 }
-                else if (dudeOnAPogoStickDefeated == true && ego.FightClubRank >= 12)
+                else if (ego.DudeOnAPogoStickDefeated == true && ego.FightClubRank >= 12)
                 {
-                    badGuy = badGuy.RewriteBadGuy("Dude on a Pogo Stick", 150, 150, 5, 0.80, 8, 6, 3.00, die.Next(30, 51), 1, healingPotion, pogoStick, leatherArmor, "A Dude on a Pogo Stick bounces through the crowd and bounces at you furiously!");
+                    badGuy = badGuy.RewriteBadGuy("Dude on a Pogo Stick", 125, 125, 5, 0.80, 6, 6, 2.00, die.Next(30, 51), 1, greaterHealingPotion, pogoStick, leatherArmor, "A Dude on a Pogo Stick bounces through the crowd and bounces at you furiously!");
                     badGuyHandicap = ego.FightClubRank - 12;
                 }
-                else if (salamancaCousinDefeated == true && ego.FightClubRank >= 8)
+                else if (ego.SalamancaCousinDefeated == true && ego.FightClubRank >= 8)
                 {
-                    badGuy = badGuy.RewriteBadGuy("Salamanca Cousin", 100, 100, 2, 0.85, 8, 4, 3.00, die.Next(30, 51), 1, healingPotion, huntingKnife, leatherArmor, "A Salamanca Cousin steps out of the crowd, and comes at you with a knife!");
+                    badGuy = badGuy.RewriteBadGuy("Salamanca Cousin", 60, 60, 2, 0.85, 8, 6, 2.00, die.Next(40, 61), 1, healingPotion, huntingKnife, leatherArmor, "A Salamanca Cousin steps out of the crowd, and comes at you with a knife!");
                     badGuyHandicap = ego.FightClubRank - 8;
                 }
-                else if (salamancaGuardDefeated == true && ego.FightClubRank >= 5)
+                else if (ego.SalamancaGuardDefeated == true && ego.FightClubRank >= 4)
                 {
                     badGuy = badGuy.RewriteBadGuy("Salamanca Guard", 50, 50, 2, 0.85, 8, 4, 3.00, die.Next(10, 26), 1, lightHealingPotion, huntingKnife, leatherArmor, "A Salamanca Guard steps out of the crowd, and comes at you with a knife!");
-                    badGuyHandicap = ego.FightClubRank -5;
+                    badGuyHandicap = ego.FightClubRank -4;
                 }
                 //insert more badguys with else if in order from hard to easy
-                else if (theCreeperInTheDarkDefeated == true && ego.FightClubRank >= 1)
+                else if (ego.TheCreeperInTheDarkDefeated == true && ego.FightClubRank >= 1)
                 {
                     badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, die.Next(11), 0, lightHealingPotion, pointyStick, noArmor, "From the back of the crowd emerges a creeper in the dark. He begins closing in with a weapon pointed at you.");
                     badGuyHandicap = ego.FightClubRank - 1;
@@ -19165,6 +20694,18 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("\"Hmm. Your rank isn\'t too hot. This small, sickly child will do nicely.\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    badGuy = badGuy.RewriteBadGuy("A small, sickly child", 2, 2, 0, 1.5, 2, 0, 0.90, 1, 0, lightHealingPotion, noWeapon, noArmor, "A small, sickly child limps over and assumes a fighting stance!");
+                }
+                else if (ego.SalamancaGuardDefeated)
+                {
+                    if (ego.FightClubRank > 1) { ego.FightClubRank--; }
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("\"Hmm no one is available at your low rank. This small, sickly child will do nicely.\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
@@ -19221,28 +20762,28 @@ namespace JessesDungeon
                     badGuy = badGuy.RewriteBadGuy("Heisenberg", 200, 200, 3, 0.75, 8, 4, 2.00, 5000, 2, greaterHealingPotion, noWeapon, noArmor, "The crowd suddenly hushes and begins to part, revealing Heisenberg standing in the back. He folds his hands in front of himself and says, \"I am the one who knocks.\"");
                     badGuyHandicap = ego.FightClubRank - 18;
                 }
-                else if (jesseDefeated == true && ego.FightClubRank >= 15)
+                else if (ego.JesseDefeated == true && ego.FightClubRank >= 15)
                 {
                     badGuy = badGuy.RewriteBadGuy("Jesse", 150, 150, 4, 0.85, 8, 3, 3.00, 500, 3, healingPotion, noWeapon, noArmor, "Jesse steps forward from the back of the crowd and brandishes an axe menacingly!");
                     badGuyHandicap = ego.FightClubRank - 15;
                 }
-                else if (dudeOnAPogoStickDefeated == true && ego.FightClubRank >= 12)
+                else if (ego.DudeOnAPogoStickDefeated == true && ego.FightClubRank >= 12)
                 {
-                    badGuy = badGuy.RewriteBadGuy("Dude on a Pogo Stick", 150, 150, 5, 0.80, 8, 6, 3.00, die.Next(30, 51), 2, greaterHealingPotion, pogoStick, leatherArmor, "A Dude on a Pogo Stick bounces through the crowd and bounces at you furiously!");
+                    badGuy = badGuy.RewriteBadGuy("Dude on a Pogo Stick", 125, 125, 5, 0.80, 6, 6, 2.00, die.Next(30, 51), 1, greaterHealingPotion, pogoStick, leatherArmor, "A Dude on a Pogo Stick bounces through the crowd and bounces at you furiously!");
                     badGuyHandicap = ego.FightClubRank - 12;
                 }
-                else if (salamancaCousinDefeated == true && ego.FightClubRank >= 8)
+                else if (ego.SalamancaCousinDefeated == true && ego.FightClubRank >= 8)
                 {
-                    badGuy = badGuy.RewriteBadGuy("Salamanca Cousin", 100, 100, 2, 0.85, 8, 4, 3.00, die.Next(30, 51), 2, greaterHealingPotion, huntingKnife, leatherArmor, "A Salamanca Cousin steps out of the crowd, and comes at you with a knife!");
+                    badGuy = badGuy.RewriteBadGuy("Salamanca Cousin", 60, 60, 2, 0.85, 8, 6, 3.00, die.Next(30, 51), 1, healingPotion, huntingKnife, leatherArmor, "A Salamanca Cousin steps out of the crowd, and comes at you with a knife!");
                     badGuyHandicap = ego.FightClubRank - 8;
                 }
-                else if (salamancaGuardDefeated == true && ego.FightClubRank >= 5)
+                else if (ego.SalamancaGuardDefeated == true && ego.FightClubRank >= 4)
                 {
                     badGuy = badGuy.RewriteBadGuy("Salamanca Guard", 50, 50, 2, 0.85, 8, 4, 3.00, die.Next(10, 26), 2, healingPotion, huntingKnife, leatherArmor, "Two Salamanca Guards step out of the crowd, and come at you with knifes!");
-                    badGuyHandicap = ego.FightClubRank - 5;
+                    badGuyHandicap = ego.FightClubRank - 4;
                 }
                 //insert more badguys with else if
-                else if (theCreeperInTheDarkDefeated == true && ego.FightClubRank >= 1)
+                else if (ego.TheCreeperInTheDarkDefeated == true && ego.FightClubRank >= 1)
                 {
                     badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, die.Next(11), 0, lightHealingPotion, pointyStick, noArmor, "From the back of the crowd emerges two creepers in the dark. They begin closing in with weapons pointed at you.");
                     badGuyHandicap = ego.FightClubRank - 1;
@@ -19252,11 +20793,23 @@ namespace JessesDungeon
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("\"Hmm. Your rank isn\'t too hot. This small, sickly child will do nicely.\"");
+                    Console.WriteLine("\"Hmm. Your rank isn\'t too hot. These small, sickly children will do nicely.\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                     badGuy = badGuy.RewriteBadGuy("A small, sickly child", 2, 2, 0, 1.5, 2, 0, 0.90, 1, 0, lightHealingPotion, noWeapon, noArmor, "A pair of small, sickly children limp over and assume fighting stances!");
+                }
+                else if (ego.SalamancaGuardDefeated)
+                {
+                    if (ego.FightClubRank > 1) { ego.FightClubRank--; }
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("\"Hmm no one is available at your low rank. These small, sickly children will do nicely.\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    badGuy = badGuy.RewriteBadGuy("A small, sickly child", 2, 2, 0, 1.5, 2, 0, 0.90, 1, 0, lightHealingPotion, noWeapon, noArmor, "A small, sickly child limps over and assumes a fighting stance!");
                 }
                 else
                 {
@@ -19264,7 +20817,7 @@ namespace JessesDungeon
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("\"You've never fought anyone before, have you? This small, sickly child will do nicely.\"");
+                    Console.WriteLine("\"You've never fought anyone before, have you? These small, sickly children will do nicely.\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
@@ -19309,11 +20862,11 @@ namespace JessesDungeon
                     Console.ReadLine();
                     badGuy = badGuy.RewriteBadGuy("A small, sickly child", 2, 2, 0, 1.5, 2, 0, 0.90, 1, 0, lightHealingPotion, noWeapon, noArmor, "A small, sickly child limps over and assumes a fighting stance!");
                 }
-                else if (ego.FightClubRank == 1 && theCreeperInTheDarkDefeated == true)
+                else if (ego.FightClubRank == 1 && ego.TheCreeperInTheDarkDefeated == true)
                 {
                     badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, die.Next(11), 0, lightHealingPotion, pointyStick, noArmor, "SO MANY - wait there's just one. A creeper in the Dark emerges and engages.");
                 }
-                else if (ego.FightClubRank > 1 && theCreeperInTheDarkDefeated == true)
+                else if (ego.FightClubRank > 1 && ego.TheCreeperInTheDarkDefeated == true)
                 {
                     badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, die.Next(11), 0, lightHealingPotion, pointyStick, noArmor, "From somewhere - somehow - many creepers in the dark emerge. They begin closing in with weapons pointed at you. One engages, and the rest throw air punches and kick menacingly!");
                 }
@@ -19370,8 +20923,6 @@ namespace JessesDungeon
                 badGuy.BlueCrystals = (badGuy.BlueCrystals * mode);
                 ego.LastDefeated = badGuy.Name;
                 Console.Clear();
-                Console.WriteLine();
-                Console.WriteLine();
                 if (mode > 1)
                 {
                     if (badGuy.BlueCrystals == 1)
@@ -19405,7 +20956,7 @@ namespace JessesDungeon
                 ego.BlueCrystals = ego.BlueCrystals + badGuy.BlueCrystals;
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.WriteLine("Press ENTER to continue");
+                Console.Write("Press ENTER to continue");
                 Console.ReadLine();
                 Console.Clear();
             }
@@ -19445,6 +20996,7 @@ namespace JessesDungeon
                 bool pantsOff = false;
                 int randomAttack = 1;
                 int randomDamage = 1;
+                int pogoFlurry = 0;
                 TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
 
                 Console.Clear();
@@ -19454,6 +21006,56 @@ namespace JessesDungeon
                 Thread.Sleep(5000);
                 while (battleLoop == true)
                 {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    if (ego.HotActive > 0)
+                    {
+                        if (ego.HotActive < 3)
+                        {
+                            if (ego.CurrentHitPoints < (ego.MaxHitPoints - 10))
+                            {
+                                ego.CurrentHitPoints = ego.CurrentHitPoints + 10;
+                                Console.WriteLine("You feel the soothing effects of your potion. You regain 10 HP!");
+                            }
+                            else
+                            {
+                                ego.CurrentHitPoints = ego.MaxHitPoints;
+                                Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                            }
+                        }
+                        else if (ego.HotActive < 5)
+                        {
+                            if (ego.CurrentHitPoints < (ego.MaxHitPoints - 15))
+                            {
+                                ego.CurrentHitPoints = ego.CurrentHitPoints + 15;
+                                Console.WriteLine("You feel the soothing effects of your potion. You regain 15 HP!");
+                            }
+                            else
+                            {
+                                ego.CurrentHitPoints = ego.MaxHitPoints;
+                                Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                            }
+                            if (ego.HotActive == 3) { ego.HotActive = 1; }
+                        }
+                        else if (ego.HotActive < 7)
+                        {
+                            if (ego.CurrentHitPoints < (ego.MaxHitPoints - 25))
+                            {
+                                ego.CurrentHitPoints = ego.CurrentHitPoints + 25;
+                                Console.WriteLine("You feel the soothing effects of your potion. You regain 25 HP!");
+                            }
+                            else
+                            {
+                                ego.CurrentHitPoints = ego.MaxHitPoints;
+                                Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                            }
+                            if (ego.HotActive == 5) { ego.HotActive = 1; }
+                        }
+                        ego.HotActive--;
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
                     Console.Clear();
                     if (fullDefense == true)
                     {
@@ -19590,7 +21192,21 @@ namespace JessesDungeon
                                         battleAction = "Complete";
                                         inventoryLoop = false;
                                         potionBelt.Remove(potion);
-                                        GetGoodGuyDrunk(ego, potion);
+                                        if (potion.Potency > 0) { GetGoodGuyDrunk(ego, potion); }
+                                        else if (potion.Name == "Light Vial of Corrosive" || potion.Name == "Vial of Corrosive" || potion.Name == "Greater Vial of Corrosive")
+                                        {
+                                            if (potion.Name == "Light Vial of Corrosive") { ego.DotActive = 2; }
+                                            else if (potion.Name == "Vial of Corrosive") { ego.DotActive = 4; }
+                                            else if (potion.Name == "Greater Vial of Corrosive") { ego.DotActive = 6; }
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine($"You throw the {potion.Name} at {badGuy.Name} and it bursts onto his skin!");
+                                            Console.WriteLine();
+                                            Console.Write("Press ENTER to continue");
+                                            Console.ReadLine();
+                                        }
+                                        else { GetBombed(badGuy, potion); }
                                         break;
                                     }
                                 }
@@ -19647,7 +21263,7 @@ namespace JessesDungeon
                                     if (equippingItem == bagCheck)
                                     {
                                         battleAction = "incomplete";
-                                        GetDressed(ego, armor);
+                                        GetDressed(ego, armor, equippableArmor);
                                         break;
                                     }
                                 }
@@ -19657,7 +21273,7 @@ namespace JessesDungeon
                                     if (equippingItem == bagCheck)
                                     {
                                         battleAction = "incomplete";
-                                        GetEquipped(ego, weapon);
+                                        GetEquipped(ego, weapon, equippableWeapon, equippableArmor, equippableShield);
                                         break;
                                     }
                                 }
@@ -19667,7 +21283,7 @@ namespace JessesDungeon
                                     if (equippingItem == bagCheck)
                                     {
                                         battleAction = "incomplete";
-                                        GetStrapped(ego, shield);
+                                        GetStrapped(ego, shield, equippableShield);
                                         break;
                                     }
                                 }
@@ -19819,16 +21435,17 @@ namespace JessesDungeon
                     if (battleAction == "attack" || battleAction == "fight" || battleAction == "kill")
                     {
                         battleAction = "Complete";
-                        attackRoll = die.Next(1, 21) + ego.ToHitMod;
+                        attackRoll = die.Next(1, 21);
                         Console.WriteLine();
                         Console.WriteLine();
-                        if (ego.EquippedWeapon.Name == "Pointy Stick" || ego.EquippedWeapon.Name == "Mildew-Encrusted Pocket Knife" || ego.EquippedWeapon.Name == "Knife" || ego.EquippedWeapon.Name == "Stick" || ego.EquippedWeapon.Name == "Hunting Knife") { Console.Write("You stab at " + badGuy.Name + ", "); }
-                        else if (ego.EquippedWeapon.Name == "Gun") { Console.Write("You shoot at " + badGuy.Name + ", "); }
-                        else if (ego.EquippedWeapon.Name == "Pogo Stick") { Console.Write("You jab at " + badGuy.Name + ", "); }
-                        else { Console.Write("You swing at " + badGuy.Name + ", "); }
+                        if (ego.EquippedWeapon.Class == "Piercing") { Console.Write("You stab at " + badGuy.Name + ", "); }
+                        else if (ego.EquippedWeapon.Class == "Ranged") { Console.Write("You shoot at " + badGuy.Name + ", "); }
+                        else if (ego.EquippedWeapon.Class == "Polearm") { Console.Write("You jab at " + badGuy.Name + ", "); }
+                        else if (ego.EquippedWeapon.Class == "SlashBash") { Console.Write("You swing at " + badGuy.Name + ", "); }
                         Thread.Sleep(1500);
-                        if (attackRoll >= badGuy.ArmorClass && attackRoll < 20)
+                        if (attackRoll >= (badGuy.ArmorClass - ego.ToHitMod) && attackRoll < 20)
                         {
+                            if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
                             if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                             rolledDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
                             Console.Write("and hit for " + rolledDamage + " damage!");
@@ -19840,6 +21457,7 @@ namespace JessesDungeon
                         }
                         if (attackRoll >= 20)
                         {
+                            if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
                             if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                             rolledDamage = (int)Math.Round((ego.CritMultiplier * (die.Next(1, (ego.DamageDie + 1)) + ego.Damage)) * badGuy.CritResist);
                             Console.Write("and critically hit for " + rolledDamage + " damage!");
@@ -19849,7 +21467,7 @@ namespace JessesDungeon
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                         }
-                        else if (attackRoll < badGuy.ArmorClass)
+                        else if (attackRoll < (badGuy.ArmorClass - ego.ToHitMod))
                         {
                             Console.Write("but miss!");
                             Console.WriteLine();
@@ -19859,12 +21477,12 @@ namespace JessesDungeon
                         }
                         while (ego.Flurry > 0)
                         {
-                            attackRoll = die.Next(1, 21) + ego.ToHitMod;
+                            attackRoll = die.Next(1, 21);
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.Write($"Your pogo stick executes a FLURRY of attacks on {badGuy.Name}, ");
                             Thread.Sleep(1500);
-                            if (attackRoll >= (badGuy.ArmorClass + ego.Flurry) && attackRoll < 20)
+                            if (attackRoll >= (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod) && attackRoll < 20)
                             {
                                 ego.Flurry = ego.Flurry + 5;
                                 rolledDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
@@ -19886,7 +21504,7 @@ namespace JessesDungeon
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                             }
-                            else if (attackRoll < (badGuy.ArmorClass + ego.Flurry))
+                            else if (attackRoll < (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod))
                             {
                                 ego.Flurry = 0;
                                 Console.Write("but misses!");
@@ -19899,6 +21517,7 @@ namespace JessesDungeon
                     }
                     if (battleAction == "tap out")
                     {
+                        ego.DotActive = 0;
                         battleAction = "incomplete";
                         battleLoop = false;
                         ego.JustFled = true;
@@ -19919,6 +21538,34 @@ namespace JessesDungeon
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
+
+                    if (ego.DotActive > 0 && battleAction != "incomplete")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        if (ego.DotActive < 3)
+                        {
+                            badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 5;
+                            Console.WriteLine("Your enemy reels in pain and takes 5 points of damage!");
+                        }
+                        else if (ego.DotActive < 5)
+                        {
+                            badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 10;
+                            Console.WriteLine("Your enemy reels in pain and takes 10 points of damage!");
+                            if (ego.DotActive == 3) { ego.DotActive = 1; }
+                        }
+                        else if (ego.DotActive < 7)
+                        {
+                            badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 20;
+                            Console.WriteLine("Your enemy reels in pain and takes 20 points of damage!");
+                            if (ego.DotActive == 5) { ego.DotActive = 1; }
+                        }
+                        ego.DotActive--;
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+
                     if (badGuy.Name == "Heisenberg")
                     {
                         if (battleAction == "Complete" && badGuy.CurrentHitPoints > 0)
@@ -19953,8 +21600,21 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.WriteLine("Heisenberg raises two fingers, and a red beam appears on your chest. He throws his fingers forward, and a gunshot is heard!");
                                     Thread.Sleep(4000);
-                                    Console.WriteLine();
-                                    Console.Write("The sniper fires at you, ");
+                                    if (ego.EquippedShield.Name == "The Mirror Shield")
+                                    {
+                                        randomAttack = -1;
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Unbeknownst to Heisenberg, the sniper's beam drifted onto your mirror shield and reflected onto him!");
+                                        Thread.Sleep(3000);
+                                        Console.WriteLine();
+                                        Console.Write("The sniper fires, ");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.Write("The sniper fires at you, ");
+                                    }
                                 }
                                 else if (randomAttack == 4)
                                 {
@@ -19985,35 +21645,72 @@ namespace JessesDungeon
                                 Thread.Sleep(1500);
                                 attackRoll = die.Next(1, 21);
 
-                                if (attackRoll >= ego.ArmorClass && attackRoll < 20)
+
+                                if (randomAttack == -1)
                                 {
-                                    rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage + randomDamage - ego.DamageReduction;
-                                    if (rolledDamage < 0) { rolledDamage = 0; }
-                                    Console.Write("and hits for " + rolledDamage + " damage!");
-                                    ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
+                                    if (attackRoll >= badGuy.ArmorClass && attackRoll < 20)
+                                    {
+                                        rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage + randomDamage;
+                                        if (rolledDamage < 0) { rolledDamage = 0; }
+                                        Console.Write("and hits for " + rolledDamage + " damage!");
+                                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    if (attackRoll == 20)
+                                    {
+                                        rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * badGuy.CritResist);
+                                        if (rolledDamage < 0) { rolledDamage = 0; }
+                                        Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else if (attackRoll < badGuy.ArmorClass)
+                                    {
+                                        Console.Write("but misses!");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
                                 }
-                                if (attackRoll == 20)
+                                else
                                 {
-                                    rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
-                                    if (rolledDamage < 0) { rolledDamage = 0; }
-                                    Console.Write("and critically hits for " + rolledDamage + " damage!");
-                                    ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
-                                }
-                                else if (attackRoll < ego.ArmorClass)
-                                {
-                                    Console.Write("but misses!");
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
+                                    if (attackRoll >= ego.ArmorClass && attackRoll < 20)
+                                    {
+                                        rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage + randomDamage - ego.DamageReduction;
+                                        if (rolledDamage < 0) { rolledDamage = 0; }
+                                        Console.Write("and hits for " + rolledDamage + " damage!");
+                                        ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    if (attackRoll == 20)
+                                    {
+                                        rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
+                                        if (rolledDamage < 0) { rolledDamage = 0; }
+                                        Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                        ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else if (attackRoll < ego.ArmorClass)
+                                    {
+                                        Console.Write("but misses!");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
                                 }
                             }
                             else if (enemyHPPercent <= 0.25 && enemyHPPercent > 0 && badGuy.PotionCount > 0)
@@ -20074,25 +21771,41 @@ namespace JessesDungeon
                                 Thread.Sleep(1500);
                                 if (attackRoll >= ego.ArmorClass && attackRoll < 20)
                                 {
+                                    if (badGuy.Weapon.Name == "Pogo Stick") { pogoFlurry = pogoFlurry + 5; }
                                     rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage - ego.DamageReduction;
                                     if (rolledDamage < 0) { rolledDamage = 0; }
                                     Console.Write("and hits for " + rolledDamage + " damage!");
                                     ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
+                                    if (pogoFlurry > 0)
+                                    {
+                                        Thread.Sleep(1000);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
                                 }
-                                if (attackRoll == 20)
+                                else if (attackRoll == 20)
                                 {
+                                    if (badGuy.Weapon.Name == "Pogo Stick") { pogoFlurry = pogoFlurry + 5; }
                                     rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
                                     if (rolledDamage < 0) { rolledDamage = 0; }
                                     Console.Write("and critically hits for " + rolledDamage + " damage!");
                                     ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
+                                    if (pogoFlurry > 0)
+                                    {
+                                        Thread.Sleep(1000);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
                                 }
                                 else if (attackRoll < ego.ArmorClass)
                                 {
@@ -20102,8 +21815,47 @@ namespace JessesDungeon
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
                                 }
+                                while (pogoFlurry > 0)
+                                {
+                                    attackRoll = die.Next(1, 21);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write($"The pogo stick executes a FLURRY of attacks, ");
+                                    Thread.Sleep(1500);
+                                    if (attackRoll >= (ego.ArmorClass + pogoFlurry) && attackRoll < 20)
+                                    {
+                                        pogoFlurry = pogoFlurry + 5;
+                                        rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage - ego.DamageReduction;
+                                        if (rolledDamage < 0) { rolledDamage = 0; }
+                                        Console.Write("and hits for " + rolledDamage + " damage!");
+                                        ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                        Thread.Sleep(1000);
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                    }
+                                    else if (attackRoll == 20)
+                                    {
+                                        pogoFlurry = pogoFlurry + 5;
+                                        rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
+                                        if (rolledDamage < 0) { rolledDamage = 0; }
+                                        Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                        ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                        Thread.Sleep(1000);
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                    }
+                                    else if (attackRoll < (ego.ArmorClass + pogoFlurry))
+                                    {
+                                        pogoFlurry = 0;
+                                        Console.Write("but misses!");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                }
                             }
-                            if (enemyHPPercent <= 0.25 && enemyHPPercent > 0 && badGuy.PotionCount > 0)
+                            else if (enemyHPPercent <= 0.25 && enemyHPPercent > 0 && badGuy.PotionCount > 0)
                             {
                                 badGuy.PotionCount--;
                                 GetBadGuyDrunk(badGuy, badGuy.PotionType);
@@ -20195,6 +21947,7 @@ namespace JessesDungeon
                     
                     if ((double)badGuy.CurrentHitPoints <= 0 && numberOfBaddies == 1)
                     {
+                        ego.DotActive = 0;
                         battleLoop = false;
                         if (fightingDefensively == true)
                         {
@@ -20210,6 +21963,7 @@ namespace JessesDungeon
                     }
                     if ((double)badGuy.CurrentHitPoints <= 0 && numberOfBaddies > 1)
                     {
+                        ego.DotActive = 0;
                         numberOfBaddies--;
                         badGuy.CurrentHitPoints = badGuy.MaxHitPoints;
                         Console.WriteLine();
@@ -20223,6 +21977,7 @@ namespace JessesDungeon
                     }
                     if ((double)ego.CurrentHitPoints <= 0)
                     {
+                        ego.DotActive = 0;
                         battleLoop = false;
                         if (fightingDefensively == true)
                         {
@@ -20254,22 +22009,21 @@ namespace JessesDungeon
                     return status;
                 }
 
-                static void GetGoodGuyDrunk(Stats imbiber, Potion potion)
+                static void GetGoodGuyDrunk(Stats ego, Potion potion)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    if (imbiber.CurrentHitPoints <= (imbiber.MaxHitPoints - potion.Potency))
+                    Console.Clear();
+                    if (potion.Name == "Light Soothing Potion") { ego.HotActive = 2; }
+                    else if (potion.Name == "Soothing Potion") { ego.HotActive = 4; }
+                    else if (potion.Name == "Greater Soothing Potion") { ego.HotActive = 6; }
+                    if (ego.CurrentHitPoints < (ego.MaxHitPoints - potion.Potency))
                     {
-                        imbiber.CurrentHitPoints = imbiber.CurrentHitPoints + potion.Potency;
-                        if (imbiber.Name == "Ego") { Console.WriteLine("You drink the " + potion.Name + ". You regain " + potion.Potency + " HP!"); }
-                        else { Console.WriteLine(imbiber.Name + " drinks a " + potion.Name + ", and suddenly looks healthier!"); }
-
+                        ego.CurrentHitPoints = ego.CurrentHitPoints + potion.Potency;
+                        Console.WriteLine("You drink the " + potion.Name + ". You regain " + potion.Potency + " HP!");
                     }
                     else
                     {
-                        imbiber.CurrentHitPoints = imbiber.MaxHitPoints;
-                        if (imbiber.Name == "Ego") { Console.WriteLine("You drink the " + potion.Name + ". Your HP are maxed out!"); }
-                        else { Console.WriteLine(imbiber.Name + " drinks a " + potion.Name + ", and suddenly looks healthier!"); }
+                        ego.CurrentHitPoints = ego.MaxHitPoints;
+                        Console.WriteLine("You drink the " + potion.Name + ". Your HP are maxed out!");
                     }
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
@@ -20296,6 +22050,17 @@ namespace JessesDungeon
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                 }
+                static void GetBombed(BadGuyStats badGuy, Potion potion)
+                {
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine($"You throw the {potion.Name} and cause " + (potion.Potency * -1) + " damage!");
+                    badGuy.CurrentHitPoints = badGuy.CurrentHitPoints + potion.Potency;
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                }
             }
         }
        
@@ -20308,15 +22073,16 @@ namespace JessesDungeon
             Random blueCrystalLoot = new Random();
             string encounterAction;
             bool encounterLoop = true;
-            Weapon Unarmed = new Weapon("Unarmed", 0, 1, 0, true, false, 0, "Fists of fury.");
+            Weapon Unarmed = new Weapon("Unarmed", 0, 1, 0, true, false, 0, "Fists of fury.", "SlashBash");
+            Weapon club = new Weapon("Club", 15, 2, 0, false, false, 500, "Known to be used by frequent party-goers.", "SlashBash");
             Armor Rags = new Armor("Rags", 0, 0.95, false, 0, "These are your clothes, but with a fancier name.");
-            Weapon noWeapon = new Weapon(null, 0, 0, 0, true, false, 0, "'Tis nothing but spun sugar and bootblack.");
+            Weapon noWeapon = new Weapon(null, 0, 0, 0, true, false, 0, "'Tis nothing but spun sugar and bootblack.", "SlashBash");
             Armor noArmor = new Armor(null, 0, 0, false, 0, "'Tis nothing but spun sugar and bootblack.");
-            Potion lightHealingPotion = new Potion("Light Healing Potion", 10, "This potion will recover 10 HP.");
-            Potion HealingPotion = new Potion("Healing Potion", 20, "This potion will recover 20 HP.");
+            Potion lightHealingPotion = new Potion("Light Healing Potion", 20, "This potion will recover 20 HP.");
+            Potion healingPotion = new Potion("Healing Potion", 30, "This potion will recover 30 HP.");
             Potion greaterHealingPotion = new Potion("Greater Healing Potion", 50, "This potion will recover 50 HP.");
-            Weapon pointyStick = new Weapon("Pointy Stick", 0, 4, 2, true, false, 10, "Brilliant use of \"force over surface area\" wouldn't you say?");
-            Weapon huntingKnife = new Weapon("Hunting Knife", 0, 4, 3, true, false, 50, "THAT'S a knife.");
+            Weapon pointyStick = new Weapon("Pointy Stick", 0, 4, 2, true, false, 10, "Brilliant use of \"force over surface area\" wouldn't you say?", "Piercing");
+            Weapon huntingKnife = new Weapon("Hunting Knife", 0, 4, 3, true, false, 50, "THAT'S a knife.", "Piercing");
             Armor leatherArmor = new Armor("Leather Armor", 1, 0.85, false, 70, "Provides a bit of protection, but still no match for a good stabbing.");
             var badGuy = new BadGuyStats(null, 0, 0, 0, 0, 0, 0, 0, 0, 0, lightHealingPotion, noWeapon, noArmor, null);
 
@@ -20324,11 +22090,40 @@ namespace JessesDungeon
             int rolledDamage = 1;
 
 
-            if (encounterRoll < 6) //creeper
+            if (!ego.TheCreeperInTheDarkDefeated && encounterRoll < 16)
             {
-                badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, blueCrystalLoot.Next(11), 0, lightHealingPotion, pointyStick, noArmor, "From the far corner of the room emerges a creeper in the dark. He begins closing in with a weapon pointed at you.");
+                if (encounterRoll < 16)
+                {
+                    badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, blueCrystalLoot.Next(11), 0, lightHealingPotion, pointyStick, noArmor, "From the far corner of the room emerges a creeper in the dark. He begins closing in with a weapon pointed at you.");
+                }
             }
-            if (encounterRoll > 5)
+            else if (ego.FredDefeated && encounterRoll < 8)
+            {
+                if (encounterRoll < 2)
+                {
+                    badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, blueCrystalLoot.Next(11), 0, lightHealingPotion, pointyStick, noArmor, "From the far corner of the room emerges a creeper in the dark. He begins closing in with a weapon pointed at you.");
+                }
+                else if (encounterRoll < 4)
+                {
+                    badGuy = badGuy.RewriteBadGuy("An Aggressive Peace Monger", 50, 50, 2, 0.85, 8, 4, 3.00, blueCrystalLoot.Next(10, 21), 1, lightHealingPotion, noWeapon, noArmor, "An Aggressive Peace Monger approaches with determination in his eyes. He forcefully encourages you to fall into line!");
+                }
+                else if (encounterRoll < 8)
+                {
+                    badGuy = badGuy.RewriteBadGuy("A Big Burly Brute", 80, 80, 2, 0.85, 10, 8, 2.00, blueCrystalLoot.Next(10, 21), 2, healingPotion, club, noArmor, "A Big, Burly Brute grunts as he charges at you with a club!");
+                }
+            }
+            else if (ego.SalamancaCousinDefeated && encounterRoll < 8)
+            {
+                if (encounterRoll < 4)
+                {
+                    badGuy = badGuy.RewriteBadGuy("The Creeper in the Dark", 20, 20, 0, 0.95, 6, 2, 2.00, blueCrystalLoot.Next(11), 0, lightHealingPotion, pointyStick, noArmor, "From the far corner of the room emerges a creeper in the dark. He begins closing in with a weapon pointed at you.");
+                }
+                else if (encounterRoll < 8)
+                {
+                    badGuy = badGuy.RewriteBadGuy("An Aggressive Peace Monger", 50, 50, 2, 0.85, 8, 4, 3.00, blueCrystalLoot.Next(10, 21), 1, lightHealingPotion, noWeapon, noArmor, "An Aggressive Peace Monger approaches with determination in his eyes. He forcefully encourages you to fall into line!");
+                }
+            }
+            else
             { 
                 return;
             }
@@ -20357,9 +22152,7 @@ namespace JessesDungeon
                         {
                             Console.WriteLine("You clench your fists and prepare for battle.");
                         }
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
+                    Thread.Sleep(2000);
                         Battle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
                         if (ego.JanesProtectionActive == true)
                         {
@@ -20374,8 +22167,6 @@ namespace JessesDungeon
                         {
                         ego.LastDefeated = badGuy.Name;
                         Console.Clear();
-                        Console.WriteLine();
-                        Console.WriteLine();
                         if (badGuy.BlueCrystals == 1)
                         {
                             Console.WriteLine("Searching the grotesque carcass, you find a single measly blue crystal; what a way to make a living!");
@@ -20389,35 +22180,41 @@ namespace JessesDungeon
                             Console.WriteLine("Searching the grotesque carcass, you find " + badGuy.BlueCrystals + " blue crystals. Must've been the big loser at last night's poker game.");
                         }
                         ego.BlueCrystals = ego.BlueCrystals + badGuy.BlueCrystals;
-                        Console.WriteLine();
                         Thread.Sleep(3000);
+                        Console.WriteLine();
                         if (badGuy.Weapon.Name == null && badGuy.Armor.Name != null)
                         {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
                             Console.WriteLine("And the enemy left a present!");
                             Console.WriteLine();
                             Console.WriteLine("The " + badGuy.Armor.Name + " looks useful. You take it.");
                             equippableArmor.Add(badGuy.Armor);
-                            Thread.Sleep(3000);
                         }
-                        if (badGuy.Weapon.Name != null && badGuy.Armor.Name == null)
+                        else if (badGuy.Weapon.Name != null && badGuy.Armor.Name == null)
                         {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
                             Console.WriteLine("And the enemy left a present!");
                             Console.WriteLine();
                             Console.WriteLine("The " + badGuy.Weapon.Name + " looks useful. You take it.");
                             equippableWeapon.Add(badGuy.Weapon);
-                            Thread.Sleep(3000);
                         }
-                        if (badGuy.Weapon.Name != null && badGuy.Armor.Name != null)
+                        else if (badGuy.Weapon.Name != null && badGuy.Armor.Name != null)
                         {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
                             Console.WriteLine("And the enemy left some presents!");
                             Console.WriteLine();
                             Console.WriteLine("The " + badGuy.Weapon.Name + " and " + badGuy.Armor.Name + " look useful. You take them.");
                             equippableWeapon.Add(badGuy.Weapon);
                             equippableArmor.Add(badGuy.Armor);
-                            Thread.Sleep(3000);
                         }
                         Console.WriteLine();
-                        Console.WriteLine("Press ENTER to continue");
+                        Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                         Console.Clear();
                         }
@@ -20540,6 +22337,56 @@ namespace JessesDungeon
 
                 while (battleLoop == true)
                 {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    if (ego.HotActive > 0)
+                    {
+                        if (ego.HotActive < 3)
+                        {
+                            if (ego.CurrentHitPoints < (ego.MaxHitPoints - 10))
+                            {
+                                ego.CurrentHitPoints = ego.CurrentHitPoints + 10;
+                                Console.WriteLine("You feel the soothing effects of your potion. You regain 10 HP!");
+                            }
+                            else
+                            {
+                                ego.CurrentHitPoints = ego.MaxHitPoints;
+                                Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                            }
+                        }
+                        else if (ego.HotActive < 5)
+                        {
+                            if (ego.CurrentHitPoints < (ego.MaxHitPoints - 15))
+                            {
+                                ego.CurrentHitPoints = ego.CurrentHitPoints + 15;
+                                Console.WriteLine("You feel the soothing effects of your potion. You regain 15 HP!");
+                            }
+                            else
+                            {
+                                ego.CurrentHitPoints = ego.MaxHitPoints;
+                                Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                            }
+                            if (ego.HotActive == 3) { ego.HotActive = 1; }
+                        }
+                        else if (ego.HotActive < 7)
+                        {
+                            if (ego.CurrentHitPoints < (ego.MaxHitPoints - 25))
+                            {
+                                ego.CurrentHitPoints = ego.CurrentHitPoints + 25;
+                                Console.WriteLine("You feel the soothing effects of your potion. You regain 25 HP!");
+                            }
+                            else
+                            {
+                                ego.CurrentHitPoints = ego.MaxHitPoints;
+                                Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                            }
+                            if (ego.HotActive == 5) { ego.HotActive = 1; }
+                        }
+                        ego.HotActive--;
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
                     Console.Clear();
                     if (fullDefense == true)
                     {
@@ -20676,7 +22523,21 @@ namespace JessesDungeon
                                         battleAction = "Complete";
                                         inventoryLoop = false;
                                         potionBelt.Remove(potion);
-                                        GetGoodGuyDrunk(ego, potion);
+                                        if (potion.Potency > 0) { GetGoodGuyDrunk(ego, potion); }
+                                        else if (potion.Name == "Light Vial of Corrosive" || potion.Name == "Vial of Corrosive" || potion.Name == "Greater Vial of Corrosive")
+                                        {
+                                            if (potion.Name == "Light Vial of Corrosive") { ego.DotActive = 2; }
+                                            else if (potion.Name == "Vial of Corrosive") { ego.DotActive = 4; }
+                                            else if (potion.Name == "Greater Vial of Corrosive") { ego.DotActive = 6; }
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine($"You throw the {potion.Name} at {badGuy.Name} and it bursts onto his skin!");
+                                            Console.WriteLine();
+                                            Console.Write("Press ENTER to continue");
+                                            Console.ReadLine();
+                                        }
+                                        else { GetBombed(badGuy, potion); }
                                         break;
                                     }
                                 }
@@ -20733,7 +22594,7 @@ namespace JessesDungeon
                                     if (equippingItem == bagCheck)
                                     {
                                         battleAction = "incomplete";
-                                        GetDressed(ego, armor);
+                                        GetDressed(ego, armor, equippableArmor);
                                         break;
                                     }
                                 }
@@ -20743,7 +22604,7 @@ namespace JessesDungeon
                                     if (equippingItem == bagCheck)
                                     {
                                         battleAction = "incomplete";
-                                        GetEquipped(ego, weapon);
+                                        GetEquipped(ego, weapon, equippableWeapon, equippableArmor, equippableShield);
                                         break;
                                     }
                                 }
@@ -20753,7 +22614,7 @@ namespace JessesDungeon
                                     if (equippingItem == bagCheck)
                                     {
                                         battleAction = "incomplete";
-                                        GetStrapped(ego, shield);
+                                        GetStrapped(ego, shield, equippableShield);
                                         break;
                                     }
                                 }
@@ -20908,13 +22769,14 @@ namespace JessesDungeon
                         attackRoll = d20.Next(1, 21);
                         Console.WriteLine();
                         Console.WriteLine();
-                        if (ego.EquippedWeapon.Name == "Pointy Stick" || ego.EquippedWeapon.Name == "Mildew-Encrusted Pocket Knife" || ego.EquippedWeapon.Name == "Knife" || ego.EquippedWeapon.Name == "Stick" || ego.EquippedWeapon.Name == "Hunting Knife") { Console.Write("You stab at " + badGuy.Name + ", "); }
-                        else if (ego.EquippedWeapon.Name == "Gun") { Console.Write("You shoot at " + badGuy.Name + ", "); }
-                        else if (ego.EquippedWeapon.Name == "Pogo Stick") { Console.Write("You jab at " + badGuy.Name + ", "); }
-                        else { Console.Write("You swing at " + badGuy.Name + ", "); }
+                        if (ego.EquippedWeapon.Class == "Piercing") { Console.Write("You stab at " + badGuy.Name + ", "); }
+                        else if (ego.EquippedWeapon.Class == "Ranged") { Console.Write("You shoot at " + badGuy.Name + ", "); }
+                        else if (ego.EquippedWeapon.Class == "Polearm") { Console.Write("You jab at " + badGuy.Name + ", "); }
+                        else if (ego.EquippedWeapon.Class == "SlashBash") { Console.Write("You swing at " + badGuy.Name + ", "); }
                         Thread.Sleep(1500);
-                        if (attackRoll >= badGuy.ArmorClass && attackRoll < 20)
+                        if (attackRoll >= (badGuy.ArmorClass - ego.ToHitMod) && attackRoll < 20)
                         {
+                            if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
                             if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                             rolledDamage = d6.Next(1, (ego.DamageDie + 1)) + ego.Damage;
                             Console.Write("and hit for " + rolledDamage + " damage!");
@@ -20926,6 +22788,7 @@ namespace JessesDungeon
                         }
                         if (attackRoll >= 20)
                         {
+                            if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
                             if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                             rolledDamage = (int)Math.Round((ego.CritMultiplier * (d6.Next(1, (ego.DamageDie + 1)) + ego.Damage)) * badGuy.CritResist);
                             Console.Write("and critically hit for " + rolledDamage + " damage!");                           
@@ -20935,7 +22798,7 @@ namespace JessesDungeon
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                         }
-                        else if (attackRoll < badGuy.ArmorClass)
+                        else if (attackRoll < (badGuy.ArmorClass - ego.ToHitMod))
                         {
                             Console.Write("but miss!");
                             Console.WriteLine();
@@ -20945,12 +22808,12 @@ namespace JessesDungeon
                         }
                         while (ego.Flurry > 0)
                         {
-                            attackRoll = die.Next(1, 21) + ego.ToHitMod;
+                            attackRoll = die.Next(1, 21);
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.Write($"Your pogo stick executes a FLURRY of attacks on {badGuy.Name}, ");
                             Thread.Sleep(1500);
-                            if (attackRoll >= (badGuy.ArmorClass + ego.Flurry) && attackRoll < 20)
+                            if (attackRoll >= (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod) && attackRoll < 20)
                             {
                                 ego.Flurry = ego.Flurry + 5;
                                 rolledDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
@@ -20972,7 +22835,7 @@ namespace JessesDungeon
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                             }
-                            else if (attackRoll < (badGuy.ArmorClass + ego.Flurry))
+                            else if (attackRoll < (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod))
                             {
                                 ego.Flurry = 0;
                                 Console.Write("but misses!");
@@ -20985,6 +22848,7 @@ namespace JessesDungeon
                     }
                     if (battleAction == "flee")
                     {
+                        ego.DotActive = 0;
                         battleAction = "incomplete";
                         battleLoop = false;
                         ego.JustFled = true;
@@ -21125,8 +22989,36 @@ namespace JessesDungeon
                         }
                     }
 
+                    if (ego.DotActive > 0 && battleAction != "incomplete")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        if (ego.DotActive < 3)
+                        {
+                            badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 5;
+                            Console.WriteLine("Your enemy reels in pain and takes 5 points of damage!");
+                        }
+                        else if (ego.DotActive < 5)
+                        {
+                            badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 10;
+                            Console.WriteLine("Your enemy reels in pain and takes 10 points of damage!");
+                            if (ego.DotActive == 3) { ego.DotActive = 1; }
+                        }
+                        else if (ego.DotActive < 7)
+                        {
+                            badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 20;
+                            Console.WriteLine("Your enemy reels in pain and takes 20 points of damage!");
+                            if (ego.DotActive == 5) { ego.DotActive = 1; }
+                        }
+                        ego.DotActive--;
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+
                     if ((double)badGuy.CurrentHitPoints <= 0)
                     {
+                        ego.DotActive = 0;
                         battleLoop = false;
                         if (fightingDefensively == true)
                         {
@@ -21142,6 +23034,7 @@ namespace JessesDungeon
                     }
                     if ((double)ego.CurrentHitPoints <= 0)
                     {
+                        ego.DotActive = 0;
                         battleLoop = false;
                         if (fightingDefensively == true)
                         {
@@ -21172,22 +23065,21 @@ namespace JessesDungeon
                     return status;
                 }
 
-                static void GetGoodGuyDrunk(Stats imbiber, Potion potion)
+                static void GetGoodGuyDrunk(Stats ego, Potion potion)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    if (imbiber.CurrentHitPoints <= (imbiber.MaxHitPoints - potion.Potency))
+                    Console.Clear();
+                    if (potion.Name == "Light Soothing Potion") { ego.HotActive = 2; }
+                    else if (potion.Name == "Soothing Potion") { ego.HotActive = 4; }
+                    else if (potion.Name == "Greater Soothing Potion") { ego.HotActive = 6; }
+                    if (ego.CurrentHitPoints < (ego.MaxHitPoints - potion.Potency))
                     {
-                        imbiber.CurrentHitPoints = imbiber.CurrentHitPoints + potion.Potency;
-                        if (imbiber.Name == "Ego") { Console.WriteLine("You drink the " + potion.Name + ". You regain " + potion.Potency + " HP!"); }
-                        else { Console.WriteLine(imbiber.Name + " drinks a " + potion.Name + ", and suddenly looks healthier!"); }
-
+                        ego.CurrentHitPoints = ego.CurrentHitPoints + potion.Potency;
+                        Console.WriteLine("You drink the " + potion.Name + ". You regain " + potion.Potency + " HP!");
                     }
                     else
                     {
-                        imbiber.CurrentHitPoints = imbiber.MaxHitPoints;
-                        if (imbiber.Name == "Ego") { Console.WriteLine("You drink the " + potion.Name + ". Your HP are maxed out!"); }
-                        else { Console.WriteLine(imbiber.Name + " drinks a " + potion.Name + ", and suddenly looks healthier!"); }                       
+                        ego.CurrentHitPoints = ego.MaxHitPoints;
+                        Console.WriteLine("You drink the " + potion.Name + ". Your HP are maxed out!");
                     }
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
@@ -21214,6 +23106,17 @@ namespace JessesDungeon
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                 }
+                static void GetBombed(BadGuyStats badGuy, Potion potion)
+                {
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine($"You throw the {potion.Name} and cause " + (potion.Potency * -1) + " damage!");
+                    badGuy.CurrentHitPoints = badGuy.CurrentHitPoints + potion.Potency;
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                }
             }
         }
 
@@ -21228,6 +23131,7 @@ namespace JessesDungeon
             int attackRoll = 1;
             int rolledDamage = 0;
             double enemyHPPercent = 1.00;
+            int pogoFlurry = 0;
             TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
 
             Console.Clear();
@@ -21236,6 +23140,56 @@ namespace JessesDungeon
 
             while (battleLoop == true)
             {
+                Console.WriteLine();
+                Console.WriteLine();
+                if (ego.HotActive > 0)
+                {
+                    if (ego.HotActive < 3)
+                    {
+                        if (ego.CurrentHitPoints < (ego.MaxHitPoints - 10))
+                        {
+                            ego.CurrentHitPoints = ego.CurrentHitPoints + 10;
+                            Console.WriteLine("You feel the soothing effects of your potion. You regain 10 HP!");
+                        }
+                        else
+                        {
+                            ego.CurrentHitPoints = ego.MaxHitPoints;
+                            Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                        }
+                    }
+                    else if (ego.HotActive < 5)
+                    {
+                        if (ego.CurrentHitPoints < (ego.MaxHitPoints - 15))
+                        {
+                            ego.CurrentHitPoints = ego.CurrentHitPoints + 15;
+                            Console.WriteLine("You feel the soothing effects of your potion. You regain 15 HP!");
+                        }
+                        else
+                        {
+                            ego.CurrentHitPoints = ego.MaxHitPoints;
+                            Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                        }
+                        if (ego.HotActive == 3) { ego.HotActive = 1; }
+                    }
+                    else if (ego.HotActive < 7)
+                    {
+                        if (ego.CurrentHitPoints < (ego.MaxHitPoints - 25))
+                        {
+                            ego.CurrentHitPoints = ego.CurrentHitPoints + 25;
+                            Console.WriteLine("You feel the soothing effects of your potion. You regain 25 HP!");
+                        }
+                        else
+                        {
+                            ego.CurrentHitPoints = ego.MaxHitPoints;
+                            Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                        }
+                        if (ego.HotActive == 5) { ego.HotActive = 1; }
+                    }
+                    ego.HotActive--;
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                }
                 Console.Clear();
                 if (fullDefense == true)
                 {
@@ -21372,7 +23326,21 @@ namespace JessesDungeon
                                     battleAction = "Complete";
                                     inventoryLoop = false;
                                     potionBelt.Remove(potion);
-                                    GetGoodGuyDrunk(ego, potion);
+                                    if (potion.Potency > 0) { GetGoodGuyDrunk(ego, potion); }
+                                    else if (potion.Name == "Light Vial of Corrosive" || potion.Name == "Vial of Corrosive" || potion.Name == "Greater Vial of Corrosive")
+                                    {
+                                        if (potion.Name == "Light Vial of Corrosive") { ego.DotActive = 2; }
+                                        else if (potion.Name == "Vial of Corrosive") { ego.DotActive = 4; }
+                                        else if (potion.Name == "Greater Vial of Corrosive") { ego.DotActive = 6; }
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine($"You throw the {potion.Name} at {badGuy.Name} and it bursts onto his skin!");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else { GetBombed(badGuy, potion); }
                                     break;
                                 }
                             }
@@ -21429,7 +23397,7 @@ namespace JessesDungeon
                                 if (equippingItem == bagCheck)
                                 {
                                     battleAction = "incomplete";
-                                    GetDressed(ego, armor);
+                                    GetDressed(ego, armor, equippableArmor);
                                     break;
                                 }
                             }
@@ -21439,7 +23407,7 @@ namespace JessesDungeon
                                 if (equippingItem == bagCheck)
                                 {
                                     battleAction = "incomplete";
-                                    GetEquipped(ego, weapon);
+                                    GetEquipped(ego, weapon, equippableWeapon, equippableArmor, equippableShield);
                                     break;
                                 }
                             }
@@ -21449,7 +23417,7 @@ namespace JessesDungeon
                                 if (equippingItem == bagCheck)
                                 {
                                     battleAction = "incomplete";
-                                    GetStrapped(ego, shield);
+                                    GetStrapped(ego, shield, equippableShield);
                                     break;
                                 }
                             }
@@ -21601,16 +23569,17 @@ namespace JessesDungeon
                 if (battleAction == "attack" || battleAction == "fight" || battleAction == "kill")
                 {
                     battleAction = "Complete";
-                    attackRoll = die.Next(1, 21) + ego.ToHitMod;
+                    attackRoll = die.Next(1, 21);
                     Console.WriteLine();
                     Console.WriteLine();
-                    if (ego.EquippedWeapon.Name == "Pointy Stick" || ego.EquippedWeapon.Name == "Mildew-Encrusted Pocket Knife" || ego.EquippedWeapon.Name == "Knife" || ego.EquippedWeapon.Name == "Stick" || ego.EquippedWeapon.Name == "Hunting Knife") { Console.Write("You stab at " + badGuy.Name + ", "); }
-                    else if (ego.EquippedWeapon.Name == "Gun") { Console.Write("You shoot at " + badGuy.Name + ", "); }
-                    else if (ego.EquippedWeapon.Name == "Pogo Stick") { Console.Write("You jab at " + badGuy.Name + ", "); }
-                    else { Console.Write("You swing at " + badGuy.Name + ", "); }
+                    if (ego.EquippedWeapon.Class == "Piercing") { Console.Write("You stab at " + badGuy.Name + ", "); }
+                    else if (ego.EquippedWeapon.Class == "Ranged") { Console.Write("You shoot at " + badGuy.Name + ", "); }
+                    else if (ego.EquippedWeapon.Class == "Polearm") { Console.Write("You jab at " + badGuy.Name + ", "); }
+                    else if (ego.EquippedWeapon.Class == "SlashBash") { Console.Write("You swing at " + badGuy.Name + ", "); }
                     Thread.Sleep(1500);
-                    if (attackRoll >= badGuy.ArmorClass && attackRoll < 20)
+                    if (attackRoll >= (badGuy.ArmorClass - ego.ToHitMod) && attackRoll < 20)
                     {
+                        if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
                         if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                         rolledDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
                         Console.Write("and hit for " + rolledDamage + " damage!");
@@ -21620,8 +23589,9 @@ namespace JessesDungeon
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
-                    if (attackRoll >= 20)
+                    else if (attackRoll >= 20)
                     {
+                        if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
                         if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                         rolledDamage = (int)Math.Round((ego.CritMultiplier * (die.Next(1, (ego.DamageDie + 1)) + ego.Damage)) * badGuy.CritResist);
                         Console.Write("and critically hit for " + rolledDamage + " damage!");
@@ -21631,7 +23601,7 @@ namespace JessesDungeon
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
-                    else if (attackRoll < badGuy.ArmorClass)
+                    else if (attackRoll < (badGuy.ArmorClass - ego.ToHitMod))
                     {
                         Console.Write("but miss!");
                         Console.WriteLine();
@@ -21641,12 +23611,12 @@ namespace JessesDungeon
                     }
                     while (ego.Flurry > 0)
                     {
-                        attackRoll = die.Next(1, 21) + ego.ToHitMod;
+                        attackRoll = die.Next(1, 21);
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.Write($"Your pogo stick executes a FLURRY of attacks on {badGuy.Name}, ");
                         Thread.Sleep(1500);
-                        if (attackRoll >= (badGuy.ArmorClass + ego.Flurry) && attackRoll < 20)
+                        if (attackRoll >= (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod) && attackRoll < 20)
                         {
                             ego.Flurry = ego.Flurry + 5;
                             rolledDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
@@ -21668,7 +23638,7 @@ namespace JessesDungeon
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                         }
-                        else if (attackRoll < (badGuy.ArmorClass + ego.Flurry))
+                        else if (attackRoll < (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod))
                         {
                             ego.Flurry = 0;
                             Console.Write("but misses!");
@@ -21682,6 +23652,7 @@ namespace JessesDungeon
                 if (battleAction == "flee")
                 {
                     battleAction = "incomplete";
+                    ego.DotActive = 0;
                     battleLoop = false;
                     ego.JustFled = true;
                     ego.Location = ego.FleeLocation;
@@ -21747,25 +23718,41 @@ namespace JessesDungeon
                         Thread.Sleep(1500);
                         if (attackRoll >= ego.ArmorClass && attackRoll < 20)
                         {
+                            if (badGuy.Weapon.Name == "Pogo Stick") { pogoFlurry = pogoFlurry + 5; }
                             rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage - ego.DamageReduction;
                             if (rolledDamage < 0) { rolledDamage = 0; }
                             Console.Write("and hits for " + rolledDamage + " damage!");
                             ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            if (pogoFlurry > 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+                            else
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
                         }
-                        if (attackRoll == 20)
+                        else if (attackRoll == 20)
                         {
+                            if (badGuy.Weapon.Name == "Pogo Stick") { pogoFlurry = pogoFlurry + 5; }
                             rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
                             if (rolledDamage < 0) { rolledDamage = 0; }
                             Console.Write("and critically hits for " + rolledDamage + " damage!");
                             ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            if (pogoFlurry > 0)
+                            {
+                                Thread.Sleep(1000);
+                            }
+                            else
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
                         }
                         else if (attackRoll < ego.ArmorClass)
                         {
@@ -21774,6 +23761,45 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                        }
+                        while (pogoFlurry > 0)
+                        {
+                            attackRoll = die.Next(1, 21);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write($"The pogo stick executes a FLURRY of attacks, ");
+                            Thread.Sleep(1500);
+                            if (attackRoll >= (ego.ArmorClass + pogoFlurry) && attackRoll < 20)
+                            {
+                                pogoFlurry = pogoFlurry + 5;
+                                rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage - ego.DamageReduction;
+                                if (rolledDamage < 0) { rolledDamage = 0; }
+                                Console.Write("and hits for " + rolledDamage + " damage!");
+                                ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                Thread.Sleep(1000);
+                                Console.WriteLine();
+                                Console.WriteLine();
+                            }
+                            else if (attackRoll == 20)
+                            {
+                                pogoFlurry = pogoFlurry + 5;
+                                rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
+                                if (rolledDamage < 0) { rolledDamage = 0; }
+                                Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                Thread.Sleep(1000);
+                                Console.WriteLine();
+                                Console.WriteLine();
+                            }
+                            else if (attackRoll < (ego.ArmorClass + pogoFlurry))
+                            {
+                                pogoFlurry = 0;
+                                Console.Write("but misses!");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
                         }
                     }
                     else if (enemyHPPercent <= 0.25 && enemyHPPercent > 0 && badGuy.PotionCount > 0)
@@ -21861,8 +23887,36 @@ namespace JessesDungeon
                     }
                 }
 
+                if (ego.DotActive > 0 && battleAction != "incomplete")
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    if (ego.DotActive < 3)
+                    {
+                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 5;
+                        Console.WriteLine("Your enemy reels in pain and takes 5 points of damage!");
+                    }
+                    else if (ego.DotActive < 5)
+                    {
+                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 10;
+                        Console.WriteLine("Your enemy reels in pain and takes 10 points of damage!");
+                        if (ego.DotActive == 3) { ego.DotActive = 1; }
+                    }
+                    else if (ego.DotActive < 7)
+                    {
+                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 20;
+                        Console.WriteLine("Your enemy reels in pain and takes 20 points of damage!");
+                        if (ego.DotActive == 5) { ego.DotActive = 1; }
+                    }
+                    ego.DotActive--;
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                }
+
                 if ((double)badGuy.CurrentHitPoints <= 0)
                 {
+                    ego.DotActive = 0;
                     battleLoop = false;
                     if (fightingDefensively == true)
                     {
@@ -21878,6 +23932,7 @@ namespace JessesDungeon
                 }
                 if ((double)ego.CurrentHitPoints <= 0)
                 {
+                    ego.DotActive = 0;
                     battleLoop = false;
                     if (fightingDefensively == true)
                     {
@@ -21908,22 +23963,21 @@ namespace JessesDungeon
                 return status;
             }
 
-            static void GetGoodGuyDrunk(Stats imbiber, Potion potion)
+            static void GetGoodGuyDrunk(Stats ego, Potion potion)
             {
-                Console.WriteLine();
-                Console.WriteLine();
-                if (imbiber.CurrentHitPoints <= (imbiber.MaxHitPoints - potion.Potency))
+                Console.Clear();
+                if (potion.Name == "Light Soothing Potion") { ego.HotActive = 2; }
+                else if (potion.Name == "Soothing Potion") { ego.HotActive = 4; }
+                else if (potion.Name == "Greater Soothing Potion") { ego.HotActive = 6; }
+                if (ego.CurrentHitPoints < (ego.MaxHitPoints - potion.Potency))
                 {
-                    imbiber.CurrentHitPoints = imbiber.CurrentHitPoints + potion.Potency;
-                    if (imbiber.Name == "Ego") { Console.WriteLine("You drink the " + potion.Name + ". You regain " + potion.Potency + " HP!"); }
-                    else { Console.WriteLine(imbiber.Name + " drinks a " + potion.Name + ", and suddenly looks healthier!"); }
-
+                    ego.CurrentHitPoints = ego.CurrentHitPoints + potion.Potency;
+                    Console.WriteLine("You drink the " + potion.Name + ". You regain " + potion.Potency + " HP!");
                 }
                 else
                 {
-                    imbiber.CurrentHitPoints = imbiber.MaxHitPoints;
-                    if (imbiber.Name == "Ego") { Console.WriteLine("You drink the " + potion.Name + ". Your HP are maxed out!"); }
-                    else { Console.WriteLine(imbiber.Name + " drinks a " + potion.Name + ", and suddenly looks healthier!"); }
+                    ego.CurrentHitPoints = ego.MaxHitPoints;
+                    Console.WriteLine("You drink the " + potion.Name + ". Your HP are maxed out!");
                 }
                 Console.WriteLine();
                 Console.Write("Press ENTER to continue");
@@ -21950,6 +24004,17 @@ namespace JessesDungeon
                 Console.Write("Press ENTER to continue");
                 Console.ReadLine();
             }
+            static void GetBombed(BadGuyStats badGuy, Potion potion)
+            {
+                Console.WriteLine("____________________________________________________");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine($"You throw the {potion.Name} and cause " + (potion.Potency * -1) + " damage!");
+                badGuy.CurrentHitPoints = badGuy.CurrentHitPoints + potion.Potency;
+                Console.WriteLine();
+                Console.Write("Press ENTER to continue");
+                Console.ReadLine();
+            }
         }
 
         static void HeisenBattle(Stats ego, BadGuyStats badGuy, List<Potion> potionBelt, List<Armor> equippableArmor, List<Weapon> equippableWeapon, List<Shield> equippableShield)
@@ -21970,6 +24035,56 @@ namespace JessesDungeon
 
             while (battleLoop == true)
             {
+                if (ego.HotActive > 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    if (ego.HotActive < 3)
+                    {
+                        if (ego.CurrentHitPoints < (ego.MaxHitPoints - 10))
+                        {
+                            ego.CurrentHitPoints = ego.CurrentHitPoints + 10;
+                            Console.WriteLine("You feel the soothing effects of your potion. You regain 10 HP!");
+                        }
+                        else
+                        {
+                            ego.CurrentHitPoints = ego.MaxHitPoints;
+                            Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                        }
+                    }
+                    else if (ego.HotActive < 5)
+                    {
+                        if (ego.CurrentHitPoints < (ego.MaxHitPoints - 15))
+                        {
+                            ego.CurrentHitPoints = ego.CurrentHitPoints + 15;
+                            Console.WriteLine("You feel the soothing effects of your potion. You regain 15 HP!");
+                        }
+                        else
+                        {
+                            ego.CurrentHitPoints = ego.MaxHitPoints;
+                            Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                        }
+                        if (ego.HotActive == 3) { ego.HotActive = 1; }
+                    }
+                    else if (ego.HotActive < 7)
+                    {
+                        if (ego.CurrentHitPoints < (ego.MaxHitPoints - 25))
+                        {
+                            ego.CurrentHitPoints = ego.CurrentHitPoints + 25;
+                            Console.WriteLine("You feel the soothing effects of your potion. You regain 25 HP!");
+                        }
+                        else
+                        {
+                            ego.CurrentHitPoints = ego.MaxHitPoints;
+                            Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                        }
+                        if (ego.HotActive == 5) { ego.HotActive = 1; }
+                    }
+                    ego.HotActive--;
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                }
                 Console.Clear();
                 if (fullDefense == true)
                 {
@@ -22106,7 +24221,21 @@ namespace JessesDungeon
                                     battleAction = "Complete";
                                     inventoryLoop = false;
                                     potionBelt.Remove(potion);
-                                    GetGoodGuyDrunk(ego, potion);
+                                    if (potion.Potency > 0) { GetGoodGuyDrunk(ego, potion); }
+                                    else if (potion.Name == "Light Vial of Corrosive" || potion.Name == "Vial of Corrosive" || potion.Name == "Greater Vial of Corrosive")
+                                    {
+                                        if (potion.Name == "Light Vial of Corrosive") { ego.DotActive = 2; }
+                                        else if (potion.Name == "Vial of Corrosive") { ego.DotActive = 4; }
+                                        else if (potion.Name == "Greater Vial of Corrosive") { ego.DotActive = 6; }
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine($"You throw the {potion.Name} at {badGuy.Name} and it bursts onto his skin!");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else { GetBombed(badGuy, potion); }
                                     break;
                                 }
                             }
@@ -22163,7 +24292,7 @@ namespace JessesDungeon
                                 if (equippingItem == bagCheck)
                                 {
                                     battleAction = "incomplete";
-                                    GetDressed(ego, armor);
+                                    GetDressed(ego, armor, equippableArmor);
                                     break;
                                 }
                             }
@@ -22173,7 +24302,7 @@ namespace JessesDungeon
                                 if (equippingItem == bagCheck)
                                 {
                                     battleAction = "incomplete";
-                                    GetEquipped(ego, weapon);
+                                    GetEquipped(ego, weapon, equippableWeapon, equippableArmor, equippableShield);
                                     break;
                                 }
                             }
@@ -22183,7 +24312,7 @@ namespace JessesDungeon
                                 if (equippingItem == bagCheck)
                                 {
                                     battleAction = "incomplete";
-                                    GetStrapped(ego, shield);
+                                    GetStrapped(ego, shield, equippableShield);
                                     break;
                                 }
                             }
@@ -22332,19 +24461,20 @@ namespace JessesDungeon
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                 }
-                if (battleAction == "attack")
+                if (battleAction == "attack"|| battleAction == "fight" || battleAction == "kill")
                 {
                     battleAction = "Complete";
-                    attackRoll = die.Next(1, 21) + ego.ToHitMod;
+                    attackRoll = die.Next(1, 21);
                     Console.WriteLine();
                     Console.WriteLine();
-                    if (ego.EquippedWeapon.Name == "Pointy Stick" || ego.EquippedWeapon.Name == "Mildew-Encrusted Pocket Knife" || ego.EquippedWeapon.Name == "Knife" || ego.EquippedWeapon.Name == "Stick" || ego.EquippedWeapon.Name == "Hunting Knife") { Console.Write("You stab at " + badGuy.Name + ", "); }
-                    else if (ego.EquippedWeapon.Name == "Gun") { Console.Write("You shoot at " + badGuy.Name + ", "); }
-                    else if (ego.EquippedWeapon.Name == "Pogo Stick") { Console.Write("You jab at " + badGuy.Name + ", "); }
-                    else { Console.Write("You swing at " + badGuy.Name + ", "); }
+                    if (ego.EquippedWeapon.Class == "Piercing") { Console.Write("You stab at " + badGuy.Name + ", "); }
+                    else if (ego.EquippedWeapon.Class == "Ranged") { Console.Write("You shoot at " + badGuy.Name + ", "); }
+                    else if (ego.EquippedWeapon.Class == "Polearm") { Console.Write("You jab at " + badGuy.Name + ", "); }
+                    else if (ego.EquippedWeapon.Class == "SlashBash") { Console.Write("You swing at " + badGuy.Name + ", "); }
                     Thread.Sleep(1500);
-                    if (attackRoll >= badGuy.ArmorClass && attackRoll < 20)
+                    if (attackRoll >= (badGuy.ArmorClass - ego.ToHitMod) && attackRoll < 20)
                     {
+                        if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
                         if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                         rolledDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
                         Console.Write("and hit for " + rolledDamage + " damage!");
@@ -22356,6 +24486,7 @@ namespace JessesDungeon
                     }
                     if (attackRoll == 20)
                     {
+                        if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
                         if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                         rolledDamage = (int)Math.Round((ego.CritMultiplier * (die.Next(1, (ego.DamageDie + 1)) + ego.Damage)) * badGuy.CritResist);
                         Console.Write("and critically hit for " + rolledDamage + " damage!");
@@ -22365,7 +24496,7 @@ namespace JessesDungeon
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
-                    else if (attackRoll < badGuy.ArmorClass)
+                    else if (attackRoll < (badGuy.ArmorClass - ego.ToHitMod))
                     {
                         Console.Write("but miss!");
                         Console.WriteLine();
@@ -22375,12 +24506,12 @@ namespace JessesDungeon
                     }
                     while (ego.Flurry > 0)
                     {
-                        attackRoll = die.Next(1, 21) + ego.ToHitMod;
+                        attackRoll = die.Next(1, 21);
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.Write($"Your pogo stick executes a FLURRY of attacks on {badGuy.Name}, ");
                         Thread.Sleep(1500);
-                        if (attackRoll >= (badGuy.ArmorClass + ego.Flurry) && attackRoll < 20)
+                        if (attackRoll >= (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod) && attackRoll < 20)
                         {
                             ego.Flurry = ego.Flurry + 5;
                             rolledDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
@@ -22402,7 +24533,7 @@ namespace JessesDungeon
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                         }
-                        else if (attackRoll < (badGuy.ArmorClass + ego.Flurry))
+                        else if (attackRoll < (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod))
                         {
                             ego.Flurry = 0;
                             Console.Write("but misses!");
@@ -22416,6 +24547,7 @@ namespace JessesDungeon
                 if (battleAction == "flee")
                 {
                     battleAction = "incomplete";
+                    ego.DotActive = 0;
                     battleLoop = false;
                     ego.JustFled = true;
                     ego.Location = ego.FleeLocation;
@@ -22501,8 +24633,21 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.WriteLine("Heisenberg raises two fingers, and a red beam appears on your chest. He throws his fingers forward, and a gunshot is heard!");
                             Thread.Sleep(4000);
-                            Console.WriteLine();
-                            Console.Write("The sniper fires at you, ");
+                            if (ego.EquippedShield.Name == "The Mirror Shield")
+                            {
+                                randomAttack = -1;
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Unbeknownst to Heisenberg, the sniper's beam drifted onto your mirror shield, and reflected onto him!");
+                                Thread.Sleep(3000);
+                                Console.WriteLine();
+                                Console.Write("The sniper fires, ");
+                            }
+                            else
+                            {
+                                Console.WriteLine();
+                                Console.Write("The sniper fires at you, ");
+                            }
                         }
                         else if (randomAttack == 4)
                         {
@@ -22533,36 +24678,74 @@ namespace JessesDungeon
                         Thread.Sleep(1500);
                         attackRoll = die.Next(1, 21);
                         
-                        if (attackRoll >= ego.ArmorClass && attackRoll < 20)
+                        if (randomAttack == -1)
                         {
-                            rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage + randomDamage - ego.DamageReduction;
-                            if (rolledDamage < 0) { rolledDamage = 0; }
-                            Console.Write("and hits for " + rolledDamage + " damage!");
-                            ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            if (attackRoll >= badGuy.ArmorClass && attackRoll < 20)
+                            {
+                                rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage + randomDamage;
+                                if (rolledDamage < 0) { rolledDamage = 0; }
+                                Console.Write("and hits for " + rolledDamage + " damage!");
+                                badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            if (attackRoll == 20)
+                            {
+                                rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * badGuy.CritResist);
+                                if (rolledDamage < 0) { rolledDamage = 0; }
+                                Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else if (attackRoll < badGuy.ArmorClass)
+                            {
+                                Console.Write("but misses!");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
                         }
-                        if (attackRoll == 20)
+                        else
                         {
-                            rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
-                            if (rolledDamage < 0) { rolledDamage = 0; }
-                            Console.Write("and critically hits for " + rolledDamage + " damage!");
-                            ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
+                            if (attackRoll >= ego.ArmorClass && attackRoll < 20)
+                            {
+                                rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage + randomDamage - ego.DamageReduction;
+                                if (rolledDamage < 0) { rolledDamage = 0; }
+                                Console.Write("and hits for " + rolledDamage + " damage!");
+                                ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            if (attackRoll == 20)
+                            {
+                                rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
+                                if (rolledDamage < 0) { rolledDamage = 0; }
+                                Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else if (attackRoll < ego.ArmorClass)
+                            {
+                                Console.Write("but misses!");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
                         }
-                        else if (attackRoll < ego.ArmorClass)
-                        {
-                            Console.Write("but misses!");
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
-                        }
+
+
                     }
                     else if (enemyHPPercent <= 0.25 && enemyHPPercent > 0 && badGuy.PotionCount > 0)
                     {
@@ -22608,24 +24791,66 @@ namespace JessesDungeon
                     }
                 }
 
+                if (ego.DotActive > 0 && battleAction != "incomplete")
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    if (ego.DotActive < 3)
+                    {
+                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 5;
+                        Console.WriteLine("Your enemy reels in pain and takes 5 points of damage!");
+                    }
+                    else if (ego.DotActive < 5)
+                    {
+                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 10;
+                        Console.WriteLine("Your enemy reels in pain and takes 10 points of damage!");
+                        if (ego.DotActive == 3) { ego.DotActive = 1; }
+                    }
+                    else if (ego.DotActive < 7)
+                    {
+                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 20;
+                        Console.WriteLine("Your enemy reels in pain and takes 20 points of damage!");
+                        if (ego.DotActive == 5) { ego.DotActive = 1; }
+                    }
+                    ego.DotActive--;
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                }
+
                 if ((double)badGuy.CurrentHitPoints <= 0)
                 {
                     battleLoop = false;
+                    ego.DotActive = 0;
                     if (fightingDefensively == true)
                     {
                         fightingDefensively = false;
                         ego.ArmorClass = ego.ArmorClass - 1;
                         badGuy.ArmorClass = badGuy.ArmorClass - 1;
                     }
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine("Heisenberg:");
+                    Console.WriteLine();
+                    Console.Write("\"I did it...\"");
+                    Thread.Sleep(1000);
                     Console.WriteLine();
                     Console.WriteLine();
+                    Console.Write("\"I did it for me.\"");
+                    Thread.Sleep(1500);
                     Console.WriteLine();
+                    Thread.Sleep(100);
+                    Console.WriteLine();
+                    Thread.Sleep(100);
+                    Console.WriteLine();
+                    Thread.Sleep(100);
                     Console.WriteLine("You won!");
                     Thread.Sleep(2000);
                 }
                 if ((double)ego.CurrentHitPoints <= 0)
                 {
                     battleLoop = false;
+                    ego.DotActive = 0;
                     if (fightingDefensively == true)
                     {
                         fightingDefensively = false;
@@ -22655,22 +24880,21 @@ namespace JessesDungeon
                 return status;
             }
 
-            static void GetGoodGuyDrunk(Stats imbiber, Potion potion)
+            static void GetGoodGuyDrunk(Stats ego, Potion potion)
             {
-                Console.WriteLine();
-                Console.WriteLine();
-                if (imbiber.CurrentHitPoints <= (imbiber.MaxHitPoints - potion.Potency))
+                Console.Clear();
+                if (potion.Name == "Light Soothing Potion") { ego.HotActive = 2; }
+                else if (potion.Name == "Soothing Potion") { ego.HotActive = 4; }
+                else if (potion.Name == "Greater Soothing Potion") { ego.HotActive = 6; }
+                if (ego.CurrentHitPoints < (ego.MaxHitPoints - potion.Potency))
                 {
-                    imbiber.CurrentHitPoints = imbiber.CurrentHitPoints + potion.Potency;
-                    if (imbiber.Name == "Ego") { Console.WriteLine("You drink the " + potion.Name + ". You regain " + potion.Potency + " HP!"); }
-                    else { Console.WriteLine(imbiber.Name + " drinks a " + potion.Name + ", and suddenly looks healthier!"); }
-
+                    ego.CurrentHitPoints = ego.CurrentHitPoints + potion.Potency;
+                    Console.WriteLine("You drink the " + potion.Name + ". You regain " + potion.Potency + " HP!");
                 }
                 else
                 {
-                    imbiber.CurrentHitPoints = imbiber.MaxHitPoints;
-                    if (imbiber.Name == "Ego") { Console.WriteLine("You drink the " + potion.Name + ". Your HP are maxed out!"); }
-                    else { Console.WriteLine(imbiber.Name + " drinks a " + potion.Name + ", and suddenly looks healthier!"); }
+                    ego.CurrentHitPoints = ego.MaxHitPoints;
+                    Console.WriteLine("You drink the " + potion.Name + ". Your HP are maxed out!");
                 }
                 Console.WriteLine();
                 Console.Write("Press ENTER to continue");
@@ -22697,6 +24921,17 @@ namespace JessesDungeon
                 Console.Write("Press ENTER to continue");
                 Console.ReadLine();
             }
+            static void GetBombed(BadGuyStats badGuy, Potion potion)
+            {
+                Console.WriteLine("____________________________________________________");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine($"You throw the {potion.Name} and cause " + (potion.Potency * -1) + " damage!");
+                badGuy.CurrentHitPoints = badGuy.CurrentHitPoints + potion.Potency;
+                Console.WriteLine();
+                Console.Write("Press ENTER to continue");
+                Console.ReadLine();
+            }
         }
 
         static void PlotBattleResolution(Stats ego, List<Armor> equippableArmor, List<Weapon> equippableWeapon, List<Shield> equippableShield, List<Potion> potionBelt, BadGuyStats badGuy)
@@ -22718,9 +24953,6 @@ namespace JessesDungeon
             {
                 ego.LastDefeated = badGuy.Name;
                 Console.Clear();
-                Console.WriteLine();
-                Console.WriteLine();
-
                 if (badGuy.Name == "Salamanca Cousin")
                 {
                     badGuy.BlueCrystals = (badGuy.BlueCrystals * 2);
@@ -22753,26 +24985,12 @@ namespace JessesDungeon
                     }
                 }
                 ego.BlueCrystals = ego.BlueCrystals + badGuy.BlueCrystals;
-                Console.WriteLine();
                 Thread.Sleep(3000);
-                if (badGuy.Weapon.Name == null && badGuy.Armor.Name != null)
+                if (badGuy.Name == "Salamanca Cousin")
                 {
-                    Console.WriteLine("And the enemy left a present!");
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
-                    Console.WriteLine("The " + badGuy.Armor.Name + " looks useful. You take it.");
-                    equippableArmor.Add(badGuy.Armor);
-                    Thread.Sleep(3000);
-                }
-                if (badGuy.Weapon.Name != null && badGuy.Armor.Name == null)
-                {
-                    Console.WriteLine("And the enemy left a present!");
                     Console.WriteLine();
-                    Console.WriteLine("The " + badGuy.Weapon.Name + " looks useful. You take it.");
-                    equippableWeapon.Add(badGuy.Weapon);
-                    Thread.Sleep(3000);
-                }
-                if (badGuy.Weapon.Name == "Salamanca Cousin")
-                {
                     Console.WriteLine("And the enemies left some presents!");
                     Console.WriteLine();
                     Console.WriteLine("The " + badGuy.Weapon.Name + " and " + badGuy.Armor.Name + " that each has look useful. You take them.");
@@ -22780,19 +24998,40 @@ namespace JessesDungeon
                     equippableArmor.Add(badGuy.Armor);
                     equippableWeapon.Add(badGuy.Weapon);
                     equippableArmor.Add(badGuy.Armor);
-                    Thread.Sleep(3000);
+                }
+                else if (badGuy.Weapon.Name == null && badGuy.Armor.Name != null)
+                {
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("And the enemy left a present!");
+                    Console.WriteLine();
+                    Console.WriteLine("The " + badGuy.Armor.Name + " looks useful. You take it.");
+                    equippableArmor.Add(badGuy.Armor);
+                }
+                else if (badGuy.Weapon.Name != null && badGuy.Armor.Name == null)
+                {
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("And the enemy left a present!");
+                    Console.WriteLine();
+                    Console.WriteLine("The " + badGuy.Weapon.Name + " looks useful. You take it.");
+                    equippableWeapon.Add(badGuy.Weapon);
                 }
                 else if (badGuy.Weapon.Name != null && badGuy.Armor.Name != null)
                 {
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
                     Console.WriteLine("And the enemy left some presents!");
                     Console.WriteLine();
                     Console.WriteLine("The " + badGuy.Weapon.Name + " and " + badGuy.Armor.Name + " look useful. You take them.");
                     equippableWeapon.Add(badGuy.Weapon);
                     equippableArmor.Add(badGuy.Armor);
-                    Thread.Sleep(3000);
                 }
                 Console.WriteLine();
-                Console.WriteLine("Press ENTER to continue");
+                Console.Write("Press ENTER to continue");
                 Console.ReadLine();
                 Console.Clear();
             }
@@ -22802,7 +25041,7 @@ namespace JessesDungeon
         {
             Armor Rags = new Armor("Rags", 0, 0.95, false, 0, "These are your clothes, but with a fancier name.");
             Shield nullShield = new Shield(null, 0, 1.00, true, 0, "'Tis nothing but spun sugar and bootblack.");
-            Weapon Unarmed = new Weapon("Unarmed", 0, 1, 0, true, false, 0, "Fists of fury.");
+            Weapon Unarmed = new Weapon("Unarmed", 0, 1, 0, true, false, 0, "Fists of fury.", "SlashBash");
 
             Console.Clear();
             ego.Location = "F7";
@@ -22814,7 +25053,7 @@ namespace JessesDungeon
             equippableArmor.Add(Rags);
             equippableShield.Add(nullShield);
             equippableWeapon.Add(Unarmed);
-            GetStripped(ego, Rags, Unarmed, nullShield);
+            GetStripped(ego, Rags, Unarmed, nullShield, equippableArmor, equippableWeapon, equippableShield);
             ego.CurrentHitPoints = ego.MaxHitPoints;
             Console.WriteLine("You awaken on something hard. Not cold, though, as you'd expect from the dungeon floor.");
             Console.WriteLine();
