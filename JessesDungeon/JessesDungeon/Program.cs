@@ -44,35 +44,36 @@ namespace JessesDungeon
             TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
 
             Armor rags = new Armor("Rags", 0, 0.95, false, 0, "These are your clothes, but with a fancier name.");
-            Armor leatherArmor = new Armor("Leather Armor", 1, 0.85, false, 70, "Provides a bit of protection, but still no match for a good stabbing.");
+            Armor leatherArmor = new Armor("Leather Armor        ", 1, 0.85, false, 70, "Provides a bit of protection, but still no match for a good stabbing.");
             Armor studdedLeatherArmor = new Armor("Studded Leather Armor", 3, 0.80, false, 120, "Stiff and studded: that's how she likes it.");
-            Armor ringmail = new Armor("Ringmail", 5, 0.75, false, 400, "Composed of mismatched rings and metal shards, this is surely a \"practicality over fashion\" choice.");
+            Armor ringmail = new Armor("Ringmail             ", 5, 0.75, false, 400, "Composed of mismatched rings and metal shards, this is surely a \"practicality over fashion\" choice.");
             Armor chainmail = new Armor("Chainmail", 7, 0.70, false, 0, "The closest you'll ever get to being a knight.");
-            Armor hazmatSuit = new Armor("Hazmat Suit", 10, 0.80, false, 1500, "Knives, swords, and guns are VERY hazardous materials.");
+            Armor hazmatSuit = new Armor("Hazmat Suit          ", 10, 0.80, false, 1500, "Knives, swords, and guns are VERY hazardous materials.");
             List<Armor> merchantArmor = new List<Armor>();
 
             //add all armor, weapon, shield merchant will sell at any point to list
 
             Weapon unarmed = new Weapon("Unarmed", 0, 1, 0, true, false, 0, "Fists of fury.", "SlashBash");
             Weapon rustyWoodenSpoon = new Weapon("Rusty Wooden Spoon", 1, 2, 0, true, false, 0, "A miracle of natural law.", "SlashBash");
-            Weapon stick = new Weapon("Stick", 1, 2, 0, true, true, 5, "Ho Haha Guard Turn Parry Dodge Spin Ha Thrust!", "SlashBash");
-            Weapon pointyStick = new Weapon("Pointy Stick", 4, 2, 0, true, false, 10, "Brilliant use of \"force over surface area\" wouldn't you say?", "Piercing");
+            Weapon stick = new Weapon("Stick        ", 1, 2, 0, true, true, 5, "Ho Haha Guard Turn Parry Dodge Spin Ha Thrust!", "SlashBash");
+            Weapon pointyStick = new Weapon("Pointy Stick ", 4, 2, 0, true, false, 10, "Brilliant use of \"force over surface area\" wouldn't you say?", "Piercing");
             Weapon mildewEncrustedPocketKnife = new Weapon("Mildew-Encrusted Pocket Knife", 4, 3, 0, true, false, 0, "Gross. But pointy!", "Piercing");
-            Weapon knife = new Weapon("Knife", 4, 3, 0, true, false, 20, "You could definitely stab something with this.", "Piercing");
+            Weapon knife = new Weapon("Knife        ", 4, 3, 0, true, false, 20, "You could definitely stab something with this.", "Piercing");
             Weapon huntingKnife = new Weapon("Hunting Knife", 6, 3, 0, true, false, 50, "THAT'S a knife.", "Piercing");
-            Weapon club = new Weapon("Club", 15, 2, 0, false, false, 500, "Known to be used by frequent party-goers.", "SlashBash");
+            Weapon club = new Weapon("Club         ", 15, 2, 0, false, false, 500, "Known to be used by frequent party-goers.", "SlashBash");
             Weapon axe = new Weapon("Fireman's Axe", 10, 3, 0, false, false, 400, "This emergency axe was not made for combat. The force of this two-handed weapon increases your damage die by two, but its unwieldy nature will decrease your AC by two as well.", "SlashBash");
-            Weapon pogoStick = new Weapon("Pogo Stick", 4, 2, 0, false, false, 700, "Wielding this contraption like a lance/bazooka, each successful hit leads to an additional attack -- albeit at a -5 penalty.", "Polearm");
+            Weapon pogoStick = new Weapon("Pogo Stick   ", 4, 2, 0, false, false, 700, "Wielding this contraption like a lance/bazooka, each successful hit leads to an additional attack -- albeit at a -5 penalty.", "Polearm");
             Weapon realSword = new Weapon("Sword", 10, 3, 0, true, false, 0, "Unfortunately, this sword is not unnaturally propotioned or outfitted with a gun.", "SlashBash");
             Weapon mace = new Weapon("Mace", 8, 5, 0, true, false, 0, "Any girl in this environment needs to carry a mace!", "SlashBash");
-            Weapon gun = new Weapon("Gun", 20, 1.5, -5, true, false, 1000, "Can make a massive hole in your target if you can handle its massive kickback (-5 penalty).", "Ranged");
+            Weapon trident = new Weapon("Ganon's Trident", 30, 3, 10, false, false, 0, "Infused with magic, in your hands this weapon deals massive damage and always strikes true (+10 bonus)", "Pierce");
+            Weapon gun = new Weapon("Gun          ", 20, 1.5, -5, true, false, 1000, "Can make a massive hole in your target if you can handle its massive kickback (-5 penalty).", "Ranged");
             Weapon assassinsDagger = new Weapon("Assassin's Dagger", 2, 2, 5, true, false, 500, "It's not the size of the dagger that counts -- but how you use it. It may be weak initially, but it's balanced to connect (+5 bonus) and its poison will continue to harm its victim (5 dmg/round x3).", "Piercing");
             List<Weapon> merchantWeapon = new List<Weapon>();
 
             Shield nullShield = new Shield("Forearm", 0, 1.00, true, 0, "'Tis nothing but spun sugar and bootblack.");
             Shield soupBowl = new Shield("Soup Bowl", 1, 0.95, false, 0, "Not very slick.");
             Shield cardboardCutout = new Shield("Cardboard Cutout", 1, 0.95, true, 3, "Well it looks like a shield...");
-            Shield garbageCanLid = new Shield("Garbage Can Lid", 2, 0.90, false, 10, "Can't top this one.");
+            Shield garbageCanLid = new Shield("Garbage Can Lid ", 2, 0.90, false, 10, "Can't top this one.");
             Shield realShield = new Shield("Shield", 5, 0.85, false, 0, "Perfect for phalanx formation if you only had some friends.");
             Shield mirrorShield = new Shield("The Mirror Shield", 4, 0.90, false, 2000, "Dah nah nah naaaah!");
             List<Shield> merchantShield = new List<Shield>();
@@ -224,9 +225,11 @@ namespace JessesDungeon
             bool converseSixDone = false;
             bool converseSevenDone = false;
             bool secondQuest = false;
+            bool thirdQuest = false;
+            bool lootedGarbageCanLid = false;
 
-            List<string> boolList = new List<string> { "debugMode", "bowlAndSpoonLooted", "listenedToTownVoices", "unlockedListenTo", "hasNotEnteredTown", "hasLeftTown", "searchedTree", "galeQuestGiven", "galeQuestCompleted", "hermitVisited", "lookedMeepEyes", "searchedMeepMounds", "talkedToMeepMounds", "searchedMikeHouse", "fuckedUpWithMike", "searchedGraveyard", "salamancaGuardDefeated", "salamancaGuardSearched", "salamancaCousinDefeated", "salamancaDead", "randomEncountersOn", "lydiaQuestGiven", "lydiaQuestCompleted", "lootedCentaur", "frontEntranceWarning", "joinedFightClub", "fightClubLoop", "foughtInFightClub", "theCreeperInTheDarkDefeated", "puddleSearched", "visitedBowlingAlley", "bowlingLoop", "talkedToPriest", "noticedJane", "janesProtectionActive", "janesDoorOpened", "signedLogBook", "dryadLoop", "peteLoop", "buyLoop", "sellLoop", "inventoryLoop", "salamancaLoop", "salamancaBagLooted", "newConverseAvailable", "gusQuestGiven", "gusQuestCompleted", "gusLoop", "losPollosHermanos", "mikeQuestGiven", "mikeQuestCompleted", "peteQuestGiven", "peteQuestCompleted", "saulQuestGiven", "saulQuestCompleted", "studdedLeatherArmorLooted", "knightSuitAvailable", "mikeLoop", "janeQuestGiven", "janeQuestCompleted", "janeLoop", "freePotions", "dudeOnAPogoStickDefeated", "hidenGoseke", "secretTunnelOpened", "returnedRing", "shopClosed", "readLogbook", "tookPeteCash", "tookGusCash", "tookSaulCash", "tookHermitCash", "tookLydiaCash", "tookMikeCash", "tookJaneCash", "talkLoop", "killedJesse", "jesseDefeated", "sparedJesse", "searchedHeisenberg", "narratorDefeated", "searchedFortress", "mapTown", "mapPeace", "mapSalamanca", "mapLiquor", "mapVacuum", "mapCartel", "mapMike", "mapFight", "mapLydia", "mapSaul", "mapBowl", "mapHermit", "mapFortress" , "searchedChest" , "searchedNightstand" , "lootedFredBeard", "lootedMirror", "converseOneDone", "converseTwoDone", "converseThreeDone", "converseFourDone", "converseFiveDone", "converseSixDone", "converseSevenDone", "secondQuest" };
-            List<bool> boolFlags = new List<bool> { debugMode, bowlAndSpoonLooted, listenedToTownVoices, unlockedListenTo, hasNotEnteredTown, hasLeftTown, searchedTree, galeQuestGiven, galeQuestCompleted, hermitVisited, lookedMeepEyes, searchedMeepMounds, talkedToMeepMounds, searchedMikeHouse, fuckedUpWithMike, searchedGraveyard, salamancaGuardDefeated, salamancaGuardSearched, salamancaCousinDefeated, salamancaDead, randomEncountersOn, lydiaQuestGiven, lydiaQuestCompleted, lootedCentaur, frontEntranceWarning, joinedFightClub, fightClubLoop, foughtInFightClub, theCreeperInTheDarkDefeated, puddleSearched, visitedBowlingAlley, bowlingLoop, talkedToPriest, noticedJane, janesProtectionActive, janesDoorOpened, signedLogBook, dryadLoop, peteLoop, buyLoop, sellLoop, inventoryLoop, salamancaLoop, salamancaBagLooted, newConverseAvailable, gusQuestGiven, gusQuestCompleted, gusLoop, losPollosHermanos, mikeQuestGiven, mikeQuestCompleted, peteQuestGiven, peteQuestCompleted, saulQuestGiven, saulQuestCompleted, studdedLeatherArmorLooted, knightSuitAvailable, mikeLoop, janeQuestGiven, janeQuestCompleted, janeLoop, freePotions, dudeOnAPogoStickDefeated, hidenGoseke, secretTunnelOpened, returnedRing, shopClosed, readLogbook, tookPeteCash, tookGusCash, tookSaulCash, tookHermitCash, tookLydiaCash, tookMikeCash, tookJaneCash, talkLoop, killedJesse, jesseDefeated, sparedJesse, searchedHeisenberg, narratorDefeated, searchedFortress, mapTown, mapPeace, mapSalamanca, mapLiquor, mapVacuum, mapCartel, mapMike, mapFight, mapLydia, mapSaul, mapBowl, mapHermit, mapFortress, searchedChest, searchedNightstand, lootedFredBeard, lootedMirror, converseOneDone, converseTwoDone, converseThreeDone, converseFourDone, converseFiveDone, converseSixDone, converseSevenDone, secondQuest };
+            List<string> boolList = new List<string> { "debugMode", "bowlAndSpoonLooted", "listenedToTownVoices", "unlockedListenTo", "hasNotEnteredTown", "hasLeftTown", "searchedTree", "galeQuestGiven", "galeQuestCompleted", "hermitVisited", "lookedMeepEyes", "searchedMeepMounds", "talkedToMeepMounds", "searchedMikeHouse", "fuckedUpWithMike", "searchedGraveyard", "salamancaGuardDefeated", "salamancaGuardSearched", "salamancaCousinDefeated", "salamancaDead", "randomEncountersOn", "lydiaQuestGiven", "lydiaQuestCompleted", "lootedCentaur", "frontEntranceWarning", "joinedFightClub", "fightClubLoop", "foughtInFightClub", "theCreeperInTheDarkDefeated", "puddleSearched", "visitedBowlingAlley", "bowlingLoop", "talkedToPriest", "noticedJane", "janesProtectionActive", "janesDoorOpened", "signedLogBook", "dryadLoop", "peteLoop", "buyLoop", "sellLoop", "inventoryLoop", "salamancaLoop", "salamancaBagLooted", "newConverseAvailable", "gusQuestGiven", "gusQuestCompleted", "gusLoop", "losPollosHermanos", "mikeQuestGiven", "mikeQuestCompleted", "peteQuestGiven", "peteQuestCompleted", "saulQuestGiven", "saulQuestCompleted", "studdedLeatherArmorLooted", "knightSuitAvailable", "mikeLoop", "janeQuestGiven", "janeQuestCompleted", "janeLoop", "freePotions", "dudeOnAPogoStickDefeated", "hidenGoseke", "secretTunnelOpened", "returnedRing", "shopClosed", "readLogbook", "tookPeteCash", "tookGusCash", "tookSaulCash", "tookHermitCash", "tookLydiaCash", "tookMikeCash", "tookJaneCash", "talkLoop", "killedJesse", "jesseDefeated", "sparedJesse", "searchedHeisenberg", "narratorDefeated", "searchedFortress", "mapTown", "mapPeace", "mapSalamanca", "mapLiquor", "mapVacuum", "mapCartel", "mapMike", "mapFight", "mapLydia", "mapSaul", "mapBowl", "mapHermit", "mapFortress" , "searchedChest" , "searchedNightstand" , "lootedFredBeard", "lootedMirror", "converseOneDone", "converseTwoDone", "converseThreeDone", "converseFourDone", "converseFiveDone", "converseSixDone", "converseSevenDone", "secondQuest", "thirdQuest", "lootedGarbageCanLid" };
+            List<bool> boolFlags = new List<bool> { debugMode, bowlAndSpoonLooted, listenedToTownVoices, unlockedListenTo, hasNotEnteredTown, hasLeftTown, searchedTree, galeQuestGiven, galeQuestCompleted, hermitVisited, lookedMeepEyes, searchedMeepMounds, talkedToMeepMounds, searchedMikeHouse, fuckedUpWithMike, searchedGraveyard, salamancaGuardDefeated, salamancaGuardSearched, salamancaCousinDefeated, salamancaDead, randomEncountersOn, lydiaQuestGiven, lydiaQuestCompleted, lootedCentaur, frontEntranceWarning, joinedFightClub, fightClubLoop, foughtInFightClub, theCreeperInTheDarkDefeated, puddleSearched, visitedBowlingAlley, bowlingLoop, talkedToPriest, noticedJane, janesProtectionActive, janesDoorOpened, signedLogBook, dryadLoop, peteLoop, buyLoop, sellLoop, inventoryLoop, salamancaLoop, salamancaBagLooted, newConverseAvailable, gusQuestGiven, gusQuestCompleted, gusLoop, losPollosHermanos, mikeQuestGiven, mikeQuestCompleted, peteQuestGiven, peteQuestCompleted, saulQuestGiven, saulQuestCompleted, studdedLeatherArmorLooted, knightSuitAvailable, mikeLoop, janeQuestGiven, janeQuestCompleted, janeLoop, freePotions, dudeOnAPogoStickDefeated, hidenGoseke, secretTunnelOpened, returnedRing, shopClosed, readLogbook, tookPeteCash, tookGusCash, tookSaulCash, tookHermitCash, tookLydiaCash, tookMikeCash, tookJaneCash, talkLoop, killedJesse, jesseDefeated, sparedJesse, searchedHeisenberg, narratorDefeated, searchedFortress, mapTown, mapPeace, mapSalamanca, mapLiquor, mapVacuum, mapCartel, mapMike, mapFight, mapLydia, mapSaul, mapBowl, mapHermit, mapFortress, searchedChest, searchedNightstand, lootedFredBeard, lootedMirror, converseOneDone, converseTwoDone, converseThreeDone, converseFourDone, converseFiveDone, converseSixDone, converseSevenDone, secondQuest, thirdQuest, lootedGarbageCanLid };
 
             int hermitAnger = 0;
             int highestHermitAnger = 0;
@@ -289,7 +292,7 @@ namespace JessesDungeon
             Console.WriteLine();
             Console.WriteLine("You've been thrown into a pit and the entrance shut and locked above you.");
             Console.WriteLine();
-            Console.Write("Press ENTER to continue");
+            Console.Write("Press ENTER to begin ");
             action = Console.ReadLine();
 
             if (action == "ZELDA")
@@ -318,6 +321,21 @@ namespace JessesDungeon
                 Console.WriteLine("\"It's dangerous to go alone! Take this.\"");
                 Console.WriteLine();
                 Console.WriteLine("You receive the mace.");
+                Console.WriteLine();
+                Console.Write("Press ENTER to continue");
+                Console.ReadLine();
+            }
+            if (action == "ROCKY 5000")
+            {
+                thirdQuest = true;
+                ego.Location = "winner";
+                action = "Complete";
+                Console.WriteLine("____________________________________________________");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("You're playing again? Well jeez I mean there isn't that much different in this quest...");
+                Console.WriteLine();
+                Console.WriteLine("Well you know how it all goes, so let's just skip the busy work and hop to the end, shall we?");
                 Console.WriteLine();
                 Console.Write("Press ENTER to continue");
                 Console.ReadLine();
@@ -1971,6 +1989,7 @@ namespace JessesDungeon
                                         merchantWeapon.Add(gun);
                                         merchantShield.Add(cardboardCutout);
                                         merchantShield.Add(garbageCanLid);
+                                        merchantShield.Add(mirrorShield);
                                         buyLoop = true;
                                         while (buyLoop == true)
                                         {
@@ -2245,6 +2264,18 @@ namespace JessesDungeon
                                                 Console.Write("Press ENTER to continue");
                                                 Console.ReadLine();
                                             }
+                                            else if (sellItem == "Mace")
+                                            {
+                                                sellItem = "switzerfisch";
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                if (secondQuest) { Console.WriteLine("\"Lookin' like you are? You'd be better off taking two or three of these!\""); }
+                                                else { Console.WriteLine("\"You wot m8?\""); }
+                                                Console.WriteLine();
+                                                Console.Write("Press ENTER to continue");
+                                                Console.ReadLine();
+                                            }
                                             else
                                             {
                                                 if (peteQuestCompleted == true)
@@ -2269,7 +2300,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                                                                if (ego.EquippedArmor.Name == armor.Name && !equippableArmor.Contains(armor)) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableArmor.Remove(armor);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (armor.Price / 3);
                                                                 Console.WriteLine("____________________________________________________");
@@ -2325,7 +2356,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                                                                if (ego.EquippedWeapon.Name == weapon.Name && !equippableWeapon.Contains(weapon)) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableWeapon.Remove(weapon);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (weapon.Price / 3);
                                                                 Console.WriteLine("____________________________________________________");
@@ -2381,7 +2412,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
+                                                                if (ego.EquippedShield.Name == shield.Name && !equippableShield.Contains(shield)) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableShield.Remove(shield);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (shield.Price / 3);
                                                                 Console.WriteLine("____________________________________________________");
@@ -2440,7 +2471,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                                                                if (ego.EquippedArmor.Name == armor.Name && !equippableArmor.Contains(armor)) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableArmor.Remove(armor);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (armor.Price / 4);
                                                                 Console.WriteLine("____________________________________________________");
@@ -2496,7 +2527,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                                                                if (ego.EquippedWeapon.Name == weapon.Name && !equippableWeapon.Contains(weapon)) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableWeapon.Remove(weapon);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (weapon.Price / 4);
                                                                 Console.WriteLine("____________________________________________________");
@@ -2552,7 +2583,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
+                                                                if (ego.EquippedShield.Name == shield.Name && !equippableShield.Contains(shield)) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableShield.Remove(shield);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (shield.Price / 4);
                                                                 Console.WriteLine("____________________________________________________");
@@ -3179,6 +3210,7 @@ namespace JessesDungeon
                                         merchantWeapon.Add(gun);
                                         merchantShield.Add(cardboardCutout);
                                         merchantShield.Add(garbageCanLid);
+                                        merchantShield.Add(mirrorShield);
                                         buyLoop = true;
                                         while (buyLoop == true)
                                         {
@@ -3453,6 +3485,18 @@ namespace JessesDungeon
                                                 Console.Write("Press ENTER to continue");
                                                 Console.ReadLine();
                                             }
+                                            else if (sellItem == "Mace")
+                                            {
+                                                sellItem = "switzerfisch";
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                if (secondQuest) { Console.WriteLine("\"Lookin' like you are? You'd be better off taking two or three of these!\""); }
+                                                else { Console.WriteLine("\"You wot m8?\""); }
+                                                Console.WriteLine();
+                                                Console.Write("Press ENTER to continue");
+                                                Console.ReadLine();
+                                            }
                                             else
                                             {
                                                 if (peteQuestCompleted == true)
@@ -3477,7 +3521,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                                                                if (ego.EquippedArmor.Name == armor.Name && !equippableArmor.Contains(armor)) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableArmor.Remove(armor);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (armor.Price / 3);
                                                                 Console.WriteLine("____________________________________________________");
@@ -3533,7 +3577,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                                                                if (ego.EquippedWeapon.Name == weapon.Name && !equippableWeapon.Contains(weapon)) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableWeapon.Remove(weapon);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (weapon.Price / 3);
                                                                 Console.WriteLine("____________________________________________________");
@@ -3589,7 +3633,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
+                                                                if (ego.EquippedShield.Name == shield.Name && !equippableShield.Contains(shield)) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableShield.Remove(shield);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (shield.Price / 3);
                                                                 Console.WriteLine("____________________________________________________");
@@ -3648,7 +3692,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedArmor.Name == armor.Name) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                                                                if (ego.EquippedArmor.Name == armor.Name && !equippableArmor.Contains(armor)) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableArmor.Remove(armor);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (armor.Price / 4);
                                                                 Console.WriteLine("____________________________________________________");
@@ -3704,7 +3748,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedWeapon.Name == weapon.Name) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                                                                if (ego.EquippedWeapon.Name == weapon.Name && !equippableWeapon.Contains(weapon)) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableWeapon.Remove(weapon);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (weapon.Price / 4);
                                                                 Console.WriteLine("____________________________________________________");
@@ -3760,7 +3804,7 @@ namespace JessesDungeon
                                                             sellItem2 = sellItem2.ToLower();
                                                             if (sellItem2 == "yes")
                                                             {
-                                                                if (ego.EquippedShield.Name == shield.Name) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
+                                                                if (ego.EquippedShield.Name == shield.Name && !equippableShield.Contains(shield)) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
                                                                 equippableShield.Remove(shield);
                                                                 ego.BlueCrystals = ego.BlueCrystals + (shield.Price / 4);
                                                                 Console.WriteLine("____________________________________________________");
@@ -4224,6 +4268,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -4244,7 +4289,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("The woman sighs.");
                                 Console.WriteLine();
-                                if (secondQuest) { Console.WriteLine("\"Oh the good ones are never on my team.\""); }
+                                if (secondQuest) { Console.WriteLine("\"The good ones are never on my team.\""); }
                                 else { Console.WriteLine("\"You're new. It's all right. Get up.\""); }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
@@ -4445,7 +4490,8 @@ namespace JessesDungeon
                                 {
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine("\"Just because I've decided you're not a threat to me doesn't mean I want to chat.\"");
+                                    if (secondQuest) { Console.WriteLine("\"I don't like to mix business with pleasure. If our relationship is going to be merely professional, then let's keep it to that.\""); }
+                                    else { Console.WriteLine("\"Just because I've decided you're not a threat to me doesn't mean I want to chat.\""); }
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
@@ -4454,7 +4500,9 @@ namespace JessesDungeon
                                 {
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine("\"A picture of me in a church? I apologize if I gave the impression that I'd care.\"");
+                                    if (secondQuest) { Console.WriteLine("\"Did they get my good side?\""); }
+                                    else { Console.WriteLine("\"A picture of me in a church? I apologize if I gave the impression that I'd care.\""); }
+                                    Console.WriteLine("");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
@@ -5248,6 +5296,7 @@ namespace JessesDungeon
                         Console.WriteLine("Stats");
                         Console.WriteLine("Look at");
                         Console.WriteLine("Search");
+                        Console.WriteLine("Talk to");
                         Console.WriteLine("Sit");
                         Console.WriteLine("Go south");
                         Console.WriteLine();
@@ -5408,7 +5457,8 @@ namespace JessesDungeon
                                                     if (secondQuest) { Console.WriteLine("\"Don't waste my time or I'll give you the balls of the last sod who did and have them.\""); }
                                                     else { Console.WriteLine("\"Don't waste my time or I'll have your balls.\""); }
                                                     Console.WriteLine();
-                                                    Console.WriteLine("\"You can't trick me just because I'm a woman.\"");
+                                                    if (secondQuest) { Console.WriteLine("\"I'm far smarter than you, blondie.\""); }
+                                                    else { Console.WriteLine("\"You can't trick me just because I'm a woman.\""); }
                                                 }
                                                 else if (ego.BlueCrystals >= bankDeposit)
                                                 {
@@ -5465,7 +5515,8 @@ namespace JessesDungeon
                                                     if (secondQuest) { Console.WriteLine("\"Don't waste my time or I'll give you the balls of the last sod who did and have them.\""); }
                                                     else { Console.WriteLine("\"Don't waste my time or I'll have your balls.\""); }
                                                     Console.WriteLine();
-                                                    Console.WriteLine("\"You can't trick me just because I'm a woman.\"");
+                                                    if (secondQuest) { Console.WriteLine("\"I'm far smarter than you, blondie.\""); }
+                                                    else { Console.WriteLine("\"You can't trick me just because I'm a woman.\""); }
                                                 }
                                                 else if (ego.BankedCrystals >= bankWithdrawal)
                                                 {
@@ -6298,8 +6349,9 @@ namespace JessesDungeon
                         if (action == "search sheets")
                         {
                             action = "Complete";
-                            if (garbageCanLid.Unlocked == false)
+                            if (lootedGarbageCanLid == false)
                             {
+                                lootedGarbageCanLid = true;
                                 garbageCanLid.Unlocked = true;
                                 equippableShield.Add(garbageCanLid);
                                 Console.WriteLine("____________________________________________________");
@@ -7074,7 +7126,8 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.WriteLine("As you're continuing to assess the mound of dirt, an arm suddenly reaches around from behind it and smacks your hand.");
                             Console.WriteLine();
-                            Console.WriteLine("\"Watch it, buddy! This office was harder to set up than you'd think.\"");
+                            if (secondQuest) { Console.WriteLine("\"Watch it, missy! This office was harder to set up than you'd think.\""); }
+                            else { Console.WriteLine("\"Watch it, buddy! This office was harder to set up than you'd think.\""); }
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -7096,7 +7149,8 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.WriteLine("A man steps out from behind a mound. He is (unsurprisingly) covered in dirt; but he also (surprisingly) is wearing a flashy suit. He smiles and extends his hand.");
                             Console.WriteLine();
-                            Console.WriteLine("\"You seem like the kind of guy who it'd be wise to be friendly to. I can feel something special aboutcha. You are something special, eh? Don't be modest!\"");
+                            if (secondQuest) { Console.WriteLine("\"You seem like the kind of gal who it'd be wise to be friendly to. I can feel something special aboutcha. You are something special, eh? Don't be modest!\""); }
+                            else { Console.WriteLine("\"You seem like the kind of guy who it'd be wise to be friendly to. I can feel something special aboutcha. You are something special, eh? Don't be modest!\""); }
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -7144,7 +7198,8 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Hey, listen, if we're really getting ourselves out of here, I have a lot of prep work to do in order to be ready. You understand, I'm sure. I'll see you on the outside, all right, bud?\"");
+                                if (secondQuest) { Console.WriteLine("\"Hey, listen, if we're really getting ourselves out of here, I have a lot of prep work to do in order to be ready. You understand, I'm sure. I'll see you on the outside, all right, miss?\""); }
+                                else { Console.WriteLine("\"Hey, listen, if we're really getting ourselves out of here, I have a lot of prep work to do in order to be ready. You understand, I'm sure. I'll see you on the outside, all right, bud?\""); }
                                 Console.WriteLine();
                                 Console.WriteLine("\"Thanks again!\"");
                                 Console.WriteLine();
@@ -7160,7 +7215,8 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy steps out from behind one of his hiding places.");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Hey, buddy! Welcome back! What can I do for you?\"");
+                                if (secondQuest) { Console.WriteLine("\"Hey, missy! Welcome back! What can I do for you?\""); }
+                                else { Console.WriteLine("\"Hey, buddy! Welcome back! What can I do for you?\""); }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -7176,7 +7232,8 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"I totally see what you're getting at and - buddy, believe me - I 100% support it.\"");
+                                if (secondQuest) { Console.WriteLine("\"I totally see what you're getting at and - missy, believe me - I 100% support it.\""); }
+                                else { Console.WriteLine("\"I totally see what you're getting at and - buddy, believe me - I 100% support it.\""); }
                                 Console.WriteLine();
                                 Console.WriteLine("\"But I just don't know what I can really do to help you out!\"");
                                 Console.WriteLine();
@@ -7238,7 +7295,8 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy steps out from behind one of his hiding places.");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Hey, buddy! Welcome back! What can I do for you?\"");
+                                if (secondQuest) { Console.WriteLine("\"Hey, missy! Welcome back! What can I do for you?\""); }
+                                else { Console.WriteLine("\"Hey, buddy! Welcome back! What can I do for you?\""); }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -7254,7 +7312,8 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Listen, buddy, I'd love to help you out -- really I would! But I just simply can't help you.\"");
+                                if (secondQuest) { Console.WriteLine("\"Listen, missy, I'd love to help you out -- really I would! But I just simply can't help you.\""); }
+                                else { Console.WriteLine("\"Listen, buddy, I'd love to help you out -- really I would! But I just simply can't help you.\""); }
                                 Console.WriteLine();
                                 Console.WriteLine("\"Now, now! Don't give me that look. No matter what you do it won't change the fact that I no longer have it!\"");
                                 Console.WriteLine();
@@ -7274,7 +7333,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Now -- here's the little caveat. He is less-than-happy with me right now, and we haven't spoken in a while.\"");
+                                Console.WriteLine("\"Now here's the little caveat. He is less-than-happy with me right now, and we haven't spoken in a while.\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"I'd love to help you out, but... I don't know how thrilled he'll be even to hear I sent you there.\"");
                                 Console.WriteLine();
@@ -7284,7 +7343,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"He's a nice enough guy and all, but he is not likely to part with his stuff... especially since he has no source to restock. You might have to drop my name and try your luck.\"");
+                                Console.WriteLine("\"He's a nice enough guy and all, but he is not likely to part with his stuff -- especially since he has no source to restock. You might have to drop my name and try your luck.\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"He lives east and a bit south of here. Just tell him 'little Jimmy' sent you!\"");
                                 Console.WriteLine();
@@ -7298,7 +7357,8 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy steps out from behind one of his hiding places.");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Hey, buddy! Welcome back! What can I do for you?\"");
+                                if (secondQuest) { Console.WriteLine("\"Hey, missy! Welcome back! What can I do for you?\""); }
+                                else { Console.WriteLine("\"Hey, buddy! Welcome back! What can I do for you?\""); }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -7306,7 +7366,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"You know, you don't talk much -- and that's great. Always good to have a \'strong and silent type\' pal that you can count on. But don't be shy! if you EVER need something -- I'm your man!\"");
+                                Console.WriteLine("\"You know, you don't talk much -- and that's great. Always good to have a \'strong and silent type\' pal that you can count on. But don't be shy! if you EVER need something: I'm your man!\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -7558,7 +7618,8 @@ namespace JessesDungeon
                                     Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine("\"Hrm. I take you for more of a \'blue\' man.\"");
+                                    if (secondQuest) { Console.WriteLine("\"Hrm. I take you for more of a \'blue\' woman.\""); }
+                                    else { Console.WriteLine("\"Hrm. I take you for more of a \'blue\' man.\""); }
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
@@ -7689,7 +7750,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Hrm. I take you for more of a \'blue\' man.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Hrm. I take you for more of a \'blue\' woman.\""); }
+                                        else { Console.WriteLine("\"Hrm. I take you for more of a \'blue\' man.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -7753,7 +7815,8 @@ namespace JessesDungeon
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("\"Hey. Uh?... wait. You're one of those cartel guys, aren't you?\"");
+                                if (secondQuest) { Console.WriteLine("\"Hey. Uh?... wait. You're one of those cartel gals, aren't you?\""); }
+                                else { Console.WriteLine("\"Hey. Uh?... wait. You're one of those cartel guys, aren't you?\""); }
                                 Thread.Sleep(2000);
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -7838,7 +7901,8 @@ namespace JessesDungeon
                                             Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
-                                            Console.WriteLine("\"Hrm. I take you for more of a \'blue\' man.\"");
+                                            if (secondQuest) { Console.WriteLine("\"Hrm. I take you for more of a \'blue\' woman.\""); }
+                                            else { Console.WriteLine("\"Hrm. I take you for more of a \'blue\' man.\""); }
                                             Console.WriteLine();
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
@@ -7897,7 +7961,8 @@ namespace JessesDungeon
                                     Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine("\"I'm not really sure what you're trying to say? But I'm pretty sure you're that cartel guy. The boss doesn't want to get mixed up with you guys. He won\'t see you. Sorry.\"");
+                                    if (secondQuest) { Console.WriteLine("\"I'm not really sure what you're trying to say? But I'm pretty sure you're that cartel gal. The boss doesn't want to get mixed up with you guys. He won\'t see you. Sorry.\""); }
+                                    else { Console.WriteLine("\"I'm not really sure what you're trying to say? But I'm pretty sure you're that cartel guy. The boss doesn't want to get mixed up with you guys. He won\'t see you. Sorry.\""); }
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
@@ -7923,7 +7988,11 @@ namespace JessesDungeon
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            if (searchedTree == true) { Console.WriteLine("The statue is warm, and slightly more malleable to the touch than it should be... wait. Forget getting a leg-up on the situation -- just stop and back away slowly. You can't afford two potential sexual harrassment cases. It's not worth it."); }
+                            if (searchedTree == true)
+                            {
+                                if (secondQuest) { Console.WriteLine("The statue is warm, and slightly more malleable to the touch than it should be... wait. Forget getting a leg-up on the situation -- just stop and back away slowly. You can't afford two potential statutory relationships. It's not worth it."); }
+                                else { Console.WriteLine("The statue is warm, and slightly more malleable to the touch than it should be... wait. Forget getting a leg-up on the situation -- just stop and back away slowly. You can't afford two potential sexual harrassment cases. It's not worth it."); }
+                            }
                             if (searchedTree == false) { Console.WriteLine("The statue's clothes are real. In the pockets you find a pair of glasses and an empty notepad -- nothing really of much value to you."); }
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
@@ -8605,7 +8674,8 @@ namespace JessesDungeon
                         Console.WriteLine();
                         if (salamancaChoice == null)
                         {
-                            Console.WriteLine("An old, decrepit man sitting in the back yells, \"Who is that! Kill him!\"");
+                            if (secondQuest) { Console.WriteLine("An old, decrepit man sitting in the back yells, \"Who is that! Kill her!\""); }
+                            else { Console.WriteLine("An old, decrepit man sitting in the back yells, \"Who is that! Kill him!\""); }
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Two far less decrepit men are advancing on you. If you're going to do anything, you'd best do it fast.");
@@ -9022,7 +9092,6 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("That's the most blue you've ever seen in one place.");
-                                    Thread.Sleep(2000);
                                     Console.WriteLine();
                                     Console.WriteLine("...Wanna take some?");
                                     Console.WriteLine();
@@ -9061,7 +9130,11 @@ namespace JessesDungeon
                                                     else if (stolenCrystals <= 30) { Console.WriteLine("Ohhhh Sneeeaaakyyyyy!"); }
                                                     else if (stolenCrystals <= 40) { Console.WriteLine("Oh man. Getting those deep pockets."); }
                                                     else if (stolenCrystals <= 50) { Console.WriteLine("Bold strategy, Cotton - let's see if it pays off for 'em."); }
-                                                    else if (stolenCrystals > 50) { Console.WriteLine("You must have as many balls as you do crystals right now."); }
+                                                    else if (stolenCrystals > 50)
+                                                    {
+                                                        if (secondQuest) { Console.WriteLine("You must have collected as many balls as you have crystals right now."); }
+                                                        else { Console.WriteLine("You must have as many balls as you do crystals right now."); }
+                                                    }
                                                     ego.BlueCrystals = ego.BlueCrystals + salamancaStolenCrystals;
                                                     Console.WriteLine();
                                                     Console.Write("Press ENTER to continue");
@@ -9217,7 +9290,6 @@ namespace JessesDungeon
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine("That's the most blue you've ever seen in one place.");
-                                    Thread.Sleep(2000);
                                     Console.WriteLine();
                                     Console.WriteLine("...Wanna take some?");
                                     Console.WriteLine();
@@ -9255,7 +9327,11 @@ namespace JessesDungeon
                                                     else if (stolenCrystals <= 30) { Console.WriteLine("Ohhhh Sneeeaaakyyyyy!"); }
                                                     else if (stolenCrystals <= 40) { Console.WriteLine("Oh man. Getting those deep pockets."); }
                                                     else if (stolenCrystals <= 50) { Console.WriteLine("Bold strategy, Cotton - let's see if it pays off for 'em."); }
-                                                    else if (stolenCrystals > 50) { Console.WriteLine("You must have as many balls as you do crystals right now."); }
+                                                    else if (stolenCrystals > 50)
+                                                    {
+                                                        if (secondQuest) { Console.WriteLine("You must have collected as many balls as you have crystals right now."); }
+                                                        else { Console.WriteLine("You must have as many balls as you do crystals right now."); }
+                                                    }
                                                     ego.BlueCrystals = ego.BlueCrystals + salamancaStolenCrystals;
                                                     Console.WriteLine();
                                                     Console.Write("Press ENTER to continue");
@@ -9314,7 +9390,9 @@ namespace JessesDungeon
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("Nothin', man. Will have to settle for his gigantic bag of cash.");
+                                if (secondQuest) { Console.WriteLine("Nothin', chicka. Will have to settle for his gigantic bag of cash."); }
+                                else { Console.WriteLine("Nothin', man. Will have to settle for his gigantic bag of cash."); }
+                                Console.WriteLine("");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -9683,7 +9761,8 @@ namespace JessesDungeon
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("You're not too sure why Mike would care if his crystals had dirt on them, but you're just the new guy here.");
+                                if (secondQuest) { Console.WriteLine("You're not too sure why Mike would care if his crystals had dirt on them, but you're just the new girl here."); }
+                                else { Console.WriteLine("You're not too sure why Mike would care if his crystals had dirt on them, but you're just the new guy here."); }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -10086,7 +10165,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Here you go, man - blow some bad man's face off.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Here you go, lady - blow some bad man's face off.\""); }
+                                        else { Console.WriteLine("\"Here you go, man - blow some bad man's face off.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10096,7 +10176,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Listen, lady: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
+                                        else { Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10112,7 +10193,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Here you go, man - blow some bad man's face off.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Here you go, lady - blow some bad man's face off.\""); }
+                                        else { Console.WriteLine("\"Here you go, man - blow some bad man's face off.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10122,7 +10204,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Listen, lady: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
+                                        else { Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10138,7 +10221,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Here you go, man - blow some bad man's face off.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Here you go, lady - blow some bad man's face off.\""); }
+                                        else { Console.WriteLine("\"Here you go, man - blow some bad man's face off.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10148,7 +10232,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Listen, lady: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
+                                        else { Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10164,7 +10249,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Here you go, man - melt some bad man's face off.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Here you go, lady - melt some bad man's face off.\""); }
+                                        else { Console.WriteLine("\"Here you go, man - melt some bad man's face off.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10174,7 +10260,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Listen, lady: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
+                                        else { Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10190,7 +10277,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Here you go, man - melt some bad man's face off.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Here you go, lady - melt some bad man's face off.\""); }
+                                        else { Console.WriteLine("\"Here you go, man - melt some bad man's face off.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10200,7 +10288,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Listen, lady: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
+                                        else { Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10217,7 +10306,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Here you go, man - melt some bad man's face off.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Here you go, lady - melt some bad man's face off.\""); }
+                                        else { Console.WriteLine("\"Here you go, man - melt some bad man's face off.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10227,7 +10317,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Listen, lady: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
+                                        else { Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10253,7 +10344,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Listen, lady: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
+                                        else { Console.WriteLine("\"Listen, man: I'm out to help you, but this ain't no charity - you gotta have the cash.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -10410,7 +10502,7 @@ namespace JessesDungeon
                             Thread.Sleep(1500);
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.Write("Yeah no");
+                            Console.Write("Yeah no.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -10440,9 +10532,18 @@ namespace JessesDungeon
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("I've gotta admit -- you've got balls.");
-                                Console.WriteLine();
-                                Console.WriteLine("Had balls, rather, as one of the many bullets shot at (and through) you hit you in the genitals and severed your testicles from the rest of your body. You are quite dead.");
+                                if (secondQuest)
+                                {
+                                    Console.WriteLine("I've gotta admit -- you've got guts.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Had guts, rather, as a slew of bullets go through your abdomen and make your internal organs become your external organs. You are quite dead.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("I've gotta admit -- you've got balls.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Had balls, rather, as one of the many bullets shot at (and through) you hit you in the genitals and severed your testicles from the rest of your body. You are quite dead.");
+                                }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -10576,7 +10677,8 @@ namespace JessesDungeon
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("The guy's ripped. He's gorgeous. If you were to experiment it'd be with this dude.");
+                            if (secondQuest) { Console.WriteLine("He's all right, I guess; not really your type."); }
+                            else { Console.WriteLine("The guy's ripped. He's gorgeous. If you were to experiment it'd be with this dude."); }
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Something about his demeanor gives the impression he's a bit mentally \"off,\" though.");
@@ -10653,7 +10755,8 @@ namespace JessesDungeon
                                         Console.WriteLine("Based on your standing, you will be given fights of varying difficulty.");
                                         Console.WriteLine("Your standing goes up when you win, and goes down when you lose.");
                                         Console.WriteLine("If someone taps out or goes limp: his fight is over.");
-                                        Console.WriteLine("The victor wins his opponent\'s blue crystals; everything for a felled opponent, and half if he surrendered.");
+                                        if (secondQuest) { Console.WriteLine("The victor wins her opponent\'s blue crystals; everything for a felled opponent, and half if he surrendered."); }
+                                        else { Console.WriteLine("The victor wins his opponent\'s blue crystals; everything for a felled opponent, and half if he surrendered."); }
                                         Console.WriteLine("If this is your first time at fight club -- you have to fight.");
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
@@ -10702,12 +10805,14 @@ namespace JessesDungeon
                                             }
                                             if (fightClubChoice == "two")
                                             {
-                                                Console.WriteLine("\"Menage a trois? Didn't take you for that kind of guy, but you got it.\"");
+                                                if (secondQuest) { Console.WriteLine("\"Menage a trois? Didn't take you for that kind of gal, but you got it.\""); }
+                                                else { Console.WriteLine("\"Menage a trois? Didn't take you for that kind of guy, but you got it.\""); }
                                                 fightClubMode = 2;
                                             }
                                             if (fightClubChoice == "many")
                                             {
-                                                Console.WriteLine("\"Cowabunga, bro.\"");
+                                                if (secondQuest) { Console.WriteLine("\"Cowabunga, sis.\""); }
+                                                else { Console.WriteLine("\"Cowabunga, bro\""); }
                                                 fightClubMode = 3;
                                             }
                                             Console.WriteLine();
@@ -10747,7 +10852,8 @@ namespace JessesDungeon
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("\"Hey, man. I'm gonna need you to focus. What you said didn't do anything useful.\"");
+                                        if (secondQuest) { Console.WriteLine("\"Hey, lady. I'm gonna need you to focus. What you said didn't do anything useful.\""); }
+                                        else { Console.WriteLine("\"Hey, man. I'm gonna need you to focus. What you said didn't do anything useful.\""); }
                                         Console.WriteLine();
                                         Console.Write("Press ENTER to continue");
                                         Console.ReadLine();
@@ -11278,7 +11384,7 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("The note reads:");
-                            Thread.Sleep(1500);
+                            Thread.Sleep(1000);
                             Console.Clear();
                             Console.WriteLine("I can't believe he has such security measures in place. I've been lost here for so long that I've resorted to writing on the wall as if I'm some sort of deranged lunatic gone mad from prolonged isolation. No matter. I shall log my activities here in hopes that it will aid me in remembering the sequence through this maze.");
                             Console.WriteLine();
@@ -11857,446 +11963,591 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.WriteLine("As you go to address him, he shuts off his music and speaks.");
                             Console.WriteLine();
-                            if (konamiProgress == 10) { Console.WriteLine("\"You know, I paid a lot for that whole big contraption. Now some random dude just comes wandering through?\""); }
-                            else { Console.WriteLine("\"You know, I paid that pogo punk a lot to keep people away from that tunnel. Now some random dude just comes wandering through?\""); }
+                            if (konamiProgress == 10)
+                            {
+                                if (secondQuest) { Console.WriteLine("\"You know, I paid a lot for that whole big contraption. And some blonde bimbo just comes wandering through?\""); }
+                                else { Console.WriteLine("\"You know, I paid a lot for that whole big contraption. Now some random dude just comes wandering through?\""); }
+                            }
+                            else
+                            {
+                                if (secondQuest) { Console.WriteLine("\"You know, I paid that pogo punk a lot to keep people away from that tunnel. I guess I wasn't paying him enough to keep you out.\""); }
+                                else { Console.WriteLine("\"You know, I paid that pogo punk a lot to keep people away from that tunnel. Now some random dude just comes wandering through?\""); }
+                            }
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
-                            if (disappearChoice == "jesse")
+                            if (secondQuest)
                             {
-                                Console.Clear();
+                                BadGuyStats badGuy = new BadGuyStats("Ganon", 300, 300, 2, 0.85, 8, 4, 2.00, 0, 0, greaterHealingPotion, trident, hazmatSuit, "Ganon levitates into the air and brandishes his trident!");
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("The Runaway Five Theme suddenly begins to play.");
+                                Console.WriteLine("A scream comes from behind the door, and an eerie purple light leaks through the cracks.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind the couch and throws a bag over Jesse's head.");
+                                Console.WriteLine("As Jesse turns, the door splinters and explodes outward. A beast wielding a trident stands in the doorway.");
                                 Console.WriteLine();
-                                Console.WriteLine("\"I'll take care of him from here. You take care of the beast behind the door.\"");
+                                Console.WriteLine("\"Jesse... the Triforce... is resonating.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                            }
-                            else if (undroppables.Contains(jeweledRing))
-                            {
-                                undroppables.Remove(jeweledRing);
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("His gaze shifts down and settles upon the jeweled ring you're holding. His eyes widen and he rises to his feet.");
+                                Console.WriteLine("\"She is finally here... Come, fools - to your doom!\"");
                                 Console.WriteLine();
-                                Console.WriteLine("\"That ring... where did you get that ring?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("He darts at you and grabs the ring. His eyes, burning with rage, now stare intensely into yours.");
-                                Console.WriteLine();
-                                Console.WriteLine("\"WHERE DID YOU GET THIS?\"");
+                                Console.WriteLine("Hostile intent is evident. You prepare for battle.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                BadGuyStats badGuy = new BadGuyStats("Jesse", 150, 150, 4, 0.85, 8, 3, 3.00, 500, 3, healingPotion, axe, ringmail, "Jesse brandishes an axe menacingly!");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("He lunges behind the couch and stands back up with an axe. He growls as he advances on you.");
-                                Console.WriteLine();
-                                Console.WriteLine("Hostile intent is evident. You ready yourself for battle.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield, secondQuest);
-                                if (ego.JanesProtectionActive == true)
-                                {
-                                    ego.JanesProtectionActive = false;
-                                    ego.ArmorClass--;
-                                }
-                                if (ego.JustFled == true)
-                                {
-
-                                }
+                                GanonBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield);
                                 if (ego.CurrentHitPoints <= 0)
                                 {
                                     EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt, secondQuest);
                                 }
-                                else if (badGuy.CurrentHitPoints <= 0)
+                                else if (ego.CurrentHitPoints > 0)
                                 {
-                                    ego.JesseDefeated = true;
-                                    talkLoop = true;
-                                    while (talkLoop == true)
+                                    undroppables.Add(dungeonKey);
+                                    equippableWeapon.Add(badGuy.Weapon);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The enemy left a present!");
+                                    Console.WriteLine();
+                                    Console.WriteLine("The " + badGuy.Weapon.Name + " looks useful. You take it.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    if (disappearChoice == "jesse")
                                     {
+                                        Console.Clear();
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("The Runaway Five Theme suddenly begins to play.");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
                                         Console.WriteLine("____________________________________________________");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("Jesse lays gasping for air at your feet. He's definitely down for the count, but will survive.");
+                                        Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind the couch and throws a bag over Jesse's head.");
                                         Console.WriteLine();
-                                        Console.WriteLine("Any attempt to go near him is met with resistance. What will you do?");
+                                        Console.WriteLine("\"I'll take care of him. You get us out of here.\"");
                                         Console.WriteLine();
-                                        Console.WriteLine("[Kill] him");
-                                        Console.WriteLine("[Leave] him");
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    if (disappearChoice == "heisenberg")
+                                    {
+                                        Console.Clear();
                                         Console.WriteLine();
-                                        Console.Write("> ");
-
-                                        action = Console.ReadLine();
-                                        action = action.ToLower();
-                                        action = action.Trim();
-
-                                        if (action == "leave")
-                                        {
-                                            action = "Complete";
-                                            talkLoop = false;
-                                            sparedJesse = true;
-                                            Console.WriteLine("____________________________________________________");
-                                            Console.WriteLine();
-                                            Console.WriteLine();
-                                            Console.WriteLine("Mercy being the necessary part of honor, you leave the cause of your woes to fight another day.");
-                                            Console.WriteLine();
-                                            Console.Write("Press ENTER to continue");
-                                            Console.ReadLine();
-                                        }
-                                        else if (action == "kill")
-                                        {
-                                            action = "Complete";
-                                            talkLoop = false;
-                                            killedJesse = true;
-                                            gun.Unlocked = true;
-                                            axe.Unlocked = true;
-                                            Console.WriteLine("____________________________________________________");
-                                            Console.WriteLine();
-                                            Console.WriteLine();
-                                            Console.WriteLine("Searching the grotesque carcass, you find 500 blue crystals, which you take.");
-                                            ego.BlueCrystals = ego.BlueCrystals + 500;
-                                            Console.WriteLine();
-                                            Thread.Sleep(3000);
-                                            Console.WriteLine("And the enemy left some presents!");
-                                            Console.WriteLine();
-                                            Console.WriteLine("The Fireman's Axe and the gun look useful. You take them.");
-                                            equippableWeapon.Add(axe);
-                                            equippableWeapon.Add(gun);
-                                            Thread.Sleep(3000);
-                                            Console.WriteLine();
-                                            Console.WriteLine("Press ENTER to continue");
-                                            Console.ReadLine();
-                                            Console.Clear();
-                                        }
-                                        else
-                                        {
-                                            action = "Complete";
-                                            Console.WriteLine("____________________________________________________");
-                                            Console.WriteLine();
-                                            Console.WriteLine();
-                                            Console.WriteLine("There is no escaping this choice.");
-                                            Console.WriteLine();
-                                            Console.Write("Press ENTER to continue");
-                                            Console.ReadLine();
-                                        }
+                                        Console.WriteLine();
+                                        Console.WriteLine("The Runaway Five Theme suddenly begins to play.");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind the couch and throws a bag over Heisenberg's head.");
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"I'll take care of him. You get us out of here.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    action = "Complete";
+                                    ego.Location = "E11";
+                                    ego.FleeLocation = "E11";
+                                    Console.Clear();
+                                    if (disappearChoice != "jesse")
+                                    {
+                                        Console.WriteLine("\"That was... not how I expected this to go. I am very grateful that you found a way to save him.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("He walks over to a drawer and retrieves a key.");
+                                        Console.WriteLine();
+                                        Console.WriteLine("\"This will unlock the cage door. Take it and let's get out of here.\"");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("With all peril quelled, you take your time searching the lab.");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("In addition to many fascinating chemist's trinkets, you find a key which does not seem to operate any lock in the immediate vicinity. You take it hoping it is what you have sought.");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
                                     }
                                 }
                             }
-                            else if (konamiProgress != 10)
-                            {
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("He rises to his feet and squints at you suspiciously.");
-                                Console.WriteLine();
-                                Console.WriteLine("\"How did you know about my escape tunnel?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"Jane? She would not... she would... not...\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess it always does.\"");
-                                Console.WriteLine();
-                                Console.WriteLine("\"Now even she would betray me.\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"I've lost sight of it all. It needs to end.\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"Just make him stop loving them more than himself -- no matter how you balance that equation.\"");
-                                Console.WriteLine();
-                                Console.WriteLine("\"Do that and I'll make this all be over.\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                            }
-                            else if (freePotions == true)
-                            {
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("He rises to his feet and squints at you suspiciously.");
-                                Console.WriteLine();
-                                Console.WriteLine("\"Who are you, anyway?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"...The cartel has conspired against me? With allies? Even... with Jane?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess it always does.\"");
-                                Console.WriteLine();
-                                Console.WriteLine("\"Now even she would betray me.\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"I've lost sight of it all. It needs to end.\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"Just make him stop loving them more than himself -- no matter how you balance that equation.\"");
-                                Console.WriteLine();
-                                Console.WriteLine("\"Do that and I'll make this all be over.\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                            }
                             else
                             {
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("He rises to his feet and squints at you suspiciously.");
-                                Console.WriteLine();
-                                Console.WriteLine("\"Who are you, anyway?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"...The cartel has conspired against me? With allies? EVERYONE has united to kill me?\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess it always does.\"");
-                                Console.WriteLine();
-                                Console.WriteLine("\"It's turned into such a travesty.\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"I've lost sight of it all. It needs to end.\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse:");
-                                Console.WriteLine();
-                                Console.WriteLine("\"Just make him stop loving them more than himself -- no matter how you balance that equation.\"");
-                                Console.WriteLine();
-                                Console.WriteLine("\"Do that and I'll make this all be over.\"");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                            }
-                            if (ego.CurrentHitPoints >= 0)
-                            {
-                                action = "Complete";
-                                ego.JesseDefeated = true;
-                                ego.Location = "Heisenberg";
-                                ego.FleeLocation = "Fortress0";
-                                Console.Clear();
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("The door at the far end of the room is locked and barred from your side. You open it and go in.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
+                                if (disappearChoice == "jesse")
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The Runaway Five Theme suddenly begins to play.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind the couch and throws a bag over Jesse's head.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"I'll take care of him from here. You take care of the beast behind the door.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else if (undroppables.Contains(jeweledRing))
+                                {
+                                    undroppables.Remove(jeweledRing);
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("His gaze shifts down and settles upon the jeweled ring you're holding. His eyes widen and he rises to his feet.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"That ring... where did you get that ring?\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("He darts at you and grabs the ring. His eyes, burning with rage, now stare intensely into yours.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"WHERE DID YOU GET THIS?\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    BadGuyStats badGuy = new BadGuyStats("Jesse", 150, 150, 4, 0.85, 8, 3, 3.00, 500, 3, healingPotion, axe, ringmail, "Jesse brandishes an axe menacingly!");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("He lunges behind the couch and stands back up with an axe. He growls as he advances on you.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Hostile intent is evident. You ready yourself for battle.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield, secondQuest);
+                                    if (ego.JanesProtectionActive == true)
+                                    {
+                                        ego.JanesProtectionActive = false;
+                                        ego.ArmorClass--;
+                                    }
+                                    if (ego.JustFled == true)
+                                    {
+
+                                    }
+                                    if (ego.CurrentHitPoints <= 0)
+                                    {
+                                        EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt, secondQuest);
+                                    }
+                                    else if (badGuy.CurrentHitPoints <= 0)
+                                    {
+                                        ego.JesseDefeated = true;
+                                        talkLoop = true;
+                                        while (talkLoop == true)
+                                        {
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine("Jesse lays gasping for air at your feet. He's definitely down for the count, but will survive.");
+                                            Console.WriteLine();
+                                            Console.WriteLine("Any attempt to go near him is met with resistance. What will you do?");
+                                            Console.WriteLine();
+                                            Console.WriteLine("[Kill] him");
+                                            Console.WriteLine("[Leave] him");
+                                            Console.WriteLine();
+                                            Console.Write("> ");
+
+                                            action = Console.ReadLine();
+                                            action = action.ToLower();
+                                            action = action.Trim();
+
+                                            if (action == "leave")
+                                            {
+                                                action = "Complete";
+                                                talkLoop = false;
+                                                sparedJesse = true;
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                Console.WriteLine("Mercy being the necessary part of honor, you leave the cause of your woes to fight another day.");
+                                                Console.WriteLine();
+                                                Console.Write("Press ENTER to continue");
+                                                Console.ReadLine();
+                                            }
+                                            else if (action == "kill")
+                                            {
+                                                action = "Complete";
+                                                talkLoop = false;
+                                                killedJesse = true;
+                                                gun.Unlocked = true;
+                                                axe.Unlocked = true;
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                Console.WriteLine("Searching the grotesque carcass, you find 500 blue crystals, which you take.");
+                                                ego.BlueCrystals = ego.BlueCrystals + 500;
+                                                Console.WriteLine();
+                                                Thread.Sleep(3000);
+                                                Console.WriteLine("And the enemy left some presents!");
+                                                Console.WriteLine();
+                                                Console.WriteLine("The Fireman's Axe and the gun look useful. You take them.");
+                                                equippableWeapon.Add(axe);
+                                                equippableWeapon.Add(gun);
+                                                Thread.Sleep(3000);
+                                                Console.WriteLine();
+                                                Console.WriteLine("Press ENTER to continue");
+                                                Console.ReadLine();
+                                                Console.Clear();
+                                            }
+                                            else
+                                            {
+                                                action = "Complete";
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                Console.WriteLine("There is no escaping this choice.");
+                                                Console.WriteLine();
+                                                Console.Write("Press ENTER to continue");
+                                                Console.ReadLine();
+                                            }
+                                        }
+                                    }
+                                }
+                                else if (konamiProgress != 10)
+                                {
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("He rises to his feet and squints at you suspiciously.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"How did you know about my escape tunnel?\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Jane? She would not... she would... not...\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess it always does.\"");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Now even she would betray me.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"I've lost sight of it all. It needs to end.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Just make him stop loving them more than himself -- no matter how you balance that equation.\"");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Do that and I'll make this all be over.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else if (freePotions == true)
+                                {
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("He rises to his feet and squints at you suspiciously.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Who are you, anyway?\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"...The cartel has conspired against me? With allies? Even... with Jane?\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess it always does.\"");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Now even she would betray me.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"I've lost sight of it all. It needs to end.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Just make him stop loving them more than himself -- no matter how you balance that equation.\"");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Do that and I'll make this all be over.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("He rises to his feet and squints at you suspiciously.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Who are you, anyway?\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"...The cartel has conspired against me? With allies? EVERYONE has united to kill me?\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"All I wanted was to break his obsession with these crystals! It all seemed so simple at the start. But I guess it always does.\"");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"It's turned into such a travesty.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"I've lost sight of it all. It needs to end.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse:");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Just make him stop loving them more than himself -- no matter how you balance that equation.\"");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Do that and I'll make this all be over.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                if (ego.CurrentHitPoints >= 0)
+                                {
+                                    action = "Complete";
+                                    ego.JesseDefeated = true;
+                                    ego.Location = "Heisenberg";
+                                    ego.FleeLocation = "Fortress0";
+                                    Console.Clear();
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The door at the far end of the room is locked and barred from your side. You open it and go in.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
                             }
                         }
 
                         if ((action == "fight" || action == "fight jesse") && !ego.JesseDefeated)
                         {
-                            if (disappearChoice == "jesse")
+                            if (secondQuest)
                             {
-                                Console.Clear();
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("The Runaway Five Theme suddenly begins to play.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
+                                action = "Complete";
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
+                                Console.WriteLine("Jesse:");
                                 Console.WriteLine();
-                                Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind the couch and throws a bag over Jesse's head.");
-                                Console.WriteLine();
-                                Console.WriteLine("\"I'll take care of him from here. You take care of the beast behind the door.\"");
+                                Console.WriteLine("\"I don't fight girls.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
-                                ego.JesseDefeated = true;
                             }
                             else
                             {
-                                Console.WriteLine("____________________________________________________");
-                                BadGuyStats badGuy = new BadGuyStats("Jesse", 150, 150, 4, 0.85, 8, 3, 3.00, 500, 3, healingPotion, axe, ringmail, "Jesse brandishes an axe menacingly!");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("Jesse reaches behind the couch and stands back up with an axe. He growls as he advances on you.");
-                                Console.WriteLine();
-                                Console.WriteLine("Hostile intent is evident. You ready yourself for battle.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                                PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield, secondQuest);
-                                if (ego.JanesProtectionActive == true)
+                                if (disappearChoice == "jesse")
                                 {
-                                    ego.JanesProtectionActive = false;
-                                    ego.ArmorClass--;
-                                }
-                                if (ego.JustFled == true)
-                                {
-
-                                }
-                                if (ego.CurrentHitPoints <= 0)
-                                {
-                                    EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt, secondQuest);
-                                }
-                                else if (badGuy.CurrentHitPoints <= 0)
-                                {
+                                    Console.Clear();
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The Runaway Five Theme suddenly begins to play.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind the couch and throws a bag over Jesse's head.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"I'll take care of him from here. You take care of the beast behind the door.\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
                                     ego.JesseDefeated = true;
-                                    talkLoop = true;
-                                    while (talkLoop == true)
+                                }
+                                else
+                                {
+                                    Console.WriteLine("____________________________________________________");
+                                    BadGuyStats badGuy = new BadGuyStats("Jesse", 150, 150, 4, 0.85, 8, 3, 3.00, 500, 3, healingPotion, axe, ringmail, "Jesse brandishes an axe menacingly!");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Jesse reaches behind the couch and stands back up with an axe. He growls as he advances on you.");
+                                    Console.WriteLine();
+                                    Console.WriteLine("Hostile intent is evident. You ready yourself for battle.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    PlotBattle(ego, badGuy, potionBelt, equippableArmor, equippableWeapon, equippableShield, secondQuest);
+                                    if (ego.JanesProtectionActive == true)
                                     {
-                                        Console.WriteLine("____________________________________________________");
-                                        Console.WriteLine();
-                                        Console.WriteLine();
-                                        Console.WriteLine("Jesse lays gasping for air at your feet. He's definitely down for the count, but will survive.");
-                                        Console.WriteLine();
-                                        Console.WriteLine("Any attempt to go near him is met with resistance. What will you do?");
-                                        Console.WriteLine();
-                                        Console.WriteLine("[Kill] him");
-                                        Console.WriteLine("[Leave] him");
-                                        Console.WriteLine();
-                                        Console.Write("> ");
+                                        ego.JanesProtectionActive = false;
+                                        ego.ArmorClass--;
+                                    }
+                                    if (ego.JustFled == true)
+                                    {
 
-                                        action = Console.ReadLine();
-                                        action = action.ToLower();
-                                        action = action.Trim();
+                                    }
+                                    if (ego.CurrentHitPoints <= 0)
+                                    {
+                                        EgoDead(ego, equippableArmor, equippableShield, equippableWeapon, potionBelt, secondQuest);
+                                    }
+                                    else if (badGuy.CurrentHitPoints <= 0)
+                                    {
+                                        ego.JesseDefeated = true;
+                                        talkLoop = true;
+                                        while (talkLoop == true)
+                                        {
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine("Jesse lays gasping for air at your feet. He's definitely down for the count, but will survive.");
+                                            Console.WriteLine();
+                                            Console.WriteLine("Any attempt to go near him is met with resistance. What will you do?");
+                                            Console.WriteLine();
+                                            Console.WriteLine("[Kill] him");
+                                            Console.WriteLine("[Leave] him");
+                                            Console.WriteLine();
+                                            Console.Write("> ");
 
-                                        if (action == "leave")
-                                        {
-                                            action = "Complete";
-                                            talkLoop = false;
-                                            sparedJesse = true;
-                                            Console.WriteLine("____________________________________________________");
-                                            Console.WriteLine();
-                                            Console.WriteLine();
-                                            Console.WriteLine("Mercy being the necessary part of honor, you leave the cause of your woes to fight another day.");
-                                            Console.WriteLine();
-                                            Console.Write("Press ENTER to continue");
-                                            Console.ReadLine();
-                                        }
-                                        else if (action == "kill")
-                                        {
-                                            action = "Complete";
-                                            talkLoop = false;
-                                            killedJesse = true;
-                                            gun.Unlocked = true;
-                                            axe.Unlocked = true;
-                                            Console.WriteLine("____________________________________________________");
-                                            Console.WriteLine();
-                                            Console.WriteLine();
-                                            Console.WriteLine("Searching the grotesque carcass, you find 500 blue crystals, which you take.");
-                                            ego.BlueCrystals = ego.BlueCrystals + 500;
-                                            Console.WriteLine();
-                                            Thread.Sleep(3000);
-                                            Console.WriteLine("And the enemy left some presents!");
-                                            Console.WriteLine();
-                                            Console.WriteLine("The Fireman's Axe and the gun look useful. You take them.");
-                                            equippableWeapon.Add(axe);
-                                            equippableWeapon.Add(gun);
-                                            Thread.Sleep(3000);
-                                            Console.WriteLine();
-                                            Console.WriteLine("Press ENTER to continue");
-                                            Console.ReadLine();
-                                            Console.Clear();
-                                        }
-                                        else
-                                        {
-                                            action = "Complete";
-                                            Console.WriteLine("____________________________________________________");
-                                            Console.WriteLine();
-                                            Console.WriteLine();
-                                            Console.WriteLine("There is no escaping this choice.");
-                                            Console.WriteLine();
-                                            Console.Write("Press ENTER to continue");
-                                            Console.ReadLine();
+                                            action = Console.ReadLine();
+                                            action = action.ToLower();
+                                            action = action.Trim();
+
+                                            if (action == "leave")
+                                            {
+                                                action = "Complete";
+                                                talkLoop = false;
+                                                sparedJesse = true;
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                Console.WriteLine("Mercy being the necessary part of honor, you leave the cause of your woes to fight another day.");
+                                                Console.WriteLine();
+                                                Console.Write("Press ENTER to continue");
+                                                Console.ReadLine();
+                                            }
+                                            else if (action == "kill")
+                                            {
+                                                action = "Complete";
+                                                talkLoop = false;
+                                                killedJesse = true;
+                                                gun.Unlocked = true;
+                                                axe.Unlocked = true;
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                Console.WriteLine("Searching the grotesque carcass, you find 500 blue crystals, which you take.");
+                                                ego.BlueCrystals = ego.BlueCrystals + 500;
+                                                Console.WriteLine();
+                                                Thread.Sleep(3000);
+                                                Console.WriteLine("And the enemy left some presents!");
+                                                Console.WriteLine();
+                                                Console.WriteLine("The Fireman's Axe and the gun look useful. You take them.");
+                                                equippableWeapon.Add(axe);
+                                                equippableWeapon.Add(gun);
+                                                Thread.Sleep(3000);
+                                                Console.WriteLine();
+                                                Console.WriteLine("Press ENTER to continue");
+                                                Console.ReadLine();
+                                                Console.Clear();
+                                            }
+                                            else
+                                            {
+                                                action = "Complete";
+                                                Console.WriteLine("____________________________________________________");
+                                                Console.WriteLine();
+                                                Console.WriteLine();
+                                                Console.WriteLine("There is no escaping this choice.");
+                                                Console.WriteLine();
+                                                Console.Write("Press ENTER to continue");
+                                                Console.ReadLine();
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            if (ego.CurrentHitPoints >= 0)
-                            {
-                                action = "Complete";
-                                ego.Location = "Heisenberg";
-                                ego.FleeLocation = "Fortress0";
-                                Console.WriteLine("____________________________________________________");
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("The door at the far end of the room is locked and barred from your side. You open it and go in.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
+                                if (ego.CurrentHitPoints >= 0)
+                                {
+                                    action = "Complete";
+                                    ego.Location = "Heisenberg";
+                                    ego.FleeLocation = "Fortress0";
+                                    Console.WriteLine("____________________________________________________");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("The door at the far end of the room is locked and barred from your side. You open it and go in.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
                             }
                         }
 
@@ -13105,7 +13356,8 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Hey, buddy. I kinda followed you down here. How'd it go?\"");
+                                if (secondQuest) { Console.WriteLine("\"Hey, missy. I kinda followed you down here. How'd it go?\""); }
+                                else { Console.WriteLine("\"Hey, buddy. I kinda followed you down here. How'd it go?\""); }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -13137,7 +13389,9 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Hey, buddy. How'd it go this time?\"");
+                                if (secondQuest) { Console.WriteLine("\"Hey, missy. How'd it go this time?\""); }
+                                else { Console.WriteLine("\"Hey, buddy. How'd it go this time?\""); }
+                                Console.WriteLine("");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -13167,7 +13421,8 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Hey, buddy. How'd it go this time?\"");
+                                if (secondQuest) { Console.WriteLine("\"Hey, missy. How'd it go this time?\""); }
+                                else { Console.WriteLine("\"Hey, buddy. How'd it go this time?\""); }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -13199,7 +13454,8 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Hey, buddy. How'd it go this time?\"");
+                                if (secondQuest) { Console.WriteLine("\"Hey, missy. How'd it go this time?\""); }
+                                else { Console.WriteLine("\"Hey, buddy. How'd it go this time?\""); }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -13238,14 +13494,16 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Hey, buddy. How'd it go this time?\"");
+                                if (secondQuest) { Console.WriteLine("\"Hey, missy. How'd it go this time?\""); }
+                                else { Console.WriteLine("\"Hey, buddy. How'd it go this time?\""); }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine(); Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"No updates? No problem, my man -- I believe in you!\"");
+                                if (secondQuest) { Console.WriteLine("\"No updates? No problem, good lady -- I believe in you!\""); }
+                                else { Console.WriteLine("\"No updates? No problem, my man -- I believe in you!\""); }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -13364,7 +13622,8 @@ namespace JessesDungeon
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("Oh and you did find his money pouch, but I'm assuming you're a gentleman and let him hold onto it -- it's the least you can do for someone so helpful.");
+                            if (secondQuest) { Console.WriteLine("Oh and you did find his money pouch, but I'm assuming you're a lady and let him hold onto it -- it's the least you can do for someone so helpful."); }
+                            else { Console.WriteLine("Oh and you did find his money pouch, but I'm assuming you're a gentleman and let him hold onto it -- it's the least you can do for someone so helpful."); }
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -13552,7 +13811,8 @@ namespace JessesDungeon
                                                 Console.WriteLine("____________________________________________________");
                                                 Console.WriteLine();
                                                 Console.WriteLine();
-                                                Console.WriteLine("\"My SIR! It seems no one will take your wager. Anyone who would consider bowling for such a prize package is afraid of you!\"");
+                                                if (secondQuest) { Console.WriteLine("\"My GOOD LADY! It seems no one will take your wager. Anyone who would consider bowling for such a prize package is afraid of you!\""); }
+                                                else { Console.WriteLine("\"My SIR! It seems no one will take your wager. Anyone who would consider bowling for such a prize package is afraid of you!\""); }
                                                 Console.WriteLine();
                                                 Console.Write("Press ENTER to continue");
                                                 Console.ReadLine();
@@ -14129,7 +14389,8 @@ namespace JessesDungeon
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("You never actually got to participate in a panty raid at college. Let's see here...");
+                                if (secondQuest) { Console.WriteLine("You never actually got panty raided in college. This is what they were all on about?"); }
+                                else { Console.WriteLine("You never actually got to participate in a panty raid at college. Let's see here..."); }
                                 Console.WriteLine();
                                 Console.WriteLine("Oh. Well not what you expected to find, but there's a gorgeous ring in there. Definitely no use for this thing to remain here.");
                                 undroppables.Add(jeweledRing);
@@ -14142,9 +14403,13 @@ namespace JessesDungeon
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("You never actually got to participate in a panty raid at college. Let's see here...");
-                                Console.WriteLine();
-                                Console.WriteLine("Teeheehee! Panties.");
+                                if (secondQuest) { Console.WriteLine("You never actually got panty raided in college. This is what they were all on about?"); }
+                                else { Console.WriteLine("You never actually got to participate in a panty raid at college. Let's see here..."); }                                
+                                if (!secondQuest)
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine("Teeheehee! Panties.");
+                                }
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -14417,7 +14682,7 @@ namespace JessesDungeon
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("Your searching beyond the second proves fruitless. In what game would a THIRD search get you something?");
+                                Console.WriteLine("Your searching beyond the second proves fruitless. In what game would a THIRD search get you something? At least not in the second act.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -14882,7 +15147,8 @@ namespace JessesDungeon
                             Console.WriteLine("Gosh this certainly IS a nice room, but as you are admiring its beautiful plainness, a voice calls out to you from the south.");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("\"Hey - tall, dark, and quiet! Over here!\"");
+                            if (secondQuest) { Console.WriteLine("\"Hey - cute, blonde, and quiet! Over here!\""); }
+                            else { Console.WriteLine("\"Hey - tall, dark, and quiet! Over here!\""); }
                         }
                         else { Console.WriteLine("There is little to differentiate this room from the others."); }
                         Console.WriteLine();
@@ -17817,6 +18083,9 @@ namespace JessesDungeon
                             }
                             else
                             {
+                                if (droppingItem == ego.EquippedArmor.Name && !equippableArmor.Contains(ego.EquippedArmor)) { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                                if (droppingItem == ego.EquippedWeapon.Name && !equippableWeapon.Contains(ego.EquippedWeapon)) { GetStripped(ego, ego.EquippedArmor, unarmed, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                                if (droppingItem == ego.EquippedShield.Name && !equippableShield.Contains(ego.EquippedShield)) { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, nullShield, equippableArmor, equippableWeapon, equippableShield); }
                                 Console.WriteLine("____________________________________________________");
                                 foreach (Armor armor in equippableArmor)
                                 {
@@ -17910,7 +18179,6 @@ namespace JessesDungeon
                             if (action != "Complete")
                             {
                                 action = "Complete";
-                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine("You must be quite a content person, as you don't want what you don't have.");
@@ -18045,6 +18313,48 @@ namespace JessesDungeon
                             inspectingItem = action.Remove((action.IndexOf("Inspect ")), 8);
                             inspectingItem = inspectingItem.ToLower();
                             inspectingItem = myTI.ToTitleCase(inspectingItem);
+
+
+                            if (inspectingItem == ego.EquippedArmor.Name && !equippableArmor.Contains(ego.EquippedArmor))
+                            {
+                                action = "Complete";
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine(ego.EquippedArmor.Description);
+                                Console.WriteLine();
+                                Console.WriteLine(ego.EquippedArmor.Name);
+                                Console.WriteLine($"Dmg Reduction: {ego.EquippedArmor.DamageReduction}  Crit Resist: {ego.EquippedArmor.CritResist}");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            if (inspectingItem == ego.EquippedWeapon.Name && !equippableWeapon.Contains(ego.EquippedWeapon))
+                            {
+                                action = "Complete";
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine(ego.EquippedWeapon.Description);
+                                Console.WriteLine();
+                                Console.WriteLine(ego.EquippedWeapon.Name);
+                                Console.WriteLine($"Damage Bonus: {ego.EquippedWeapon.Damage}  Crit Multiplier: {ego.EquippedWeapon.CritMultiplier}");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.WriteLine();
+                                Console.ReadLine();
+                            }
+                            if (inspectingItem == ego.EquippedShield.Name && !equippableShield.Contains(ego.EquippedShield))
+                            {
+                                action = "Complete";
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine(ego.EquippedShield.Description);
+                                Console.WriteLine();
+                                Console.WriteLine(ego.EquippedShield.Name);
+                                Console.WriteLine($"AC: {ego.EquippedShield.ArmorClass}  Crit Resist: {ego.EquippedShield.CritResist}");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
 
                             Console.WriteLine("____________________________________________________");
                             foreach (Armor armor in equippableArmor)
@@ -18198,7 +18508,7 @@ namespace JessesDungeon
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("v.Insect's Quest I");
+                    Console.WriteLine("v.Insect's Quest II");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
@@ -19995,146 +20305,83 @@ namespace JessesDungeon
                 Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.WriteLine("\"He's here!\"");
-                Console.WriteLine();
-                Console.WriteLine("The inhabitants of the dungeon have all congregated at the exit and turn to you. They applaud and cheer.");
-                Console.WriteLine();
-                Console.Write("Press ENTER to continue");
-                Console.ReadLine();
-                Console.WriteLine("____________________________________________________");
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine("When the applause comes down, Jimmy, standing at the head of the crowd, speaks. \"So you've finally made it! We all just wanted to properly thank you for getting us out of here.\"");
-                Console.WriteLine();
-                Console.WriteLine("\"Not only that, but, you know, you're still walking around with the key.\"");
-                Console.WriteLine();
-                Console.Write("Press ENTER to continue");
-                Console.ReadLine();
-                Console.WriteLine("____________________________________________________");
-                Console.WriteLine();
-                Console.WriteLine("Jimmy:");
-                Console.WriteLine();
-                Console.WriteLine("\"But I would be remiss if I did not point out that without your intervention - for my personal benefit or not - my relationship with my brother would still be in shambles.\"");
-                Console.WriteLine();
-                Console.Write("Press ENTER to continue");
-                Console.ReadLine();
-                if (disappearChoice != "hermit mcgill")
+                if (thirdQuest)
                 {
+                    Console.WriteLine("\"It's here!\"");
+                    Console.WriteLine();
+                    Console.WriteLine("The inhabitants of the dungeon have all congregated at the exit and turn to you. They applaud and cheer.");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("When the applause comes down, Jimmy, standing at the head of the crowd, speaks. \"So you've finally made it! We all just wanted to properly thank you for getting us out of here.\"");
+                    Console.WriteLine();
+                    Console.WriteLine("\"Not only that, but, you know, you're still walking around with the key.\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine("Jimmy:");
+                    Console.WriteLine();
+                    Console.WriteLine("\"But I would be remiss if I did not point out that without your intervention - for my personal benefit or not - my relationship with my brother would still be in shambles.\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After clearing his throat, a man mummified in space blankets begins to speak.");
                     Console.WriteLine();
-                    if (highestHermitAnger == 0)
-                    {
-                        Console.WriteLine("\"Yes, well - the boy is a pure delight to speak with. The manners of a saint and the vision of a hawk, I'm sure.\"");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine("Hermit:");
-                        Console.WriteLine();
-                        Console.WriteLine("He loosens the wrap on his head and peeks his eyes out.");
-                        Console.WriteLine();
-                        Console.WriteLine("\"The young man has even inspired me to acclimate myself to the light. I think I'll get into selling action figures of us and split the profits!\"");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("\"'Jesse's Dungeon: You know the name -- now own the toy!!'\"");
-                        Console.WriteLine();
-                    }
-                    else if (highestHermitAnger < 3)
-                    {
-                        Console.WriteLine("\"Yes, well - the boy is a pure delight to speak with. The manners of a saint and the vision of a hawk, I'm sure.\"");
-                        Console.WriteLine();
-                    }
-                    else if (highestHermitAnger < 7)
-                    {
-                        Console.WriteLine("\"Yes, well - the boy can be a bit of a handful at times, but certainly a young man worthy of praise. Well done.\"");
-                        Console.WriteLine();
-                    }
-                    else
-                    {
-                        Console.WriteLine("\"Yes, well - while perhaps deserving of recognition for getting us out, he is a bit of a handful. Probably carries around a flashlight, too, I'll bet.\"");
-                        Console.WriteLine();
-                    }
+                    Console.WriteLine("\"Yes, well - it is a pure delight to speak with. The manners of a saint and the vision of a hawk, I'm sure.\"");
+                    Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                }
-                Console.Clear();
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
-                Console.WriteLine();
-                Console.WriteLine("\"Who else owes thanks to this Matchmaker of the Dungeon?\"");
-                Console.WriteLine();
-                Console.Write("Press ENTER to continue");
-                Console.ReadLine();
-                if (disappearChoice != "badger")
-                {
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine("Hermit:");
+                    Console.WriteLine();
+                    Console.WriteLine("He loosens the wrap on his head and peeks his eyes out.");
+                    Console.WriteLine();
+                    Console.WriteLine("\"The young thing has even inspired me to acclimate myself to the light. I think I'll get into the restaurant business and split the profits!\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("\"'Jesse's Dungeon: You know the name -- now enjoy your very own!!'\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.Clear();
+
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
+                    Console.WriteLine();
+                    Console.WriteLine("\"Who else owes thanks to this Matchmaker of the Dungeon?\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Badger hesitantly looks around and raises his hand.");
                     Console.WriteLine();
-                    Console.WriteLine("\"Yeah, I mean, none of us even knew this guy at all, and he risked everything while we just sat on our butts. Even if he only did it with himself in mind I owe him big, you know? Thanks, bro!\"");
+                    Console.WriteLine("\"Yeah, I mean, none of us even knew this thing at all, and it risked everything while we just sat on our butts. Even if it only did it with itself in mind I owe it big, you know? Thanks, amigo!\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                    if (disappearChoice != "skinny pete")
-                    {
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Skinny Pete thrusts his hands in the air. \"Yeah! None of you guys really like to trade anymore, but this guy right here even brought me Jesse's celebratory Mezcal for when we were done in here! Seems appropriate for us to pass some around now!\"");
-                        Console.WriteLine();
-                        Console.WriteLine("He and Badger proceed to pass around some cups.");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine("Skinny Pete:");
-                        Console.WriteLine();
-                        Console.WriteLine("He holds up the mostly-full bottle with a smile, and shrugs.");
-                        Console.WriteLine();
-                        Console.WriteLine("\"Hey, well, I didn't really count on you succeeding and all... so I guess we'll just say I got a bit of a head start.\"");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else
-                    {
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine("Badger:");
-                        Console.WriteLine();
-                        Console.WriteLine("\"And I'm not too sure where Skinny Pete got off to, but I know he was planning some celebratory toast or something.\"");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    Console.Clear();
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
+                    Console.WriteLine("Skinny Pete thrusts his hands in the air. \"Yeah! None of you guys really like to trade anymore, but this thing right here even brought me Jesse's celebratory Mezcal for when we were done in here! Seems appropriate for us to pass some around now!\"");
                     Console.WriteLine();
-                    Console.WriteLine("\"Who else owes thanks to this Celebration of the Dungeon?\"");
-                    Console.WriteLine();
-                    Console.Write("Press ENTER to continue");
-                    Console.ReadLine();
-                }
-                else
-                {
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("Skinny Pete raises a hand in the air. \"None of you guys really like to trade anymore, but this guy right here even brought me Jesse's celebratory Mezcal for when we were done in here! Seems appropriate for us to pass some around now!\"");
-                    Console.WriteLine();
-                    Console.WriteLine("He proceeds to pass around some cups.");
+                    Console.WriteLine("He and Badger proceed to pass around some cups.");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
@@ -20142,13 +20389,14 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.WriteLine("Skinny Pete:");
                     Console.WriteLine();
-                    Console.WriteLine("He looks left and right to the people adjacent to him.");
+                    Console.WriteLine("He holds up the mostly-full bottle with a smile, and shrugs.");
                     Console.WriteLine();
-                    Console.WriteLine("\"Well I don't like exactly know where Badger got off to, but could you help pass these cups out?\"");
+                    Console.WriteLine("\"Hey, well, I didn't really count on you succeeding and all... so I guess we'll just say I got a bit of a head start.\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                     Console.Clear();
+
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
@@ -20157,14 +20405,12 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                }
-                if (disappearChoice != "lydia")
-                {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Lydia hands off her cup of tea to a bystander.");
                     Console.WriteLine();
-                    Console.WriteLine("\"This young man saved me from a most dire fate. I could barely muster the energy to lament my circumstances - not to mention do anything to solve them! Without him I would still be horribly backlogged, which would likely have then caused the collapse of our entire economic structure! First the value of the crystal would crash, and then war, plague, and FAMINE!\"");
+                    Console.WriteLine("\"This young thing saved me from a most dire fate. I could barely muster the energy to lament my circumstances - not to mention do anything to solve them! Without it I would still be horribly backlogged, which would likely have then caused the collapse of our entire economic structure! First the value of the crystal would crash, and then war, plague, and FAMINE!\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
@@ -20178,37 +20424,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                    if (inappropriateTouchingCounter > 0)
-                    {
 
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine("Lydia:");
-                        Console.WriteLine();
-                        Console.WriteLine("And let's not forget just how FRIENDLY he is!");
-                        Console.WriteLine();
-                        Console.Write("\"He touched me\"");
-                        Thread.Sleep(500);
-                        Console.Write(".");
-                        Thread.Sleep(500);
-                        Console.Write(".");
-                        Thread.Sleep(500);
-                        Console.Write(".");
-                        Thread.Sleep(1500);
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Here.");
-                        for (int i = 0; i < inappropriateTouchingCounter; i++)
-                        {
-                            Thread.Sleep(500);
-                            Console.WriteLine();
-                            Console.WriteLine("And here.");
-                        }
-                        Thread.Sleep(500);
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
                     Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine();
@@ -20218,19 +20434,17 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                }
-                if (disappearChoice != "narrator" && narratorDefeated)
-                {
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("The gorgeous, shirtless man from the fight club steps forward.");
                     Console.WriteLine();
-                    Console.WriteLine("\"This man can not only outwit and outmaneuver his enemies, but he is the strongest fighter I've ever seen. With brains and brawn, he is a force to be reckoned with.\"");
+                    Console.WriteLine("\"This thing not only is tough without and delicious within, but is the spiciest thing I've ever seen. Both creamy AND spicy, it is a force to be reckoned with.\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                     Console.Clear();
+
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
@@ -20239,22 +20453,19 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                }
-                if (disappearChoice != "bowling guy" && bowlingSkill == 20)
-                {
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("The glib bowling salesman speaks next.");
                     Console.WriteLine();
-                    Console.WriteLine("\"A great man walks here. A great man who has contributed SO much money to his recreational prowess! He has procured my services through his own blood and sweat and has bested all others in the sport of bowling!\"");
+                    Console.WriteLine("\"No! A great travesty walks here! He made a mess of my alley, and that 'spicy goodness' burned holes in my finish!\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("\"I'll be able to open a franchise of alleys now!\"");
+                    Console.WriteLine("\"It'll take practically all of my crystals to repair! I'm ruined!\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
@@ -20266,63 +20477,48 @@ namespace JessesDungeon
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                     Console.Clear();
+
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
                     Console.WriteLine();
-                    Console.WriteLine("\"Who else owes thanks to this Investor of the Dungeon?\"");
+                    Console.WriteLine("\"Who else owes thanks to this Abrasive of the Dungeon?\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                }
-                if (disappearChoice != "gus")
-                {
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Though making no apparent sound or movement, Gus ushers a hush over the crowd as everyone focuses on him.");
                     Console.WriteLine();
-                    Console.WriteLine("\"This man was integral in the unification of our factions. Without his essential contributions, none of us would be getting out today.\"");
+                    Console.WriteLine("\"This item was integral in the unification of our factions. Without its essential contributions, none of us would be getting out today.\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                    if (disappearChoice != "salamanca" && !salamancaDead)
-                    {
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine("Gus:");
-                        Console.WriteLine();
-                        Console.WriteLine("\"He first destroyed the Salamanca dissidents --\"");
-                        Thread.Sleep(1000);
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine("Salamanca interrupts and begins a (likely less than flattering) tirade in Spanish.");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine("Gus:");
-                        Console.WriteLine();
-                        Console.WriteLine("He pauses until it is quiet again, and then continues.");
-                        Console.WriteLine();
-                        Console.WriteLine("\"-- and then removed all other obstacles for a united front. We owe him a debt of gratitude - one I fully intend to repay.\"");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else
-                    {
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine("Gus:");
-                        Console.WriteLine();
-                        Console.WriteLine("\"He first destroyed the Salamanca dissidents and then removed all other obstacles for a united front. We owe him a debt of gratitude - one I fully intend to repay.\"");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine("Gus:");
+                    Console.WriteLine();
+                    Console.WriteLine("\"He first destroyed the Salamanca dissidents --\"");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine("Salamanca interrupts and begins a (likely less than flattering) tirade in Spanish.");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine("Gus:");
+                    Console.WriteLine();
+                    Console.WriteLine("He pauses until it is quiet again, and then continues.");
+                    Console.WriteLine();
+                    Console.WriteLine("\"-- and then removed all other obstacles for a united front. We owe it a debt of gratitude - one I fully intend to repay.\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
                     Console.Clear();
+
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
@@ -20331,30 +20527,24 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                }
-                if (disappearChoice != "mike")
-                {
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("There is a short silence, and Jimmy looks at Mike.");
                     Console.WriteLine();
-                    Console.WriteLine("\"Who ELSE owes thanks to this man?\"");
+                    Console.WriteLine("\"Who ELSE owes thanks to this delicacy?\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                    if (disappearChoice != "daniel")
-                    {
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Mike remains unmoving with his arms crossed.");
-                        Console.WriteLine();
-                        Console.WriteLine("Next to him, the statue man speaks. \"Uh? Hey, well, I do suppose there is something. There was a bit of a cash flow problem and he did clear that up. I'm sure I can speak for us both in giving our sincerest thanks.\"");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Mike remains unmoving with his arms crossed.");
+                    Console.WriteLine();
+                    Console.WriteLine("Next to him, the statue man speaks. \"Uh? Hey, well, I do suppose there is something. There was a bit of a cash flow problem and it did clear that up. I'm sure I can speak for us both in giving our sincerest thanks.\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine("Mike:");
@@ -20366,183 +20556,94 @@ namespace JessesDungeon
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                     Console.Clear();
+
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
                     Console.WriteLine();
-                    Console.WriteLine("\"Who else owes thanks to this Unappreciated Man of the Dungeon?\"");
+                    Console.WriteLine("\"Who else owes thanks to this Unappreciated Dish of the Dungeon?\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                }
-                else
-                {
-                    Console.WriteLine("____________________________________________________");
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("The statue man raises his hand and stutters.");
-                    Console.WriteLine();
-                    Console.WriteLine("\"Uh? Hey, well, I do suppose there is something. There was a bit of a cash flow problem and he did cleared that up. I'm unsure of where Mike has gone, but I think he'd be thankful.\"");
-                    Console.WriteLine();
-                    Console.Write("Press ENTER to continue");
-                    Console.ReadLine();
-                    Console.Clear();
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
-                    Console.WriteLine();
-                    Console.WriteLine("\"Who else owes thanks to this Unappreciated Man of the Dungeon?\"");
-                    Console.WriteLine();
-                    Console.Write("Press ENTER to continue");
-                    Console.ReadLine();
-                }
-                if (disappearChoice != "jane" && !killedJesse && searchedTree)
-                {
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("The tree woman raises her branch and takes a step forward.");
                     Console.WriteLine();
-                    Console.WriteLine("\"Despite my initial distrust of this stranger, he has proven to be what we all had needed.\"");
+                    Console.WriteLine("\"Despite my initial distrust of this stranger, it has proven to be what we all had needed.\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                    if (freePotions)
-                    {
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine("Jane:");
-                        Console.WriteLine();
-                        Console.WriteLine("\"I trusted him with the secrets to Jesse's Fortress. In return I asked what little I could do to protect Jesse: a promise that he would leave him alive -- something anyone could easily break.\"");
-                        Console.WriteLine();
-                        Console.WriteLine("\"Despite the opportunity, he stayed true to his word. He is a man of integrity and honor.\"");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    if (disappearChoice == "jesse")
-                    {
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        if (freePotions) { Console.WriteLine("Jane:"); }
-                        Console.WriteLine();
-                        Console.WriteLine("\"I know not where Jesse ended up, but I do trust that he is alive and well somewhere.\"");
-                        Console.WriteLine();
-                        Console.WriteLine("\"He is out there waiting.\"");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (disappearChoice == "heisenberg")
-                    {
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Jesse clears his throat and steps forward next to her.");
-                        Console.WriteLine();
-                        Console.WriteLine("\"Yeah, man, he even is like more than I ever imagined. All I wanted was for this to end, and I only saw that happening with Heisenberg's death. I couldn't do it myself, so I sent him to do it for me; but he managed to free us while sparing my friend's life. He is a true hero.\"");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Jesse turns and smiles at the tree woman and they both step back.");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else
-                    {
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Jesse clears his throat and steps forward next to her.");
-                        Console.WriteLine();
-                        Console.WriteLine("\"Yeah, man. All I wanted was for this to end, and I only saw that happening with Heisenberg's death. I couldn't do it myself, so I sent him to do it for me; he is a hero -- to me, at least.\"");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                }
-                else
-                {
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("\"Oh, I'm wrong.\"");
+                    Console.WriteLine("\"I trusted it with the secrets of Jesse's digestive issues. In return I asked what little I could do to protect Jesse: a promise that it would leave him alive -- something anyone could easily break.\"");
+                    Console.WriteLine();
+                    Console.WriteLine("\"Despite the opportunity, it stayed true to its word. He is a taco of integrity and honor.\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                }
-                if (disappearChoice != "jimmy")
-                {
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Jesse clears his throat and steps forward next to her.");
+                    Console.WriteLine();
+                    Console.WriteLine("\"Yeah, man, he even is, like, more than I ever imagined. All I wanted was for this to end, and I only saw that happening with Heisenberg's death. I couldn't do it myself, so I sent it to do it for me; but it managed to free us while sparing all but my friend's underwear. It is a true hero.\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Jesse turns and smiles at the tree woman and they both step back.");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
                     Console.Clear();
+
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Jimmy breaks into a largely exaggerated applause.");
                     Console.WriteLine();
-                    Console.WriteLine("\"No matter if he came from the north or east, he did not disappoint in the least. Returning something most precious or merely some dinero, he has proven to be our hero.\"");
-                    Console.WriteLine();
-                    Console.Write("Press ENTER to continue");
-                    Console.ReadLine();
-                }
-                else
-                {
-                    Console.Clear();
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("The Runaway Five Theme suddenly begins to play.");
+                    Console.WriteLine("\"No matter if it came from the south or east, it did not disappoint in the least. With a spice level far higher than zero, this giant taco has proven to be our hero.\"");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
                     Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind the crowd and throws a bag over Jimmy's head.");
+                    Console.WriteLine("The crowd parts, making a path for you to the door. Someone had the forethought of setting up a ladder for you, as well.");
                     Console.WriteLine();
-                    Console.WriteLine("\"I waited for you to get the credit you were owed. Now finish up what you came here to do.\"");
+                    Console.WriteLine("You climb the ladder and unlock the cage holding you all inside. The key turns, and you push the door open.");
                     Console.WriteLine();
                     Console.Write("Press ENTER to continue");
                     Console.ReadLine();
-                }
-                Console.WriteLine("____________________________________________________");
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine("The crowd parts, making a path for you to the door. Someone had the forethought of setting up a ladder for you, as well.");
-                Console.WriteLine();
-                Console.WriteLine("You climb the ladder and unlock the cage holding you all inside. The key turns, and you push the door open.");
-                Console.WriteLine();
-                Console.Write("Press ENTER to continue");
-                Console.ReadLine();
-                talkLoop = true;
-                while (talkLoop == true)
-                {
-                    Console.WriteLine("____________________________________________________");
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("After climbing out, would you like to:");
-                    Console.WriteLine();
-                    Console.WriteLine("[Help] everyone out until every last person has escaped");
-                    Console.WriteLine("[Kick] out the ladder and shut the door");
-                    Console.WriteLine();
-                    Console.Write("> ");
-                    action = Console.ReadLine();
-                    action = action.ToLower();
-
-                    if (action == "help")
+                    talkLoop = true;
+                    while (talkLoop == true)
                     {
-                        action = "Complete";
-                        talkLoop = false;
                         Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.WriteLine("You see to the escape of all your grateful friends. Gradually, everyone says their goodbyes and parts ways.");
+                        Console.WriteLine("After climbing out, would you like to:");
                         Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                        if (disappearChoice == "heisenberg" && !killedJesse)
+                        Console.WriteLine("[Help] everyone out until every last person has escaped");
+                        Console.WriteLine("[Kick] out the ladder and shut the door");
+                        Console.WriteLine();
+                        Console.Write("> ");
+                        action = Console.ReadLine();
+                        action = action.ToLower();
+
+                        if (action == "help")
                         {
+                            action = "Complete";
+                            talkLoop = false;
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("You see to the escape of all your grateful friends. Gradually, everyone says their goodbyes and parts ways.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
@@ -20550,54 +20651,723 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Congratulations! You've successfully completed \"Jesse's Dungeon.\" Your final score was 150 of 100 possible Puzzle Points.");
+                            Console.WriteLine();
+                            Console.WriteLine("Now play again with the other character types; many puzzles are different, or have alternate solutions.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();                            
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Yo quiero Taco Bell!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to gracefully end the program");
+                            Console.ReadLine();
                         }
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Congratulations! You've successfully completed \"Jesse's Dungeon.\" Your final score was 100 of 100 possible Puzzle Points.");
-                        Console.WriteLine();
-                        Console.WriteLine("Now play again with the other character types; many puzzles are different, or have alternate solutions.");
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                        if (!secondQuest)
+                        else if (action == "kick")
+                        {
+                            action = "Complete";
+                            talkLoop = false;
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine("Badger:");
+                            Console.WriteLine();
+                            Console.WriteLine("\"You dick!\"");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Someone jumps and grabs you by the lettuce. You spill fire sauce on him, but not before you fall low enough for others to grab a hold of your shell.");
+                            Console.WriteLine();
+                            Console.WriteLine("They drag you back down, and begin cracking off pieces of your shell and scooping out your sour cream.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("The last thing you see is Jesse glowering down at you.");
+                            Console.WriteLine();
+                            Console.WriteLine("He tears out the tomatoes that serve as your eyes and devours them, then returns for the guacamole making up your brain.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            Console.Clear();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("\"Yeah, BITCH!\"");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to exit");
+                            Console.ReadLine();
+                        }
+                        else
                         {
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("Second quest unlocked!");
+                            Console.WriteLine("That didn't do anything useful.");
                             Console.WriteLine();
-                            Console.WriteLine("Before entering the dungeon, type code: ZELDA");
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                    }
+                }
+                else
+                {
+                    if (secondQuest) { Console.WriteLine("\"She's here!\""); }
+                    else { Console.WriteLine("\"He's here!\""); }
+                    Console.WriteLine();
+                    Console.WriteLine("The inhabitants of the dungeon have all congregated at the exit and turn to you. They applaud and cheer.");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("When the applause comes down, Jimmy, standing at the head of the crowd, speaks. \"So you've finally made it! We all just wanted to properly thank you for getting us out of here.\"");
+                    Console.WriteLine();
+                    Console.WriteLine("\"Not only that, but, you know, you're still walking around with the key.\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine("Jimmy:");
+                    Console.WriteLine();
+                    Console.WriteLine("\"But I would be remiss if I did not point out that without your intervention - for my personal benefit or not - my relationship with my brother would still be in shambles.\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    if (disappearChoice != "hermit mcgill")
+                    {
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("After clearing his throat, a man mummified in space blankets begins to speak.");
+                        Console.WriteLine();
+                        if (highestHermitAnger == 0)
+                        {
+                            if (secondQuest) { Console.WriteLine("\"Yes, well - the girl is a pure delight to speak with. The manners of a saint and the vision of a hawk, I'm sure.\""); }
+                            else { Console.WriteLine("\"Yes, well - the boy is a pure delight to speak with. The manners of a saint and the vision of a hawk, I'm sure.\""); }
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine("Hermit:");
+                            Console.WriteLine();
+                            Console.WriteLine("He loosens the wrap on his head and peeks his eyes out.");
+                            Console.WriteLine();
+                            if (secondQuest) { Console.WriteLine("\"The young woman has even inspired me to acclimate myself to the light. I think I'll get into selling action figures of us and split the profits!\""); }
+                            else { Console.WriteLine("\"The young man has even inspired me to acclimate myself to the light. I think I'll get into selling action figures of us and split the profits!\""); }
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("\"'Jesse's Dungeon: You know the name -- now own the toy!!'\"");
+                            Console.WriteLine();
+                        }
+                        else if (highestHermitAnger < 3)
+                        {
+                            if (secondQuest) { Console.WriteLine("\"Yes, well - the girl is a pure delight to speak with. The manners of a saint and the vision of a hawk, I'm sure.\""); }
+                            else { Console.WriteLine("\"Yes, well - the boy is a pure delight to speak with. The manners of a saint and the vision of a hawk, I'm sure.\""); }
+                            Console.WriteLine();
+                        }
+                        else if (highestHermitAnger < 7)
+                        {
+                            if (secondQuest) { Console.WriteLine("\"Yes, well - the girl can be a bit of a handful at times, but certainly a young woman worthy of praise. Well done.\""); }
+                            else { Console.WriteLine("\"Yes, well - the boy can be a bit of a handful at times, but certainly a young man worthy of praise. Well done.\""); }
+                            Console.WriteLine();
+                        }
+                        else
+                        {
+                            if (secondQuest) { Console.WriteLine("\"Yes, well - while perhaps deserving of recognition for getting us out, she is a bit of a handful. Probably carries around a flashlight, too, I'll bet.\""); }
+                            else { Console.WriteLine("\"Yes, well - while perhaps deserving of recognition for getting us out, he is a bit of a handful. Probably carries around a flashlight, too, I'll bet.\""); }
+                            Console.WriteLine();
+                        }
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    Console.Clear();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
+                    Console.WriteLine();
+                    Console.WriteLine("\"Who else owes thanks to this Matchmaker of the Dungeon?\"");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    if (disappearChoice != "badger")
+                    {
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Badger hesitantly looks around and raises his hand.");
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("\"Yeah, I mean, none of us even knew this gal at all, and she risked everything while we just sat on our butts. Even if she only did it with herself in mind I owe her big, you know? Thanks, sis!\""); }
+                        else { Console.WriteLine("\"Yeah, I mean, none of us even knew this guy at all, and he risked everything while we just sat on our butts. Even if he only did it with himself in mind I owe him big, you know? Thanks, bro!\""); }
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        if (disappearChoice != "skinny pete")
+                        {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            if (secondQuest) { Console.WriteLine("Skinny Pete thrusts his hands in the air. \"Yeah! None of you guys really like to trade anymore, but this gal right here even brought me Jesse's celebratory Mezcal for when we were done in here! Seems appropriate for us to pass some around now!\""); }
+                            else { Console.WriteLine("Skinny Pete thrusts his hands in the air. \"Yeah! None of you guys really like to trade anymore, but this guy right here even brought me Jesse's celebratory Mezcal for when we were done in here! Seems appropriate for us to pass some around now!\""); }
+                            Console.WriteLine();
+                            Console.WriteLine("He and Badger proceed to pass around some cups.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine("Skinny Pete:");
+                            Console.WriteLine();
+                            Console.WriteLine("He holds up the mostly-full bottle with a smile, and shrugs.");
+                            Console.WriteLine();
+                            Console.WriteLine("\"Hey, well, I didn't really count on you succeeding and all... so I guess we'll just say I got a bit of a head start.\"");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else
+                        {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine("Badger:");
+                            Console.WriteLine();
+                            Console.WriteLine("\"And I'm not too sure where Skinny Pete got off to, but I know he was planning some celebratory toast or something.\"");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
+                        Console.WriteLine();
+                        Console.WriteLine("\"Who else owes thanks to this Celebration of the Dungeon?\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("Skinny Pete raises a hand in the air. \"None of you guys really like to trade anymore, but this gal right here even brought me Jesse's celebratory Mezcal for when we were done in here! Seems appropriate for us to pass some around now!\""); }
+                        else { Console.WriteLine("Skinny Pete raises a hand in the air. \"None of you guys really like to trade anymore, but this guy right here even brought me Jesse's celebratory Mezcal for when we were done in here! Seems appropriate for us to pass some around now!\""); }
+                        Console.WriteLine();
+                        Console.WriteLine("He proceeds to pass around some cups.");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine("Skinny Pete:");
+                        Console.WriteLine();
+                        Console.WriteLine("He looks left and right to the people adjacent to him.");
+                        Console.WriteLine();
+                        Console.WriteLine("\"Well I don't, like, exactly know where Badger got off to, but could you help pass these cups out?\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
+                        Console.WriteLine();
+                        Console.WriteLine("\"Who else owes thanks to this Celebration of the Dungeon?\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    if (disappearChoice != "lydia")
+                    {
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Lydia hands off her cup of tea to a bystander.");
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("\"This young lady saved me from a most dire fate. I could barely muster the energy to lament my circumstances - not to mention do anything to solve them! Without her I would still be horribly backlogged, which would likely have then caused the collapse of our entire economic structure! First the value of the crystal would crash, and then war, plague, and FAMINE!\""); }
+                        else { Console.WriteLine("\"This young man saved me from a most dire fate. I could barely muster the energy to lament my circumstances - not to mention do anything to solve them! Without him I would still be horribly backlogged, which would likely have then caused the collapse of our entire economic structure! First the value of the crystal would crash, and then war, plague, and FAMINE!\""); }
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine("Lydia:");
+                        Console.WriteLine();
+                        Console.WriteLine("She retrieves her cup.");
+                        Console.WriteLine();
+                        Console.WriteLine("\"Just remember how important the little things can be.\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        if (inappropriateTouchingCounter > 0)
+                        {
+
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine("Lydia:");
+                            Console.WriteLine();
+                            if (secondQuest) { Console.WriteLine("And let's not forget just how FRIENDLY she is!"); }
+                            else { Console.WriteLine("And let's not forget just how FRIENDLY he is!"); }
+                            Console.WriteLine();
+                            if (secondQuest) { Console.Write("\"She touched me\""); }
+                            else { Console.Write("\"He touched me\""); }
+                            Thread.Sleep(500);
+                            Console.Write(".");
+                            Thread.Sleep(500);
+                            Console.Write(".");
+                            Thread.Sleep(500);
+                            Console.Write(".");
+                            Thread.Sleep(1500);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Here.");
+                            for (int i = 0; i < inappropriateTouchingCounter; i++)
+                            {
+                                Thread.Sleep(500);
+                                Console.WriteLine();
+                                Console.WriteLine("And here.");
+                            }
+                            Thread.Sleep(500);
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Jimmy is motionless for a moment, and then rolls his eyes.");
+                        Console.WriteLine();
+                        Console.WriteLine("\"Who else owes thanks to this Stevia Retriever of the Dungeon?\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    if (disappearChoice != "narrator" && narratorDefeated)
+                    {
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("The gorgeous, yet not-quite-your-type man from the fight club steps forward."); }
+                        else { Console.WriteLine("The gorgeous, shirtless man from the fight club steps forward."); }
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("\"This woman can not only outwit and outmaneuver her enemies, but she is the strongest fighter I've ever seen. What's more, she seems to be immune to my smoulder. With brains, brawn, and the ability to resist 'People's Sexiest Man Alive' of 1995 AND 2000, she is a force to be reckoned with.\""); }
+                        else { Console.WriteLine("\"This man can not only outwit and outmaneuver his enemies, but he is the strongest fighter I've ever seen. With brains and brawn, he is a force to be reckoned with.\""); }
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
+                        Console.WriteLine();
+                        Console.WriteLine("\"Who else owes thanks to this Most Interesting Single-Serving Friend of the Dungeon?\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    if (disappearChoice != "bowling guy" && bowlingSkill == 20)
+                    {
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("The glib bowling salesman speaks next.");
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("\"A great woman walks here. A great woman who has contributed SO much money to her recreational prowess! She has procured my services through her own blood and sweat and has bested all others in the sport of bowling!\""); }
+                        else { Console.WriteLine("\"A great man walks here. A great man who has contributed SO much money to his recreational prowess! He has procured my services through his own blood and sweat and has bested all others in the sport of bowling!\""); }
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("\"I'll be able to open a franchise of alleys now!\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Jimmy squints his eyes and gives the man a half smile. \"Of course you realize those crystals no longer hold any value as currency... actually - you know what - we'll talk!\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
+                        Console.WriteLine();
+                        Console.WriteLine("\"Who else owes thanks to this Investor of the Dungeon?\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    if (disappearChoice != "gus")
+                    {
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Though making no apparent sound or movement, Gus ushers a hush over the crowd as everyone focuses on him.");
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("\"This woman was integral in the unification of our factions. Without her essential contributions, none of us would be getting out today.\""); }
+                        else { Console.WriteLine("\"This man was integral in the unification of our factions. Without his essential contributions, none of us would be getting out today.\""); }
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        if (disappearChoice != "salamanca" && !salamancaDead)
+                        {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine("Gus:");
+                            Console.WriteLine();
+                            if (secondQuest) { Console.WriteLine("\"She first destroyed the Salamanca dissidents --\""); }
+                            else { Console.WriteLine("\"He first destroyed the Salamanca dissidents --\""); }
+                            Thread.Sleep(1000);
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine("Salamanca interrupts and begins a (likely less than flattering) tirade in Spanish.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine("Gus:");
+                            Console.WriteLine();
+                            Console.WriteLine("He pauses until it is quiet again, and then continues.");
+                            Console.WriteLine();
+                            if (secondQuest) { Console.WriteLine("\"-- and then removed all other obstacles for a united front. We owe her a debt of gratitude - one I fully intend to repay.\""); }
+                            else { Console.WriteLine("\"-- and then removed all other obstacles for a united front. We owe him a debt of gratitude - one I fully intend to repay.\""); }
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else
+                        {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine("Gus:");
+                            Console.WriteLine();
+                            if (secondQuest) { Console.WriteLine("\"She first destroyed the Salamanca dissidents and then removed all other obstacles for a united front. We owe her a debt of gratitude - one I fully intend to repay.\""); }
+                            else { Console.WriteLine("\"He first destroyed the Salamanca dissidents and then removed all other obstacles for a united front. We owe him a debt of gratitude - one I fully intend to repay.\""); }
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
+                        Console.WriteLine();
+                        Console.WriteLine("\"Who else owes thanks to this Facilitator of the Dungeon?\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    if (disappearChoice != "mike")
+                    {
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("There is a short silence, and Jimmy looks at Mike.");
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("\"Who ELSE owes thanks to this woman?\""); }
+                        else { Console.WriteLine("\"Who ELSE owes thanks to this man?\""); }
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        if (disappearChoice != "daniel")
+                        {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Mike remains unmoving with his arms crossed.");
+                            Console.WriteLine();
+                            if (secondQuest) { Console.WriteLine("Next to him, the statue man speaks. \"Uh? Hey, well, I do suppose there is something. There was a bit of a cash flow problem and she did clear that up. I'm sure I can speak for us both in giving our sincerest thanks.\""); }
+                            else { Console.WriteLine("Next to him, the statue man speaks. \"Uh? Hey, well, I do suppose there is something. There was a bit of a cash flow problem and he did clear that up. I'm sure I can speak for us both in giving our sincerest thanks.\""); }
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                         }
                         Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
+                        Console.WriteLine("Mike:");
                         Console.WriteLine();
-                        Console.WriteLine("See you next time!");
+                        Console.WriteLine("He keeps his arms folded in front of his chest, looking away to the side.");
                         Console.WriteLine();
-                        Console.Write("Press ENTER to gracefully end the program");
+                        Console.WriteLine("\"Hmph.\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
                         Console.ReadLine();
-                    }
-                    else if (action == "kick")
-                    {
-                        action = "Complete";
-                        talkLoop = false;
+                        Console.Clear();
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.WriteLine("Dick.");
-                        Thread.Sleep(1500);
+                        Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("\"Who else owes thanks to this Unappreciated Woman of the Dungeon?\""); }
+                        else { Console.WriteLine("\"Who else owes thanks to this Unappreciated Man of the Dungeon?\""); }
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
                     }
                     else
                     {
                         Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.WriteLine("That didn't do anything useful.");
+                        Console.WriteLine("The statue man raises his hand and stutters.");
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("\"Uh? Hey, well, I do suppose there is something. There was a bit of a cash flow problem and she did cleared that up. I'm unsure of where Mike has gone, but I think he'd be thankful.\""); }
+                        else { Console.WriteLine("\"Uh? Hey, well, I do suppose there is something. There was a bit of a cash flow problem and he did cleared that up. I'm unsure of where Mike has gone, but I think he'd be thankful.\""); }
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("After another round of applause, Jimmy addresses the crowd.");
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("\"Who else owes thanks to this Unappreciated Woman of the Dungeon?\""); }
+                        else { Console.WriteLine("\"Who else owes thanks to this Unappreciated Man of the Dungeon?\""); }
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    if (disappearChoice != "jane" && !killedJesse && searchedTree)
+                    {
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("The tree woman raises her branch and takes a step forward.");
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("\"Despite how gorgeous this stranger may be, she has proven to be what we all had needed.\""); }
+                        else { Console.WriteLine("\"Despite my initial distrust of this stranger, he has proven to be what we all had needed.\""); }
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        if (freePotions)
+                        {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine("Jane:");
+                            Console.WriteLine();
+                            if (secondQuest) { Console.WriteLine("\"I trusted her with the secrets to Jesse's Fortress. In return I asked what little I could do to protect Jesse: a promise that she would leave him alive -- something anyone so attractive could easily break.\""); }
+                            else { Console.WriteLine("\"I trusted him with the secrets to Jesse's Fortress. In return I asked what little I could do to protect Jesse: a promise that he would leave him alive -- something anyone could easily break.\""); }
+                            Console.WriteLine();
+                            if (secondQuest) { Console.WriteLine("\"Despite the opportunity, she stayed true to her word. She is a woman of integrity, honor, and beauty.\""); }
+                            else { Console.WriteLine("\"Despite the opportunity, he stayed true to his word. He is a man of integrity and honor.\""); }
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        if (disappearChoice == "jesse")
+                        {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            if (freePotions) { Console.WriteLine("Jane:"); }
+                            Console.WriteLine();
+                            Console.WriteLine("\"I know not where Jesse ended up, but I do trust that he is alive and well somewhere.\"");
+                            Console.WriteLine();
+                            Console.WriteLine("\"He is out there waiting.\"");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (disappearChoice == "heisenberg")
+                        {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Jesse clears his throat and steps forward next to her.");
+                            Console.WriteLine();
+                            if (secondQuest) { Console.WriteLine("\"Yeah, man, she even is, like, more than I ever imagined. All I wanted was for this to end, and I only saw that happening with Heisenberg's death. I couldn't do it myself, so I sent her to do it for me; but she managed to free us while sparing my friend's life. She is a true hero.\""); }
+                            else { Console.WriteLine("\"Yeah, man, he even is, like, more than I ever imagined. All I wanted was for this to end, and I only saw that happening with Heisenberg's death. I couldn't do it myself, so I sent him to do it for me; but he managed to free us while sparing my friend's life. He is a true hero.\""); }
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            if (freePotions) { Console.WriteLine("Jesse turns and smiles at Jane and they both step back."); }
+                            else { Console.WriteLine("Jesse turns and smiles at the tree woman and they both step back."); }
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else
+                        {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Jesse clears his throat and steps forward next to her.");
+                            Console.WriteLine();
+                            if (secondQuest) { Console.WriteLine("\"Yeah, man. All I wanted was for this to end, and I only saw that happening with Heisenberg's death. I couldn't do it myself, so I sent her to do it for me; she is a hero -- to me, at least.\""); }
+                            else { Console.WriteLine("\"Yeah, man. All I wanted was for this to end, and I only saw that happening with Heisenberg's death. I couldn't do it myself, so I sent him to do it for me; he is a hero -- to me, at least.\""); }
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("\"Oh, I'm wrong.\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    if (disappearChoice != "jimmy")
+                    {
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Jimmy breaks into a largely exaggerated applause.");
+                        Console.WriteLine();
+                        if (secondQuest) { Console.WriteLine("\"No matter if she came from the north or east, she did not disappoint in the least. Returning something most precious or merely some dinero, she has proven to be our hero.\""); }
+                        else { Console.WriteLine("\"No matter if he came from the north or east, he did not disappoint in the least. Returning something most precious or merely some dinero, he has proven to be our hero.\""); }
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("The Runaway Five Theme suddenly begins to play.");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("As if from nowhere, the disappearing-service man appears from behind the crowd and throws a bag over Jimmy's head.");
+                        Console.WriteLine();
+                        Console.WriteLine("\"I waited for you to get the credit you were owed. Now finish up what you came here to do.\"");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("The crowd parts, making a path for you to the door. Someone had the forethought of setting up a ladder for you, as well.");
+                    Console.WriteLine();
+                    Console.WriteLine("You climb the ladder and unlock the cage holding you all inside. The key turns, and you push the door open.");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    talkLoop = true;
+                    while (talkLoop == true)
+                    {
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("After climbing out, would you like to:");
+                        Console.WriteLine();
+                        Console.WriteLine("[Help] everyone out until every last person has escaped");
+                        Console.WriteLine("[Kick] out the ladder and shut the door");
+                        Console.WriteLine();
+                        Console.Write("> ");
+                        action = Console.ReadLine();
+                        action = action.ToLower();
+
+                        if (action == "help")
+                        {
+                            action = "Complete";
+                            talkLoop = false;
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("You see to the escape of all your grateful friends. Gradually, everyone says their goodbyes and parts ways.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            if (disappearChoice == "heisenberg" && !killedJesse)
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("In thanks, Jesse bequeaths the dungeon to you to use as you see fit. He suggests the installation of an entrance ramp and a thorough cleaning.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Congratulations! You've successfully completed \"Jesse's Dungeon.\" Your final score was 100 of 100 possible Puzzle Points.");
+                            Console.WriteLine();
+                            Console.WriteLine("Now play again with the other character types; many puzzles are different, or have alternate solutions.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            if (!secondQuest)
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Second quest unlocked!");
+                                Console.WriteLine();
+                                Console.WriteLine("Before entering the dungeon, type code: ZELDA");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Third quest unlocked!");
+                                Console.WriteLine();
+                                Console.WriteLine("Before entering the dungeon, type code: ROCKY 5000");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("See you next time!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to gracefully end the program");
+                            Console.ReadLine();
+                        }
+                        else if (action == "kick")
+                        {
+                            action = "Complete";
+                            talkLoop = false;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Dick.");
+                            Thread.Sleep(1500);
+                        }
+                        else
+                        {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("That didn't do anything useful.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
                     }
                 }
             }
@@ -21753,6 +22523,7 @@ namespace JessesDungeon
                     {
                         if (battleAction == "Complete" && badGuy.CurrentHitPoints > 0)
                         {
+                            Console.WriteLine("____________________________________________________");
                             enemyHPPercent = ((double)badGuy.CurrentHitPoints / (double)badGuy.MaxHitPoints);
 
                             randomAttack = die.Next(1, 11);
@@ -21948,6 +22719,7 @@ namespace JessesDungeon
                             if (enemyHPPercent > 0.25)
                             {
                                 attackRoll = die.Next(1, 21);
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.Write(badGuy.Name + " attacks you, ");
@@ -22050,6 +22822,7 @@ namespace JessesDungeon
                                 {
                                     attackRoll = attackRoll - 5;
                                 }
+                                Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 if (badGuy.Name == "Dude on a Pogo Stick") { Console.Write($"{badGuy.Name} charges forward!"); }
@@ -22214,6 +22987,7 @@ namespace JessesDungeon
                 }
                 static void GetBadGuyDrunk(BadGuyStats imbiber, Potion potion)
                 {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     if (imbiber.CurrentHitPoints <= (imbiber.MaxHitPoints - potion.Potency))
@@ -22486,6 +23260,7 @@ namespace JessesDungeon
                 }
                     else
                     {
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("OH HO! You've uncovered the super secret hidden battle option! You now can use \"" + encounterAction + "\" in all fights from here on!");
@@ -23092,6 +23867,7 @@ namespace JessesDungeon
                         if ( enemyHPPercent > 0.25)
                         {
                             attackRoll = d20.Next(1, 21);
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.Write(badGuy.Name + " attacks you, ");
@@ -23135,6 +23911,7 @@ namespace JessesDungeon
                         else if (enemyHPPercent <= 0.25 && enemyHPPercent > 0)
                         {
                             attackRoll = d20.Next(1, 21);
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.Write(badGuy.Name + " attacks you, ");
@@ -23270,6 +24047,7 @@ namespace JessesDungeon
                 }
                 static void GetBadGuyDrunk(BadGuyStats imbiber, Potion potion)
                 {
+                    Console.WriteLine("____________________________________________________");
                     Console.WriteLine();
                     Console.WriteLine();
                     if (imbiber.CurrentHitPoints <= (imbiber.MaxHitPoints - potion.Potency))
@@ -23895,6 +24673,7 @@ namespace JessesDungeon
                     if (enemyHPPercent > 0.25)
                     {
                         attackRoll = die.Next(1, 21);
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.Write(badGuy.Name + " attacks you, ");
@@ -23997,6 +24776,7 @@ namespace JessesDungeon
                         {
                             attackRoll = attackRoll - 5;
                         }
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         if (badGuy.Name == "Dude on a Pogo Stick") { Console.Write($"{badGuy.Name} charges forward!"); }
@@ -24168,6 +24948,7 @@ namespace JessesDungeon
             }
             static void GetBadGuyDrunk(BadGuyStats imbiber, Potion potion)
             {
+                Console.WriteLine("____________________________________________________");
                 Console.WriteLine();
                 Console.WriteLine();
                 if (imbiber.CurrentHitPoints <= (imbiber.MaxHitPoints - potion.Potency))
@@ -24792,6 +25573,7 @@ namespace JessesDungeon
                     if (enemyHPPercent > 0.25 && randomAttack == 1 && pantsOff == false)
                     {
                         pantsOff = true;
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.Write("Heisenberg takes off his pants!");
@@ -24802,6 +25584,7 @@ namespace JessesDungeon
                         if (randomAttack < 3)
                         {
                             randomDamage = die.Next(1, 6);
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Heisenberg, screaming in frustration, throws a pizza onto a canopied work station! The pizza begins to bake under an intense lamp, and the cheese becomes scalding hot. The oils become turbulent, causing it to slide down and off the canopy!");
@@ -24812,6 +25595,7 @@ namespace JessesDungeon
                         else if (randomAttack == 3)
                         {
                             randomDamage = die.Next(10, 21);
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Heisenberg raises two fingers, and a red beam appears on your chest. He throws his fingers forward, and a gunshot is heard!");
@@ -24835,6 +25619,7 @@ namespace JessesDungeon
                         else if (randomAttack == 4)
                         {
                             randomDamage = die.Next(15, 26);
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Heisenberg offers you a bath! In need of relaxation, you get in. Suddenly, Heisenberg is standing over you with flesh-dissolving chemicals!");
@@ -24845,6 +25630,7 @@ namespace JessesDungeon
                         else if (randomAttack == 5)
                         {
                             randomDamage = die.Next(10, 16);
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.WriteLine("Heisenberg tells you he poisoned someone near and dear to your heart. While this causes no direct damage, the mental distress manifests as physical harm!");
@@ -24854,6 +25640,7 @@ namespace JessesDungeon
                         }
                         else
                         {
+                            Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.Write("Heisenberg attacks you, ");
@@ -24938,13 +25725,16 @@ namespace JessesDungeon
                     else if (enemyHPPercent <= 0.25 && enemyHPPercent > 0)
                     {
                         attackRoll = die.Next(1, 21);
+                        Console.WriteLine("____________________________________________________");
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.WriteLine("Heisenberg presses the button on a remote! Gesturing your attention, he points to the trunk of a car which pops open with a machine gun emerging.");
+                        Console.Write("Heisenberg presses the button on a remote! Gesturing your attention, he points to the trunk of a car which pops open with a machine gun emerging.");
                         Thread.Sleep(5000);
                         Console.WriteLine();
-                        Console.WriteLine("The gun fires!");
+                        Console.WriteLine();
+                        Console.Write("The gun fires!");
                         Thread.Sleep(1500);
+                        Console.WriteLine();
                         if (attackRoll >= ego.ArmorClass)
                         {
                             Console.WriteLine();
@@ -24953,10 +25743,11 @@ namespace JessesDungeon
                             {
                                 rolledDamage = die.Next(5, 16) - ego.DamageReduction;
                                 if (rolledDamage < 0) { rolledDamage = 0; }
-                                Console.WriteLine("And hits for " + rolledDamage + " damage!");
+                                Console.Write("And hits for " + rolledDamage + " damage!");
                                 ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
                                 attackRoll--;
                                 Thread.Sleep(500);
+                                Console.WriteLine();
                             }
                             Console.WriteLine();
                             Console.WriteLine();
@@ -25003,6 +25794,7 @@ namespace JessesDungeon
 
                 if ((double)badGuy.CurrentHitPoints <= 0)
                 {
+                    ego.CurrentHitPoints = ego.MaxHitPoints;
                     battleLoop = false;
                     ego.DotActive = 0;
                     if (fightingDefensively == true)
@@ -25085,6 +25877,1305 @@ namespace JessesDungeon
             }
             static void GetBadGuyDrunk(BadGuyStats imbiber, Potion potion)
             {
+                Console.WriteLine("____________________________________________________");
+                Console.WriteLine();
+                Console.WriteLine();
+                if (imbiber.CurrentHitPoints <= (imbiber.MaxHitPoints - potion.Potency))
+                {
+                    imbiber.CurrentHitPoints = imbiber.CurrentHitPoints + potion.Potency;
+                    if (imbiber.Name == "Ego") { Console.WriteLine("You drink the " + potion.Name + ". You regain " + potion.Potency + " HP!"); }
+                    else { Console.WriteLine(imbiber.Name + " drinks a " + potion.Name + ", and suddenly looks healthier!"); }
+
+                }
+                else
+                {
+                    imbiber.CurrentHitPoints = imbiber.MaxHitPoints;
+                    if (imbiber.Name == "Ego") { Console.WriteLine("You drink the " + potion.Name + ". Your HP are maxed out!"); }
+                    else { Console.WriteLine(imbiber.Name + " drinks a " + potion.Name + ", and suddenly looks healthier!"); }
+                }
+                Console.WriteLine();
+                Console.Write("Press ENTER to continue");
+                Console.ReadLine();
+            }
+            static void GetBombed(BadGuyStats badGuy, Potion potion)
+            {
+                Console.WriteLine("____________________________________________________");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine($"You throw the {potion.Name} and cause " + (potion.Potency * -1) + " damage!");
+                badGuy.CurrentHitPoints = badGuy.CurrentHitPoints + potion.Potency;
+                Console.WriteLine();
+                Console.Write("Press ENTER to continue");
+                Console.ReadLine();
+            }
+        }
+
+        static void GanonBattle(Stats ego, BadGuyStats badGuy, List<Potion> potionBelt, List<Armor> equippableArmor, List<Weapon> equippableWeapon, List<Shield> equippableShield)
+        {
+            Random die = new Random();
+            bool battleLoop = true;
+            bool fightingDefensively = false;
+            bool fullDefense = false;
+            string battleAction;
+            bool inventoryLoop;
+            int attackRoll = 1;
+            int rolledDamage = 0;
+            double enemyHPPercent = 1.00;
+            int randomAttack = 1;
+            int randomDamage = 1;
+            bool pantsOff = false;
+            TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
+            int jesseHP = 150;
+            int jesseAC = 4;
+            int jessePotion = 3;
+            int switchHit = 0;
+
+            while (battleLoop == true)
+            {
+                if (ego.HotActive > 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    if (ego.HotActive < 3)
+                    {
+                        if (ego.CurrentHitPoints < (ego.MaxHitPoints - 10))
+                        {
+                            ego.CurrentHitPoints = ego.CurrentHitPoints + 10;
+                            Console.WriteLine("You feel the soothing effects of your potion. You regain 10 HP!");
+                        }
+                        else
+                        {
+                            ego.CurrentHitPoints = ego.MaxHitPoints;
+                            Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                        }
+                    }
+                    else if (ego.HotActive < 5)
+                    {
+                        if (ego.CurrentHitPoints < (ego.MaxHitPoints - 15))
+                        {
+                            ego.CurrentHitPoints = ego.CurrentHitPoints + 15;
+                            Console.WriteLine("You feel the soothing effects of your potion. You regain 15 HP!");
+                        }
+                        else
+                        {
+                            ego.CurrentHitPoints = ego.MaxHitPoints;
+                            Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                        }
+                        if (ego.HotActive == 3) { ego.HotActive = 1; }
+                    }
+                    else if (ego.HotActive < 7)
+                    {
+                        if (ego.CurrentHitPoints < (ego.MaxHitPoints - 25))
+                        {
+                            ego.CurrentHitPoints = ego.CurrentHitPoints + 25;
+                            Console.WriteLine("You feel the soothing effects of your potion. You regain 25 HP!");
+                        }
+                        else
+                        {
+                            ego.CurrentHitPoints = ego.MaxHitPoints;
+                            Console.WriteLine("You feel the soothing effects of your potion. Your HP are maxed out!");
+                        }
+                        if (ego.HotActive == 5) { ego.HotActive = 1; }
+                    }
+                    ego.HotActive--;
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                }
+                Console.Clear();
+                if (fullDefense == true)
+                {
+                    ego.ArmorClass = ego.ArmorClass - 5;
+                    fullDefense = false;
+                }
+                string enemyHealth = GetEnemyHealth(badGuy.MaxHitPoints, badGuy.CurrentHitPoints);
+                Console.WriteLine("Your Hit Points: " + ego.CurrentHitPoints + " / " + ego.MaxHitPoints);
+                Console.WriteLine(badGuy.Name + "'s Status: " + enemyHealth);
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("What will you do?");
+                Console.WriteLine("-------------------");
+                Console.WriteLine("Inventory");
+                Console.WriteLine("Attack");
+                Console.WriteLine("Defend");
+                if (fightingDefensively == false) { Console.WriteLine("Fight defensively"); }
+                if (fightingDefensively == true) { Console.WriteLine("Fight normally"); }
+                Console.WriteLine("Flee");
+                Console.WriteLine();
+                Console.WriteLine();
+
+                Console.Write("Your action: ");
+                battleAction = Console.ReadLine();
+                battleAction = battleAction.ToLower();
+
+                if (battleAction == "inventory")
+                {
+                    inventoryLoop = true;
+                    while (inventoryLoop == true)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine("Equipment:");
+                        Console.WriteLine("Weapon: " + ego.EquippedWeapon.Name);
+                        Console.WriteLine("Armor: " + ego.EquippedArmor.Name);
+                        if (ego.EquippedShield.Name != "Forearm") { Console.WriteLine("Shield: " + ego.EquippedShield.Name); }
+                        else { Console.WriteLine("Shield: None"); }
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Inventory:");
+                        Console.WriteLine();
+                        foreach (Armor armor in equippableArmor)
+                        {
+                            Console.WriteLine(armor.Name);
+                        }
+                        foreach (Weapon weapon in equippableWeapon)
+                        {
+                            if (weapon.Name == "Unarmed") { }
+                            else { Console.WriteLine(weapon.Name); }
+                        }
+                        foreach (Shield shield in equippableShield)
+                        {
+                            if (shield.Name == "Forearm") { }
+                            else { Console.WriteLine(shield.Name); }
+                        }
+                        foreach (Potion potion in potionBelt)
+                        {
+                            Console.WriteLine(potion.Name);
+                        }
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Use");
+                        Console.WriteLine("Inspect");
+                        Console.WriteLine("Equip");
+                        Console.WriteLine();
+                        Console.WriteLine("Return");
+                        Console.WriteLine();
+                        Console.Write("> ");
+                        battleAction = Console.ReadLine();
+                        battleAction = battleAction.ToLower();
+                        battleAction = myTI.ToTitleCase(battleAction);
+
+                        if (battleAction == "Return")
+                        {
+                            battleAction = "incomplete";
+                            inventoryLoop = false;
+                        }
+                        else if (battleAction.StartsWith("Use "))
+                        {
+                            string usedItem = battleAction.Remove(battleAction.IndexOf("Use "), 4);
+                            foreach (Armor armor in equippableArmor)
+                            {
+                                string bagCheck = armor.Name;
+                                if (usedItem == bagCheck)
+                                {
+                                    battleAction = "incomplete";
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Nothing happens.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    break;
+                                }
+                            }
+                            foreach (Weapon weapon in equippableWeapon)
+                            {
+                                string bagCheck = weapon.Name;
+                                if (usedItem == bagCheck)
+                                {
+                                    battleAction = "incomplete";
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Nothing happens.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    break;
+                                }
+                            }
+                            foreach (Shield shield in equippableShield)
+                            {
+                                string bagCheck = shield.Name;
+                                if (usedItem == bagCheck)
+                                {
+                                    battleAction = "incomplete";
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Nothing happens.");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    break;
+                                }
+                            }
+                            foreach (Potion potion in potionBelt)
+                            {
+                                string bagCheck = potion.Name;
+                                if (usedItem == bagCheck)
+                                {
+                                    battleAction = "Complete";
+                                    inventoryLoop = false;
+                                    potionBelt.Remove(potion);
+                                    if (potion.Potency > 0) { GetGoodGuyDrunk(ego, potion); }
+                                    else if (potion.Name == "Light Vial of Corrosive" || potion.Name == "Vial of Corrosive" || potion.Name == "Greater Vial of Corrosive")
+                                    {
+                                        if (potion.Name == "Light Vial of Corrosive") { ego.DotActive = 2; }
+                                        else if (potion.Name == "Vial of Corrosive") { ego.DotActive = 4; }
+                                        else if (potion.Name == "Greater Vial of Corrosive") { ego.DotActive = 6; }
+                                        Console.WriteLine("____________________________________________________");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine($"You throw the {potion.Name} at {badGuy.Name} and it bursts onto his skin!");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                    }
+                                    else { GetBombed(badGuy, potion); }
+                                    break;
+                                }
+                            }
+
+                            if (battleAction != "Complete" && battleAction != "incomplete")
+                            {
+                                battleAction = "incomplete";
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Let's get one thing straight, OK? You don't have that, it's not usable here, or you just plain typed something that didn't make sense.");
+                                Console.WriteLine("Whichever the case -- stop trying to use it. You're looking silly in front of the bad guy.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                        }
+                        else if (battleAction == "Use")
+                        {
+                            battleAction = "incomplete";
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Use? Use WHAT?!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (battleAction == "Equip")
+                        {
+                            battleAction = "incomplete";
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Oops! You equipped something that we weren't expecting. Whatever it was, you don't need to do it to finish the game.");
+                            Console.WriteLine();
+                            Console.WriteLine("Try taking a different approach to the situation.");
+                            Console.WriteLine();
+                            Console.WriteLine("Error 4. SCI Version 1.001.050");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Had you going there, didn't I? But seriously -- next time try saying what you want to equip.");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (battleAction.StartsWith("Equip "))
+                        {
+                            string equippingItem = battleAction.Remove((battleAction.IndexOf("Equip ")), 6);
+
+                            foreach (Armor armor in equippableArmor)
+                            {
+                                string bagCheck = armor.Name;
+                                if (equippingItem == bagCheck)
+                                {
+                                    battleAction = "incomplete";
+                                    GetDressed(ego, armor, equippableArmor);
+                                    break;
+                                }
+                            }
+                            foreach (Weapon weapon in equippableWeapon)
+                            {
+                                string bagCheck = weapon.Name;
+                                if (equippingItem == bagCheck)
+                                {
+                                    battleAction = "incomplete";
+                                    GetEquipped(ego, weapon, equippableWeapon, equippableArmor, equippableShield);
+                                    break;
+                                }
+                            }
+                            foreach (Shield shield in equippableShield)
+                            {
+                                string bagCheck = shield.Name;
+                                if (equippingItem == bagCheck)
+                                {
+                                    battleAction = "incomplete";
+                                    GetStrapped(ego, shield, equippableShield);
+                                    break;
+                                }
+                            }
+                            if (battleAction != "Complete" && battleAction != "incomplete")
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Let's get one thing straight, OK? You don't have that, it's not equippable, or you just plain typed something that didn't make sense.");
+                                Console.WriteLine("Whichever the case -- stop trying to put that on. It makes you look silly.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            };
+                        }
+                        else if (battleAction == "Inspect")
+                        {
+                            battleAction = "incomplete";
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("-or gadget DOO DOO DOO DOO DOO DOOOO DOOOOOOO!");
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (battleAction.StartsWith("Inspect "))
+                        {
+                            string inspectingItem = battleAction.Remove((battleAction.IndexOf("Inspect ")), 8);
+                            foreach (Armor armor in equippableArmor)
+                            {
+                                string bagCheck = armor.Name;
+                                if (inspectingItem == bagCheck)
+                                {
+                                    battleAction = "incomplete";
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine(armor.Description);
+                                    Console.WriteLine();
+                                    Console.WriteLine(armor.Name);
+                                    Console.WriteLine($"Dmg Reduction: {armor.DamageReduction}  Crit Resist: {armor.CritResist}");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    break;
+                                }
+                            }
+                            foreach (Weapon weapon in equippableWeapon)
+                            {
+                                string bagCheck = weapon.Name;
+                                if (inspectingItem == bagCheck)
+                                {
+                                    battleAction = "incomplete";
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine(weapon.Description);
+                                    Console.WriteLine();
+                                    Console.WriteLine(weapon.Name);
+                                    Console.WriteLine($"Damage Bonus: {weapon.Damage}  Crit Multiplier: {weapon.CritMultiplier}");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.WriteLine();
+                                    Console.ReadLine();
+                                    break;
+                                }
+                            }
+                            foreach (Shield shield in equippableShield)
+                            {
+                                string bagCheck = shield.Name;
+                                if (inspectingItem == bagCheck)
+                                {
+                                    battleAction = "incomplete";
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine(shield.Description);
+                                    Console.WriteLine();
+                                    Console.WriteLine(shield.Name);
+                                    Console.WriteLine($"AC: {shield.ArmorClass}  Crit Resist: {shield.CritResist}");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    break;
+                                }
+                            }
+                            foreach (Potion potion in potionBelt)
+                            {
+                                string bagCheck = potion.Name;
+                                if (inspectingItem == bagCheck)
+                                {
+                                    battleAction = "incomplete";
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine(potion.Description);
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                    break;
+                                }
+                            }
+                            if (battleAction != "Complete" && battleAction != "incomplete")
+                            {
+                                battleAction = "Complete";
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Are we reading from the same inventory sheet?");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                        }
+                    }
+                }
+                if (battleAction == "fight defensively" && fightingDefensively == false)
+                {
+                    battleAction = "fight";
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("You begin fighting defensively. Both you and your opponent gain 1 AC.");
+                    ego.ArmorClass = ego.ArmorClass + 1;
+                    badGuy.ArmorClass = badGuy.ArmorClass + 1;
+                    fightingDefensively = true;
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                }
+                if (battleAction == "fight normally" && fightingDefensively == true)
+                {
+                    battleAction = "fight";
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("You begin fighting normally. Both your and your opponent's ACs return to normal.");
+                    ego.ArmorClass = ego.ArmorClass - 1;
+                    badGuy.ArmorClass = badGuy.ArmorClass - 1;
+                    fightingDefensively = false;
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                }
+                if (battleAction == "defend")
+                {
+                    battleAction = "Complete";
+                    fullDefense = true;
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("You take a defensive stance. You gain 5 AC.");
+                    ego.ArmorClass = ego.ArmorClass + 5;
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                }
+                if (battleAction == "attack" || battleAction == "fight" || battleAction == "kill")
+                {
+                    battleAction = "Complete";
+                    attackRoll = die.Next(1, 21);
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    if (ego.EquippedWeapon.Class == "Piercing") { Console.Write("You stab at " + badGuy.Name + ", "); }
+                    else if (ego.EquippedWeapon.Class == "Ranged") { Console.Write("You shoot at " + badGuy.Name + ", "); }
+                    else if (ego.EquippedWeapon.Class == "Polearm") { Console.Write("You jab at " + badGuy.Name + ", "); }
+                    else if (ego.EquippedWeapon.Class == "SlashBash") { Console.Write("You swing at " + badGuy.Name + ", "); }
+                    Thread.Sleep(1500);
+                    if (attackRoll >= (badGuy.ArmorClass - ego.ToHitMod) && attackRoll < 20)
+                    {
+                        if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
+                        if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
+                        rolledDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
+                        Console.Write("and hit for " + rolledDamage + " damage!");
+                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    if (attackRoll == 20)
+                    {
+                        if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
+                        if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
+                        rolledDamage = (int)Math.Round((ego.CritMultiplier * (die.Next(1, (ego.DamageDie + 1)) + ego.Damage)) * badGuy.CritResist);
+                        Console.Write("and critically hit for " + rolledDamage + " damage!");
+                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    else if (attackRoll < (badGuy.ArmorClass - ego.ToHitMod))
+                    {
+                        Console.Write("but miss!");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    while (ego.Flurry > 0)
+                    {
+                        attackRoll = die.Next(1, 21);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write($"Your pogo stick executes a FLURRY of attacks on {badGuy.Name}, ");
+                        Thread.Sleep(1500);
+                        if (attackRoll >= (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod) && attackRoll < 20)
+                        {
+                            ego.Flurry = ego.Flurry + 5;
+                            rolledDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
+                            Console.Write("and hits for " + rolledDamage + " damage!");
+                            badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (attackRoll == 20)
+                        {
+                            ego.Flurry = ego.Flurry + 5;
+                            rolledDamage = (int)Math.Round((ego.CritMultiplier * (die.Next(1, (ego.DamageDie + 1)) + ego.Damage)) * badGuy.CritResist);
+                            Console.Write("and critically hits for " + rolledDamage + " damage!");
+                            badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (attackRoll < (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod))
+                        {
+                            ego.Flurry = 0;
+                            Console.Write("but misses!");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                    }
+                }
+                if (battleAction == "flee")
+                {
+                    battleAction = "incomplete";
+                    ego.DotActive = 0;
+                    battleLoop = false;
+                    ego.JustFled = true;
+                    ego.Location = ego.FleeLocation;
+                    attackRoll = die.Next(1, 21);
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Before you can escape, " + badGuy.Name + " gets in an attack!");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.Write(badGuy.Name + " attacks you, ");
+                    Thread.Sleep(1500);
+                    if (attackRoll >= ego.ArmorClass && attackRoll < 20)
+                    {
+                        rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage;
+                        Console.Write("and hits for " + rolledDamage + " damage!");
+                        ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    if (attackRoll == 20)
+                    {
+                        rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist);
+                        Console.Write("and critically hits for " + rolledDamage + " damage!");
+                        ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    else if (attackRoll < ego.ArmorClass)
+                    {
+                        Console.Write("but misses!");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                }
+                if (battleAction != "Complete" && battleAction != "incomplete")
+                {
+                    battleAction = "incomplete";
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("That didn't do anything useful.");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                }
+                if (battleAction == "Complete" && badGuy.CurrentHitPoints > 0)
+                {
+                    if (jesseHP > 60)
+                    {
+                        attackRoll = die.Next(1, 21);
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Jesse swings with an axe!");
+                        Thread.Sleep(1500);
+                        if (attackRoll >= (badGuy.ArmorClass ) && attackRoll < 20)
+                        {
+                            rolledDamage = die.Next(8, 16);
+                            Console.Write(" And hits for " + rolledDamage + " damage!");
+                            badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (attackRoll == 20)
+                        {
+                            rolledDamage = (int)Math.Round(1.5 * (die.Next(8, 16)) * badGuy.CritResist);
+                            Console.Write(" And critically hits for " + rolledDamage + " damage!");
+                            badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (attackRoll < (badGuy.ArmorClass))
+                        {
+                            Console.Write("but misses!");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                    }
+                    else if (jesseHP > 0 && jessePotion > 0)
+                    {
+                        jesseHP = jesseHP + 30;
+                        jessePotion--;
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Jesse drinks a healing potion, and suddenly looks healthier!");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    else if (jesseHP > 0)
+                    {
+                        attackRoll = die.Next(1, 21);
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Jesse pulls out a gun and fires!");
+                        Thread.Sleep(1500);
+                        if (attackRoll >= (badGuy.ArmorClass + 5) && attackRoll < 20)
+                        {
+                            rolledDamage = die.Next(20, 31);
+                            Console.Write(" And hits for " + rolledDamage + " damage!");
+                            badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (attackRoll == 20)
+                        {
+                            rolledDamage = (int)Math.Round(1.5 * (die.Next(20, 31)) * badGuy.CritResist);
+                            Console.Write(" And critically hits for " + rolledDamage + " damage!");
+                            badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (attackRoll < (badGuy.ArmorClass + 5))
+                        {
+                            Console.Write("but misses!");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                    }
+                }
+                if (battleAction == "Complete" && badGuy.CurrentHitPoints > 0)
+                {
+                    enemyHPPercent = ((double)badGuy.CurrentHitPoints / (double)badGuy.MaxHitPoints);
+
+                    switchHit = die.Next(0, 2);
+                    if (jesseHP <= 0) { switchHit = 0; }
+                    if (ego.CurrentHitPoints <= 0) { switchHit = 1; }
+                    randomAttack = die.Next(1, 11);
+                    if (enemyHPPercent > 0.15 && enemyHPPercent <= 0.75 && randomAttack == 1 && pantsOff == false)
+                    {
+                        pantsOff = true;
+                        badGuy.ArmorClass = badGuy.ArmorClass - 2;
+                        badGuy.Damage = badGuy.Damage + 5;
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("An image of the triforce of power appears on the back of Ganon's hand! His eyes flash a sickly yellow before turning to a deep, dark red.");
+                        Thread.Sleep(3000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Ganon's damage increases!");
+                        Thread.Sleep(500);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Ganon's crit chance increases!");
+                        Thread.Sleep(500);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Ganon's AC decreases!");
+                        Thread.Sleep(1000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                    else if (enemyHPPercent > 0.15)
+                    {
+                        if (randomAttack < 3)
+                        {
+                            randomDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            if (switchHit == 1) { Console.WriteLine("Ganon conjures Jesse's shadow into a living being!"); }
+                            else { Console.WriteLine("Ganon conjures your shadow into a living being!"); }                            
+                            Thread.Sleep(2000);
+                            Console.WriteLine();
+                            if (switchHit == 1) { Console.Write("Jesse's shadow attacks, "); }
+                            else { Console.Write("Your shadow attacks, "); }
+                        }
+                        else if (randomAttack == 3)
+                        {
+                            randomDamage = die.Next(10, 21);
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Ganon draws a device of ancient origin, locks on, and unleashes a beam of incredible energy!");
+                            Thread.Sleep(4000);
+                            if (ego.EquippedShield.Name == "The Mirror Shield" && switchHit == 0)
+                            {
+                                randomAttack = -1;
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Using your mirror shield, you slam the beam and reflect it back at him!");
+                                Thread.Sleep(3000);
+                                Console.WriteLine();
+                                Console.Write("The beam comes at Ganon, ");
+                            }
+                            else
+                            {
+                                Console.WriteLine();
+                                if (switchHit == 1) { Console.Write("The beam comes at Jesse, "); }
+                                else { Console.Write("The beam comes at you, "); }
+                            }
+                        }
+                        else if (randomAttack == 4)
+                        {
+                            randomDamage = die.Next(8, 16);
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            if (switchHit == 1) { Console.WriteLine("Ganon whirls his trident overhead, and throws it at Jesse!"); }
+                            else { Console.WriteLine("Ganon whirls his trident overhead, and throws it at you!"); }
+                            Thread.Sleep(3000);
+                            Console.WriteLine();
+                            if (switchHit == 1) { Console.Write("The trident strikes at Jesse, "); }
+                            else { Console.Write("The trident strikes at you, "); }
+                        }
+                        else if (randomAttack == 5 && ego.CurrentHitPoints > 0 && jesseHP > 0)
+                        {
+                            randomDamage = die.Next(10, 16);
+                            switchHit = 1;
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Ganon takes a massive swing!");
+                            Thread.Sleep(1500);
+                            Console.WriteLine();
+                            Console.Write("Ganon attacks you, ");
+                        }
+                        else
+                        {
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            if (switchHit == 1) { Console.Write("Ganon attacks Jesse, "); }
+                            else { Console.Write("Ganon attacks you, "); }
+                        }
+                        Thread.Sleep(1500);
+                        attackRoll = die.Next(1, 21);
+                        if (pantsOff && attackRoll == 19) { attackRoll = 20; }
+
+                        if (randomAttack == -1)
+                        {
+                            if (attackRoll >= badGuy.ArmorClass && attackRoll < 20)
+                            {
+                                rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage + randomDamage;
+                                if (rolledDamage < 0) { rolledDamage = 0; }
+                                Console.Write("and hits for " + rolledDamage + " damage!");
+                                badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            if (attackRoll == 20)
+                            {
+                                rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * badGuy.CritResist);
+                                if (rolledDamage < 0) { rolledDamage = 0; }
+                                Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else if (attackRoll < badGuy.ArmorClass)
+                            {
+                                Console.Write("but misses!");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                        }
+                        else
+                        {
+                            if (randomAttack == 5)
+                            {
+                                if (attackRoll >= ego.ArmorClass && attackRoll < 20)
+                                {
+                                    rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage + randomDamage - ego.DamageReduction;
+                                    if (rolledDamage < 0) { rolledDamage = 0; }
+                                    Console.Write("and hits for " + rolledDamage + " damage!");
+                                    ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                    Thread.Sleep(1500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Ganon attacks Jesse, ");
+                                }
+                                else if (attackRoll == 20)
+                                {
+                                    rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
+                                    if (rolledDamage < 0) { rolledDamage = 0; }
+                                    Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                    ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                    Thread.Sleep(1500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Ganon attacks Jesse, ");
+                                }
+                                else if (attackRoll < ego.ArmorClass)
+                                {
+                                    Console.Write("but misses!");
+                                    Thread.Sleep(1500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Ganon attacks Jesse, ");
+                                }
+
+                                Thread.Sleep(1500);
+                                attackRoll = die.Next(1, 21);
+                                if (pantsOff && attackRoll == 19) { attackRoll = 20; }
+                            }
+                            if (switchHit == 0)
+                            {
+                                if (attackRoll >= ego.ArmorClass && attackRoll < 20)
+                                {
+                                    rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage + randomDamage - ego.DamageReduction;
+                                    if (rolledDamage < 0) { rolledDamage = 0; }
+                                    Console.Write("and hits for " + rolledDamage + " damage!");
+                                    ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else if (attackRoll == 20)
+                                {
+                                    rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
+                                    if (rolledDamage < 0) { rolledDamage = 0; }
+                                    Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                    ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else if (attackRoll < ego.ArmorClass)
+                                {
+                                    Console.Write("but misses!");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                            }
+                            else
+                            {
+                                if (attackRoll >= jesseAC && attackRoll < 20)
+                                {
+                                    rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage + randomDamage - 5;
+                                    if (rolledDamage < 0) { rolledDamage = 0; }
+                                    Console.Write("and hits for " + rolledDamage + " damage!");
+                                    jesseHP = jesseHP - rolledDamage;
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else if (attackRoll == 20)
+                                {
+                                    rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * 0.85) - 5;
+                                    if (rolledDamage < 0) { rolledDamage = 0; }
+                                    Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                    jesseHP = jesseHP - rolledDamage;
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else if (attackRoll < ego.ArmorClass)
+                                {
+                                    Console.Write("but misses!");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                            }
+                        }
+                        if (randomAttack == 4)
+                        {
+                            randomDamage = die.Next(8, 16);
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("The trident returns for another pass!");
+                            Thread.Sleep(2000);
+                            Console.WriteLine();
+                            if (switchHit == 1) { Console.Write("The trident strikes at Jesse, "); }
+                            else { Console.Write("The trident strikes at you, "); }
+                            Thread.Sleep(1500);
+                            attackRoll = die.Next(1, 21);
+                            if (pantsOff && attackRoll == 19) { attackRoll = 20; }
+                            if (switchHit == 0)
+                            {
+                                if (attackRoll >= ego.ArmorClass && attackRoll < 20)
+                                {
+                                    rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage + randomDamage - ego.DamageReduction;
+                                    if (rolledDamage < 0) { rolledDamage = 0; }
+                                    Console.Write("and hits for " + rolledDamage + " damage!");
+                                    ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else if (attackRoll == 20)
+                                {
+                                    rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist) - ego.DamageReduction;
+                                    if (rolledDamage < 0) { rolledDamage = 0; }
+                                    Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                    ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else if (attackRoll < ego.ArmorClass)
+                                {
+                                    Console.Write("but misses!");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                            }
+                            else
+                            {
+                                if (attackRoll >= jesseAC && attackRoll < 20)
+                                {
+                                    rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage + randomDamage - 5;
+                                    if (rolledDamage < 0) { rolledDamage = 0; }
+                                    Console.Write("and hits for " + rolledDamage + " damage!");
+                                    jesseHP = jesseHP - rolledDamage;
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else if (attackRoll == 20)
+                                {
+                                    rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * 0.85) - 5;
+                                    if (rolledDamage < 0) { rolledDamage = 0; }
+                                    Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                    jesseHP = jesseHP - rolledDamage;
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else if (attackRoll < ego.ArmorClass)
+                                {
+                                    Console.Write("but misses!");
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                            }
+                        }
+                    }
+                    else if (enemyHPPercent <= 0.15 && enemyHPPercent > 0 && badGuy.PotionCount > 0)
+                    {
+                        badGuy.PotionCount--;
+                        GetBadGuyDrunk(badGuy, badGuy.PotionType);
+                    }
+                    else if (enemyHPPercent <= 0.15 && enemyHPPercent > 0)
+                    {
+                        Console.WriteLine("____________________________________________________");
+                        attackRoll = die.Next(1, 21);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Ganon turns invisible and teleports around the room, firing balls of energy from all around you!");
+                        Thread.Sleep(3000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Ganon strikes!");
+                        Thread.Sleep(1000);
+                        Console.WriteLine();
+                        Console.WriteLine();
+
+                        if (attackRoll < ego.ArmorClass && attackRoll < jesseAC) { Console.WriteLine("But misses!"); }
+                        else
+                        {
+                            while (attackRoll >= ego.ArmorClass || attackRoll >= jesseAC)
+                            {
+                                switchHit = die.Next(0, 2);
+                                if (jesseHP <= 0) { switchHit = 0; }
+                                if (ego.CurrentHitPoints <= 0) { switchHit = 1; }
+
+                                if (switchHit == 1)
+                                {
+                                    if (attackRoll >= jesseAC)
+                                    {
+                                        rolledDamage = die.Next(5, 16) - 5;
+                                        if (rolledDamage < 0) { rolledDamage = 0; }
+                                        Console.Write("And hits Jesse for " + rolledDamage + " damage!");
+                                        jesseHP = jesseHP - rolledDamage;
+                                        attackRoll--;
+                                        Thread.Sleep(500);
+                                        Console.WriteLine();
+                                    }
+                                    else
+                                    {
+                                        Console.Write("But misses!");
+                                        attackRoll--;
+                                        Thread.Sleep(500);
+                                        Console.WriteLine();
+                                    }
+                                }
+                                else
+                                {
+                                    if (attackRoll >= ego.ArmorClass)
+                                    {
+                                        rolledDamage = die.Next(5, 16) - ego.DamageReduction;
+                                        if (rolledDamage < 0) { rolledDamage = 0; }
+                                        Console.Write("And hits you for " + rolledDamage + " damage!");
+                                        ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                                        attackRoll--;
+                                        Thread.Sleep(500);
+                                        Console.WriteLine();
+                                    }
+                                    else
+                                    {
+                                        Console.Write("But misses!");
+                                        attackRoll--;
+                                        Thread.Sleep(500);
+                                        Console.WriteLine();
+                                    }
+                                }
+                            }
+                        }                        
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }
+                }
+
+                if (jesseHP <= 0 && jesseHP > -32000)
+                {
+                    jesseHP = -32001;
+                    Console.Write("Jesse has fallen!");
+                    Thread.Sleep(1000);
+                    Console.WriteLine();
+                }
+                if (ego.CurrentHitPoints <= 0 && ego.CurrentHitPoints > -32000)
+                {
+                    ego.CurrentHitPoints = -32001;
+                    Console.Write("You have fallen!");
+                    Thread.Sleep(1000);
+                    Console.WriteLine();
+                }
+
+                if (ego.DotActive > 0 && battleAction != "incomplete")
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    if (ego.DotActive < 3)
+                    {
+                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 5;
+                        Console.WriteLine("Your enemy reels in pain and takes 5 points of damage!");
+                    }
+                    else if (ego.DotActive < 5)
+                    {
+                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 10;
+                        Console.WriteLine("Your enemy reels in pain and takes 10 points of damage!");
+                        if (ego.DotActive == 3) { ego.DotActive = 1; }
+                    }
+                    else if (ego.DotActive < 7)
+                    {
+                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - 20;
+                        Console.WriteLine("Your enemy reels in pain and takes 20 points of damage!");
+                        if (ego.DotActive == 5) { ego.DotActive = 1; }
+                    }
+                    ego.DotActive--;
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                }
+
+                if ((double)badGuy.CurrentHitPoints <= 0)
+                {
+                    battleLoop = false;
+                    ego.DotActive = 0;
+                    if (fightingDefensively == true)
+                    {
+                        fightingDefensively = false;
+                        ego.ArmorClass = ego.ArmorClass - 1;
+                        badGuy.ArmorClass = badGuy.ArmorClass - 1;
+                    }
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Suddenly, your mace springs into the air and begins to speak.");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine("Fi:");
+                    Console.WriteLine();
+                    Console.WriteLine("\"Beep bop boop bop bop bop!\"");
+                    Console.WriteLine();
+                    if (jesseHP == -32001)
+                    {
+                        jesseHP = 150;
+                        Console.WriteLine("a light envelops Jesse, and he is revived!");
+                        Console.WriteLine();
+                    }
+                    else if (ego.CurrentHitPoints == -32001)
+                    {
+                        Console.WriteLine("a light envelops you, and you are revived!");
+                        Console.WriteLine();
+                    }
+                    ego.CurrentHitPoints = ego.MaxHitPoints;
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("The mace transforms into a golden gun, and floats in the air before Jesse.");
+                    Console.WriteLine();
+                    Console.WriteLine("Jesse takes aim, and fires!");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("The bullet pierces through Ganon's head and lodges in the far wall. He screams and collapses forward onto his knees.");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("A purple mist rises from Ganon and disperses, leaving Heisenberg remaining.");
+                    Console.WriteLine();
+                    Console.WriteLine("He looks up.");
+                    Console.WriteLine();
+                    Console.Write("Press ENTER to continue");
+                    Console.ReadLine();
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine("Heisenberg:");
+                    Console.WriteLine();
+                    Console.Write("\"Million dollar shot, Jesse.\"");
+                    Thread.Sleep(1500);
+                    Console.WriteLine();
+                    Thread.Sleep(100);
+                    Console.WriteLine();
+                    Thread.Sleep(100);
+                    Console.WriteLine();
+                    Thread.Sleep(100);
+                    Console.WriteLine("You won!");
+                    Thread.Sleep(2000);
+                }
+                if (ego.CurrentHitPoints == -32001 && jesseHP == -32001)
+                {
+                    battleLoop = false;
+                    ego.DotActive = 0;
+                    if (fightingDefensively == true)
+                    {
+                        fightingDefensively = false;
+                        ego.ArmorClass = ego.ArmorClass - 1;
+                        badGuy.ArmorClass = badGuy.ArmorClass - 1;
+                    }
+                    Console.Clear();
+                    Console.WriteLine("...Shoot. You lost.");
+                    Thread.Sleep(1000);
+                    Console.WriteLine();
+                    Console.WriteLine("Press ENTER to continue");
+                    Console.ReadLine();
+                }
+            }
+            static string GetEnemyHealth(int max, int current)
+            {
+                double percentage = (double)current / (double)max;
+                string status = "Uninjured";
+
+                if (percentage == 1) { status = "Uninjured"; }
+                if (percentage >= 0.75 && percentage != 1) { status = "Healthy"; }
+                if (percentage >= 0.5 && percentage < 0.75) { status = "Injured"; }
+                if (percentage >= 0.2 && percentage < 0.5) { status = "Bloodied"; }
+                if (percentage >= 0.05 && percentage < 0.2) { status = "Critical"; }
+                if (percentage > 0 && percentage < 0.05) { status = "Practically dead"; }
+
+                return status;
+            }
+
+            static void GetGoodGuyDrunk(Stats ego, Potion potion)
+            {
+                Console.Clear();
+                if (potion.Name == "Light Soothing Potion") { ego.HotActive = 2; }
+                else if (potion.Name == "Soothing Potion") { ego.HotActive = 4; }
+                else if (potion.Name == "Greater Soothing Potion") { ego.HotActive = 6; }
+                if (ego.CurrentHitPoints < (ego.MaxHitPoints - potion.Potency))
+                {
+                    ego.CurrentHitPoints = ego.CurrentHitPoints + potion.Potency;
+                    Console.WriteLine("You drink the " + potion.Name + ". You regain " + potion.Potency + " HP!");
+                }
+                else
+                {
+                    ego.CurrentHitPoints = ego.MaxHitPoints;
+                    Console.WriteLine("You drink the " + potion.Name + ". Your HP are maxed out!");
+                }
+                Console.WriteLine();
+                Console.Write("Press ENTER to continue");
+                Console.ReadLine();
+            }
+            static void GetBadGuyDrunk(BadGuyStats imbiber, Potion potion)
+            {
+                Console.WriteLine("____________________________________________________");
                 Console.WriteLine();
                 Console.WriteLine();
                 if (imbiber.CurrentHitPoints <= (imbiber.MaxHitPoints - potion.Potency))
@@ -25247,14 +27338,16 @@ namespace JessesDungeon
             Console.WriteLine("____________________________________________________");
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("\"Hey, man. I found you laying out there a little beat up. I brought you back here and let you rest up on my plank.\"");
+            if (secondQuest) { Console.WriteLine("\"Hey, lady. I found you laying out there a little beat up. I brought you back here and let you rest up on my plank.\""); }
+            else { Console.WriteLine("\"Hey, man. I found you laying out there a little beat up. I brought you back here and let you rest up on my plank.\""); }
             Console.WriteLine();
             Console.Write("Press ENTER to continue");
             Console.ReadLine();
             Console.WriteLine("____________________________________________________");
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("\"And, uh, don't worry about paying me. Looks like they took your stuff. Just think of it as my investing in your health so you can come back and pay in the future.\"");
+            if (secondQuest) { Console.WriteLine("\"And, uh, don't worry about paying me. Looks like they took everything except your mace; those manly men must assume its only a chick thing. Just think of it as my investing in your health so you can come back and pay in the future.\""); }
+            else { Console.WriteLine("\"And, uh, don't worry about paying me. Looks like they took your stuff. Just think of it as my investing in your health so you can come back and pay in the future.\""); }
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Yep. Everything's gone.");
