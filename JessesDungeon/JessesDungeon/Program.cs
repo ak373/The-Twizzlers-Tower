@@ -1071,8 +1071,48 @@ namespace JessesDungeon
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
                                 }
+                                else if (jokeConverse == 3)
+                                {
+                                    Console.WriteLine("\"There are 362 references to retro games and miscellaneous pop culture in this game.\"");
+                                    Thread.Sleep(5000);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Wow! Is there really?\"");
+                                    Thread.Sleep(1500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Nah. Well I mean maybe -- probably woulda been smart of the designer to keep count as he made them.\"");
+                                    Thread.Sleep(6000);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"You think anyone will ever count them?\"");
+                                    Thread.Sleep(2500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"I don't know, bro. Maybe one day someone playing it will count, but then you'd never know if you got every single one. There's even a reference to James Bond somewhere.\"");
+                                    Thread.Sleep(10000);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Gotta catch 'em all!\"");
+                                    Thread.Sleep(1500);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"Actually there aren't any Pokemon references.\"");
+                                    Thread.Sleep(3000);
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("\"...There is now.\"");
+                                    Thread.Sleep(1500);
+                                    Console.Clear();
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("Ba-doom shhh!");
+                                    Thread.Sleep(500);
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
                                 jokeConverse++;
-                                if (jokeConverse == 3) { jokeConverse = 0; }
+                                if (jokeConverse == 4) { jokeConverse = 0; }
                             }
                             //7 total conversations. 6 "newconverses"
                             else if (converseCount == 7 || (converseCount == 6 && newConverseAvailable == true))
@@ -11991,7 +12031,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("As Jesse turns, the door splinters and explodes outward. A beast wielding a trident stands in the doorway.");
                                 Console.WriteLine();
-                                Console.WriteLine("\"Jesse... the Triforce... is resonating.");
+                                Console.WriteLine("\"Jesse... the Triforce... it's resonating.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.WriteLine("____________________________________________________");
