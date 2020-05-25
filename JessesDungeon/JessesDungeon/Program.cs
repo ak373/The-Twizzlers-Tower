@@ -44,36 +44,36 @@ namespace JessesDungeon
             TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
 
             Armor rags = new Armor("Rags", 0, 0.95, false, 0, "These are your clothes, but with a fancier name.");
-            Armor leatherArmor = new Armor("Leather Armor        ", 1, 0.85, false, 70, "Provides a bit of protection, but still no match for a good stabbing.");
+            Armor leatherArmor = new Armor("Leather Armor", 1, 0.85, false, 70, "Provides a bit of protection, but still no match for a good stabbing.");
             Armor studdedLeatherArmor = new Armor("Studded Leather Armor", 3, 0.80, false, 120, "Stiff and studded: that's how she likes it.");
-            Armor ringmail = new Armor("Ringmail             ", 5, 0.75, false, 400, "Composed of mismatched rings and metal shards, this is surely a \"practicality over fashion\" choice.");
+            Armor ringmail = new Armor("Ringmail", 5, 0.75, false, 400, "Composed of mismatched rings and metal shards, this is surely a \"practicality over fashion\" choice.");
             Armor chainmail = new Armor("Chainmail", 7, 0.70, false, 0, "The closest you'll ever get to being a knight.");
-            Armor hazmatSuit = new Armor("Hazmat Suit          ", 10, 0.80, false, 1500, "Knives, swords, and guns are VERY hazardous materials.");
+            Armor hazmatSuit = new Armor("Hazmat Suit", 10, 0.80, false, 1500, "Knives, swords, and guns are VERY hazardous materials.");
             List<Armor> merchantArmor = new List<Armor>();
 
             //add all armor, weapon, shield merchant will sell at any point to list
 
             Weapon unarmed = new Weapon("Unarmed", 0, 1, 0, true, false, 0, "Fists of fury.", "SlashBash");
             Weapon rustyWoodenSpoon = new Weapon("Rusty Wooden Spoon", 1, 2, 0, true, false, 0, "A miracle of natural law.", "SlashBash");
-            Weapon stick = new Weapon("Stick        ", 1, 2, 0, true, true, 5, "Ho Haha Guard Turn Parry Dodge Spin Ha Thrust!", "SlashBash");
-            Weapon pointyStick = new Weapon("Pointy Stick ", 4, 2, 0, true, false, 10, "Brilliant use of \"force over surface area\" wouldn't you say?", "Piercing");
+            Weapon stick = new Weapon("Stick", 1, 2, 0, true, true, 5, "Ho Haha Guard Turn Parry Dodge Spin Ha Thrust!", "SlashBash");
+            Weapon pointyStick = new Weapon("Pointy Stick", 4, 2, 0, true, false, 10, "Brilliant use of \"force over surface area\" wouldn't you say?", "Piercing");
             Weapon mildewEncrustedPocketKnife = new Weapon("Mildew-Encrusted Pocket Knife", 4, 3, 0, true, false, 0, "Gross. But pointy!", "Piercing");
-            Weapon knife = new Weapon("Knife        ", 4, 3, 0, true, false, 20, "You could definitely stab something with this.", "Piercing");
+            Weapon knife = new Weapon("Knife", 4, 3, 0, true, false, 20, "You could definitely stab something with this.", "Piercing");
             Weapon huntingKnife = new Weapon("Hunting Knife", 6, 3, 0, true, false, 50, "THAT'S a knife.", "Piercing");
-            Weapon club = new Weapon("Club         ", 15, 2, 0, false, false, 500, "Known to be used by frequent party-goers.", "SlashBash");
+            Weapon club = new Weapon("Club", 15, 2, 0, false, false, 500, "Known to be used by frequent party-goers.", "SlashBash");
             Weapon axe = new Weapon("Fireman's Axe", 10, 3, 0, false, false, 400, "This emergency axe was not made for combat. The force of this two-handed weapon increases your damage die by two, but its unwieldy nature will decrease your AC by two as well.", "SlashBash");
-            Weapon pogoStick = new Weapon("Pogo Stick   ", 4, 2, 0, false, false, 700, "Wielding this contraption like a lance/bazooka, each successful hit leads to an additional attack -- albeit at a -5 penalty.", "Polearm");
+            Weapon pogoStick = new Weapon("Pogo Stick", 4, 2, 0, false, false, 700, "Wielding this contraption like a lance/bazooka, each successful hit leads to an additional attack -- albeit at a -5 penalty.", "Polearm");
             Weapon realSword = new Weapon("Sword", 10, 3, 0, true, false, 0, "Unfortunately, this sword is not unnaturally propotioned or outfitted with a gun.", "SlashBash");
             Weapon mace = new Weapon("Mace", 8, 5, 0, true, false, 0, "Any girl in this environment needs to carry a mace!", "SlashBash");
             Weapon trident = new Weapon("Ganon's Trident", 30, 3, 10, false, false, 0, "Infused with magic, in your hands this weapon deals massive damage and always strikes true (+10 bonus)", "Pierce");
-            Weapon gun = new Weapon("Gun          ", 20, 1.5, -5, true, false, 1000, "Can make a massive hole in your target if you can handle its massive kickback (-5 penalty).", "Ranged");
+            Weapon gun = new Weapon("Gun", 20, 1.5, -5, true, false, 1000, "Can make a massive hole in your target if you can handle its massive kickback (-5 penalty).", "Ranged");
             Weapon assassinsDagger = new Weapon("Assassin's Dagger", 2, 2, 5, true, false, 500, "It's not the size of the dagger that counts -- but how you use it. It may be weak initially, but it's balanced to connect (+5 bonus) and its poison will continue to harm its victim (5 dmg/round x3).", "Piercing");
             List<Weapon> merchantWeapon = new List<Weapon>();
 
             Shield nullShield = new Shield("Forearm", 0, 1.00, true, 0, "'Tis nothing but spun sugar and bootblack.");
             Shield soupBowl = new Shield("Soup Bowl", 1, 0.95, false, 0, "Not very slick.");
             Shield cardboardCutout = new Shield("Cardboard Cutout", 1, 0.95, true, 3, "Well it looks like a shield...");
-            Shield garbageCanLid = new Shield("Garbage Can Lid ", 2, 0.90, false, 10, "Can't top this one.");
+            Shield garbageCanLid = new Shield("Garbage Can Lid", 2, 0.90, false, 10, "Can't top this one.");
             Shield realShield = new Shield("Shield", 5, 0.85, false, 0, "Perfect for phalanx formation if you only had some friends.");
             Shield mirrorShield = new Shield("The Mirror Shield", 4, 0.90, false, 2000, "Dah nah nah naaaah!");
             List<Shield> merchantShield = new List<Shield>();
@@ -1089,7 +1089,7 @@ namespace JessesDungeon
                                     Thread.Sleep(2500);
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine("\"I don't know, bro. Maybe one day someone playing it will count, but then you'd never know if you got every single one. There's even a reference to James Bond somewhere.\"");
+                                    Console.WriteLine("\"I don't know, bro. Maybe one day someone playing it will count, but then you'd never know if you got every single one. There're references to James Bond and even Seinfeld in there somewhere.\"");
                                     Thread.Sleep(10000);
                                     Console.WriteLine();
                                     Console.WriteLine();
@@ -2044,7 +2044,8 @@ namespace JessesDungeon
                                                 bool foundCheck = armor.Unlocked;
                                                 if (foundCheck == true)
                                                 {
-                                                    Console.WriteLine($"{armor.Name} (Dmg Reduction: {armor.DamageReduction}  Crit Resist: {armor.CritResist}) - {armor.Price} crystals");
+                                                    string merchantDisplay = armor.Name.PadRight(armor.Name.Length + (25 - armor.Name.Length), ' ');
+                                                    Console.WriteLine($"{merchantDisplay} (Dmg Reduction: {armor.DamageReduction}  Crit Resist: {armor.CritResist}) - {armor.Price} crystals");
                                                 }
                                             }
                                             Console.WriteLine();
@@ -2055,7 +2056,8 @@ namespace JessesDungeon
                                                 bool foundCheck = weapon.Unlocked;
                                                 if (foundCheck == true)
                                                 {
-                                                    Console.WriteLine($"{weapon.Name} (Damage Bonus: {weapon.Damage}  Crit Multiplier: {weapon.CritMultiplier}) - {weapon.Price} crystals");
+                                                    string merchantDisplay = weapon.Name.PadRight(weapon.Name.Length + (25 - weapon.Name.Length), ' ');
+                                                    Console.WriteLine($"{merchantDisplay} (Damage Bonus: {weapon.Damage}  Crit Multiplier: {weapon.CritMultiplier}) - {weapon.Price} crystals");
                                                 }
                                             }
                                             Console.WriteLine();
@@ -2066,7 +2068,8 @@ namespace JessesDungeon
                                                 bool foundCheck = shield.Unlocked;
                                                 if (foundCheck == true)
                                                 {
-                                                    Console.WriteLine($"{shield.Name} (AC: {shield.ArmorClass}  Crit Resist: {shield.CritResist}) - {shield.Price} crystals");
+                                                    string merchantDisplay = shield.Name.PadRight(shield.Name.Length + (25 - shield.Name.Length), ' ');
+                                                    Console.WriteLine($"{merchantDisplay} (AC: {shield.ArmorClass}  Crit Resist: {shield.CritResist}) - {shield.Price} crystals");
                                                 }
                                             }
                                             Console.WriteLine();
@@ -2265,6 +2268,7 @@ namespace JessesDungeon
                                             sellItem = sellItem.ToLower();
                                             sellItem = myTI.ToTitleCase(sellItem);
                                             sellItem = sellItem.Trim();
+                                            if (sellItem.Contains(" Of ")) { sellItem = sellItem.Replace(" Of ", " of "); }
 
 
                                             if (sellItem == "Unarmed")
@@ -3265,7 +3269,8 @@ namespace JessesDungeon
                                                 bool foundCheck = armor.Unlocked;
                                                 if (foundCheck == true)
                                                 {
-                                                    Console.WriteLine($"{armor.Name} (Dmg Reduction: {armor.DamageReduction}  Crit Resist: {armor.CritResist}) - {armor.Price} crystals");
+                                                    string merchantDisplay = armor.Name.PadRight(armor.Name.Length + (25 - armor.Name.Length), ' ');
+                                                    Console.WriteLine($"{merchantDisplay} (Dmg Reduction: {armor.DamageReduction}  Crit Resist: {armor.CritResist}) - {armor.Price} crystals");
                                                 }
                                             }
                                             Console.WriteLine();
@@ -3276,7 +3281,8 @@ namespace JessesDungeon
                                                 bool foundCheck = weapon.Unlocked;
                                                 if (foundCheck == true)
                                                 {
-                                                    Console.WriteLine($"{weapon.Name} (Damage Bonus: {weapon.Damage}  Crit Multiplier: {weapon.CritMultiplier}) - {weapon.Price} crystals");
+                                                    string merchantDisplay = weapon.Name.PadRight(weapon.Name.Length + (25 - weapon.Name.Length), ' ');
+                                                    Console.WriteLine($"{merchantDisplay} (Damage Bonus: {weapon.Damage}  Crit Multiplier: {weapon.CritMultiplier}) - {weapon.Price} crystals");
                                                 }
                                             }
                                             Console.WriteLine();
@@ -3287,7 +3293,8 @@ namespace JessesDungeon
                                                 bool foundCheck = shield.Unlocked;
                                                 if (foundCheck == true)
                                                 {
-                                                    Console.WriteLine($"{shield.Name} (AC: {shield.ArmorClass}  Crit Resist: {shield.CritResist}) - {shield.Price} crystals");
+                                                    string merchantDisplay = shield.Name.PadRight(shield.Name.Length + (25 - shield.Name.Length), ' ');
+                                                    Console.WriteLine($"{merchantDisplay} (AC: {shield.ArmorClass}  Crit Resist: {shield.CritResist}) - {shield.Price} crystals");
                                                 }
                                             }
                                             Console.WriteLine();
@@ -3486,6 +3493,7 @@ namespace JessesDungeon
                                             sellItem = sellItem.ToLower();
                                             sellItem = myTI.ToTitleCase(sellItem);
                                             sellItem = sellItem.Trim();
+                                            if (sellItem.Contains(" Of ")) { sellItem = sellItem.Replace(" Of ", " of "); }
 
 
                                             if (sellItem == "Unarmed")
@@ -4528,6 +4536,7 @@ namespace JessesDungeon
                                 }
                                 else if (noticedJane == false)
                                 {
+                                    Console.WriteLine("____________________________________________________");
                                     Console.WriteLine();
                                     Console.WriteLine();
                                     if (secondQuest) { Console.WriteLine("\"I don't like to mix business with pleasure. If our relationship is going to be merely professional, then let's keep it to that.\""); }
@@ -4690,7 +4699,7 @@ namespace JessesDungeon
                                             Console.WriteLine("____________________________________________________");
                                             Console.WriteLine();
                                             Console.WriteLine();
-                                            Console.WriteLine("\"You got it\"");
+                                            Console.WriteLine("\"You got it.\"");
                                             Console.WriteLine();
                                             Console.Write("Press ENTER to continue");
                                             Console.ReadLine();
@@ -5372,7 +5381,7 @@ namespace JessesDungeon
                             }
                         }
 
-                        if (action == "look at man")
+                        if (action == "look at man" || action == "look at gus")
                         {
                             action = "Complete";
                             Console.WriteLine("____________________________________________________");
@@ -5384,7 +5393,7 @@ namespace JessesDungeon
                             Console.ReadLine();
                         }
 
-                        if (action == "search man")
+                        if (action == "search man" || action == "search gus")
                         {
                             action = "Complete";
                             Console.WriteLine("____________________________________________________");
@@ -5396,7 +5405,7 @@ namespace JessesDungeon
                             Console.ReadLine();
                         }
 
-                        if (action == "talk to man")
+                        if (action == "talk to man" || action == "talk to gus")
                         {
                             action = "Complete";
                             Console.WriteLine("____________________________________________________");
@@ -5408,7 +5417,7 @@ namespace JessesDungeon
                             Console.ReadLine();
                         }
 
-                        if (action == "look at woman")
+                        if (action == "look at woman" || action == "look at skyler")
                         {
                             action = "Complete";
                             Console.WriteLine("____________________________________________________");
@@ -5420,7 +5429,7 @@ namespace JessesDungeon
                             Console.ReadLine();
                         }
 
-                        if (action == "search woman")
+                        if (action == "search woman" || action == "search skyler")
                         {
                             action = "Complete";
                             Console.WriteLine("____________________________________________________");
@@ -5436,7 +5445,7 @@ namespace JessesDungeon
                             Console.ReadLine();
                         }
 
-                        if (action == "talk to woman")
+                        if (action == "talk to woman" || action == "talk to skyler")
                         {
                             action = "Complete";
                             if (gusQuestGiven)
@@ -7187,7 +7196,7 @@ namespace JessesDungeon
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
-                            Console.WriteLine("A man steps out from behind a mound. He is (unsurprisingly) covered in dirt; but he also (surprisingly) is wearing a flashy suit. He smiles and extends his hand.");
+                            Console.WriteLine("A man steps out from behind a mound. He is (unsurprisingly) covered in dirt; but he also is (surprisingly) wearing a flashy suit. He smiles and extends his hand.");
                             Console.WriteLine();
                             if (secondQuest) { Console.WriteLine("\"You seem like the kind of gal who it'd be wise to be friendly to. I can feel something special aboutcha. You are something special, eh? Don't be modest!\""); }
                             else { Console.WriteLine("\"You seem like the kind of guy who it'd be wise to be friendly to. I can feel something special aboutcha. You are something special, eh? Don't be modest!\""); }
@@ -7205,7 +7214,9 @@ namespace JessesDungeon
                             Console.WriteLine();
                             Console.WriteLine("Jimmy:");
                             Console.WriteLine();
-                            Console.WriteLine("\"You and I? We're gonna be great friends -- I can just tell. It's all good, man! Come back and visit ANY time!\"");
+                            Console.WriteLine("\"You and I? We're gonna be great friends -- I can just tell. It's all good, man! Whoa, man - I mean woman!\"");
+                            Console.WriteLine();
+                            Console.WriteLine("\"Come back and visit ANY time!\"");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
@@ -9562,7 +9573,7 @@ namespace JessesDungeon
                             Thread.Sleep(1500);
                         }
 
-                        if (action == "look at woman")
+                        if (action == "look at woman" || action == "look at lydia")
                         {
                             action = "Complete";
                             if (lydiaQuestCompleted == false)
@@ -9587,7 +9598,7 @@ namespace JessesDungeon
                             }
                         }
 
-                        if (action == "search woman")
+                        if (action == "search woman" || action == "search lydia")
                         {
                             action = "Complete";
                             inappropriateTouchingCounter++;
@@ -9599,7 +9610,7 @@ namespace JessesDungeon
                             Console.ReadLine();
                         }
 
-                        if (action == "talk to woman")
+                        if (action == "talk to woman" || action == "talk to lydia")
                         {
                             action = "Complete";
                             if (undroppables.Contains(dungeonKey))
@@ -10153,6 +10164,7 @@ namespace JessesDungeon
                             while (dryadLoop == true)
                             {
                                 Console.WriteLine("____________________________________________________");
+                                Console.WriteLine($"Blue Crystals: {ego.BlueCrystals}");
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 if (lootedCentaur) { Console.WriteLine("\"Didn't I tell you exactly NOT to do that? Or did you do it just to check out my goods?\""); }
@@ -12034,6 +12046,7 @@ namespace JessesDungeon
                                 Console.WriteLine("\"Jesse... the Triforce... it's resonating.");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -13185,7 +13198,7 @@ namespace JessesDungeon
                         randomEncountersOn = false;
                         discoveredMap[18, 12] = "[x]";
                         discoveredMap[17, 12] = " | ";
-                        if (saulHermitBond > 0 && saulHermitBond < 8) { Console.WriteLine("[Jimmy] emerges his head from beneath a large [puddle] in the southeast of this room. He shifts his eyes back and forth before gesturing with his head and whispering, \"c'mere!\""); }
+                        if (saulHermitBond > 0 && saulHermitBond < 8) { Console.WriteLine("[Jimmy] sticks out his head from beneath a large [puddle] in the southeast of this room. He shifts his eyes back and forth before gesturing with his head and whispering, \"c'mere!\""); }
                         else { Console.WriteLine("There's a large [puddle] accumulated in the southeast of this room. It looks less than appetizing."); }
                         Console.WriteLine();
                         Console.WriteLine("There is an exit to the north.");
@@ -13415,7 +13428,7 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Jimmy:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"You know that man is so opinionated. I was just trying to live my separate life while taking care of his, too!\"");
+                                Console.WriteLine("\"You know, that man is so opinionated. I was just trying to live my separate life while taking care of his, too!\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"I guess I grew tired of listening to him complain about me all the time. I probably started acting in some way he found 'unacceptable.'\"");
                                 Console.WriteLine();
@@ -14628,7 +14641,7 @@ namespace JessesDungeon
                         Console.WriteLine("Stats");
                         Console.WriteLine("Look at");
                         Console.WriteLine("Search");
-                        Console.WriteLine("Fight");
+                        if (!ego.FredDefeated) { Console.WriteLine("Fight"); }                        
                         Console.WriteLine("Go south");
                         Console.WriteLine("Go east");
                         Console.WriteLine();
@@ -14729,10 +14742,10 @@ namespace JessesDungeon
                             }
                         }
 
-                        if (action == "fight" || action == "fight man")
+                        if ((action == "fight" || action == "fight man") && !ego.FredDefeated)
                         {
                             action = "Complete";
-                            BadGuyStats badGuy = new BadGuyStats("Fabulous Fred", 80, 80, 3, 0.75, 10, 10, 2.00, die.Next(30, 46), 1, greaterHealingPotion, stick, leatherArmor, "After smoothing out a cowlick, the large man lunges forward!");
+                            BadGuyStats badGuy = new BadGuyStats("Fabulous Fred", 80, 80, 3, 0.75, 10, 6, 2.00, die.Next(30, 46), 2, healingPotion, club, leatherArmor, "After smoothing out a cowlick, the large man lunges forward!");
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
                             Console.WriteLine();
@@ -17926,7 +17939,7 @@ namespace JessesDungeon
                     Console.WriteLine();
                     Console.WriteLine("Unfortunately, searching that did not aid you in your quest. A waste of time even to describe it!");
                     Console.WriteLine();
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1500);
                     //Console.WriteLine("Press ENTER to continue");
                     //Console.ReadLine();
                 }
@@ -18040,6 +18053,7 @@ namespace JessesDungeon
                             string equippingItem = action.Remove((action.IndexOf("Equip ")), 6);
                             equippingItem = equippingItem.ToLower();
                             equippingItem = myTI.ToTitleCase(equippingItem);
+                            if (equippingItem.Contains(" Of ")) { equippingItem = equippingItem.Replace(" Of ", " of "); }
 
                             foreach (Armor armor in equippableArmor)
                             {
@@ -18098,6 +18112,7 @@ namespace JessesDungeon
                             string droppingItem = action.Remove((action.IndexOf("Drop ")), 5);
                             droppingItem = droppingItem.ToLower();
                             droppingItem = myTI.ToTitleCase(droppingItem);
+                            if (droppingItem.Contains(" Of ")) { droppingItem = droppingItem.Replace(" Of ", " of "); }
 
                             if (droppingItem == "Rags")
                             {
@@ -18244,6 +18259,7 @@ namespace JessesDungeon
                             usingItem = action.Remove((action.IndexOf("Use ")), 4);
                             usingItem = usingItem.ToLower();
                             usingItem = myTI.ToTitleCase(usingItem);
+                            if (usingItem.Contains(" Of ")) { usingItem = usingItem.Replace(" Of ", " of "); }
 
                             foreach (Potion potion in potionBelt)
                             {
@@ -18353,6 +18369,7 @@ namespace JessesDungeon
                             inspectingItem = action.Remove((action.IndexOf("Inspect ")), 8);
                             inspectingItem = inspectingItem.ToLower();
                             inspectingItem = myTI.ToTitleCase(inspectingItem);
+                            if (inspectingItem.Contains(" Of ")) { inspectingItem = inspectingItem.Replace(" Of ", " of "); }
 
 
                             if (inspectingItem == ego.EquippedArmor.Name && !equippableArmor.Contains(ego.EquippedArmor))
@@ -21079,6 +21096,7 @@ namespace JessesDungeon
                             Thread.Sleep(1000);
                             Console.WriteLine("____________________________________________________");
                             Console.WriteLine();
+                            Console.WriteLine();
                             Console.WriteLine("Salamanca interrupts and begins a (likely less than flattering) tirade in Spanish.");
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
@@ -22815,6 +22833,7 @@ namespace JessesDungeon
                                     attackRoll = die.Next(1, 21);
                                     Console.WriteLine();
                                     Console.WriteLine();
+                                    Console.WriteLine();
                                     Console.Write($"The pogo stick executes a FLURRY of attacks, ");
                                     Thread.Sleep(1500);
                                     if (attackRoll >= (ego.ArmorClass + pogoFlurry) && attackRoll < 20)
@@ -23102,11 +23121,11 @@ namespace JessesDungeon
                 }
                 else if (encounterRoll < 4)
                 {
-                    badGuy = badGuy.RewriteBadGuy("An Aggressive Peace Monger", 50, 50, 2, 0.85, 8, 4, 3.00, blueCrystalLoot.Next(10, 21), 1, lightHealingPotion, noWeapon, noArmor, "An Aggressive Peace Monger approaches with determination in his eyes. He forcefully encourages you to fall into line!");
+                    badGuy = badGuy.RewriteBadGuy("An Aggressive Peace Monger", 40, 40, 2, 0.85, 8, 4, 3.00, blueCrystalLoot.Next(10, 21), 1, lightHealingPotion, noWeapon, noArmor, "An Aggressive Peace Monger approaches with determination in his eyes. He forcefully encourages you to fall into line!");
                 }
                 else if (encounterRoll < 8)
                 {
-                    badGuy = badGuy.RewriteBadGuy("A Big Burly Brute", 80, 80, 2, 0.85, 10, 8, 2.00, blueCrystalLoot.Next(10, 21), 2, healingPotion, club, noArmor, "A Big, Burly Brute grunts as he charges at you with a club!");
+                    badGuy = badGuy.RewriteBadGuy("A Big Burly Brute", 60, 60, 2, 0.85, 10, 6, 2.00, blueCrystalLoot.Next(10, 21), 2, healingPotion, club, noArmor, "A Big, Burly Brute grunts as he charges at you with a club!");
                 }
             }
             else if (ego.SalamancaCousinDefeated && encounterRoll < 8)
@@ -23117,7 +23136,7 @@ namespace JessesDungeon
                 }
                 else if (encounterRoll < 8)
                 {
-                    badGuy = badGuy.RewriteBadGuy("An Aggressive Peace Monger", 50, 50, 2, 0.85, 8, 4, 3.00, blueCrystalLoot.Next(10, 21), 1, lightHealingPotion, noWeapon, noArmor, "An Aggressive Peace Monger approaches with determination in his eyes. He forcefully encourages you to fall into line!");
+                    badGuy = badGuy.RewriteBadGuy("An Aggressive Peace Monger", 40, 40, 2, 0.85, 8, 4, 3.00, blueCrystalLoot.Next(10, 21), 1, lightHealingPotion, noWeapon, noArmor, "An Aggressive Peace Monger approaches with determination in his eyes. He forcefully encourages you to fall into line!");
                 }
             }
             else
@@ -24769,6 +24788,7 @@ namespace JessesDungeon
                             attackRoll = die.Next(1, 21);
                             Console.WriteLine();
                             Console.WriteLine();
+                            Console.WriteLine();
                             Console.Write($"The pogo stick executes a FLURRY of attacks, ");
                             Thread.Sleep(1500);
                             if (attackRoll >= (ego.ArmorClass + pogoFlurry) && attackRoll < 20)
@@ -26029,450 +26049,512 @@ namespace JessesDungeon
                     fullDefense = false;
                 }
                 string enemyHealth = GetEnemyHealth(badGuy.MaxHitPoints, badGuy.CurrentHitPoints);
-                Console.WriteLine("Your Hit Points: " + ego.CurrentHitPoints + " / " + ego.MaxHitPoints);
-                Console.WriteLine(badGuy.Name + "'s Status: " + enemyHealth);
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine("What will you do?");
-                Console.WriteLine("-------------------");
-                Console.WriteLine("Inventory");
-                Console.WriteLine("Attack");
-                Console.WriteLine("Defend");
-                if (fightingDefensively == false) { Console.WriteLine("Fight defensively"); }
-                if (fightingDefensively == true) { Console.WriteLine("Fight normally"); }
-                Console.WriteLine("Flee");
-                Console.WriteLine();
-                Console.WriteLine();
-
-                Console.Write("Your action: ");
-                battleAction = Console.ReadLine();
-                battleAction = battleAction.ToLower();
-
-                if (battleAction == "inventory")
+                if (ego.CurrentHitPoints < -32000 && jesseHP >= -32000)
                 {
-                    inventoryLoop = true;
-                    while (inventoryLoop == true)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("____________________________________________________");
-                        Console.WriteLine();
-                        Console.WriteLine("Equipment:");
-                        Console.WriteLine("Weapon: " + ego.EquippedWeapon.Name);
-                        Console.WriteLine("Armor: " + ego.EquippedArmor.Name);
-                        if (ego.EquippedShield.Name != "Forearm") { Console.WriteLine("Shield: " + ego.EquippedShield.Name); }
-                        else { Console.WriteLine("Shield: None"); }
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Inventory:");
-                        Console.WriteLine();
-                        foreach (Armor armor in equippableArmor)
-                        {
-                            Console.WriteLine(armor.Name);
-                        }
-                        foreach (Weapon weapon in equippableWeapon)
-                        {
-                            if (weapon.Name == "Unarmed") { }
-                            else { Console.WriteLine(weapon.Name); }
-                        }
-                        foreach (Shield shield in equippableShield)
-                        {
-                            if (shield.Name == "Forearm") { }
-                            else { Console.WriteLine(shield.Name); }
-                        }
-                        foreach (Potion potion in potionBelt)
-                        {
-                            Console.WriteLine(potion.Name);
-                        }
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Use");
-                        Console.WriteLine("Inspect");
-                        Console.WriteLine("Equip");
-                        Console.WriteLine();
-                        Console.WriteLine("Return");
-                        Console.WriteLine();
-                        Console.Write("> ");
-                        battleAction = Console.ReadLine();
-                        battleAction = battleAction.ToLower();
-                        battleAction = myTI.ToTitleCase(battleAction);
+                    battleAction = "Complete";
+                    Console.WriteLine(badGuy.Name + "'s Status: " + enemyHealth);
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("You have fallen, but Jesse continues the fight!");
+                    Thread.Sleep(2500);
+                    Console.WriteLine();
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine("Your Hit Points: " + ego.CurrentHitPoints + " / " + ego.MaxHitPoints);
+                    Console.WriteLine(badGuy.Name + "'s Status: " + enemyHealth);
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("What will you do?");
+                    Console.WriteLine("-------------------");
+                    Console.WriteLine("Inventory");
+                    Console.WriteLine("Attack");
+                    Console.WriteLine("Defend");
+                    if (fightingDefensively == false) { Console.WriteLine("Fight defensively"); }
+                    if (fightingDefensively == true) { Console.WriteLine("Fight normally"); }
+                    Console.WriteLine("Flee");
+                    Console.WriteLine();
+                    Console.WriteLine();
 
-                        if (battleAction == "Return")
+                    Console.Write("Your action: ");
+                    battleAction = Console.ReadLine();
+                    battleAction = battleAction.ToLower();
+
+                    if (battleAction == "inventory")
+                    {
+                        inventoryLoop = true;
+                        while (inventoryLoop == true)
                         {
-                            battleAction = "incomplete";
-                            inventoryLoop = false;
-                        }
-                        else if (battleAction.StartsWith("Use "))
-                        {
-                            string usedItem = battleAction.Remove(battleAction.IndexOf("Use "), 4);
+                            Console.WriteLine();
+                            Console.WriteLine("____________________________________________________");
+                            Console.WriteLine();
+                            Console.WriteLine("Equipment:");
+                            Console.WriteLine("Weapon: " + ego.EquippedWeapon.Name);
+                            Console.WriteLine("Armor: " + ego.EquippedArmor.Name);
+                            if (ego.EquippedShield.Name != "Forearm") { Console.WriteLine("Shield: " + ego.EquippedShield.Name); }
+                            else { Console.WriteLine("Shield: None"); }
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Inventory:");
+                            Console.WriteLine();
                             foreach (Armor armor in equippableArmor)
                             {
-                                string bagCheck = armor.Name;
-                                if (usedItem == bagCheck)
-                                {
-                                    battleAction = "incomplete";
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine("Nothing happens.");
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
-                                    break;
-                                }
+                                Console.WriteLine(armor.Name);
                             }
                             foreach (Weapon weapon in equippableWeapon)
                             {
-                                string bagCheck = weapon.Name;
-                                if (usedItem == bagCheck)
-                                {
-                                    battleAction = "incomplete";
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine("Nothing happens.");
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
-                                    break;
-                                }
+                                if (weapon.Name == "Unarmed") { }
+                                else { Console.WriteLine(weapon.Name); }
                             }
                             foreach (Shield shield in equippableShield)
                             {
-                                string bagCheck = shield.Name;
-                                if (usedItem == bagCheck)
+                                if (shield.Name == "Forearm") { }
+                                else { Console.WriteLine(shield.Name); }
+                            }
+                            foreach (Potion potion in potionBelt)
+                            {
+                                Console.WriteLine(potion.Name);
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Use");
+                            Console.WriteLine("Inspect");
+                            Console.WriteLine("Equip");
+                            Console.WriteLine();
+                            Console.WriteLine("Return");
+                            Console.WriteLine();
+                            Console.Write("> ");
+                            battleAction = Console.ReadLine();
+                            battleAction = battleAction.ToLower();
+                            battleAction = myTI.ToTitleCase(battleAction);
+
+                            if (battleAction == "Return")
+                            {
+                                battleAction = "incomplete";
+                                inventoryLoop = false;
+                            }
+                            else if (battleAction.StartsWith("Use "))
+                            {
+                                string usedItem = battleAction.Remove(battleAction.IndexOf("Use "), 4);
+                                foreach (Armor armor in equippableArmor)
+                                {
+                                    string bagCheck = armor.Name;
+                                    if (usedItem == bagCheck)
+                                    {
+                                        battleAction = "incomplete";
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Nothing happens.");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                        break;
+                                    }
+                                }
+                                foreach (Weapon weapon in equippableWeapon)
+                                {
+                                    string bagCheck = weapon.Name;
+                                    if (usedItem == bagCheck)
+                                    {
+                                        battleAction = "incomplete";
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Nothing happens.");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                        break;
+                                    }
+                                }
+                                foreach (Shield shield in equippableShield)
+                                {
+                                    string bagCheck = shield.Name;
+                                    if (usedItem == bagCheck)
+                                    {
+                                        battleAction = "incomplete";
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Nothing happens.");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                        break;
+                                    }
+                                }
+                                foreach (Potion potion in potionBelt)
+                                {
+                                    string bagCheck = potion.Name;
+                                    if (usedItem == bagCheck)
+                                    {
+                                        battleAction = "Complete";
+                                        inventoryLoop = false;
+                                        potionBelt.Remove(potion);
+                                        if (potion.Potency > 0) { GetGoodGuyDrunk(ego, potion); }
+                                        else if (potion.Name == "Light Vial of Corrosive" || potion.Name == "Vial of Corrosive" || potion.Name == "Greater Vial of Corrosive")
+                                        {
+                                            if (potion.Name == "Light Vial of Corrosive") { ego.DotActive = 2; }
+                                            else if (potion.Name == "Vial of Corrosive") { ego.DotActive = 4; }
+                                            else if (potion.Name == "Greater Vial of Corrosive") { ego.DotActive = 6; }
+                                            Console.WriteLine("____________________________________________________");
+                                            Console.WriteLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine($"You throw the {potion.Name} at {badGuy.Name} and it bursts onto his skin!");
+                                            Console.WriteLine();
+                                            Console.Write("Press ENTER to continue");
+                                            Console.ReadLine();
+                                        }
+                                        else { GetBombed(badGuy, potion); }
+                                        break;
+                                    }
+                                }
+
+                                if (battleAction != "Complete" && battleAction != "incomplete")
                                 {
                                     battleAction = "incomplete";
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine("Nothing happens.");
+                                    Console.WriteLine("Let's get one thing straight, OK? You don't have that, it's not usable here, or you just plain typed something that didn't make sense.");
+                                    Console.WriteLine("Whichever the case -- stop trying to use it. You're looking silly in front of the bad guy.");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
-                                    break;
                                 }
                             }
-                            foreach (Potion potion in potionBelt)
-                            {
-                                string bagCheck = potion.Name;
-                                if (usedItem == bagCheck)
-                                {
-                                    battleAction = "Complete";
-                                    inventoryLoop = false;
-                                    potionBelt.Remove(potion);
-                                    if (potion.Potency > 0) { GetGoodGuyDrunk(ego, potion); }
-                                    else if (potion.Name == "Light Vial of Corrosive" || potion.Name == "Vial of Corrosive" || potion.Name == "Greater Vial of Corrosive")
-                                    {
-                                        if (potion.Name == "Light Vial of Corrosive") { ego.DotActive = 2; }
-                                        else if (potion.Name == "Vial of Corrosive") { ego.DotActive = 4; }
-                                        else if (potion.Name == "Greater Vial of Corrosive") { ego.DotActive = 6; }
-                                        Console.WriteLine("____________________________________________________");
-                                        Console.WriteLine();
-                                        Console.WriteLine();
-                                        Console.WriteLine($"You throw the {potion.Name} at {badGuy.Name} and it bursts onto his skin!");
-                                        Console.WriteLine();
-                                        Console.Write("Press ENTER to continue");
-                                        Console.ReadLine();
-                                    }
-                                    else { GetBombed(badGuy, potion); }
-                                    break;
-                                }
-                            }
-
-                            if (battleAction != "Complete" && battleAction != "incomplete")
+                            else if (battleAction == "Use")
                             {
                                 battleAction = "incomplete";
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("Let's get one thing straight, OK? You don't have that, it's not usable here, or you just plain typed something that didn't make sense.");
-                                Console.WriteLine("Whichever the case -- stop trying to use it. You're looking silly in front of the bad guy.");
+                                Console.WriteLine("Use? Use WHAT?!");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                             }
-                        }
-                        else if (battleAction == "Use")
-                        {
-                            battleAction = "incomplete";
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("Use? Use WHAT?!");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
-                        }
-                        else if (battleAction == "Equip")
-                        {
-                            battleAction = "incomplete";
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("Oops! You equipped something that we weren't expecting. Whatever it was, you don't need to do it to finish the game.");
-                            Console.WriteLine();
-                            Console.WriteLine("Try taking a different approach to the situation.");
-                            Console.WriteLine();
-                            Console.WriteLine("Error 4. SCI Version 1.001.050");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("Had you going there, didn't I? But seriously -- next time try saying what you want to equip.");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
-                        }
-                        else if (battleAction.StartsWith("Equip "))
-                        {
-                            string equippingItem = battleAction.Remove((battleAction.IndexOf("Equip ")), 6);
+                            else if (battleAction == "Equip")
+                            {
+                                battleAction = "incomplete";
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Oops! You equipped something that we weren't expecting. Whatever it was, you don't need to do it to finish the game.");
+                                Console.WriteLine();
+                                Console.WriteLine("Try taking a different approach to the situation.");
+                                Console.WriteLine();
+                                Console.WriteLine("Error 4. SCI Version 1.001.050");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Had you going there, didn't I? But seriously -- next time try saying what you want to equip.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else if (battleAction.StartsWith("Equip "))
+                            {
+                                string equippingItem = battleAction.Remove((battleAction.IndexOf("Equip ")), 6);
 
-                            foreach (Armor armor in equippableArmor)
-                            {
-                                string bagCheck = armor.Name;
-                                if (equippingItem == bagCheck)
+                                foreach (Armor armor in equippableArmor)
                                 {
-                                    battleAction = "incomplete";
-                                    GetDressed(ego, armor, equippableArmor);
-                                    break;
+                                    string bagCheck = armor.Name;
+                                    if (equippingItem == bagCheck)
+                                    {
+                                        battleAction = "incomplete";
+                                        GetDressed(ego, armor, equippableArmor);
+                                        break;
+                                    }
                                 }
-                            }
-                            foreach (Weapon weapon in equippableWeapon)
-                            {
-                                string bagCheck = weapon.Name;
-                                if (equippingItem == bagCheck)
+                                foreach (Weapon weapon in equippableWeapon)
                                 {
-                                    battleAction = "incomplete";
-                                    GetEquipped(ego, weapon, equippableWeapon, equippableArmor, equippableShield);
-                                    break;
+                                    string bagCheck = weapon.Name;
+                                    if (equippingItem == bagCheck)
+                                    {
+                                        battleAction = "incomplete";
+                                        GetEquipped(ego, weapon, equippableWeapon, equippableArmor, equippableShield);
+                                        break;
+                                    }
                                 }
-                            }
-                            foreach (Shield shield in equippableShield)
-                            {
-                                string bagCheck = shield.Name;
-                                if (equippingItem == bagCheck)
+                                foreach (Shield shield in equippableShield)
                                 {
-                                    battleAction = "incomplete";
-                                    GetStrapped(ego, shield, equippableShield);
-                                    break;
+                                    string bagCheck = shield.Name;
+                                    if (equippingItem == bagCheck)
+                                    {
+                                        battleAction = "incomplete";
+                                        GetStrapped(ego, shield, equippableShield);
+                                        break;
+                                    }
                                 }
-                            }
-                            if (battleAction != "Complete" && battleAction != "incomplete")
-                            {
-                                Console.WriteLine();
-                                Console.WriteLine();
-                                Console.WriteLine("Let's get one thing straight, OK? You don't have that, it's not equippable, or you just plain typed something that didn't make sense.");
-                                Console.WriteLine("Whichever the case -- stop trying to put that on. It makes you look silly.");
-                                Console.WriteLine();
-                                Console.Write("Press ENTER to continue");
-                                Console.ReadLine();
-                            };
-                        }
-                        else if (battleAction == "Inspect")
-                        {
-                            battleAction = "incomplete";
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("-or gadget DOO DOO DOO DOO DOO DOOOO DOOOOOOO!");
-                            Console.WriteLine();
-                            Console.Write("Press ENTER to continue");
-                            Console.ReadLine();
-                        }
-                        else if (battleAction.StartsWith("Inspect "))
-                        {
-                            string inspectingItem = battleAction.Remove((battleAction.IndexOf("Inspect ")), 8);
-                            foreach (Armor armor in equippableArmor)
-                            {
-                                string bagCheck = armor.Name;
-                                if (inspectingItem == bagCheck)
+                                if (battleAction != "Complete" && battleAction != "incomplete")
                                 {
-                                    battleAction = "incomplete";
                                     Console.WriteLine();
                                     Console.WriteLine();
-                                    Console.WriteLine(armor.Description);
-                                    Console.WriteLine();
-                                    Console.WriteLine(armor.Name);
-                                    Console.WriteLine($"Dmg Reduction: {armor.DamageReduction}  Crit Resist: {armor.CritResist}");
+                                    Console.WriteLine("Let's get one thing straight, OK? You don't have that, it's not equippable, or you just plain typed something that didn't make sense.");
+                                    Console.WriteLine("Whichever the case -- stop trying to put that on. It makes you look silly.");
                                     Console.WriteLine();
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
-                                    break;
-                                }
+                                };
                             }
-                            foreach (Weapon weapon in equippableWeapon)
+                            else if (battleAction == "Inspect")
                             {
-                                string bagCheck = weapon.Name;
-                                if (inspectingItem == bagCheck)
-                                {
-                                    battleAction = "incomplete";
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine(weapon.Description);
-                                    Console.WriteLine();
-                                    Console.WriteLine(weapon.Name);
-                                    Console.WriteLine($"Damage Bonus: {weapon.Damage}  Crit Multiplier: {weapon.CritMultiplier}");
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.WriteLine();
-                                    Console.ReadLine();
-                                    break;
-                                }
-                            }
-                            foreach (Shield shield in equippableShield)
-                            {
-                                string bagCheck = shield.Name;
-                                if (inspectingItem == bagCheck)
-                                {
-                                    battleAction = "incomplete";
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine(shield.Description);
-                                    Console.WriteLine();
-                                    Console.WriteLine(shield.Name);
-                                    Console.WriteLine($"AC: {shield.ArmorClass}  Crit Resist: {shield.CritResist}");
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
-                                    break;
-                                }
-                            }
-                            foreach (Potion potion in potionBelt)
-                            {
-                                string bagCheck = potion.Name;
-                                if (inspectingItem == bagCheck)
-                                {
-                                    battleAction = "incomplete";
-                                    Console.WriteLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine(potion.Description);
-                                    Console.WriteLine();
-                                    Console.Write("Press ENTER to continue");
-                                    Console.ReadLine();
-                                    break;
-                                }
-                            }
-                            if (battleAction != "Complete" && battleAction != "incomplete")
-                            {
-                                battleAction = "Complete";
+                                battleAction = "incomplete";
                                 Console.WriteLine();
                                 Console.WriteLine();
-                                Console.WriteLine("Are we reading from the same inventory sheet?");
+                                Console.WriteLine("-or gadget DOO DOO DOO DOO DOO DOOOO DOOOOOOO!");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                             }
+                            else if (battleAction.StartsWith("Inspect "))
+                            {
+                                string inspectingItem = battleAction.Remove((battleAction.IndexOf("Inspect ")), 8);
+                                foreach (Armor armor in equippableArmor)
+                                {
+                                    string bagCheck = armor.Name;
+                                    if (inspectingItem == bagCheck)
+                                    {
+                                        battleAction = "incomplete";
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine(armor.Description);
+                                        Console.WriteLine();
+                                        Console.WriteLine(armor.Name);
+                                        Console.WriteLine($"Dmg Reduction: {armor.DamageReduction}  Crit Resist: {armor.CritResist}");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                        break;
+                                    }
+                                }
+                                foreach (Weapon weapon in equippableWeapon)
+                                {
+                                    string bagCheck = weapon.Name;
+                                    if (inspectingItem == bagCheck)
+                                    {
+                                        battleAction = "incomplete";
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine(weapon.Description);
+                                        Console.WriteLine();
+                                        Console.WriteLine(weapon.Name);
+                                        Console.WriteLine($"Damage Bonus: {weapon.Damage}  Crit Multiplier: {weapon.CritMultiplier}");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.WriteLine();
+                                        Console.ReadLine();
+                                        break;
+                                    }
+                                }
+                                foreach (Shield shield in equippableShield)
+                                {
+                                    string bagCheck = shield.Name;
+                                    if (inspectingItem == bagCheck)
+                                    {
+                                        battleAction = "incomplete";
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine(shield.Description);
+                                        Console.WriteLine();
+                                        Console.WriteLine(shield.Name);
+                                        Console.WriteLine($"AC: {shield.ArmorClass}  Crit Resist: {shield.CritResist}");
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                        break;
+                                    }
+                                }
+                                foreach (Potion potion in potionBelt)
+                                {
+                                    string bagCheck = potion.Name;
+                                    if (inspectingItem == bagCheck)
+                                    {
+                                        battleAction = "incomplete";
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine(potion.Description);
+                                        Console.WriteLine();
+                                        Console.Write("Press ENTER to continue");
+                                        Console.ReadLine();
+                                        break;
+                                    }
+                                }
+                                if (battleAction != "Complete" && battleAction != "incomplete")
+                                {
+                                    battleAction = "Complete";
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Are we reading from the same inventory sheet?");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                            }
                         }
                     }
-                }
-                if (battleAction == "fight defensively" && fightingDefensively == false)
-                {
-                    battleAction = "fight";
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("You begin fighting defensively. Both you and your opponent gain 1 AC.");
-                    ego.ArmorClass = ego.ArmorClass + 1;
-                    badGuy.ArmorClass = badGuy.ArmorClass + 1;
-                    fightingDefensively = true;
-                    Console.WriteLine();
-                    Console.Write("Press ENTER to continue");
-                    Console.ReadLine();
-                }
-                if (battleAction == "fight normally" && fightingDefensively == true)
-                {
-                    battleAction = "fight";
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("You begin fighting normally. Both your and your opponent's ACs return to normal.");
-                    ego.ArmorClass = ego.ArmorClass - 1;
-                    badGuy.ArmorClass = badGuy.ArmorClass - 1;
-                    fightingDefensively = false;
-                    Console.WriteLine();
-                    Console.Write("Press ENTER to continue");
-                    Console.ReadLine();
-                }
-                if (battleAction == "defend")
-                {
-                    battleAction = "Complete";
-                    fullDefense = true;
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("You take a defensive stance. You gain 5 AC.");
-                    ego.ArmorClass = ego.ArmorClass + 5;
-                    Console.WriteLine();
-                    Console.Write("Press ENTER to continue");
-                    Console.ReadLine();
-                }
-                if (battleAction == "attack" || battleAction == "fight" || battleAction == "kill")
-                {
-                    battleAction = "Complete";
-                    attackRoll = die.Next(1, 21);
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    if (ego.EquippedWeapon.Class == "Piercing") { Console.Write("You stab at " + badGuy.Name + ", "); }
-                    else if (ego.EquippedWeapon.Class == "Ranged") { Console.Write("You shoot at " + badGuy.Name + ", "); }
-                    else if (ego.EquippedWeapon.Class == "Polearm") { Console.Write("You jab at " + badGuy.Name + ", "); }
-                    else if (ego.EquippedWeapon.Class == "SlashBash") { Console.Write("You swing at " + badGuy.Name + ", "); }
-                    Thread.Sleep(1500);
-                    if (attackRoll >= (badGuy.ArmorClass - ego.ToHitMod) && attackRoll < 20)
+                    if (battleAction == "fight defensively" && fightingDefensively == false)
                     {
-                        if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
-                        if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
-                        rolledDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
-                        Console.Write("and hit for " + rolledDamage + " damage!");
-                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                        battleAction = "fight";
                         Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("You begin fighting defensively. Both you and your opponent gain 1 AC.");
+                        ego.ArmorClass = ego.ArmorClass + 1;
+                        badGuy.ArmorClass = badGuy.ArmorClass + 1;
+                        fightingDefensively = true;
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
-                    if (attackRoll == 20)
+                    if (battleAction == "fight normally" && fightingDefensively == true)
                     {
-                        if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
-                        if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
-                        rolledDamage = (int)Math.Round((ego.CritMultiplier * (die.Next(1, (ego.DamageDie + 1)) + ego.Damage)) * badGuy.CritResist);
-                        Console.Write("and critically hit for " + rolledDamage + " damage!");
-                        badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                        battleAction = "fight";
                         Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("You begin fighting normally. Both your and your opponent's ACs return to normal.");
+                        ego.ArmorClass = ego.ArmorClass - 1;
+                        badGuy.ArmorClass = badGuy.ArmorClass - 1;
+                        fightingDefensively = false;
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
-                    else if (attackRoll < (badGuy.ArmorClass - ego.ToHitMod))
+                    if (battleAction == "defend")
                     {
-                        Console.Write("but miss!");
+                        battleAction = "Complete";
+                        fullDefense = true;
                         Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("You take a defensive stance. You gain 5 AC.");
+                        ego.ArmorClass = ego.ArmorClass + 5;
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
-                    while (ego.Flurry > 0)
+                    if (battleAction == "attack" || battleAction == "fight" || battleAction == "kill")
                     {
+                        battleAction = "Complete";
                         attackRoll = die.Next(1, 21);
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.Write($"Your pogo stick executes a FLURRY of attacks on {badGuy.Name}, ");
+                        if (ego.EquippedWeapon.Class == "Piercing") { Console.Write("You stab at " + badGuy.Name + ", "); }
+                        else if (ego.EquippedWeapon.Class == "Ranged") { Console.Write("You shoot at " + badGuy.Name + ", "); }
+                        else if (ego.EquippedWeapon.Class == "Polearm") { Console.Write("You jab at " + badGuy.Name + ", "); }
+                        else if (ego.EquippedWeapon.Class == "SlashBash") { Console.Write("You swing at " + badGuy.Name + ", "); }
                         Thread.Sleep(1500);
-                        if (attackRoll >= (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod) && attackRoll < 20)
+                        if (attackRoll >= (badGuy.ArmorClass - ego.ToHitMod) && attackRoll < 20)
                         {
-                            ego.Flurry = ego.Flurry + 5;
+                            if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
+                            if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                             rolledDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
-                            Console.Write("and hits for " + rolledDamage + " damage!");
+                            Console.Write("and hit for " + rolledDamage + " damage!");
                             badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                         }
-                        else if (attackRoll == 20)
+                        if (attackRoll == 20)
                         {
-                            ego.Flurry = ego.Flurry + 5;
+                            if (ego.EquippedWeapon.Name == "Assassin's Dagger") { ego.DotActive = 2; }
+                            if (ego.EquippedWeapon.Name == "Pogo Stick") { ego.Flurry = ego.Flurry + 5; }
                             rolledDamage = (int)Math.Round((ego.CritMultiplier * (die.Next(1, (ego.DamageDie + 1)) + ego.Damage)) * badGuy.CritResist);
-                            Console.Write("and critically hits for " + rolledDamage + " damage!");
+                            Console.Write("and critically hit for " + rolledDamage + " damage!");
                             badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
                             Console.ReadLine();
                         }
-                        else if (attackRoll < (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod))
+                        else if (attackRoll < (badGuy.ArmorClass - ego.ToHitMod))
                         {
-                            ego.Flurry = 0;
+                            Console.Write("but miss!");
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        while (ego.Flurry > 0)
+                        {
+                            attackRoll = die.Next(1, 21);
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write($"Your pogo stick executes a FLURRY of attacks on {badGuy.Name}, ");
+                            Thread.Sleep(1500);
+                            if (attackRoll >= (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod) && attackRoll < 20)
+                            {
+                                ego.Flurry = ego.Flurry + 5;
+                                rolledDamage = die.Next(1, (ego.DamageDie + 1)) + ego.Damage;
+                                Console.Write("and hits for " + rolledDamage + " damage!");
+                                badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else if (attackRoll == 20)
+                            {
+                                ego.Flurry = ego.Flurry + 5;
+                                rolledDamage = (int)Math.Round((ego.CritMultiplier * (die.Next(1, (ego.DamageDie + 1)) + ego.Damage)) * badGuy.CritResist);
+                                Console.Write("and critically hits for " + rolledDamage + " damage!");
+                                badGuy.CurrentHitPoints = badGuy.CurrentHitPoints - rolledDamage;
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                            else if (attackRoll < (badGuy.ArmorClass + ego.Flurry - ego.ToHitMod))
+                            {
+                                ego.Flurry = 0;
+                                Console.Write("but misses!");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+                        }
+                    }
+                    if (battleAction == "flee")
+                    {
+                        battleAction = "incomplete";
+                        ego.DotActive = 0;
+                        battleLoop = false;
+                        ego.JustFled = true;
+                        ego.Location = ego.FleeLocation;
+                        attackRoll = die.Next(1, 21);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Before you can escape, " + badGuy.Name + " gets in an attack!");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write(badGuy.Name + " attacks you, ");
+                        Thread.Sleep(1500);
+                        if (attackRoll >= ego.ArmorClass && attackRoll < 20)
+                        {
+                            rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage;
+                            Console.Write("and hits for " + rolledDamage + " damage!");
+                            ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        if (attackRoll == 20)
+                        {
+                            rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist);
+                            Console.Write("and critically hits for " + rolledDamage + " damage!");
+                            ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                        else if (attackRoll < ego.ArmorClass)
+                        {
                             Console.Write("but misses!");
                             Console.WriteLine();
                             Console.WriteLine();
@@ -26480,64 +26562,18 @@ namespace JessesDungeon
                             Console.ReadLine();
                         }
                     }
-                }
-                if (battleAction == "flee")
-                {
-                    battleAction = "incomplete";
-                    ego.DotActive = 0;
-                    battleLoop = false;
-                    ego.JustFled = true;
-                    ego.Location = ego.FleeLocation;
-                    attackRoll = die.Next(1, 21);
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("Before you can escape, " + badGuy.Name + " gets in an attack!");
-                    Console.WriteLine();
-                    Console.Write("Press ENTER to continue");
-                    Console.ReadLine();
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.Write(badGuy.Name + " attacks you, ");
-                    Thread.Sleep(1500);
-                    if (attackRoll >= ego.ArmorClass && attackRoll < 20)
+                    if (battleAction != "Complete" && battleAction != "incomplete")
                     {
-                        rolledDamage = die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage;
-                        Console.Write("and hits for " + rolledDamage + " damage!");
-                        ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
+                        battleAction = "incomplete";
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    if (attackRoll == 20)
-                    {
-                        rolledDamage = (int)Math.Round((badGuy.CritMultiplier * (die.Next(1, (badGuy.DamageDie + 1)) + badGuy.Damage)) * ego.CritResist);
-                        Console.Write("and critically hits for " + rolledDamage + " damage!");
-                        ego.CurrentHitPoints = ego.CurrentHitPoints - rolledDamage;
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.Write("Press ENTER to continue");
-                        Console.ReadLine();
-                    }
-                    else if (attackRoll < ego.ArmorClass)
-                    {
-                        Console.Write("but misses!");
-                        Console.WriteLine();
+                        Console.WriteLine("That didn't do anything useful.");
                         Console.WriteLine();
                         Console.Write("Press ENTER to continue");
                         Console.ReadLine();
                     }
                 }
-                if (battleAction != "Complete" && battleAction != "incomplete")
-                {
-                    battleAction = "incomplete";
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("That didn't do anything useful.");
-                    Console.WriteLine();
-                    Console.Write("Press ENTER to continue");
-                    Console.ReadLine();
-                }
+
                 if (battleAction == "Complete" && badGuy.CurrentHitPoints > 0)
                 {
                     if (jesseHP > 60)
@@ -26570,7 +26606,7 @@ namespace JessesDungeon
                         }
                         else if (attackRoll < (badGuy.ArmorClass))
                         {
-                            Console.Write("but misses!");
+                            Console.Write(" But misses!");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
@@ -26620,7 +26656,7 @@ namespace JessesDungeon
                         }
                         else if (attackRoll < (badGuy.ArmorClass + 5))
                         {
-                            Console.Write("but misses!");
+                            Console.Write(" But misses!");
                             Console.WriteLine();
                             Console.WriteLine();
                             Console.Write("Press ENTER to continue");
@@ -27044,19 +27080,24 @@ namespace JessesDungeon
                 if (jesseHP <= 0 && jesseHP > -32000)
                 {
                     jesseHP = -32001;
+                    Console.WriteLine();
+                    Console.WriteLine();
                     Console.Write("Jesse has fallen!");
-                    Thread.Sleep(1000);
+                    Thread.Sleep(1500);
                     Console.WriteLine();
                 }
                 if (ego.CurrentHitPoints <= 0 && ego.CurrentHitPoints > -32000)
                 {
                     ego.CurrentHitPoints = -32001;
+                    ego.HotActive = 0;
+                    Console.WriteLine();
+                    Console.WriteLine();
                     Console.Write("You have fallen!");
-                    Thread.Sleep(1000);
+                    Thread.Sleep(1500);
                     Console.WriteLine();
                 }
 
-                if (ego.DotActive > 0 && battleAction != "incomplete")
+                if (ego.DotActive > 0 && battleAction != "incomplete" && !(ego.CurrentHitPoints == -32001 && jesseHP == -32001))
                 {
                     Console.WriteLine();
                     Console.WriteLine();
