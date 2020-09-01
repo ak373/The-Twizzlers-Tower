@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Globalization;
 
@@ -227,6 +229,58 @@ namespace JessesDungeon
             bool secondQuest = false;
             bool thirdQuest = false;
             bool lootedGarbageCanLid = false;
+            bool enteredB6 = false;
+            bool enteredB7 = false;
+            bool enteredB8 = false;
+            bool enteredB9 = false;
+            bool enteredC5 = false;
+            bool enteredC7 = false;
+            bool enteredC8 = false;
+            bool enteredC9 = false;
+            bool enteredD10 = false;
+            bool enteredD4 = false;
+            bool enteredD5 = false;
+            bool enteredD6 = false;
+            bool enteredD7 = false;
+            bool enteredD8 = false;
+            bool enteredD9 = false;
+            bool enteredE10 = false;
+            bool enteredE4 = false;
+            bool enteredE5 = false;
+            bool enteredE6 = false;
+            bool enteredE7 = false;
+            bool enteredE8 = false;
+            bool enteredE9 = false;
+            bool enteredF10 = false;
+            bool enteredF11 = false;
+            bool enteredF2 = false;
+            bool enteredF3 = false;
+            bool enteredF4 = false;
+            bool enteredF5 = false;
+            bool enteredF6 = false;
+            bool enteredF9 = false;
+            bool enteredG10 = false;
+            bool enteredG2 = false;
+            bool enteredG3 = false;
+            bool enteredG5 = false;
+            bool enteredG6 = false;
+            bool enteredG7 = false;
+            bool enteredG8 = false;
+            bool enteredG9 = false;
+            bool enteredH2 = false;
+            bool enteredH3 = false;
+            bool enteredH4 = false;
+            bool enteredH5 = false;
+            bool enteredH6 = false;
+            bool enteredH7 = false;
+            bool enteredH8 = false;
+            bool enteredI4 = false;
+            bool enteredI5 = false;
+            bool enteredI6 = false;
+            bool enteredI7 = false;
+            bool enteredJ7 = true;
+            bool failLoadIntCode = true;
+            bool failLoad = false;
 
             List<string> boolList = new List<string> { "debugMode", "bowlAndSpoonLooted", "listenedToTownVoices", "unlockedListenTo", "hasNotEnteredTown", "hasLeftTown", "searchedTree", "galeQuestGiven", "galeQuestCompleted", "hermitVisited", "lookedMeepEyes", "searchedMeepMounds", "talkedToMeepMounds", "searchedMikeHouse", "fuckedUpWithMike", "searchedGraveyard", "salamancaGuardDefeated", "salamancaGuardSearched", "salamancaCousinDefeated", "salamancaDead", "randomEncountersOn", "lydiaQuestGiven", "lydiaQuestCompleted", "lootedCentaur", "frontEntranceWarning", "joinedFightClub", "fightClubLoop", "foughtInFightClub", "theCreeperInTheDarkDefeated", "puddleSearched", "visitedBowlingAlley", "bowlingLoop", "talkedToPriest", "noticedJane", "janesProtectionActive", "janesDoorOpened", "signedLogBook", "dryadLoop", "peteLoop", "buyLoop", "sellLoop", "inventoryLoop", "salamancaLoop", "salamancaBagLooted", "newConverseAvailable", "gusQuestGiven", "gusQuestCompleted", "gusLoop", "losPollosHermanos", "mikeQuestGiven", "mikeQuestCompleted", "peteQuestGiven", "peteQuestCompleted", "saulQuestGiven", "saulQuestCompleted", "studdedLeatherArmorLooted", "knightSuitAvailable", "mikeLoop", "janeQuestGiven", "janeQuestCompleted", "janeLoop", "freePotions", "dudeOnAPogoStickDefeated", "hidenGoseke", "secretTunnelOpened", "returnedRing", "shopClosed", "readLogbook", "tookPeteCash", "tookGusCash", "tookSaulCash", "tookHermitCash", "tookLydiaCash", "tookMikeCash", "tookJaneCash", "talkLoop", "killedJesse", "jesseDefeated", "sparedJesse", "searchedHeisenberg", "narratorDefeated", "searchedFortress", "mapTown", "mapPeace", "mapSalamanca", "mapLiquor", "mapVacuum", "mapCartel", "mapMike", "mapFight", "mapLydia", "mapSaul", "mapBowl", "mapHermit", "mapFortress" , "searchedChest" , "searchedNightstand" , "lootedFredBeard", "lootedMirror", "converseOneDone", "converseTwoDone", "converseThreeDone", "converseFourDone", "converseFiveDone", "converseSixDone", "converseSevenDone", "secondQuest", "thirdQuest", "lootedGarbageCanLid" };
             List<bool> boolFlags = new List<bool> { debugMode, bowlAndSpoonLooted, listenedToTownVoices, unlockedListenTo, hasNotEnteredTown, hasLeftTown, searchedTree, galeQuestGiven, galeQuestCompleted, hermitVisited, lookedMeepEyes, searchedMeepMounds, talkedToMeepMounds, searchedMikeHouse, fuckedUpWithMike, searchedGraveyard, salamancaGuardDefeated, salamancaGuardSearched, salamancaCousinDefeated, salamancaDead, randomEncountersOn, lydiaQuestGiven, lydiaQuestCompleted, lootedCentaur, frontEntranceWarning, joinedFightClub, fightClubLoop, foughtInFightClub, theCreeperInTheDarkDefeated, puddleSearched, visitedBowlingAlley, bowlingLoop, talkedToPriest, noticedJane, janesProtectionActive, janesDoorOpened, signedLogBook, dryadLoop, peteLoop, buyLoop, sellLoop, inventoryLoop, salamancaLoop, salamancaBagLooted, newConverseAvailable, gusQuestGiven, gusQuestCompleted, gusLoop, losPollosHermanos, mikeQuestGiven, mikeQuestCompleted, peteQuestGiven, peteQuestCompleted, saulQuestGiven, saulQuestCompleted, studdedLeatherArmorLooted, knightSuitAvailable, mikeLoop, janeQuestGiven, janeQuestCompleted, janeLoop, freePotions, dudeOnAPogoStickDefeated, hidenGoseke, secretTunnelOpened, returnedRing, shopClosed, readLogbook, tookPeteCash, tookGusCash, tookSaulCash, tookHermitCash, tookLydiaCash, tookMikeCash, tookJaneCash, talkLoop, killedJesse, jesseDefeated, sparedJesse, searchedHeisenberg, narratorDefeated, searchedFortress, mapTown, mapPeace, mapSalamanca, mapLiquor, mapVacuum, mapCartel, mapMike, mapFight, mapLydia, mapSaul, mapBowl, mapHermit, mapFortress, searchedChest, searchedNightstand, lootedFredBeard, lootedMirror, converseOneDone, converseTwoDone, converseThreeDone, converseFourDone, converseFiveDone, converseSixDone, converseSevenDone, secondQuest, thirdQuest, lootedGarbageCanLid };
@@ -250,6 +304,7 @@ namespace JessesDungeon
             int bankDeposit = 0;
             int bankWithdrawal = 0;
             int jokeConverse = 0;
+            int saveInvCounter = 0;
 
             List<string> intList = new List<string> { "hermitAnger", "highestHermitAnger", "debugMoneyOutput", "inappropriateTouchingCounter", "fightClubMode", "bowlingSkill", "lastBowlingBet", "egoBowlingScore", "enemyBowlingScore", "bowlingPrizePackage", "salamancaStolenCrystals", "converseCount", "gusSenseMotiveCheck", "saulHermitBond", "konamiProgress", "stolenHeisenPotions", "bankDeposit", "bankWithdrawal", "jokeConverse" };
             List<int> intFlags = new List<int> { hermitAnger, highestHermitAnger, debugMoneyOutput, inappropriateTouchingCounter, fightClubMode, bowlingSkill, lastBowlingBet, egoBowlingScore, enemyBowlingScore, bowlingPrizePackage, salamancaStolenCrystals, converseCount, gusSenseMotiveCheck, saulHermitBond, konamiProgress, stolenHeisenPotions, bankDeposit, bankWithdrawal, jokeConverse };
@@ -268,6 +323,25 @@ namespace JessesDungeon
             string disappearChoice = null;
             string razzleDazzleRootBeer = null;
             string suckBlueFrogs = null;
+            string mapCode = "";
+            string loadMapCode = "";
+            string mapCodeHex = "";
+            string loadMapCodeHex = "";
+            string invCode = "";
+            string loadInvCode = "";
+            string proCode1 = "";
+            string proCode2 = "";
+            string loadProCode1 = "";
+            string loadProCode2 = "";
+            string proCodeHex1 = "";
+            string proCodeHex2 = "";
+            string loadProCodeHex1 = "";
+            string loadProCodeHex2 = "";
+            string intCode = "";
+            string loadIntCode = "";
+            string fullCode = "";
+            string loadFullCode = "";
+            string[] intray;
 
             string action = "";
 
@@ -399,6 +473,7 @@ namespace JessesDungeon
                 {
                     case "J7":
                         randomEncountersOn = false;
+                        enteredJ7 = true;
                         discoveredMap[12, 18] = "[x]";
                         discoveredMap[12, 17] = "-";
                         Console.WriteLine("You're in the initial room with the entrance shut and locked above you.");
@@ -440,6 +515,7 @@ namespace JessesDungeon
 
                     case "I7":
                         randomEncountersOn = false;
+                        enteredI7 = true;
                         discoveredMap[12, 16] = "[x]";
                         discoveredMap[12, 15] = "-";
                         discoveredMap[12, 17] = "-";
@@ -689,6 +765,7 @@ namespace JessesDungeon
 
                     case "H7":
                         randomEncountersOn = false;
+                        enteredH7 = true;
                         discoveredMap[12, 14] = "[x]";
                         discoveredMap[12, 13] = "-";
                         discoveredMap[12, 15] = "-";
@@ -812,6 +889,7 @@ namespace JessesDungeon
 
                     case "G7":
                         randomEncountersOn = false;
+                        enteredG7 = true;
                         discoveredMap[12, 12] = "[x]";
                         discoveredMap[12, 11] = "-";
                         discoveredMap[12, 13] = "-";
@@ -1800,10 +1878,11 @@ namespace JessesDungeon
                         break;
 
                     case "F7": //Town
+                        mapTown = true;
                         discoveredMap[12, 10] = "[x]";
                         if (hasLeftTown == false)
                         {
-                            Console.WriteLine("There are two [men] conversing, who stop and look as you enter. They are each standing behind a crudely built [podium]; one has a [plank] of wood lying beside him, while the other conversely has a large, filled [sack].");
+                            Console.WriteLine("There are two [men] conversing, who stop and look as you enter. A third sits in a corner and writes in a book, seemingly unaware of your presence. The first two are each standing behind a crudely built [podium]; one has a [plank] of wood lying beside him, while the other conversely has a large, filled [sack].");
                             Console.WriteLine();
                             Console.WriteLine("There is an exit to the [east].");
                             if (hasNotEnteredTown == true)
@@ -1817,14 +1896,24 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("The man with the wooden plank speaks.");
                                 Console.WriteLine();
-                                if (secondQuest) { Console.WriteLine("\"Hey. You must be new? Gee -- aren't you a looker! Best keep that mace handy. You can call me Badger, and this here is Skinny Pete. Welcome to your new home!\""); }
-                                else { Console.WriteLine("\"Hey. You must be new? Haven't seen you around before. You can call me Badger, and this here is Skinny Pete. Welcome to your new home!\""); }
+                                if (secondQuest) { Console.WriteLine("\"Hey. You must be new? Gee -- aren't you a looker! Best keep that mace handy. You can call me Badger, and this here is Skinny Pete. That one doodling in the corner is Jeff. Welcome to your new home!\""); }
+                                else { Console.WriteLine("\"Hey. You must be new? Haven't seen you around before. You can call me Badger, and this here is Skinny Pete. That one doodling in the corner is Jeff. Welcome to your new home!\""); }
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("The man in the corner looks up.");
+                                Console.WriteLine();
+                                Console.WriteLine("\"That's Geoff.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
                                 Console.WriteLine("____________________________________________________");
                                 Console.WriteLine();
                                 Console.WriteLine("Badger:");
+                                Console.WriteLine();
+                                Console.WriteLine("\"Right. What'd I say? Anyways...\"");
                                 Console.WriteLine();
                                 Console.WriteLine("\"If you wanna do some trading, Skinny Pete is your man. He's interested in pretty much anything - and that's how he's also got pretty much anything! Otherwise, if you need to rest -- I'm your guy. For just a small fee, you can get a full night's rest and (rest assured!) I'll watch out for ya.\"");
                                 Console.WriteLine();
@@ -1834,7 +1923,25 @@ namespace JessesDungeon
                                 Console.WriteLine();
                                 Console.WriteLine("Badger:");
                                 Console.WriteLine();
-                                Console.WriteLine("\"And, well, if you want to 'make something' of yourself down here, you can go pay your respects to the cartel just out and to the north. I'd be careful getting involved with them, though.\"");
+                                Console.WriteLine("\"Jeff likes to draw caricatures.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Geoff:");
+                                Console.WriteLine();
+                                Console.WriteLine("\"I'm a WRITER! You know - with ink and parchment?\"");
+                                Console.WriteLine();
+                                Console.WriteLine("\"I would be happy to create a log of your journey. Just have a seat at your leisure and tell me of your exploits so we can write down your progress.\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Badger:");
+                                Console.WriteLine();
+                                Console.WriteLine("\"Otherwise, if you want to 'make something' of yourself down here, you can go pay your respects to the cartel just out and to the north. I'd be careful getting involved with them, though.\"");
                                 Console.WriteLine();
                                 Console.Write("Press ENTER to continue");
                                 Console.ReadLine();
@@ -1851,6 +1958,7 @@ namespace JessesDungeon
                             Console.WriteLine("Talk to");
                             Console.WriteLine("Rest (3 crystals)");
                             Console.WriteLine("Shop");
+                            Console.WriteLine("Save");
                             Console.WriteLine("Go east");
                             Console.WriteLine();
                             Console.WriteLine();
@@ -1862,7 +1970,6 @@ namespace JessesDungeon
 
                             if (action == "go east" || action == "east" || action == "e")
                             {
-                                mapTown = true;
                                 action = "Complete";
                                 randomEncountersOn = true;
                                 ego.FleeLocation = "F7";
@@ -2800,6 +2907,654 @@ namespace JessesDungeon
                                 }
                             }
 
+                            if (action == "save")
+                            {
+                                action = "Complete";
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.WriteLine(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.WriteLine(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.WriteLine(".");
+                                Thread.Sleep(250);
+                                Console.WriteLine();
+                                mapCode = "";
+                                invCode = "";
+                                proCode1 = "";
+                                proCode2 = "";
+                                intCode = "";
+                                fullCode = "";
+                                //mapCode
+                                mapCode += "1";
+                                if (enteredB6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredB7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredB8) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredB9) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredC5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredC7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredC8) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredC9) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD10) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD4) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD8) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD9) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE10) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE4) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE8) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE9) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF10) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF11) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF2) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF3) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF4) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF9) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG10) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG2) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG3) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG8) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG9) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH2) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH3) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH4) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH8) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredI4) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredI5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredI6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredI7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapBowl) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapCartel) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapFight) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapFortress) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapHermit) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapLiquor) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapLydia) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapMike) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapPeace) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapSalamanca) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapSaul) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapTown) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapVacuum) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                //62
+                                mapCode += "00";
+                                mapCodeHex = string.Join("", Enumerable.Range(0, 8).Select(i => Convert.ToByte(mapCode.Substring(i * 8, 8), 2).ToString("X2")));
+
+                                //invCode
+                                // items with multiple drops in double while loops; unique item simplified to single if statement
+                                invCode = "";
+                                while (equippableArmor.Contains(leatherArmor))
+                                {
+                                    invCode += "a";
+                                    equippableArmor.Remove(leatherArmor);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableArmor.Add(leatherArmor);
+                                    saveInvCounter--;
+                                }
+                                if (equippableArmor.Contains(studdedLeatherArmor)) { invCode += "b"; }
+                                if (equippableArmor.Contains(ringmail)) { invCode += "c"; }
+                                if (equippableArmor.Contains(chainmail)) { invCode += "d"; }
+                                if (equippableArmor.Contains(hazmatSuit)) { invCode += "e"; }
+                                if (equippableWeapon.Contains(rustyWoodenSpoon)) { invCode += "f"; }
+                                while (equippableWeapon.Contains(stick))
+                                {
+                                    invCode += "g";
+                                    equippableWeapon.Remove(stick);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableWeapon.Add(stick);
+                                    saveInvCounter--;
+                                }
+                                while (equippableWeapon.Contains(pointyStick))
+                                {
+                                    invCode += "h";
+                                    equippableWeapon.Remove(pointyStick);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableWeapon.Add(pointyStick);
+                                    saveInvCounter--;
+                                }
+                                if (equippableWeapon.Contains(mildewEncrustedPocketKnife)) { invCode += "i"; }
+                                while (equippableWeapon.Contains(knife))
+                                {
+                                    invCode += "j";
+                                    equippableWeapon.Remove(knife);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableWeapon.Add(knife);
+                                    saveInvCounter--;
+                                }
+                                while (equippableWeapon.Contains(huntingKnife))
+                                {
+                                    invCode += "k";
+                                    equippableWeapon.Remove(huntingKnife);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableWeapon.Add(huntingKnife);
+                                    saveInvCounter--;
+                                }
+                                while (equippableWeapon.Contains(club))
+                                {
+                                    invCode += "l";
+                                    equippableWeapon.Remove(club);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableWeapon.Add(club);
+                                    saveInvCounter--;
+                                }
+                                if (equippableWeapon.Contains(axe)) { invCode += "m"; }
+                                if (equippableWeapon.Contains(pogoStick)) { invCode += "n"; }
+                                if (equippableWeapon.Contains(realSword)) { invCode += "o"; }
+                                if (equippableWeapon.Contains(gun)) { invCode += "p"; }
+                                if (equippableWeapon.Contains(assassinsDagger)) { invCode += "q"; }
+                                if (equippableWeapon.Contains(mace)) { invCode += ";"; }
+                                if (equippableWeapon.Contains(trident)) { invCode += "<"; }
+                                if (equippableShield.Contains(soupBowl)) { invCode += "r"; }
+                                while (equippableShield.Contains(cardboardCutout))
+                                {
+                                    invCode += "s";
+                                    equippableShield.Remove(cardboardCutout);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableShield.Add(cardboardCutout);
+                                    saveInvCounter--;
+                                }
+                                if (equippableShield.Contains(garbageCanLid)) { invCode += "t"; }
+                                if (equippableShield.Contains(realShield)) { invCode += "u"; }
+                                if (equippableShield.Contains(mirrorShield)) { invCode += "v"; }
+                                while (potionBelt.Contains(healingPotion))
+                                {
+                                    invCode += "w";
+                                    potionBelt.Remove(healingPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(healingPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(lightHealingPotion))
+                                {
+                                    invCode += "x";
+                                    potionBelt.Remove(lightHealingPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(lightHealingPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(greaterHealingPotion))
+                                {
+                                    invCode += "y";
+                                    potionBelt.Remove(greaterHealingPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(greaterHealingPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(hotPotion))
+                                {
+                                    invCode += "z";
+                                    potionBelt.Remove(hotPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(hotPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(lightHotPotion))
+                                {
+                                    invCode += "0";
+                                    potionBelt.Remove(lightHotPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(lightHotPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(greaterHotPotion))
+                                {
+                                    invCode += "1";
+                                    potionBelt.Remove(greaterHotPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(greaterHotPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(acidBomb))
+                                {
+                                    invCode += "2";
+                                    potionBelt.Remove(acidBomb);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(acidBomb);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(lightAcidBomb))
+                                {
+                                    invCode += "3";
+                                    potionBelt.Remove(lightAcidBomb);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(lightAcidBomb);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(greaterAcidBomb))
+                                {
+                                    invCode += "3";
+                                    potionBelt.Remove(greaterAcidBomb);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(greaterAcidBomb);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(dotPotion))
+                                {
+                                    invCode += "4";
+                                    potionBelt.Remove(dotPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(dotPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(lightDotPotion))
+                                {
+                                    invCode += "5";
+                                    potionBelt.Remove(lightDotPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(lightDotPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(greaterDotPotion))
+                                {
+                                    invCode += "6";
+                                    potionBelt.Remove(greaterDotPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(greaterDotPotion);
+                                    saveInvCounter--;
+                                }
+                                if (undroppables.Contains(sackOfCash)) { invCode += "!"; }
+                                if (undroppables.Contains(giantBlueCrystal)) { invCode += "@"; }
+                                if (undroppables.Contains(stevia)) { invCode += "#"; }
+                                if (undroppables.Contains(janesKey)) { invCode += "$"; }
+                                if (undroppables.Contains(largeBrassKey)) { invCode += "%"; }
+                                if (undroppables.Contains(liquorKey)) { invCode += "^"; }
+                                if (undroppables.Contains(mezcal)) { invCode += "&"; }
+                                if (undroppables.Contains(jeweledRing)) { invCode += "*"; }
+                                if (undroppables.Contains(sackOfGoodies)) { invCode += "("; }
+                                if (undroppables.Contains(minkCoat)) { invCode += ")"; }
+                                if (undroppables.Contains(fredStash)) { invCode += "_"; }
+                                if (undroppables.Contains(safe)) { invCode += "+"; }
+                                if (undroppables.Contains(generator)) { invCode += "="; }
+                                if (undroppables.Contains(dungeonKey)) { invCode += "~"; }
+                                if (ego.EquippedArmor.Name == "Rags") { invCode += "Z"; }
+                                if (ego.EquippedArmor.Name == "Leather Armor") { invCode += "A"; }
+                                if (ego.EquippedArmor.Name == "Studded Leather Armor") { invCode += "B"; }
+                                if (ego.EquippedArmor.Name == "Ringmail") { invCode += "C"; }
+                                if (ego.EquippedArmor.Name == "Chainmail") { invCode += "D"; }
+                                if (ego.EquippedArmor.Name == "Hazmat Suit") { invCode += "E"; }
+                                if (ego.EquippedWeapon.Name == "Stick") { invCode += "G"; }
+                                if (ego.EquippedWeapon.Name == "Pointy Stick") { invCode += "H"; }
+                                if (ego.EquippedWeapon.Name == "Mildew-Encrusted Pocket Knife") { invCode += "I"; }
+                                if (ego.EquippedWeapon.Name == "Knife") { invCode += "J"; }
+                                if (ego.EquippedWeapon.Name == "Hunting Knife") { invCode += "K"; }
+                                if (ego.EquippedWeapon.Name == "Club") { invCode += "L"; }
+                                if (ego.EquippedWeapon.Name == "Fireman's Axe") { invCode += "M"; }
+                                if (ego.EquippedWeapon.Name == "Pogo Stick") { invCode += "N"; }
+                                if (ego.EquippedWeapon.Name == "Sword") { invCode += "O"; }
+                                if (ego.EquippedWeapon.Name == "Gun") { invCode += "P"; }
+                                if (ego.EquippedWeapon.Name == "Assassin's Dagger") { invCode += "Q"; }
+                                if (ego.EquippedWeapon.Name == "Mace") { invCode += ":"; }
+                                if (ego.EquippedWeapon.Name == "Ganon's Trident") { invCode += ">"; }
+                                if (ego.EquippedShield.Name == "Soup Bowl") { invCode += "R"; }
+                                if (ego.EquippedShield.Name == "Cardboard Cutout") { invCode += "S"; }
+                                if (ego.EquippedShield.Name == "Garbage Can Lid") { invCode += "T"; }
+                                if (ego.EquippedShield.Name == "Shield") { invCode += "U"; }
+                                if (ego.EquippedShield.Name == "The Mirror Shield") { invCode += "V"; }
+                                //proCode
+                                proCode1 += "1"; //entered J7
+                                if (bowlAndSpoonLooted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (listenedToTownVoices) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (unlockedListenTo) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (hasNotEnteredTown) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (hasLeftTown) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (searchedTree) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (galeQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (galeQuestCompleted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (hermitVisited) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (lookedMeepEyes) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (searchedMeepMounds) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (talkedToMeepMounds) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (searchedMikeHouse) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (fuckedUpWithMike) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (searchedGraveyard) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (salamancaGuardDefeated) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (salamancaCousinDefeated) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (salamancaDead) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (randomEncountersOn) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (lydiaQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (lydiaQuestCompleted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (lootedCentaur) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (frontEntranceWarning) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (joinedFightClub) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (foughtInFightClub) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (theCreeperInTheDarkDefeated) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (puddleSearched) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (visitedBowlingAlley) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (talkedToPriest) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (noticedJane) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (janesProtectionActive) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (janesDoorOpened) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (signedLogBook) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (salamancaBagLooted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (newConverseAvailable) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (gusQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (gusQuestCompleted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (losPollosHermanos) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (mikeQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (mikeQuestCompleted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (peteQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (peteQuestCompleted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (saulQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (saulQuestCompleted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (studdedLeatherArmorLooted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (knightSuitAvailable) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (janeQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                //48
+                                proCode2 += "1"; //filler
+                                if (janeQuestCompleted) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (freePotions) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (dudeOnAPogoStickDefeated) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (hidenGoseke) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (secretTunnelOpened) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (returnedRing) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (shopClosed) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (readLogbook) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookPeteCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookGusCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookSaulCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookHermitCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookLydiaCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookMikeCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookJaneCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (killedJesse) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (jesseDefeated) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (sparedJesse) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (searchedHeisenberg) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (narratorDefeated) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (searchedFortress) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapTown) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapPeace) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapSalamanca) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapLiquor) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapVacuum) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapCartel) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapMike) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapFight) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapLydia) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapSaul) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapBowl) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapHermit) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapFortress) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (searchedChest) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (searchedNightstand) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (lootedFredBeard) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (lootedMirror) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseOneDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseTwoDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseThreeDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseFourDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseFiveDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseSixDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseSevenDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (secondQuest) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (thirdQuest) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (lootedGarbageCanLid) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                //49
+                                proCode2 += "0000000"; //56
+                                proCodeHex1 = string.Join("", Enumerable.Range(0, 6).Select(i => Convert.ToByte(proCode1.Substring(i * 8, 8), 2).ToString("X2")));
+                                proCodeHex2 = string.Join("", Enumerable.Range(0, 7).Select(i => Convert.ToByte(proCode2.Substring(i * 8, 8), 2).ToString("X2")));
+
+                                //intCode
+                                intCode = hermitAnger.ToString() + "\'" + highestHermitAnger.ToString() + "\'" + inappropriateTouchingCounter.ToString() + "\'" + bowlingSkill.ToString() + "\'" + salamancaStolenCrystals.ToString() + "\'" + converseCount.ToString() + "\'" + saulHermitBond.ToString() + "\'" + konamiProgress.ToString() + "\'" + stolenHeisenPotions.ToString() + "\'" + jokeConverse.ToString() + "\'" + ego.CurrentHitPoints.ToString() + "\'" + ego.BlueCrystals.ToString() + "\'" + ego.FightClubRank.ToString() + "\'" + ego.BankedCrystals.ToString();
+
+                                //loadCode
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Geoff:");
+                                Console.WriteLine();
+                                Console.WriteLine("\"Alllllll right! I've got it all marked down! Now, to sum up your journey, I can bring it down to this:\"");
+                                Console.WriteLine();
+                                Console.WriteLine(mapCodeHex + " " + invCode + " " + proCodeHex1 + " " + proCodeHex2 + " " + intCode);
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Geoff:");
+                                Console.WriteLine();
+                                Console.WriteLine("\"Just remember that and you'll be able to [restore] your journey at any time!\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+
                             if (action == "talk to")
                             {
                                 action = "Complete";
@@ -2824,7 +3579,7 @@ namespace JessesDungeon
                         }                           
                         else
                         {
-                            Console.WriteLine("[Badger] and [Skinny Pete] stop their conversation and look at you. Skinny Pete's [sack] looks even burstier than before.");
+                            Console.WriteLine("[Badger] and [Skinny Pete] stop their conversation and look at you. [Geoff] looks up from his scribblings to nod, and returns to work.");
                             Console.WriteLine();
                             Console.WriteLine("There is an exit to the [east].");
                             Console.WriteLine();
@@ -2844,6 +3599,7 @@ namespace JessesDungeon
                             Console.WriteLine("Talk to");
                             Console.WriteLine("Rest (3 crystals)");
                             Console.WriteLine("Shop");
+                            Console.WriteLine("Save");
                             Console.WriteLine("Go east");
                             Console.WriteLine();
                             Console.WriteLine();
@@ -3183,6 +3939,58 @@ namespace JessesDungeon
                                     Console.Write("Press ENTER to continue");
                                     Console.ReadLine();
                                 }
+                            }
+
+                            if (action == "look at geoff")
+                            {
+                                action = "Complete";
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                Console.WriteLine("Geoff is hard at work on his latest novel.");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+
+                            if (action == "search geoff")
+                            {
+                                action = "Complete";
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Geoff:");
+                                Console.WriteLine();
+                                if (mapCode != "")
+                                {
+                                    Console.WriteLine("\"Hmm? Did you need your latest adventure code again?\"");
+                                    Console.WriteLine();
+                                    Console.WriteLine(mapCodeHex + " " + invCode + " " + proCodeHex1 + " " + proCodeHex2 + " " + intCode);
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\"Hmm? No need to, uh, pay me negative crystals...\"");
+                                    Console.WriteLine();
+                                    Console.Write("Press ENTER to continue");
+                                    Console.ReadLine();
+                                }
+                            }
+
+                            if (action == "talk to geoff")
+                            {
+                                action = "Complete";
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Geoff:");
+                                Console.WriteLine();
+                                if (secondQuest) { Console.WriteLine("\"I look forward to writing about your exploits! A gorgeous and daring dame like you ought to make for a great story.\""); }
+                                else { Console.WriteLine("\"I look forward to writing about your exploits! A strapping lad such as yourself ought to make for a great story.\""); }
+                                Console.WriteLine("");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
                             }
 
                             if (action == "look at sack")
@@ -4025,6 +4833,655 @@ namespace JessesDungeon
                                 }
                             }
 
+                            if (action == "save")
+                            {
+                                action = "Complete";
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.WriteLine(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.WriteLine(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.Write(".");
+                                Thread.Sleep(250);
+                                Console.WriteLine();
+                                Console.WriteLine();
+                                mapCode = "";
+                                invCode = "";
+                                proCode1 = "";
+                                proCode2 = "";
+                                intCode = "";
+                                fullCode = "";
+                                //mapCode
+                                mapCode += "1";
+                                if (enteredB6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredB7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredB8) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredB9) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredC5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredC7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredC8) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredC9) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD10) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD4) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD8) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredD9) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE10) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE4) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE8) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredE9) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF10) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF11) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF2) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF3) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF4) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredF9) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG10) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG2) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG3) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG8) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredG9) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH2) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH3) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH4) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredH8) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredI4) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredI5) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredI6) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (enteredI7) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapBowl) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapCartel) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapFight) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapFortress) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapHermit) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapLiquor) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapLydia) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapMike) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapPeace) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapSalamanca) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapSaul) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapTown) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                if (mapVacuum) { mapCode += "1"; }
+                                else { mapCode += "0"; }
+                                //62
+                                mapCode += "00";
+                                mapCodeHex = string.Join("", Enumerable.Range(0, 8).Select(i => Convert.ToByte(mapCode.Substring(i * 8, 8), 2).ToString("X2")));
+
+                                //invCode
+                                // items with multiple drops in double while loops; unique item simplified to single if statement
+                                invCode = "";
+                                while (equippableArmor.Contains(leatherArmor))
+                                {
+                                    invCode += "a";
+                                    equippableArmor.Remove(leatherArmor);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableArmor.Add(leatherArmor);
+                                    saveInvCounter--;
+                                }
+                                if (equippableArmor.Contains(studdedLeatherArmor)) { invCode += "b"; }
+                                if (equippableArmor.Contains(ringmail)) { invCode += "c"; }
+                                if (equippableArmor.Contains(chainmail)) { invCode += "d"; }
+                                if (equippableArmor.Contains(hazmatSuit)) { invCode += "e"; }
+                                if (equippableWeapon.Contains(rustyWoodenSpoon)) { invCode += "f"; }
+                                while (equippableWeapon.Contains(stick))
+                                {
+                                    invCode += "g";
+                                    equippableWeapon.Remove(stick);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableWeapon.Add(stick);
+                                    saveInvCounter--;
+                                }
+                                while (equippableWeapon.Contains(pointyStick))
+                                {
+                                    invCode += "h";
+                                    equippableWeapon.Remove(pointyStick);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableWeapon.Add(pointyStick);
+                                    saveInvCounter--;
+                                }
+                                if (equippableWeapon.Contains(mildewEncrustedPocketKnife)) { invCode += "i"; }
+                                while (equippableWeapon.Contains(knife))
+                                {
+                                    invCode += "j";
+                                    equippableWeapon.Remove(knife);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableWeapon.Add(knife);
+                                    saveInvCounter--;
+                                }
+                                while (equippableWeapon.Contains(huntingKnife))
+                                {
+                                    invCode += "k";
+                                    equippableWeapon.Remove(huntingKnife);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableWeapon.Add(huntingKnife);
+                                    saveInvCounter--;
+                                }
+                                while (equippableWeapon.Contains(club))
+                                {
+                                    invCode += "l";
+                                    equippableWeapon.Remove(club);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableWeapon.Add(club);
+                                    saveInvCounter--;
+                                }
+                                if (equippableWeapon.Contains(axe)) { invCode += "m"; }
+                                if (equippableWeapon.Contains(pogoStick)) { invCode += "n"; }
+                                if (equippableWeapon.Contains(realSword)) { invCode += "o"; }
+                                if (equippableWeapon.Contains(gun)) { invCode += "p"; }
+                                if (equippableWeapon.Contains(assassinsDagger)) { invCode += "q"; }
+                                if (equippableWeapon.Contains(mace)) { invCode += ";"; }
+                                if (equippableWeapon.Contains(trident)) { invCode += "<"; }
+                                if (equippableShield.Contains(soupBowl)) { invCode += "r"; }
+                                while (equippableShield.Contains(cardboardCutout))
+                                {
+                                    invCode += "s";
+                                    equippableShield.Remove(cardboardCutout);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    equippableShield.Add(cardboardCutout);
+                                    saveInvCounter--;
+                                }
+                                if (equippableShield.Contains(garbageCanLid)) { invCode += "t"; }
+                                if (equippableShield.Contains(realShield)) { invCode += "u"; }
+                                if (equippableShield.Contains(mirrorShield)) { invCode += "v"; }
+                                while (potionBelt.Contains(healingPotion))
+                                {
+                                    invCode += "w";
+                                    potionBelt.Remove(healingPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(healingPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(lightHealingPotion))
+                                {
+                                    invCode += "x";
+                                    potionBelt.Remove(lightHealingPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(lightHealingPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(greaterHealingPotion))
+                                {
+                                    invCode += "y";
+                                    potionBelt.Remove(greaterHealingPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(greaterHealingPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(hotPotion))
+                                {
+                                    invCode += "z";
+                                    potionBelt.Remove(hotPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(hotPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(lightHotPotion))
+                                {
+                                    invCode += "0";
+                                    potionBelt.Remove(lightHotPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(lightHotPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(greaterHotPotion))
+                                {
+                                    invCode += "1";
+                                    potionBelt.Remove(greaterHotPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(greaterHotPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(acidBomb))
+                                {
+                                    invCode += "2";
+                                    potionBelt.Remove(acidBomb);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(acidBomb);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(lightAcidBomb))
+                                {
+                                    invCode += "3";
+                                    potionBelt.Remove(lightAcidBomb);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(lightAcidBomb);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(greaterAcidBomb))
+                                {
+                                    invCode += "3";
+                                    potionBelt.Remove(greaterAcidBomb);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(greaterAcidBomb);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(dotPotion))
+                                {
+                                    invCode += "4";
+                                    potionBelt.Remove(dotPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(dotPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(lightDotPotion))
+                                {
+                                    invCode += "5";
+                                    potionBelt.Remove(lightDotPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(lightDotPotion);
+                                    saveInvCounter--;
+                                }
+                                while (potionBelt.Contains(greaterDotPotion))
+                                {
+                                    invCode += "6";
+                                    potionBelt.Remove(greaterDotPotion);
+                                    saveInvCounter++;
+                                }
+                                while (saveInvCounter > 0)
+                                {
+                                    potionBelt.Add(greaterDotPotion);
+                                    saveInvCounter--;
+                                }
+                                if (undroppables.Contains(sackOfCash)) { invCode += "!"; }
+                                if (undroppables.Contains(giantBlueCrystal)) { invCode += "@"; }
+                                if (undroppables.Contains(stevia)) { invCode += "#"; }
+                                if (undroppables.Contains(janesKey)) { invCode += "$"; }
+                                if (undroppables.Contains(largeBrassKey)) { invCode += "%"; }
+                                if (undroppables.Contains(liquorKey)) { invCode += "^"; }
+                                if (undroppables.Contains(mezcal)) { invCode += "&"; }
+                                if (undroppables.Contains(jeweledRing)) { invCode += "*"; }
+                                if (undroppables.Contains(sackOfGoodies)) { invCode += "("; }
+                                if (undroppables.Contains(minkCoat)) { invCode += ")"; }
+                                if (undroppables.Contains(fredStash)) { invCode += "_"; }
+                                if (undroppables.Contains(safe)) { invCode += "+"; }
+                                if (undroppables.Contains(generator)) { invCode += "="; }
+                                if (undroppables.Contains(dungeonKey)) { invCode += "~"; }
+                                if (ego.EquippedArmor.Name == "Rags") { invCode += "Z"; }
+                                if (ego.EquippedArmor.Name == "Leather Armor") { invCode += "A"; }
+                                if (ego.EquippedArmor.Name == "Studded Leather Armor") { invCode += "B"; }
+                                if (ego.EquippedArmor.Name == "Ringmail") { invCode += "C"; }
+                                if (ego.EquippedArmor.Name == "Chainmail") { invCode += "D"; }
+                                if (ego.EquippedArmor.Name == "Hazmat Suit") { invCode += "E"; }
+                                if (ego.EquippedWeapon.Name == "Stick") { invCode += "G"; }
+                                if (ego.EquippedWeapon.Name == "Pointy Stick") { invCode += "H"; }
+                                if (ego.EquippedWeapon.Name == "Mildew-Encrusted Pocket Knife") { invCode += "I"; }
+                                if (ego.EquippedWeapon.Name == "Knife") { invCode += "J"; }
+                                if (ego.EquippedWeapon.Name == "Hunting Knife") { invCode += "K"; }
+                                if (ego.EquippedWeapon.Name == "Club") { invCode += "L"; }
+                                if (ego.EquippedWeapon.Name == "Fireman's Axe") { invCode += "M"; }
+                                if (ego.EquippedWeapon.Name == "Pogo Stick") { invCode += "N"; }
+                                if (ego.EquippedWeapon.Name == "Sword") { invCode += "O"; }
+                                if (ego.EquippedWeapon.Name == "Gun") { invCode += "P"; }
+                                if (ego.EquippedWeapon.Name == "Assassin's Dagger") { invCode += "Q"; }
+                                if (ego.EquippedWeapon.Name == "Mace") { invCode += ":"; }
+                                if (ego.EquippedWeapon.Name == "Ganon's Trident") { invCode += ">"; }
+                                if (ego.EquippedShield.Name == "Soup Bowl") { invCode += "R"; }
+                                if (ego.EquippedShield.Name == "Cardboard Cutout") { invCode += "S"; }
+                                if (ego.EquippedShield.Name == "Garbage Can Lid") { invCode += "T"; }
+                                if (ego.EquippedShield.Name == "Shield") { invCode += "U"; }
+                                if (ego.EquippedShield.Name == "The Mirror Shield") { invCode += "V"; }
+                                //proCode
+                                proCode1 += "1"; //entered J7
+                                if (bowlAndSpoonLooted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (listenedToTownVoices) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (unlockedListenTo) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (hasNotEnteredTown) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (hasLeftTown) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (searchedTree) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (galeQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (galeQuestCompleted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (hermitVisited) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (lookedMeepEyes) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (searchedMeepMounds) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (talkedToMeepMounds) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (searchedMikeHouse) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (fuckedUpWithMike) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (searchedGraveyard) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (salamancaGuardDefeated) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (salamancaCousinDefeated) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (salamancaDead) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (randomEncountersOn) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (lydiaQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (lydiaQuestCompleted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (lootedCentaur) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (frontEntranceWarning) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (joinedFightClub) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (foughtInFightClub) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (theCreeperInTheDarkDefeated) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (puddleSearched) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (visitedBowlingAlley) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (talkedToPriest) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (noticedJane) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (janesProtectionActive) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (janesDoorOpened) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (signedLogBook) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (salamancaBagLooted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (newConverseAvailable) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (gusQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (gusQuestCompleted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (losPollosHermanos) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (mikeQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (mikeQuestCompleted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (peteQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (peteQuestCompleted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (saulQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (saulQuestCompleted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (studdedLeatherArmorLooted) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (knightSuitAvailable) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                if (janeQuestGiven) { proCode1 += "1"; }
+                                else { proCode1 += "0"; }
+                                //48
+                                proCode2 += "1"; //filler
+                                if (janeQuestCompleted) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (freePotions) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (dudeOnAPogoStickDefeated) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (hidenGoseke) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (secretTunnelOpened) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (returnedRing) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (shopClosed) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (readLogbook) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookPeteCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookGusCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookSaulCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookHermitCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookLydiaCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookMikeCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (tookJaneCash) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (killedJesse) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (jesseDefeated) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (sparedJesse) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (searchedHeisenberg) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (narratorDefeated) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (searchedFortress) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapTown) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapPeace) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapSalamanca) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapLiquor) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapVacuum) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapCartel) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapMike) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapFight) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapLydia) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapSaul) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapBowl) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapHermit) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (mapFortress) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (searchedChest) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (searchedNightstand) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (lootedFredBeard) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (lootedMirror) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseOneDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseTwoDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseThreeDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseFourDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseFiveDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseSixDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (converseSevenDone) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (secondQuest) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (thirdQuest) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                if (lootedGarbageCanLid) { proCode2 += "1"; }
+                                else { proCode2 += "0"; }
+                                //49
+                                proCode2 += "0000000"; //56
+                                proCodeHex1 = string.Join("", Enumerable.Range(0, 6).Select(i => Convert.ToByte(proCode1.Substring(i * 8, 8), 2).ToString("X2")));
+                                proCodeHex2 = string.Join("", Enumerable.Range(0, 7).Select(i => Convert.ToByte(proCode2.Substring(i * 8, 8), 2).ToString("X2")));
+
+                                //intCode
+                                intCode = hermitAnger.ToString() + "\'" + highestHermitAnger.ToString() + "\'" + inappropriateTouchingCounter.ToString() + "\'" + bowlingSkill.ToString() + "\'" + salamancaStolenCrystals.ToString() + "\'" + converseCount.ToString() + "\'" + saulHermitBond.ToString() + "\'" + konamiProgress.ToString() + "\'" + stolenHeisenPotions.ToString() + "\'" + jokeConverse.ToString() + "\'" + ego.CurrentHitPoints.ToString() + "\'" + ego.BlueCrystals.ToString() + "\'" + ego.FightClubRank.ToString() + "\'" + ego.BankedCrystals.ToString();
+
+                                //loadCode
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Geoff:");
+                                Console.WriteLine();
+                                Console.WriteLine("\"Alllllll right! I've got it all marked down! Now, to sum up your journey, I can bring it down to this:\"");
+                                Console.WriteLine();
+                                Console.WriteLine(mapCodeHex + " " + invCode + " " + proCodeHex1 + " " + proCodeHex2 + " " + intCode);
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                                Console.WriteLine("____________________________________________________");
+                                Console.WriteLine();
+                                Console.WriteLine("Geoff:");
+                                Console.WriteLine();
+                                Console.WriteLine("\"Just remember that and you'll be able to [restore] your journey at any time!\"");
+                                Console.WriteLine();
+                                Console.Write("Press ENTER to continue");
+                                Console.ReadLine();
+                            }
+
                             if (action == "talk to")
                             {
                                 action = "Complete";
@@ -4053,6 +5510,7 @@ namespace JessesDungeon
 
                     case "G6": //Dryad
                         randomEncountersOn = false;
+                        enteredG6 = true;
                         discoveredMap[10, 12] = "[x]";
                         discoveredMap[10, 11] = "-";
                         discoveredMap[10, 13] = "-";
@@ -4984,6 +6442,7 @@ namespace JessesDungeon
 
                     case "G5": //Gale
                         randomEncountersOn = false;
+                        enteredG5 = true;
                         discoveredMap[8, 12] = "[x]";
                         discoveredMap[7, 12] = " | ";
                         discoveredMap[9, 12] = " | ";
@@ -6027,6 +7486,7 @@ namespace JessesDungeon
                         randomEncountersOn = false;
                         discoveredMap[6, 4] = "[x]";
                         discoveredMap[7, 5] = " | ";
+                        mapVacuum = true;
                         Console.WriteLine("This room just has a [man] standing in the center of it. While you imagine he's aware of your presence, he has no apparent reaction.");
                         Console.WriteLine();
                         Console.WriteLine("There is an exit to the [south].");
@@ -6301,6 +7761,7 @@ namespace JessesDungeon
                         randomEncountersOn = false;
                         discoveredMap[16, 14] = "[x]";
                         discoveredMap[16, 13] = "-";
+                        mapHermit = true;
                         Console.WriteLine("You have come to a walled off section of the dungeon with a peculiar [dwelling] fashioned out of peculiar material. There are pliable metallic [sheets] netted between posts.");
                         Console.WriteLine();
                         Console.WriteLine("There is an exit to the [west].");
@@ -7110,6 +8571,7 @@ namespace JessesDungeon
                         randomEncountersOn = false;
                         discoveredMap[12, 0] = "[x]";
                         discoveredMap[12, 1] = "-";
+                        mapSaul = true;
                         if (saulHermitBond > -1 && saulHermitBond < 9) { Console.WriteLine("There are several tall [mounds] of dirt and mud piled all over this room. The [glint] of light is nowhere to be found."); }
                         else { Console.WriteLine("There are several tall [mounds] of dirt and mud piled all over this room. Every so often your peripheral vision catches a [glint] of light coming from inside the mounds."); }
                         Console.WriteLine();
@@ -7536,6 +8998,7 @@ namespace JessesDungeon
                     case "J4": //Outside Mike
                         randomEncountersOn = false;
                         discoveredMap[6, 18] = "[x]";
+                        mapMike = true;
                         Console.WriteLine("A fairly well constructed [house] stands in the corner of this room. There is a [statue] of a man standing in front of the entrance.");
                         Console.WriteLine();
                         Console.WriteLine("There is an exit to the [west].");
@@ -7559,7 +9022,6 @@ namespace JessesDungeon
 
                         if (action == "go west" || action == "west" || action == "w")
                         {
-                            mapMike = true;
                             action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "J4";
@@ -8389,6 +9851,7 @@ namespace JessesDungeon
 
                     case "E7": //Graveyard
                         randomEncountersOn = false;
+                        enteredE7 = true;
                         discoveredMap[12, 8] = "[x]";
                         discoveredMap[13, 8] = " | ";
                         discoveredMap[11, 8] = " | ";
@@ -8533,6 +9996,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredH2 = true;
                         discoveredMap[2, 14] = "[x]";
                         discoveredMap[1, 14] = " | ";
                         discoveredMap[2, 13] = "-";
@@ -8720,6 +10184,7 @@ namespace JessesDungeon
                         randomEncountersOn = false;
                         discoveredMap[0, 14] = "[x]";
                         discoveredMap[1, 14] = " | ";
+                        mapSalamanca = true;
                         if (salamancaBagLooted == false) { Console.WriteLine("The wall to the east has been partially demolished to enlarge the room. A [table] that looks like a scientist's laboratory stands to your right, and a large [bag] sits by the far wall."); }
                         else if (salamancaBagLooted == true) { Console.WriteLine("The wall to the east has been partially demolished to enlarge the room. A [table] that looks like a scientist's laboratory stands to your right."); }
                         Console.WriteLine();
@@ -8768,7 +10233,6 @@ namespace JessesDungeon
                         {
                             if (action == "flee south")
                             {
-                                mapSalamanca = true;
                                 action = "Complete";
                                 randomEncountersOn = true;
                                 ego.Location = "H2";
@@ -9083,7 +10547,6 @@ namespace JessesDungeon
                         {
                             if (action == "go south" || action == "south" || action == "s")
                             {
-                                mapSalamanca = true;
                                 action = "Complete";
                                 randomEncountersOn = true;
                                 ego.Location = "H2";
@@ -9281,7 +10744,6 @@ namespace JessesDungeon
                         {
                             if (action == "go south" || action == "south" || action == "s")
                             {
-                                mapSalamanca = true;
                                 action = "Complete";
                                 randomEncountersOn = true;
                                 ego.Location = "H2";
@@ -9464,6 +10926,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredI6 = true;
                         discoveredMap[10, 16] = "[x]";
                         discoveredMap[10, 17] = "-";
                         discoveredMap[10, 15] = "-";
@@ -9536,6 +10999,7 @@ namespace JessesDungeon
                         randomEncountersOn = false;
                         discoveredMap[10, 18] = "[x]";
                         discoveredMap[10, 17] = "-";
+                        mapLydia = true;
                         if (tookLydiaCash) { Console.WriteLine("Ice predominates this room. A [woman] sits shivering by a table gazing contentedly at a [tea cup]."); }
                         else if (lydiaQuestCompleted) { Console.WriteLine("Ice predominates this room. A [woman] dressed in heavy, exotic furs sits by a table gazing contentedly at a [tea cup]."); }
                         else { Console.WriteLine("Ice predominates this room. A [woman] dressed in heavy, exotic furs sits by a table gazing forlornly at a [tea cup]."); }
@@ -9561,7 +11025,6 @@ namespace JessesDungeon
 
                         if (action == "go west" || action == "west" || action == "w")
                         {
-                            mapLydia = true;
                             action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "J6";
@@ -9946,6 +11409,7 @@ namespace JessesDungeon
 
                     case "F6": //not centaur
                         randomEncountersOn = false;
+                        enteredF6 = true;
                         discoveredMap[10, 10] = "[x]";
                         discoveredMap[10, 11] = "-";
                         discoveredMap[10, 9] = "-";
@@ -10457,6 +11921,7 @@ namespace JessesDungeon
                         randomEncountersOn = false;
                         discoveredMap[20, 8] = "[x]";
                         discoveredMap[20, 9] = "-";
+                        mapFortress = true;
                         if (gusQuestCompleted == true) { Console.WriteLine("So this is what a [fortress] with no guards looks like. A lot like it would with them, but your heart is beating way slower so you can appreciate it more."); }
                         else { Console.WriteLine("Well this place is dangerous. Several men appear from what looks like a [fortress] with guns pointed at you. Their body language reads \"go away.\""); }
                         Console.WriteLine();
@@ -10482,7 +11947,6 @@ namespace JessesDungeon
 
                         if (action == "go east" || action == "east" || action == "e")
                         {
-                            mapFortress = true;
                             action = "Complete";
                             randomEncountersOn = true;
                             ego.FleeLocation = "E11";
@@ -10946,6 +12410,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredD10 = true;
                         discoveredMap[18, 6] = "[x]";
                         discoveredMap[18, 7] = "-";
                         discoveredMap[17, 6] = " | ";
@@ -13196,6 +14661,7 @@ namespace JessesDungeon
 
                     case "G10": //lake
                         randomEncountersOn = false;
+                        enteredG10 = true;
                         discoveredMap[18, 12] = "[x]";
                         discoveredMap[17, 12] = " | ";
                         if (saulHermitBond > 0 && saulHermitBond < 8) { Console.WriteLine("[Jimmy] sticks out his head from beneath a large [puddle] in the southeast of this room. He shifts his eyes back and forth before gesturing with his head and whispering, \"c'mere!\""); }
@@ -14154,6 +15620,7 @@ namespace JessesDungeon
 
                     case "C9": //before jane's bedroom
                         randomEncountersOn = false;
+                        enteredC9 = true;
                         discoveredMap[16, 4] = "[x]";
                         discoveredMap[16, 3] = "-";
                         discoveredMap[16, 5] = "-";
@@ -14304,6 +15771,7 @@ namespace JessesDungeon
 
                     case "B9": //jane's bedroom
                         randomEncountersOn = false;
+                        enteredB9 = true;
                         discoveredMap[16, 2] = "[x]";
                         discoveredMap[16, 3] = "-";
                         Console.WriteLine("This is a fairly nice bedroom -- by any standard. There's a large (and inviting) [bed], a majestic [armoire], and a matching [chest] of drawers. The whole room exudes a rather feminine quality.");
@@ -14961,6 +16429,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredF11 = true;
                         discoveredMap[20, 10] = "[x]";
                         discoveredMap[20, 9] = "-";
                         discoveredMap[19, 10] = " | ";
@@ -15026,6 +16495,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredF10 = true;
                         discoveredMap[18, 10] = "[x]";
                         discoveredMap[18, 9] = "-";
                         Console.WriteLine("There is little to differentiate this room from the others.");
@@ -15094,6 +16564,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredE10 = true;
                         discoveredMap[18, 8] = "[x]";
                         discoveredMap[18, 9] = "-";
                         discoveredMap[18, 7] = "-";
@@ -15190,6 +16661,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredG9 = true;
                         discoveredMap[16, 12] = "[x]";
                         discoveredMap[16, 11] = "-";
                         discoveredMap[16, 13] = "-";
@@ -15293,6 +16765,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredF9 = true;
                         discoveredMap[16, 10] = "[x]";
                         discoveredMap[16, 9] = "-";
                         discoveredMap[16, 11] = "-";
@@ -15373,6 +16846,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredE9 = true;
                         discoveredMap[16, 8] = "[x]";
                         discoveredMap[16, 7] = "-";
                         discoveredMap[16, 9] = "-";
@@ -15453,6 +16927,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredH8 = true;
                         discoveredMap[14, 14] = "[x]";
                         discoveredMap[14, 13] = "-";
                         discoveredMap[13, 14] = " | ";
@@ -15518,6 +16993,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredG8 = true;
                         discoveredMap[14, 12] = "[x]";
                         discoveredMap[14, 13] = "-";
                         discoveredMap[14, 11] = "-";
@@ -15613,6 +17089,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredD8 = true;
                         discoveredMap[14, 6] = "[x]";
                         discoveredMap[14, 5] = "-";
                         discoveredMap[14, 7] = "-";
@@ -15708,6 +17185,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredB8 = true;
                         discoveredMap[14, 2] = "[x]";
                         discoveredMap[14, 3] = "-";
                         discoveredMap[13, 2] = " | ";
@@ -15773,6 +17251,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredC7 = true;
                         discoveredMap[12, 4] = "[x]";
                         discoveredMap[12, 5] = "-";
                         discoveredMap[12, 3] = "-";
@@ -15869,6 +17348,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredB7 = true;
                         discoveredMap[12, 2] = "[x]";
                         discoveredMap[12, 3] = "-";
                         discoveredMap[12, 1] = "-";
@@ -15964,6 +17444,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredH6 = true;
                         discoveredMap[10, 14] = "[x]";
                         discoveredMap[10, 15] = "-";
                         discoveredMap[10, 13] = "-";
@@ -16059,6 +17540,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredD6 = true;
                         discoveredMap[10, 6] = "[x]";
                         discoveredMap[10, 5] = "-";
                         discoveredMap[10, 7] = "-";
@@ -16154,6 +17636,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredB6 = true;
                         discoveredMap[10, 2] = "[x]";
                         discoveredMap[10, 3] = "-";
                         discoveredMap[11, 2] = " | ";
@@ -16219,6 +17702,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredI5 = true;
                         discoveredMap[8, 16] = "[x]";
                         discoveredMap[8, 15] = "-";
                         discoveredMap[9, 16] = " | ";
@@ -16284,6 +17768,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredH5 = true;
                         discoveredMap[8, 14] = "[x]";
                         discoveredMap[8, 15] = "-";
                         discoveredMap[9, 14] = " | ";
@@ -16364,6 +17849,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredF5 = true;
                         discoveredMap[8, 10] = "[x]";
                         discoveredMap[8, 9] = "-";
                         discoveredMap[9, 10] = " | ";
@@ -16444,6 +17930,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredE5 = true;
                         discoveredMap[8, 8] = "[x]";
                         discoveredMap[8, 9] = "-";
                         discoveredMap[8, 7] = "-";
@@ -16539,6 +18026,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredD5 = true;
                         discoveredMap[8, 6] = "[x]";
                         discoveredMap[8, 7] = "-";
                         discoveredMap[8, 5] = "-";
@@ -16634,6 +18122,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredC5 = true;
                         discoveredMap[8, 4] = "[x]";
                         discoveredMap[8, 5] = "-";
                         discoveredMap[9, 4] = " | ";
@@ -16714,6 +18203,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredI4 = true;
                         discoveredMap[6, 16] = "[x]";
                         discoveredMap[6, 15] = "-";
                         discoveredMap[6, 17] = "-";
@@ -16779,6 +18269,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredH4 = true;
                         discoveredMap[6, 14] = "[x]";
                         discoveredMap[6, 15] = "-";
                         discoveredMap[5, 14] = " | ";
@@ -16859,6 +18350,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredF4 = true;
                         discoveredMap[6, 10] = "[x]";
                         discoveredMap[6, 9] = "-";
                         discoveredMap[5, 10] = " | ";
@@ -16939,6 +18431,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredE4 = true;
                         discoveredMap[6, 8] = "[x]";
                         discoveredMap[6, 9] = "-";
                         discoveredMap[6, 7] = "-";
@@ -17034,6 +18527,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredD4 = true;
                         discoveredMap[6, 6] = "[x]";
                         discoveredMap[6, 7] = "-";
                         discoveredMap[7, 6] = " | ";
@@ -17099,6 +18593,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredH3 = true;
                         discoveredMap[4, 14] = "[x]";
                         discoveredMap[4, 13] = "-";
                         discoveredMap[5, 14] = " | ";
@@ -17164,6 +18659,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredG3 = true;
                         discoveredMap[4, 12] = "[x]";
                         discoveredMap[4, 13] = "-";
                         discoveredMap[4, 11] = "-";
@@ -17229,6 +18725,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredF3 = true;
                         discoveredMap[4, 10] = "[x]";
                         discoveredMap[4, 9] = "-";
                         discoveredMap[4, 11] = "-";
@@ -17324,6 +18821,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredG2 = true;
                         discoveredMap[2, 12] = "[x]";
                         discoveredMap[2, 13] = "-";
                         discoveredMap[2, 11] = "-";
@@ -17404,6 +18902,7 @@ namespace JessesDungeon
                             break;
                         }
                         randomEncountersOn = false;
+                        enteredF2 = true;
                         discoveredMap[2, 10] = "[x]";
                         discoveredMap[2, 11] = "-";
                         discoveredMap[3, 10] = " | ";
@@ -17459,6 +18958,7 @@ namespace JessesDungeon
 
                     case "D9": //two rooms out jane's bedroom
                         randomEncountersOn = false;
+                        enteredD9 = true;
                         discoveredMap[16, 6] = "[x]";
                         discoveredMap[16, 7] = "-";
                         discoveredMap[16, 5] = "-";
@@ -17544,6 +19044,7 @@ namespace JessesDungeon
 
                     case "C8": //two rooms out jane's bedroom
                         randomEncountersOn = false;
+                        enteredC8 = true;
                         discoveredMap[14, 4] = "[x]";
                         discoveredMap[14, 3] = "-";
                         discoveredMap[14, 5] = "-";
@@ -17629,6 +19130,7 @@ namespace JessesDungeon
 
                     case "E8": //south of GY
                         randomEncountersOn = false;
+                        enteredE8 = true;
                         discoveredMap[14, 8] = "[x]";
                         discoveredMap[14, 9] = "-";
                         discoveredMap[14, 7] = "-";
@@ -17714,6 +19216,7 @@ namespace JessesDungeon
 
                     case "E6": //north of GY
                         randomEncountersOn = false;
+                        enteredE6 = true;
                         discoveredMap[10, 8] = "[x]";
                         discoveredMap[10, 9] = "-";
                         discoveredMap[10, 7] = "-";
@@ -17799,6 +19302,7 @@ namespace JessesDungeon
 
                     case "D7": //west of GY
                         randomEncountersOn = false;
+                        enteredD7 = true;
                         discoveredMap[12, 6] = "[x]";
                         discoveredMap[12, 5] = "-";
                         discoveredMap[12, 7] = "-";
@@ -17943,6 +19447,1348 @@ namespace JessesDungeon
                     //Console.WriteLine("Press ENTER to continue");
                     //Console.ReadLine();
                 }
+                
+                if (action == "load" || action == "restore")
+                {
+                    action = "Complete";
+                    failLoad = false;
+                    Console.WriteLine("____________________________________________________");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("...You got the code, right?");
+                    Console.WriteLine();
+                    Console.Write("> ");
+                    loadFullCode = Console.ReadLine();
+                    loadFullCode = loadFullCode.Trim();
+                    string[] loadCodeRay = loadFullCode.Split(' ');
+                    //invalid code checkers and dehexxers
+                    if (loadCodeRay.Length == 5)
+                    {
+                        loadMapCodeHex = loadCodeRay[0];
+                        loadInvCode = loadCodeRay[1];
+                        loadProCodeHex1 = loadCodeRay[2];
+                        loadProCodeHex2 = loadCodeRay[3];
+                        loadIntCode = loadCodeRay[4];
+                        intray = loadIntCode.Split('\'');
+                    }
+                    else
+                    { 
+                        failLoad = true;                        
+                        intray = loadCodeRay;
+                    }
+                    if (loadMapCodeHex.Length > 0)
+                    {
+                        long longLoadMapCode = Convert.ToInt64(loadMapCodeHex, 16);
+                        string loadMapCodeDehexxed = Convert.ToString(longLoadMapCode, 2);
+                        loadMapCode = loadMapCodeDehexxed;
+                    }
+                    else { failLoad = true; }
+                    if (loadProCodeHex1.Length > 0)
+                    {
+                        long loadLongProCode1 = Convert.ToInt64(loadProCodeHex1, 16);
+                        string loadProCode1Dehexxed = Convert.ToString(loadLongProCode1, 2);
+                        loadProCode1 = loadProCode1Dehexxed;
+                    }
+                    else { failLoad = true; }
+                    if (loadProCodeHex2.Length > 0)
+                    {
+                        long loadLongProCode2 = Convert.ToInt64(loadProCodeHex2, 16);
+                        string loadProCode2Dehexxed = Convert.ToString(loadLongProCode2, 2);
+                        loadProCode2 = loadProCode2Dehexxed;
+                    }
+                    else {failLoad = true; }
+                    if (loadMapCode.Length != 64) { failLoad = true; }
+                    for (int i = 0; i < loadMapCode.Length; i++)
+                    {
+                        if (!(loadMapCode[i] == '0' || loadMapCode[i] == '1')) { failLoad = true; }
+                    }
+                    if (loadProCode1.Length != 48) { failLoad = true; }
+                    if (loadProCode2.Length != 56) { failLoad = true; }
+                    for (int i = 0; i < loadProCode1.Length; i++)
+                    {
+                        if (!(loadProCode1[i] == '0' || loadProCode1[i] == '1')) { failLoad = true; }
+                    }
+                    for (int i = 0; i < loadProCode2.Length; i++)
+                    {
+                        if (!(loadProCode2[i] == '0' || loadProCode2[i] == '1')) { failLoad = true; }
+                    }
+                    if (intray.Length != 14) { failLoad = true; }
+                    for (int i = 0; i < intray.Length; i++)
+                    {
+                        int number;
+                        if (!(Int32.TryParse(intray[i], out number))) { failLoad = true; }
+                    }
+
+                    //load!
+                    if (!failLoad)
+                    {
+                        ego.Location = "F7";
+                        //load map
+                        if (loadMapCode[1] == '0') //B6
+                        {
+                            enteredB6 = false;
+                            discoveredMap[10, 2] = "   ";
+                            discoveredMap[10, 3] = " ";
+                            discoveredMap[11, 2] = "   ";
+                        }
+                        if (loadMapCode[2] == '0') //B7
+                        {
+                            enteredB7 = false;
+                            discoveredMap[12, 2] = "   ";
+                            discoveredMap[12, 3] = " ";
+                            discoveredMap[12, 1] = " ";
+                            discoveredMap[13, 2] = "   ";
+                            discoveredMap[11, 2] = "   ";
+                        }
+                        if (loadMapCode[3] == '0') //B8
+                        {
+                            enteredB8 = false;
+                            discoveredMap[14, 2] = "   ";
+                            discoveredMap[14, 3] = " ";
+                            discoveredMap[13, 2] = "   ";
+                        }
+                        if (loadMapCode[4] == '0') //B9
+                        {
+                            enteredB9 = false;
+                            discoveredMap[16, 2] = "   ";
+                            discoveredMap[16, 3] = " ";
+                        }
+                        if (loadMapCode[5] == '0') //C5
+                        {
+                            enteredC5 = false;
+                            discoveredMap[8, 4] = "   ";
+                            discoveredMap[8, 5] = " ";
+                            discoveredMap[9, 4] = "   ";
+                            discoveredMap[7, 4] = "   ";
+                        }
+                        if (loadMapCode[6] == '0') //C7
+                        {
+                            enteredC7 = false;
+                            discoveredMap[12, 4] = "   ";
+                            discoveredMap[12, 5] = " ";
+                            discoveredMap[12, 3] = " ";
+                            discoveredMap[13, 4] = "   ";
+                            discoveredMap[11, 4] = "  ";
+                        }
+                        if (loadMapCode[7] == '0') //C8
+                        {
+                            enteredC8 = false;
+                            discoveredMap[14, 4] = "   ";
+                            discoveredMap[14, 3] = " ";
+                            discoveredMap[14, 5] = " ";
+                            discoveredMap[15, 4] = "   ";
+                            discoveredMap[13, 4] = "   ";
+                        }
+                        if (loadMapCode[8] == '0') //C9
+                        {
+                            enteredC9 = false;
+                            discoveredMap[16, 4] = "   ";
+                            discoveredMap[16, 3] = " ";
+                            discoveredMap[16, 5] = " ";
+                            discoveredMap[15, 4] = "   ";
+                        }
+                        if (loadMapCode[9] == '0') //D10
+                        {
+                            enteredD10 = false;
+                            discoveredMap[18, 6] = "   ";
+                            discoveredMap[18, 7] = " ";
+                            discoveredMap[17, 6] = "   ";
+                        }
+                        if (loadMapCode[10] == '0') //D4
+                        {
+                            enteredD4 = false;
+                            discoveredMap[6, 6] = "   ";
+                            discoveredMap[6, 7] = " ";
+                            discoveredMap[7, 6] = "   ";
+                        }
+                        if (loadMapCode[11] == '0') //D5
+                        {
+                            enteredD5 = false;
+                            discoveredMap[8, 6] = "   ";
+                            discoveredMap[8, 7] = " ";
+                            discoveredMap[8, 5] = " ";
+                            discoveredMap[9, 6] = "   ";
+                            discoveredMap[7, 6] = "   ";
+                        }
+                        if (loadMapCode[12] == '0') //D6
+                        {
+                            enteredD6 = false;
+                            discoveredMap[10, 6] = "   ";
+                            discoveredMap[10, 5] = " ";
+                            discoveredMap[10, 7] = " ";
+                            discoveredMap[9, 6] = "   ";
+                            discoveredMap[11, 6] = "   ";
+                        }
+                        if (loadMapCode[13] == '0') //D7
+                        {
+                            enteredD7 = false;
+                            discoveredMap[12, 6] = "   ";
+                            discoveredMap[12, 5] = " ";
+                            discoveredMap[12, 7] = " ";
+                            discoveredMap[11, 6] = "   ";
+                            discoveredMap[13, 6] = "   ";
+                        }
+                        if (loadMapCode[14] == '0') //D8
+                        {
+                            enteredD8 = false;
+                            discoveredMap[14, 6] = "   ";
+                            discoveredMap[14, 5] = " ";
+                            discoveredMap[14, 7] = " ";
+                            discoveredMap[13, 6] = "   ";
+                            discoveredMap[15, 6] = "   ";
+                        }
+                        if (loadMapCode[15] == '0') //D9
+                        {
+                            enteredD9 = false;
+                            discoveredMap[16, 6] = "   ";
+                            discoveredMap[16, 7] = " ";
+                            discoveredMap[16, 5] = " ";
+                            discoveredMap[15, 6] = "   ";
+                            discoveredMap[17, 6] = "   ";
+                        }
+                        if (loadMapCode[16] == '0') //E10
+                        {
+                            enteredE10 = false;
+                            discoveredMap[18, 8] = "   ";
+                            discoveredMap[18, 9] = " ";
+                            discoveredMap[18, 7] = " ";
+                        }
+                        if (loadMapCode[17] == '0') //E4
+                        {
+                            enteredE4 = false;
+                            discoveredMap[6, 8] = "   ";
+                            discoveredMap[6, 9] = " ";
+                            discoveredMap[6, 7] = " ";
+                            discoveredMap[5, 8] = "   ";
+                            discoveredMap[7, 8] = "   ";
+                        }
+                        if (loadMapCode[18] == '0') //E5
+                        {
+                            enteredE5 = false;
+                            discoveredMap[8, 8] = "   ";
+                            discoveredMap[8, 9] = " ";
+                            discoveredMap[8, 7] = " ";
+                            discoveredMap[9, 8] = "   ";
+                            discoveredMap[7, 8] = "   ";
+                        }
+                        if (loadMapCode[19] == '0') //E6
+                        {
+                            enteredE6 = false;
+                            discoveredMap[10, 8] = "   ";
+                            discoveredMap[10, 9] = " ";
+                            discoveredMap[10, 7] = " ";
+                            discoveredMap[11, 8] = "   ";
+                            discoveredMap[9, 8] = "   ";
+                        }
+                        if (loadMapCode[20] == '0') //E7
+                        {
+                            enteredE7 = false;
+                            discoveredMap[12, 8] = "   ";
+                            discoveredMap[13, 8] = "   ";
+                            discoveredMap[11, 8] = "   ";
+                            discoveredMap[12, 7] = " ";
+                        }
+                        if (loadMapCode[21] == '0') //E8
+                        {
+                            enteredE8 = false;
+                            discoveredMap[14, 8] = "   ";
+                            discoveredMap[14, 9] = " ";
+                            discoveredMap[14, 7] = " ";
+                            discoveredMap[15, 8] = "   ";
+                            discoveredMap[13, 8] = "   ";
+                        }
+                        if (loadMapCode[22] == '0') //E9
+                        {
+                            enteredE9 = false;
+                            discoveredMap[16, 8] = "   ";
+                            discoveredMap[16, 7] = " ";
+                            discoveredMap[16, 9] = " ";
+                            discoveredMap[15, 8] = "   ";
+                        }
+                        if (loadMapCode[23] == '0') //F10
+                        {
+                            enteredF10 = false;
+                            discoveredMap[18, 10] = "   ";
+                            discoveredMap[18, 9] = " ";
+                        }
+                        if (loadMapCode[24] == '0') //F11
+                        {
+                            enteredF11 = false;
+                            discoveredMap[20, 10] = "   ";
+                            discoveredMap[20, 9] = " ";
+                            discoveredMap[19, 10] = "   ";
+                        }
+                        if (loadMapCode[25] == '0') //F2
+                        {
+                            enteredF2 = false;
+                            discoveredMap[2, 10] = "   ";
+                            discoveredMap[2, 11] = " ";
+                            discoveredMap[3, 10] = "   ";
+                        }
+                        if (loadMapCode[26] == '0') //F3
+                        {
+                            enteredF3 = false;
+                            discoveredMap[4, 10] = "   ";
+                            discoveredMap[4, 9] = " ";
+                            discoveredMap[4, 11] = " ";
+                            discoveredMap[3, 10] = "   ";
+                            discoveredMap[5, 10] = "   ";
+                        }
+                        if (loadMapCode[27] == '0') //F4
+                        {
+                            enteredF4 = false;
+                            discoveredMap[6, 10] = "   ";
+                            discoveredMap[6, 9] = " ";
+                            discoveredMap[5, 10] = "   ";
+                            discoveredMap[7, 10] = "   ";
+                        }
+                        if (loadMapCode[28] == '0') //F5
+                        {
+                            enteredF5 = false;
+                            discoveredMap[8, 10] = "   ";
+                            discoveredMap[8, 9] = " ";
+                            discoveredMap[9, 10] = "   ";
+                            discoveredMap[7, 10] = "   ";
+                        }
+                        if (loadMapCode[29] == '0') //F6
+                        {
+                            enteredF6 = false;
+                            discoveredMap[10, 10] = "   ";
+                            discoveredMap[10, 11] = " ";
+                            discoveredMap[10, 9] = " ";
+                            discoveredMap[9, 10] = "   ";
+                        }
+                        if (loadMapCode[30] == '0') //F9
+                        {
+                            enteredF9 = false;
+                            discoveredMap[16, 10] = "   ";
+                            discoveredMap[16, 9] = " ";
+                            discoveredMap[16, 11] = " ";
+                            discoveredMap[15, 10] = "   ";
+                        }
+                        if (loadMapCode[31] == '0') //G10
+                        {
+                            enteredG10 = false;
+                            discoveredMap[18, 12] = "   ";
+                            discoveredMap[17, 12] = "   ";
+                        }
+                        if (loadMapCode[32] == '0') //G2
+                        {
+                            enteredG2 = false;
+                            discoveredMap[2, 12] = "   ";
+                            discoveredMap[2, 13] = " ";
+                            discoveredMap[2, 11] = " ";
+                            discoveredMap[1, 12] = "   ";
+                        }
+                        if (loadMapCode[33] == '0') //G3
+                        {
+                            enteredG3 = false;
+                            discoveredMap[4, 12] = "   ";
+                            discoveredMap[4, 13] = " ";
+                            discoveredMap[4, 11] = " ";
+                        }
+                        if (loadMapCode[34] == '0') //G5
+                        {
+                            enteredG5 = false;
+                            discoveredMap[8, 12] = "   ";
+                            discoveredMap[7, 12] = "   ";
+                            discoveredMap[9, 12] = "   ";
+                        }
+                        if (loadMapCode[35] == '0') //G6
+                        {
+                            enteredG6 = true;
+                            discoveredMap[10, 12] = "   ";
+                            discoveredMap[10, 11] = " ";
+                            discoveredMap[10, 13] = " ";
+                            discoveredMap[9, 12] = "   ";
+                            discoveredMap[11, 12] = "   ";
+                        }
+                        if (loadMapCode[36] == '0') //G7
+                        {
+                            enteredG7 = false;
+                            discoveredMap[12, 12] = "   ";
+                            discoveredMap[12, 11] = " ";
+                            discoveredMap[12, 13] = " ";
+                            discoveredMap[11, 12] = "   ";
+                            discoveredMap[13, 12] = "   ";
+                        }
+                        if (loadMapCode[37] == '0') //G8
+                        {
+                            enteredG8 = false;
+                            discoveredMap[14, 12] = "   ";
+                            discoveredMap[14, 13] = " ";
+                            discoveredMap[14, 11] = " ";
+                            discoveredMap[13, 12] = "   ";
+                            discoveredMap[15, 12] = "   ";
+                        }
+                        if (loadMapCode[38] == '0') //G9
+                        {
+                            enteredG9 = false;
+                            discoveredMap[16, 12] = "   ";
+                            discoveredMap[16, 11] = " ";
+                            discoveredMap[16, 13] = " ";
+                            discoveredMap[15, 12] = "   ";
+                            discoveredMap[17, 12] = "   ";
+                        }
+                        if (loadMapCode[39] == '0') //H2
+                        {
+                            enteredH2 = false;
+                            discoveredMap[2, 14] = "   ";
+                            discoveredMap[1, 14] = "   ";
+                            discoveredMap[2, 13] = " ";
+                        }
+                        if (loadMapCode[40] == '0') //H3
+                        {
+                            enteredH3 = false;
+                            discoveredMap[4, 14] = "   ";
+                            discoveredMap[4, 13] = " ";
+                            discoveredMap[5, 14] = "   ";
+                        }
+                        if (loadMapCode[41] == '0') //H4
+                        {
+                            enteredH4 = false;
+                            discoveredMap[6, 14] = "   ";
+                            discoveredMap[6, 15] = " ";
+                            discoveredMap[5, 14] = "   ";
+                            discoveredMap[7, 14] = "   ";
+                        }
+                        if (loadMapCode[42] == '0') //H5
+                        {
+                            enteredH5 = false;
+                            discoveredMap[8, 14] = "   ";
+                            discoveredMap[8, 15] = " ";
+                            discoveredMap[9, 14] = "   ";
+                            discoveredMap[7, 14] = "   ";
+                        }
+                        if (loadMapCode[43] == '0') //H6
+                        {
+                            enteredH6 = false;
+                            discoveredMap[10, 14] = "   ";
+                            discoveredMap[10, 15] = " ";
+                            discoveredMap[10, 13] = " ";
+                            discoveredMap[9, 14] = "   ";
+                            discoveredMap[11, 14] = "   ";
+                        }
+                        if (loadMapCode[44] == '0') //H7
+                        {
+                            enteredH7 = false;
+                            discoveredMap[12, 14] = "   ";
+                            discoveredMap[12, 13] = " ";
+                            discoveredMap[12, 15] = " ";
+                            discoveredMap[11, 14] = "   ";
+                            discoveredMap[13, 14] = "   ";
+                        }
+                        if (loadMapCode[45] == '0') //H8
+                        {
+                            enteredH8 = false;
+                            discoveredMap[14, 14] = "   ";
+                            discoveredMap[14, 13] = " ";
+                            discoveredMap[13, 14] = "   ";
+                        }
+                        if (loadMapCode[46] == '0') //I4
+                        {
+                            enteredI4 = false;
+                            discoveredMap[6, 16] = "   ";
+                            discoveredMap[6, 15] = " ";
+                            discoveredMap[6, 17] = " ";
+                        }
+                        if (loadMapCode[47] == '0') //I5
+                        {
+                            enteredI5 = false;
+                            discoveredMap[8, 16] = "   ";
+                            discoveredMap[8, 15] = " ";
+                            discoveredMap[9, 16] = "   ";
+                        }
+                        if (loadMapCode[48] == '0') //I6
+                        {
+                            enteredI6 = false;
+                            discoveredMap[10, 16] = "   ";
+                            discoveredMap[10, 17] = " ";
+                            discoveredMap[10, 15] = " ";
+                            discoveredMap[9, 16] = "   ";
+                        }
+                        if (loadMapCode[49] == '0') //I7
+                        {
+                            enteredI7 = false;
+                            discoveredMap[12, 16] = "   ";
+                            discoveredMap[12, 15] = " ";
+                            discoveredMap[12, 17] = " ";
+                        }
+                        if (loadMapCode[50] == '0') //Bowling
+                        {
+                            mapBowl = false;
+                            discoveredMap[14, 10] = "   ";
+                            discoveredMap[15, 10] = "   ";
+                            discoveredMap[14, 11] = " ";
+                            discoveredMap[14, 9] = " ";
+                        }
+                        if (loadMapCode[51] == '0') //Cartel
+                        {
+                            mapCartel = false;
+                            discoveredMap[6, 12] = "   ";
+                            discoveredMap[7, 12] = "   ";
+                        }
+                        if (loadMapCode[52] == '0') //Fight Club
+                        {
+                            mapFight = false;
+                            discoveredMap[10, 4] = "   ";
+                            discoveredMap[10, 3] = " ";
+                            discoveredMap[10, 5] = " ";
+                            discoveredMap[11, 4] = "   ";
+                            discoveredMap[9, 4] = "   ";
+                        }
+                        if (loadMapCode[53] == '0') //Fortress Entrance
+                        {
+                            mapFortress = false;
+                            discoveredMap[20, 8] = "   ";
+                            discoveredMap[20, 9] = " ";
+                        }
+                        if (loadMapCode[54] == '0') //Hermit
+                        {
+                            mapHermit = false;
+                            discoveredMap[16, 14] = "   ";
+                            discoveredMap[16, 13] = " ";
+                        }
+                        if (loadMapCode[55] == '0') //Liquor
+                        {
+                            mapLiquor = false;
+                            discoveredMap[4, 8] = "   ";
+                            discoveredMap[4, 9] = " ";
+                            discoveredMap[5, 8] = "   ";
+                        }
+                        if (loadMapCode[56] == '0') //Lydia
+                        {
+                            mapLiquor = false;
+                            discoveredMap[10, 18] = "   ";
+                            discoveredMap[10, 17] = " ";
+                        }
+                        if (loadMapCode[57] == '0') //Mike
+                        {
+                            mapMike = false;
+                            discoveredMap[6, 18] = "   ";
+                        }
+                        if (loadMapCode[58] == '0') //Jane's Peace
+                        {
+                            mapPeace = false;
+                            discoveredMap[0, 12] = "   ";
+                            discoveredMap[1, 12] = "   ";
+                        }
+                        if (loadMapCode[59] == '0') //Salamanca
+                        {
+                            mapSalamanca = false;
+                            discoveredMap[0, 14] = "   ";
+                            discoveredMap[1, 14] = "   ";
+                        }
+                        if (loadMapCode[60] == '0') //Saul
+                        {
+                            mapSaul = false;
+                            discoveredMap[12, 0] = "   ";
+                            discoveredMap[12, 1] = " ";
+                        }
+                        if (loadMapCode[61] == '0') //Town
+                        {
+                            mapTown = false;
+                            discoveredMap[12, 10] = "   ";
+                        }
+                        if (loadMapCode[62] == '0') //Vacuum
+                        {
+                            mapVacuum = false;
+                            discoveredMap[6, 4] = "   ";
+                            discoveredMap[7, 5] = "   ";
+                        }
+                        if (loadMapCode[0] == '1') //J7
+                        {
+                            enteredJ7 = true;
+                            discoveredMap[12, 18] = "[ ]";
+                            discoveredMap[12, 17] = "-";
+                        }
+                        if (loadMapCode[1] == '1') //B6
+                        {
+                            enteredB6 = true;
+                            discoveredMap[10, 2] = "[ ]";
+                            discoveredMap[10, 3] = "-";
+                            discoveredMap[11, 2] = " | ";
+                        }
+                        if (loadMapCode[2] == '1') //B7
+                        {
+                            enteredB7 = true;
+                            discoveredMap[12, 2] = "[ ]";
+                            discoveredMap[12, 3] = "-";
+                            discoveredMap[12, 1] = "-";
+                            discoveredMap[13, 2] = " | ";
+                            discoveredMap[11, 2] = " | ";
+                        }
+                        if (loadMapCode[3] == '1') //B8
+                        {
+                            enteredB8 = true;
+                            discoveredMap[14, 2] = "[ ]";
+                            discoveredMap[14, 3] = "-";
+                            discoveredMap[13, 2] = " | ";
+                        }
+                        if (loadMapCode[4] == '1') //B9
+                        {
+                            enteredB9 = true;
+                            discoveredMap[16, 2] = "[ ]";
+                            discoveredMap[16, 3] = "-";
+                        }
+                        if (loadMapCode[5] == '1') //C5
+                        {
+                            enteredC5 = true;
+                            discoveredMap[8, 4] = "[ ]";
+                            discoveredMap[8, 5] = "-";
+                            discoveredMap[9, 4] = " | ";
+                            discoveredMap[7, 4] = " | ";
+                        }
+                        if (loadMapCode[6] == '1') //C7
+                        {
+                            enteredC7 = true;
+                            discoveredMap[12, 4] = "[ ]";
+                            discoveredMap[12, 5] = "-";
+                            discoveredMap[12, 3] = "-";
+                            discoveredMap[13, 4] = " | ";
+                            discoveredMap[11, 4] = " | ";
+                        }
+                        if (loadMapCode[7] == '1') //C8
+                        {
+                            enteredC8 = true;
+                            discoveredMap[14, 4] = "[ ]";
+                            discoveredMap[14, 3] = "-";
+                            discoveredMap[14, 5] = "-";
+                            discoveredMap[15, 4] = " | ";
+                            discoveredMap[13, 4] = " | ";
+                        }
+                        if (loadMapCode[8] == '1') //C9
+                        {
+                            enteredC9 = true;
+                            discoveredMap[16, 4] = "[ ]";
+                            discoveredMap[16, 3] = "-";
+                            discoveredMap[16, 5] = "-";
+                            discoveredMap[15, 4] = " | ";
+                        }
+                        if (loadMapCode[9] == '1') //D10
+                        {
+                            enteredD10 = true;
+                            discoveredMap[18, 6] = "[ ]";
+                            discoveredMap[18, 7] = "-";
+                            discoveredMap[17, 6] = " | ";
+                        }
+                        if (loadMapCode[10] == '1') //D4
+                        {
+                            enteredD4 = true;
+                            discoveredMap[6, 6] = "[ ]";
+                            discoveredMap[6, 7] = "-";
+                            discoveredMap[7, 6] = " | ";
+                        }
+                        if (loadMapCode[11] == '1') //D5
+                        {
+                            enteredD5 = true;
+                            discoveredMap[8, 6] = "[ ]";
+                            discoveredMap[8, 7] = "-";
+                            discoveredMap[8, 5] = "-";
+                            discoveredMap[9, 6] = " | ";
+                            discoveredMap[7, 6] = " | ";
+                        }
+                        if (loadMapCode[12] == '1') //D6
+                        {
+                            enteredD6 = true;
+                            discoveredMap[10, 6] = "[ ]";
+                            discoveredMap[10, 5] = "-";
+                            discoveredMap[10, 7] = "-";
+                            discoveredMap[9, 6] = " | ";
+                            discoveredMap[11, 6] = " | ";
+                        }
+                        if (loadMapCode[13] == '1') //D7
+                        {
+                            enteredD7 = true;
+                            discoveredMap[12, 6] = "[ ]";
+                            discoveredMap[12, 5] = "-";
+                            discoveredMap[12, 7] = "-";
+                            discoveredMap[11, 6] = " | ";
+                            discoveredMap[13, 6] = " | ";
+                        }
+                        if (loadMapCode[14] == '1') //D8
+                        {
+                            enteredD8 = true;
+                            discoveredMap[14, 6] = "[ ]";
+                            discoveredMap[14, 5] = "-";
+                            discoveredMap[14, 7] = "-";
+                            discoveredMap[13, 6] = " | ";
+                            discoveredMap[15, 6] = " | ";
+                        }
+                        if (loadMapCode[15] == '1') //D9
+                        {
+                            enteredD9 = true;
+                            discoveredMap[16, 6] = "[ ]";
+                            discoveredMap[16, 7] = "-";
+                            discoveredMap[16, 5] = "-";
+                            discoveredMap[15, 6] = " | ";
+                            discoveredMap[17, 6] = " | ";
+                        }
+                        if (loadMapCode[16] == '1') //E10
+                        {
+                            enteredE10 = true;
+                            discoveredMap[18, 8] = "[ ]";
+                            discoveredMap[18, 9] = "-";
+                            discoveredMap[18, 7] = "-";
+                        }
+                        if (loadMapCode[17] == '1') //E4
+                        {
+                            enteredE4 = true;
+                            discoveredMap[6, 8] = "[ ]";
+                            discoveredMap[6, 9] = "-";
+                            discoveredMap[6, 7] = "-";
+                            discoveredMap[5, 8] = " | ";
+                            discoveredMap[7, 8] = " | ";
+                        }
+                        if (loadMapCode[18] == '1') //E5
+                        {
+                            enteredE5 = true;
+                            discoveredMap[8, 8] = "[ ]";
+                            discoveredMap[8, 9] = "-";
+                            discoveredMap[8, 7] = "-";
+                            discoveredMap[9, 8] = " | ";
+                            discoveredMap[7, 8] = " | ";
+                        }
+                        if (loadMapCode[19] == '1') //E6
+                        {
+                            enteredE6 = true;
+                            discoveredMap[10, 8] = "[ ]";
+                            discoveredMap[10, 9] = "-";
+                            discoveredMap[10, 7] = "-";
+                            discoveredMap[11, 8] = " | ";
+                            discoveredMap[9, 8] = " | ";
+                        }
+                        if (loadMapCode[20] == '1') //E7
+                        {
+                            enteredE7 = true;
+                            discoveredMap[12, 8] = "[ ]";
+                            discoveredMap[13, 8] = " | ";
+                            discoveredMap[11, 8] = " | ";
+                            discoveredMap[12, 7] = "-";
+                        }
+                        if (loadMapCode[21] == '1') //E8
+                        {
+                            enteredE8 = true;
+                            discoveredMap[14, 8] = "[ ]";
+                            discoveredMap[14, 9] = "-";
+                            discoveredMap[14, 7] = "-";
+                            discoveredMap[15, 8] = " | ";
+                            discoveredMap[13, 8] = " | ";
+                        }
+                        if (loadMapCode[22] == '1') //E9
+                        {
+                            enteredE9 = true;
+                            discoveredMap[16, 8] = "[ ]";
+                            discoveredMap[16, 7] = "-";
+                            discoveredMap[16, 9] = "-";
+                            discoveredMap[15, 8] = " | ";
+                        }
+                        if (loadMapCode[23] == '1') //F10
+                        {
+                            enteredF10 = true;
+                            discoveredMap[18, 10] = "[ ]";
+                            discoveredMap[18, 9] = "-";
+                        }
+                        if (loadMapCode[24] == '1') //F11
+                        {
+                            enteredF11 = true;
+                            discoveredMap[20, 10] = "[ ]";
+                            discoveredMap[20, 9] = "-";
+                            discoveredMap[19, 10] = " | ";
+                        }
+                        if (loadMapCode[25] == '1') //F2
+                        {
+                            enteredF2 = true;
+                            discoveredMap[2, 10] = "[ ]";
+                            discoveredMap[2, 11] = "-";
+                            discoveredMap[3, 10] = " | ";
+                        }
+                        if (loadMapCode[26] == '1') //F3
+                        {
+                            enteredF3 = true;
+                            discoveredMap[4, 10] = "[ ]";
+                            discoveredMap[4, 9] = "-";
+                            discoveredMap[4, 11] = "-";
+                            discoveredMap[3, 10] = " | ";
+                            discoveredMap[5, 10] = " | ";
+                        }
+                        if (loadMapCode[27] == '1') //F4
+                        {
+                            enteredF4 = true;
+                            discoveredMap[6, 10] = "[ ]";
+                            discoveredMap[6, 9] = "-";
+                            discoveredMap[5, 10] = " | ";
+                            discoveredMap[7, 10] = " | ";
+                        }
+                        if (loadMapCode[28] == '1') //F5
+                        {
+                            enteredF5 = true;
+                            discoveredMap[8, 10] = "[ ]";
+                            discoveredMap[8, 9] = "-";
+                            discoveredMap[9, 10] = " | ";
+                            discoveredMap[7, 10] = " | ";
+                        }
+                        if (loadMapCode[29] == '1') //F6
+                        {
+                            enteredF6 = true;
+                            discoveredMap[10, 10] = "[ ]";
+                            discoveredMap[10, 11] = "-";
+                            discoveredMap[10, 9] = "-";
+                            discoveredMap[9, 10] = " | ";
+                        }
+                        if (loadMapCode[30] == '1') //F9
+                        {
+                            enteredF9 = true;
+                            discoveredMap[16, 10] = "[ ]";
+                            discoveredMap[16, 9] = "-";
+                            discoveredMap[16, 11] = "-";
+                            discoveredMap[15, 10] = " | ";
+                        }
+                        if (loadMapCode[31] == '1') //G10
+                        {
+                            enteredG10 = true;
+                            discoveredMap[18, 12] = "[ ]";
+                            discoveredMap[17, 12] = " | ";
+                        }
+                        if (loadMapCode[32] == '1') //G2
+                        {
+                            enteredG2 = true;
+                            discoveredMap[2, 12] = "[ ]";
+                            discoveredMap[2, 13] = "-";
+                            discoveredMap[2, 11] = "-";
+                            discoveredMap[1, 12] = " | ";
+                        }
+                        if (loadMapCode[33] == '1') //G3
+                        {
+                            enteredG3 = true;
+                            discoveredMap[4, 12] = "[ ]";
+                            discoveredMap[4, 13] = "-";
+                            discoveredMap[4, 11] = "-";
+                        }
+                        if (loadMapCode[34] == '1') //G5
+                        {
+                            enteredG5 = true;
+                            discoveredMap[8, 12] = "[ ]";
+                            discoveredMap[7, 12] = " | ";
+                            discoveredMap[9, 12] = " | ";
+                        }
+                        if (loadMapCode[35] == '1') //G6
+                        {
+                            enteredG6 = true;
+                            discoveredMap[10, 12] = "[ ]";
+                            discoveredMap[10, 11] = "-";
+                            discoveredMap[10, 13] = "-";
+                            discoveredMap[9, 12] = " | ";
+                            discoveredMap[11, 12] = " | ";
+                        }
+                        if (loadMapCode[36] == '1') //G7
+                        {
+                            enteredG7 = true;
+                            discoveredMap[12, 12] = "[ ]";
+                            discoveredMap[12, 11] = "-";
+                            discoveredMap[12, 13] = "-";
+                            discoveredMap[11, 12] = " | ";
+                            discoveredMap[13, 12] = " | ";
+                        }
+                        if (loadMapCode[37] == '1') //G8
+                        {
+                            enteredG8 = true;
+                            discoveredMap[14, 12] = "[ ]";
+                            discoveredMap[14, 13] = "-";
+                            discoveredMap[14, 11] = "-";
+                            discoveredMap[13, 12] = " | ";
+                            discoveredMap[15, 12] = " | ";
+                        }
+                        if (loadMapCode[38] == '1') //G9
+                        {
+                            enteredG9 = true;
+                            discoveredMap[16, 12] = "[ ]";
+                            discoveredMap[16, 11] = "-";
+                            discoveredMap[16, 13] = "-";
+                            discoveredMap[15, 12] = " | ";
+                            discoveredMap[17, 12] = " | ";
+                        }
+                        if (loadMapCode[39] == '1') //H2
+                        {
+                            enteredH2 = true;
+                            discoveredMap[2, 14] = "[x]";
+                            discoveredMap[1, 14] = " | ";
+                            discoveredMap[2, 13] = "-";
+                        }
+                        if (loadMapCode[40] == '1') //H3
+                        {
+                            enteredH3 = true;
+                            discoveredMap[4, 14] = "[ ]";
+                            discoveredMap[4, 13] = "-";
+                            discoveredMap[5, 14] = " | ";
+                        }
+                        if (loadMapCode[41] == '1') //H4
+                        {
+                            enteredH4 = true;
+                            discoveredMap[6, 14] = "[ ]";
+                            discoveredMap[6, 15] = "-";
+                            discoveredMap[5, 14] = " | ";
+                            discoveredMap[7, 14] = " | ";
+                        }
+                        if (loadMapCode[42] == '1') //H5
+                        {
+                            enteredH5 = true;
+                            discoveredMap[8, 14] = "[ ]";
+                            discoveredMap[8, 15] = "-";
+                            discoveredMap[9, 14] = " | ";
+                            discoveredMap[7, 14] = " | ";
+                        }
+                        if (loadMapCode[43] == '1') //H6
+                        {
+                            enteredH6 = true;
+                            discoveredMap[10, 14] = "[ ]";
+                            discoveredMap[10, 15] = "-";
+                            discoveredMap[10, 13] = "-";
+                            discoveredMap[9, 14] = " | ";
+                            discoveredMap[11, 14] = " | ";
+                        }
+                        if (loadMapCode[44] == '1') //H7
+                        {
+                            enteredH7 = true;
+                            discoveredMap[12, 14] = "[ ]";
+                            discoveredMap[12, 13] = "-";
+                            discoveredMap[12, 15] = "-";
+                            discoveredMap[11, 14] = " | ";
+                            discoveredMap[13, 14] = " | ";
+                        }
+                        if (loadMapCode[45] == '1') //H8
+                        {
+                            enteredH8 = true;
+                            discoveredMap[14, 14] = "[ ]";
+                            discoveredMap[14, 13] = "-";
+                            discoveredMap[13, 14] = " | ";
+                        }
+                        if (loadMapCode[46] == '1') //I4
+                        {
+                            enteredI4 = true;
+                            discoveredMap[6, 16] = "[ ]";
+                            discoveredMap[6, 15] = "-";
+                            discoveredMap[6, 17] = "-";
+                        }
+                        if (loadMapCode[47] == '1') //I5
+                        {
+                            enteredI5 = true;
+                            discoveredMap[8, 16] = "[ ]";
+                            discoveredMap[8, 15] = "-";
+                            discoveredMap[9, 16] = " | ";
+                        }
+                        if (loadMapCode[48] == '1') //I6
+                        {
+                            enteredI6 = true;
+                            discoveredMap[10, 16] = "[ ]";
+                            discoveredMap[10, 17] = "-";
+                            discoveredMap[10, 15] = "-";
+                            discoveredMap[9, 16] = " | ";
+                        }
+                        if (loadMapCode[49] == '1') //I7
+                        {
+                            enteredI7 = true;
+                            discoveredMap[12, 16] = "[ ]";
+                            discoveredMap[12, 15] = "-";
+                            discoveredMap[12, 17] = "-";
+                        }
+                        if (loadMapCode[50] == '1') //Bowling
+                        {
+                            mapBowl = true;
+                            discoveredMap[14, 10] = "[B]";
+                            discoveredMap[15, 10] = " | ";
+                            discoveredMap[14, 11] = "-";
+                            discoveredMap[14, 9] = "-";
+                        }
+                        if (loadMapCode[51] == '1') //Cartel
+                        {
+                            mapCartel = true;
+                            discoveredMap[6, 12] = "[C]";
+                            discoveredMap[7, 12] = " | ";
+                        }
+                        if (loadMapCode[52] == '1') //Fight Club
+                        {
+                            mapFight = true;
+                            discoveredMap[10, 4] = "[!]";
+                            discoveredMap[10, 3] = "-";
+                            discoveredMap[10, 5] = "-";
+                            discoveredMap[11, 4] = " | ";
+                            discoveredMap[9, 4] = " | ";
+                        }
+                        if (loadMapCode[53] == '1') //Fortress Entrance
+                        {
+                            mapFortress = true;
+                            discoveredMap[20, 8] = "[F]";
+                            discoveredMap[20, 9] = "-";
+                        }
+                        if (loadMapCode[54] == '1') //Hermit
+                        {
+                            mapHermit = true;
+                            discoveredMap[16, 14] = "[H]";
+                            discoveredMap[16, 13] = "-";
+                        }
+                        if (loadMapCode[55] == '1') //Liquor
+                        {
+                            mapLiquor = true;
+                            discoveredMap[4, 8] = "[W]";
+                            discoveredMap[4, 9] = "-";
+                            discoveredMap[5, 8] = " | ";
+                        }
+                        if (loadMapCode[56] == '1') //Lydia
+                        {
+                            mapLiquor = true;
+                            discoveredMap[10, 18] = "[L]";
+                            discoveredMap[10, 17] = "-";
+                        }
+                        if (loadMapCode[57] == '1') //Mike
+                        {
+                            mapMike = true;
+                            discoveredMap[6, 18] = "[M]";
+                        }
+                        if (loadMapCode[58] == '1') //Jane's Peace
+                        {
+                            mapPeace = true;
+                            discoveredMap[0, 12] = "[P]";
+                            discoveredMap[1, 12] = " | ";
+                        }
+                        if (loadMapCode[59] == '1') //Salamanca
+                        {
+                            mapSalamanca = true;
+                            discoveredMap[0, 14] = "[S]";
+                            discoveredMap[1, 14] = " | ";
+                        }
+                        if (loadMapCode[60] == '1') //Saul
+                        {
+                            mapSaul = true;
+                            discoveredMap[12, 0] = "[J]";
+                            discoveredMap[12, 1] = "-";
+                        }
+                        if (loadMapCode[61] == '1') //Town
+                        {
+                            mapTown = true;
+                            discoveredMap[12, 10] = "[T]";
+                        }
+                        if (loadMapCode[62] == '1') //Vacuum
+                        {
+                            mapVacuum = true;
+                            discoveredMap[6, 4] = "[?]";
+                            discoveredMap[7, 5] = " | ";
+                        }
+
+                        //load inventory
+                        equippableWeapon.Clear();
+                        equippableArmor.Clear();
+                        equippableShield.Clear();
+                        undroppables.Clear();
+                        potionBelt.Clear();
+                        ego.EquippedArmor = rags;
+                        ego.EquippedShield = nullShield;
+                        ego.EquippedWeapon = unarmed;
+                        GetStripped(ego, rags, unarmed, nullShield, equippableArmor, equippableWeapon, equippableShield);
+                        for (int i = 0; i < loadInvCode.Length; i++)
+                        {
+                            if (loadInvCode[i] == 'a') { equippableArmor.Add(leatherArmor); }
+                            if (loadInvCode[i] == 'b') { equippableArmor.Add(studdedLeatherArmor); }
+                            if (loadInvCode[i] == 'c') { equippableArmor.Add(ringmail); }
+                            if (loadInvCode[i] == 'd') { equippableArmor.Add(chainmail); }
+                            if (loadInvCode[i] == 'e') { equippableArmor.Add(hazmatSuit); }
+                            if (loadInvCode[i] == 'f') { equippableWeapon.Add(rustyWoodenSpoon); }
+                            if (loadInvCode[i] == 'g') { equippableWeapon.Add(stick); }
+                            if (loadInvCode[i] == 'h') { equippableWeapon.Add(pointyStick); }
+                            if (loadInvCode[i] == 'i') { equippableWeapon.Add(mildewEncrustedPocketKnife); }
+                            if (loadInvCode[i] == 'j') { equippableWeapon.Add(knife); }
+                            if (loadInvCode[i] == 'k') { equippableWeapon.Add(huntingKnife); }
+                            if (loadInvCode[i] == 'l') { equippableWeapon.Add(club); }
+                            if (loadInvCode[i] == 'm') { equippableWeapon.Add(axe); }
+                            if (loadInvCode[i] == 'n') { equippableWeapon.Add(pogoStick); }
+                            if (loadInvCode[i] == 'o') { equippableWeapon.Add(realSword); }
+                            if (loadInvCode[i] == 'p') { equippableWeapon.Add(gun); }
+                            if (loadInvCode[i] == 'q') { equippableWeapon.Add(assassinsDagger); }
+                            if (loadInvCode[i] == 'r') { equippableShield.Add(soupBowl); }
+                            if (loadInvCode[i] == 's') { equippableShield.Add(cardboardCutout); }
+                            if (loadInvCode[i] == 't') { equippableShield.Add(garbageCanLid); }
+                            if (loadInvCode[i] == 'u') { equippableShield.Add(realShield); }
+                            if (loadInvCode[i] == 'v') { equippableShield.Add(mirrorShield); }
+                            if (loadInvCode[i] == 'w') { potionBelt.Add(healingPotion); }
+                            if (loadInvCode[i] == 'x') { potionBelt.Add(lightHealingPotion); }
+                            if (loadInvCode[i] == 'y') { potionBelt.Add(greaterHealingPotion); }
+                            if (loadInvCode[i] == 'z') { potionBelt.Add(hotPotion); }
+                            if (loadInvCode[i] == '0') { potionBelt.Add(lightHotPotion); }
+                            if (loadInvCode[i] == '1') { potionBelt.Add(greaterHotPotion); }
+                            if (loadInvCode[i] == '2') { potionBelt.Add(acidBomb); }
+                            if (loadInvCode[i] == '3') { potionBelt.Add(lightAcidBomb); }
+                            if (loadInvCode[i] == '4') { potionBelt.Add(greaterAcidBomb); }
+                            if (loadInvCode[i] == '5') { potionBelt.Add(dotPotion); }
+                            if (loadInvCode[i] == '6') { potionBelt.Add(lightDotPotion); }
+                            if (loadInvCode[i] == '7') { potionBelt.Add(greaterDotPotion); }
+                            if (loadInvCode[i] == '!') { undroppables.Add(sackOfCash); }
+                            if (loadInvCode[i] == '@') { undroppables.Add(giantBlueCrystal); }
+                            if (loadInvCode[i] == '#') { undroppables.Add(stevia); }
+                            if (loadInvCode[i] == '$') { undroppables.Add(janesKey); }
+                            if (loadInvCode[i] == '%') { undroppables.Add(largeBrassKey); }
+                            if (loadInvCode[i] == '^') { undroppables.Add(liquorKey); }
+                            if (loadInvCode[i] == '&') { undroppables.Add(mezcal); }
+                            if (loadInvCode[i] == '*') { undroppables.Add(jeweledRing); }
+                            if (loadInvCode[i] == '(') { undroppables.Add(sackOfGoodies); }
+                            if (loadInvCode[i] == ')') { undroppables.Add(minkCoat); }
+                            if (loadInvCode[i] == '_') { undroppables.Add(fredStash); }
+                            if (loadInvCode[i] == '+') { undroppables.Add(safe); }
+                            if (loadInvCode[i] == '=') { undroppables.Add(generator); }
+                            if (loadInvCode[i] == '~') { undroppables.Add(dungeonKey); }
+                            if (loadInvCode[i] == 'Z') { GetStripped(ego, rags, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'A') { GetStripped(ego, leatherArmor, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'B') { GetStripped(ego, studdedLeatherArmor, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'C') { GetStripped(ego, ringmail, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'D') { GetStripped(ego, chainmail, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'E') { GetStripped(ego, hazmatSuit, ego.EquippedWeapon, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'G') { GetStripped(ego, ego.EquippedArmor, stick, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'H') { GetStripped(ego, ego.EquippedArmor, pointyStick, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'I') { GetStripped(ego, ego.EquippedArmor, mildewEncrustedPocketKnife, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'J') { GetStripped(ego, ego.EquippedArmor, knife, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'K') { GetStripped(ego, ego.EquippedArmor, huntingKnife, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'L') { GetStripped(ego, ego.EquippedArmor, club, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'M') { GetStripped(ego, ego.EquippedArmor, axe, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'N') { GetStripped(ego, ego.EquippedArmor, pogoStick, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'O') { GetStripped(ego, ego.EquippedArmor, realSword, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'P') { GetStripped(ego, ego.EquippedArmor, gun, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'Q') { GetStripped(ego, ego.EquippedArmor, assassinsDagger, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == ':') { GetStripped(ego, ego.EquippedArmor, mace, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == '>') { GetStripped(ego, ego.EquippedArmor, trident, ego.EquippedShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'R') { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, soupBowl, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'S') { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, cardboardCutout, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'T') { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, garbageCanLid, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'U') { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, realShield, equippableArmor, equippableWeapon, equippableShield); }
+                            if (loadInvCode[i] == 'V') { GetStripped(ego, ego.EquippedArmor, ego.EquippedWeapon, mirrorShield, equippableArmor, equippableWeapon, equippableShield); }
+                        }
+
+                        //load progression
+                        if (loadProCode1[0] == '1') { enteredJ7 = true; }
+                        else { enteredJ7 = false; }
+                        if (loadProCode1[1] == '1') { bowlAndSpoonLooted = true; }
+                        else { bowlAndSpoonLooted = false; }
+                        if (loadProCode1[2] == '1') { listenedToTownVoices = true; }
+                        else { listenedToTownVoices = false; }
+                        if (loadProCode1[3] == '1') { unlockedListenTo = true; }
+                        else { unlockedListenTo = false; }
+                        if (loadProCode1[4] == '1') { hasNotEnteredTown = true; }
+                        else { hasNotEnteredTown = false; }
+                        if (loadProCode1[5] == '1') { hasLeftTown = true; }
+                        else { hasLeftTown = false; }
+                        if (loadProCode1[6] == '1') { searchedTree = true; }
+                        else { searchedTree = false; }
+                        if (loadProCode1[7] == '1') { galeQuestGiven = true; }
+                        else { galeQuestGiven = false; }
+                        if (loadProCode1[8] == '1') { galeQuestCompleted = true; }
+                        else { galeQuestCompleted = false; }
+                        if (loadProCode1[9] == '1') { hermitVisited = true; }
+                        else { hermitVisited = false; }
+                        if (loadProCode1[10] == '1') { lookedMeepEyes = true; }
+                        else { lookedMeepEyes = false; }
+                        if (loadProCode1[11] == '1') { searchedMeepMounds = true; }
+                        else { searchedMeepMounds = false; }
+                        if (loadProCode1[12] == '1') { talkedToMeepMounds = true; }
+                        else { talkedToMeepMounds = false; }
+                        if (loadProCode1[13] == '1') { searchedMikeHouse = true; }
+                        else { searchedMikeHouse = false; }
+                        if (loadProCode1[14] == '1') { fuckedUpWithMike = true; }
+                        else { fuckedUpWithMike = false; }
+                        if (loadProCode1[15] == '1') { searchedGraveyard = true; }
+                        else { searchedGraveyard = false; }
+                        if (loadProCode1[16] == '1') { salamancaGuardDefeated = true; }
+                        else { salamancaGuardDefeated = false; }
+                        if (loadProCode1[17] == '1') { salamancaCousinDefeated = true; }
+                        else { salamancaCousinDefeated = false; }
+                        if (loadProCode1[18] == '1') { salamancaDead = true; }
+                        else { salamancaDead = false; }
+                        if (loadProCode1[19] == '1') { randomEncountersOn = true; }
+                        else { randomEncountersOn = false; }
+                        if (loadProCode1[20] == '1') { lydiaQuestGiven = true; }
+                        else { lydiaQuestGiven = false; }
+                        if (loadProCode1[21] == '1') { lydiaQuestCompleted = true; }
+                        else { lydiaQuestCompleted = false; }
+                        if (loadProCode1[22] == '1') { lootedCentaur = true; }
+                        else { lootedCentaur = false; }
+                        if (loadProCode1[23] == '1') { frontEntranceWarning = true; }
+                        else { frontEntranceWarning = false; }
+                        if (loadProCode1[24] == '1') { joinedFightClub = true; }
+                        else { joinedFightClub = false; }
+                        if (loadProCode1[25] == '1') { foughtInFightClub = true; }
+                        else { foughtInFightClub = false; }
+                        if (loadProCode1[26] == '1') { theCreeperInTheDarkDefeated = true; }
+                        else { theCreeperInTheDarkDefeated = false; }
+                        if (loadProCode1[27] == '1') { puddleSearched = true; }
+                        else { puddleSearched = false; }
+                        if (loadProCode1[28] == '1') { visitedBowlingAlley = true; }
+                        else { visitedBowlingAlley = false; }
+                        if (loadProCode1[29] == '1') { talkedToPriest = true; }
+                        else { talkedToPriest = false; }
+                        if (loadProCode1[30] == '1') { noticedJane = true; }
+                        else { noticedJane = false; }
+                        if (loadProCode1[31] == '1') { janesProtectionActive = true; }
+                        else { janesProtectionActive = false; }
+                        if (loadProCode1[32] == '1') { janesDoorOpened = true; }
+                        else { janesDoorOpened = false; }
+                        if (loadProCode1[33] == '1') { signedLogBook = true; }
+                        else { signedLogBook = false; }
+                        if (loadProCode1[34] == '1') { salamancaBagLooted = true; }
+                        else { salamancaBagLooted = false; }
+                        if (loadProCode1[35] == '1') { newConverseAvailable = true; }
+                        else { newConverseAvailable = false; }
+                        if (loadProCode1[36] == '1') { gusQuestGiven = true; }
+                        else { gusQuestGiven = false; }
+                        if (loadProCode1[37] == '1') { gusQuestCompleted = true; }
+                        else { gusQuestCompleted = false; }
+                        if (loadProCode1[38] == '1') { losPollosHermanos = true; }
+                        else { losPollosHermanos = false; }
+                        if (loadProCode1[39] == '1') { mikeQuestGiven = true; }
+                        else { mikeQuestGiven = false; }
+                        if (loadProCode1[40] == '1') { mikeQuestCompleted = true; }
+                        else { mikeQuestCompleted = false; }
+                        if (loadProCode1[41] == '1') { peteQuestGiven = true; }
+                        else { peteQuestGiven = false; }
+                        if (loadProCode1[42] == '1') { peteQuestCompleted = true; }
+                        else { peteQuestCompleted = false; }
+                        if (loadProCode1[43] == '1') { saulQuestGiven = true; }
+                        else { saulQuestGiven = false; }
+                        if (loadProCode1[44] == '1') { saulQuestCompleted = true; }
+                        else { saulQuestCompleted = false; }
+                        if (loadProCode1[45] == '1') { studdedLeatherArmorLooted = true; }
+                        else { studdedLeatherArmorLooted = false; }
+                        if (loadProCode1[46] == '1') { knightSuitAvailable = true; }
+                        else { knightSuitAvailable = false; }
+                        if (loadProCode1[47] == '1') { janeQuestGiven = true; }
+                        else { janeQuestGiven = false; }
+                        if (loadProCode2[1] == '1') { janeQuestCompleted = true; }
+                        else { janeQuestCompleted = false; }
+                        if (loadProCode2[2] == '1') { freePotions = true; }
+                        else { freePotions = false; }
+                        if (loadProCode2[3] == '1') { dudeOnAPogoStickDefeated = true; }
+                        else { dudeOnAPogoStickDefeated = false; }
+                        if (loadProCode2[4] == '1') { hidenGoseke = true; }
+                        else { hidenGoseke = false; }
+                        if (loadProCode2[5] == '1') { secretTunnelOpened = true; }
+                        else { secretTunnelOpened = false; }
+                        if (loadProCode2[6] == '1') { returnedRing = true; }
+                        else { returnedRing = false; }
+                        if (loadProCode2[7] == '1') { shopClosed = true; }
+                        else { shopClosed = false; }
+                        if (loadProCode2[8] == '1') { readLogbook = true; }
+                        else { readLogbook = false; }
+                        if (loadProCode2[9] == '1') { tookPeteCash = true; }
+                        else { tookPeteCash = false; }
+                        if (loadProCode2[10] == '1') { tookGusCash = true; }
+                        else { tookGusCash = false; }
+                        if (loadProCode2[11] == '1') { tookSaulCash = true; }
+                        else { tookSaulCash = false; }
+                        if (loadProCode2[12] == '1') { tookHermitCash = true; }
+                        else { tookHermitCash = false; }
+                        if (loadProCode2[13] == '1') { tookLydiaCash = true; }
+                        else { tookLydiaCash = false; }
+                        if (loadProCode2[14] == '1') { tookMikeCash = true; }
+                        else { tookMikeCash = false; }
+                        if (loadProCode2[15] == '1') { tookJaneCash = true; }
+                        else { tookJaneCash = false; }
+                        if (loadProCode2[16] == '1') { killedJesse = true; }
+                        else { killedJesse = false; }
+                        if (loadProCode2[17] == '1') { jesseDefeated = true; }
+                        else { jesseDefeated = false; }
+                        if (loadProCode2[18] == '1') { sparedJesse = true; }
+                        else { sparedJesse = false; }
+                        if (loadProCode2[19] == '1') { searchedHeisenberg = true; }
+                        else { searchedHeisenberg = false; }
+                        if (loadProCode2[20] == '1') { narratorDefeated = true; }
+                        else { narratorDefeated = false; }
+                        if (loadProCode2[21] == '1') { searchedFortress = true; }
+                        else { searchedFortress = false; }
+                        if (loadProCode2[22] == '1') { mapTown = true; }
+                        else { mapTown = false; }
+                        if (loadProCode2[23] == '1') { mapPeace = true; }
+                        else { mapPeace = false; }
+                        if (loadProCode2[24] == '1') { mapSalamanca = true; }
+                        else { mapSalamanca = false; }
+                        if (loadProCode2[25] == '1') { mapLiquor = true; }
+                        else { mapLiquor = false; }
+                        if (loadProCode2[26] == '1') { mapVacuum = true; }
+                        else { mapVacuum = false; }
+                        if (loadProCode2[27] == '1') { mapCartel = true; }
+                        else { mapCartel = false; }
+                        if (loadProCode2[28] == '1') { mapMike = true; }
+                        else { mapMike = false; }
+                        if (loadProCode2[29] == '1') { mapFight = true; }
+                        else { mapFight = false; }
+                        if (loadProCode2[30] == '1') { mapLydia = true; }
+                        else { mapLydia = false; }
+                        if (loadProCode2[31] == '1') { mapSaul = true; }
+                        else { mapSaul = false; }
+                        if (loadProCode2[32] == '1') { mapBowl = true; }
+                        else { mapBowl = false; }
+                        if (loadProCode2[33] == '1') { mapHermit = true; }
+                        else { mapHermit = false; }
+                        if (loadProCode2[34] == '1') { mapFortress = true; }
+                        else { mapFortress = false; }
+                        if (loadProCode2[35] == '1') { searchedChest = true; }
+                        else { searchedChest = false; }
+                        if (loadProCode2[36] == '1') { searchedNightstand = true; }
+                        else { searchedNightstand = false; }
+                        if (loadProCode2[37] == '1') { lootedFredBeard = true; }
+                        else { lootedFredBeard = false; }
+                        if (loadProCode2[38] == '1') { lootedMirror = true; }
+                        else { lootedMirror = false; }
+                        if (loadProCode2[39] == '1') { converseOneDone = true; }
+                        else { converseOneDone = false; }
+                        if (loadProCode2[40] == '1') { converseTwoDone = true; }
+                        else { converseTwoDone = false; }
+                        if (loadProCode2[41] == '1') { converseThreeDone = true; }
+                        else { converseThreeDone = false; }
+                        if (loadProCode2[42] == '1') { converseFourDone = true; }
+                        else { converseFourDone = false; }
+                        if (loadProCode2[43] == '1') { converseFiveDone = true; }
+                        else { converseFiveDone = false; }
+                        if (loadProCode2[44] == '1') { converseSixDone = true; }
+                        else { converseSixDone = false; }
+                        if (loadProCode2[45] == '1') { converseSevenDone = true; }
+                        else { converseSevenDone = false; }
+                        if (loadProCode2[46] == '1') { secondQuest = true; }
+                        else { secondQuest = false; }
+                        if (loadProCode2[47] == '1') { thirdQuest = true; }
+                        else { thirdQuest = false; }
+                        if (loadProCode2[48] == '1') { lootedGarbageCanLid = true; }
+                        else { lootedGarbageCanLid = false; }
+
+                        //load integers
+                        hermitAnger = Convert.ToInt32(intray[0]);
+                        highestHermitAnger = Convert.ToInt32(intray[1]);
+                        inappropriateTouchingCounter = Convert.ToInt32(intray[2]);
+                        bowlingSkill = Convert.ToInt32(intray[3]);
+                        salamancaStolenCrystals = Convert.ToInt32(intray[4]);
+                        converseCount = Convert.ToInt32(intray[5]);
+                        saulHermitBond = Convert.ToInt32(intray[6]);
+                        konamiProgress = Convert.ToInt32(intray[7]);
+                        stolenHeisenPotions = Convert.ToInt32(intray[8]);
+                        jokeConverse = Convert.ToInt32(intray[9]);
+                        ego.CurrentHitPoints = Convert.ToInt32(intray[10]);
+                        ego.BlueCrystals = Convert.ToInt32(intray[11]);
+                        ego.FightClubRank = Convert.ToInt32(intray[12]);
+                        ego.BankedCrystals = Convert.ToInt32(intray[13]);
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Get to the choppa!");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to restore");
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("____________________________________________________");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Hmmmm no I guess you don't.");
+                        Console.WriteLine();
+                        Console.Write("Press ENTER to continue");
+                        Console.ReadLine();
+                    }                    
+                }
 
                 if (action == "map")
                 {
@@ -17956,7 +20802,7 @@ namespace JessesDungeon
                     if (mapTown) { Console.WriteLine("T: Town"); }
                     if (mapPeace) { Console.WriteLine("P: Peaceful Sanctuary"); }
                     if (mapSalamanca) { Console.WriteLine("S: Salamanca's Territory"); }
-                    if (mapLiquor) { Console.WriteLine("L: Liquor & Winery"); }
+                    if (mapLiquor) { Console.WriteLine("W: Winery"); }
                     if (mapCartel) { Console.WriteLine("C: Cartel"); }
                     if (mapMike) { Console.WriteLine("M: Mike"); }
                     if (mapFight) { Console.WriteLine("!: Fight Club"); }
@@ -19416,32 +22262,172 @@ namespace JessesDungeon
                         if (action == "string list")
                         {
                             action = "List";
+                            stringFlags[0] = debugMoneyInput;
+                            stringFlags[1] = fightClubAction;
+                            stringFlags[2] = fightClubChoice;
+                            stringFlags[3] = bowlingAction;
+                            stringFlags[4] = purchaseItem;
+                            stringFlags[5] = sellItem;
+                            stringFlags[6] = sellItem2;
+                            stringFlags[7] = usingItem;
+                            stringFlags[8] = inspectingItem;
+                            stringFlags[9] = salamancaAction;
+                            stringFlags[10] = salamancaChoice;
+                            stringFlags[11] = disappearChoice;
                             Console.WriteLine();
                             Console.WriteLine();
-                            foreach (string statskill in stringList)
+                            for (int i = 0; i < 15; i++)
                             {
-                                Console.WriteLine(statskill);
-                            }                            
+                                if (stringFlags[i] == "" || stringFlags[i] == null) { Console.WriteLine(stringList[i].PadRight(21, '-') + "> empty"); }
+                                else { Console.WriteLine(stringList[i].PadRight(21, '-') + "> " + stringFlags[i]); }
+                            }
+                            //foreach (string statskill in stringList) { Console.WriteLine(statskill); }                            
                         }
                         else if (action == "int list")
                         {
                             action = "List";
+                            intFlags[0] = hermitAnger;
+                            intFlags[1] = highestHermitAnger;
+                            intFlags[2] = debugMoneyOutput;
+                            intFlags[3] = inappropriateTouchingCounter;
+                            intFlags[4] = fightClubMode;
+                            intFlags[5] = bowlingSkill;
+                            intFlags[6] = lastBowlingBet;
+                            intFlags[7] = egoBowlingScore;
+                            intFlags[8] = enemyBowlingScore;
+                            intFlags[9] = bowlingPrizePackage;
+                            intFlags[10] = salamancaStolenCrystals;
+                            intFlags[11] = converseCount;
+                            intFlags[12] = gusSenseMotiveCheck;
+                            intFlags[13] = saulHermitBond;
+                            intFlags[14] = konamiProgress;
+                            intFlags[15] = stolenHeisenPotions;
+                            intFlags[16] = bankDeposit;
+                            intFlags[17] = bankWithdrawal;
+                            intFlags[18] = jokeConverse;
                             Console.WriteLine();
                             Console.WriteLine();
-                            foreach (string statskill in intList)
-                            {
-                                Console.WriteLine(statskill);
-                            }
+                            for (int i = 0; i < 19; i++) { Console.WriteLine(intList[i].PadRight(29, '-') + "> " + intFlags[i]); }
+                            //foreach (string statskill in intList) { Console.WriteLine(statskill); }
                         }
                         else if (action == "bool list")
                         {
                             action = "List";
+                            boolFlags[0] = debugMode;
+                            boolFlags[1] = bowlAndSpoonLooted;
+                            boolFlags[2] = listenedToTownVoices;
+                            boolFlags[3] = unlockedListenTo;
+                            boolFlags[4] = hasNotEnteredTown;
+                            boolFlags[5] = hasLeftTown;
+                            boolFlags[6] = searchedTree;
+                            boolFlags[7] = galeQuestGiven;
+                            boolFlags[8] = galeQuestCompleted;
+                            boolFlags[9] = hermitVisited;
+                            boolFlags[10] = lookedMeepEyes;
+                            boolFlags[11] = searchedMeepMounds;
+                            boolFlags[12] = talkedToMeepMounds;
+                            boolFlags[13] = searchedMikeHouse;
+                            boolFlags[14] = fuckedUpWithMike;
+                            boolFlags[15] = searchedGraveyard;
+                            boolFlags[16] = salamancaGuardDefeated;
+                            boolFlags[17] = salamancaGuardSearched;
+                            boolFlags[18] = salamancaCousinDefeated;
+                            boolFlags[19] = salamancaDead;
+                            boolFlags[20] = randomEncountersOn;
+                            boolFlags[21] = lydiaQuestGiven;
+                            boolFlags[22] = lydiaQuestCompleted;
+                            boolFlags[23] = lootedCentaur;
+                            boolFlags[24] = frontEntranceWarning;
+                            boolFlags[25] = joinedFightClub;
+                            boolFlags[26] = fightClubLoop;
+                            boolFlags[27] = foughtInFightClub;
+                            boolFlags[28] = theCreeperInTheDarkDefeated;
+                            boolFlags[29] = puddleSearched;
+                            boolFlags[30] = visitedBowlingAlley;
+                            boolFlags[31] = bowlingLoop;
+                            boolFlags[32] = talkedToPriest;
+                            boolFlags[33] = noticedJane;
+                            boolFlags[34] = janesProtectionActive;
+                            boolFlags[35] = janesDoorOpened;
+                            boolFlags[36] = signedLogBook;
+                            boolFlags[37] = dryadLoop;
+                            boolFlags[38] = peteLoop;
+                            boolFlags[39] = buyLoop;
+                            boolFlags[40] = sellLoop;
+                            boolFlags[41] = inventoryLoop;
+                            boolFlags[42] = salamancaLoop;
+                            boolFlags[43] = salamancaBagLooted;
+                            boolFlags[44] = newConverseAvailable;
+                            boolFlags[45] = gusQuestGiven;
+                            boolFlags[46] = gusQuestCompleted;
+                            boolFlags[47] = gusLoop;
+                            boolFlags[48] = losPollosHermanos;
+                            boolFlags[49] = mikeQuestGiven;
+                            boolFlags[50] = mikeQuestCompleted;
+                            boolFlags[51] = peteQuestGiven;
+                            boolFlags[52] = peteQuestCompleted;
+                            boolFlags[53] = saulQuestGiven;
+                            boolFlags[54] = saulQuestCompleted;
+                            boolFlags[55] = studdedLeatherArmorLooted;
+                            boolFlags[56] = knightSuitAvailable;
+                            boolFlags[57] = mikeLoop;
+                            boolFlags[58] = janeQuestGiven;
+                            boolFlags[59] = janeQuestCompleted;
+                            boolFlags[60] = janeLoop;
+                            boolFlags[61] = freePotions;
+                            boolFlags[62] = dudeOnAPogoStickDefeated;
+                            boolFlags[63] = hidenGoseke;
+                            boolFlags[64] = secretTunnelOpened;
+                            boolFlags[65] = returnedRing;
+                            boolFlags[66] = shopClosed;
+                            boolFlags[67] = readLogbook;
+                            boolFlags[68] = tookPeteCash;
+                            boolFlags[69] = tookGusCash;
+                            boolFlags[70] = tookSaulCash;
+                            boolFlags[71] = tookHermitCash;
+                            boolFlags[72] = tookLydiaCash;
+                            boolFlags[73] = tookMikeCash;
+                            boolFlags[74] = tookJaneCash;
+                            boolFlags[75] = talkLoop;
+                            boolFlags[76] = killedJesse;
+                            boolFlags[77] = jesseDefeated;
+                            boolFlags[78] = sparedJesse;
+                            boolFlags[79] = searchedHeisenberg;
+                            boolFlags[80] = narratorDefeated;
+                            boolFlags[81] = searchedFortress;
+                            boolFlags[82] = mapTown;
+                            boolFlags[83] = mapPeace;
+                            boolFlags[84] = mapSalamanca;
+                            boolFlags[85] = mapLiquor;
+                            boolFlags[86] = mapVacuum;
+                            boolFlags[87] = mapCartel;
+                            boolFlags[88] = mapMike;
+                            boolFlags[89] = mapFight;
+                            boolFlags[90] = mapLydia;
+                            boolFlags[91] = mapSaul;
+                            boolFlags[92] = mapBowl;
+                            boolFlags[93] = mapHermit;
+                            boolFlags[94] = mapFortress;
+                            boolFlags[95] = searchedNightstand;
+                            boolFlags[96] = lootedFredBeard;
+                            boolFlags[97] = lootedMirror;
+                            boolFlags[98] = converseOneDone;
+                            boolFlags[99] = converseTwoDone;
+                            boolFlags[100] = converseThreeDone;
+                            boolFlags[101] = converseFourDone;
+                            boolFlags[102] = converseFiveDone;
+                            boolFlags[103] = converseSixDone;
+                            boolFlags[104] = converseSevenDone;
+                            boolFlags[105] = secondQuest;
+                            boolFlags[106] = thirdQuest;
+                            boolFlags[107] = lootedGarbageCanLid;
                             Console.WriteLine();
                             Console.WriteLine();
-                            foreach (string statskill in boolList)
-                            {
-                                Console.WriteLine(statskill);
-                            }
+                            for (int i = 0; i < 109; i++) { Console.WriteLine(boolList[i].PadRight(28, '-') + "> " + boolFlags[i]); }
+                            //foreach (string statskill in boolList)
+                            //{
+                            //    Console.WriteLine(statskill);
+                            //}
                         }
                         else if (action == "ego")
                         {
@@ -19917,7 +22903,6 @@ namespace JessesDungeon
                             string inputCheck = stringList[i];
                             if (razzleDazzleRootBeer == inputCheck)
                             {
-                                talkLoop = false;
                                 action = "Complete";
                                 stringFlags[0] = debugMoneyInput;
                                 stringFlags[1] = fightClubAction;
@@ -19937,24 +22922,7 @@ namespace JessesDungeon
                                 Console.Write("Enter value: ");
                                 suckBlueFrogs = Console.ReadLine();
                                 stringFlags[i] = suckBlueFrogs;
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.WriteLine(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.WriteLine(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.Write(".");
-                                Thread.Sleep(250);
-                                Console.WriteLine(".");
-                                Thread.Sleep(250);
+                                Console.WriteLine();
                                 Console.WriteLine();
                                 Console.WriteLine($"{stringList[i]} = {stringFlags[i]}");
                                 Console.WriteLine();
@@ -20000,6 +22968,9 @@ namespace JessesDungeon
                                 intFlags[13] = saulHermitBond;
                                 intFlags[14] = konamiProgress;
                                 intFlags[15] = stolenHeisenPotions;
+                                intFlags[16] = bankDeposit;
+                                intFlags[17] = bankWithdrawal;
+                                intFlags[18] = jokeConverse;
 
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -20007,26 +22978,8 @@ namespace JessesDungeon
                                 suckBlueFrogs = Console.ReadLine();
                                 if (Int32.TryParse(suckBlueFrogs, out int newValue))
                                 {
-                                    talkLoop = false;
                                     intFlags[i] = newValue;
-                                    Console.Write(".");
-                                    Thread.Sleep(250);
-                                    Console.Write(".");
-                                    Thread.Sleep(250);
-                                    Console.WriteLine(".");
-                                    Thread.Sleep(250);
-                                    Console.Write(".");
-                                    Thread.Sleep(250);
-                                    Console.Write(".");
-                                    Thread.Sleep(250);
-                                    Console.WriteLine(".");
-                                    Thread.Sleep(250);
-                                    Console.Write(".");
-                                    Thread.Sleep(250);
-                                    Console.Write(".");
-                                    Thread.Sleep(250);
-                                    Console.WriteLine(".");
-                                    Thread.Sleep(250);
+                                    Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine($"{intList[i]} = {intFlags[i]}");
                                     Console.WriteLine();
@@ -20051,6 +23004,9 @@ namespace JessesDungeon
                                     saulHermitBond = intFlags[13];
                                     konamiProgress = intFlags[14];
                                     stolenHeisenPotions = intFlags[15];
+                                    bankDeposit = intFlags[16];
+                                    bankWithdrawal = intFlags[17];
+                                    jokeConverse  = intFlags[18];
                                 }
                                 else
                                 {
@@ -20165,6 +23121,19 @@ namespace JessesDungeon
                                 boolFlags[92] = mapBowl;
                                 boolFlags[93] = mapHermit;
                                 boolFlags[94] = mapFortress;
+                                boolFlags[95] = searchedNightstand;
+                                boolFlags[96] = lootedFredBeard;
+                                boolFlags[97] = lootedMirror;
+                                boolFlags[98] = converseOneDone;
+                                boolFlags[99] = converseTwoDone;
+                                boolFlags[100] = converseThreeDone;
+                                boolFlags[101] = converseFourDone;
+                                boolFlags[102] = converseFiveDone;
+                                boolFlags[103] = converseSixDone;
+                                boolFlags[104] = converseSevenDone;
+                                boolFlags[105] = secondQuest;
+                                boolFlags[106] = thirdQuest;
+                                boolFlags[107] = lootedGarbageCanLid;
 
                                 Console.WriteLine();
                                 Console.WriteLine();
@@ -20174,24 +23143,7 @@ namespace JessesDungeon
                                 {
                                     talkLoop = false;
                                     boolFlags[i] = newValue;
-                                    Console.Write(".");
-                                    Thread.Sleep(250);
-                                    Console.Write(".");
-                                    Thread.Sleep(250);
-                                    Console.WriteLine(".");
-                                    Thread.Sleep(250);
-                                    Console.Write(".");
-                                    Thread.Sleep(250);
-                                    Console.Write(".");
-                                    Thread.Sleep(250);
-                                    Console.WriteLine(".");
-                                    Thread.Sleep(250);
-                                    Console.Write(".");
-                                    Thread.Sleep(250);
-                                    Console.Write(".");
-                                    Thread.Sleep(250);
-                                    Console.WriteLine(".");
-                                    Thread.Sleep(250);
+                                    Console.WriteLine();
                                     Console.WriteLine();
                                     Console.WriteLine($"{boolList[i]} = {boolFlags[i]}");
                                     Console.WriteLine();
